@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_PlayerShadowStrikeComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent.AC_PlayerShadowStrikeComponent",
+    "relative_package": "Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/E_ShadowStrikeState",
+      "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatTargetable"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_Execution",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview"
+    ],
+    "non_architecture_dependency_count": 5,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent.AC_PlayerShadowStrikeComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent.AC_PlayerShadowStrikeComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent.AC_PlayerShadowStrikeComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "ActiveBodyTrailComponent",
+        "guid": "3C12770943A692B9070E4CBE42F9C0E5",
+        "friendly_name": "Active Body Trail Component",
+        "category": "Visuals",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimConeAngle",
+        "guid": "AAAE30EE45E7592F0AFFD580242703E3",
+        "friendly_name": "Aim Cone Angle",
+        "category": "Targeting settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimRadius",
+        "guid": "79B1F2ED4B0671ACC21CEFB31F4291BD",
+        "friendly_name": "Aim Radius",
+        "category": "Targeting settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDebugShadowStrike",
+        "guid": "789970E348E5A3B2AD93DB955CE3C623",
+        "friendly_name": "Debug Shadow Strike",
+        "category": "Runtime state",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BodyTrailNiagara",
+        "guid": "6311922E47AA2DE4238930B7F1D3B462",
+        "friendly_name": "Body Trail Niagara",
+        "category": "Visuals",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bShadowStrikeActive",
+        "guid": "546E4A37466BF486F7ED3A8D48B6F1D3",
+        "friendly_name": "Shadow Strike Active",
+        "category": "Runtime state",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bUseLineOfSight",
+        "guid": "FEA795B941D2867DDFDCC7A870A1FF33",
+        "friendly_name": "Use Line Of Sight",
+        "category": "Targeting settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CameraBoom",
+        "guid": "034279C84A0833639C426CBBA93ABC53",
+        "friendly_name": "Camera Boom",
+        "category": "References",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SpringArmComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ChainConeAngle",
+        "guid": "9309BA994A02E28D6F7DF58014EABA68",
+        "friendly_name": "Chain Cone Angle",
+        "category": "Targeting settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ChainCount",
+        "guid": "D254653849C2F381F6C124B8807A9F54",
+        "friendly_name": "Chain Count",
+        "category": "Runtime state",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ChainRadius",
+        "guid": "15717E8A42B870ACC3B4CE8FCCA54E69",
+        "friendly_name": "Chain Radius",
+        "category": "Targeting settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ExecutionEntryDistance",
+        "guid": "23B305794CB4EB30AC6155B4C76F0FE4",
+        "friendly_name": "Execution Entry Distance",
+        "category": "Travel Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ExecutionEntrySideOffset",
+        "guid": "E8F1CE6748194792DCFA049EA69CF76D",
+        "friendly_name": "Execution Entry Side Offset",
+        "category": "Travel Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FollowCamera",
+        "guid": "76B339E04561168CD70F4082ADDD1E3E",
+        "friendly_name": "Follow Camera",
+        "category": "References",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GlobalSlowMo",
+        "guid": "94C73B5E452830E89FCFEF8D02EBF279",
+        "friendly_name": "Global Slow Mo",
+        "category": "Slow motion settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxChains",
+        "guid": "6B70B8AF49B6457C9B64779266E2D838",
+        "friendly_name": "Max Chains",
+        "category": "Runtime state",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxHeightDelta",
+        "guid": "0551A3784EF2A5625C25F6AB6CBCF1D7",
+        "friendly_name": "Max Height Delta",
+        "category": "Targeting settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OwnerPlayer",
+        "guid": "10B573084559259FAAC4E58FCBF039B6",
+        "friendly_name": "Owner Player",
+        "category": "References",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerActionComp",
+        "guid": "6F309E98490A2D6C96E820A7965BF01E",
+        "friendly_name": "Player Action Comp",
+        "category": "References",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent.BP_PlayerActionComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerGhostMaterial",
+        "guid": "2971072346C205542B2A5592359B7B6B",
+        "friendly_name": "Player Ghost Material",
+        "category": "Visuals",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInstance'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerSlowMoCompensation",
+        "guid": "16D5BB2A483A35FF393B0B9B3D9CBC55",
+        "friendly_name": "Player Slow Mo Compensation",
+        "category": "Slow motion settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PreviousCameraLagEnabled",
+        "guid": "EE257A0942059386B1618FB658300725",
+        "friendly_name": "Previous Camera Lag Enabled",
+        "category": "Camera lag backup",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PreviousCameraLagMaxDistance",
+        "guid": "6892036F447A9DA6994BEA99CFA95EE7",
+        "friendly_name": "Previous Camera Lag Max Distance",
+        "category": "Camera lag backup",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PreviousCameraLagSpeed",
+        "guid": "34F2321946C95EA483D9E6AFFF7F426F",
+        "friendly_name": "Previous Camera Lag Speed",
+        "category": "Camera lag backup",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PreviousSelectedTarget",
+        "guid": "E7D1EB824B1E24D7D167EBA5FC36F0D5",
+        "friendly_name": "Previous Selected Target",
+        "category": "Runtime state",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SelectedTarget",
+        "guid": "6F3D8C3341B8527AEC3700B69B7531E0",
+        "friendly_name": "Selected Target",
+        "category": "Runtime state",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ShadowStrikeState",
+        "guid": "F3FFF5EA45B8A7131940B8B3953E3DAA",
+        "friendly_name": "Shadow Strike State",
+        "category": "Runtime state",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/E_ShadowStrikeState.E_ShadowStrikeState'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ShadowTravelCameraLagMaxDistance",
+        "guid": "43E0181E4E1D823F6C91D689EDE0DD08",
+        "friendly_name": "Shadow Travel Camera Lag Max Distance",
+        "category": "Camera lag backup",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ShadowTravelCameraLagSpeed",
+        "guid": "4E54A5624A83E1E757908EA61D40EC5C",
+        "friendly_name": "Shadow Travel Camera Lag Speed",
+        "category": "Camera lag backup",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TargetingComp",
+        "guid": "BF360749420D61F17EE7A09DE7A4B523",
+        "friendly_name": "Targeting Comp",
+        "category": "References",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent.AC_PlayerTargetingComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TargetOverlayMaterial",
+        "guid": "3DB13E414F671DAE711F77882EEE4C3B",
+        "friendly_name": "Target Overlay Material",
+        "category": "Visuals",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInstance'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TravelAlpha",
+        "guid": "E5ABE382431D98E56F83A6923E462351",
+        "friendly_name": "Travel Alpha",
+        "category": "Travel Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TravelDuration",
+        "guid": "3E82B067485072CBEFBC2087CAB70104",
+        "friendly_name": "Travel Duration",
+        "category": "Travel Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TravelEndLocation",
+        "guid": "C5321A3E498AF62C5BFE5FAD4022A636",
+        "friendly_name": "Travel End Location",
+        "category": "Travel Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TravelEndRotation",
+        "guid": "E3AC68C8418C6D7E8F4136817AC2AD64",
+        "friendly_name": "Travel End Rotation",
+        "category": "Travel Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TravelStartLocation",
+        "guid": "7E122ABC4988B74340A7ABBF6362EDA1",
+        "friendly_name": "Travel Start Location",
+        "category": "Travel Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TravelStartRotation",
+        "guid": "6F82EBBB411D8E89FE330BB39AECEB3A",
+        "friendly_name": "Travel Start Rotation",
+        "category": "Travel Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TravelTarget",
+        "guid": "302079D54D6F804F10152AA0D320A7DD",
+        "friendly_name": "Travel Target",
+        "category": "Travel Settings",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UsedTargets",
+        "guid": "1736210A4401FE34470087A108677D78",
+        "friendly_name": "Used Targets",
+        "category": "Runtime state",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "HandleShadowStrikeInput",
+        "CanStartShadowStrike",
+        "EnterAimMode",
+        "EndShadowStrike",
+        "ApplyPlayerShadowVisuals",
+        "SwitchToShadowStrikeCameraMode",
+        "UpdateSelectedShadowStrikeTarget",
+        "DrawDebugSelectedTarget",
+        "FindBestShadowStrikeTarget",
+        "ClearTargetVisual",
+        "ApplyTargetVisual",
+        "IsValidShadowStrikeCandidate",
+        "ScoreShadowStrikeCandidate",
+        "HasShadowStrikeLineOfSight",
+        "ConfirmSelectedTarget",
+        "RestoreTimeDilationBeforeTravel",
+        "StartShadowTravel",
+        "UpdateShadowTravel",
+        "FinishShadowTravel",
+        "ForceEndShadowStrike",
+        "RestoreCameraLag",
+        "StartExecutionOnTarget",
+        "NotifyShadowExecutionFinished"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveTick",
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_SlotContainer_wName",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "E0C752B3488ADBD476F0339C43AAE122",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "InventoryComponent",
+      "guid": "B01E270A4C8ECB7B3A608A8EEAE594FB",
+      "friendly_name": "Inventory Component",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ItemCategory",
+      "guid": "E7F279914D09DB4EBC33AFB322ED23B9",
+      "friendly_name": "Item Category",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/Item/EItemCategory.EItemCategory'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SlotWidgetClass",
+      "guid": "8D3E618641485AA30063569EF147F250",
+      "friendly_name": "Slot Widget Class",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot.WBP_InventorySlot_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SlotWidgets",
+      "guid": "1052E2F74BFBE92BB351E897A6CA76E5",
+      "friendly_name": "Slot Widgets",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot.WBP_InventorySlot_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "RefreshContainer",
+      "kind": "function",
+      "guid": "58EC049347BDC4D951DF6887DE0B86CA",
+      "node_count": 4,
+      "pin_count": 12,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "NotifySlotClicked",
+      "kind": "function",
+      "guid": "E34260734499A0F39D8BB488AFD8DCAC",
+      "node_count": 19,
+      "pin_count": 51,
+      "connection_count": 20,
+      "exec_connection_count": 10,
+      "data_connection_count": 10
+    },
+    {
+      "name": "InitContainer",
+      "kind": "function",
+      "guid": "83214F1945FF5573F930279FEE33F77E",
+      "node_count": 39,
+      "pin_count": 117,
+      "connection_count": 39,
+      "exec_connection_count": 10,
+      "data_connection_count": 29
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "DDA8BD18435A01EACAC37FAE21529133",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 4,
+    "generated_graph_count": 0,
+    "authored_node_count": 65,
+    "authored_pin_count": 189,
+    "authored_connection_count": 63,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "InitContainer",
+      "kind": "function",
+      "file": "graphs/InitContainer.json"
+    },
+    {
+      "name": "NotifySlotClicked",
+      "kind": "function",
+      "file": "graphs/NotifySlotClicked.json"
+    },
+    {
+      "name": "RefreshContainer",
+      "kind": "function",
+      "file": "graphs/RefreshContainer.json"
+    }
+  ]
+}

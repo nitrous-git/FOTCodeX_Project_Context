@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_ProjectileComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent.BP_ProjectileComponent",
+    "relative_package": "Frameworks/BossFramework/Projectiles/BP_ProjectileComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B_Clone",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/AnimNotify/BP_ArcProjectile_Notify",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/AnimNotify/BP_DirectProjectile_Notify",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/AnimNotify/BP_GridProjectile_Notify",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/AnimNotify/BP_NPC_DirectProjectile_Notify",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/AnimNotify/BP_PeaCockProjectile_Notify",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/AnimNotify/BP_ShockwaveProjectile_Notify"
+    ],
+    "non_architecture_dependency_count": 3,
+    "non_architecture_referencer_count": 1
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent.BP_ProjectileComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent.BP_ProjectileComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent.BP_ProjectileComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "Draw Debug Type",
+        "guid": "9B3FCEE0477658D477133D86D82064A0",
+        "friendly_name": "Draw Debug Type",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.EDrawDebugTrace'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Draw Time",
+        "guid": "818E3A3A4844EA994AF7F3B2561E02C8",
+        "friendly_name": "Draw Time",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HomingTarget",
+        "guid": "5015DB1E4D2A50B4C425AF9564FD223D",
+        "friendly_name": "Homing Target",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SpawnCount",
+        "guid": "8CDAE2664DA08B89688126A741CC70F9",
+        "friendly_name": "Spawn Count",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Trace Channel",
+        "guid": "90427F684730BF0B9D65C4A4180113B8",
+        "friendly_name": "Trace Channel",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.ETraceTypeQuery'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Trace Color",
+        "guid": "34E096C142212A00E19BA8A618117A04",
+        "friendly_name": "Trace Color",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.LinearColor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Trace Hit Color",
+        "guid": "74326E074CF54B7FF9B2D6A0E35C95F5",
+        "friendly_name": "Trace Hit Color",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.LinearColor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "CalculateMainDirection",
+        "SpawnShockwave",
+        "SpawnGrid",
+        "SpawnArc",
+        "SpawnDirect",
+        "Spawnpeacock"
+      ],
+      "macros": [
+        "CenterGrid",
+        "SpawnCounter"
+      ],
+      "delegates": [],
+      "generated_graphs": [
+        "Spawn Peacock Projectile",
+        "Spawn Shockwave Projectile",
+        "Spawn Arc Projectile",
+        "Spawn Grid Projectile",
+        "Spawn Direct Projectile"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

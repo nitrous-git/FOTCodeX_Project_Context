@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_ProjectileComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "A266D0D344102CC88903DC8A27FF4F2B",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "Draw Debug Type",
+      "guid": "9B3FCEE0477658D477133D86D82064A0",
+      "friendly_name": "Draw Debug Type",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.EDrawDebugTrace'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Draw Time",
+      "guid": "818E3A3A4844EA994AF7F3B2561E02C8",
+      "friendly_name": "Draw Time",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HomingTarget",
+      "guid": "5015DB1E4D2A50B4C425AF9564FD223D",
+      "friendly_name": "Homing Target",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpawnCount",
+      "guid": "8CDAE2664DA08B89688126A741CC70F9",
+      "friendly_name": "Spawn Count",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Trace Channel",
+      "guid": "90427F684730BF0B9D65C4A4180113B8",
+      "friendly_name": "Trace Channel",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.ETraceTypeQuery'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Trace Color",
+      "guid": "34E096C142212A00E19BA8A618117A04",
+      "friendly_name": "Trace Color",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.LinearColor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Trace Hit Color",
+      "guid": "74326E074CF54B7FF9B2D6A0E35C95F5",
+      "friendly_name": "Trace Hit Color",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.LinearColor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "F0117B53480068E6479DDA96C66A1C8E",
+      "node_count": 6,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CalculateMainDirection",
+      "kind": "function",
+      "guid": "CF7911254B4714493F7ED2842DD1E9CB",
+      "node_count": 45,
+      "pin_count": 166,
+      "connection_count": 57,
+      "exec_connection_count": 3,
+      "data_connection_count": 54
+    },
+    {
+      "name": "SpawnShockwave",
+      "kind": "function",
+      "guid": "AE9C715D4C0DE3EF321F63897794D24B",
+      "node_count": 48,
+      "pin_count": 187,
+      "connection_count": 56,
+      "exec_connection_count": 3,
+      "data_connection_count": 53
+    },
+    {
+      "name": "SpawnGrid",
+      "kind": "function",
+      "guid": "59EC2F6947E98C81CC3AF88A720B0C30",
+      "node_count": 60,
+      "pin_count": 208,
+      "connection_count": 73,
+      "exec_connection_count": 4,
+      "data_connection_count": 69
+    },
+    {
+      "name": "SpawnArc",
+      "kind": "function",
+      "guid": "2C5ED743464E1D979E9E0D8BF2FA2C0B",
+      "node_count": 50,
+      "pin_count": 188,
+      "connection_count": 62,
+      "exec_connection_count": 4,
+      "data_connection_count": 58
+    },
+    {
+      "name": "SpawnDirect",
+      "kind": "function",
+      "guid": "AA26763641DF853EFFBE7AAFC6D1FF12",
+      "node_count": 15,
+      "pin_count": 60,
+      "connection_count": 24,
+      "exec_connection_count": 2,
+      "data_connection_count": 22
+    },
+    {
+      "name": "Spawnpeacock",
+      "kind": "function",
+      "guid": "26B881E84E866A64D50CADB6B210685C",
+      "node_count": 47,
+      "pin_count": 184,
+      "connection_count": 55,
+      "exec_connection_count": 3,
+      "data_connection_count": 52
+    },
+    {
+      "name": "CenterGrid",
+      "kind": "macro",
+      "guid": "6BEF4889437CC69B2D5E299852DF0CC6",
+      "node_count": 12,
+      "pin_count": 43,
+      "connection_count": 17,
+      "exec_connection_count": 0,
+      "data_connection_count": 17
+    },
+    {
+      "name": "SpawnCounter",
+      "kind": "macro",
+      "guid": "E06488C2404B20C0C281BB94E8DE312D",
+      "node_count": 9,
+      "pin_count": 27,
+      "connection_count": 9,
+      "exec_connection_count": 5,
+      "data_connection_count": 4
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Spawn Peacock Projectile",
+      "guid": "E64C23E24CA3813DA893839C32D75750",
+      "node_count": 3,
+      "pin_count": 31,
+      "connection_count": 14,
+      "exec_connection_count": 2,
+      "data_connection_count": 12
+    },
+    {
+      "name": "Spawn Shockwave Projectile",
+      "guid": "33FA10A44868AAE6D4AA63AA4B58C288",
+      "node_count": 3,
+      "pin_count": 31,
+      "connection_count": 14,
+      "exec_connection_count": 2,
+      "data_connection_count": 12
+    },
+    {
+      "name": "Spawn Arc Projectile",
+      "guid": "AD7E128847F03916526867A8056597A7",
+      "node_count": 3,
+      "pin_count": 25,
+      "connection_count": 11,
+      "exec_connection_count": 2,
+      "data_connection_count": 9
+    },
+    {
+      "name": "Spawn Grid Projectile",
+      "guid": "D63AF92E4BAA3F90811608B9314867EA",
+      "node_count": 3,
+      "pin_count": 25,
+      "connection_count": 11,
+      "exec_connection_count": 2,
+      "data_connection_count": 9
+    },
+    {
+      "name": "Spawn Direct Projectile",
+      "guid": "EB2806FA4D0889A19162D0A2C8351F69",
+      "node_count": 3,
+      "pin_count": 29,
+      "connection_count": 13,
+      "exec_connection_count": 2,
+      "data_connection_count": 11
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 9,
+    "generated_graph_count": 5,
+    "authored_node_count": 292,
+    "authored_pin_count": 1063,
+    "authored_connection_count": 353,
+    "generated_node_count": 15,
+    "generated_pin_count": 141
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CalculateMainDirection",
+      "kind": "function",
+      "file": "graphs/CalculateMainDirection.json"
+    },
+    {
+      "name": "SpawnArc",
+      "kind": "function",
+      "file": "graphs/SpawnArc.json"
+    },
+    {
+      "name": "SpawnDirect",
+      "kind": "function",
+      "file": "graphs/SpawnDirect.json"
+    },
+    {
+      "name": "SpawnGrid",
+      "kind": "function",
+      "file": "graphs/SpawnGrid.json"
+    },
+    {
+      "name": "Spawnpeacock",
+      "kind": "function",
+      "file": "graphs/Spawnpeacock.json"
+    },
+    {
+      "name": "SpawnShockwave",
+      "kind": "function",
+      "file": "graphs/SpawnShockwave.json"
+    },
+    {
+      "name": "CenterGrid",
+      "kind": "macro",
+      "file": "graphs/CenterGrid.json"
+    },
+    {
+      "name": "SpawnCounter",
+      "kind": "macro",
+      "file": "graphs/SpawnCounter.json"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "asset": {
+    "name": "FActionDef",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FActionDef",
+    "relative_package": "Frameworks/PlayerFramework/Core/Structs/FActionDef",
+    "class": "UserDefinedStruct",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FActionDef.FActionDef"
+  },
+  "serializer": "user_defined_struct",
+  "data": {
+    "struct_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FActionDef.FActionDef",
+    "field_count": 9,
+    "fields": [
+      {
+        "name": "ActionTag",
+        "internal_name": "ActionTag_20_52DFBE144C36D9D4EEE79C809E48363E",
+        "guid": "52DFBE144C36D9D4EEE79C809E48363E",
+        "type": {
+          "category": "struct",
+          "sub_category_object": "/Script/GameplayTags.GameplayTag"
+        },
+        "default_value": "(TagName=\"\")",
+        "current_default_value": "(TagName=\"\")",
+        "tooltip": null
+      },
+      {
+        "name": "ActionClass",
+        "internal_name": "ActionClass_21_48C871EF4D564DFCC1706591BBD8C9F9",
+        "guid": "48C871EF4D564DFCC1706591BBD8C9F9",
+        "type": {
+          "category": "class",
+          "sub_category_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C"
+        },
+        "default_value": "None",
+        "current_default_value": "None",
+        "tooltip": null
+      },
+      {
+        "name": "RequiredWindow",
+        "internal_name": "RequiredWindow_22_A73B129D4B4AEF21A38F39A5BB1E5676",
+        "guid": "A73B129D4B4AEF21A38F39A5BB1E5676",
+        "type": {
+          "category": "byte",
+          "sub_category_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionWindowType.EActionWindowType"
+        },
+        "default_value": "NewEnumerator0",
+        "current_default_value": "NewEnumerator0",
+        "tooltip": "Pretty much always None "
+      },
+      {
+        "name": "bAllowWhileCurrentActionActive",
+        "internal_name": "bAllowWhileCurrentActionActive_9_50FB13AC40A7F944E991AB9F16154D62",
+        "guid": "50FB13AC40A7F944E991AB9F16154D62",
+        "type": {
+          "category": "bool"
+        },
+        "default_value": "True",
+        "current_default_value": "True",
+        "tooltip": "This action can be potentialy handled internally (ex: combo chain) "
+      },
+      {
+        "name": "Priority",
+        "internal_name": "Priority_23_9355F90349911ED853138FB669A3C302",
+        "guid": "9355F90349911ED853138FB669A3C302",
+        "type": {
+          "category": "int"
+        },
+        "default_value": "0",
+        "current_default_value": "0",
+        "tooltip": null
+      },
+      {
+        "name": "bCanBeBuffered",
+        "internal_name": "bCanBeBuffered_13_A734A87449E474E4D363A6AA7AB12F2D",
+        "guid": "A734A87449E474E4D363A6AA7AB12F2D",
+        "type": {
+          "category": "bool"
+        },
+        "default_value": "True",
+        "current_default_value": "True",
+        "tooltip": null
+      },
+      {
+        "name": "BufferTTL",
+        "internal_name": "BufferTTL_24_CED75B9E4C11BFA5A890469921EA9193",
+        "guid": "CED75B9E4C11BFA5A890469921EA9193",
+        "type": {
+          "category": "real",
+          "sub_category": "double"
+        },
+        "default_value": "0.350000",
+        "current_default_value": "0.350000",
+        "tooltip": "Time to live inside Buffer"
+      },
+      {
+        "name": "CancelPolicy",
+        "internal_name": "CancelPolicy_25_A2EDDFD54BA1694B3AED119EE2D5C244",
+        "guid": "A2EDDFD54BA1694B3AED119EE2D5C244",
+        "type": {
+          "category": "byte",
+          "sub_category_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionCancelPolicy.EActionCancelPolicy"
+        },
+        "default_value": "NewEnumerator0",
+        "current_default_value": "NewEnumerator0",
+        "tooltip": "Can this action cancel cancel the old one ? Yes, this action can force cancel, can cancel when old one open a window OR No, can never cancel.  "
+      },
+      {
+        "name": "AllowedCancelFromTags",
+        "internal_name": "AllowedCancelFromTags_26_E8EC037340F6629A096D0F92BAB899AA",
+        "guid": "E8EC037340F6629A096D0F92BAB899AA",
+        "type": {
+          "category": "struct",
+          "sub_category_object": "/Script/GameplayTags.GameplayTagContainer"
+        },
+        "default_value": "(GameplayTags=)",
+        "current_default_value": "(GameplayTags=)",
+        "tooltip": null
+      }
+    ],
+    "definition_source": "raw_object_tree"
+  },
+  "raw_object_tree": [
+    {
+      "name": "FActionDef",
+      "class": "/Script/CoreUObject.UserDefinedStruct",
+      "export_path": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FActionDef.FActionDef'",
+      "properties": [
+        {
+          "name": "EditorData",
+          "value": "/Script/UnrealEd.UserDefinedStructEditorData'UserDefinedStructEditorData_0'"
+        },
+        {
+          "name": "Guid",
+          "value": "5BB8EECE47E53B2AE4F544A8131BD5AD"
+        }
+      ],
+      "children": [
+        {
+          "name": "UserDefinedStructEditorData_0",
+          "class": "/Script/UnrealEd.UserDefinedStructEditorData",
+          "export_path": "/Script/UnrealEd.UserDefinedStructEditorData'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FActionDef.FActionDef:UserDefinedStructEditorData_0'",
+          "properties": [],
+          "children": []
+        },
+        {
+          "name": "UserDefinedStructEditorData_0",
+          "class": "/Script/UnrealEd.UserDefinedStructEditorData",
+          "export_path": "/Script/UnrealEd.UserDefinedStructEditorData'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FActionDef.FActionDef:UserDefinedStructEditorData_0'",
+          "properties": [
+            {
+              "name": "UniqueNameId",
+              "value": 27
+            },
+            {
+              "name": "VariablesDescriptions(0)",
+              "value": "(VarName=\"ActionTag_20_52DFBE144C36D9D4EEE79C809E48363E\",VarGuid=52DFBE144C36D9D4EEE79C809E48363E,FriendlyName=\"ActionTag\",DefaultValue=\"(TagName=\\\"\\\")\",Category=\"struct\",SubCategoryObject=\"/Script/GameplayTags.GameplayTag\",CurrentDefaultValue=\"(TagName=\\\"\\\")\")"
+            },
+            {
+              "name": "VariablesDescriptions(1)",
+              "value": "(VarName=\"ActionClass_21_48C871EF4D564DFCC1706591BBD8C9F9\",VarGuid=48C871EF4D564DFCC1706591BBD8C9F9,FriendlyName=\"ActionClass\",DefaultValue=\"None\",Category=\"class\",SubCategoryObject=\"/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C\",CurrentDefaultValue=\"None\")"
+            },
+            {
+              "name": "VariablesDescriptions(2)",
+              "value": "(VarName=\"RequiredWindow_22_A73B129D4B4AEF21A38F39A5BB1E5676\",VarGuid=A73B129D4B4AEF21A38F39A5BB1E5676,FriendlyName=\"RequiredWindow\",DefaultValue=\"NewEnumerator0\",Category=\"byte\",SubCategoryObject=\"/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionWindowType.EActionWindowType\",CurrentDefaultValue=\"NewEnumerator0\",ToolTip=\"Pretty much always None \")"
+            },
+            {
+              "name": "VariablesDescriptions(3)",
+              "value": "(VarName=\"bAllowWhileCurrentActionActive_9_50FB13AC40A7F944E991AB9F16154D62\",VarGuid=50FB13AC40A7F944E991AB9F16154D62,FriendlyName=\"bAllowWhileCurrentActionActive\",DefaultValue=\"True\",Category=\"bool\",CurrentDefaultValue=\"True\",ToolTip=\"This action can be potentialy handled internally (ex: combo chain) \")"
+            },
+            {
+              "name": "VariablesDescriptions(4)",
+              "value": "(VarName=\"Priority_23_9355F90349911ED853138FB669A3C302\",VarGuid=9355F90349911ED853138FB669A3C302,FriendlyName=\"Priority\",DefaultValue=\"0\",Category=\"int\",CurrentDefaultValue=\"0\")"
+            },
+            {
+              "name": "VariablesDescriptions(5)",
+              "value": "(VarName=\"bCanBeBuffered_13_A734A87449E474E4D363A6AA7AB12F2D\",VarGuid=A734A87449E474E4D363A6AA7AB12F2D,FriendlyName=\"bCanBeBuffered\",DefaultValue=\"True\",Category=\"bool\",CurrentDefaultValue=\"True\")"
+            },
+            {
+              "name": "VariablesDescriptions(6)",
+              "value": "(VarName=\"BufferTTL_24_CED75B9E4C11BFA5A890469921EA9193\",VarGuid=CED75B9E4C11BFA5A890469921EA9193,FriendlyName=\"BufferTTL\",DefaultValue=\"0.350000\",Category=\"real\",SubCategory=\"double\",CurrentDefaultValue=\"0.350000\",ToolTip=\"Time to live inside Buffer\")"
+            },
+            {
+              "name": "VariablesDescriptions(7)",
+              "value": "(VarName=\"CancelPolicy_25_A2EDDFD54BA1694B3AED119EE2D5C244\",VarGuid=A2EDDFD54BA1694B3AED119EE2D5C244,FriendlyName=\"CancelPolicy\",DefaultValue=\"NewEnumerator0\",Category=\"byte\",SubCategoryObject=\"/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionCancelPolicy.EActionCancelPolicy\",CurrentDefaultValue=\"NewEnumerator0\",ToolTip=\"Can this action cancel cancel the old one ? Yes, this action can force cancel, can cancel when old one open a window OR No, can never cancel.  \")"
+            },
+            {
+              "name": "VariablesDescriptions(8)",
+              "value": "(VarName=\"AllowedCancelFromTags_26_E8EC037340F6629A096D0F92BAB899AA\",VarGuid=E8EC037340F6629A096D0F92BAB899AA,FriendlyName=\"AllowedCancelFromTags\",DefaultValue=\"(GameplayTags=)\",Category=\"struct\",SubCategoryObject=\"/Script/GameplayTags.GameplayTagContainer\",CurrentDefaultValue=\"(GameplayTags=)\")"
+            }
+          ],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "raw": {
+    "t3d_exported": true,
+    "t3d_file": "_raw/structural.t3d",
+    "encoding": "utf-8",
+    "size_bytes": 3856
+  },
+  "warnings": []
+}

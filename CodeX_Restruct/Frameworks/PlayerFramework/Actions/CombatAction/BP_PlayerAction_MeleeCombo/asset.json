@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_PlayerAction_MeleeCombo",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo.BP_PlayerAction_MeleeCombo",
+    "relative_package": "Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionWindowType",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase",
+      "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatTargetable"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap_Instance"
+    ],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo.BP_PlayerAction_MeleeCombo_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo.BP_PlayerAction_MeleeCombo_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo.BP_PlayerAction_MeleeCombo_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bAllowLungeInFreeCombat",
+        "guid": "8A4C037341A9F698A7420B90D260A949",
+        "friendly_name": "Allow Lunge in Free Combat",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bAllowLungeWhenLockedOn",
+        "guid": "B9B62F9D4BCE7D82DCDEB0A592BEB167",
+        "friendly_name": "Allow Lunge when Locked On",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bUseLungeAssist",
+        "guid": "7F61A9F44BEDE8BBE867C6A649D6921E",
+        "friendly_name": "Use Lunge Assist",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ComboIndex",
+        "guid": "D9D9FCF5456E61A3FD3C1684923BA6E2",
+        "friendly_name": "Combo Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LungeIndex",
+        "guid": "C6F7712F42C892569C5A528BD7B0F45C",
+        "friendly_name": "Lunge Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LungeMaxDistance",
+        "guid": "F6471E964439ADDC7F6E3984C2099A6F",
+        "friendly_name": "Lunge Max Distance",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LungeMinDistance",
+        "guid": "93473A424696E49AB84CAD859FA47C43",
+        "friendly_name": "Lunge Min Distance",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "NormalAttackMaxDistance",
+        "guid": "F3586E4442BC4AD2C3470E97C9294D4D",
+        "friendly_name": "Normal Attack Max Distance",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "StartAction",
+        "PlayCurrentComboMontage",
+        "HandleTag",
+        "CanHandle",
+        "EndAction",
+        "CheckForWeaponAdjustement",
+        "ResetWeaponAdjustement",
+        "ShouldUseLungeAssist"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

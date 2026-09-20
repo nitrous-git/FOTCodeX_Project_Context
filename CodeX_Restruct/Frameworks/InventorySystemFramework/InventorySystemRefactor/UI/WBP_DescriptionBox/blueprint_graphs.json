@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_DescriptionBox",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "2C9490A143BA4AA794C907B5DDEE6436",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "CurrentItemID",
+      "guid": "10093A6D44DD48DA168739893685101E",
+      "friendly_name": "Current Item ID",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DescriptionCategory",
+      "guid": "EF39882D4F7C3090CD2899B6D7F6860B",
+      "friendly_name": "Description Category",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/Item/EItemCategory.EItemCategory'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InventoryComponent",
+      "guid": "9BB5106A4498C80B783B339684B7FF2F",
+      "friendly_name": "Inventory Component",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "DDA8BD18435A01EACAC37FAE21529133",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "InitDescriptionBox",
+      "kind": "function",
+      "guid": "83214F1945FF5573F930279FEE33F77E",
+      "node_count": 7,
+      "pin_count": 23,
+      "connection_count": 6,
+      "exec_connection_count": 4,
+      "data_connection_count": 2
+    },
+    {
+      "name": "UpdateFromItemID",
+      "kind": "function",
+      "guid": "58EC049347BDC4D951DF6887DE0B86CA",
+      "node_count": 32,
+      "pin_count": 104,
+      "connection_count": 34,
+      "exec_connection_count": 18,
+      "data_connection_count": 16
+    },
+    {
+      "name": "ClearDescription",
+      "kind": "function",
+      "guid": "E34260734499A0F39D8BB488AFD8DCAC",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshFromEquippedItem",
+      "kind": "function",
+      "guid": "2EEA92B74E89C9649B1EC5AA51524D20",
+      "node_count": 23,
+      "pin_count": 62,
+      "connection_count": 26,
+      "exec_connection_count": 17,
+      "data_connection_count": 9
+    },
+    {
+      "name": "GetFormattedDescription",
+      "kind": "function",
+      "guid": "54D3140B4A40154AC3F8F195A1FFD909",
+      "node_count": 6,
+      "pin_count": 16,
+      "connection_count": 6,
+      "exec_connection_count": 1,
+      "data_connection_count": 5
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 6,
+    "generated_graph_count": 0,
+    "authored_node_count": 77,
+    "authored_pin_count": 232,
+    "authored_connection_count": 77,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ClearDescription",
+      "kind": "function",
+      "file": "graphs/ClearDescription.json"
+    },
+    {
+      "name": "GetFormattedDescription",
+      "kind": "function",
+      "file": "graphs/GetFormattedDescription.json"
+    },
+    {
+      "name": "InitDescriptionBox",
+      "kind": "function",
+      "file": "graphs/InitDescriptionBox.json"
+    },
+    {
+      "name": "RefreshFromEquippedItem",
+      "kind": "function",
+      "file": "graphs/RefreshFromEquippedItem.json"
+    },
+    {
+      "name": "UpdateFromItemID",
+      "kind": "function",
+      "file": "graphs/UpdateFromItemID.json"
+    }
+  ]
+}

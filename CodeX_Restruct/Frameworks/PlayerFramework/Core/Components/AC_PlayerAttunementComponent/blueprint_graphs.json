@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_PlayerAttunementComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "8CFC79E9471DB16A27BAE9B2F0ECBDA3",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "ActiveAttunementData",
+      "guid": "C3C79FC649D2833E6A4944BA453000EE",
+      "friendly_name": "Active Attunement Data",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement.DA_Attunement_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ActiveAttunementType",
+      "guid": "32C77BC94FD6FAFBE17136ABFBFCC071",
+      "friendly_name": "Active Attunement Type",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/E_AttunementType.E_AttunementType'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefaultNeutralAttunement",
+      "guid": "0AE0ECAD42D474F9D996608BAE234251",
+      "friendly_name": "Default Neutral Attunement",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement.DA_Attunement_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OwnerPlayer",
+      "guid": "CBDD6AFB40276D7CF8DCF2B7E069ACFD",
+      "friendly_name": "Owner Player",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "EE9C3B744A20CBE9816972BCE0FED03F",
+      "node_count": 3,
+      "pin_count": 8,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "InitAttunementComponent",
+      "kind": "function",
+      "guid": "25A616A84C89AB4D197FC481F7F4EB19",
+      "node_count": 8,
+      "pin_count": 26,
+      "connection_count": 8,
+      "exec_connection_count": 4,
+      "data_connection_count": 4
+    },
+    {
+      "name": "SetActiveAttunement",
+      "kind": "function",
+      "guid": "BD501E3643FB1ED47FEDD58821547651",
+      "node_count": 22,
+      "pin_count": 68,
+      "connection_count": 22,
+      "exec_connection_count": 11,
+      "data_connection_count": 11
+    },
+    {
+      "name": "ReapplyAttunementToCurrentWeapons",
+      "kind": "function",
+      "guid": "1917E27B49E225BD3F694580F61A7B5A",
+      "node_count": 16,
+      "pin_count": 40,
+      "connection_count": 16,
+      "exec_connection_count": 5,
+      "data_connection_count": 11
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "443E7A4D40B6275A07FEF496ACE40C68",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 4,
+    "generated_graph_count": 1,
+    "authored_node_count": 49,
+    "authored_pin_count": 142,
+    "authored_connection_count": 47,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "InitAttunementComponent",
+      "kind": "function",
+      "file": "graphs/InitAttunementComponent.json"
+    },
+    {
+      "name": "ReapplyAttunementToCurrentWeapons",
+      "kind": "function",
+      "file": "graphs/ReapplyAttunementToCurrentWeapons.json"
+    },
+    {
+      "name": "SetActiveAttunement",
+      "kind": "function",
+      "file": "graphs/SetActiveAttunement.json"
+    }
+  ]
+}

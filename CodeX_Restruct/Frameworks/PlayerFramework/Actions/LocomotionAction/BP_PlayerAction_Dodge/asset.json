@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_PlayerAction_Dodge",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Dodge",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Dodge.BP_PlayerAction_Dodge",
+    "relative_package": "Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Dodge"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionWindowType",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap_Instance"
+    ],
+    "non_architecture_dependency_count": 1,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Dodge.BP_PlayerAction_Dodge_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Dodge.BP_PlayerAction_Dodge_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Dodge.BP_PlayerAction_Dodge_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bUseDirectionDodge",
+        "guid": "55711EC5438AC4019232C8BDA0C7AECE",
+        "friendly_name": "Use Direction Dodge",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ChosenMontage",
+        "guid": "2AB71E0D4E741688C0980BBB1C7F3F88",
+        "friendly_name": "Chosen Montage",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Deadzone",
+        "guid": "483EB157440A652AC74AC2B52BC318FC",
+        "friendly_name": "Deadzone",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "StartAction",
+        "SelectDodgeDirection",
+        "CheckPlayerLockOnTarget",
+        "EndAction"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

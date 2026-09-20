@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_LevelDirector_DesertRealm",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "9893E9C5455C332DD21CBCA6EF574A40",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+  },
+  "variables": [
+    {
+      "name": "bDialogueTriggered",
+      "guid": "5DAEE3884CA904723113A19CFDC0D55E",
+      "friendly_name": "Dialogue Triggered",
+      "category": "INVTEXT(\"Presentation\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bFragmentSpawned",
+      "guid": "8E04D8044BC605142099B797D14039D0",
+      "friendly_name": "Fragment Spawned",
+      "category": "Events",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bHasBoundBossEvents",
+      "guid": "B8E8C9664FE22FC470C37485E8E1CDB8",
+      "friendly_name": "Has Bound Boss Events",
+      "category": "Events",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BoundConcubine ",
+      "guid": "E00626724709FAF5064233B54496F9A3",
+      "friendly_name": "Bound Concubine ",
+      "category": "Events",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BoundUndeadPrince ",
+      "guid": "B8999B4D4A96256EA2E682A0F23A1DDB",
+      "friendly_name": "Bound Undead Prince ",
+      "category": "Events",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPortalSpawned",
+      "guid": "1F4C15FD423B143B9CE59B9AE1D93334",
+      "friendly_name": "Portal Spawned",
+      "category": "Events",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ConcubineFragmentSpawnPoint",
+      "guid": "8A21F32F4E3447795092528A286DED93",
+      "friendly_name": "Concubine Fragment Spawn Point",
+      "category": "INVTEXT(\"SpawnPoints\")",
+      "property_flags": 2053,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.TargetPoint'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DialogueSequenceWidget",
+      "guid": "36FA79C341F95DFA3BDAB3975F0E1D84",
+      "friendly_name": "Dialogue Sequence Widget",
+      "category": "INVTEXT(\"Presentation\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/Widget/WBP_DialogueSequence.WBP_DialogueSequence_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LevelTitleWidget",
+      "guid": "14D3FDC9492AEF28682FA5B0335578FF",
+      "friendly_name": "Level Title Widget",
+      "category": "INVTEXT(\"Presentation\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "4E40988F499673CE77647E975E5E39F4",
+      "friendly_name": "Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "UndeadPrincePortalSpawnPoint",
+      "guid": "41C9042040CC59BF6A1514829237820B",
+      "friendly_name": "Undead Prince Portal Spawn Point",
+      "category": "SpawnPoints",
+      "property_flags": 2053,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.TargetPoint'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "905B72214B7B0776DCBFB4998D5986BA",
+      "node_count": 23,
+      "pin_count": 95,
+      "connection_count": 18,
+      "exec_connection_count": 11,
+      "data_connection_count": 7
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "DAEE5FF741076FAD322A6FBD7C800598",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "StartDesertDialogueSequence",
+      "kind": "function",
+      "guid": "C463605F47BDBD600F3D4CB3A452CA76",
+      "node_count": 6,
+      "pin_count": 17,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "InitWidget",
+      "kind": "function",
+      "guid": "9B6FB2D747C81D65E695A68D812EEFB0",
+      "node_count": 10,
+      "pin_count": 37,
+      "connection_count": 13,
+      "exec_connection_count": 7,
+      "data_connection_count": 6
+    },
+    {
+      "name": "StartTitleIntro",
+      "kind": "function",
+      "guid": "E2EEDFAF47E0B953E9E3BC9E18E8371A",
+      "node_count": 5,
+      "pin_count": 12,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RegisterBossActor",
+      "kind": "function",
+      "guid": "08B7699F409C4BF4398A6DA040C23850",
+      "node_count": 11,
+      "pin_count": 35,
+      "connection_count": 14,
+      "exec_connection_count": 7,
+      "data_connection_count": 7
+    },
+    {
+      "name": "SpawnPortal",
+      "kind": "function",
+      "guid": "A229997B4F00B47DEB3F51A03100986E",
+      "node_count": 12,
+      "pin_count": 58,
+      "connection_count": 15,
+      "exec_connection_count": 6,
+      "data_connection_count": 9
+    },
+    {
+      "name": "InitRef",
+      "kind": "function",
+      "guid": "52BEF140440DAA14982F5B8DB4F759B3",
+      "node_count": 4,
+      "pin_count": 16,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "CE_HandleConcubineDefeated",
+      "guid": "B3B347A14C15C9A873F60D82540BA590",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_HandleUndeadPrinceDefeated",
+      "guid": "FAEC29BB403372CD90953F82127E5580",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__BP_LevelDirector_DesertRealm_IntroDialogueTriggerBox_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "D003CD1E4E1EA9544BB58DB6A410BDB3",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "739010914A635E0549E5A7B91EC57640",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 8,
+    "generated_graph_count": 4,
+    "authored_node_count": 72,
+    "authored_pin_count": 271,
+    "authored_connection_count": 73,
+    "generated_node_count": 9,
+    "generated_pin_count": 34
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "InitRef",
+      "kind": "function",
+      "file": "graphs/InitRef.json"
+    },
+    {
+      "name": "InitWidget",
+      "kind": "function",
+      "file": "graphs/InitWidget.json"
+    },
+    {
+      "name": "RegisterBossActor",
+      "kind": "function",
+      "file": "graphs/RegisterBossActor.json"
+    },
+    {
+      "name": "SpawnPortal",
+      "kind": "function",
+      "file": "graphs/SpawnPortal.json"
+    },
+    {
+      "name": "StartDesertDialogueSequence",
+      "kind": "function",
+      "file": "graphs/StartDesertDialogueSequence.json"
+    },
+    {
+      "name": "StartTitleIntro",
+      "kind": "function",
+      "file": "graphs/StartTitleIntro.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

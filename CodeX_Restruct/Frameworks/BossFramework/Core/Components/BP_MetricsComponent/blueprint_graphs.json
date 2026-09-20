@@ -1,0 +1,785 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_MetricsComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "19721E87497A6CC91C0330AD84C9643A",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "AggroRange",
+      "guid": "8139D9CC4CD21A71C99707858AA4CEDC",
+      "friendly_name": "Aggro Range",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ApproachDotThreshold",
+      "guid": "2D9F07A94D8A095A55C3A7A789B19F92",
+      "friendly_name": "Approach Dot Threshold",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BossHitComboWindow",
+      "guid": "8653465C4CAA4F86496BB9A6C302C2E3",
+      "friendly_name": "Boss Hit Combo Window",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPlayerAggressing",
+      "guid": "33EEB0AB40E35C989C86AC908B8D2376",
+      "friendly_name": "Player Aggressing",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bStaggerRequested",
+      "guid": "AAE0BD9C47A665D77A7F4B9D3E66ED26",
+      "friendly_name": "Stagger Requested",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bStaminaDepleted",
+      "guid": "1F2B37074FDA9F2FED4D849959E2E9C9",
+      "friendly_name": "Stamina Depleted",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ConsecutiveBossHit",
+      "guid": "2BBB806240D9A76569D890ABBC05E4C1",
+      "friendly_name": "Consecutive Boss Hit",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ConsecutivePlayerHits",
+      "guid": "449213A844A676B540EEA4A855012514",
+      "friendly_name": "Consecutive Player Hits",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DistanceToTarget",
+      "guid": "34D625E7466F3AF4171B9A896E7F3170",
+      "friendly_name": "Distance to Target",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HeavyHitDrainMultiplier",
+      "guid": "094FA29B488512EB3FB677B60B0D57CB",
+      "friendly_name": "Heavy Hit Drain Multiplier",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastMetricsUpdateTime",
+      "guid": "636EB13E4DF25C8C901862B5F9396D86",
+      "friendly_name": "Last Metrics Update Time",
+      "category": "Metrics",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastStaggerRequestTime",
+      "guid": "66E3B6DF444267DBFF04768108C3ACE2",
+      "friendly_name": "Last Stagger Request Time",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MetricsUpdateInterval",
+      "guid": "05F5641340E6A100D4E82B9BF76561F6",
+      "friendly_name": "Metrics Update Interval",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MinAggroSpeed",
+      "guid": "70DE1CE74D6C1806555C34BF0519FAC4",
+      "friendly_name": "Min Aggro Speed",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "NowTime",
+      "guid": "A17D4D3944222E087C1967A6E342DFC7",
+      "friendly_name": "Now Time",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OwnerBoss",
+      "guid": "C5B2F03142E8DB7F1CB1E685EA40821C",
+      "friendly_name": "Owner Boss",
+      "category": "References",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerHitComboWindow",
+      "guid": "6811C89E444785FB7E9A5FB5F04ABF42",
+      "friendly_name": "Player Hit Combo Window",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Pressure",
+      "guid": "401F607E45F1B608F1BD09B650C1C30A",
+      "friendly_name": "Pressure",
+      "category": "Metrics_Pressure",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PressureDecayPerSecond_NonCombat",
+      "guid": "2777A96544D5E661D5F19EBA0FF28D53",
+      "friendly_name": "Pressure Decay Per Second Non Combat",
+      "category": "INVTEXT(\"Metrics_Pressure\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PressureGainPerSecond_Combat",
+      "guid": "DE03B85C47650AF0482D068593D9F940",
+      "friendly_name": "Pressure Gain Per Second Combat",
+      "category": "INVTEXT(\"Metrics_Pressure\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PressureMax",
+      "guid": "9736D7F34551DCD190B9AEB00F3FADD5",
+      "friendly_name": "Pressure Max",
+      "category": "INVTEXT(\"Metrics_Pressure\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PressureNorm",
+      "guid": "3291BD3449523D4002B34B8A815A6496",
+      "friendly_name": "Pressure Norm",
+      "category": "INVTEXT(\"Metrics_Pressure\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaggerRequestCooldown",
+      "guid": "CD6942554D8550B2594591A628849E3D",
+      "friendly_name": "Stagger Request Cooldown",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaCurrent",
+      "guid": "3AAE38BB4BB64E7F0582B7A3599DFBA7",
+      "friendly_name": "Stamina Current",
+      "category": "Metrics_Stamina",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaDrainPerDamage",
+      "guid": "6697933D465693371BD1349DB9C1266F",
+      "friendly_name": "Stamina Drain Per Damage",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaMax",
+      "guid": "99E1285141B05C32D7684389C08ECB6A",
+      "friendly_name": "Stamina Max",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaPercent",
+      "guid": "884C34AF481007EF5E1771BF7F8B0D95",
+      "friendly_name": "Stamina Percent",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaRegenDelayAfterHit",
+      "guid": "9986DD154C1851651622DFA1CACAAAC8",
+      "friendly_name": "Stamina Regen Delay After Hit",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaRegenPerSecond",
+      "guid": "6A09A9FF4966B7A72DE2C191B1D37A9A",
+      "friendly_name": "Stamina Regen Per Second",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TargetActor",
+      "guid": "E49BBA454342BE675655229FAD60F6B2",
+      "friendly_name": "Target Actor",
+      "category": "INVTEXT(\"References\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TimeSinceBossHitPlayer",
+      "guid": "30D9DE58432E02F8742CC898FCAE6EC0",
+      "friendly_name": "Time Since Boss Hit Player",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TimeSinceBossWasHit",
+      "guid": "965F484E403121D6EC47FCB4BA64C4DC",
+      "friendly_name": "Time Since Boss Was Hit",
+      "category": "INVTEXT(\"Metrics\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TimeSinceStaminaDrain",
+      "guid": "A757C1A449ADA8D1F8B66BBE878322A1",
+      "friendly_name": "Time Since Stamina Drain",
+      "category": "INVTEXT(\"Metrics_Stamina\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "7AC3CF39472B3715684D9BA12E2AC601",
+      "node_count": 26,
+      "pin_count": 96,
+      "connection_count": 26,
+      "exec_connection_count": 12,
+      "data_connection_count": 14
+    },
+    {
+      "name": "UpdateMetricsTimer",
+      "kind": "function",
+      "guid": "577BC19F46C755F3A557C39020AD1AF5",
+      "node_count": 25,
+      "pin_count": 68,
+      "connection_count": 25,
+      "exec_connection_count": 12,
+      "data_connection_count": 13
+    },
+    {
+      "name": "UpdateDistance",
+      "kind": "function",
+      "guid": "3C6EF55F47CB273E268D7FACF7BD0C55",
+      "node_count": 8,
+      "pin_count": 20,
+      "connection_count": 7,
+      "exec_connection_count": 1,
+      "data_connection_count": 6
+    },
+    {
+      "name": "UpdateAgression",
+      "kind": "function",
+      "guid": "565AD6C14A3B18F703C6B6BB6AB3DA83",
+      "node_count": 49,
+      "pin_count": 139,
+      "connection_count": 47,
+      "exec_connection_count": 8,
+      "data_connection_count": 39
+    },
+    {
+      "name": "NotifyBossTookHit",
+      "kind": "function",
+      "guid": "B31FB4FA48D4C701CE1C29822E9AF5B0",
+      "node_count": 45,
+      "pin_count": 123,
+      "connection_count": 47,
+      "exec_connection_count": 16,
+      "data_connection_count": 31
+    },
+    {
+      "name": "NotifyBossSuccessfulHit",
+      "kind": "function",
+      "guid": "50DD42AD4D2A426CCC0FE9B26A129E53",
+      "node_count": 5,
+      "pin_count": 16,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "UpdateHitTimer",
+      "kind": "function",
+      "guid": "D4041F574EA81A18FEC154BC3B463E49",
+      "node_count": 30,
+      "pin_count": 87,
+      "connection_count": 31,
+      "exec_connection_count": 9,
+      "data_connection_count": 22
+    },
+    {
+      "name": "UpdatePressure",
+      "kind": "function",
+      "guid": "513FBBE442C35B6ABFC3EAA7FA0720B6",
+      "node_count": 34,
+      "pin_count": 104,
+      "connection_count": 38,
+      "exec_connection_count": 15,
+      "data_connection_count": 23
+    },
+    {
+      "name": "UpdateStaminaMetrics",
+      "kind": "function",
+      "guid": "4EB50AEA42BBA6EB505E23BD95C41CAE",
+      "node_count": 61,
+      "pin_count": 185,
+      "connection_count": 64,
+      "exec_connection_count": 19,
+      "data_connection_count": 45
+    },
+    {
+      "name": "RequestStaggerFromDepletion",
+      "kind": "function",
+      "guid": "67CFC9A44EF8D09CCD8EE78C97805BB1",
+      "node_count": 17,
+      "pin_count": 49,
+      "connection_count": 17,
+      "exec_connection_count": 7,
+      "data_connection_count": 10
+    },
+    {
+      "name": "ConsumeStaggerRequest",
+      "kind": "function",
+      "guid": "3210CAD74EE8BF4D825B0FB97F338025",
+      "node_count": 5,
+      "pin_count": 17,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "isStaggerRequested",
+      "kind": "function",
+      "guid": "25D459BE44BECB2E5E5112AE2C4C9A15",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "CS_UpdateMetricsTimer",
+      "guid": "3B442BFA4CDF4F7522C09F817FB4E259",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "DEA807194CC3DE39F4B378B152FDA757",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 12,
+    "generated_graph_count": 2,
+    "authored_node_count": 308,
+    "authored_pin_count": 909,
+    "authored_connection_count": 313,
+    "generated_node_count": 4,
+    "generated_pin_count": 10
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ConsumeStaggerRequest",
+      "kind": "function",
+      "file": "graphs/ConsumeStaggerRequest.json"
+    },
+    {
+      "name": "isStaggerRequested",
+      "kind": "function",
+      "file": "graphs/isStaggerRequested.json"
+    },
+    {
+      "name": "NotifyBossSuccessfulHit",
+      "kind": "function",
+      "file": "graphs/NotifyBossSuccessfulHit.json"
+    },
+    {
+      "name": "NotifyBossTookHit",
+      "kind": "function",
+      "file": "graphs/NotifyBossTookHit.json"
+    },
+    {
+      "name": "RequestStaggerFromDepletion",
+      "kind": "function",
+      "file": "graphs/RequestStaggerFromDepletion.json"
+    },
+    {
+      "name": "UpdateAgression",
+      "kind": "function",
+      "file": "graphs/UpdateAgression.json"
+    },
+    {
+      "name": "UpdateDistance",
+      "kind": "function",
+      "file": "graphs/UpdateDistance.json"
+    },
+    {
+      "name": "UpdateHitTimer",
+      "kind": "function",
+      "file": "graphs/UpdateHitTimer.json"
+    },
+    {
+      "name": "UpdateMetricsTimer",
+      "kind": "function",
+      "file": "graphs/UpdateMetricsTimer.json"
+    },
+    {
+      "name": "UpdatePressure",
+      "kind": "function",
+      "file": "graphs/UpdatePressure.json"
+    },
+    {
+      "name": "UpdateStaminaMetrics",
+      "kind": "function",
+      "file": "graphs/UpdateStaminaMetrics.json"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_PlayerBase_InventoryPreview",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "51FEF25F4E25D905922C64A590539919",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'"
+  },
+  "variables": [
+    {
+      "name": "InventoryComponent",
+      "guid": "9D714E0D413CFBC172E0EB8247FD417D",
+      "friendly_name": "Inventory Component",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RotationStep",
+      "guid": "C249EBC543FD6AC3E93D0AA0EE671CA0",
+      "friendly_name": "Rotation Step",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SourcePlayer",
+      "guid": "A8E1F4FC410D233FADB00D992A429749",
+      "friendly_name": "Source Player",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "04823BF34C1F8D550458F8889EE3B00D",
+      "node_count": 19,
+      "pin_count": 59,
+      "connection_count": 14,
+      "exec_connection_count": 8,
+      "data_connection_count": 6
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "F6D4F88D45067C57252FCC83494294E0",
+      "node_count": 2,
+      "pin_count": 4,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "InitInventoryPreview",
+      "kind": "function",
+      "guid": "484F40C04BAFF76A14E9109DEDC8965F",
+      "node_count": 12,
+      "pin_count": 36,
+      "connection_count": 11,
+      "exec_connection_count": 6,
+      "data_connection_count": 5
+    },
+    {
+      "name": "SyncPreviewFromInventory",
+      "kind": "function",
+      "guid": "7A8BCDEA442F5FAC57962ABB8F7A5F19",
+      "node_count": 28,
+      "pin_count": 88,
+      "connection_count": 33,
+      "exec_connection_count": 14,
+      "data_connection_count": 19
+    },
+    {
+      "name": "RotatePreview",
+      "kind": "function",
+      "guid": "0DBF96C44321603BD754FEA9AEDDC7ED",
+      "node_count": 5,
+      "pin_count": 19,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "CapturePreview",
+      "kind": "function",
+      "guid": "E79A01534F7CE4BCDD983884644C6C51",
+      "node_count": 11,
+      "pin_count": 30,
+      "connection_count": 10,
+      "exec_connection_count": 3,
+      "data_connection_count": 7
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "ED7519834DED63918B4D10ABA0016C9D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 6,
+    "generated_graph_count": 1,
+    "authored_node_count": 77,
+    "authored_pin_count": 236,
+    "authored_connection_count": 74,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CapturePreview",
+      "kind": "function",
+      "file": "graphs/CapturePreview.json"
+    },
+    {
+      "name": "InitInventoryPreview",
+      "kind": "function",
+      "file": "graphs/InitInventoryPreview.json"
+    },
+    {
+      "name": "RotatePreview",
+      "kind": "function",
+      "file": "graphs/RotatePreview.json"
+    },
+    {
+      "name": "SyncPreviewFromInventory",
+      "kind": "function",
+      "file": "graphs/SyncPreviewFromInventory.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

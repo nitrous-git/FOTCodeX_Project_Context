@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "ABP_BossB",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/ABP/ABP_BossB",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/ABP",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/ABP/ABP_BossB.ABP_BossB",
+    "relative_package": "Frameworks/BossFramework/Bosses/Boss_Concubine/ABP/ABP_BossB"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "AnimBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B"
+    ],
+    "non_architecture_dependency_count": 10,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/ABP/ABP_BossB.ABP_BossB_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/ABP/ABP_BossB.ABP_BossB_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/ABP/ABP_BossB.ABP_BossB_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "BossRef",
+        "guid": "52CFF3B040ED0511300CB3A3DE1E67DD",
+        "friendly_name": "Boss Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B.BP_Boss_B_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "direction",
+        "guid": "F33559054F6CAB8610E3E19C23520E35",
+        "friendly_name": "Direction",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Is Defending",
+        "guid": "B4EE340D4C96438CB3665C9EA412E7AF",
+        "friendly_name": "Is Defending",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsInAir?",
+        "guid": "94705CFD490E75C9ED9BD0962169CBDC",
+        "friendly_name": "Is in Air?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "isRunning",
+        "guid": "10832E834CEBEDA188FBE980512FFDC3",
+        "friendly_name": "Is Running",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "speed",
+        "guid": "A6D9002E48F7460A7C09F6AB74275D8C",
+        "friendly_name": "Speed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "BlueprintUpdateAnimation",
+        "BlueprintBeginPlay",
+        "AnimNotify_TransitionNotify",
+        "AnimNotify_StaggerFlag",
+        "AnimNotify_VaultingAttack",
+        "AnimNotify_Appear",
+        "AnimNotify_Disappear",
+        "AnimNotify_DashDown",
+        "AnimNotify_IsInAir",
+        "AnimNotify_Rampage",
+        "AnimNotify_JumpAttack",
+        "AnimNotify_Evade",
+        "AnimNotify_SmallCombo01",
+        "AnimNotify_BigCombo01",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_BA5A940E4D240A23BFBA05A35B755BFF",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_40C156834A5E12679CCCC883E53CD2A5",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_6428BEE647797E794F3CA9A28019BC23",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_E170256C418277E05DDFE69B547954F7",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_4C1B25A342D938EF6B0452B8AE14CF22",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_0FCC5D5041BBBD3F19E17C8EBF947EDD",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_044F153F41EB9DD845C39A98356F0075"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

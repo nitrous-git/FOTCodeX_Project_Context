@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_PlayerBase_InventoryPreview",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview",
+    "relative_package": "Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_CharacterPreviewPanel",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual"
+    ],
+    "non_architecture_dependency_count": 9,
+    "non_architecture_referencer_count": 1
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "AC_CameraModeComponent",
+        "class": "AC_CameraModeComponent_C",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:AC_CameraModeComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_InventoryComponent",
+        "class": "AC_InventoryComponent_C",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:AC_InventoryComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_PlayerAttunementComponent",
+        "class": "AC_PlayerAttunementComponent_C",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:AC_PlayerAttunementComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_PlayerShadowStrikeComponent",
+        "class": "AC_PlayerShadowStrikeComponent_C",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:AC_PlayerShadowStrikeComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_PlayerTargetingComponent",
+        "class": "AC_PlayerTargetingComponent_C",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:AC_PlayerTargetingComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_TeleporterComponent",
+        "class": "AC_TeleporterComponent_C",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:AC_TeleporterComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_TraversalDeviceComponent",
+        "class": "AC_TraversalDeviceComponent_C",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:AC_TraversalDeviceComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_TraversalHomingComponent",
+        "class": "AC_TraversalHomingComponent_C",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:AC_TraversalHomingComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "ActorSequence",
+        "class": "ActorSequenceComponent",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:ActorSequence_GEN_VARIABLE"
+      },
+      {
+        "name": "ActorSequence1",
+        "class": "ActorSequenceComponent",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:ActorSequence1_GEN_VARIABLE"
+      },
+      {
+        "name": "ActorSequence_BossLookUp",
+        "class": "ActorSequenceComponent",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:ActorSequence_BossLookUp_GEN_VARIABLE"
+      },
+      {
+        "name": "ArrowComponent",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.Default__BP_PlayerBase_InventoryPreview_C:Arrow"
+      },
+      {
+        "name": "BP_PlayerActionComponent",
+        "class": "BP_PlayerActionComponent_C",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:BP_PlayerActionComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "CameraBoom",
+        "class": "SpringArmComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SpringArmComponent_0__A9892D03"
+      },
+      {
+        "name": "CapsuleComponent",
+        "class": "CapsuleComponent",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.Default__BP_PlayerBase_InventoryPreview_C:CollisionCylinder"
+      },
+      {
+        "name": "CharacterMovement",
+        "class": "CharacterMovementComponent",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.Default__BP_PlayerBase_InventoryPreview_C:CharMoveComp"
+      },
+      {
+        "name": "CollisionArrow",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:CollisionArrow_GEN_VARIABLE"
+      },
+      {
+        "name": "ContextualAnimSceneActor",
+        "class": "ContextualAnimSceneActorComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:ContextualAnimSceneActor_GEN_VARIABLE"
+      },
+      {
+        "name": "FollowCamera",
+        "class": "CameraComponent",
+        "parent": "CameraBoom",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:CameraComponent_0__CCE3C0B4"
+      },
+      {
+        "name": "HomingTarget",
+        "class": "SceneComponent",
+        "parent": "ArrowComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:HomingTarget_GEN_VARIABLE"
+      },
+      {
+        "name": "Mesh",
+        "class": "SkeletalMeshComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.Default__BP_PlayerBase_InventoryPreview_C:CharacterMesh0"
+      },
+      {
+        "name": "MotionWarping",
+        "class": "MotionWarpingComponent",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:MotionWarping_GEN_VARIABLE"
+      },
+      {
+        "name": "PreviewCameraPivot",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:PreviewCameraPivot_GEN_VARIABLE"
+      },
+      {
+        "name": "RectLight_Preview",
+        "class": "RectLightComponent",
+        "parent": "PreviewCameraPivot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:RectLight_Preview_GEN_VARIABLE"
+      },
+      {
+        "name": "SceneCapture2D_Inventory",
+        "class": "SceneCaptureComponent2D",
+        "parent": "PreviewCameraPivot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SceneCapture2D_Inventory_GEN_VARIABLE"
+      },
+      {
+        "name": "SheatedShield",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SheatedShield_GEN_VARIABLE"
+      },
+      {
+        "name": "SheatedSword",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SheatedSword_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_arm",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_arm_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_armorarm",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_armorarm_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_armorbottom",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_armorbottom_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_armortop",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_armortop_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_body",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_body_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_dark_arm",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_dark_arm_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_dark_body",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_dark_body_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_hair",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_hair_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_hand",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_hand_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_head",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_head_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_hoodunused",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Assassin_hoodunused_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_DC_Knight_UE4_Body_armor_no_knife",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_DC_Knight_UE4_Body_armor_no_knife_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_DC_Knight_UE4_Greaves",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_DC_Knight_UE4_Greaves_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_ma_chest_heavy_03_a",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_ma_chest_heavy_03_a_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_ma_chest_heavy_04_b",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_ma_chest_heavy_04_b_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_arm",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_MercenaryWarrior_arm_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_bracer",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_MercenaryWarrior_bracer_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_cloak",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_MercenaryWarrior_cloak_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_hair",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_MercenaryWarrior_hair_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_hand",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_MercenaryWarrior_hand_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_helmet",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_MercenaryWarrior_helmet_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_leg",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_MercenaryWarrior_leg_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_pauldron",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_MercenaryWarrior_pauldron_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_skirt",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_MercenaryWarrior_skirt_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_torso",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_MercenaryWarrior_torso_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_PrimaryWeapon",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_PrimaryWeapon_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_SecondaryWeapon",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_SecondaryWeapon_GEN_VARIABLE"
+      },
+      {
+        "name": "StaticMesh",
+        "class": "StaticMeshComponent",
+        "parent": "SK_PrimaryWeapon",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:StaticMesh_GEN_VARIABLE"
+      },
+      {
+        "name": "TargetSystem",
+        "class": "TargetSystemComponent",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:TargetSystem_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "InventoryComponent",
+        "guid": "9D714E0D413CFBC172E0EB8247FD417D",
+        "friendly_name": "Inventory Component",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RotationStep",
+        "guid": "C249EBC543FD6AC3E93D0AA0EE671CA0",
+        "friendly_name": "Rotation Step",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SourcePlayer",
+        "guid": "A8E1F4FC410D233FADB00D992A429749",
+        "friendly_name": "Source Player",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "InitInventoryPreview",
+        "SyncPreviewFromInventory",
+        "RotatePreview",
+        "CapturePreview"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

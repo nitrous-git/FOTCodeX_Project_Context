@@ -1,0 +1,1705 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_EnemyBase",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase",
+    "relative_package": "Frameworks/EnemyFramework/Core/BP_EnemyBase"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Animations/ABP/ABP_Enemy",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Cleaver",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Cleaver_Instance",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Katana",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Katana_Instance",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_HitReactType",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_StrafeMode",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase",
+      "/Game/CodeX_Restruct/Shared/CameraShake/CameraShakeSmool",
+      "/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome",
+      "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatReceiver",
+      "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatTargetable",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco/BTDecorator_PlayerInRange",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco/BTDecorator_inAtkRange",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco/BTDecorator_isAttacker",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Attacker",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Awakening",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Damage",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Dead",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Execution",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Observer",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Retreat",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Animations/ABP/ABP_Enemy",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_ExecutionEnding",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_OnEnemyAttackFinished",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_SpawnDeathNiagara",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_StartDeathDissolve",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_Execution",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
+    ],
+    "non_architecture_dependency_count": 18,
+    "non_architecture_referencer_count": 10
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "ArrowComponent",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.Default__BP_EnemyBase_C:Arrow"
+      },
+      {
+        "name": "CapsuleComponent",
+        "class": "CapsuleComponent",
+        "parent": "BP_EnemyBase",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.Default__BP_EnemyBase_C:CollisionCylinder"
+      },
+      {
+        "name": "CharacterMovement",
+        "class": "CharacterMovementComponent",
+        "parent": "BP_EnemyBase",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.Default__BP_EnemyBase_C:CharMoveComp"
+      },
+      {
+        "name": "CombatTargetPoint ",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:CombatTargetPoint _GEN_VARIABLE"
+      },
+      {
+        "name": "ContextualAnimSceneActor",
+        "class": "ContextualAnimSceneActorComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:ContextualAnimSceneActor_GEN_VARIABLE"
+      },
+      {
+        "name": "DamageArrow",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:DamageArrow_GEN_VARIABLE"
+      },
+      {
+        "name": "DeathNiagara",
+        "class": "NiagaraComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:DeathNiagara_GEN_VARIABLE"
+      },
+      {
+        "name": "DebugText",
+        "class": "TextRenderComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:DebugText_GEN_VARIABLE"
+      },
+      {
+        "name": "Mesh",
+        "class": "SkeletalMeshComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.Default__BP_EnemyBase_C:CharacterMesh0"
+      },
+      {
+        "name": "MotionWarping",
+        "class": "MotionWarpingComponent",
+        "parent": "BP_EnemyBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:MotionWarping_GEN_VARIABLE"
+      },
+      {
+        "name": "SceneKnock",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:SceneKnock_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_PrimaryWeapon",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:SK_PrimaryWeapon_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_SecondaryWeapon",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:SK_SecondaryWeapon_GEN_VARIABLE"
+      },
+      {
+        "name": "StaticMesh",
+        "class": "StaticMeshComponent",
+        "parent": "SK_PrimaryWeapon",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:StaticMesh_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "AggroRange",
+        "guid": "B19CF90E451267032B31C8B3220FCB32",
+        "friendly_name": "Aggro Range",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AIManagerRef",
+        "guid": "8E07D0EE4F2CF4A5F47E4EB318F567C9",
+        "friendly_name": "AIManager Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AttackArray",
+        "guid": "113EF79844CB6F09DB90E689280328CB",
+        "friendly_name": "Attack Array",
+        "category": "INVTEXT(\"Attack\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AttackCooldown",
+        "guid": "09EFD07344B6F9DACF487BAE0E26C609",
+        "friendly_name": "Attack Cooldown",
+        "category": "INVTEXT(\"Attacker\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AttackerMoveRefreshInterval",
+        "guid": "769284974F7828C472FB71BEF395A80F",
+        "friendly_name": "Attacker Move Refresh Interval",
+        "category": "INVTEXT(\"Attacker\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AttackerMoveRefreshTimer",
+        "guid": "9525200649BCA484D290EDAA0B0ADFA2",
+        "friendly_name": "Attacker Move Refresh Timer",
+        "category": "INVTEXT(\"Attacker\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AttackRange ",
+        "guid": "6417AF614D59AAE65F95A79C731E24B3",
+        "friendly_name": "Attack Range ",
+        "category": "Attacker",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bAttackInProgress",
+        "guid": "BC40730042406B01E134ED9D99B81D5B",
+        "friendly_name": "Attack in Progress",
+        "category": "INVTEXT(\"Attacker\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCanBeExecuted",
+        "guid": "2450AC264562981ECFBA2DA62ACE900D",
+        "friendly_name": "Can be Executed",
+        "category": "Execution",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCanBeShadowStruck",
+        "guid": "B1A82FD749BFEA1C54BC1BB7FC5F7E03",
+        "friendly_name": "Can be Shadow Struck",
+        "category": "Execution",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDeathDissolveStarted",
+        "guid": "700304FB4850CA9904FAC68DDA8FDDBA",
+        "friendly_name": "Death Dissolve Started",
+        "category": "Dead",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDeathRagdollStarted",
+        "guid": "6470C6E047D43C6FC4594B8416D0130A",
+        "friendly_name": "Death Ragdoll Started",
+        "category": "Dead",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDeathStarted",
+        "guid": "953BBAB64656E8208B28C0A6DB3C9B02",
+        "friendly_name": "Death Started",
+        "category": "Dead",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bExecutionConsumed",
+        "guid": "A0516A094B66EE284C0A7CA444013BBD",
+        "friendly_name": "Execution Consumed",
+        "category": "Execution",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsAttackerActive",
+        "guid": "6F67D9054CE7AB646F22AF9DB4F25B6B",
+        "friendly_name": "Is Attacker Active",
+        "category": "INVTEXT(\"Attacker\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsBeingExecuted",
+        "guid": "3FB43CD1477DD25C217912AF6BB6E58B",
+        "friendly_name": "Is Being Executed",
+        "category": "Execution",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsCombatReady",
+        "guid": "8B6CE7CE4C92000B2C17ADA4E63C85EE",
+        "friendly_name": "Is Combat Ready",
+        "category": "Awakening",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsDead",
+        "guid": "A69C2053404BFDEF034D2BA87195BF50",
+        "friendly_name": "Is Dead",
+        "category": "Dead",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsInAggroRange",
+        "guid": "B03AF869478D120DA83FD9BFAB494012",
+        "friendly_name": "Is in Aggro Range",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsInAttackRange ",
+        "guid": "4F921F78435DF1797A4069878848CC09",
+        "friendly_name": "Is in Attack Range ",
+        "category": "INVTEXT(\"Attacker\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsInDamageState",
+        "guid": "4F0391E941A97058AC66D6BE688265E6",
+        "friendly_name": "Is in Damage State",
+        "category": "Damage",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bObserverReenteringAggroRange ",
+        "guid": "5CE8ABC34B918313F87811BF69F13F92",
+        "friendly_name": "Observer Reentering Aggro Range ",
+        "category": "Observer",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bReservedForShadowStrike",
+        "guid": "E01CD99E428CF3E00E6127A26A541F22",
+        "friendly_name": "Reserved for Shadow Strike",
+        "category": "Execution",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bShowExecutionDebugText",
+        "guid": "F02075954D110D609E3CE1803F6E2D1D",
+        "friendly_name": "Show Execution Debug Text",
+        "category": "Execution",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bSpawnStarted",
+        "guid": "B280F2F7453084F5A2F636BFA27F2AE6",
+        "friendly_name": "Spawn Started",
+        "category": "Awakening",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CameraShake",
+        "guid": "C9C0D0B043A3D591EDB46589549ECAD3",
+        "friendly_name": "Camera Shake",
+        "category": "INVTEXT(\"Hurts\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/EngineCameras.LegacyCameraShake'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CombatStyleMode",
+        "guid": "277B3D854F8371B683FF0CB1103CD83D",
+        "friendly_name": "Combat Style Mode",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode.E_Enemy_CombatStyleMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ConsecutiveHitCount",
+        "guid": "6DE4494A45947E1F29BE2094F503D4D5",
+        "friendly_name": "Consecutive Hit Count",
+        "category": "Damage",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentAttack",
+        "guid": "E34131FB49D08A9C7DCFD29C5246EE3E",
+        "friendly_name": "Current Attack",
+        "category": "Attack",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext.S_AttackContext'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentAttackAnim",
+        "guid": "F04B81B14EE13E1DA88ECBB83E241FF1",
+        "friendly_name": "Current Attack Anim",
+        "category": "INVTEXT(\"Attack\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentCombatStyle",
+        "guid": "B79667F24EAEF20A39DAD7ABCB35F692",
+        "friendly_name": "Current Combat Style",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle.DA_Enemy_CombatStyle_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentHitReactType",
+        "guid": "CF07C931432467243F56E684D3873A91",
+        "friendly_name": "Current Hit React Type",
+        "category": "Damage",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_HitReactType.E_HitReactType'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentObserverStrafeMode ",
+        "guid": "968EAF0E43DECF18E4C1249F93BDE6DC",
+        "friendly_name": "Current Observer Strafe Mode ",
+        "category": "Observer",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_StrafeMode.E_StrafeMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentState",
+        "guid": "A2B36AB34579F1AC674A0DA3C33E3DD4",
+        "friendly_name": "Current State",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState.E_EnemyState'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DamageMode",
+        "guid": "BED538A541F3231A1AA320ABFDD701C6",
+        "friendly_name": "Damage Mode",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DamageRecoveryDuration",
+        "guid": "F33B0B434CC70238C3345EA6084906F3",
+        "friendly_name": "Damage Recovery Duration",
+        "category": "Damage",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DamageRecoveryTimer",
+        "guid": "E4B6F9F34304D986F9D11EBB4654A1E8",
+        "friendly_name": "Damage Recovery Timer",
+        "category": "Damage",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DamageTimer",
+        "guid": "AD3300974F1495C72E4811B73B9B218B",
+        "friendly_name": "Damage Timer",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DeathDissolveDuration",
+        "guid": "F5A99D704E2A2C0981CF37AA3802F63A",
+        "friendly_name": "Death Dissolve Duration",
+        "category": "Dead",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DeathDissolveStartDelay",
+        "guid": "AFC01EB94D54D5A37DD38ABA0A42255A",
+        "friendly_name": "Death Dissolve Start Delay",
+        "category": "Dead",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DeathDynamicMaterials",
+        "guid": "353816124ACE9EF5994B21B1E0C5A5A2",
+        "friendly_name": "Death Dynamic Materials",
+        "category": "Dead",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInstanceDynamic'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DirectionVector",
+        "guid": "DDF6E6804596495348BF4EB9395C30F3",
+        "friendly_name": "Direction Vector",
+        "category": "INVTEXT(\"Dodge\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DistanceToPlayer",
+        "guid": "584555B3473C939C131CB6BAE04B437E",
+        "friendly_name": "Distance to Player",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ExecutionHealthPercentThreshold",
+        "guid": "225353184F6E533D88816BBDE9C20658",
+        "friendly_name": "Execution Health Percent Threshold",
+        "category": "Execution",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HealthCurrent",
+        "guid": "59F7EEA943DAB3B90AE0EFB29E09A573",
+        "friendly_name": "Health Current",
+        "category": "Hurts",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HealthMax",
+        "guid": "DE307E3C4EB72640313134BEC2770198",
+        "friendly_name": "Health Max",
+        "category": "Hurts",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HitComboResetWindow",
+        "guid": "0BE7E2274388BC17490450A5B9F32284",
+        "friendly_name": "Hit Combo Reset Window",
+        "category": "Damage",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HitCounterLimitForLargeReact",
+        "guid": "AF3B75084728A9FB56E977B8CD291007",
+        "friendly_name": "Hit Counter Limit for Large React",
+        "category": "Damage",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "hitLimit",
+        "guid": "8F17DB5B43786E88F196A097645817B9",
+        "friendly_name": "Hit Limit",
+        "category": "INVTEXT(\"Hurts\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HitTarget",
+        "guid": "D5087B184831AA0028C5BA944FEED897",
+        "friendly_name": "Hit Target",
+        "category": "INVTEXT(\"Attack\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "impactLocation",
+        "guid": "31D8DA9F486225D05C821D9379817B99",
+        "friendly_name": "Impact Location",
+        "category": "INVTEXT(\"Hurts\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "inSpclDamageMode",
+        "guid": "E086D8B2449FAE1365BEDFAE19D426C1",
+        "friendly_name": "In Spcl Damage Mode",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InterruptTimer",
+        "guid": "5FC5C07C4C2632368667FA995EEA449D",
+        "friendly_name": "Interrupt Timer",
+        "category": "INVTEXT(\"Attack\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "isAttacker",
+        "guid": "DBD3D3AC4FEDF4151F83679696ED49EA",
+        "friendly_name": "Is Attacker",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "isAttacking",
+        "guid": "4719FBAE44C73FF3C76FFF9682D88DCD",
+        "friendly_name": "Is Attacking",
+        "category": "CombatState",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "isAwake",
+        "guid": "84974F3C46189CF0182665B08FE968E2",
+        "friendly_name": "Is Awake",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "isDead",
+        "guid": "3F54E68E4ACFFB25C1DCD8923E21BE7F",
+        "friendly_name": "Is Dead",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "isDodging",
+        "guid": "22DF45614777DE993C7F6490F2F4A6A2",
+        "friendly_name": "Is Dodging",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "isRunning",
+        "guid": "20E84FCA461E6729EB2E5E9C2A48F333",
+        "friendly_name": "Is Running",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "isStrafing",
+        "guid": "6F3E2201415AA671D8EB16A94437FD93",
+        "friendly_name": "Is Strafing",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "isStun",
+        "guid": "AE081785475CC86DD983658E6929B1FD",
+        "friendly_name": "Is Stun",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastAttackTime",
+        "guid": "C5C5B14549921B10F66C4BAE99DBCC82",
+        "friendly_name": "Last Attack Time",
+        "category": "INVTEXT(\"Attacker\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastBecameAttackerTime",
+        "guid": "5F078528434D562FF568C3B831BEBF83",
+        "friendly_name": "Last Became Attacker Time",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastDamageTime",
+        "guid": "BAB9A0B244FBBECC87ED59945FA367F9",
+        "friendly_name": "Last Damage Time",
+        "category": "Damage",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MoveDirection",
+        "guid": "DC84BA244613388DA1078F9262A4A39F",
+        "friendly_name": "Move Direction",
+        "category": "INVTEXT(\"Observer\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "nonTargetable",
+        "guid": "C48F59054DAFD436CF5C64A129073904",
+        "friendly_name": "Non Targetable",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ObserverDirectionChangeInterval ",
+        "guid": "B47D727145AAB285DD25858A33FDCEE6",
+        "friendly_name": "Observer Direction Change Interval ",
+        "category": "Observer",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ObserverDirectionTimer",
+        "guid": "2957F1074EB9B7A4ECA5339A936C05AB",
+        "friendly_name": "Observer Direction Timer",
+        "category": "Observer",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ObserverReenterBuffer ",
+        "guid": "ACC64EB14FA55AD2DE83B684E4DB12A8",
+        "friendly_name": "Observer Reenter Buffer ",
+        "category": "Observer",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Outcome",
+        "guid": "4D0297D4464F813BD55FA4BF50A03C66",
+        "friendly_name": "Outcome",
+        "category": "INVTEXT(\"Attack\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome.E_HitOutcome'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerInRange",
+        "guid": "82D57134402D825ED165F3BB2A88F192",
+        "friendly_name": "Player in Range",
+        "category": "INVTEXT(\"CombatState\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerRef",
+        "guid": "1971BAFE4C0B177E66F0AEACBFED6368",
+        "friendly_name": "Player Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PrimaryWeapon",
+        "guid": "21F367594FF473D8802E4B951F451F63",
+        "friendly_name": "Primary Weapon",
+        "category": "Equipement",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RandomDodge",
+        "guid": "C0B1431341718997A8A5DF9AE2E28EC6",
+        "friendly_name": "Random Dodge",
+        "category": "INVTEXT(\"Dodge\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ReticleMaterialRef",
+        "guid": "03EBB04F4CA683922F42EDB2E5C44994",
+        "friendly_name": "Reticle Material Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInstanceDynamic'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SecondaryWeapon",
+        "guid": "054C813F4C46BF0FF4383CBD7A4463E3",
+        "friendly_name": "Secondary Weapon",
+        "category": "INVTEXT(\"Equipement\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "smallHitArray",
+        "guid": "BC6BBCBB443DFC05C9556A9DE09BA7EE",
+        "friendly_name": "Small Hit Array",
+        "category": "INVTEXT(\"Hurts\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SpawnDissolveDuration",
+        "guid": "0CF26DC541F3FF7DEF4BECAAD1E2B18F",
+        "friendly_name": "Spawn Dissolve Duration",
+        "category": "Awakening",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SpawnDynamicMaterials",
+        "guid": "5811675B4F7DCAA1615A8A8CB657BE9E",
+        "friendly_name": "Spawn Dynamic Materials",
+        "category": "Awakening",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInstanceDynamic'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SpawnFinishDelay",
+        "guid": "5AFBE3BF4D5852DB0DE6AE926DB709BC",
+        "friendly_name": "Spawn Finish Delay",
+        "category": "Awakening",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SpawnNiagaraFX",
+        "guid": "D125A27148E3524D5AD414BF6CE054B2",
+        "friendly_name": "Spawn Niagara FX",
+        "category": "Awakening",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "getRandDirection",
+        "tryToPlayMontage",
+        "Set Strafe Direction",
+        "GetCombatStyle",
+        "SetCombatStyle",
+        "SetCombatStyleWeapon",
+        "UnequipAllWeapon",
+        "Set Combat Style from Enum",
+        "InitCombatStyle",
+        "UpdateDistanceToPlayer",
+        "CanBeGroupAttacker",
+        "SetEnemyState",
+        "PickObserverStrafeMode",
+        "ComputeStrafeDirection",
+        "CanAttackPlayer",
+        "SetWeaponVisibility",
+        "UpdateExecutionDebugVisual",
+        "UpdateExecutionEligibility",
+        "CanReceiveShadowStrike"
+      ],
+      "macros": [
+        "IsInAir"
+      ],
+      "delegates": [],
+      "generated_graphs": [
+        "IsTargetable",
+        "BPI_GetTargetPriority",
+        "BPI_GetCombatTargetLocation",
+        "BPI_CanBeCombatTargeted",
+        "BPI_CanBeExecuted",
+        "BPI_GetExecutionTargetLocation",
+        "CE_StartAwakeningState",
+        "CE_StopAwakeningState",
+        "CE_UpdateAwakeningState",
+        "CE_PrepareSpawnDissolveMaterials",
+        "CE_FinishAwakeningState",
+        "CE_StartDamageState",
+        "CE_UpdateDamageState",
+        "CE_StopDamageState",
+        "CE_FinishDamageState",
+        "CE_StartRetreatState",
+        "CE_UpdateRetreatState",
+        "CE_StopRetreatState",
+        "CS_MoveToPlayer",
+        "CE_AttackPlayer",
+        "CE_StartAttackerState",
+        "CE_UpdateAttackerState",
+        "CE_StopAttackerState",
+        "CE_OnAttackFinished",
+        "CE_UpdateAttackerCooldownMovement",
+        "CE_UpdateObserverState",
+        "CE_StartObserverState",
+        "CE_StopObserverState",
+        "CE_ResolveExecutionEnding",
+        "CE_UpdateExecutionDamage",
+        "CE_StopExecutionState",
+        "CE_UpdateExecutionState",
+        "CE_StartExecutionState",
+        "CE_StartDissolveTimer",
+        "BPI_OnExecutionCanceled",
+        "BPI_OnExecutionFinished",
+        "BPI_OnExecutionStarted",
+        "CE_StartDeathDissolve",
+        "CE_PrepareDeathDissolveMaterials",
+        "CE_StopDeadState",
+        "CE_UpdateDeadState",
+        "CE_StartDeadState",
+        "CE_RefreshDamageState",
+        "CE_UpdateHitReactType",
+        "ReceiveEndPlay",
+        "CS_BuildContext",
+        "CS_RandomDodger",
+        "CS_DoDamage",
+        "CS_FacePlayer",
+        "ReceiveTick",
+        "ReceiveBeginPlay",
+        "CE_BloodDecals",
+        "ReceiveAnyDamage",
+        "OnSuccess_7814196343216C6AD39B27943D2BD3AF",
+        "OnFail_7814196343216C6AD39B27943D2BD3AF",
+        "Timeline_SpawnDissolve__UpdateFunc",
+        "Timeline_SpawnDissolve__FinishedFunc",
+        "Timeline_DeathDissolve__UpdateFunc",
+        "Timeline_DeathDissolve__FinishedFunc"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

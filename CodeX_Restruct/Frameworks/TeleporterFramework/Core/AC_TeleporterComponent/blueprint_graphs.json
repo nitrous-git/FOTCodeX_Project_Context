@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_TeleporterComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "0594586A431C78C0BBD4CB8348D6C766",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "bAllowTeleportation",
+      "guid": "58BA58414A0C5405240AD88046DBA633",
+      "friendly_name": "Allow Teleportation",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "27D6B4144C48AAEE537DDBB53C801BE3",
+      "friendly_name": "Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TeleporterRef",
+      "guid": "62BC53CC43098148382B8CBB8AC671DC",
+      "friendly_name": "Teleporter Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_TeleporterBase.BP_TeleporterBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TeleportWidget",
+      "guid": "BB782D8B4CBBB0DC8E760BAA0E854A8D",
+      "friendly_name": "Teleport Widget",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Widget/WP_TeleportWidget.WP_TeleportWidget_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TempMaxWalkSpeed",
+      "guid": "FE8A62AC41F7FBFEA4AA6E9C0A43663B",
+      "friendly_name": "Temp Max Walk Speed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WorldDataLayerManager",
+      "guid": "527966B84E59A686B8FA008A5FE7DDC6",
+      "friendly_name": "World Data Layer Manager",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager.BP_WorldDataLayerManager_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "614AAD6846AB98A8933AC093FB33AF91",
+      "node_count": 51,
+      "pin_count": 180,
+      "connection_count": 52,
+      "exec_connection_count": 24,
+      "data_connection_count": 28
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "CE_SetTeleporterRef",
+      "guid": "246EA6BD40695F7EF79AAFADD3A35C50",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_ResetMovementInput",
+      "guid": "B9AA00A1492E0848FD3D0FA75C7EF03C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_CloseTeleportWidget",
+      "guid": "ECBBBCC043A481ACF4BA65ADF1FDA226",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_OpenTeleportWidget",
+      "guid": "342F142948CC2763EE645790BBE6906C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "8F00E85C4EAF567F21CFE9A1F0EBC157",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "InpActEvt_T_K2Node_InputKeyEvent_0",
+      "guid": "F0599A334F4D5F26424F1399DEC77203",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 6,
+    "authored_node_count": 51,
+    "authored_pin_count": 180,
+    "authored_connection_count": 52,
+    "generated_node_count": 14,
+    "generated_pin_count": 38
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

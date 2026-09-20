@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_CameraTrigger",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "95BE30A94C37964DF882CB92EF6BA6B6",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+  },
+  "variables": [
+    {
+      "name": "bAlreadyTriggered",
+      "guid": "F8D33A4942496CE3B1D8CF951D2EF5DE",
+      "friendly_name": "Already Triggered",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Blend Duration",
+      "guid": "6467721148B7F18CD1B6EEA3B28F8FA8",
+      "friendly_name": "Blend Duration",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "NewCameraMode",
+      "guid": "AD2F77E948B4DBAA9DA1EFB41A76490E",
+      "friendly_name": "New Camera Mode",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode.ECameraMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "537AAE5F40FE59A209D20A9B6B52788C",
+      "friendly_name": "Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "InitRef",
+      "kind": "function",
+      "guid": "544E63D84BE85A41615889B81A1010C0",
+      "node_count": 4,
+      "pin_count": 16,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "5938DF2045747E5DF7DEF9B8842A27CC",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "E931EA2E4CC11C64709AAEB3C0DC94C0",
+      "node_count": 24,
+      "pin_count": 82,
+      "connection_count": 20,
+      "exec_connection_count": 5,
+      "data_connection_count": 15
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "C724C06440879A4CDF6060B0D9127B98",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__BP_CameraTrigger_BoxCollider_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "AD4DEC4548E78789FAC3558F3022744C",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 3,
+    "generated_graph_count": 2,
+    "authored_node_count": 29,
+    "authored_pin_count": 99,
+    "authored_connection_count": 24,
+    "generated_node_count": 5,
+    "generated_pin_count": 24
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "InitRef",
+      "kind": "function",
+      "file": "graphs/InitRef.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

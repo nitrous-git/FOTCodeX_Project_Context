@@ -1,0 +1,477 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_PlayerActionComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "2A85A1C94D827BDED5968EA43FC2276D",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "ActionMap",
+      "guid": "2304DDB7427D1E98FD380091F95DC444",
+      "friendly_name": "Action Map",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap.DA_ActionMap_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDebug",
+      "guid": "A77793E144CC5069B97AB7AB9A909561",
+      "friendly_name": "Debug",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDebugWindows",
+      "guid": "A56A918D4B59D2BB8C25C2B49C6E0762",
+      "friendly_name": "Debug Windows",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Class_MeleeCombo",
+      "guid": "CFB6251344AC1E8837A7DCB62A60822F",
+      "friendly_name": "Class Melee Combo",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo.BP_PlayerAction_MeleeCombo_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CombatStyle",
+      "guid": "DC1275D64B797ED946E4E889D0BCD9D9",
+      "friendly_name": "Combat Style",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle.DA_CombatStyle_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentAction",
+      "guid": "BCD8290C4385923C920613B0478533AA",
+      "friendly_name": "Current Action",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DA_ActionWindowRules_Global",
+      "guid": "408A8E1E4FD5D810A6E01FBB568EC465",
+      "friendly_name": "DA Action Window Rules Global",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OwningPawn",
+      "guid": "201386874E3EF3C94C51E0BDE352436D",
+      "friendly_name": "Owning Pawn",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PendingExpireTime",
+      "guid": "843DDED446683524FD911EA35CF0C850",
+      "friendly_name": "Pending Expire Time",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PendingTag",
+      "guid": "339332834716F6538DF471B08454BEF4",
+      "friendly_name": "Pending Tag",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WindowOpenMap",
+      "guid": "831D378243E399B5FDBBBBB77CC57B44",
+      "friendly_name": "Window Open Map",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionWindowType.EActionWindowType'",
+        "container": "Map",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "CF3EEAB44CA2257A87B7CAA6BFD226C2",
+      "node_count": 4,
+      "pin_count": 15,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "IsWindowOpen",
+      "kind": "function",
+      "guid": "2E3334FC458F9C6A42762DA61CFB20CB",
+      "node_count": 4,
+      "pin_count": 12,
+      "connection_count": 5,
+      "exec_connection_count": 1,
+      "data_connection_count": 4
+    },
+    {
+      "name": "StartNewAction",
+      "kind": "function",
+      "guid": "8AF8A1D4460E5BC832281CBEDC3A5D0D",
+      "node_count": 13,
+      "pin_count": 37,
+      "connection_count": 13,
+      "exec_connection_count": 5,
+      "data_connection_count": 8
+    },
+    {
+      "name": "SetWindowOpen",
+      "kind": "function",
+      "guid": "CA12DE36479DDD113680B8A071746080",
+      "node_count": 9,
+      "pin_count": 37,
+      "connection_count": 12,
+      "exec_connection_count": 3,
+      "data_connection_count": 9
+    },
+    {
+      "name": "EndCurrentAction",
+      "kind": "function",
+      "guid": "CF60EECD4C9AB83204A26595E5CCA8EB",
+      "node_count": 10,
+      "pin_count": 25,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "InitWindows",
+      "kind": "function",
+      "guid": "C6B2D15A4119FAF7152AEAB65F550047",
+      "node_count": 4,
+      "pin_count": 16,
+      "connection_count": 3,
+      "exec_connection_count": 3,
+      "data_connection_count": 0
+    },
+    {
+      "name": "NotifyActionAnimFinished",
+      "kind": "function",
+      "guid": "AB23E35B4BA26847CAC330A7D998190D",
+      "node_count": 11,
+      "pin_count": 36,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
+    },
+    {
+      "name": "NotifyWindow",
+      "kind": "function",
+      "guid": "069C551E4567F6E7F39598B1D5964813",
+      "node_count": 5,
+      "pin_count": 17,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "SetPending",
+      "kind": "function",
+      "guid": "F0A7506F4D6052611F91A78B3223AC90",
+      "node_count": 13,
+      "pin_count": 52,
+      "connection_count": 15,
+      "exec_connection_count": 3,
+      "data_connection_count": 12
+    },
+    {
+      "name": "TryActivate",
+      "kind": "function",
+      "guid": "6DEA17BF41BC43AD7C390192BA81CE86",
+      "node_count": 56,
+      "pin_count": 190,
+      "connection_count": 56,
+      "exec_connection_count": 21,
+      "data_connection_count": 35
+    },
+    {
+      "name": "TryActivatePending",
+      "kind": "function",
+      "guid": "053E84954AAF662E5B124FB332DE0BC5",
+      "node_count": 19,
+      "pin_count": 63,
+      "connection_count": 19,
+      "exec_connection_count": 11,
+      "data_connection_count": 8
+    },
+    {
+      "name": "GetActionDef",
+      "kind": "function",
+      "guid": "77CC9456472533F4AA8280BEA0157F42",
+      "node_count": 15,
+      "pin_count": 55,
+      "connection_count": 15,
+      "exec_connection_count": 5,
+      "data_connection_count": 10
+    },
+    {
+      "name": "BufferOrReject",
+      "kind": "function",
+      "guid": "60F315BA44797A69DA2CB7A90B84BBE6",
+      "node_count": 28,
+      "pin_count": 107,
+      "connection_count": 26,
+      "exec_connection_count": 8,
+      "data_connection_count": 18
+    },
+    {
+      "name": "RouteToCurrentActionIfPossible",
+      "kind": "function",
+      "guid": "261769B94DEDCC3FCF965EA2291D601D",
+      "node_count": 12,
+      "pin_count": 39,
+      "connection_count": 12,
+      "exec_connection_count": 4,
+      "data_connection_count": 8
+    },
+    {
+      "name": "CanCancelCurrentAction",
+      "kind": "function",
+      "guid": "C64F54C8495ECE7AFB68E596809630F6",
+      "node_count": 15,
+      "pin_count": 57,
+      "connection_count": 13,
+      "exec_connection_count": 7,
+      "data_connection_count": 6
+    },
+    {
+      "name": "TryCancelCurrentAction",
+      "kind": "function",
+      "guid": "F77659514F61C2F18C1569AFA685A51C",
+      "node_count": 12,
+      "pin_count": 43,
+      "connection_count": 12,
+      "exec_connection_count": 7,
+      "data_connection_count": 5
+    },
+    {
+      "name": "TryBuffer",
+      "kind": "function",
+      "guid": "1AC0523F4800E24203B04BB3A5FC508C",
+      "node_count": 27,
+      "pin_count": 95,
+      "connection_count": 28,
+      "exec_connection_count": 13,
+      "data_connection_count": 15
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "F34AA0334B37255BA00C73A50462DFD4",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 17,
+    "generated_graph_count": 1,
+    "authored_node_count": 257,
+    "authored_pin_count": 896,
+    "authored_connection_count": 259,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "BufferOrReject",
+      "kind": "function",
+      "file": "graphs/BufferOrReject.json"
+    },
+    {
+      "name": "CanCancelCurrentAction",
+      "kind": "function",
+      "file": "graphs/CanCancelCurrentAction.json"
+    },
+    {
+      "name": "EndCurrentAction",
+      "kind": "function",
+      "file": "graphs/EndCurrentAction.json"
+    },
+    {
+      "name": "GetActionDef",
+      "kind": "function",
+      "file": "graphs/GetActionDef.json"
+    },
+    {
+      "name": "InitWindows",
+      "kind": "function",
+      "file": "graphs/InitWindows.json"
+    },
+    {
+      "name": "IsWindowOpen",
+      "kind": "function",
+      "file": "graphs/IsWindowOpen.json"
+    },
+    {
+      "name": "NotifyActionAnimFinished",
+      "kind": "function",
+      "file": "graphs/NotifyActionAnimFinished.json"
+    },
+    {
+      "name": "NotifyWindow",
+      "kind": "function",
+      "file": "graphs/NotifyWindow.json"
+    },
+    {
+      "name": "RouteToCurrentActionIfPossible",
+      "kind": "function",
+      "file": "graphs/RouteToCurrentActionIfPossible.json"
+    },
+    {
+      "name": "SetPending",
+      "kind": "function",
+      "file": "graphs/SetPending.json"
+    },
+    {
+      "name": "SetWindowOpen",
+      "kind": "function",
+      "file": "graphs/SetWindowOpen.json"
+    },
+    {
+      "name": "StartNewAction",
+      "kind": "function",
+      "file": "graphs/StartNewAction.json"
+    },
+    {
+      "name": "TryActivate",
+      "kind": "function",
+      "file": "graphs/TryActivate.json"
+    },
+    {
+      "name": "TryActivatePending",
+      "kind": "function",
+      "file": "graphs/TryActivatePending.json"
+    },
+    {
+      "name": "TryBuffer",
+      "kind": "function",
+      "file": "graphs/TryBuffer.json"
+    },
+    {
+      "name": "TryCancelCurrentAction",
+      "kind": "function",
+      "file": "graphs/TryCancelCurrentAction.json"
+    }
+  ]
+}

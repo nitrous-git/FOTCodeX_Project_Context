@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_ItemPickup_Master",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master.BP_ItemPickup_Master",
+    "relative_package": "Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/ItemPickup/BP_Pickup_ChampionFragment01",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/ItemPickup/BP_Pickup_ENPotion",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/ItemPickup/BP_Pickup_FireAttunement",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/ItemPickup/BP_Pickup_HPPotion",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/ItemPickup/BP_Pickup_StandardTunic"
+    ],
+    "non_architecture_dependency_count": 4,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master.BP_ItemPickup_Master_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master.BP_ItemPickup_Master_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master.BP_ItemPickup_Master_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_ItemPickup_Master",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master.BP_ItemPickup_Master_C:DefaultSceneRoot_GEN_VARIABLE"
+      },
+      {
+        "name": "SkeletalMesh",
+        "class": "SkeletalMeshComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master.BP_ItemPickup_Master_C:SkeletalMesh_GEN_VARIABLE"
+      },
+      {
+        "name": "SphereCollider",
+        "class": "SphereComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master.BP_ItemPickup_Master_C:SphereCollider_GEN_VARIABLE"
+      },
+      {
+        "name": "StaticMesh",
+        "class": "StaticMeshComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master.BP_ItemPickup_Master_C:StaticMesh_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "Amount",
+        "guid": "7534A18F42EAD9D5FEFBB6A1F3030840",
+        "friendly_name": "Amount",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ItemID",
+        "guid": "D27A8A0A446D439CD323348DD662A0F0",
+        "friendly_name": "Item ID",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "BndEvt__BP_ItemMaster_SphereCollider_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

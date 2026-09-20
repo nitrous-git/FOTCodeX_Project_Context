@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "ABP_PlayerMaster",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster.ABP_PlayerMaster",
+    "relative_package": "Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "AnimBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECombatStyleMode",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ELocomotionMode",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Animations/ABP/ALI_TraversalDevice",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/ETraversalAirMode"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    ],
+    "non_architecture_dependency_count": 36,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster.ABP_PlayerMaster_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster.ABP_PlayerMaster_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster.ABP_PlayerMaster_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "AirMode",
+        "guid": "19016E694F7E357E28480283159A37F8",
+        "friendly_name": "Air Mode",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/ETraversalAirMode.ETraversalAirMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AnimChoice",
+        "guid": "FDDA700945BEC000ADB3A7B159889DA1",
+        "friendly_name": "Anim Choice",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice.EAnimationChoice'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "As BP Player Base",
+        "guid": "D708356C499CFF5A53F98EADDC93F405",
+        "friendly_name": "As BP Player Base",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bBlock",
+        "guid": "B753E94A481A26A21EC88087ACCB1B54",
+        "friendly_name": "Block",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsInAir?",
+        "guid": "709833124A37F68E679167821BF783F2",
+        "friendly_name": "Is in Air?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsRunning",
+        "guid": "0C4903624A9BD9E3B458D480C1F32B51",
+        "friendly_name": "Is Running",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CombatStyleMode",
+        "guid": "EA2905514A614C1F43AB23A1518AAF51",
+        "friendly_name": "Combat Style Mode",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECombatStyleMode.ECombatStyleMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Direction",
+        "guid": "E3A66C4148CCA7831E9484BA11EEE2F1",
+        "friendly_name": "Direction",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Speed",
+        "guid": "7527C8114A03EFCB2BD06E94AA04F65E",
+        "friendly_name": "Speed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "AnimNotify_doDamage",
+        "BlueprintBeginPlay",
+        "BlueprintUpdateAnimation",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_77E9F0674268A4C2A8C175870F2EC11B",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_94551F864388E567D2FA8CA2DDFDE462",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_EE0A32C34B29876EF82CF7B4CC731FB3",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_37551FB84607AC87B19C1DA0A9A3C702",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_D33004634D14D2960B01869DB818CCEF",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_74D3EADF45897EFE9D0CF19E79B2FAC7",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_2090AC0C4605021593059FA547CE8047",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_9B5B8F3C496B2A8FABAB8CB63EDF32D1",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_F6011ADA4BF6EBD63A53FAB6D507A5B8",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_FAF58B0D42732B4F86056F97D5833FF2",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_EBB78FDE48924E8861B81E91E6B29D78",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_FFDD1BEC423D550F8A9CD6BAE6621B50",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_895A58EC4FB66355A459F7AB4C8CF462",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_7CCD89D047E2BB57E3DDDD821EB588C4",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_5B0C76D24526A7E7B465C4928666845F",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_A06513B14D84E3618DD938BB084D7D7B",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_6E36523044391D1784F0FEB0A8078E94",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_5A7FB4724E014365DAB840A54AE368BA",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_0A62D8904C49C0131A1F61BC146FAF9F",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_9922C9644E48A2D8B1476DB8490E0A9E",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_8A157497481B86ABD78E56995E771EDE",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_1450275A4B1C2ECDD1B405922B598AF1",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_8A3C7ED94F6D841430FE4383528BA639",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_92AE5C9146486D430C34FC8077833BDA",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_5FBC327949E232B24CE93CB8C3C196E7",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_F0C1A0ED42218D6A3FCDA78A4B8944A7",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_25C458EB438910B5356F0B8978AEB285",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_748EEE4A4EC5ECE4C76B07B4735C6944",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_8B789CDB420F9C1386082690D38165B7",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_A9865C40431A1E64C30B5C915985FCEA",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_923FC1B94F1EEF21A2DE57AF56FFAE8E",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_793FD84A4D818D37F83CEC9FEC1A4BEF",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_1EDE845E422CFF803106C2850A9821FF",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_9802F1984CDDFEDE3E267F90BC07186D",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_B6D5DA1E48524452FA7DD5A2BB5115EE",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_89F1588D45E554F32D212DB2D9D6DC24",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_ACB6DDD24A8E83A37B83A4966DC394AD",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_9E643730469C3B95296B429C5A84E39E",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_6601AF3D40F028F538B58EA04FBB0560",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_4518A1E9460AB3514D6FC3BD555B84AE",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_87468139432E38E9BE744881FF93D390",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_5EF6DE2648DAE30611558A99B1C33530",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_E2384B9542EA8C5F5E4825ADFF2BFF9E",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_1E0266D74C8C68EB391BB68B1901311C",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_A12C9F7D4E360C4618471485C56C070F",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_D87F5A434F808CF0AE925BB6667D6C68",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_C85863844546D4F9A129C39C437A8719",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_ECD3D7B94C9665572349FC9D8A69A7B5",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_B265EE3440AB251E0C8824A97EB24A51",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_7A6491D4496F48500C4D2AB60547BE87",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_7681FF9441E9553D2E28A8A3CC3B9113",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_23020D3F41BFA023E28A3592C5897AEA",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_ECA4342045C3385C46F0EC85184EA148",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_B0D648D048E4E10D23223CA127483B87",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_EB7CC4144B0DA19E3B213F9D0F362A56",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_760D6A3E425913D61F0C1F848CCA0BE6",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_D2B03E0C48E7D66FB40C1F92ED542AB3",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_D55ADDD0435E486F27B056B5DF120013",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_6B1B120C44A240272B508C90ACCCC583",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_4D60E53E487BF1E0415F4DB5B5D3BD07"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

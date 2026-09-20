@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_StrafeObserveATKState_BossC",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "EB905F43401B3C89728263A6C12C4879",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'"
+  },
+  "variables": [
+    {
+      "name": "As BP Boss C",
+      "guid": "2EE10C9C41663BC1C00B3EB8527BBFFB",
+      "friendly_name": "As BP Boss C",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentStep",
+      "guid": "9BCCC87C4D1551AB4D7FFCA5B87B742D",
+      "friendly_name": "Current Step",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DirectionChoice",
+      "guid": "9177592B4130CF323E2F2FBEB3D5A3C1",
+      "friendly_name": "Direction Choice",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "string",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DirectionName",
+      "guid": "B3F67B6F4283DC16B2629790F0760684",
+      "friendly_name": "Direction Name",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "string",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Duration",
+      "guid": "103EC33146DA7292A59D3B9C1503BE5E",
+      "friendly_name": "Duration",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Elapsed",
+      "guid": "D2A6A7BB411B736AA22FABA8522947AF",
+      "friendly_name": "Elapsed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IterationCount",
+      "guid": "B69F60B1462F8EFB42CE0CBC00E62E75",
+      "friendly_name": "Iteration Count",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MaxIteration",
+      "guid": "60C955754AA12F086825DDB34C5A1172",
+      "friendly_name": "Max Iteration",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StrafeDirection",
+      "guid": "6BE572FC439EB6614492EFA9E6F9C38E",
+      "friendly_name": "Strafe Direction",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "73216A9B44C4008B462E57927CF6FCB7",
+      "node_count": 97,
+      "pin_count": 339,
+      "connection_count": 107,
+      "exec_connection_count": 45,
+      "data_connection_count": 62
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "CS_PickRandomStrafeDirection",
+      "guid": "46F815F74A209D06D4968DB8F5A91193",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Exit",
+      "guid": "4FEA1D7D41E316BCDCCD5BAA750AE627",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Tick",
+      "guid": "26B3D7BB4EF38F75A99B32B82B796053",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Enter",
+      "guid": "FD3DD4964FA899D380AEF7A6C0618DCD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnSuccess_562D89E846EA8CD8F44E4BBD6AFE3ECF",
+      "guid": "33264AC342F4961BDCA3869176E84BAF",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnFail_562D89E846EA8CD8F44E4BBD6AFE3ECF",
+      "guid": "C56329C2428914AD7119B6B35291ACF2",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 6,
+    "authored_node_count": 97,
+    "authored_pin_count": 339,
+    "authored_connection_count": 107,
+    "generated_node_count": 16,
+    "generated_pin_count": 46
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

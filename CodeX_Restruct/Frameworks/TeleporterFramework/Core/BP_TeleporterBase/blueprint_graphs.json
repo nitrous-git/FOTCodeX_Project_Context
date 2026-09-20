@@ -1,0 +1,885 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_TeleporterBase",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "690BF2274C9AFC775D0E24BBFB9BEFFB",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+  },
+  "variables": [
+    {
+      "name": "AC Teleporter Component",
+      "guid": "27D66D7545270E24E5755BBBB2AA24CC",
+      "friendly_name": "AC Teleporter Component",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent.AC_TeleporterComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bTeleportInProgress",
+      "guid": "C672E3FC49DE55A56DBA52A18150E00F",
+      "friendly_name": "Teleport in Progress",
+      "category": "States",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentLightingLayer",
+      "guid": "CA7FF64B47D742F5C70CFDA9436DE105",
+      "friendly_name": "Current Lighting Layer",
+      "category": "Layers",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentWorldLayer",
+      "guid": "EBCA15844C4706A60FCA828D240DA416",
+      "friendly_name": "Current World Layer",
+      "category": "Layers",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "End_RevealRadiusMax",
+      "guid": "F78F061149A4034BBDB51085A46D0FD8",
+      "friendly_name": "End Reveal Radius Max",
+      "category": "PP Reveal",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FromPPTeleportDuration",
+      "guid": "AA7A7F5E4EE011A351DD459C59BBD86F",
+      "friendly_name": "From PPTeleport Duration",
+      "category": "Timing",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LightingBlendDuration",
+      "guid": "6752C61E4C1893D0E931B89E436B39F6",
+      "friendly_name": "Lighting Blend Duration",
+      "category": "INVTEXT(\"LightingBlend\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LightingLayer0",
+      "guid": "4A412A1D411ACB8747F0F5A1A44FE86A",
+      "friendly_name": "Lighting Layer 0",
+      "category": "Layers",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LightingLayer1",
+      "guid": "6239357E4780278E08D76C9D57D860FB",
+      "friendly_name": "Lighting Layer 1",
+      "category": "Layers",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LoadDuration",
+      "guid": "B144823D4C80A14210EA8A8F2BB5765B",
+      "friendly_name": "Load Duration",
+      "category": "Timing",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "5349DD294C980C65CCD8E4B09A7805AE",
+      "friendly_name": "Player Ref",
+      "category": "References",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PPVolumeRef",
+      "guid": "1DDB412F40D325DCC490E3AE754B2105",
+      "friendly_name": "PPVolume Ref",
+      "category": "INVTEXT(\"References\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.PostProcessVolume'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RevealDuration",
+      "guid": "C82377D04464076C79D85C8E124F8470",
+      "friendly_name": "Reveal Duration",
+      "category": "Timing",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SourceLayer",
+      "guid": "A04FEF0D472890460859C9A27E0F6F9B",
+      "friendly_name": "Source Layer",
+      "category": "Layers",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Start_RevealRadiusMax",
+      "guid": "C6510998472B94D113096CA15080461D",
+      "friendly_name": "Start Reveal Radius Max",
+      "category": "PP_Reveal",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SunIntensity_End",
+      "guid": "F6FD794E4230569C525474B6A552E8CF",
+      "friendly_name": "Sun Intensity End",
+      "category": "INVTEXT(\"LightingBlend\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SunIntensity_L0",
+      "guid": "ECDA9C044ED9A7935E9D2F86CCB20020",
+      "friendly_name": "Sun Intensity L0",
+      "category": "LightingBlend",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SunIntensity_L1",
+      "guid": "86041ECD40432357700CC58D6D34344E",
+      "friendly_name": "Sun Intensity L1",
+      "category": "INVTEXT(\"LightingBlend\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SunIntensity_Start",
+      "guid": "64278F9B4D6EA07E0FEDBC9075F1CD6D",
+      "friendly_name": "Sun Intensity Start",
+      "category": "INVTEXT(\"LightingBlend\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SunRef",
+      "guid": "1D905FC646533B3743FC77A24B6A2815",
+      "friendly_name": "Sun Ref",
+      "category": "INVTEXT(\"LightingBlend\")",
+      "property_flags": 2053,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DirectionalLight'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SunRot_End",
+      "guid": "0C37C1944C7744DE378817BA6342C89B",
+      "friendly_name": "Sun Rot End",
+      "category": "INVTEXT(\"LightingBlend\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SunRot_L0",
+      "guid": "F50652DA4E9BC5BDE199E8A547BAA0CB",
+      "friendly_name": "Sun Rot L0",
+      "category": "INVTEXT(\"LightingBlend\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SunRot_L1",
+      "guid": "BBBBB10849B1A4BA8CE98DAA035448FE",
+      "friendly_name": "Sun Rot L1",
+      "category": "INVTEXT(\"LightingBlend\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SunRot_Start",
+      "guid": "4D31EF30418E99DD58018488B405A74E",
+      "friendly_name": "Sun Rot Start",
+      "category": "INVTEXT(\"LightingBlend\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TargetLightingLayer",
+      "guid": "4AED690B4AE72BCDBE32C1873E038787",
+      "friendly_name": "Target Lighting Layer",
+      "category": "Layers",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TargetWorldLayer",
+      "guid": "35DBB3A94448F63D6F6233A73F446A72",
+      "friendly_name": "Target World Layer",
+      "category": "Layers",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TeleportPhase",
+      "guid": "E177979144967E0A46ED67AB6B750DAB",
+      "friendly_name": "Teleport Phase",
+      "category": "INVTEXT(\"States\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/Enums/E_TeleportPhase.E_TeleportPhase'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TH_TeleportPhase",
+      "guid": "F96810114D9B72815CE6E582392BA4DF",
+      "friendly_name": "TH Teleport Phase",
+      "category": "Timer",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ToPPTeleportDuration",
+      "guid": "4B46CCF8402C746D1F3EF39451B5C56F",
+      "friendly_name": "To PPTeleport Duration",
+      "category": "Timing",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WorldDataLayerManagerRef",
+      "guid": "F5C9BC7048434CEF2984AEA4B88DD655",
+      "friendly_name": "World Data Layer Manager Ref",
+      "category": "INVTEXT(\"References\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager.BP_WorldDataLayerManager_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WorldLayer0",
+      "guid": "9F94A2D04686F212A21E1FA950B88ABD",
+      "friendly_name": "World Layer 0",
+      "category": "Layers",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WorldLayer1",
+      "guid": "9B65908A41939CBA936DC1A6E9B58C91",
+      "friendly_name": "World Layer 1",
+      "category": "Layers",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "BD9ADA484DA7507CB6EB1481A98244B7",
+      "node_count": 103,
+      "pin_count": 392,
+      "connection_count": 102,
+      "exec_connection_count": 38,
+      "data_connection_count": 64
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "8499DA344183FAF4F0C079A81DC24B30",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "StartPhase_ToPPTeleport",
+      "kind": "function",
+      "guid": "09C0154649939B5D514758B6980116D0",
+      "node_count": 22,
+      "pin_count": 67,
+      "connection_count": 21,
+      "exec_connection_count": 7,
+      "data_connection_count": 14
+    },
+    {
+      "name": "StartPhase_Loading",
+      "kind": "function",
+      "guid": "4C6D3ABF404C18C2ECDEF485D3BB0035",
+      "node_count": 19,
+      "pin_count": 66,
+      "connection_count": 21,
+      "exec_connection_count": 10,
+      "data_connection_count": 11
+    },
+    {
+      "name": "StartPhase_FromPPTeleport",
+      "kind": "function",
+      "guid": "32FAE51C4AAC7AEF36E6658433FE3970",
+      "node_count": 16,
+      "pin_count": 51,
+      "connection_count": 15,
+      "exec_connection_count": 5,
+      "data_connection_count": 10
+    },
+    {
+      "name": "OnLoadWindowComplete",
+      "kind": "function",
+      "guid": "492EC9564FF3B5128071CCBB8D9545CA",
+      "node_count": 22,
+      "pin_count": 65,
+      "connection_count": 23,
+      "exec_connection_count": 9,
+      "data_connection_count": 14
+    },
+    {
+      "name": "FinishTeleport",
+      "kind": "function",
+      "guid": "2F786D6F4015E1EB2586B7B6B5A024B8",
+      "node_count": 18,
+      "pin_count": 60,
+      "connection_count": 17,
+      "exec_connection_count": 9,
+      "data_connection_count": 8
+    },
+    {
+      "name": "StartReveal",
+      "kind": "function",
+      "guid": "3DA75E574C98F6FE57D538B2E759043B",
+      "node_count": 14,
+      "pin_count": 38,
+      "connection_count": 13,
+      "exec_connection_count": 5,
+      "data_connection_count": 8
+    },
+    {
+      "name": "SetTeleporterActive",
+      "kind": "function",
+      "guid": "C606341F48D4BD3369138D97ED6EE714",
+      "node_count": 7,
+      "pin_count": 20,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    },
+    {
+      "name": "RefreshTeleporter",
+      "kind": "function",
+      "guid": "8D3CF7C84C94B0458280778E42299469",
+      "node_count": 13,
+      "pin_count": 54,
+      "connection_count": 14,
+      "exec_connection_count": 5,
+      "data_connection_count": 9
+    },
+    {
+      "name": "SetPPMaterial",
+      "kind": "function",
+      "guid": "107614A7488DABEFD06310B8E6BABD08",
+      "node_count": 5,
+      "pin_count": 16,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "SetInitialValue",
+      "kind": "function",
+      "guid": "A2C053E549BDEC481DC17D8FBDEF309F",
+      "node_count": 16,
+      "pin_count": 63,
+      "connection_count": 23,
+      "exec_connection_count": 8,
+      "data_connection_count": 15
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "CE_PPOff",
+      "guid": "BBE73F8B457CD817489FBDAF41A7834C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_PPOn",
+      "guid": "62C251E74BB971FBB5E5848674A1CEB3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "StartLightingBlendForTarget",
+      "guid": "CE1B8158408D8FF903B9AD805B9D130C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_ToggleTeleport",
+      "guid": "4670BB324AE19D19E14A2B9F48B2324F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__BP_Teleporter_BoxCollider_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature",
+      "guid": "03DB01CA4DA9F464EDA1A1AC6225D8F5",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "BndEvt__BP_Teleporter_BoxCollider_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "4383098049A6BF66526582BA77542484",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "C35BC33B4E8C22CC8FCBBBAB0A2A8E1F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_FromPPTeleport__UpdateFunc",
+      "guid": "B114797D4B78647643FB1A95977F8957",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_FromPPTeleport__FinishedFunc",
+      "guid": "7D0B949C46425CD0F8425FAC085CA230",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_ToPPTeleport__UpdateFunc",
+      "guid": "47BB8011418CCAC5274FDBBA309E1F86",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_ToPPTeleport__FinishedFunc",
+      "guid": "457AB64345D349D366A108A6D2A81B67",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_LightingBlend__UpdateFunc",
+      "guid": "45D6B48B4243AEA8C81F409C028F257C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_LightingBlend__FinishedFunc",
+      "guid": "F9A4DC144EBAD6F4B5D5369C81180B0A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_Reveal_L1__UpdateFunc",
+      "guid": "D159C8AA4C6FB46726417083B78E1294",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_Reveal_L1__FinishedFunc",
+      "guid": "8B5A94E24AE84B80A8BEF394EA021FE3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 12,
+    "generated_graph_count": 15,
+    "authored_node_count": 256,
+    "authored_pin_count": 893,
+    "authored_connection_count": 260,
+    "generated_node_count": 32,
+    "generated_pin_count": 99
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "FinishTeleport",
+      "kind": "function",
+      "file": "graphs/FinishTeleport.json"
+    },
+    {
+      "name": "OnLoadWindowComplete",
+      "kind": "function",
+      "file": "graphs/OnLoadWindowComplete.json"
+    },
+    {
+      "name": "RefreshTeleporter",
+      "kind": "function",
+      "file": "graphs/RefreshTeleporter.json"
+    },
+    {
+      "name": "SetInitialValue",
+      "kind": "function",
+      "file": "graphs/SetInitialValue.json"
+    },
+    {
+      "name": "SetPPMaterial",
+      "kind": "function",
+      "file": "graphs/SetPPMaterial.json"
+    },
+    {
+      "name": "SetTeleporterActive",
+      "kind": "function",
+      "file": "graphs/SetTeleporterActive.json"
+    },
+    {
+      "name": "StartPhase_FromPPTeleport",
+      "kind": "function",
+      "file": "graphs/StartPhase_FromPPTeleport.json"
+    },
+    {
+      "name": "StartPhase_Loading",
+      "kind": "function",
+      "file": "graphs/StartPhase_Loading.json"
+    },
+    {
+      "name": "StartPhase_ToPPTeleport",
+      "kind": "function",
+      "file": "graphs/StartPhase_ToPPTeleport.json"
+    },
+    {
+      "name": "StartReveal",
+      "kind": "function",
+      "file": "graphs/StartReveal.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

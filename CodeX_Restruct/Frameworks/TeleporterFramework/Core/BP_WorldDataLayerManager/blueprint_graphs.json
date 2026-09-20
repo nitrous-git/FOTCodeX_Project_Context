@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_WorldDataLayerManager",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "8A245BAB460A79FD8A8FD8BB5FD823D4",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+  },
+  "variables": [
+    {
+      "name": "CurrentLightingLayer",
+      "guid": "A4223F294BF7BFA60AABEF8CECBEB26E",
+      "friendly_name": "Current Lighting Layer",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentWorldLayer",
+      "guid": "F44AF9674D514C7D661669868CF171AD",
+      "friendly_name": "Current World Layer",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "A67F65494E0FFC4FD94AED8C72DFF808",
+      "node_count": 58,
+      "pin_count": 231,
+      "connection_count": 73,
+      "exec_connection_count": 26,
+      "data_connection_count": 47
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "7A4711604476B056B1A75399D06039A8",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "UnloadAllDataLayers",
+      "kind": "function",
+      "guid": "5F6C3B704FDC6CEEF3E7988B462760EB",
+      "node_count": 18,
+      "pin_count": 98,
+      "connection_count": 24,
+      "exec_connection_count": 12,
+      "data_connection_count": 12
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "CE_LoadWorldAndLightingLayer",
+      "guid": "CF811ED14D62F65E76E2E493626C4B8A",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "CE_ActivateSpecificDataLayer",
+      "guid": "7302579B444A9677EA4DBCB3D6D93A0F",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_LoadSpecificDataLayer",
+      "guid": "18C6F7E54B9964AFB179CA9BAA1F18EA",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "6B9F9F3948548ED5A101959DEE15DB84",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 3,
+    "generated_graph_count": 4,
+    "authored_node_count": 77,
+    "authored_pin_count": 330,
+    "authored_connection_count": 97,
+    "generated_node_count": 11,
+    "generated_pin_count": 34
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "UnloadAllDataLayers",
+      "kind": "function",
+      "file": "graphs/UnloadAllDataLayers.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

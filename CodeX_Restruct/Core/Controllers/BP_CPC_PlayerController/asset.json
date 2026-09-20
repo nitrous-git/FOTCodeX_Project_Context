@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_CPC_PlayerController",
+    "package_name": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+    "package_path": "/Game/CodeX_Restruct/Core/Controllers",
+    "object_path": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController",
+    "relative_package": "Core/Controllers/BP_CPC_PlayerController"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_AttackLight",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Block",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Dodge",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Execution",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Jump",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Look",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Move",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Sprint",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_ToggleLocomotion",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/GameModes/BP_CPC_GameMode",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    ],
+    "non_architecture_dependency_count": 7,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PlayerController'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PlayerController'",
+    "generated_class_object": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "BP_PlayerTargetingComponent",
+        "class": "AC_PlayerTargetingComponent_C",
+        "parent": "BP_CPC_PlayerController",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C:BP_PlayerTargetingComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "TransformComponent",
+        "class": "SceneComponent",
+        "parent": "BP_CPC_PlayerController",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.Default__BP_CPC_PlayerController_C:TransformComponent0"
+      }
+    ],
+    "variables": [
+      {
+        "name": "bIsInventoryOpen",
+        "guid": "B19FE0164AA79C9C1818EFA0553D2AE0",
+        "friendly_name": "Is Inventory Open",
+        "category": "INVTEXT(\"Inventory\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EnemyAIManager",
+        "guid": "AC404964477C53B18AD09CB568982F89",
+        "friendly_name": "Enemy AIManager",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ForwardIntent",
+        "guid": "F36497C0466C54A84627318635DAB8FF",
+        "friendly_name": "Forward Intent",
+        "category": "Movement",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ForwardVector",
+        "guid": "A55701144D6B006A0A7DA0B230478AF8",
+        "friendly_name": "Forward Vector",
+        "category": "Movement",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InputStrength",
+        "guid": "4D8C0C62414884647F92CC923E6E2B86",
+        "friendly_name": "Input Strength",
+        "category": "Movement",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InventoryHUD",
+        "guid": "1EDA0A6E4A76B21AEBE69EA4815C313F",
+        "friendly_name": "Inventory HUD",
+        "category": "Inventory",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual.WBP_PlayerInventoryHUD_manual_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InventoryHUDClass",
+        "guid": "36B73628423BF2581CB23FB18AEC4FC2",
+        "friendly_name": "Inventory HUDClass",
+        "category": "INVTEXT(\"Inventory\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual.WBP_PlayerInventoryHUD_manual_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastMoveInput",
+        "guid": "8029928644197E66C7776FB6F4F7136D",
+        "friendly_name": "Last Move Input",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MoveX",
+        "guid": "0047E0D140EB5ED78ED3C9AFEDE98DF2",
+        "friendly_name": "Move X",
+        "category": "Movement",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MoveY",
+        "guid": "1E526BD64192BD4A1EEE0FAD9DF6AEDB",
+        "friendly_name": "Move Y",
+        "category": "Movement",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerRef",
+        "guid": "F8B3D02747D847A0E0A986B4066ADE7C",
+        "friendly_name": "Player Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RawWorldMoveIntent",
+        "guid": "A9BF38314ECEDD25162D979CBDBA846B",
+        "friendly_name": "Raw World Move Intent",
+        "category": "Movement",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RightIntent",
+        "guid": "55B6D16F4254A16AA7EC55AB2A20EB8A",
+        "friendly_name": "Right Intent",
+        "category": "Movement",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RightVector",
+        "guid": "3B2BB25A424B0F9CFD0160971AA615FA",
+        "friendly_name": "Right Vector",
+        "category": "Movement",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WorldMoveIntent",
+        "guid": "D4FFBC0D4ECA70DA5A1D5F9F2C5EF4A7",
+        "friendly_name": "World Move Intent",
+        "category": "Movement",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "OpenInventory",
+        "CloseInventory",
+        "ToggleInventory"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveBeginPlay",
+        "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_0",
+        "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_1",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_2",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_3",
+        "InpActEvt_N_K2Node_InputKeyEvent_0",
+        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_4",
+        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_5",
+        "InpActEvt_I_K2Node_InputKeyEvent_1",
+        "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_6",
+        "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_7",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_8",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_9",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_10",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_11",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
+        "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_13"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

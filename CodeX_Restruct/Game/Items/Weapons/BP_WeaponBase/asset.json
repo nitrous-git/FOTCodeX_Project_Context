@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_WeaponBase",
+    "package_name": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase",
+    "package_path": "/Game/CodeX_Restruct/Game/Items/Weapons",
+    "object_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase",
+    "relative_package": "Game/Items/Weapons/BP_WeaponBase"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/E_AttunementType"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Block",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Cleaver",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Katana",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Katana2",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Sword",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Twinblades"
+    ],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "ActiveBladeVFXComponent",
+        "class": "NiagaraComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C:ActiveBladeVFXComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "ActiveTrailVFXComponent ",
+        "class": "NiagaraComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C:ActiveTrailVFXComponent _GEN_VARIABLE"
+      },
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_WeaponBase",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C:DefaultSceneRoot_GEN_VARIABLE"
+      },
+      {
+        "name": "WeaponVFXAttachComponent ",
+        "class": "SceneComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C:WeaponVFXAttachComponent _GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "CurrentAttunementData",
+        "guid": "E916F24E4CACEAF797EF92A8C2C3AEAF",
+        "friendly_name": "Current Attunement Data",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement.DA_Attunement_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "ApplyAttunement",
+        "ClearAttunementVisuals",
+        "GetAttunementHitVFX"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

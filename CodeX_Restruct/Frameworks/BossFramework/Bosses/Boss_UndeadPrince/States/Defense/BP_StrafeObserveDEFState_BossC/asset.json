@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_StrafeObserveDEFState_BossC",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_StrafeObserveDEFState_BossC",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_StrafeObserveDEFState_BossC.BP_StrafeObserveDEFState_BossC",
+    "relative_package": "Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_StrafeObserveDEFState_BossC"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C"
+    ],
+    "non_architecture_dependency_count": 1,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_StrafeObserveDEFState_BossC.BP_StrafeObserveDEFState_BossC_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_StrafeObserveDEFState_BossC.BP_StrafeObserveDEFState_BossC_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_StrafeObserveDEFState_BossC.BP_StrafeObserveDEFState_BossC_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "As BP Boss C",
+        "guid": "49B25F104B90A1288568CE99353F8C17",
+        "friendly_name": "As BP Boss C",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentStep",
+        "guid": "3DB582A24DE6E7649AB8D09E5D58154B",
+        "friendly_name": "Current Step",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DirectionChoice",
+        "guid": "EB0036AA47112A7157EE299363E56620",
+        "friendly_name": "Direction Choice",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "string",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DirectionName",
+        "guid": "340BB5A5419EEDE149E71FB079E7A732",
+        "friendly_name": "Direction Name",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "string",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Duration",
+        "guid": "ED3203F04B44911A7C598397AF41DB85",
+        "friendly_name": "Duration",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Elapsed",
+        "guid": "9AB52D314FDF70C8CAED2DAC081939EA",
+        "friendly_name": "Elapsed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IterationCount",
+        "guid": "866F88D442D136A11E7768B8CB125534",
+        "friendly_name": "Iteration Count",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxIteration",
+        "guid": "9758819E409780D0D1B56CB62F974EA0",
+        "friendly_name": "Max Iteration",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StrafeDirection",
+        "guid": "5292F659436B3BB8727670832BA71021",
+        "friendly_name": "Strafe Direction",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Exit",
+        "Tick",
+        "Enter",
+        "CS_PickRandomStrafeDirection"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

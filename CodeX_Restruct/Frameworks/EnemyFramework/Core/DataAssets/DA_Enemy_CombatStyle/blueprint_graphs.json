@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "DA_Enemy_CombatStyle",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "974392A14E27DD1BEC0E05B6D6542447",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PrimaryDataAsset'"
+  },
+  "variables": [
+    {
+      "name": "Combo",
+      "guid": "E865114347478DAA55543B9E1FEF43A1",
+      "friendly_name": "Combo",
+      "category": "Montage Buckets",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Death",
+      "guid": "4A758B4F4B043AD5F4FD99B9050D0379",
+      "friendly_name": "Death",
+      "category": "INVTEXT(\"Montage Buckets\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Dodge",
+      "guid": "5532EDB0466ADEC768CC27BEB6B5224C",
+      "friendly_name": "Dodge",
+      "category": "INVTEXT(\"Montage Buckets\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitLarge",
+      "guid": "59AE6A8F4B0E7F320DF73C95A81B1A73",
+      "friendly_name": "Hit Large",
+      "category": "INVTEXT(\"Montage Buckets\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitSmall",
+      "guid": "50E261B842FFC2045CB4B9B8E12DE028",
+      "friendly_name": "Hit Small",
+      "category": "INVTEXT(\"Montage Buckets\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PrimaryWeapon",
+      "guid": "79D379E3451D3A70B8E315BFEC5E310E",
+      "friendly_name": "Primary Weapon",
+      "category": "INVTEXT(\"Equipement\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RunningSpeed",
+      "guid": "015AE2E34AF07C49D44D8CA0180F970A",
+      "friendly_name": "Running Speed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SecondaryWeapon",
+      "guid": "F7A10EA04F2B23287A357188B886E349",
+      "friendly_name": "Secondary Weapon",
+      "category": "INVTEXT(\"Equipement\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SkeletalMeshAsset",
+      "guid": "AA8122134116DB8C81CEA08A19DFB53A",
+      "friendly_name": "Skeletal Mesh Asset",
+      "category": "Mesh",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMesh'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StrafingSpeed",
+      "guid": "7A9211E64B65610CB0BFC7A3F650C892",
+      "friendly_name": "Strafing Speed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StyleTag",
+      "guid": "4CCA831647AA54FDDD6FEFB624E4E56F",
+      "friendly_name": "Style Tag",
+      "category": "Identity",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "65DBC6F5419935A28AF3729F54A96F80",
+      "node_count": 0,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 0,
+    "authored_node_count": 0,
+    "authored_pin_count": 0,
+    "authored_connection_count": 0,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

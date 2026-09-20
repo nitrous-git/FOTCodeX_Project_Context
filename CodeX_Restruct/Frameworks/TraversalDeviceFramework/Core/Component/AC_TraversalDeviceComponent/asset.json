@@ -1,0 +1,1160 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_TraversalDeviceComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent.AC_TraversalDeviceComponent",
+    "relative_package": "Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Animations/ABP/ABP_TraversalDevice",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/CameraShakes/Low_Camera_Shake_BP",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/AnimationType_Enum",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/InputBehavior_Enum",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/JumpPadAnimationType_Enum",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/LaunchLocation_Enum",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/UpSpringInputBehavior_Enum",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Struct/FPlatformerDeviceConfig",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/BP_PlatformerDeviceBase"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Animations/ABP/ABP_TraversalDevice"
+    ],
+    "non_architecture_dependency_count": 9,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent.AC_TraversalDeviceComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "description": "Character component that interacts with Platformer Actors.",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent.AC_TraversalDeviceComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent.AC_TraversalDeviceComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "ActorRotation",
+        "guid": "63F4214E463D7BA7678A6CA6A4C6B2B9",
+        "friendly_name": "Actor Rotation",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AdjustCapsuleSize?",
+        "guid": "8412F9C44C417DE0257FA3897ECF04E3",
+        "friendly_name": "Adjust Capsule Size?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AdjustFallingParameters?",
+        "guid": "B1E76B9E4CE28225E309F782A034D3EE",
+        "friendly_name": "Adjust Falling Parameters?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AnimCurvePosition",
+        "guid": "2059891542A1AA275BE048A584BC6FAD",
+        "friendly_name": "Anim Curve Position",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AxisValue",
+        "guid": "847647CF426593F61ECD50804F0B80F6",
+        "friendly_name": "Axis Value",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Braking Deceleration Falling",
+        "guid": "7BC208A84D5A6930437187871501F6C1",
+        "friendly_name": "Braking Deceleration Falling",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CanLaunchCharacter?",
+        "guid": "0FF1E22D4104F9853B107FA73D8A5F70",
+        "friendly_name": "Can Launch Character?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Capsule Half Height",
+        "guid": "E3B8457C455D18C898C162B41036F037",
+        "friendly_name": "Capsule Half Height",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Capsule Radius",
+        "guid": "A1444B304506FE24037EC3B5A1965DA5",
+        "friendly_name": "Capsule Radius",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CapsuleComponent",
+        "guid": "86D03B8E4AE62B64781334BD6B63859B",
+        "friendly_name": "Capsule Component",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CapsuleComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CharacterLocation",
+        "guid": "2849CCE046EEEE316D9428890595F595",
+        "friendly_name": "Character Location",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CharacterMovementComponent",
+        "guid": "79327DDE4C615C73A9A5AEAEAFBAC466",
+        "friendly_name": "Character Movement Component",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CharacterMovementComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CheckCapsule?",
+        "guid": "20CF67524F8AAE17E2025392B8A81B2A",
+        "friendly_name": "Check Capsule?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ComponentActive?",
+        "guid": "E51049A5458F31535FE048899FE2BB7D",
+        "friendly_name": "Component Active?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ContinueExecution?",
+        "guid": "E05E08FB40BB5B51902EE8A387D71DBA",
+        "friendly_name": "Continue Execution?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurvePosition",
+        "guid": "D7FE5718459D1EF34242B7BA586AF469",
+        "friendly_name": "Curve Position",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DashAnimClamped?",
+        "guid": "7BE1D9B947DC9045A30CEBA37439D61E",
+        "friendly_name": "Dash Anim Clamped?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EndLocation",
+        "guid": "1E1F9DFF45AA6B3BF69CE1AB3BD7354F",
+        "friendly_name": "End Location",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Falling Lateral Friction",
+        "guid": "853A7CA7454C35E1B8AFB9AB57A14C70",
+        "friendly_name": "Falling Lateral Friction",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Hit?",
+        "guid": "F0D74C7E4F8BFD943E3F21AD0C4F2112",
+        "friendly_name": "Hit?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HitCameraShake",
+        "guid": "2B728A0544F239313AB149B4717B8328",
+        "friendly_name": "Hit Camera Shake",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraShakeBase'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IgnoreInput?",
+        "guid": "2B65E629488DCF96C0C0D48F8E34A517",
+        "friendly_name": "Ignore Input?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Index",
+        "guid": "FD1CC658452A210E9ACA30B56BAF76F0",
+        "friendly_name": "Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InitialCapsuleYaw",
+        "guid": "D0D0503B4809D886B0F03696FD72BED6",
+        "friendly_name": "Initial Capsule Yaw",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Land Recovery 1 Anim",
+        "guid": "805B8E764DF75BE72DA8569926981F0F",
+        "friendly_name": "Land Recovery 1 Anim",
+        "category": "INVTEXT(\"Montages\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Land Recovery 2 Anim",
+        "guid": "866BDEC348D3051080959C9CB8BA7D26",
+        "friendly_name": "Land Recovery 2 Anim",
+        "category": "INVTEXT(\"Montages\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Land Recovery 2 Mirror Anim",
+        "guid": "1F0765E14ADDD0EE0BDC3EB79A139170",
+        "friendly_name": "Land Recovery 2 Mirror Anim",
+        "category": "INVTEXT(\"Montages\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LandedOnPlatformerActor?",
+        "guid": "DF8FB48C4FC579C7BED8E78DEF86BDCF",
+        "friendly_name": "Landed on Platformer Actor?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Launch Height",
+        "guid": "A4E2CF4C4047CB120F2496B0EF88A046",
+        "friendly_name": "Launch Height",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LaunchLocation",
+        "guid": "9A92B48B47E1984AEB3556B1A88D2999",
+        "friendly_name": "Launch Location",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LaunchUpwardAfterHit?",
+        "guid": "C1187FDD44420E59245C039727BD5A70",
+        "friendly_name": "Launch Upward After Hit?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LinearCurve",
+        "guid": "00032D6E469E0B2212CC0598C19179FA",
+        "friendly_name": "Linear Curve",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CurveFloat'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MapDeltaFloat",
+        "guid": "79298D5B4379ACDE2265128C60D637BF",
+        "friendly_name": "Map Delta Float",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MoveForward",
+        "guid": "F72DB257416F3367191AC69D35ECB2C9",
+        "friendly_name": "Move Forward",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MoveRight",
+        "guid": "3EFE084C49ED9C3218F0778B02776BC2",
+        "friendly_name": "Move Right",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "NewRotation",
+        "guid": "04AC3FF14A88194836C3DA8818FEB755",
+        "friendly_name": "New Rotation",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Other Actor",
+        "guid": "B2ED3D1C4D81ADF961872684D84CCE37",
+        "friendly_name": "Other Actor",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlatformerDeviceConfig",
+        "guid": "408617184299BEFBEE832CBC41EE767D",
+        "friendly_name": "Platformer Device Config",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Struct/FPlatformerDeviceConfig.FPlatformerDeviceConfig'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlatformerDeviceConfig_Temp",
+        "guid": "1ACF34044E6500D5C15BB6942FE16A90",
+        "friendly_name": "Platformer Device Config Temp",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Struct/FPlatformerDeviceConfig.FPlatformerDeviceConfig'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayAnimations?",
+        "guid": "69CCE2204E2B283467BF27BF3D777B2D",
+        "friendly_name": "Play Animations?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ProjectGravity",
+        "guid": "88D4215F480CDF30632C1B915F4F5CE2",
+        "friendly_name": "Project Gravity",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ResetFallingParameters?",
+        "guid": "4AD1304A42D57095921BD7AACFE98756",
+        "friendly_name": "Reset Falling Parameters?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RestoreInputAfterHit?",
+        "guid": "F5EF0C5B4F48A9FA4F27729DA728A3AC",
+        "friendly_name": "Restore Input After Hit?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ShowHitReactions?",
+        "guid": "872E07BC4066171CCC3E1380EBF8EBD0",
+        "friendly_name": "Show Hit Reactions?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SkeletalMeshComponent",
+        "guid": "690A56C7487AFFD690E6E3B479BB71FC",
+        "friendly_name": "Skeletal Mesh Component",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMeshComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Skip ID Check?",
+        "guid": "08E59D174FF28F54B952F6B671CB50A2",
+        "friendly_name": "Skip ID Check?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SkipUpdatePosition?",
+        "guid": "4984BFCE4F70272FDDC7EF811F765A98",
+        "friendly_name": "Skip Update Position?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Spin Anim Montage",
+        "guid": "A0765C57411D57E87323CDB600C32257",
+        "friendly_name": "Spin Anim Montage",
+        "category": "Montages",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Spline1",
+        "guid": "5987D74F4A9139FB6D8A779538BA632F",
+        "friendly_name": "Spline 1",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SplineComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Spline2",
+        "guid": "D00504F34BD638552B04EDAD1691FE0B",
+        "friendly_name": "Spline 2",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SplineComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StartAnimation?",
+        "guid": "CCEC11CA4B828046DDFDBCAE96EF7951",
+        "friendly_name": "Start Animation?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Temp Actor",
+        "guid": "98CE7476403C92B2707D02969D765348",
+        "friendly_name": "Temp Actor",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TraversalAnimBlueprint",
+        "guid": "494C9FAE4E4A0B301624D4992C2CD72C",
+        "friendly_name": "Traversal Anim Blueprint",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Animations/ABP/ABP_TraversalDevice.ABP_TraversalDevice_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UniqueID",
+        "guid": "E8F0424D4D2A196A1A5AD3B8775596D6",
+        "friendly_name": "Unique ID",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UpdateAxisValue?",
+        "guid": "78CACD4E4C4E152F891C5DB6B2349DBB",
+        "friendly_name": "Update Axis Value?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UpdateOverlaps?",
+        "guid": "088C1CAC4AD6C26F7972A0AC2E9E2B47",
+        "friendly_name": "Update Overlaps?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UpwardsVelocity OnHit",
+        "guid": "43E85AF64A3CECB5E226DB84D8981E56",
+        "friendly_name": "Upwards Velocity on Hit",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UseDiveSpins?",
+        "guid": "3474033643EEF541813414BAC7610D86",
+        "friendly_name": "Use Dive Spins?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UseMirrorLandRecovAnim?",
+        "guid": "4B3BBDA94308A0CF1B7EE6A5DFAEC61E",
+        "friendly_name": "Use Mirror Land Recov Anim?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Z Location",
+        "guid": "7A92F31841284C4666B0FDA8E9DD2138",
+        "friendly_name": "Z Location",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "Get Launch Velocity",
+        "Get Launch Location",
+        "Get Spline",
+        "Get Character Location",
+        "Move Again?",
+        "Get Character Rotation",
+        "Get Character Location At Spline",
+        "Get Arc Values",
+        "Get Curve Position",
+        "Play Dash Animation?",
+        "Near Launch Height?",
+        "Get Capsule Trace Data",
+        "Is Capsule Base Above Hit Location?",
+        "Set Ignore Move Input?",
+        "Can Use Actor?",
+        "Can Component Be Interrupted?",
+        "Start Hit Reaction?",
+        "Get Capsule Radius And Half Height",
+        "Set Move Forward / Move Right"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Hit SFX And Camera Shake",
+        "Play Animation",
+        "Keep Character At Location",
+        "Start Using Actor",
+        "Get Overlapping Actor",
+        "Set Component State",
+        "Look For Platformer Actor",
+        "Stop Active Action",
+        "Set Launch Velocity",
+        "Stop Component Tick",
+        "Set Jump Pad And Boost Ring Animations",
+        "Set Falling Parameters",
+        "Check Movement Input",
+        "Input Registered?",
+        "Stop Active Montage",
+        "Update Up Spring Curve Value",
+        "Set Up Spring Launch Animations",
+        "Set Arc Spring Animations",
+        "Set Capsule Height and Radius",
+        "Pause Capsule Check",
+        "Check Capsule",
+        "Start Arc Simulation",
+        "On Hit",
+        "On Landed",
+        "Set Spline",
+        "ReceiveTick",
+        "Overlap Actor",
+        "ReceiveBeginPlay",
+        "OnCompleted_AF721FF34CD3474F2E6258827C7CF9E5",
+        "OnBlendOut_AF721FF34CD3474F2E6258827C7CF9E5",
+        "OnInterrupted_AF721FF34CD3474F2E6258827C7CF9E5",
+        "OnNotifyBegin_AF721FF34CD3474F2E6258827C7CF9E5",
+        "OnNotifyEnd_AF721FF34CD3474F2E6258827C7CF9E5",
+        "OnCompleted_7D0A7B274EBC5FD0AC8360A3A07E31F0",
+        "OnBlendOut_7D0A7B274EBC5FD0AC8360A3A07E31F0",
+        "OnInterrupted_7D0A7B274EBC5FD0AC8360A3A07E31F0",
+        "OnNotifyBegin_7D0A7B274EBC5FD0AC8360A3A07E31F0",
+        "OnNotifyEnd_7D0A7B274EBC5FD0AC8360A3A07E31F0",
+        "OnCompleted_FB14120A457A4103B776F988AC532F4B",
+        "OnBlendOut_FB14120A457A4103B776F988AC532F4B",
+        "OnInterrupted_FB14120A457A4103B776F988AC532F4B",
+        "OnNotifyBegin_FB14120A457A4103B776F988AC532F4B",
+        "OnNotifyEnd_FB14120A457A4103B776F988AC532F4B"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_CameraModeComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent.AC_CameraModeComponent",
+    "relative_package": "Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCameraModeSettings"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_TeleporterBase",
+      "/Game/CodeX_Restruct/Shared/Directors/BP_CameraTrigger"
+    ],
+    "non_architecture_dependency_count": 1,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent.AC_CameraModeComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent.AC_CameraModeComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent.AC_CameraModeComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "Alpha",
+        "guid": "91E3CC174A49FC1317FD13907E54E2E0",
+        "friendly_name": "Alpha",
+        "category": "Transition",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDebugCameraMode",
+        "guid": "8E6A887641EED71019EAECB3C7049725",
+        "friendly_name": "Debug Camera Mode",
+        "category": "Debug",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bTransitionActive",
+        "guid": "3DA113E24A1C45878DCD62B5A6D588FC",
+        "friendly_name": "Transition Active",
+        "category": "Transition",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CameraBoom",
+        "guid": "FEF0271F4F37D3475403AD8150DEEAC9",
+        "friendly_name": "Camera Boom",
+        "category": "References",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SpringArmComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentMode",
+        "guid": "385B0ED8472A16211604AFA34E09AD3F",
+        "friendly_name": "Current Mode",
+        "category": "State",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode.ECameraMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FarSettings",
+        "guid": "6533247B4FF77617AF2184961C1B0272",
+        "friendly_name": "Far Settings",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCameraModeSettings.FCameraModeSettings'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FollowCamera",
+        "guid": "220FAB7049EFCB5EF6041FA69097BF72",
+        "friendly_name": "Follow Camera",
+        "category": "References",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MidSettings",
+        "guid": "72304D774C0BDB89C4C151961F8162E6",
+        "friendly_name": "Mid Settings",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCameraModeSettings.FCameraModeSettings'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "NearSettings",
+        "guid": "FD47C527478CFF825F1FF18078A429B2",
+        "friendly_name": "Near Settings",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCameraModeSettings.FCameraModeSettings'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SmoothAlpha",
+        "guid": "15B5A7B24E433B52C7FAFE86344E51DC",
+        "friendly_name": "Smooth Alpha",
+        "category": "Transition",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TargetMode",
+        "guid": "A429D6B744C0555671E8219B69AB84FD",
+        "friendly_name": "Target Mode",
+        "category": "State",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode.ECameraMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TransitionDuration",
+        "guid": "3814554949E86DDAD2FBE49FEF9F8288",
+        "friendly_name": "Transition Duration",
+        "category": "Transition",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TransitionElapsed",
+        "guid": "8AA4AE0440CFC4636E139BA499A4147F",
+        "friendly_name": "Transition Elapsed",
+        "category": "Transition",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TransitionStartSettings",
+        "guid": "B283790041A259349F9FD0AB22E158AB",
+        "friendly_name": "Transition Start Settings",
+        "category": "Transition",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCameraModeSettings.FCameraModeSettings'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TransitionTargetSettings",
+        "guid": "06CFCC4B40091906BB73448619F1252E",
+        "friendly_name": "Transition Target Settings",
+        "category": "Transition",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCameraModeSettings.FCameraModeSettings'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "GetSettingsForMode",
+        "ApplySettings",
+        "GetCurrentLiveSettings",
+        "SetCameraModeSmooth",
+        "ForceCameraMode",
+        "ReturnToMid"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveTick",
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

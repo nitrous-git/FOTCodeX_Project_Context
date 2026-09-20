@@ -1,0 +1,579 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_TraversalHomingComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "0D9AA9894401595A05EEB1A53464884B",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "AirMode",
+      "guid": "ABBE065E4113FEA753584FB43036BA95",
+      "friendly_name": "Air Mode",
+      "category": "State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/ETraversalAirMode.ETraversalAirMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AnimChoice",
+      "guid": "2F8A0B9E46B74355665A189DEBF283F7",
+      "friendly_name": "Anim Choice",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice.EAnimationChoice'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ArrivalMontage",
+      "guid": "70CE54A343919857F06983A687D0232C",
+      "friendly_name": "Arrival Montage",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bChainRequested",
+      "guid": "723D50554C58EA6A3240C083CAA9D6B1",
+      "friendly_name": "Chain Requested",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bChainWindowOpen",
+      "guid": "D590DADE474345AE211D9AA81AA8E29A",
+      "friendly_name": "Chain Window Open",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDebugHomingDash",
+      "guid": "062768964A309D4E6B17E1857F03DA9F",
+      "friendly_name": "Debug Homing Dash",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPlayingArrivalMontage",
+      "guid": "D72266CF4E2FB3C64634ADAB89087EE9",
+      "friendly_name": "Playing Arrival Montage",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentTarget",
+      "guid": "194D9CAC46033820557704A20B77D4EB",
+      "friendly_name": "Current Target",
+      "category": "State",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DashDuration",
+      "guid": "329BCA53480F9E6E52D73697DA121DC8",
+      "friendly_name": "Dash Duration",
+      "category": "Dash State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DashSpec",
+      "guid": "35AB2DE8422B2FE021D4C38603DA3DEA",
+      "friendly_name": "Dash Spec",
+      "category": "Specs",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Struct/FHomingDashSpec.FHomingDashSpec'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DashStartLoc",
+      "guid": "BC70DF014C7CD5ED1C22AB8CCC00D805",
+      "friendly_name": "Dash Start Loc",
+      "category": "Dash State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DashStartTime",
+      "guid": "07A5B2194B76D4E224BC899B5BE10BD2",
+      "friendly_name": "Dash Start Time",
+      "category": "Dash State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DashTargetLoc",
+      "guid": "2DE5069A4FA0B7670D2A8AAE9BE1269B",
+      "friendly_name": "Dash Target Loc",
+      "category": "Dash State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FollowCamera",
+      "guid": "5B6ECAF64809A1DCE25A9D8E0CEBDE6E",
+      "friendly_name": "Follow Camera",
+      "category": "Ref",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "NiagaraTrail",
+      "guid": "A3879F9A483D451FA3F8DA88F7846A18",
+      "friendly_name": "Niagara Trail",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OwnerCharacter",
+      "guid": "6FE604474F9BF4C80A32D495F81225DC",
+      "friendly_name": "Owner Character",
+      "category": "INVTEXT(\"Ref\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallActor",
+      "guid": "11F2BF3E47355D9F3430F2A5DE2BC39D",
+      "friendly_name": "Wall Actor",
+      "category": "WallRide State",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallPlaneNormal",
+      "guid": "2CE65D974386EAEDBACC31AFAF0A96C8",
+      "friendly_name": "Wall Plane Normal",
+      "category": "WallRide State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallPlaneOrigin",
+      "guid": "DCAD9C3A4B961AD03D1CF7A994FEE2A2",
+      "friendly_name": "Wall Plane Origin",
+      "category": "WallRide State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallSpec",
+      "guid": "394365A34413EF1635E519B4E429FE41",
+      "friendly_name": "Wall Spec",
+      "category": "INVTEXT(\"Specs\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Struct/FHomingWallSpec.FHomingWallSpec'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "7C07EE3F4BEBF4BC1AFA48AFF0862D8F",
+      "node_count": 12,
+      "pin_count": 46,
+      "connection_count": 12,
+      "exec_connection_count": 7,
+      "data_connection_count": 5
+    },
+    {
+      "name": "FindBestHomingTarget",
+      "kind": "function",
+      "guid": "8EAB55FD49079526007FEEAD4D4A10C9",
+      "node_count": 117,
+      "pin_count": 329,
+      "connection_count": 121,
+      "exec_connection_count": 38,
+      "data_connection_count": 83
+    },
+    {
+      "name": "FindBestHomingTarget_Split",
+      "kind": "function",
+      "guid": "870DFDFE4A938B92C9D75795B2E66DF3",
+      "node_count": 77,
+      "pin_count": 249,
+      "connection_count": 84,
+      "exec_connection_count": 27,
+      "data_connection_count": 57
+    },
+    {
+      "name": "TD_PassesCone",
+      "kind": "function",
+      "guid": "DE3F226046875AAE0590E6B75E835940",
+      "node_count": 33,
+      "pin_count": 98,
+      "connection_count": 32,
+      "exec_connection_count": 7,
+      "data_connection_count": 25
+    },
+    {
+      "name": "TD_GetCandidateActors",
+      "kind": "function",
+      "guid": "45597E2244BFF883AC90C993919D5B30",
+      "node_count": 10,
+      "pin_count": 36,
+      "connection_count": 11,
+      "exec_connection_count": 2,
+      "data_connection_count": 9
+    },
+    {
+      "name": "TD_PassesLOS",
+      "kind": "function",
+      "guid": "8F67AE764B7A0F04B4C9BBBA98AA0A32",
+      "node_count": 21,
+      "pin_count": 77,
+      "connection_count": 20,
+      "exec_connection_count": 9,
+      "data_connection_count": 11
+    },
+    {
+      "name": "TD_ComputeTargetScore",
+      "kind": "function",
+      "guid": "ECAB6A274C2618C9074C8BBB5E43969B",
+      "node_count": 21,
+      "pin_count": 53,
+      "connection_count": 20,
+      "exec_connection_count": 5,
+      "data_connection_count": 15
+    },
+    {
+      "name": "StartHomingDash",
+      "kind": "function",
+      "guid": "5EB9C12141EFE3C4E2DE1882409B0DC8",
+      "node_count": 56,
+      "pin_count": 167,
+      "connection_count": 54,
+      "exec_connection_count": 23,
+      "data_connection_count": 31
+    },
+    {
+      "name": "UpdateHomingDash",
+      "kind": "function",
+      "guid": "78B022A04CA90E67FAC50CB95C99FDC6",
+      "node_count": 48,
+      "pin_count": 130,
+      "connection_count": 41,
+      "exec_connection_count": 10,
+      "data_connection_count": 31
+    },
+    {
+      "name": "HandleTargetArrival",
+      "kind": "function",
+      "guid": "10BF08F948FDF60E13134892256EB20B",
+      "node_count": 49,
+      "pin_count": 231,
+      "connection_count": 47,
+      "exec_connection_count": 16,
+      "data_connection_count": 31
+    },
+    {
+      "name": "StopHomingDash",
+      "kind": "function",
+      "guid": "749AC88D453C2F7B1FA898BBBFA94A2D",
+      "node_count": 23,
+      "pin_count": 75,
+      "connection_count": 18,
+      "exec_connection_count": 9,
+      "data_connection_count": 9
+    },
+    {
+      "name": "UpdateWallRide",
+      "kind": "function",
+      "guid": "B77EA9564CE8EB4026A5EB882D850521",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "RequestHomingDash",
+      "kind": "function",
+      "guid": "2A2970D24A465BAD845F13AF5548FFA1",
+      "node_count": 30,
+      "pin_count": 96,
+      "connection_count": 34,
+      "exec_connection_count": 20,
+      "data_connection_count": 14
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveTick",
+      "guid": "8A602D3A47FE62AAB5F4F8AF54A98D2E",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "C4267C9943406EB05382029A28AB61FE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 13,
+    "generated_graph_count": 2,
+    "authored_node_count": 498,
+    "authored_pin_count": 1588,
+    "authored_connection_count": 494,
+    "generated_node_count": 5,
+    "generated_pin_count": 14
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "FindBestHomingTarget",
+      "kind": "function",
+      "file": "graphs/FindBestHomingTarget.json"
+    },
+    {
+      "name": "FindBestHomingTarget_Split",
+      "kind": "function",
+      "file": "graphs/FindBestHomingTarget_Split.json"
+    },
+    {
+      "name": "HandleTargetArrival",
+      "kind": "function",
+      "file": "graphs/HandleTargetArrival.json"
+    },
+    {
+      "name": "RequestHomingDash",
+      "kind": "function",
+      "file": "graphs/RequestHomingDash.json"
+    },
+    {
+      "name": "StartHomingDash",
+      "kind": "function",
+      "file": "graphs/StartHomingDash.json"
+    },
+    {
+      "name": "StopHomingDash",
+      "kind": "function",
+      "file": "graphs/StopHomingDash.json"
+    },
+    {
+      "name": "TD_ComputeTargetScore",
+      "kind": "function",
+      "file": "graphs/TD_ComputeTargetScore.json"
+    },
+    {
+      "name": "TD_GetCandidateActors",
+      "kind": "function",
+      "file": "graphs/TD_GetCandidateActors.json"
+    },
+    {
+      "name": "TD_PassesCone",
+      "kind": "function",
+      "file": "graphs/TD_PassesCone.json"
+    },
+    {
+      "name": "TD_PassesLOS",
+      "kind": "function",
+      "file": "graphs/TD_PassesLOS.json"
+    },
+    {
+      "name": "UpdateHomingDash",
+      "kind": "function",
+      "file": "graphs/UpdateHomingDash.json"
+    },
+    {
+      "name": "UpdateWallRide",
+      "kind": "function",
+      "file": "graphs/UpdateWallRide.json"
+    }
+  ]
+}

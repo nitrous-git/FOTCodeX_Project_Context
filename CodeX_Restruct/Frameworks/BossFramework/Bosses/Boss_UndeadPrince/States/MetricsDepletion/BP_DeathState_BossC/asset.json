@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_DeathState_BossC",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC.BP_DeathState_BossC",
+    "relative_package": "Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C"
+    ],
+    "non_architecture_dependency_count": 3,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC.BP_DeathState_BossC_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC.BP_DeathState_BossC_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC.BP_DeathState_BossC_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "As BP Boss C",
+        "guid": "45389B79496F7A553AA6A78B0E029119",
+        "friendly_name": "As BP Boss C",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "count",
+        "guid": "0ECF911B45EDA7A604FDFBA5DDD1719F",
+        "friendly_name": "Count",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentStep",
+        "guid": "8CA230784AAAE4E5A6CEB584422C4867",
+        "friendly_name": "Current Step",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Duration",
+        "guid": "3B970A5740D7003848CFE2BEFE6E2505",
+        "friendly_name": "Duration",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Elapsed",
+        "guid": "968B32E742FD07298BA4989700744F7F",
+        "friendly_name": "Elapsed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "lastPlayerLocation",
+        "guid": "2E30BC7E42A3DE764F4E4193473CE084",
+        "friendly_name": "Last Player Location",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Tick",
+        "Exit",
+        "Enter"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

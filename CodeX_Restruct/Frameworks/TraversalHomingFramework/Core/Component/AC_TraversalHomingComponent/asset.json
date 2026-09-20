@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_TraversalHomingComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent.AC_TraversalHomingComponent",
+    "relative_package": "Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/ETraversalAirMode",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Interface/BPI_HomingTarget",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Struct/FHomingDashSpec",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Struct/FHomingWallSpec"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/AnimNotify/AN_HomingChainWindow",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/AnimNotify/AN_StopArrivalFromMontage",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingWallSurface"
+    ],
+    "non_architecture_dependency_count": 6,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent.AC_TraversalHomingComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent.AC_TraversalHomingComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent.AC_TraversalHomingComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "AirMode",
+        "guid": "ABBE065E4113FEA753584FB43036BA95",
+        "friendly_name": "Air Mode",
+        "category": "State",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/ETraversalAirMode.ETraversalAirMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AnimChoice",
+        "guid": "2F8A0B9E46B74355665A189DEBF283F7",
+        "friendly_name": "Anim Choice",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice.EAnimationChoice'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ArrivalMontage",
+        "guid": "70CE54A343919857F06983A687D0232C",
+        "friendly_name": "Arrival Montage",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bChainRequested",
+        "guid": "723D50554C58EA6A3240C083CAA9D6B1",
+        "friendly_name": "Chain Requested",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bChainWindowOpen",
+        "guid": "D590DADE474345AE211D9AA81AA8E29A",
+        "friendly_name": "Chain Window Open",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDebugHomingDash",
+        "guid": "062768964A309D4E6B17E1857F03DA9F",
+        "friendly_name": "Debug Homing Dash",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPlayingArrivalMontage",
+        "guid": "D72266CF4E2FB3C64634ADAB89087EE9",
+        "friendly_name": "Playing Arrival Montage",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentTarget",
+        "guid": "194D9CAC46033820557704A20B77D4EB",
+        "friendly_name": "Current Target",
+        "category": "State",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DashDuration",
+        "guid": "329BCA53480F9E6E52D73697DA121DC8",
+        "friendly_name": "Dash Duration",
+        "category": "Dash State",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DashSpec",
+        "guid": "35AB2DE8422B2FE021D4C38603DA3DEA",
+        "friendly_name": "Dash Spec",
+        "category": "Specs",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Struct/FHomingDashSpec.FHomingDashSpec'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DashStartLoc",
+        "guid": "BC70DF014C7CD5ED1C22AB8CCC00D805",
+        "friendly_name": "Dash Start Loc",
+        "category": "Dash State",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DashStartTime",
+        "guid": "07A5B2194B76D4E224BC899B5BE10BD2",
+        "friendly_name": "Dash Start Time",
+        "category": "Dash State",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DashTargetLoc",
+        "guid": "2DE5069A4FA0B7670D2A8AAE9BE1269B",
+        "friendly_name": "Dash Target Loc",
+        "category": "Dash State",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FollowCamera",
+        "guid": "5B6ECAF64809A1DCE25A9D8E0CEBDE6E",
+        "friendly_name": "Follow Camera",
+        "category": "Ref",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "NiagaraTrail",
+        "guid": "A3879F9A483D451FA3F8DA88F7846A18",
+        "friendly_name": "Niagara Trail",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OwnerCharacter",
+        "guid": "6FE604474F9BF4C80A32D495F81225DC",
+        "friendly_name": "Owner Character",
+        "category": "INVTEXT(\"Ref\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WallActor",
+        "guid": "11F2BF3E47355D9F3430F2A5DE2BC39D",
+        "friendly_name": "Wall Actor",
+        "category": "WallRide State",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WallPlaneNormal",
+        "guid": "2CE65D974386EAEDBACC31AFAF0A96C8",
+        "friendly_name": "Wall Plane Normal",
+        "category": "WallRide State",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WallPlaneOrigin",
+        "guid": "DCAD9C3A4B961AD03D1CF7A994FEE2A2",
+        "friendly_name": "Wall Plane Origin",
+        "category": "WallRide State",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WallSpec",
+        "guid": "394365A34413EF1635E519B4E429FE41",
+        "friendly_name": "Wall Spec",
+        "category": "INVTEXT(\"Specs\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Struct/FHomingWallSpec.FHomingWallSpec'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "FindBestHomingTarget",
+        "FindBestHomingTarget_Split",
+        "TD_PassesCone",
+        "TD_GetCandidateActors",
+        "TD_PassesLOS",
+        "TD_ComputeTargetScore",
+        "StartHomingDash",
+        "UpdateHomingDash",
+        "HandleTargetArrival",
+        "StopHomingDash",
+        "UpdateWallRide",
+        "RequestHomingDash"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveTick",
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

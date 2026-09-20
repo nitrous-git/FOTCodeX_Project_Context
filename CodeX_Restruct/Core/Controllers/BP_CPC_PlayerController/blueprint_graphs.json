@@ -1,0 +1,509 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_CPC_PlayerController",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "DC67B60E4536724193B2148450BAAE21",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PlayerController'"
+  },
+  "variables": [
+    {
+      "name": "bIsInventoryOpen",
+      "guid": "B19FE0164AA79C9C1818EFA0553D2AE0",
+      "friendly_name": "Is Inventory Open",
+      "category": "INVTEXT(\"Inventory\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EnemyAIManager",
+      "guid": "AC404964477C53B18AD09CB568982F89",
+      "friendly_name": "Enemy AIManager",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ForwardIntent",
+      "guid": "F36497C0466C54A84627318635DAB8FF",
+      "friendly_name": "Forward Intent",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ForwardVector",
+      "guid": "A55701144D6B006A0A7DA0B230478AF8",
+      "friendly_name": "Forward Vector",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InputStrength",
+      "guid": "4D8C0C62414884647F92CC923E6E2B86",
+      "friendly_name": "Input Strength",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InventoryHUD",
+      "guid": "1EDA0A6E4A76B21AEBE69EA4815C313F",
+      "friendly_name": "Inventory HUD",
+      "category": "Inventory",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual.WBP_PlayerInventoryHUD_manual_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InventoryHUDClass",
+      "guid": "36B73628423BF2581CB23FB18AEC4FC2",
+      "friendly_name": "Inventory HUDClass",
+      "category": "INVTEXT(\"Inventory\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual.WBP_PlayerInventoryHUD_manual_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastMoveInput",
+      "guid": "8029928644197E66C7776FB6F4F7136D",
+      "friendly_name": "Last Move Input",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MoveX",
+      "guid": "0047E0D140EB5ED78ED3C9AFEDE98DF2",
+      "friendly_name": "Move X",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MoveY",
+      "guid": "1E526BD64192BD4A1EEE0FAD9DF6AEDB",
+      "friendly_name": "Move Y",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "F8B3D02747D847A0E0A986B4066ADE7C",
+      "friendly_name": "Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RawWorldMoveIntent",
+      "guid": "A9BF38314ECEDD25162D979CBDBA846B",
+      "friendly_name": "Raw World Move Intent",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RightIntent",
+      "guid": "55B6D16F4254A16AA7EC55AB2A20EB8A",
+      "friendly_name": "Right Intent",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RightVector",
+      "guid": "3B2BB25A424B0F9CFD0160971AA615FA",
+      "friendly_name": "Right Vector",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WorldMoveIntent",
+      "guid": "D4FFBC0D4ECA70DA5A1D5F9F2C5EF4A7",
+      "friendly_name": "World Move Intent",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "54B5DF38479743A61F43B19406610AD4",
+      "node_count": 127,
+      "pin_count": 431,
+      "connection_count": 118,
+      "exec_connection_count": 39,
+      "data_connection_count": 79
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "37DC3E6D46E3AA73D767338B3C0DCB61",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OpenInventory",
+      "kind": "function",
+      "guid": "7788DD744309F388D7D48FB3757FD3A8",
+      "node_count": 28,
+      "pin_count": 77,
+      "connection_count": 30,
+      "exec_connection_count": 13,
+      "data_connection_count": 17
+    },
+    {
+      "name": "CloseInventory",
+      "kind": "function",
+      "guid": "E9C5587B4C603229D90C13AD1331D8CE",
+      "node_count": 12,
+      "pin_count": 34,
+      "connection_count": 11,
+      "exec_connection_count": 6,
+      "data_connection_count": 5
+    },
+    {
+      "name": "ToggleInventory",
+      "kind": "function",
+      "guid": "771D9C444B88B2DE813C5FBB2488748F",
+      "node_count": 19,
+      "pin_count": 55,
+      "connection_count": 18,
+      "exec_connection_count": 9,
+      "data_connection_count": 9
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "A20B9DBD4187D4586A65C79F95B06518",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_0",
+      "guid": "9AB8EAF54A4EECE77F194695139AE982",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_1",
+      "guid": "26868778432B5DC2E169A3B91A458D3A",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_2",
+      "guid": "C22D5C8740CEA73DC93D5E8A4589F47E",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_3",
+      "guid": "2D984CBC45F2782A1143DF9B326E9A51",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_N_K2Node_InputKeyEvent_0",
+      "guid": "5A46E6F94A1EDD8B39D160917F78ED22",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_4",
+      "guid": "6896A95B493F9FA12CB0E1B481D57BD8",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_5",
+      "guid": "1BBB3A5F477D7739E11978AA057C64A9",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_I_K2Node_InputKeyEvent_1",
+      "guid": "BAF53EC148BDE5E2857AFF9DE861B434",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_6",
+      "guid": "07E5DDBC4C17AC44B8CA0C88E57974EF",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_7",
+      "guid": "CD238FB148BEEBD43A54FEB2ADCC32C9",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_8",
+      "guid": "CAD37EB747880D136E31C58259FCE790",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_9",
+      "guid": "D965324F4BC88F5F8A2C818406E8C83F",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_10",
+      "guid": "0BD948BB47C3FA228769AEAE89C20826",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_11",
+      "guid": "F231F6024F1ECE2A342360BCF02F84B0",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
+      "guid": "4F5EB7DC44671E6AB6F5CFB884954089",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_13",
+      "guid": "D10B0A8B4D10F6271DDBB0936857AF2F",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 17,
+    "authored_node_count": 187,
+    "authored_pin_count": 598,
+    "authored_connection_count": 177,
+    "generated_node_count": 50,
+    "generated_pin_count": 233
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CloseInventory",
+      "kind": "function",
+      "file": "graphs/CloseInventory.json"
+    },
+    {
+      "name": "OpenInventory",
+      "kind": "function",
+      "file": "graphs/OpenInventory.json"
+    },
+    {
+      "name": "ToggleInventory",
+      "kind": "function",
+      "file": "graphs/ToggleInventory.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_BaseProjectile",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "03F2A71E47D4475A7D76BAAD911AEA66",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+  },
+  "variables": [
+    {
+      "name": "Base Damage",
+      "guid": "67E4CD574DC056A6BEBAF2A20DE57361",
+      "friendly_name": "Base Damage",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FreezProjctile",
+      "guid": "AAF9615946B56B84325EE0A952C9C857",
+      "friendly_name": "Freez Projctile",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Hit Niagara VFX",
+      "guid": "1B34273B40EC4339858B4E9534FB8113",
+      "friendly_name": "Hit Niagara VFX",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Hit Trace Channel",
+      "guid": "CD91F9554B8424287750478DCD904926",
+      "friendly_name": "Hit Trace Channel",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.ETraceTypeQuery'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Hit VFX",
+      "guid": "312701774DFFA46ED356F5A74847292E",
+      "friendly_name": "Hit VFX",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.ParticleSystem'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitTimer",
+      "guid": "F9B2143B497D93D505F7C7BF1D4A4873",
+      "friendly_name": "Hit Timer",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HomingTarget",
+      "guid": "897C6B8A45AB05204B022A999D78A263",
+      "friendly_name": "Homing Target",
+      "category": "Default",
+      "property_flags": 2053,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsHoming",
+      "guid": "F269C6204939752017066E9B34FF3645",
+      "friendly_name": "Is Homing",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsSnowFall",
+      "guid": "C2D256D044BFB101A45B02BCF2E7D5DD",
+      "friendly_name": "Is Snow Fall",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsSpinning",
+      "guid": "84FAA38E45D6A04D08D2058E1EAFD4B7",
+      "friendly_name": "Is Spinning",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ProjectileSpeed",
+      "guid": "C28DF24A45D052DACE03338832355324",
+      "friendly_name": "Projectile Speed",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SnowFallDelay",
+      "guid": "67674BB64FA3B822E7F7FB80AF870FC9",
+      "friendly_name": "Snow Fall Delay",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpinRadius",
+      "guid": "22CEFADE44F6682BC8E0E2BCFF338367",
+      "friendly_name": "Spin Radius",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Velocity",
+      "guid": "7EB64AB34EEBDBE26EE85BAA6DA9D8D4",
+      "friendly_name": "Velocity",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "A10ED97243F519F33313E3B56783B34F",
+      "node_count": 73,
+      "pin_count": 284,
+      "connection_count": 81,
+      "exec_connection_count": 30,
+      "data_connection_count": 51
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "2A396D164C5A64E03CF327A987C87121",
+      "node_count": 9,
+      "pin_count": 26,
+      "connection_count": 10,
+      "exec_connection_count": 3,
+      "data_connection_count": 7
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveDestroyed",
+      "guid": "00A082104645826C75772A941653F07D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Hit Detection Event",
+      "guid": "A53C8A684A1631EF17B1239262F38BF0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Hit Event",
+      "guid": "4469548D471203458F34EC9A5C63E9F4",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "CE7621084A2B22DC6666E3B7E65433A2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 2,
+    "generated_graph_count": 4,
+    "authored_node_count": 82,
+    "authored_pin_count": 310,
+    "authored_connection_count": 91,
+    "generated_node_count": 9,
+    "generated_pin_count": 24
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

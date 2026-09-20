@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_BossStateBase",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "43F8273C4EA8D3D162EABFB398857AC0",
+    "parent_class": "/Script/CoreUObject.Class'/Script/CoreUObject.Object'"
+  },
+  "variables": [
+    {
+      "name": "bIsASetPiece",
+      "guid": "13B6D13147A47F66B1CC5A81BA762B64",
+      "friendly_name": "Is ASet Piece",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitReactPolicy",
+      "guid": "232565BD40B495B18D70699BD96CE1E3",
+      "friendly_name": "Hit React Policy",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_StateHitReactPolicy.E_StateHitReactPolicy'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OwnerBoss",
+      "guid": "329623A7496B46C2C4BF04BD31EE64BE",
+      "friendly_name": "Owner Boss",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "0B3A471E4AE65C2AFEEBA29069E5552E",
+      "node_count": 0,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "GetOwnerBoss",
+      "kind": "function",
+      "guid": "E6D5AB524F00D8124756F7AFFE5A948A",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetOwnerBoss",
+      "kind": "function",
+      "guid": "A5E78F78475F44EABAFA60909FE90B44",
+      "node_count": 2,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 3,
+    "generated_graph_count": 0,
+    "authored_node_count": 5,
+    "authored_pin_count": 12,
+    "authored_connection_count": 4,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "GetOwnerBoss",
+      "kind": "function",
+      "file": "graphs/GetOwnerBoss.json"
+    },
+    {
+      "name": "SetOwnerBoss",
+      "kind": "function",
+      "file": "graphs/SetOwnerBoss.json"
+    }
+  ]
+}

@@ -1,0 +1,492 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "Jump_Up_Spring_B_BP",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "CA5B9850410EC977527AE3B7528B0CD2",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/BP_PlatformerDeviceBase.BP_PlatformerDeviceBase_C'"
+  },
+  "variables": [
+    {
+      "name": "Actors To Ignore (Overlap)",
+      "guid": "D4B720ED45C6CEBCAFF7CC89DD64DCF1",
+      "friendly_name": "Actors to Ignore (Overlap)",
+      "category": "Default",
+      "property_flags": 2053,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AnimationType",
+      "guid": "D1A7273F41A27EFA7B3DFCA718925AC0",
+      "friendly_name": "Animation Type",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/AnimationType_Enum.AnimationType_Enum'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Array Index",
+      "guid": "F3A6191B46730ADFBF5A6A9B80B06426",
+      "friendly_name": "Array Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ArrowsHidden?",
+      "guid": "1537B2034381E47A9E8FEC9FAAE0E29C",
+      "friendly_name": "Arrows Hidden?",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ArrowsVisible?",
+      "guid": "3151F88443450B8DA3ADEB9EDACF54AB",
+      "friendly_name": "Arrows Visible?",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CharacterLaunchPosition",
+      "guid": "4A879A1945F8B2C12F9342B36AAE8DDE",
+      "friendly_name": "Character Launch Position",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/LaunchLocation_Enum.LaunchLocation_Enum'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CustomLocation",
+      "guid": "F10EC23D4CCB7FFFE09E77A10ADF732B",
+      "friendly_name": "Custom Location",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InstanceArray",
+      "guid": "D25E596E4E43275F4C678C918A069479",
+      "friendly_name": "Instance Array",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InstanceLocation",
+      "guid": "AC6A551141E349FCD74A408A9071148E",
+      "friendly_name": "Instance Location",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ISM",
+      "guid": "D39DF72D4B281CF0EDC9A9A0F4C48B26",
+      "friendly_name": "ISM",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.InstancedStaticMeshComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LaunchHeight",
+      "guid": "88E6108245A74F681ABCA8A205250854",
+      "friendly_name": "Launch Height",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MovementInputBehavior",
+      "guid": "C0880B9E42295442006E66AE8B3CD37B",
+      "friendly_name": "Movement Input Behavior",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/UpSpringInputBehavior_Enum.UpSpringInputBehavior_Enum'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OverlappingOtherPlatformerActor?",
+      "guid": "A966AE1D49D6DE39BABFBEB2848311E9",
+      "friendly_name": "Overlapping Other Platformer Actor?",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Reference Actor Location",
+      "guid": "F6CAC5E3483F0A2EB9DBFFB6B0B4ED93",
+      "friendly_name": "Reference Actor Location",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Reference Actor Rotation",
+      "guid": "1AC4A0C846507A0F5FBAD79E9D2FFD06",
+      "friendly_name": "Reference Actor Rotation",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SnapSpringToFloor?",
+      "guid": "6F86BC1144C0AA3DB26FF2A249A43983",
+      "friendly_name": "Snap Spring to Floor?",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpringBoxExtend",
+      "guid": "694D6935414C82F1360D5FB346ABFA72",
+      "friendly_name": "Spring Box Extend",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TargetActorReference",
+      "guid": "6D8C0F944B18F9AFA2A37FA2CCED56D9",
+      "friendly_name": "Target Actor Reference",
+      "category": "Default",
+      "property_flags": 2053,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Trace Channel For Floor",
+      "guid": "774DCBBF47A434B40543EB8F25F6F8EF",
+      "friendly_name": "Trace Channel for Floor",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.ETraceTypeQuery'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "UseTargetActorRotation?",
+      "guid": "FB2AB5D441A156CE0B41A28DAD3DB1DB",
+      "friendly_name": "Use Target Actor Rotation?",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "Set Custom Data Values",
+      "kind": "function",
+      "guid": "C588E07F467871AA9FC87EB8C8091791",
+      "node_count": 19,
+      "pin_count": 66,
+      "connection_count": 26,
+      "exec_connection_count": 4,
+      "data_connection_count": 22
+    },
+    {
+      "name": "Get Line Trace Vectors",
+      "kind": "function",
+      "guid": "7284BED648CFA5C74831269F726D548E",
+      "node_count": 8,
+      "pin_count": 23,
+      "connection_count": 7,
+      "exec_connection_count": 1,
+      "data_connection_count": 6
+    },
+    {
+      "name": "Get Box Trace Transform",
+      "kind": "function",
+      "guid": "919CD1204BCF5A673E4368B9F412A99E",
+      "node_count": 10,
+      "pin_count": 31,
+      "connection_count": 11,
+      "exec_connection_count": 1,
+      "data_connection_count": 10
+    },
+    {
+      "name": "Set Instance Transform",
+      "kind": "function",
+      "guid": "9FBE07A94E4368B33518DCA544A545F1",
+      "node_count": 21,
+      "pin_count": 75,
+      "connection_count": 25,
+      "exec_connection_count": 1,
+      "data_connection_count": 24
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "49BB01FB4022381D53081B895DF91DE0",
+      "node_count": 272,
+      "pin_count": 1019,
+      "connection_count": 295,
+      "exec_connection_count": 114,
+      "data_connection_count": 181
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "39470D0D46BFF747A83ACDB9B0DA514E",
+      "node_count": 19,
+      "pin_count": 85,
+      "connection_count": 18,
+      "exec_connection_count": 8,
+      "data_connection_count": 10
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Set Scale__FinishedFunc",
+      "guid": "E44659794F960DD8FA6466AF6C515397",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Set Scale__UpdateFunc",
+      "guid": "042A7F78428034CB89E9B7A8665CD3A2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Start Timeline",
+      "guid": "E45E8B964E021CF2A926898F2DA7EE22",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__Jump_Up_Spring_B_BP_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "52BAB7BE4F0670DA38529E840F225D31",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 6,
+    "generated_graph_count": 4,
+    "authored_node_count": 349,
+    "authored_pin_count": 1299,
+    "authored_connection_count": 382,
+    "generated_node_count": 9,
+    "generated_pin_count": 34
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "Get Box Trace Transform",
+      "kind": "function",
+      "file": "graphs/Get Box Trace Transform.json"
+    },
+    {
+      "name": "Get Line Trace Vectors",
+      "kind": "function",
+      "file": "graphs/Get Line Trace Vectors.json"
+    },
+    {
+      "name": "Set Custom Data Values",
+      "kind": "function",
+      "file": "graphs/Set Custom Data Values.json"
+    },
+    {
+      "name": "Set Instance Transform",
+      "kind": "function",
+      "file": "graphs/Set Instance Transform.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

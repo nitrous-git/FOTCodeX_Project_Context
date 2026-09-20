@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_InventorySlot",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot.WBP_InventorySlot",
+    "relative_package": "Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_DescriptionBox",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer_wName"
+    ],
+    "non_architecture_dependency_count": 8,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot.WBP_InventorySlot_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot.WBP_InventorySlot_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot.WBP_InventorySlot_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bShowDebugSlotIndex ",
+        "guid": "D2004049478A6F56CAE3D99C2A72CB3F",
+        "friendly_name": "Show Debug Slot Index ",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InventoryComponent",
+        "guid": "620904C74E4287F1295E6086FE8DD8C6",
+        "friendly_name": "Inventory Component",
+        "category": "INVTEXT(\"References\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ItemCategory",
+        "guid": "FEBB37724224A03F8AA504BEB3F83D33",
+        "friendly_name": "Item Category",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/Item/EItemCategory.EItemCategory'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ItemDefinition",
+        "guid": "C6ED5ACD42BA144FB30C368A3052F9E9",
+        "friendly_name": "Item Definition",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition.FInventoryItemDefinition'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OwningContainer",
+        "guid": "3E401DFB495A1A2B71910193AAA448FC",
+        "friendly_name": "Owning Container",
+        "category": "References",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer.WBP_SlotContainer_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SlotData",
+        "guid": "2D932CD545528FE00E69E89488ADCA0C",
+        "friendly_name": "Slot Data",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SlotIndex",
+        "guid": "B648EE5D4188A5D253FD57897564A0CD",
+        "friendly_name": "Slot Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "OnMouseButtonDown",
+        "OnMouseButtonUp",
+        "OnDragDetected",
+        "InitSlot",
+        "RefreshSlot",
+        "SetEmptyVisual"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

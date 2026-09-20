@@ -1,0 +1,715 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "Boost_Ring_A_BP",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "CB0A8E4F40DB2B8DBE23B4BAE4A66226",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/BP_PlatformerDeviceBase.BP_PlatformerDeviceBase_C'"
+  },
+  "variables": [
+    {
+      "name": "Actors To Ignore (Overlap)",
+      "guid": "9746C2BA4F12DDC9C647918F02B99EDE",
+      "friendly_name": "Actors to Ignore (Overlap)",
+      "category": "Default",
+      "property_flags": 2053,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ActorsToIgnore (TracePath)",
+      "guid": "90FE736B4E365BFEA157C9B23BF7A1C7",
+      "friendly_name": "Actors to Ignore (Trace Path)",
+      "category": "Default",
+      "property_flags": 2053,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AnimationType",
+      "guid": "CAD260F1408306A3D66F908583982F3D",
+      "friendly_name": "Animation Type",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/JumpPadAnimationType_Enum.JumpPadAnimationType_Enum'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Arc Height",
+      "guid": "3F43696049042AF2486145B3E9F44834",
+      "friendly_name": "Arc Height",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Array Element",
+      "guid": "E4E8BC8E4E136939C539E3B798ED4DFF",
+      "friendly_name": "Array Element",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Array Index",
+      "guid": "7046E9334B48BE8B367CBCB1BA706749",
+      "friendly_name": "Array Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CharacterLaunchPosition",
+      "guid": "EA21146948389CC7430A08B972002D50",
+      "friendly_name": "Character Launch Position",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/LaunchLocation_Enum.LaunchLocation_Enum'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentInstance",
+      "guid": "463E32AA4912004BCB2717809754861A",
+      "friendly_name": "Current Instance",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Custom Y (Pitch)",
+      "guid": "A573E67D43F09B465C46708677B026C4",
+      "friendly_name": "Custom Y (Pitch)",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DestinationMeshHidden?",
+      "guid": "420AE7AE4E34C406DDC45889CEEEC06D",
+      "friendly_name": "Destination Mesh Hidden?",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DestinationMeshType",
+      "guid": "5148FE1B4594E88D5CAE9CBB02281258",
+      "friendly_name": "Destination Mesh Type",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/EndLocation_Enum.EndLocation_Enum'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Don\\'tAddSphereAtActorLocation?",
+      "guid": "F6BC3EF446022845F4D136BD0812B851",
+      "friendly_name": "Don\\'t Add Sphere at Actor Location?",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DrawTheLaunchPathTrace?",
+      "guid": "02A14A214F3D80AF1CCC5DBBD43F50F9",
+      "friendly_name": "Draw the Launch Path Trace?",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitReferenceActor?",
+      "guid": "AFEA8C5C4663093BC1BED89D84043D65",
+      "friendly_name": "Hit Reference Actor?",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitVectorArray",
+      "guid": "83205F4946EF0C2667E7C1B119770AD9",
+      "friendly_name": "Hit Vector Array",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InstanceOverlaping?",
+      "guid": "BD8FC1244F7534A1E0E613B48B2A8536",
+      "friendly_name": "Instance Overlaping?",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ISM",
+      "guid": "0A22F7D44F2B8FA304B79CAC3BCA27B6",
+      "friendly_name": "ISM",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.InstancedStaticMeshComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastLocation",
+      "guid": "B1D1A92C4344A8CA7A4FF2AA9E93999A",
+      "friendly_name": "Last Location",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MovementInputBehavior",
+      "guid": "974A8B984EA2F2A8A543B880F1E15CD7",
+      "friendly_name": "Movement Input Behavior",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/InputBehavior_Enum.InputBehavior_Enum'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "NearEndLocation?",
+      "guid": "D789B4A640502BDE3CF25B99FEAA3087",
+      "friendly_name": "Near End Location?",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OverlappingOtherPlatformerActor?",
+      "guid": "4618EB4149F8D33FDA57A89B621F3F30",
+      "friendly_name": "Overlapping Other Platformer Actor?",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PredictedPathHidden?",
+      "guid": "C1B86C5947447B3DA39538ACE6DF961C",
+      "friendly_name": "Predicted Path Hidden?",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PredictedPathVisible?",
+      "guid": "AA6D18214826CF685C402EA9EB0AAFC0",
+      "friendly_name": "Predicted Path Visible?",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RingBoxExtend",
+      "guid": "D9FB6AD949967A1DBD9F958981932646",
+      "friendly_name": "Ring Box Extend",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RingLocation",
+      "guid": "F287813B493A4F7F5A5E49BCD90920AE",
+      "friendly_name": "Ring Location",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Simulation Frequency",
+      "guid": "8FDC28AB4FD25B338F9C84B7EF84567B",
+      "friendly_name": "Simulation Frequency",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Simulation Time",
+      "guid": "D56B8C524383F287BC3ED1860B8DEDF6",
+      "friendly_name": "Simulation Time",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SM_Sphere",
+      "guid": "FEFE7F5C4DADD5FAC14C3C9EC2BC7762",
+      "friendly_name": "SM Sphere",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.StaticMeshComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SnapTargetLocationToFloor?",
+      "guid": "E51943DB4E1F4B83173CC0B9F2BE03B8",
+      "friendly_name": "Snap Target Location to Floor?",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Sphere ISM",
+      "guid": "B22776E647A50A50A4ED029A29E875B3",
+      "friendly_name": "Sphere ISM",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.InstancedStaticMeshComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TargetActorReference",
+      "guid": "8858DD6E4AE81D6E90936DBCF5AD8344",
+      "friendly_name": "Target Actor Reference",
+      "category": "Default",
+      "property_flags": 2053,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Trace Channel For Floor",
+      "guid": "0FEB491545EE5629D73A2284D5E7CC54",
+      "friendly_name": "Trace Channel for Floor",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.ETraceTypeQuery'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TraceSphereRadius",
+      "guid": "2713212E45967A0E8B1EE5BFE531553A",
+      "friendly_name": "Trace Sphere Radius",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "UseCustomRingRotation?",
+      "guid": "68EF527D413479156713369841EF40D8",
+      "friendly_name": "Use Custom Ring Rotation?",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "Get Box Location",
+      "kind": "function",
+      "guid": "0EF2FB9B48C758046A6022967CBEC0E0",
+      "node_count": 17,
+      "pin_count": 51,
+      "connection_count": 20,
+      "exec_connection_count": 1,
+      "data_connection_count": 19
+    },
+    {
+      "name": "Get Box Trace Locations",
+      "kind": "function",
+      "guid": "A7C278CC44DBBB820D9BBDA90E17AC33",
+      "node_count": 13,
+      "pin_count": 42,
+      "connection_count": 16,
+      "exec_connection_count": 1,
+      "data_connection_count": 15
+    },
+    {
+      "name": "Is Instance Overlaping?",
+      "kind": "function",
+      "guid": "5DB99E77461A041005F30D9C20346C97",
+      "node_count": 16,
+      "pin_count": 47,
+      "connection_count": 16,
+      "exec_connection_count": 1,
+      "data_connection_count": 15
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "49BB01FB4022381D53081B895DF91DE0",
+      "node_count": 364,
+      "pin_count": 1241,
+      "connection_count": 387,
+      "exec_connection_count": 123,
+      "data_connection_count": 264
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "39470D0D46BFF747A83ACDB9B0DA514E",
+      "node_count": 29,
+      "pin_count": 119,
+      "connection_count": 31,
+      "exec_connection_count": 10,
+      "data_connection_count": 21
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Set Scale And Location__FinishedFunc",
+      "guid": "9A4B5AE149FE6835CE404291BBE52D1F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Set Scale And Location__UpdateFunc",
+      "guid": "7637687E49F1A9B221BD88B253EBA9B7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Start Timeline",
+      "guid": "AC6B8D484B97C11724CC279D6FFDF6A9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__Jump_Up_Spring_B_BP_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "C11F69A249470A05AA9F62B2F8FAFCDB",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 4,
+    "authored_node_count": 439,
+    "authored_pin_count": 1500,
+    "authored_connection_count": 470,
+    "generated_node_count": 9,
+    "generated_pin_count": 34
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "Get Box Location",
+      "kind": "function",
+      "file": "graphs/Get Box Location.json"
+    },
+    {
+      "name": "Get Box Trace Locations",
+      "kind": "function",
+      "file": "graphs/Get Box Trace Locations.json"
+    },
+    {
+      "name": "Is Instance Overlaping?",
+      "kind": "function",
+      "file": "graphs/Is Instance Overlaping_.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

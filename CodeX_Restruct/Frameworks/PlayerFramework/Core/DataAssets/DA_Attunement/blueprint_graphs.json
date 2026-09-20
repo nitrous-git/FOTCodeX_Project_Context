@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "DA_Attunement",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "EB3BB3D84D6FE7A24B7DEE9AD9F1773C",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PrimaryDataAsset'"
+  },
+  "variables": [
+    {
+      "name": "AttunementType",
+      "guid": "D88F14D14D084B1DE91B3E8086BEA26F",
+      "friendly_name": "Attunement Type",
+      "category": "MetaData",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/E_AttunementType.E_AttunementType'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BladeLoopVFX",
+      "guid": "61ACFE1A43467F471487C69D6E28ABFB",
+      "friendly_name": "Blade Loop VFX",
+      "category": "BladeAura",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BladeRelativeTransform",
+      "guid": "7714515E49AF34E14BC14F835CA4BC65",
+      "friendly_name": "Blade Relative Transform",
+      "category": "INVTEXT(\"BladeAura\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Transform'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BladeSocketName",
+      "guid": "90E1C4254940ACFAE787A6A46D50FECF",
+      "friendly_name": "Blade Socket Name",
+      "category": "INVTEXT(\"BladeAura\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Description",
+      "guid": "35EFB42F4CC0B18B2D78858FBAF540E7",
+      "friendly_name": "Description",
+      "category": "MetaData",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DisplayName",
+      "guid": "6524B76A4F6BF3784F78AD9C581B0428",
+      "friendly_name": "Display Name",
+      "category": "MetaData",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitReactVFX",
+      "guid": "8395B98842AE176243AFDDA458F3F5CE",
+      "friendly_name": "Hit React VFX",
+      "category": "Hits",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Icon",
+      "guid": "866698314789B5569CE6D8B5E1372A7B",
+      "friendly_name": "Icon",
+      "category": "MetaData",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TrailEndSocketName",
+      "guid": "83B571A64B55B32635B585BED0FAB0FE",
+      "friendly_name": "Trail End Socket Name",
+      "category": "INVTEXT(\"SwordTrail\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TrailStartSocketName",
+      "guid": "93F06479441DE4EADBEE8E90EE6E5BFB",
+      "friendly_name": "Trail Start Socket Name",
+      "category": "INVTEXT(\"SwordTrail\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TrailVFX",
+      "guid": "93AC73CE49924E482EDA7584DE17418B",
+      "friendly_name": "Trail VFX",
+      "category": "SwordTrail",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "711E6C25441D6E9BBF86FD8A1FB6DE95",
+      "node_count": 0,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 0,
+    "authored_node_count": 0,
+    "authored_pin_count": 0,
+    "authored_connection_count": 0,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_PlayerActionComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent.BP_PlayerActionComponent",
+    "relative_package": "Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap_Instance",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionCancelPolicy",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionWindowType",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FActionDef"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_Execution",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Dodge",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_ToWalk",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_ActionWindow",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/AN_ActionFinished",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview"
+    ],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent.BP_PlayerActionComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent.BP_PlayerActionComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent.BP_PlayerActionComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "ActionMap",
+        "guid": "2304DDB7427D1E98FD380091F95DC444",
+        "friendly_name": "Action Map",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap.DA_ActionMap_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDebug",
+        "guid": "A77793E144CC5069B97AB7AB9A909561",
+        "friendly_name": "Debug",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDebugWindows",
+        "guid": "A56A918D4B59D2BB8C25C2B49C6E0762",
+        "friendly_name": "Debug Windows",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Class_MeleeCombo",
+        "guid": "CFB6251344AC1E8837A7DCB62A60822F",
+        "friendly_name": "Class Melee Combo",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo.BP_PlayerAction_MeleeCombo_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CombatStyle",
+        "guid": "DC1275D64B797ED946E4E889D0BCD9D9",
+        "friendly_name": "Combat Style",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle.DA_CombatStyle_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentAction",
+        "guid": "BCD8290C4385923C920613B0478533AA",
+        "friendly_name": "Current Action",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DA_ActionWindowRules_Global",
+        "guid": "408A8E1E4FD5D810A6E01FBB568EC465",
+        "friendly_name": "DA Action Window Rules Global",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OwningPawn",
+        "guid": "201386874E3EF3C94C51E0BDE352436D",
+        "friendly_name": "Owning Pawn",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PendingExpireTime",
+        "guid": "843DDED446683524FD911EA35CF0C850",
+        "friendly_name": "Pending Expire Time",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PendingTag",
+        "guid": "339332834716F6538DF471B08454BEF4",
+        "friendly_name": "Pending Tag",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WindowOpenMap",
+        "guid": "831D378243E399B5FDBBBBB77CC57B44",
+        "friendly_name": "Window Open Map",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionWindowType.EActionWindowType'",
+          "container": "Map",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "IsWindowOpen",
+        "StartNewAction",
+        "SetWindowOpen",
+        "EndCurrentAction",
+        "InitWindows",
+        "NotifyActionAnimFinished",
+        "NotifyWindow",
+        "SetPending",
+        "TryActivate",
+        "TryActivatePending",
+        "GetActionDef",
+        "BufferOrReject",
+        "RouteToCurrentActionIfPossible",
+        "CanCancelCurrentAction",
+        "TryCancelCurrentAction",
+        "TryBuffer"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

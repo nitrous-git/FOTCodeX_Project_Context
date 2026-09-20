@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_EnemyAIManager",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "6726BC3140F600859CF1C58A8F2E94A5",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+  },
+  "variables": [
+    {
+      "name": "AttackerInterruptPause_LargeHit",
+      "guid": "00B1C35449B2AF38F6CFD9A92675C8EF",
+      "friendly_name": "Attacker Interrupt Pause Large Hit",
+      "category": "INVTEXT(\"DamageGuard\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackerInterruptPause_SmallHit",
+      "guid": "6C09D35043B0522B74284783A29FBACB",
+      "friendly_name": "Attacker Interrupt Pause Small Hit",
+      "category": "INVTEXT(\"DamageGuard\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bAttackerInterruptLockActive",
+      "guid": "BEAA0FA841F80CAAA40386AF6CAAA519",
+      "friendly_name": "Attacker Interrupt Lock Active",
+      "category": "INVTEXT(\"DamageGuard\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDebugAIManager",
+      "guid": "3303674B448969CA1C8C0DAEFA9D607A",
+      "friendly_name": "Debug AIManager",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bGroupRetreatActive",
+      "guid": "68FC5E8742BE226A1ECFB9BCA3AABB01",
+      "friendly_name": "Group Retreat Active",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bManagerActive",
+      "guid": "F99618C6495A8E1085881489AFA754E8",
+      "friendly_name": "Manager Active",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentAttacker",
+      "guid": "A900046F4C8ABEB75C645AB13CB16757",
+      "friendly_name": "Current Attacker",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Enemies",
+      "guid": "FAFCDD87450B24D1632F4F97C7E646A1",
+      "friendly_name": "Enemies",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EvaluateInterval",
+      "guid": "E15954074E3A321436F912BA52E51521",
+      "friendly_name": "Evaluate Interval",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InterruptedAttackerRef",
+      "guid": "B37A567744BCABD03745CEB10BD21108",
+      "friendly_name": "Interrupted Attacker Ref",
+      "category": "INVTEXT(\"DamageGuard\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastAttacker",
+      "guid": "688159E04F0B115D7E8123B82ED1D586",
+      "friendly_name": "Last Attacker",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "NextAttackerAllowedTime",
+      "guid": "E272CD3D4E3DCBC8D2884ABE4EAF6184",
+      "friendly_name": "Next Attacker Allowed Time",
+      "category": "INVTEXT(\"DamageGuard\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "06EDD4EB4BBD96A123642581CA38AC98",
+      "friendly_name": "Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PostDamageRosterGrace",
+      "guid": "99B131E34D2900F03044BF9151488831",
+      "friendly_name": "Post Damage Roster Grace",
+      "category": "DamageGuard",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RotateIntervalMax",
+      "guid": "008C521E468F40EE742FECB9029382E8",
+      "friendly_name": "Rotate Interval Max",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RotateIntervalMin",
+      "guid": "4CB4C5294BE97415AB00019CA97DF41B",
+      "friendly_name": "Rotate Interval Min",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TimerHandle_Evaluate",
+      "guid": "79D407B04EE8D7B7537459B05BAAF5A3",
+      "friendly_name": "Timer Handle Evaluate",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TimerHandle_Rotate",
+      "guid": "B6AC36B4421F34AD081143851EB78DAB",
+      "friendly_name": "Timer Handle Rotate",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "9C301CDD4AD6AB11CBE4AD98C378EF53",
+      "node_count": 7,
+      "pin_count": 23,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "2124E0FA4FCA9CBCAACB5386EFE81E82",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "RegisterEnemy",
+      "kind": "function",
+      "guid": "D8076CC54BC497678400DBB7580ABA27",
+      "node_count": 22,
+      "pin_count": 66,
+      "connection_count": 21,
+      "exec_connection_count": 10,
+      "data_connection_count": 11
+    },
+    {
+      "name": "UnregisterEnemy",
+      "kind": "function",
+      "guid": "3676F16E43A4B388DA14E6B7D8088792",
+      "node_count": 29,
+      "pin_count": 108,
+      "connection_count": 29,
+      "exec_connection_count": 13,
+      "data_connection_count": 16
+    },
+    {
+      "name": "ScheduleRotateTimer",
+      "kind": "function",
+      "guid": "7324B61B477134A28239EAB70BC373C7",
+      "node_count": 8,
+      "pin_count": 29,
+      "connection_count": 8,
+      "exec_connection_count": 3,
+      "data_connection_count": 5
+    },
+    {
+      "name": "GetEligibleEnemies",
+      "kind": "function",
+      "guid": "9D3ECB62485863B30CB686942765782E",
+      "node_count": 27,
+      "pin_count": 88,
+      "connection_count": 27,
+      "exec_connection_count": 9,
+      "data_connection_count": 18
+    },
+    {
+      "name": "ClearAttacker",
+      "kind": "function",
+      "guid": "FC21DF23464F24C26883838E8235B75F",
+      "node_count": 14,
+      "pin_count": 43,
+      "connection_count": 14,
+      "exec_connection_count": 8,
+      "data_connection_count": 6
+    },
+    {
+      "name": "SetAttacker",
+      "kind": "function",
+      "guid": "A1B409BA408958F3332083ADAE698251",
+      "node_count": 26,
+      "pin_count": 84,
+      "connection_count": 24,
+      "exec_connection_count": 11,
+      "data_connection_count": 13
+    },
+    {
+      "name": "EvaluateRoster",
+      "kind": "function",
+      "guid": "EAF7BCAE4B77C445A5C9A19AA4C1A081",
+      "node_count": 62,
+      "pin_count": 169,
+      "connection_count": 63,
+      "exec_connection_count": 28,
+      "data_connection_count": 35
+    },
+    {
+      "name": "TryRotateAttacker",
+      "kind": "function",
+      "guid": "BBFDC7DD4F64D544E35DA99F848B418A",
+      "node_count": 41,
+      "pin_count": 107,
+      "connection_count": 42,
+      "exec_connection_count": 21,
+      "data_connection_count": 21
+    },
+    {
+      "name": "StartManagerTimers",
+      "kind": "function",
+      "guid": "A88BD19A4736DD6962EF03BD46997E23",
+      "node_count": 6,
+      "pin_count": 22,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "StopManagerTimers",
+      "kind": "function",
+      "guid": "58EF2D3F49EDFCE2876395AA666E6F06",
+      "node_count": 5,
+      "pin_count": 15,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "Debug_ForceAllEnemiesRetreat ",
+      "kind": "function",
+      "guid": "C701275542D2155A8CF36DA75FE39C00",
+      "node_count": 13,
+      "pin_count": 44,
+      "connection_count": 15,
+      "exec_connection_count": 7,
+      "data_connection_count": 8
+    },
+    {
+      "name": "Debug_EndAllEnemiesRetreat",
+      "kind": "function",
+      "guid": "E14B5C96499F9D11102F23B30B606B3B",
+      "node_count": 13,
+      "pin_count": 44,
+      "connection_count": 15,
+      "exec_connection_count": 7,
+      "data_connection_count": 8
+    },
+    {
+      "name": "RetreatInterruptGuard",
+      "kind": "function",
+      "guid": "A95C1F4A4AA48A247A23D2AA078CF1C3",
+      "node_count": 29,
+      "pin_count": 87,
+      "connection_count": 33,
+      "exec_connection_count": 16,
+      "data_connection_count": 17
+    },
+    {
+      "name": "RequestGroupRetreat",
+      "kind": "function",
+      "guid": "E74654544612D3FED5B8BCBA0ECC4859",
+      "node_count": 19,
+      "pin_count": 75,
+      "connection_count": 21,
+      "exec_connection_count": 12,
+      "data_connection_count": 9
+    },
+    {
+      "name": "EndGroupRetreat",
+      "kind": "function",
+      "guid": "43F94A114A798658850143AE9C8EF2E0",
+      "node_count": 16,
+      "pin_count": 59,
+      "connection_count": 18,
+      "exec_connection_count": 10,
+      "data_connection_count": 8
+    },
+    {
+      "name": "NotifyEnemyEnteredDamageState",
+      "kind": "function",
+      "guid": "6E81E3A042DC43FDD65151B3A1566F8C",
+      "node_count": 29,
+      "pin_count": 84,
+      "connection_count": 31,
+      "exec_connection_count": 15,
+      "data_connection_count": 16
+    },
+    {
+      "name": "NotifyEnemyExitedDamageState",
+      "kind": "function",
+      "guid": "0D06FCBD48DEBE4B1E6432AF53F577D9",
+      "node_count": 17,
+      "pin_count": 44,
+      "connection_count": 16,
+      "exec_connection_count": 6,
+      "data_connection_count": 10
+    },
+    {
+      "name": "DamageInterruptGuard",
+      "kind": "function",
+      "guid": "814198C241D1B856C6CAC3935A521D24",
+      "node_count": 29,
+      "pin_count": 84,
+      "connection_count": 28,
+      "exec_connection_count": 16,
+      "data_connection_count": 12
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "222BF4A841DD5B48D268B894E4B1BCDD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 20,
+    "generated_graph_count": 1,
+    "authored_node_count": 413,
+    "authored_pin_count": 1276,
+    "authored_connection_count": 418,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ClearAttacker",
+      "kind": "function",
+      "file": "graphs/ClearAttacker.json"
+    },
+    {
+      "name": "DamageInterruptGuard",
+      "kind": "function",
+      "file": "graphs/DamageInterruptGuard.json"
+    },
+    {
+      "name": "Debug_EndAllEnemiesRetreat",
+      "kind": "function",
+      "file": "graphs/Debug_EndAllEnemiesRetreat.json"
+    },
+    {
+      "name": "Debug_ForceAllEnemiesRetreat ",
+      "kind": "function",
+      "file": "graphs/Debug_ForceAllEnemiesRetreat.json"
+    },
+    {
+      "name": "EndGroupRetreat",
+      "kind": "function",
+      "file": "graphs/EndGroupRetreat.json"
+    },
+    {
+      "name": "EvaluateRoster",
+      "kind": "function",
+      "file": "graphs/EvaluateRoster.json"
+    },
+    {
+      "name": "GetEligibleEnemies",
+      "kind": "function",
+      "file": "graphs/GetEligibleEnemies.json"
+    },
+    {
+      "name": "NotifyEnemyEnteredDamageState",
+      "kind": "function",
+      "file": "graphs/NotifyEnemyEnteredDamageState.json"
+    },
+    {
+      "name": "NotifyEnemyExitedDamageState",
+      "kind": "function",
+      "file": "graphs/NotifyEnemyExitedDamageState.json"
+    },
+    {
+      "name": "RegisterEnemy",
+      "kind": "function",
+      "file": "graphs/RegisterEnemy.json"
+    },
+    {
+      "name": "RequestGroupRetreat",
+      "kind": "function",
+      "file": "graphs/RequestGroupRetreat.json"
+    },
+    {
+      "name": "RetreatInterruptGuard",
+      "kind": "function",
+      "file": "graphs/RetreatInterruptGuard.json"
+    },
+    {
+      "name": "ScheduleRotateTimer",
+      "kind": "function",
+      "file": "graphs/ScheduleRotateTimer.json"
+    },
+    {
+      "name": "SetAttacker",
+      "kind": "function",
+      "file": "graphs/SetAttacker.json"
+    },
+    {
+      "name": "StartManagerTimers",
+      "kind": "function",
+      "file": "graphs/StartManagerTimers.json"
+    },
+    {
+      "name": "StopManagerTimers",
+      "kind": "function",
+      "file": "graphs/StopManagerTimers.json"
+    },
+    {
+      "name": "TryRotateAttacker",
+      "kind": "function",
+      "file": "graphs/TryRotateAttacker.json"
+    },
+    {
+      "name": "UnregisterEnemy",
+      "kind": "function",
+      "file": "graphs/UnregisterEnemy.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

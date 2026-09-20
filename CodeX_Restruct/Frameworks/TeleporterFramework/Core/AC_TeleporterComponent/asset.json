@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_TeleporterComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent.AC_TeleporterComponent",
+    "relative_package": "Frameworks/TeleporterFramework/Core/AC_TeleporterComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_TeleporterBase",
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager",
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Widget/WP_TeleportWidget"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_TeleporterBase"
+    ],
+    "non_architecture_dependency_count": 5,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent.AC_TeleporterComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent.AC_TeleporterComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent.AC_TeleporterComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bAllowTeleportation",
+        "guid": "58BA58414A0C5405240AD88046DBA633",
+        "friendly_name": "Allow Teleportation",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerRef",
+        "guid": "27D6B4144C48AAEE537DDBB53C801BE3",
+        "friendly_name": "Player Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TeleporterRef",
+        "guid": "62BC53CC43098148382B8CBB8AC671DC",
+        "friendly_name": "Teleporter Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_TeleporterBase.BP_TeleporterBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TeleportWidget",
+        "guid": "BB782D8B4CBBB0DC8E760BAA0E854A8D",
+        "friendly_name": "Teleport Widget",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Widget/WP_TeleportWidget.WP_TeleportWidget_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TempMaxWalkSpeed",
+        "guid": "FE8A62AC41F7FBFEA4AA6E9C0A43663B",
+        "friendly_name": "Temp Max Walk Speed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WorldDataLayerManager",
+        "guid": "527966B84E59A686B8FA008A5FE7DDC6",
+        "friendly_name": "World Data Layer Manager",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager.BP_WorldDataLayerManager_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "CE_SetTeleporterRef",
+        "CE_ResetMovementInput",
+        "CE_CloseTeleportWidget",
+        "CE_OpenTeleportWidget",
+        "ReceiveBeginPlay",
+        "InpActEvt_T_K2Node_InputKeyEvent_0"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

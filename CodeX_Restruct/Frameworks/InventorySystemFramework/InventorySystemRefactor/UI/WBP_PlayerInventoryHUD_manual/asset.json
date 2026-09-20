@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_PlayerInventoryHUD_manual",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual.WBP_PlayerInventoryHUD_manual",
+    "relative_package": "Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_CharacterPreviewPanel",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_DescriptionBox",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+    ],
+    "non_architecture_dependency_count": 6,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual.WBP_PlayerInventoryHUD_manual_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual.WBP_PlayerInventoryHUD_manual_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual.WBP_PlayerInventoryHUD_manual_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bInventoryOpen",
+        "guid": "167B780C4AAE9D1F7F6ABFABB3EB286B",
+        "friendly_name": "Inventory Open",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InventoryComponent",
+        "guid": "6475957545A0C7056BA8E7A11B1E47C1",
+        "friendly_name": "Inventory Component",
+        "category": "INVTEXT(\"References\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerRef",
+        "guid": "3DCBF0F743F77332786F1484EE1FA597",
+        "friendly_name": "Player Ref",
+        "category": "References",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PreviewActor",
+        "guid": "4F32B5834B8AFAF8ADCE54AF5EFF53A5",
+        "friendly_name": "Preview Actor",
+        "category": "PreviewActor",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PreviewActorClass",
+        "guid": "5D3E53744E8BE909A828148FEBBBE223",
+        "friendly_name": "Preview Actor Class",
+        "category": "INVTEXT(\"PreviewActor\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "RefreshInventoryHUD",
+        "RefreshDescriptionBoxes",
+        "HandleFocusedItemChanged",
+        "CreatePreviewActor",
+        "HandlePreviewEquipmentChanged"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Destruct",
+        "OnFocusedItemChanged_Event",
+        "OnEquipmentChanged_Event",
+        "OnInventoryChanged_Event",
+        "CE_InitInventoryHUD"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

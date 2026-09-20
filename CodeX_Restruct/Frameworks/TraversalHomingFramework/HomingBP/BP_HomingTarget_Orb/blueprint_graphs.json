@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_HomingTarget_Orb",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "9E2151BE480A57DFA0203AB29E4939AE",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+  },
+  "variables": [
+    {
+      "name": "AnimationChoice",
+      "guid": "94B3C36242875D3BDEF7E1A43E677C7F",
+      "friendly_name": "Animation Choice",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice.EAnimationChoice'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bIsTargetable",
+      "guid": "EFE0F00443BAEF65989AA4AA9FB1C6BB",
+      "friendly_name": "Is Targetable",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "31BFB5FE451E26D7EA279BB87526B425",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "019B0A04473392D9CE2003A1296B6B88",
+      "node_count": 9,
+      "pin_count": 33,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "HT_SetTargetable",
+      "guid": "A97F2D3C49B84EDFE68A49A6D04D7B72",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_ResetTargetable",
+      "guid": "D5CEE24C433A27D02DEDF1B3A82C45E8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "HT_GetAnimChoice",
+      "guid": "F07DF9D94C48FA63E3FA55A14E2E0F38",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "HT_GetPriority",
+      "guid": "EE75F23843CDDF0F41013183B9F9FDCF",
+      "node_count": 2,
+      "pin_count": 3,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "HT_GetHomingPoint",
+      "guid": "325F1B79412438A7B06B8E97CF388B92",
+      "node_count": 4,
+      "pin_count": 7,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "HT_CanBeTargeted",
+      "guid": "C895730149DC4D996BA6BBBE2EEBF154",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 2,
+    "generated_graph_count": 6,
+    "authored_node_count": 10,
+    "authored_pin_count": 34,
+    "authored_connection_count": 5,
+    "generated_node_count": 17,
+    "generated_pin_count": 34
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

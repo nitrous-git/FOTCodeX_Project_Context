@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_ExecutionState_BossC",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution/BP_ExecutionState_BossC",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution/BP_ExecutionState_BossC.BP_ExecutionState_BossC",
+    "relative_package": "Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution/BP_ExecutionState_BossC"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_StateHitReactPolicy",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C"
+    ],
+    "non_architecture_dependency_count": 4,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution/BP_ExecutionState_BossC.BP_ExecutionState_BossC_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution/BP_ExecutionState_BossC.BP_ExecutionState_BossC_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution/BP_ExecutionState_BossC.BP_ExecutionState_BossC_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "As BP Boss C",
+        "guid": "0FCD91154C3E9242C8BA6FB38D708703",
+        "friendly_name": "As BP Boss C",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentSteps",
+        "guid": "B7A4B7B64B7F10A3D40ADD97BAE82325",
+        "friendly_name": "Current Steps",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Duration",
+        "guid": "FDA2510D420B48F286FCC1AA97113600",
+        "friendly_name": "Duration",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Elapsed",
+        "guid": "7284F113451D19C58C9F28A54D69CD71",
+        "friendly_name": "Elapsed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HasTriedExecute",
+        "guid": "725936E34D7808F56502458A5A4F887E",
+        "friendly_name": "Has Tried Execute",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Exit",
+        "Tick",
+        "Enter"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "ABP_BossB",
+    "class": "/Script/Engine.AnimBlueprint",
+    "guid": "FC4B0B854E303B1C01039CA57E70BDA1",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'"
+  },
+  "variables": [
+    {
+      "name": "BossRef",
+      "guid": "52CFF3B040ED0511300CB3A3DE1E67DD",
+      "friendly_name": "Boss Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B.BP_Boss_B_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "direction",
+      "guid": "F33559054F6CAB8610E3E19C23520E35",
+      "friendly_name": "Direction",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Is Defending",
+      "guid": "B4EE340D4C96438CB3665C9EA412E7AF",
+      "friendly_name": "Is Defending",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsInAir?",
+      "guid": "94705CFD490E75C9ED9BD0962169CBDC",
+      "friendly_name": "Is in Air?",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isRunning",
+      "guid": "10832E834CEBEDA188FBE980512FFDC3",
+      "friendly_name": "Is Running",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "speed",
+      "guid": "A6D9002E48F7460A7C09F6AB74275D8C",
+      "friendly_name": "Speed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "D0EE10E44B381A23CEEDF7A78802F1B1",
+      "node_count": 47,
+      "pin_count": 134,
+      "connection_count": 50,
+      "exec_connection_count": 20,
+      "data_connection_count": 30
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "BlueprintUpdateAnimation",
+      "guid": "FA54417D4522E6C75D4BA687F18C97C1",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BlueprintBeginPlay",
+      "guid": "59A23F89499175BD9302748C427B5B23",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_TransitionNotify",
+      "guid": "DD839520427D6AF52BCCDE8EC9CCDC49",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_StaggerFlag",
+      "guid": "AB45F5304AB67BB087D91897BDEBA179",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_VaultingAttack",
+      "guid": "0D5C81E1487F0A97963DC38866AEF897",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_Appear",
+      "guid": "42B3BC9940C8E636A2D9AE90C8972DCD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_Disappear",
+      "guid": "70FADFE74F486FA11C4B0E817B61F2B0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_DashDown",
+      "guid": "6B1492104E51BCFEF18DDBBD4E10B247",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_IsInAir",
+      "guid": "C7DD856C409B4FA8EE850488A4C1BC33",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_Rampage",
+      "guid": "916BDAEE4FBD9DB05522F9ACABA94B04",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_JumpAttack",
+      "guid": "029919D74765864EF288B5BB1BC99F37",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_Evade",
+      "guid": "8228924E452557B5A3349082C7C2E0EB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_SmallCombo01",
+      "guid": "77E4DC36479AAF65B203988C55CE331D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_BigCombo01",
+      "guid": "75C29A3E43D8E2D9942DAE99406677C0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_BA5A940E4D240A23BFBA05A35B755BFF",
+      "guid": "B1BE951F4B21BF3B8F9F9988F60659E3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_40C156834A5E12679CCCC883E53CD2A5",
+      "guid": "789961C04F6EFA56862C9FA48DD9139A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_6428BEE647797E794F3CA9A28019BC23",
+      "guid": "99DE9567486EABD10B10E2AD5C059370",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_E170256C418277E05DDFE69B547954F7",
+      "guid": "E877D4D9488B5C08B27F318A47368222",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_4C1B25A342D938EF6B0452B8AE14CF22",
+      "guid": "53031F254981E807607D23AA78DF4D22",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_0FCC5D5041BBBD3F19E17C8EBF947EDD",
+      "guid": "991F8178425658FBE3D775BB7986265F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BossB_AnimGraphNode_TransitionResult_044F153F41EB9DD845C39A98356F0075",
+      "guid": "701CB9844890D25774A2E4AAC3503CF8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 21,
+    "authored_node_count": 47,
+    "authored_pin_count": 134,
+    "authored_connection_count": 50,
+    "generated_node_count": 43,
+    "generated_pin_count": 109
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

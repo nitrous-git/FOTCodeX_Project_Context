@@ -1,0 +1,1815 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_PlayerBase",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase",
+    "relative_package": "Frameworks/PlayerFramework/Core/BP_PlayerBase"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Developer/Debug/UI/WBP_BossDebugHUD",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_Common",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_Common_Instance",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_Katana",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_Katana_Instance",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_SNS",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_SNS_Instance",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_Twinblades",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_Twinblades_Instance",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle_Instance",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECombatStyleMode",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ELocomotionMode",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant",
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase",
+      "/Game/CodeX_Restruct/Game/UI/Widget/WBP_PlayerGUI",
+      "/Game/CodeX_Restruct/Shared/Animation/CameraAnimations/BP_CameraAnimationPlayer",
+      "/Game/CodeX_Restruct/Shared/CameraShake/BP_CameraShake",
+      "/Game/CodeX_Restruct/Shared/CameraShake/CameraShakeSmool",
+      "/Game/CodeX_Restruct/Shared/CameraShake/CameraShakeWarySmool",
+      "/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome",
+      "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatReceiver"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Core/GameModes/BP_CPC_GameMode",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase1/BP_ComboSlowSlashState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase1/BP_Phase1Missile_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase1/BP_StrafeObserveState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase2/BP_DashComboFollow_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/Transitions/BP_TransitionToPhase2State_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/CombatLoop/BP_CloseDistanceSwordState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/CombatLoop/BP_StrafeObserveATKState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution/BP_ExecutionState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_ExecuteToDeathState",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_Execution",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/Equipement/BP_PlayerAction_Equip",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/Equipement/BP_PlayerAction_Unequip",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Block",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Dodge",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Jump",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Sprint",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_ToWalk",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/Reaction/BP_PlayerAction_Executed",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/Reaction/BP_PlayerAction_NormalHitReact",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_ActionWindow",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/AN_ActionFinished",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_TeleporterBase",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/AnimNotify/AN_HomingChainWindow",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/AnimNotify/AN_StopArrivalFromMontage",
+      "/Game/CodeX_Restruct/Shared/Directors/BP_CameraTrigger",
+      "/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
+    ],
+    "non_architecture_dependency_count": 59,
+    "non_architecture_referencer_count": 7
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "AC_CameraModeComponent",
+        "class": "AC_CameraModeComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_CameraModeComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_InventoryComponent",
+        "class": "AC_InventoryComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_InventoryComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_PlayerAttunementComponent",
+        "class": "AC_PlayerAttunementComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_PlayerAttunementComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_PlayerShadowStrikeComponent",
+        "class": "AC_PlayerShadowStrikeComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_PlayerShadowStrikeComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_PlayerTargetingComponent",
+        "class": "AC_PlayerTargetingComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_PlayerTargetingComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_TeleporterComponent",
+        "class": "AC_TeleporterComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_TeleporterComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_TraversalDeviceComponent",
+        "class": "AC_TraversalDeviceComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_TraversalDeviceComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_TraversalHomingComponent",
+        "class": "AC_TraversalHomingComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_TraversalHomingComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "ActorSequence",
+        "class": "ActorSequenceComponent",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:ActorSequence_GEN_VARIABLE"
+      },
+      {
+        "name": "ActorSequence1",
+        "class": "ActorSequenceComponent",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:ActorSequence1_GEN_VARIABLE"
+      },
+      {
+        "name": "ActorSequence_BossLookUp",
+        "class": "ActorSequenceComponent",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:ActorSequence_BossLookUp_GEN_VARIABLE"
+      },
+      {
+        "name": "ArrowComponent",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.Default__BP_PlayerBase_C:Arrow"
+      },
+      {
+        "name": "BP_PlayerActionComponent",
+        "class": "BP_PlayerActionComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:BP_PlayerActionComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "CameraBoom",
+        "class": "SpringArmComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SpringArmComponent_0__A9892D03"
+      },
+      {
+        "name": "CapsuleComponent",
+        "class": "CapsuleComponent",
+        "parent": "BP_PlayerBase",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.Default__BP_PlayerBase_C:CollisionCylinder"
+      },
+      {
+        "name": "CharacterMovement",
+        "class": "CharacterMovementComponent",
+        "parent": "BP_PlayerBase",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.Default__BP_PlayerBase_C:CharMoveComp"
+      },
+      {
+        "name": "CollisionArrow",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:CollisionArrow_GEN_VARIABLE"
+      },
+      {
+        "name": "ContextualAnimSceneActor",
+        "class": "ContextualAnimSceneActorComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:ContextualAnimSceneActor_GEN_VARIABLE"
+      },
+      {
+        "name": "FollowCamera",
+        "class": "CameraComponent",
+        "parent": "CameraBoom",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:CameraComponent_0__CCE3C0B4"
+      },
+      {
+        "name": "HomingTarget",
+        "class": "SceneComponent",
+        "parent": "ArrowComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:HomingTarget_GEN_VARIABLE"
+      },
+      {
+        "name": "Mesh",
+        "class": "SkeletalMeshComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.Default__BP_PlayerBase_C:CharacterMesh0"
+      },
+      {
+        "name": "MotionWarping",
+        "class": "MotionWarpingComponent",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:MotionWarping_GEN_VARIABLE"
+      },
+      {
+        "name": "SheatedShield",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SheatedShield_GEN_VARIABLE"
+      },
+      {
+        "name": "SheatedSword",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SheatedSword_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_arm",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_arm_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_armorarm",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_armorarm_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_armorbottom",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_armorbottom_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_armortop",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_armortop_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_body",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_body_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_dark_arm",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_dark_arm_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_dark_body",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_dark_body_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_hair",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_hair_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_hand",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_hand_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_head",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_head_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_Assassin_hoodunused",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Assassin_hoodunused_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_DC_Knight_UE4_Body_armor_no_knife",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_DC_Knight_UE4_Body_armor_no_knife_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_DC_Knight_UE4_Greaves",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_DC_Knight_UE4_Greaves_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_ma_chest_heavy_03_a",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_ma_chest_heavy_03_a_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_ma_chest_heavy_04_b",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_ma_chest_heavy_04_b_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_arm",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_MercenaryWarrior_arm_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_bracer",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_MercenaryWarrior_bracer_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_cloak",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_MercenaryWarrior_cloak_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_hair",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_MercenaryWarrior_hair_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_hand",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_MercenaryWarrior_hand_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_helmet",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_MercenaryWarrior_helmet_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_leg",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_MercenaryWarrior_leg_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_pauldron",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_MercenaryWarrior_pauldron_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_skirt",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_MercenaryWarrior_skirt_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_MercenaryWarrior_torso",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_MercenaryWarrior_torso_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_PrimaryWeapon",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_PrimaryWeapon_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_SecondaryWeapon",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_SecondaryWeapon_GEN_VARIABLE"
+      },
+      {
+        "name": "StaticMesh",
+        "class": "StaticMeshComponent",
+        "parent": "SK_PrimaryWeapon",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:StaticMesh_GEN_VARIABLE"
+      },
+      {
+        "name": "TargetSystem",
+        "class": "TargetSystemComponent",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:TargetSystem_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "[ 5]",
+        "guid": "3D128124480E418E7FBA93947C7D3772",
+        "friendly_name": "[ 5]",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMeshComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AlreadyExecuted",
+        "guid": "3E73507D429D1A31FBBDE58B1ABB74B0",
+        "friendly_name": "Already Executed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AttackClampTarget",
+        "guid": "B283A1F44E1918B2351DD3898C175C09",
+        "friendly_name": "Attack Clamp Target",
+        "category": "INVTEXT(\"AttackClamp\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AttackCount",
+        "guid": "F14B3FDB46C8F375BCB023B2F071E05C",
+        "friendly_name": "Attack Count",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AttackType",
+        "guid": "E176AAA6493B723A7415E9B0D0B44378",
+        "friendly_name": "Attack Type",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bApplyModifyPhysics",
+        "guid": "56D97CEC4151E0E951951C94013F293B",
+        "friendly_name": "Apply Modify Physics",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Base Damage",
+        "guid": "2E0CBAEB43C4A27077B946AB42DBC513",
+        "friendly_name": "Base Damage",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCanBeInterrupted",
+        "guid": "6080E8C04EDCB42AA8A27D970F9F9AFE",
+        "friendly_name": "Can be Interrupted",
+        "category": "INVTEXT(\"ShadowStrike\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bClampActive",
+        "guid": "A283CC984D77C13F9832E6A2131FFC8A",
+        "friendly_name": "Clamp Active",
+        "category": "AttackClamp",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDebugHUDEnabled",
+        "guid": "7DDC56E04510B1626C9C36834EDFE794",
+        "friendly_name": "Debug HUDEnabled",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bHasIFrames",
+        "guid": "F70688B74C0AEBFC79FBE9BB523AC939",
+        "friendly_name": "Has IFrames",
+        "category": "INVTEXT(\"Dodging\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bHasPendingForcedExecutionTarget",
+        "guid": "863070784170A3EE509691AC6875543C",
+        "friendly_name": "Has Pending Forced Execution Target",
+        "category": "INVTEXT(\"ShadowStrike\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIgnoreDamageReact",
+        "guid": "E4EAF8A64A50E9F9DF6BED905BB46C0C",
+        "friendly_name": "Ignore Damage React",
+        "category": "INVTEXT(\"ShadowStrike\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsBlocking",
+        "guid": "9448A2074195B823193F3EA4D2B7532A",
+        "friendly_name": "Is Blocking",
+        "category": "Blocking_Parrying",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsDead",
+        "guid": "E19C618140F91F40A2A60C933763E048",
+        "friendly_name": "Is Dead",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsDodging",
+        "guid": "4F2E4CFC412327803DA7A88FC40AEE8F",
+        "friendly_name": "Is Dodging",
+        "category": "Dodging",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsEquipped",
+        "guid": "397C44C24B1D91212A48F5A4A74D0A8D",
+        "friendly_name": "Is Equipped",
+        "category": "Equipement",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsInShadowStrike",
+        "guid": "A7BEB3E943082DC2ED8DA3AF68CB34E2",
+        "friendly_name": "Is in Shadow Strike",
+        "category": "ShadowStrike",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsInventoryOpen",
+        "guid": "75A534B949C242D33FA5B5A13E706F5E",
+        "friendly_name": "Is Inventory Open",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsRunning",
+        "guid": "F09435FA4BDA66DD01C19BB6337BB5E7",
+        "friendly_name": "Is Running",
+        "category": "INVTEXT(\"Locomotion\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsStunned",
+        "guid": "8944E7E4468350308ACAF2B041C7162F",
+        "friendly_name": "Is Stunned",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsWalking",
+        "guid": "22BAB0014D560D875299299DBD8C10F8",
+        "friendly_name": "Is Walking",
+        "category": "INVTEXT(\"Locomotion\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BlockAnimArray",
+        "guid": "3A3E2CAD4157CCD2A1979AA6DDF95300",
+        "friendly_name": "Block Anim Array",
+        "category": "INVTEXT(\"Blocking_Parrying\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BlockAnimIndex",
+        "guid": "E7A79E564B660561E223AF8438BDCDEA",
+        "friendly_name": "Block Anim Index",
+        "category": "INVTEXT(\"Blocking_Parrying\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BlockingMaxSpeed",
+        "guid": "8C6528C3474BA6F76E075A85E4F1A432",
+        "friendly_name": "Blocking Max Speed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BossHealthBarRef",
+        "guid": "EEDAABF348BDC39E543DD393AB09D7F5",
+        "friendly_name": "Boss Health Bar Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI.WBP_BossUI_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BossRef",
+        "guid": "B1AABEB84FBEA9E227E846BC010F1B3E",
+        "friendly_name": "Boss Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bParryWindowActive",
+        "guid": "2B5B4E484B342BEB1CE48DBDB1DC02BB",
+        "friendly_name": "Parry Window Active",
+        "category": "INVTEXT(\"Blocking_Parrying\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPlayerExecuted",
+        "guid": "F5585BD74DE0679D04548984861E4334",
+        "friendly_name": "Player Executed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CameraAnimation",
+        "guid": "AD51BBC24C007170EC7BB78F09EC2673",
+        "friendly_name": "Camera Animation",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Animation/CameraAnimations/BP_CameraAnimationPlayer.BP_CameraAnimationPlayer_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CameraShake",
+        "guid": "64C1CF884589FA11FDC1B2811B549DD0",
+        "friendly_name": "Camera Shake",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/EngineCameras.LegacyCameraShake'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "canMelee",
+        "guid": "81017019404808C6552852AA35D9A9F8",
+        "friendly_name": "Can Melee",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ClampBuffer",
+        "guid": "8388E6014B03D931A4179BB9272B66DB",
+        "friendly_name": "Clamp Buffer",
+        "category": "INVTEXT(\"AttackClamp\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CombatStyleMode",
+        "guid": "58D828A34178B49171844788023E215D",
+        "friendly_name": "Combat Style Mode",
+        "category": "INVTEXT(\"CombatStyle\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECombatStyleMode.ECombatStyleMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ComboArray",
+        "guid": "8C59CA354BA16172827CDABE50F7C5A8",
+        "friendly_name": "Combo Array",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentAnimState",
+        "guid": "834A7D7A46C190173E2FBD9EEB025742",
+        "friendly_name": "Current Anim State",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentLocoMode",
+        "guid": "5229147F421D2341B77785B56B85CA2F",
+        "friendly_name": "Current Loco Mode",
+        "category": "Locomotion",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ELocomotionMode.ELocomotionMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DA_CombatStyle_Current",
+        "guid": "16F858C0462947EE141854A98AE8F0EF",
+        "friendly_name": "DA Combat Style Current",
+        "category": "CombatStyle",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle.DA_CombatStyle_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DamageRadius",
+        "guid": "BA42F038409FC75C8FF76DBF7BCA07C6",
+        "friendly_name": "Damage Radius",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DebugWidgetRef",
+        "guid": "A36B11794E6C973A4785D4BE0EA88016",
+        "friendly_name": "Debug Widget Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Developer/Debug/UI/WBP_BossDebugHUD.WBP_BossDebugHUD_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EnemyRef",
+        "guid": "6FB0077B43206D7324B80C90A44660C8",
+        "friendly_name": "Enemy Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Execution",
+        "guid": "CDA934CA4799597D92D819A89C8D75B6",
+        "friendly_name": "Execution",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Execution Damage",
+        "guid": "533589DE4435AA87CD2CC3B4577C17E7",
+        "friendly_name": "Execution Damage",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Health",
+        "guid": "BB6ECB1B46110CF7419D418F67F74B96",
+        "friendly_name": "Health",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "hitCounter",
+        "guid": "0385EE5C4C88D948BE2DE981DDEDAE37",
+        "friendly_name": "Hit Counter",
+        "category": "INVTEXT(\"Metrics\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "hitTimer",
+        "guid": "ACF931BC4F5D609D184D2AA25AE74812",
+        "friendly_name": "Hit Timer",
+        "category": "Metrics",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsLockedOn",
+        "guid": "0BDEBC464EC2AF1E7BFD28B5B8BD15D8",
+        "friendly_name": "Is Locked On",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastLocoMode",
+        "guid": "43EBA837440B19D17D1B55BBDB06B56C",
+        "friendly_name": "Last Loco Mode",
+        "category": "INVTEXT(\"Locomotion\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ELocomotionMode.ELocomotionMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastMoveInput",
+        "guid": "60A1666A4A3D21C42409A0A698800EB2",
+        "friendly_name": "Last Move Input",
+        "category": "INVTEXT(\"Dodging\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastMoveSpeed",
+        "guid": "AB5742674391CD77807AD3866A912ED3",
+        "friendly_name": "Last Move Speed",
+        "category": "INVTEXT(\"Locomotion\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LaunchMultiplier",
+        "guid": "65819AD5489C56108E8C1D857CAEC5D0",
+        "friendly_name": "Launch Multiplier",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ParryAnimArray",
+        "guid": "D1AC329847C6980A324A6DBCAB34C32F",
+        "friendly_name": "Parry Anim Array",
+        "category": "INVTEXT(\"Blocking_Parrying\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ParryAnimIndex",
+        "guid": "70EC0D23497C87729E121E9A109EC5F2",
+        "friendly_name": "Parry Anim Index",
+        "category": "INVTEXT(\"Blocking_Parrying\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ParryWindowDuration",
+        "guid": "CF4B1E7D4060909BB80980A1942AF69B",
+        "friendly_name": "Parry Window Duration",
+        "category": "INVTEXT(\"Blocking_Parrying\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PendingForcedExecutionTarget",
+        "guid": "3D9192A54D66A15D8C97A6AED1B68177",
+        "friendly_name": "Pending Forced Execution Target",
+        "category": "INVTEXT(\"ShadowStrike\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerInventoryHUDRef",
+        "guid": "470D95B84E45F99A187B34801F554365",
+        "friendly_name": "Player Inventory HUDRef",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/UI/WBP_PlayerInventoryHUD_dep.WBP_PlayerInventoryHUD_dep_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PrimaryWeapon",
+        "guid": "F05B86EB49A9AE0D3CD04D8271ED1C30",
+        "friendly_name": "Primary Weapon",
+        "category": "INVTEXT(\"Equipement\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RunningSpeed",
+        "guid": "5A07DDB04B5280E31AF50387E151EC7C",
+        "friendly_name": "Running Speed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SecondaryWeapon",
+        "guid": "AA828A844ABE2E13065CCEAE52659723",
+        "friendly_name": "Secondary Weapon",
+        "category": "INVTEXT(\"Equipement\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ShortRange",
+        "guid": "E62452894E38AE10C9562295D081BB05",
+        "friendly_name": "Short Range",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StartHitTimer",
+        "guid": "C71B24914B2DF8BB9601ED99386BB6AC",
+        "friendly_name": "Start Hit Timer",
+        "category": "INVTEXT(\"Metrics\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TargetLockOn",
+        "guid": "B33D0BC04A6D1D1CB6E20C81C356BDDC",
+        "friendly_name": "Target Lock On",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TargetToKill",
+        "guid": "B285966F40D0CB2CB741BF952886CCC3",
+        "friendly_name": "Target to Kill",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "In Short Range",
+        "GetCombatStyle",
+        "SetCombatStyle",
+        "SetLastMoveInput",
+        "ApplyModifyPhysics",
+        "SetLocomotionMode",
+        "Set Combat Style from Enum",
+        "SetCombatStyleWeapon",
+        "UnequipAllWeapon",
+        "TrySetEnemyRef",
+        "SetBossRef",
+        "InitPlayerUI",
+        "UnequipAllMeshPart"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "IsTargetable",
+        "ResolveIncomingHit",
+        "CE_SetTemplarTunic",
+        "CE_SetAssassinTunic",
+        "CE_SetKnightTunic",
+        "CE_SetPrinceTunic",
+        "CE_SetVillagerTunic",
+        "CE_EquipTwinblades",
+        "CE_EquipCommon",
+        "CE_EquipSNS",
+        "CE_EquipKatana",
+        "CE_ForceBackToCommon",
+        "BndEvt__BP_ThirdPersonCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_29_ComponentHitSignature__DelegateSignature",
+        "BndEvt__ThirdPersonCharacter_BP_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+        "OnLanded",
+        "CS_PlayCameraShake",
+        "CS_ResetHitCounter",
+        "CS_HitTImer",
+        "CS_PlayExecutionCamera",
+        "CS_ToggleLocomotion",
+        "CS_BossLookUp",
+        "CS_PlayExecutedCamera",
+        "CS_SetExecuted",
+        "CS_ReceiveBossDebugText",
+        "CS_CreateDebugWidget",
+        "CS_SetOrientationAndFace",
+        "CS_FaceTarget",
+        "ApplyResolvedHit",
+        "CS_ResetGlobalTimeDilation",
+        "CS_SlowGlobalTimeDilation",
+        "ReceiveTick",
+        "CS_TickAttackClamp",
+        "SetAttackClampActive",
+        "CS_LauchCharacterUtil",
+        "CS_SetAllReferences",
+        "ReceiveAnyDamage",
+        "CS_ResetBlock",
+        "CS_PlayAnim",
+        "CS_DoDamage",
+        "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_1_ComponentOnTargetLockedOnOff__DelegateSignature",
+        "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_0_ComponentOnTargetLockedOnOff__DelegateSignature",
+        "ReceiveBeginPlay",
+        "InpActEvt_MiddleMouseButton_K2Node_InputKeyEvent_0",
+        "InpActEvt_F_K2Node_InputKeyEvent_1",
+        "InpActEvt_Zero_K2Node_InputDebugKeyEvent_0",
+        "InpActEvt_One_K2Node_InputDebugKeyEvent_1",
+        "InpActEvt_Gamepad_RightShoulder_K2Node_InputKeyEvent_2",
+        "InpActEvt_E_K2Node_InputKeyEvent_3"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

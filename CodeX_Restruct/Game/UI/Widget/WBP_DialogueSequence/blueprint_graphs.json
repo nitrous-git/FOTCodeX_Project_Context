@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_DialogueSequence",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "CB8C43F1495794CECB031CBE555526A3",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "bLineFullyTyped",
+      "guid": "D69F497047624F120D826F997AB9C96D",
+      "friendly_name": "Line Fully Typed",
+      "category": "State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSequenceRunning",
+      "guid": "82C57F7849CF9317D011E782AE6F622B",
+      "friendly_name": "Sequence Running",
+      "category": "State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentCharIndex",
+      "guid": "DBFA0B8A4DD5F801C0569194CE2C8456",
+      "friendly_name": "Current Char Index",
+      "category": "Dialogue data",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentLineIndex",
+      "guid": "23710AE942B013518081DF9C723EF6ED",
+      "friendly_name": "Current Line Index",
+      "category": "INVTEXT(\"Dialogue data\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentLineString",
+      "guid": "E1FE3A4D4F25F81B8725999E7B1BE72F",
+      "friendly_name": "Current Line String",
+      "category": "Dialogue data",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "string",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DialogueLines",
+      "guid": "0F0BC57642D8B258020C858D64832C31",
+      "friendly_name": "Dialogue Lines",
+      "category": "Dialogue data",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FadeOutDuration",
+      "guid": "932041704C539DAAD1E2DF898F6D0AF9",
+      "friendly_name": "Fade Out Duration",
+      "category": "Timing",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FadeTimerHandle",
+      "guid": "7CF587E144DF494A300E538E23004608",
+      "friendly_name": "Fade Timer Handle",
+      "category": "INVTEXT(\"Timer Handle\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LineFullyTypedTime",
+      "guid": "19A6D6824587A0D4904435944495BCC4",
+      "friendly_name": "Line Fully Typed Time",
+      "category": "State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LineHoldDuration",
+      "guid": "0AA85872446ACE42695B68BFC405298F",
+      "friendly_name": "Line Hold Duration",
+      "category": "Timing",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnDialogueSequenceFinished",
+      "guid": "6A491C8948443E0A4CE57C8E5D252DF9",
+      "friendly_name": "On Dialogue Sequence Finished",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TypedString",
+      "guid": "B2FBA7684D0D8F9C4F4E75BE1976C63E",
+      "friendly_name": "Typed String",
+      "category": "Dialogue data",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "string",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TypeInterval",
+      "guid": "E5700B6E47C69E7634FB87BA23E96C4D",
+      "friendly_name": "Type Interval",
+      "category": "Timing",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TypingTimerHandle",
+      "guid": "D214E4D744CC80BC7B10FCB4DB3B3856",
+      "friendly_name": "Typing Timer Handle",
+      "category": "Timer Handle",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "AdvanceToNextLine",
+      "kind": "function",
+      "guid": "8C3B50314A50933C0A0C96A8B47B69BD",
+      "node_count": 7,
+      "pin_count": 21,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "BeginFadeOut",
+      "kind": "function",
+      "guid": "54A089364B47E0B7C809AA8F731D0947",
+      "node_count": 10,
+      "pin_count": 39,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "63668F5540A6A8187204DAA8AF32BDEF",
+      "node_count": 5,
+      "pin_count": 17,
+      "connection_count": 1,
+      "exec_connection_count": 0,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnDialogueSequenceFinished",
+      "kind": "delegate",
+      "guid": "C15BEF31403D3DC74DB9B296A29BC44C",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PlayDialogueSequence",
+      "kind": "function",
+      "guid": "1D0D5113498400D55673BC8384438D1F",
+      "node_count": 12,
+      "pin_count": 57,
+      "connection_count": 12,
+      "exec_connection_count": 10,
+      "data_connection_count": 2
+    },
+    {
+      "name": "StartCurrentLine",
+      "kind": "function",
+      "guid": "121340764FD5D3FDE4C5908550EF1684",
+      "node_count": 39,
+      "pin_count": 115,
+      "connection_count": 33,
+      "exec_connection_count": 18,
+      "data_connection_count": 15
+    },
+    {
+      "name": "TypeNextCharacter",
+      "kind": "function",
+      "guid": "BF8879FD4E19C20411CEF981391C3E09",
+      "node_count": 48,
+      "pin_count": 121,
+      "connection_count": 42,
+      "exec_connection_count": 19,
+      "data_connection_count": 23
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Construct",
+      "guid": "128A0B044285BA62EF7AB899BA79E849",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 7,
+    "generated_graph_count": 1,
+    "authored_node_count": 122,
+    "authored_pin_count": 371,
+    "authored_connection_count": 103,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "OnDialogueSequenceFinished",
+      "kind": "delegate",
+      "file": "graphs/OnDialogueSequenceFinished.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "AdvanceToNextLine",
+      "kind": "function",
+      "file": "graphs/AdvanceToNextLine.json"
+    },
+    {
+      "name": "BeginFadeOut",
+      "kind": "function",
+      "file": "graphs/BeginFadeOut.json"
+    },
+    {
+      "name": "PlayDialogueSequence",
+      "kind": "function",
+      "file": "graphs/PlayDialogueSequence.json"
+    },
+    {
+      "name": "StartCurrentLine",
+      "kind": "function",
+      "file": "graphs/StartCurrentLine.json"
+    },
+    {
+      "name": "TypeNextCharacter",
+      "kind": "function",
+      "file": "graphs/TypeNextCharacter.json"
+    }
+  ]
+}

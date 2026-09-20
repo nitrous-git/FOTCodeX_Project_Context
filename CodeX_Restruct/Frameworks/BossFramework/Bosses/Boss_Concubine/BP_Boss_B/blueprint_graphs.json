@@ -1,0 +1,776 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_Boss_B",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "01C258414E8A4E387E2B1CAE6BC4FA8F",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'"
+  },
+  "variables": [
+    {
+      "name": "AOETargetLocation",
+      "guid": "A988A48B4728E08B434212AEB7E22E34",
+      "friendly_name": "AOETarget Location",
+      "category": "INVTEXT(\"Phase2\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Appear",
+      "guid": "411B90F84CD339E3DB84379CFE575017",
+      "friendly_name": "Appear",
+      "category": "INVTEXT(\"Phase2\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BigCombo01",
+      "guid": "5D20B2654646588F3CE74F822B344CB7",
+      "friendly_name": "Big Combo 01",
+      "category": "Combat Bool",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CloneRef",
+      "guid": "0C7E04334C713B0AEA532B9D13A3EF76",
+      "friendly_name": "Clone Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DashDown",
+      "guid": "C6CABEE24811D5B87177B88C601873FE",
+      "friendly_name": "Dash Down",
+      "category": "Combat Bool",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DesertRealmDirector",
+      "guid": "CF8B8E2D443152022BDDE49484F2D9CF",
+      "friendly_name": "Desert Realm Director",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm.BP_LevelDirector_DesertRealm_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Disappear",
+      "guid": "5B697A4740F6BDBFF54755958F66097F",
+      "friendly_name": "Disappear",
+      "category": "INVTEXT(\"Phase2\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Evade",
+      "guid": "B9E1B2BA48150406A526169BC7340AC7",
+      "friendly_name": "Evade",
+      "category": "Combat Bool",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FirstWaveDone",
+      "guid": "B5E5DCCF43D958F9649F008CC1511939",
+      "friendly_name": "First Wave Done",
+      "category": "Projectile",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GhostMaterial",
+      "guid": "0C9279CE4320A4D9753E90B66561D892",
+      "friendly_name": "Ghost Material",
+      "category": "INVTEXT(\"Phase2\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInterface'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HomingTargetLocation",
+      "guid": "6FCEAFCA4BDA92454A0793BD588F3B5F",
+      "friendly_name": "Homing Target Location",
+      "category": "Projectile",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InitMaterials",
+      "guid": "6AFF844D4D7A3309F550D18E760F9734",
+      "friendly_name": "Init Materials",
+      "category": "INVTEXT(\"Phase2\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInterface'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "JumpAttack",
+      "guid": "6456715D4E171F2DE1CAD69DC74409FC",
+      "friendly_name": "Jump Attack",
+      "category": "Combat Bool",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "projIndex",
+      "guid": "53C10E2F499902C92C537BBD89FC5D94",
+      "friendly_name": "Proj Index",
+      "category": "Projectile",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "projState",
+      "guid": "59C204214BA5C3F3355935BD5B24046F",
+      "friendly_name": "Proj State",
+      "category": "Projectile",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "projWaveCount",
+      "guid": "3105B72C4F84F62DD05B17A3A62FF3D6",
+      "friendly_name": "Proj Wave Count",
+      "category": "Projectile",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Rampage",
+      "guid": "188E7B664DB6176DA0B0A999435FEBD3",
+      "friendly_name": "Rampage",
+      "category": "Combat Bool",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Reveal",
+      "guid": "D780F2904BCF2870E57693BC7C1AE34E",
+      "friendly_name": "Reveal",
+      "category": "Projectile",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SceneCenter_0",
+      "guid": "ADF69C6E4E15D0EA6B392B9D5E443145",
+      "friendly_name": "Scene Center 0",
+      "category": "INVTEXT(\"Phase2\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SmallCombo01",
+      "guid": "2DD743534A19363587D0129C04965D67",
+      "friendly_name": "Small Combo 01",
+      "category": "Combat Bool",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpawnRadius",
+      "guid": "2ED27CDA446B632C87C37493DB4F4C98",
+      "friendly_name": "Spawn Radius",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TargetFXNiagara",
+      "guid": "5FDC9B294991471810C686B77858A995",
+      "friendly_name": "Target FXNiagara",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TempProjectilesArray",
+      "guid": "F41E35D4434D17136A1B3E99B9EE0F54",
+      "friendly_name": "Temp Projectiles Array",
+      "category": "Projectile",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Theta",
+      "guid": "C51B96AD41EAB270CE7465844BD4D6B4",
+      "friendly_name": "Theta",
+      "category": "Projectile",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Transition",
+      "guid": "12E7297F4D42AD70DC23119E5081A333",
+      "friendly_name": "Transition",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "VaultingAttack",
+      "guid": "B79DB5344AA88CE91D265EBD5487679F",
+      "friendly_name": "Vaulting Attack",
+      "category": "INVTEXT(\"Phase2\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "VaultingPoint01",
+      "guid": "3FDF7DD240814170B3605FB0B47F24ED",
+      "friendly_name": "Vaulting Point 01",
+      "category": "INVTEXT(\"Phase2\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "VaultingPoint02",
+      "guid": "957C1104485C117A4FAAFCBE1AD914EF",
+      "friendly_name": "Vaulting Point 02",
+      "category": "INVTEXT(\"Phase2\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "VaultingState",
+      "guid": "09C4B06A4F30E06B54B4D9BF5B005496",
+      "friendly_name": "Vaulting State",
+      "category": "INVTEXT(\"Phase2\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "VaultWaveCount",
+      "guid": "8741D96D40BE19486456BCB4F4162ACA",
+      "friendly_name": "Vault Wave Count",
+      "category": "Phase2",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "81C844D74AA727491F4B50BE5398FCAD",
+      "node_count": 50,
+      "pin_count": 199,
+      "connection_count": 35,
+      "exec_connection_count": 17,
+      "data_connection_count": 18
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "CF4E3DBC4DD4B6F090C40D8F88045AA3",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EnableDisableCollision",
+      "kind": "function",
+      "guid": "568630CA41831AF673EC128A9CE6AB40",
+      "node_count": 10,
+      "pin_count": 25,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
+    },
+    {
+      "name": "CreateHealthWidget",
+      "kind": "function",
+      "guid": "E43F053D476CA4A3DC4F74A6B22C814C",
+      "node_count": 5,
+      "pin_count": 18,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "Initialize",
+      "kind": "function",
+      "guid": "F47CDA3E499425829C37BD8F443BE824",
+      "node_count": 6,
+      "pin_count": 15,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "InitializeFirstSequence",
+      "kind": "function",
+      "guid": "21EF727848CBC81305916792B822D7CA",
+      "node_count": 6,
+      "pin_count": 15,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RegisterToDirector",
+      "kind": "function",
+      "guid": "11CB8762464A38561249D099054F9E9B",
+      "node_count": 9,
+      "pin_count": 29,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "CS_AttachWeaponBuff",
+      "guid": "F785A7354013CFF8A371B38397221EA8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetSmallCombo01",
+      "guid": "1A70C20942BF181CE9B0B499BEEE41F6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetEvade",
+      "guid": "ECD3A3C849D39788C3D273B9321AC8AE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetBigCombo01",
+      "guid": "2FE203FC4BFC2666804843ABAA7F1550",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_SpawnCloneInRadius",
+      "guid": "78B07E0346F8A4E34403EABF9692969E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetTransition",
+      "guid": "BECC6A654AD743ECEC04D1AF25418167",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__BP_Boss_B_SwordCapsule_L_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "0CD5004F41AB35624F34D8A35F732079",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    },
+    {
+      "name": "CS_ResetStaggerFlag",
+      "guid": "FA832B76499420EE1E1683BD10B9376F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetVaultingAttack",
+      "guid": "87CD6B7341EA44DBF560258FDB335BF3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetAppear",
+      "guid": "331711864CD30191FBD61D9FE8BEDA0B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetDisappear",
+      "guid": "8E9AB0AA4DC4429A7F69929D3ED54AC9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetDashDown",
+      "guid": "A09B5E2944CF648D8D6C019CC26C2A89",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetIsInAir",
+      "guid": "E3B8AF074EC122CB00915FABACF5934C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetRampage",
+      "guid": "995B942A4A9681CA042100B11611CB59",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetJumpAttack",
+      "guid": "D7C54027434B8BF02626B8ACAD1F35AA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 7,
+    "generated_graph_count": 15,
+    "authored_node_count": 87,
+    "authored_pin_count": 302,
+    "authored_connection_count": 73,
+    "generated_node_count": 31,
+    "generated_pin_count": 89
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CreateHealthWidget",
+      "kind": "function",
+      "file": "graphs/CreateHealthWidget.json"
+    },
+    {
+      "name": "EnableDisableCollision",
+      "kind": "function",
+      "file": "graphs/EnableDisableCollision.json"
+    },
+    {
+      "name": "Initialize",
+      "kind": "function",
+      "file": "graphs/Initialize.json"
+    },
+    {
+      "name": "InitializeFirstSequence",
+      "kind": "function",
+      "file": "graphs/InitializeFirstSequence.json"
+    },
+    {
+      "name": "RegisterToDirector",
+      "kind": "function",
+      "file": "graphs/RegisterToDirector.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

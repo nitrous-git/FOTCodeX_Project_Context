@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "ABP_Enemy",
+    "class": "/Script/Engine.AnimBlueprint",
+    "guid": "71D7ED9A4C21F1D2800C5A8FD204FA89",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'"
+  },
+  "variables": [
+    {
+      "name": "CurrentCombatStyle",
+      "guid": "DFBBF05249ABA76BDBE7BDBD20F1A5C8",
+      "friendly_name": "Current Combat Style",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode.E_Enemy_CombatStyleMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Direction",
+      "guid": "0442462F448DE6EA56F529A326DE1FD2",
+      "friendly_name": "Direction",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "speed",
+      "guid": "D298E08D46804CBBC1E6318B4EB10CBB",
+      "friendly_name": "Speed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "toRun",
+      "guid": "683DDDCE43B0D54C86951DB35CBA4BA8",
+      "friendly_name": "To Run",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "CA34A14C4409884A12B2B0A6B105350B",
+      "node_count": 17,
+      "pin_count": 59,
+      "connection_count": 21,
+      "exec_connection_count": 7,
+      "data_connection_count": 14
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "AnimNotify_doDamage",
+      "guid": "A72823324722D5F32198538AC298D5F2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BlueprintUpdateAnimation",
+      "guid": "708189B54BA6EB1156B5E8925CC05A15",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_7F0123554F720B977C21F3B411098889",
+      "guid": "F6B4C93B43BE1C81A04473AE48FD5673",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_1DC7716244B6156E706FCF8D6AEA8FA0",
+      "guid": "7BBFF68741C5A294B299108B29951416",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_239905F2453E9819F6CD3DBC497A61B8",
+      "guid": "201CB253470B61309A02298F3AACE82D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_BB30D527431B0FEFC8F9DFB8133D958D",
+      "guid": "AE1A62094BC421B20B01C28270C9EDFF",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 6,
+    "authored_node_count": 17,
+    "authored_pin_count": 59,
+    "authored_connection_count": 21,
+    "generated_node_count": 13,
+    "generated_pin_count": 34
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

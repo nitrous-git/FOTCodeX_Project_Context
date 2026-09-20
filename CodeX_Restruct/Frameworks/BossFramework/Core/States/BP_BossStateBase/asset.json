@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_BossStateBase",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase",
+    "relative_package": "Frameworks/BossFramework/Core/States/BP_BossStateBase"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_StateHitReactPolicy"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B_Clone",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Clone/BP_CloneEntrance_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Clone/BP_CloneRemovalState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase1/BP_ComboSlowSlashState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase1/BP_EvadeAirAttackState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase1/BP_Phase1Missile_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase1/BP_SpawnClonePhase1_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase1/BP_StrafeObserveState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase2/BP_DashComboFollow_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase2/BP_Phase2Ultimate_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase2/BP_RampagePhase2_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase2/BP_RampageVariantPhase2_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/CombatLoop/Phase2/BP_SpikeAttack_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/DirectorStates/BP_DefenseResetState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/DirectorStates/BP_StaggerState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/DirectorStates/BP_VulnerabilityWindowState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/Transitions/BP_SpawnIntroState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/Transitions/BP_TransitionToPhase2State_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/CombatLoop/BP_CloseDistanceSwordState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/CombatLoop/BP_StrafeObserveATKState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_DefenseResetState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_EvadeState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_StrafeObserveDEFState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution/BP_ExecutionState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Spawn/BP_SpawnIntroState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Vulnerable/BP_BuffState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Vulnerable/BP_VulnerabilityWindowState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_ExecuteRecoveryState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_ExecuteToDeathState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitState"
+    ],
+    "non_architecture_dependency_count": 0,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/CoreUObject.Object'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/CoreUObject.Object'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bIsASetPiece",
+        "guid": "13B6D13147A47F66B1CC5A81BA762B64",
+        "friendly_name": "Is ASet Piece",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HitReactPolicy",
+        "guid": "232565BD40B495B18D70699BD96CE1E3",
+        "friendly_name": "Hit React Policy",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_StateHitReactPolicy.E_StateHitReactPolicy'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OwnerBoss",
+        "guid": "329623A7496B46C2C4BF04BD31EE64BE",
+        "friendly_name": "Owner Boss",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "GetOwnerBoss",
+        "SetOwnerBoss"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

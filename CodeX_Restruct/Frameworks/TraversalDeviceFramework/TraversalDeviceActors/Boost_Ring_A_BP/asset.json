@@ -1,0 +1,708 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "Boost_Ring_A_BP",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP.Boost_Ring_A_BP",
+    "relative_package": "Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/CameraShakes/Low_Camera_Shake_BP",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/EndLocation_Enum",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/InputBehavior_Enum",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/JumpPadAnimationType_Enum",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/LaunchLocation_Enum",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Struct/FPlatformerDeviceConfig",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/BP_PlatformerDeviceBase"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 12,
+    "non_architecture_referencer_count": 12
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/BP_PlatformerDeviceBase.BP_PlatformerDeviceBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP.Boost_Ring_A_BP_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP.Boost_Ring_A_BP_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/BP_PlatformerDeviceBase.BP_PlatformerDeviceBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP.Boost_Ring_A_BP_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "Box",
+        "class": "BoxComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP.Boost_Ring_A_BP_C:Box_GEN_VARIABLE"
+      },
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "Boost_Ring_A_BP",
+        "inherited": true,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP.Boost_Ring_A_BP_C:ICH-DefaultSceneRoot_GEN_VARIABLE"
+      },
+      {
+        "name": "SM_End_Location",
+        "class": "StaticMeshComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP.Boost_Ring_A_BP_C:SM_End_Location_GEN_VARIABLE"
+      },
+      {
+        "name": "SM_Ring",
+        "class": "StaticMeshComponent",
+        "parent": "Box",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP.Boost_Ring_A_BP_C:SM_Ring_GEN_VARIABLE"
+      },
+      {
+        "name": "Spline",
+        "class": "SplineComponent",
+        "parent": "Box",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/Boost_Ring_A_BP.Boost_Ring_A_BP_C:Spline_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "Actors To Ignore (Overlap)",
+        "guid": "9746C2BA4F12DDC9C647918F02B99EDE",
+        "friendly_name": "Actors to Ignore (Overlap)",
+        "category": "Default",
+        "property_flags": 2053,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ActorsToIgnore (TracePath)",
+        "guid": "90FE736B4E365BFEA157C9B23BF7A1C7",
+        "friendly_name": "Actors to Ignore (Trace Path)",
+        "category": "Default",
+        "property_flags": 2053,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AnimationType",
+        "guid": "CAD260F1408306A3D66F908583982F3D",
+        "friendly_name": "Animation Type",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/JumpPadAnimationType_Enum.JumpPadAnimationType_Enum'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Arc Height",
+        "guid": "3F43696049042AF2486145B3E9F44834",
+        "friendly_name": "Arc Height",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Array Element",
+        "guid": "E4E8BC8E4E136939C539E3B798ED4DFF",
+        "friendly_name": "Array Element",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Array Index",
+        "guid": "7046E9334B48BE8B367CBCB1BA706749",
+        "friendly_name": "Array Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CharacterLaunchPosition",
+        "guid": "EA21146948389CC7430A08B972002D50",
+        "friendly_name": "Character Launch Position",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/LaunchLocation_Enum.LaunchLocation_Enum'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentInstance",
+        "guid": "463E32AA4912004BCB2717809754861A",
+        "friendly_name": "Current Instance",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Custom Y (Pitch)",
+        "guid": "A573E67D43F09B465C46708677B026C4",
+        "friendly_name": "Custom Y (Pitch)",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DestinationMeshHidden?",
+        "guid": "420AE7AE4E34C406DDC45889CEEEC06D",
+        "friendly_name": "Destination Mesh Hidden?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DestinationMeshType",
+        "guid": "5148FE1B4594E88D5CAE9CBB02281258",
+        "friendly_name": "Destination Mesh Type",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/EndLocation_Enum.EndLocation_Enum'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Don\\'tAddSphereAtActorLocation?",
+        "guid": "F6BC3EF446022845F4D136BD0812B851",
+        "friendly_name": "Don\\'t Add Sphere at Actor Location?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DrawTheLaunchPathTrace?",
+        "guid": "02A14A214F3D80AF1CCC5DBBD43F50F9",
+        "friendly_name": "Draw the Launch Path Trace?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HitReferenceActor?",
+        "guid": "AFEA8C5C4663093BC1BED89D84043D65",
+        "friendly_name": "Hit Reference Actor?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HitVectorArray",
+        "guid": "83205F4946EF0C2667E7C1B119770AD9",
+        "friendly_name": "Hit Vector Array",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InstanceOverlaping?",
+        "guid": "BD8FC1244F7534A1E0E613B48B2A8536",
+        "friendly_name": "Instance Overlaping?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ISM",
+        "guid": "0A22F7D44F2B8FA304B79CAC3BCA27B6",
+        "friendly_name": "ISM",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.InstancedStaticMeshComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastLocation",
+        "guid": "B1D1A92C4344A8CA7A4FF2AA9E93999A",
+        "friendly_name": "Last Location",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MovementInputBehavior",
+        "guid": "974A8B984EA2F2A8A543B880F1E15CD7",
+        "friendly_name": "Movement Input Behavior",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Enums/InputBehavior_Enum.InputBehavior_Enum'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "NearEndLocation?",
+        "guid": "D789B4A640502BDE3CF25B99FEAA3087",
+        "friendly_name": "Near End Location?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OverlappingOtherPlatformerActor?",
+        "guid": "4618EB4149F8D33FDA57A89B621F3F30",
+        "friendly_name": "Overlapping Other Platformer Actor?",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PredictedPathHidden?",
+        "guid": "C1B86C5947447B3DA39538ACE6DF961C",
+        "friendly_name": "Predicted Path Hidden?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PredictedPathVisible?",
+        "guid": "AA6D18214826CF685C402EA9EB0AAFC0",
+        "friendly_name": "Predicted Path Visible?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RingBoxExtend",
+        "guid": "D9FB6AD949967A1DBD9F958981932646",
+        "friendly_name": "Ring Box Extend",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RingLocation",
+        "guid": "F287813B493A4F7F5A5E49BCD90920AE",
+        "friendly_name": "Ring Location",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Simulation Frequency",
+        "guid": "8FDC28AB4FD25B338F9C84B7EF84567B",
+        "friendly_name": "Simulation Frequency",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Simulation Time",
+        "guid": "D56B8C524383F287BC3ED1860B8DEDF6",
+        "friendly_name": "Simulation Time",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SM_Sphere",
+        "guid": "FEFE7F5C4DADD5FAC14C3C9EC2BC7762",
+        "friendly_name": "SM Sphere",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.StaticMeshComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SnapTargetLocationToFloor?",
+        "guid": "E51943DB4E1F4B83173CC0B9F2BE03B8",
+        "friendly_name": "Snap Target Location to Floor?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Sphere ISM",
+        "guid": "B22776E647A50A50A4ED029A29E875B3",
+        "friendly_name": "Sphere ISM",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.InstancedStaticMeshComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TargetActorReference",
+        "guid": "8858DD6E4AE81D6E90936DBCF5AD8344",
+        "friendly_name": "Target Actor Reference",
+        "category": "Default",
+        "property_flags": 2053,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Trace Channel For Floor",
+        "guid": "0FEB491545EE5629D73A2284D5E7CC54",
+        "friendly_name": "Trace Channel for Floor",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.ETraceTypeQuery'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TraceSphereRadius",
+        "guid": "2713212E45967A0E8B1EE5BFE531553A",
+        "friendly_name": "Trace Sphere Radius",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UseCustomRingRotation?",
+        "guid": "68EF527D413479156713369841EF40D8",
+        "friendly_name": "Use Custom Ring Rotation?",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "Get Box Location",
+        "Get Box Trace Locations",
+        "Is Instance Overlaping?",
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Set Scale And Location__FinishedFunc",
+        "Set Scale And Location__UpdateFunc",
+        "Start Timeline",
+        "BndEvt__Jump_Up_Spring_B_BP_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

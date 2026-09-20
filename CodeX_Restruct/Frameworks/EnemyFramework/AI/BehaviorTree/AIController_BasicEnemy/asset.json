@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AIController_BasicEnemy",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy.AIController_BasicEnemy",
+    "relative_package": "Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+    ],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/AIModule.AIController'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy.AIController_BasicEnemy_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy.AIController_BasicEnemy_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/AIModule.AIController'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy.AIController_BasicEnemy_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "PathFollowingComponent",
+        "class": "PathFollowingComponent",
+        "parent": "AIController_BasicEnemy",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy.Default__AIController_BasicEnemy_C:PathFollowingComponent"
+      },
+      {
+        "name": "TransformComponent",
+        "class": "SceneComponent",
+        "parent": "AIController_BasicEnemy",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy.Default__AIController_BasicEnemy_C:TransformComponent0"
+      }
+    ],
+    "variables": [
+      {
+        "name": "Target",
+        "guid": "86192DA444BB08450048549DD3BD2091",
+        "friendly_name": "Target",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveTick",
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

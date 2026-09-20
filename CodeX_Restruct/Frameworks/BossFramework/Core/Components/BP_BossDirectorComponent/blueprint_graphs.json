@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_BossDirectorComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "0F8F1627403901BF18404F8457D1F1B7",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "bModeLock",
+      "guid": "CFCD4F4B4E22B33EB1958CA6FEB9A870",
+      "friendly_name": "Mode Lock",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPhase2RequestEmitted",
+      "guid": "E59B5A80408CE5A88D596FB35040BD50",
+      "friendly_name": "Phase 2Request Emitted",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPhase2RequestLatched",
+      "guid": "EF095DAD494F66E61A409F9982E8C0EE",
+      "friendly_name": "Phase 2Request Latched",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPhase2Triggered",
+      "guid": "8AFB4C7A48806DD03E43FB853B091471",
+      "friendly_name": "Phase 2Triggered",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bRequirePlayerAggressingForDefense",
+      "guid": "8D1627F2432EBA6AE09CBC9DC2CD751A",
+      "friendly_name": "Require Player Aggressing for Defense",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Debug_LastDecisionLine",
+      "guid": "14D304394890E3C071067984A99FE90D",
+      "friendly_name": "Debug Last Decision Line",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "string",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Defense_MaxDistance",
+      "guid": "D835AB274D5077D751B22C9B176ADC15",
+      "friendly_name": "Defense Max Distance",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Defense_PressureThreshold",
+      "guid": "8F0638C04E6B43C24AA69F8E34241785",
+      "friendly_name": "Defense Pressure Threshold",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefenseCooldown",
+      "guid": "2695664C4E5E3F086A73ED81E99AD5E8",
+      "friendly_name": "Defense Cooldown",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefenseResetState",
+      "guid": "7ECEB36B4AAB0B2DDCF8518262939334",
+      "friendly_name": "Defense Reset State",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DirectorUpdateInterval",
+      "guid": "5D4A3011473AC0160151298FF8E5821A",
+      "friendly_name": "Director Update Interval",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastDefenseTime",
+      "guid": "C2EA88204B74FEA2BAC232B4938160E3",
+      "friendly_name": "Last Defense Time",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastDirectorActionTime",
+      "guid": "8FE7BACE427C011B9ACCECA9F0AB4993",
+      "friendly_name": "Last Director Action Time",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastStaggerTime",
+      "guid": "99E10987484920AEF693A1AC77B61440",
+      "friendly_name": "Last Stagger Time",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastVulnerableTime",
+      "guid": "E83424294331893D654232BB7E6A36D8",
+      "friendly_name": "Last Vulnerable Time",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MetricsComp",
+      "guid": "838F27674473DB6CBAD1A7B337C5D139",
+      "friendly_name": "Metrics Comp",
+      "category": "References",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent.BP_MetricsComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MinSecondsBetweenDirectorActions",
+      "guid": "145CE09B43FD93737FE4DB8D32611AB3",
+      "friendly_name": "Min Seconds Between Director Actions",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Now",
+      "guid": "6637A91D43222630941C05A749916AC4",
+      "friendly_name": "Now",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OwnerBoss",
+      "guid": "0C837F73485BC98C5ADA90AD6711A819",
+      "friendly_name": "Owner Boss",
+      "category": "INVTEXT(\"References\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Phase2CooldownSeconds",
+      "guid": "6483D18543A986BC8D2B279478FD82FC",
+      "friendly_name": "Phase 2Cooldown Seconds",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Phase2HealthThreshold",
+      "guid": "D4B3B01D40E1E116BA5CDC93A963D0C9",
+      "friendly_name": "Phase 2Health Threshold",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PressureNormalized",
+      "guid": "6C0A31CF45CC68ED0D81428207021B26",
+      "friendly_name": "Pressure Normalized",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaggerCooldown",
+      "guid": "8F094612455080FA37E22090F2A5E429",
+      "friendly_name": "Stagger Cooldown",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaggerState",
+      "guid": "B2742BC54ED64026906E69B2CC31836F",
+      "friendly_name": "Stagger State",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "VulnerabilityWindowState",
+      "guid": "D396B7DA4FAB0928F2FB0CB4F6F0E153",
+      "friendly_name": "Vulnerability Window State",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Vulnerable_BossHitSuppressThreshold",
+      "guid": "DF6C0318439D602090CA93B7B0E5C364",
+      "friendly_name": "Vulnerable Boss Hit Suppress Threshold",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Vulnerable_MaxDistance",
+      "guid": "B07560684AF081B3857295B6E4A7C402",
+      "friendly_name": "Vulnerable Max Distance",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Vulnerable_PlayerHitThreshold",
+      "guid": "F4679C25429B596976FBE9BF1C5A15F5",
+      "friendly_name": "Vulnerable Player Hit Threshold",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Vulnerable_PressureThreshold",
+      "guid": "721A1DC0438F6717C07C74BC8D6EFA80",
+      "friendly_name": "Vulnerable Pressure Threshold",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "VulnerableCooldown",
+      "guid": "0AE00F8D410FF139C4CFBA9AC7882C78",
+      "friendly_name": "Vulnerable Cooldown",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "ECCCF3E645955CDAC3766EAB286B7591",
+      "node_count": 16,
+      "pin_count": 55,
+      "connection_count": 15,
+      "exec_connection_count": 7,
+      "data_connection_count": 8
+    },
+    {
+      "name": "UpdateDirectorTimer",
+      "kind": "function",
+      "guid": "2EF7CCED491D4DD6ECFCD8BF90C641A2",
+      "node_count": 4,
+      "pin_count": 13,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "Director_Evaluate",
+      "kind": "function",
+      "guid": "E59D7EA6438D20ECFFA8E392AFE5B3CA",
+      "node_count": 36,
+      "pin_count": 96,
+      "connection_count": 42,
+      "exec_connection_count": 20,
+      "data_connection_count": 22
+    },
+    {
+      "name": "TryStagger_WInterrupt",
+      "kind": "function",
+      "guid": "0CEF63B148C26248DFC1CA875F0976CC",
+      "node_count": 41,
+      "pin_count": 99,
+      "connection_count": 37,
+      "exec_connection_count": 15,
+      "data_connection_count": 22
+    },
+    {
+      "name": "TryDefenseReset_WInterrupt",
+      "kind": "function",
+      "guid": "9899E4E44332414E5EEC6CA7849D0BEB",
+      "node_count": 80,
+      "pin_count": 195,
+      "connection_count": 74,
+      "exec_connection_count": 28,
+      "data_connection_count": 46
+    },
+    {
+      "name": "TryVulnerable_AfterThisState",
+      "kind": "function",
+      "guid": "C7E20D2343E4A75C0A10DE9E6EFBA197",
+      "node_count": 86,
+      "pin_count": 208,
+      "connection_count": 75,
+      "exec_connection_count": 26,
+      "data_connection_count": 49
+    },
+    {
+      "name": "Debug_SetDecision",
+      "kind": "function",
+      "guid": "E7AE84904679BE6AE94196AE10A79B9E",
+      "node_count": 6,
+      "pin_count": 20,
+      "connection_count": 6,
+      "exec_connection_count": 1,
+      "data_connection_count": 5
+    },
+    {
+      "name": "TryPhase2_AfterThisState",
+      "kind": "function",
+      "guid": "2D08C54E48B04BFD2F9D7BBDF46DA163",
+      "node_count": 32,
+      "pin_count": 85,
+      "connection_count": 27,
+      "exec_connection_count": 15,
+      "data_connection_count": 12
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "CD92019C4CC912ED7ED632A2F662325B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 8,
+    "generated_graph_count": 1,
+    "authored_node_count": 301,
+    "authored_pin_count": 771,
+    "authored_connection_count": 280,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "Debug_SetDecision",
+      "kind": "function",
+      "file": "graphs/Debug_SetDecision.json"
+    },
+    {
+      "name": "Director_Evaluate",
+      "kind": "function",
+      "file": "graphs/Director_Evaluate.json"
+    },
+    {
+      "name": "TryDefenseReset_WInterrupt",
+      "kind": "function",
+      "file": "graphs/TryDefenseReset_WInterrupt.json"
+    },
+    {
+      "name": "TryPhase2_AfterThisState",
+      "kind": "function",
+      "file": "graphs/TryPhase2_AfterThisState.json"
+    },
+    {
+      "name": "TryStagger_WInterrupt",
+      "kind": "function",
+      "file": "graphs/TryStagger_WInterrupt.json"
+    },
+    {
+      "name": "TryVulnerable_AfterThisState",
+      "kind": "function",
+      "file": "graphs/TryVulnerable_AfterThisState.json"
+    },
+    {
+      "name": "UpdateDirectorTimer",
+      "kind": "function",
+      "file": "graphs/UpdateDirectorTimer.json"
+    }
+  ]
+}

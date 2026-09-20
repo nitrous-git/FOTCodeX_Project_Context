@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_EvadeState_BossC",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "C84DFA5B4CAA02BFA8C7539808310FA0",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'"
+  },
+  "variables": [
+    {
+      "name": "As BP Boss C",
+      "guid": "E1ACFF1748E1AF6CFCE87282EEF59CE7",
+      "friendly_name": "As BP Boss C",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentStep",
+      "guid": "DAF804D14FBEFB03A608E59668607DA4",
+      "friendly_name": "Current Step",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DirectionChoice",
+      "guid": "A5FEC77C40119CE58FC927A51DA56360",
+      "friendly_name": "Direction Choice",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "string",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DirectionName",
+      "guid": "BF6D346A4735528D86013997EE04E9FE",
+      "friendly_name": "Direction Name",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "string",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Duration",
+      "guid": "1DF775914E539ECBA86F7E9564BAAE7C",
+      "friendly_name": "Duration",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Elapsed",
+      "guid": "3DF78DC1477E7412D461469B53500985",
+      "friendly_name": "Elapsed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IterationCount",
+      "guid": "80016F124D714D5AC6EF3B8784C302AC",
+      "friendly_name": "Iteration Count",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MaxIteration",
+      "guid": "762CD7904453065CDC3C278EDAB0DB7B",
+      "friendly_name": "Max Iteration",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StrafeDirection",
+      "guid": "32ABC1B2486ADB994985BBBD51522029",
+      "friendly_name": "Strafe Direction",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "73216A9B44C4008B462E57927CF6FCB7",
+      "node_count": 27,
+      "pin_count": 110,
+      "connection_count": 30,
+      "exec_connection_count": 14,
+      "data_connection_count": 16
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Exit",
+      "guid": "D208028E4B2DB4A7F126E7B8B27AEA88",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Tick",
+      "guid": "3D1A58D64F2B874B12FAE4B586966CDA",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Enter",
+      "guid": "54FCBD4942CBAC3A6C4778B453359FE0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 3,
+    "authored_node_count": 27,
+    "authored_pin_count": 110,
+    "authored_connection_count": 30,
+    "generated_node_count": 8,
+    "generated_pin_count": 23
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

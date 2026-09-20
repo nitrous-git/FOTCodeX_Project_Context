@@ -1,0 +1,2264 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_EnemyBase",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "23AA22484CF79C8221B1A3BD08C40C01",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'"
+  },
+  "variables": [
+    {
+      "name": "AggroRange",
+      "guid": "B19CF90E451267032B31C8B3220FCB32",
+      "friendly_name": "Aggro Range",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AIManagerRef",
+      "guid": "8E07D0EE4F2CF4A5F47E4EB318F567C9",
+      "friendly_name": "AIManager Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackArray",
+      "guid": "113EF79844CB6F09DB90E689280328CB",
+      "friendly_name": "Attack Array",
+      "category": "INVTEXT(\"Attack\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackCooldown",
+      "guid": "09EFD07344B6F9DACF487BAE0E26C609",
+      "friendly_name": "Attack Cooldown",
+      "category": "INVTEXT(\"Attacker\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackerMoveRefreshInterval",
+      "guid": "769284974F7828C472FB71BEF395A80F",
+      "friendly_name": "Attacker Move Refresh Interval",
+      "category": "INVTEXT(\"Attacker\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackerMoveRefreshTimer",
+      "guid": "9525200649BCA484D290EDAA0B0ADFA2",
+      "friendly_name": "Attacker Move Refresh Timer",
+      "category": "INVTEXT(\"Attacker\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackRange ",
+      "guid": "6417AF614D59AAE65F95A79C731E24B3",
+      "friendly_name": "Attack Range ",
+      "category": "Attacker",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bAttackInProgress",
+      "guid": "BC40730042406B01E134ED9D99B81D5B",
+      "friendly_name": "Attack in Progress",
+      "category": "INVTEXT(\"Attacker\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bCanBeExecuted",
+      "guid": "2450AC264562981ECFBA2DA62ACE900D",
+      "friendly_name": "Can be Executed",
+      "category": "Execution",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bCanBeShadowStruck",
+      "guid": "B1A82FD749BFEA1C54BC1BB7FC5F7E03",
+      "friendly_name": "Can be Shadow Struck",
+      "category": "Execution",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDeathDissolveStarted",
+      "guid": "700304FB4850CA9904FAC68DDA8FDDBA",
+      "friendly_name": "Death Dissolve Started",
+      "category": "Dead",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDeathRagdollStarted",
+      "guid": "6470C6E047D43C6FC4594B8416D0130A",
+      "friendly_name": "Death Ragdoll Started",
+      "category": "Dead",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDeathStarted",
+      "guid": "953BBAB64656E8208B28C0A6DB3C9B02",
+      "friendly_name": "Death Started",
+      "category": "Dead",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bExecutionConsumed",
+      "guid": "A0516A094B66EE284C0A7CA444013BBD",
+      "friendly_name": "Execution Consumed",
+      "category": "Execution",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bIsAttackerActive",
+      "guid": "6F67D9054CE7AB646F22AF9DB4F25B6B",
+      "friendly_name": "Is Attacker Active",
+      "category": "INVTEXT(\"Attacker\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bIsBeingExecuted",
+      "guid": "3FB43CD1477DD25C217912AF6BB6E58B",
+      "friendly_name": "Is Being Executed",
+      "category": "Execution",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bIsCombatReady",
+      "guid": "8B6CE7CE4C92000B2C17ADA4E63C85EE",
+      "friendly_name": "Is Combat Ready",
+      "category": "Awakening",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bIsDead",
+      "guid": "A69C2053404BFDEF034D2BA87195BF50",
+      "friendly_name": "Is Dead",
+      "category": "Dead",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bIsInAggroRange",
+      "guid": "B03AF869478D120DA83FD9BFAB494012",
+      "friendly_name": "Is in Aggro Range",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bIsInAttackRange ",
+      "guid": "4F921F78435DF1797A4069878848CC09",
+      "friendly_name": "Is in Attack Range ",
+      "category": "INVTEXT(\"Attacker\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bIsInDamageState",
+      "guid": "4F0391E941A97058AC66D6BE688265E6",
+      "friendly_name": "Is in Damage State",
+      "category": "Damage",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bObserverReenteringAggroRange ",
+      "guid": "5CE8ABC34B918313F87811BF69F13F92",
+      "friendly_name": "Observer Reentering Aggro Range ",
+      "category": "Observer",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bReservedForShadowStrike",
+      "guid": "E01CD99E428CF3E00E6127A26A541F22",
+      "friendly_name": "Reserved for Shadow Strike",
+      "category": "Execution",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bShowExecutionDebugText",
+      "guid": "F02075954D110D609E3CE1803F6E2D1D",
+      "friendly_name": "Show Execution Debug Text",
+      "category": "Execution",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSpawnStarted",
+      "guid": "B280F2F7453084F5A2F636BFA27F2AE6",
+      "friendly_name": "Spawn Started",
+      "category": "Awakening",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CameraShake",
+      "guid": "C9C0D0B043A3D591EDB46589549ECAD3",
+      "friendly_name": "Camera Shake",
+      "category": "INVTEXT(\"Hurts\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/EngineCameras.LegacyCameraShake'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CombatStyleMode",
+      "guid": "277B3D854F8371B683FF0CB1103CD83D",
+      "friendly_name": "Combat Style Mode",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode.E_Enemy_CombatStyleMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ConsecutiveHitCount",
+      "guid": "6DE4494A45947E1F29BE2094F503D4D5",
+      "friendly_name": "Consecutive Hit Count",
+      "category": "Damage",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentAttack",
+      "guid": "E34131FB49D08A9C7DCFD29C5246EE3E",
+      "friendly_name": "Current Attack",
+      "category": "Attack",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext.S_AttackContext'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentAttackAnim",
+      "guid": "F04B81B14EE13E1DA88ECBB83E241FF1",
+      "friendly_name": "Current Attack Anim",
+      "category": "INVTEXT(\"Attack\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentCombatStyle",
+      "guid": "B79667F24EAEF20A39DAD7ABCB35F692",
+      "friendly_name": "Current Combat Style",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle.DA_Enemy_CombatStyle_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentHitReactType",
+      "guid": "CF07C931432467243F56E684D3873A91",
+      "friendly_name": "Current Hit React Type",
+      "category": "Damage",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_HitReactType.E_HitReactType'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentObserverStrafeMode ",
+      "guid": "968EAF0E43DECF18E4C1249F93BDE6DC",
+      "friendly_name": "Current Observer Strafe Mode ",
+      "category": "Observer",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_StrafeMode.E_StrafeMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentState",
+      "guid": "A2B36AB34579F1AC674A0DA3C33E3DD4",
+      "friendly_name": "Current State",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState.E_EnemyState'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DamageMode",
+      "guid": "BED538A541F3231A1AA320ABFDD701C6",
+      "friendly_name": "Damage Mode",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DamageRecoveryDuration",
+      "guid": "F33B0B434CC70238C3345EA6084906F3",
+      "friendly_name": "Damage Recovery Duration",
+      "category": "Damage",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DamageRecoveryTimer",
+      "guid": "E4B6F9F34304D986F9D11EBB4654A1E8",
+      "friendly_name": "Damage Recovery Timer",
+      "category": "Damage",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DamageTimer",
+      "guid": "AD3300974F1495C72E4811B73B9B218B",
+      "friendly_name": "Damage Timer",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DeathDissolveDuration",
+      "guid": "F5A99D704E2A2C0981CF37AA3802F63A",
+      "friendly_name": "Death Dissolve Duration",
+      "category": "Dead",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DeathDissolveStartDelay",
+      "guid": "AFC01EB94D54D5A37DD38ABA0A42255A",
+      "friendly_name": "Death Dissolve Start Delay",
+      "category": "Dead",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DeathDynamicMaterials",
+      "guid": "353816124ACE9EF5994B21B1E0C5A5A2",
+      "friendly_name": "Death Dynamic Materials",
+      "category": "Dead",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInstanceDynamic'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DirectionVector",
+      "guid": "DDF6E6804596495348BF4EB9395C30F3",
+      "friendly_name": "Direction Vector",
+      "category": "INVTEXT(\"Dodge\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DistanceToPlayer",
+      "guid": "584555B3473C939C131CB6BAE04B437E",
+      "friendly_name": "Distance to Player",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ExecutionHealthPercentThreshold",
+      "guid": "225353184F6E533D88816BBDE9C20658",
+      "friendly_name": "Execution Health Percent Threshold",
+      "category": "Execution",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HealthCurrent",
+      "guid": "59F7EEA943DAB3B90AE0EFB29E09A573",
+      "friendly_name": "Health Current",
+      "category": "Hurts",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HealthMax",
+      "guid": "DE307E3C4EB72640313134BEC2770198",
+      "friendly_name": "Health Max",
+      "category": "Hurts",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitComboResetWindow",
+      "guid": "0BE7E2274388BC17490450A5B9F32284",
+      "friendly_name": "Hit Combo Reset Window",
+      "category": "Damage",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitCounterLimitForLargeReact",
+      "guid": "AF3B75084728A9FB56E977B8CD291007",
+      "friendly_name": "Hit Counter Limit for Large React",
+      "category": "Damage",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "hitLimit",
+      "guid": "8F17DB5B43786E88F196A097645817B9",
+      "friendly_name": "Hit Limit",
+      "category": "INVTEXT(\"Hurts\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitTarget",
+      "guid": "D5087B184831AA0028C5BA944FEED897",
+      "friendly_name": "Hit Target",
+      "category": "INVTEXT(\"Attack\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "impactLocation",
+      "guid": "31D8DA9F486225D05C821D9379817B99",
+      "friendly_name": "Impact Location",
+      "category": "INVTEXT(\"Hurts\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "inSpclDamageMode",
+      "guid": "E086D8B2449FAE1365BEDFAE19D426C1",
+      "friendly_name": "In Spcl Damage Mode",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InterruptTimer",
+      "guid": "5FC5C07C4C2632368667FA995EEA449D",
+      "friendly_name": "Interrupt Timer",
+      "category": "INVTEXT(\"Attack\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isAttacker",
+      "guid": "DBD3D3AC4FEDF4151F83679696ED49EA",
+      "friendly_name": "Is Attacker",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isAttacking",
+      "guid": "4719FBAE44C73FF3C76FFF9682D88DCD",
+      "friendly_name": "Is Attacking",
+      "category": "CombatState",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isAwake",
+      "guid": "84974F3C46189CF0182665B08FE968E2",
+      "friendly_name": "Is Awake",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isDead",
+      "guid": "3F54E68E4ACFFB25C1DCD8923E21BE7F",
+      "friendly_name": "Is Dead",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isDodging",
+      "guid": "22DF45614777DE993C7F6490F2F4A6A2",
+      "friendly_name": "Is Dodging",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isRunning",
+      "guid": "20E84FCA461E6729EB2E5E9C2A48F333",
+      "friendly_name": "Is Running",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isStrafing",
+      "guid": "6F3E2201415AA671D8EB16A94437FD93",
+      "friendly_name": "Is Strafing",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isStun",
+      "guid": "AE081785475CC86DD983658E6929B1FD",
+      "friendly_name": "Is Stun",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastAttackTime",
+      "guid": "C5C5B14549921B10F66C4BAE99DBCC82",
+      "friendly_name": "Last Attack Time",
+      "category": "INVTEXT(\"Attacker\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastBecameAttackerTime",
+      "guid": "5F078528434D562FF568C3B831BEBF83",
+      "friendly_name": "Last Became Attacker Time",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastDamageTime",
+      "guid": "BAB9A0B244FBBECC87ED59945FA367F9",
+      "friendly_name": "Last Damage Time",
+      "category": "Damage",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MoveDirection",
+      "guid": "DC84BA244613388DA1078F9262A4A39F",
+      "friendly_name": "Move Direction",
+      "category": "INVTEXT(\"Observer\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "nonTargetable",
+      "guid": "C48F59054DAFD436CF5C64A129073904",
+      "friendly_name": "Non Targetable",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ObserverDirectionChangeInterval ",
+      "guid": "B47D727145AAB285DD25858A33FDCEE6",
+      "friendly_name": "Observer Direction Change Interval ",
+      "category": "Observer",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ObserverDirectionTimer",
+      "guid": "2957F1074EB9B7A4ECA5339A936C05AB",
+      "friendly_name": "Observer Direction Timer",
+      "category": "Observer",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ObserverReenterBuffer ",
+      "guid": "ACC64EB14FA55AD2DE83B684E4DB12A8",
+      "friendly_name": "Observer Reenter Buffer ",
+      "category": "Observer",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Outcome",
+      "guid": "4D0297D4464F813BD55FA4BF50A03C66",
+      "friendly_name": "Outcome",
+      "category": "INVTEXT(\"Attack\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome.E_HitOutcome'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerInRange",
+      "guid": "82D57134402D825ED165F3BB2A88F192",
+      "friendly_name": "Player in Range",
+      "category": "INVTEXT(\"CombatState\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "1971BAFE4C0B177E66F0AEACBFED6368",
+      "friendly_name": "Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PrimaryWeapon",
+      "guid": "21F367594FF473D8802E4B951F451F63",
+      "friendly_name": "Primary Weapon",
+      "category": "Equipement",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RandomDodge",
+      "guid": "C0B1431341718997A8A5DF9AE2E28EC6",
+      "friendly_name": "Random Dodge",
+      "category": "INVTEXT(\"Dodge\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ReticleMaterialRef",
+      "guid": "03EBB04F4CA683922F42EDB2E5C44994",
+      "friendly_name": "Reticle Material Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInstanceDynamic'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SecondaryWeapon",
+      "guid": "054C813F4C46BF0FF4383CBD7A4463E3",
+      "friendly_name": "Secondary Weapon",
+      "category": "INVTEXT(\"Equipement\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "smallHitArray",
+      "guid": "BC6BBCBB443DFC05C9556A9DE09BA7EE",
+      "friendly_name": "Small Hit Array",
+      "category": "INVTEXT(\"Hurts\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpawnDissolveDuration",
+      "guid": "0CF26DC541F3FF7DEF4BECAAD1E2B18F",
+      "friendly_name": "Spawn Dissolve Duration",
+      "category": "Awakening",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpawnDynamicMaterials",
+      "guid": "5811675B4F7DCAA1615A8A8CB657BE9E",
+      "friendly_name": "Spawn Dynamic Materials",
+      "category": "Awakening",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInstanceDynamic'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpawnFinishDelay",
+      "guid": "5AFBE3BF4D5852DB0DE6AE926DB709BC",
+      "friendly_name": "Spawn Finish Delay",
+      "category": "Awakening",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpawnNiagaraFX",
+      "guid": "D125A27148E3524D5AD414BF6CE054B2",
+      "friendly_name": "Spawn Niagara FX",
+      "category": "Awakening",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "E4E7A79547574B8CC4F755B75ADADCE8",
+      "node_count": 375,
+      "pin_count": 1240,
+      "connection_count": 356,
+      "exec_connection_count": 165,
+      "data_connection_count": 191
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "F8DD1EA3460B383366339998CDC6B586",
+      "node_count": 8,
+      "pin_count": 19,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "getRandDirection",
+      "kind": "function",
+      "guid": "3E9B57EF4CD5BB368C120EBE4CBAF004",
+      "node_count": 12,
+      "pin_count": 41,
+      "connection_count": 13,
+      "exec_connection_count": 7,
+      "data_connection_count": 6
+    },
+    {
+      "name": "tryToPlayMontage",
+      "kind": "function",
+      "guid": "6FCB957C4C52D3443576B491C9DDAEB4",
+      "node_count": 18,
+      "pin_count": 44,
+      "connection_count": 18,
+      "exec_connection_count": 5,
+      "data_connection_count": 13
+    },
+    {
+      "name": "Set Strafe Direction",
+      "kind": "function",
+      "guid": "94DD65F94A4E6D0FFF423A866E83522E",
+      "node_count": 31,
+      "pin_count": 88,
+      "connection_count": 37,
+      "exec_connection_count": 12,
+      "data_connection_count": 25
+    },
+    {
+      "name": "GetCombatStyle",
+      "kind": "function",
+      "guid": "EBF6765543C33474208BE881B348E8D3",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetCombatStyle",
+      "kind": "function",
+      "guid": "B53D94CF4F3A62DA5215FE8D9EBDB670",
+      "node_count": 2,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetCombatStyleWeapon",
+      "kind": "function",
+      "guid": "6C1244F54DCBC504685DC485788B1465",
+      "node_count": 29,
+      "pin_count": 113,
+      "connection_count": 33,
+      "exec_connection_count": 11,
+      "data_connection_count": 22
+    },
+    {
+      "name": "UnequipAllWeapon",
+      "kind": "function",
+      "guid": "012394AD4903FC7338A3FFB042715BA2",
+      "node_count": 10,
+      "pin_count": 26,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
+    },
+    {
+      "name": "Set Combat Style from Enum",
+      "kind": "function",
+      "guid": "1D0EEB42497BB5DE7CB3629DBAF1F867",
+      "node_count": 7,
+      "pin_count": 31,
+      "connection_count": 6,
+      "exec_connection_count": 4,
+      "data_connection_count": 2
+    },
+    {
+      "name": "InitCombatStyle",
+      "kind": "function",
+      "guid": "2E6EAC5E4453DA12FD577F9D64E76F8B",
+      "node_count": 8,
+      "pin_count": 20,
+      "connection_count": 8,
+      "exec_connection_count": 3,
+      "data_connection_count": 5
+    },
+    {
+      "name": "UpdateDistanceToPlayer",
+      "kind": "function",
+      "guid": "207A371045768388B98984AB0467866A",
+      "node_count": 17,
+      "pin_count": 49,
+      "connection_count": 16,
+      "exec_connection_count": 5,
+      "data_connection_count": 11
+    },
+    {
+      "name": "CanBeGroupAttacker",
+      "kind": "function",
+      "guid": "5F7CBD3C4FFF31695C3398997EAD4E49",
+      "node_count": 6,
+      "pin_count": 14,
+      "connection_count": 5,
+      "exec_connection_count": 1,
+      "data_connection_count": 4
+    },
+    {
+      "name": "SetEnemyState",
+      "kind": "function",
+      "guid": "528B0D6541AF8AEC6C93078B228A46E5",
+      "node_count": 22,
+      "pin_count": 81,
+      "connection_count": 28,
+      "exec_connection_count": 13,
+      "data_connection_count": 15
+    },
+    {
+      "name": "PickObserverStrafeMode",
+      "kind": "function",
+      "guid": "F9E5776F4D65CD43131F589BEC889AD2",
+      "node_count": 2,
+      "pin_count": 4,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ComputeStrafeDirection",
+      "kind": "function",
+      "guid": "7BA39F0C418A98134D5400ACED25C733",
+      "node_count": 31,
+      "pin_count": 87,
+      "connection_count": 37,
+      "exec_connection_count": 12,
+      "data_connection_count": 25
+    },
+    {
+      "name": "CanAttackPlayer",
+      "kind": "function",
+      "guid": "F1E1F25247440F1A882D3BAADADEE06B",
+      "node_count": 18,
+      "pin_count": 48,
+      "connection_count": 18,
+      "exec_connection_count": 8,
+      "data_connection_count": 10
+    },
+    {
+      "name": "SetWeaponVisibility",
+      "kind": "function",
+      "guid": "2EA1D9C64ECC63ED2B13B3A747517E3C",
+      "node_count": 11,
+      "pin_count": 30,
+      "connection_count": 13,
+      "exec_connection_count": 5,
+      "data_connection_count": 8
+    },
+    {
+      "name": "UpdateExecutionDebugVisual",
+      "kind": "function",
+      "guid": "BE665CDF454E3A5BB2F131ABE0F64701",
+      "node_count": 24,
+      "pin_count": 68,
+      "connection_count": 24,
+      "exec_connection_count": 9,
+      "data_connection_count": 15
+    },
+    {
+      "name": "UpdateExecutionEligibility",
+      "kind": "function",
+      "guid": "44C737F84CA45FB41B6A24AF4E9261F0",
+      "node_count": 16,
+      "pin_count": 52,
+      "connection_count": 18,
+      "exec_connection_count": 10,
+      "data_connection_count": 8
+    },
+    {
+      "name": "CanReceiveShadowStrike",
+      "kind": "function",
+      "guid": "D41385354FAE249513EAE5A0FB5A33FA",
+      "node_count": 20,
+      "pin_count": 53,
+      "connection_count": 20,
+      "exec_connection_count": 11,
+      "data_connection_count": 9
+    },
+    {
+      "name": "IsInAir",
+      "kind": "macro",
+      "guid": "E4BF1E4F453A107CE04B48BE584D94C9",
+      "node_count": 5,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "IsTargetable",
+      "guid": "91D485664B33FAAC2D58CDA8C61A3974",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BPI_GetTargetPriority",
+      "guid": "22D915164075B4B8A2CE11B025FACE21",
+      "node_count": 2,
+      "pin_count": 3,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BPI_GetCombatTargetLocation",
+      "guid": "59DF3022427BD325A0A734B38FA7E310",
+      "node_count": 4,
+      "pin_count": 7,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BPI_CanBeCombatTargeted",
+      "guid": "A5A9F44E4E6E5C545CA4B1B353D41441",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BPI_CanBeExecuted",
+      "guid": "672E95B74D6BCF7ABFDD8E9C1A4E3DE2",
+      "node_count": 8,
+      "pin_count": 20,
+      "connection_count": 7,
+      "exec_connection_count": 1,
+      "data_connection_count": 6
+    },
+    {
+      "name": "BPI_GetExecutionTargetLocation",
+      "guid": "1E486E7C475007469612B7A2A296E56C",
+      "node_count": 4,
+      "pin_count": 7,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "CE_StartAwakeningState",
+      "guid": "A2FB96A347B184BAEB2B90B198FE40C7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StopAwakeningState",
+      "guid": "34D78E394120A0096F2EB0B9042BC830",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateAwakeningState",
+      "guid": "D7F5E36B4D80B2AE6C1E0EB9E3BFA914",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_PrepareSpawnDissolveMaterials",
+      "guid": "02C513CB4BB58C76BB905DB85FC4CA18",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_FinishAwakeningState",
+      "guid": "3B464FAA4061DEB7C7A69AB3D94C7F25",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartDamageState",
+      "guid": "692D717F4B9D8E40F256278BDD3B44C3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateDamageState",
+      "guid": "25D92C76413282C1DDABADB3A1769022",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StopDamageState",
+      "guid": "665255F542033265634EE684B71C4BF8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_FinishDamageState",
+      "guid": "2B8072D744AF089B8DD9409D052942AC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartRetreatState",
+      "guid": "063BC78C4CE61CF08E16059D9A99E565",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateRetreatState",
+      "guid": "659AFD214B3DA298FA0C61A6C3F02383",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StopRetreatState",
+      "guid": "5C889F6F41BE4B1F8E8BF38640B60DD1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_MoveToPlayer",
+      "guid": "60EEA8264656C3D0B6F96E97A8BBF985",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_AttackPlayer",
+      "guid": "B88470D34CC4040776B3D2B8FE5B7E74",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartAttackerState",
+      "guid": "734631404C53E14DA0EAF9B3A0E6703C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateAttackerState",
+      "guid": "AAF533CC4605828E7922E9B9015F7459",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StopAttackerState",
+      "guid": "AF64EB4A404C9BED77A11AA6FD8DF9FA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_OnAttackFinished",
+      "guid": "AB54378642CA9E9AAB1A1CA71ABED560",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateAttackerCooldownMovement",
+      "guid": "9295FB2645496A7080384DB99CF37F64",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateObserverState",
+      "guid": "FD76D8B44D4DA01854BEF5B8CFA07324",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartObserverState",
+      "guid": "F39BD33A474DDD3C47E334A8EEB5DFC9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StopObserverState",
+      "guid": "38AE61BC4C368FCEB85B1D848F98DB31",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_ResolveExecutionEnding",
+      "guid": "38BA303144E3D66113224499658D4A7C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateExecutionDamage",
+      "guid": "0B71C34B4DA8B3F1CBC3C0AB05CB427B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StopExecutionState",
+      "guid": "80A1031F4A89E5F1FC80B7838E4D76EC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateExecutionState",
+      "guid": "68EF36EB4C80811EA2B7FFBFD6D913FB",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartExecutionState",
+      "guid": "4DCD080C41FB65DFD5B63797A0E76D32",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartDissolveTimer",
+      "guid": "598760AA40BC06A003585DBCAB23E415",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BPI_OnExecutionCanceled",
+      "guid": "FA12D606406972E0EC441FA24A0BE1ED",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BPI_OnExecutionFinished",
+      "guid": "E99F24944C0DFD9CC7D7B390E5842994",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BPI_OnExecutionStarted",
+      "guid": "0F27F18D488BE9265FCC5B8B9846B64A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartDeathDissolve",
+      "guid": "CE8B764A42F0CE462CA4C8860E422029",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_PrepareDeathDissolveMaterials",
+      "guid": "7FE48108452585C176ECF3BF7F1C087D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StopDeadState",
+      "guid": "755D69C34F1DD8C6D49717BFE4184AC8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateDeadState",
+      "guid": "93DD28F8428295AA39AFF78F353AECB7",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartDeadState",
+      "guid": "7F5630A447121F70523110899CE610C3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_RefreshDamageState",
+      "guid": "275B26AE44F0D9BF2365F981AF03CB31",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateHitReactType",
+      "guid": "BAADE46B406C2E3EB2592DA9F4C06142",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveEndPlay",
+      "guid": "C1AF4C4A4963BCABF5358D8BA9476F43",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CS_BuildContext",
+      "guid": "9869BA614201C707B2FEF0A962C8ABDB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_RandomDodger",
+      "guid": "982BD15D4A06CE51B51E78825A641AAB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_DoDamage",
+      "guid": "EB6CC1034ADA2CCDC085BDAE9417478F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_FacePlayer",
+      "guid": "F69EABA249AACF9B1F1B3691A85DB312",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveTick",
+      "guid": "14DD0BAF4CDBCA86120E8AACA44462F7",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "42B3335B4F4BFCD1B32C28B4279D532D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_BloodDecals",
+      "guid": "146B1B954B716B74F2F405AD51D6455C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveAnyDamage",
+      "guid": "826C6A434789330804FC34963720336C",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "OnSuccess_7814196343216C6AD39B27943D2BD3AF",
+      "guid": "D7E4A4D24AC068D1E20963BA1CD3D0EE",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnFail_7814196343216C6AD39B27943D2BD3AF",
+      "guid": "CFDBD61C410859D7EFC91095D2DC7909",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Timeline_SpawnDissolve__UpdateFunc",
+      "guid": "90D2BBB044B6CF427D4546821B22D49B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Timeline_SpawnDissolve__FinishedFunc",
+      "guid": "822B6C364952F2403C9543BC06DAE2A6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Timeline_DeathDissolve__UpdateFunc",
+      "guid": "4D75A18B44EFDE9BBE51AB836831D1BF",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Timeline_DeathDissolve__FinishedFunc",
+      "guid": "60B200B24D5F9424862A44889F0CC445",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 22,
+    "generated_graph_count": 59,
+    "authored_node_count": 675,
+    "authored_pin_count": 2131,
+    "authored_connection_count": 677,
+    "generated_node_count": 148,
+    "generated_pin_count": 388
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CanAttackPlayer",
+      "kind": "function",
+      "file": "graphs/CanAttackPlayer.json"
+    },
+    {
+      "name": "CanBeGroupAttacker",
+      "kind": "function",
+      "file": "graphs/CanBeGroupAttacker.json"
+    },
+    {
+      "name": "CanReceiveShadowStrike",
+      "kind": "function",
+      "file": "graphs/CanReceiveShadowStrike.json"
+    },
+    {
+      "name": "ComputeStrafeDirection",
+      "kind": "function",
+      "file": "graphs/ComputeStrafeDirection.json"
+    },
+    {
+      "name": "GetCombatStyle",
+      "kind": "function",
+      "file": "graphs/GetCombatStyle.json"
+    },
+    {
+      "name": "getRandDirection",
+      "kind": "function",
+      "file": "graphs/getRandDirection.json"
+    },
+    {
+      "name": "InitCombatStyle",
+      "kind": "function",
+      "file": "graphs/InitCombatStyle.json"
+    },
+    {
+      "name": "PickObserverStrafeMode",
+      "kind": "function",
+      "file": "graphs/PickObserverStrafeMode.json"
+    },
+    {
+      "name": "Set Combat Style from Enum",
+      "kind": "function",
+      "file": "graphs/Set Combat Style from Enum.json"
+    },
+    {
+      "name": "Set Strafe Direction",
+      "kind": "function",
+      "file": "graphs/Set Strafe Direction.json"
+    },
+    {
+      "name": "SetCombatStyle",
+      "kind": "function",
+      "file": "graphs/SetCombatStyle.json"
+    },
+    {
+      "name": "SetCombatStyleWeapon",
+      "kind": "function",
+      "file": "graphs/SetCombatStyleWeapon.json"
+    },
+    {
+      "name": "SetEnemyState",
+      "kind": "function",
+      "file": "graphs/SetEnemyState.json"
+    },
+    {
+      "name": "SetWeaponVisibility",
+      "kind": "function",
+      "file": "graphs/SetWeaponVisibility.json"
+    },
+    {
+      "name": "tryToPlayMontage",
+      "kind": "function",
+      "file": "graphs/tryToPlayMontage.json"
+    },
+    {
+      "name": "UnequipAllWeapon",
+      "kind": "function",
+      "file": "graphs/UnequipAllWeapon.json"
+    },
+    {
+      "name": "UpdateDistanceToPlayer",
+      "kind": "function",
+      "file": "graphs/UpdateDistanceToPlayer.json"
+    },
+    {
+      "name": "UpdateExecutionDebugVisual",
+      "kind": "function",
+      "file": "graphs/UpdateExecutionDebugVisual.json"
+    },
+    {
+      "name": "UpdateExecutionEligibility",
+      "kind": "function",
+      "file": "graphs/UpdateExecutionEligibility.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    },
+    {
+      "name": "IsInAir",
+      "kind": "macro",
+      "file": "graphs/IsInAir.json"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_PlayerAction_Execution",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "8A46B4314C5918D9CBCBDC84DAD15EE2",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'"
+  },
+  "variables": [
+    {
+      "name": "bEnemyDeath",
+      "guid": "4A987A3E464A85225F6A71A7A7BFDB9A",
+      "friendly_name": "Enemy Death",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bStartedFromShadowStrike",
+      "guid": "DC97D950414EAF96D5AA2A8104872F8B",
+      "friendly_name": "Started from Shadow Strike",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "72AF3B904B6CBA70A3EAB2AC13902358",
+      "node_count": 0,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "StartAction",
+      "kind": "function",
+      "guid": "9C89A3734546D78A27B9E9B73CDBB327",
+      "node_count": 102,
+      "pin_count": 319,
+      "connection_count": 113,
+      "exec_connection_count": 41,
+      "data_connection_count": 72
+    },
+    {
+      "name": "EndAction",
+      "kind": "function",
+      "guid": "0131FBA1422DFF3EA6447AB82ED8AEDB",
+      "node_count": 30,
+      "pin_count": 83,
+      "connection_count": 30,
+      "exec_connection_count": 11,
+      "data_connection_count": 19
+    },
+    {
+      "name": "SelectExecutionToPush",
+      "kind": "function",
+      "guid": "0AAD81694CFE324169315EB4397EE1A6",
+      "node_count": 9,
+      "pin_count": 21,
+      "connection_count": 9,
+      "exec_connection_count": 5,
+      "data_connection_count": 4
+    },
+    {
+      "name": "SelectContextualAnimation",
+      "kind": "function",
+      "guid": "95FE80C8421FAB196ED620A64FC13EED",
+      "node_count": 10,
+      "pin_count": 21,
+      "connection_count": 10,
+      "exec_connection_count": 5,
+      "data_connection_count": 5
+    },
+    {
+      "name": "CheckForDeath",
+      "kind": "function",
+      "guid": "D39FD3874B5B73314951178F22AA3CB7",
+      "node_count": 16,
+      "pin_count": 44,
+      "connection_count": 14,
+      "exec_connection_count": 4,
+      "data_connection_count": 10
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 6,
+    "generated_graph_count": 0,
+    "authored_node_count": 167,
+    "authored_pin_count": 488,
+    "authored_connection_count": 176,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CheckForDeath",
+      "kind": "function",
+      "file": "graphs/CheckForDeath.json"
+    },
+    {
+      "name": "EndAction",
+      "kind": "function",
+      "file": "graphs/EndAction.json"
+    },
+    {
+      "name": "SelectContextualAnimation",
+      "kind": "function",
+      "file": "graphs/SelectContextualAnimation.json"
+    },
+    {
+      "name": "SelectExecutionToPush",
+      "kind": "function",
+      "file": "graphs/SelectExecutionToPush.json"
+    },
+    {
+      "name": "StartAction",
+      "kind": "function",
+      "file": "graphs/StartAction.json"
+    }
+  ]
+}

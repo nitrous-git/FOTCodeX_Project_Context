@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_HomingTarget_Orb",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb.BP_HomingTarget_Orb",
+    "relative_package": "Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Interface/BPI_HomingTarget"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 4,
+    "non_architecture_referencer_count": 19
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb.BP_HomingTarget_Orb_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb.BP_HomingTarget_Orb_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb.BP_HomingTarget_Orb_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "Collider",
+        "class": "BoxComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb.BP_HomingTarget_Orb_C:Collider_GEN_VARIABLE"
+      },
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_HomingTarget_Orb",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb.BP_HomingTarget_Orb_C:DefaultSceneRoot_GEN_VARIABLE"
+      },
+      {
+        "name": "HomingPoint",
+        "class": "SceneComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb.BP_HomingTarget_Orb_C:HomingPoint_GEN_VARIABLE"
+      },
+      {
+        "name": "OrbParticle",
+        "class": "NiagaraComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb.BP_HomingTarget_Orb_C:OrbParticle_GEN_VARIABLE"
+      },
+      {
+        "name": "Reticle",
+        "class": "StaticMeshComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/HomingBP/BP_HomingTarget_Orb.BP_HomingTarget_Orb_C:Reticle_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "AnimationChoice",
+        "guid": "94B3C36242875D3BDEF7E1A43E677C7F",
+        "friendly_name": "Animation Choice",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice.EAnimationChoice'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsTargetable",
+        "guid": "EFE0F00443BAEF65989AA4AA9FB1C6BB",
+        "friendly_name": "Is Targetable",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "HT_SetTargetable",
+        "CE_ResetTargetable",
+        "HT_GetAnimChoice",
+        "HT_GetPriority",
+        "HT_GetHomingPoint",
+        "HT_CanBeTargeted"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

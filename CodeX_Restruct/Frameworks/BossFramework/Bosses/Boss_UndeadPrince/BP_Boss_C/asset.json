@@ -1,0 +1,620 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_Boss_C",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C",
+    "relative_package": "Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/ABP/AnimBP_Boss_C",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/CombatLoop/BP_CloseDistanceSwordState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/CombatLoop/BP_StrafeObserveATKState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_EvadeState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_StrafeObserveDEFState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution/BP_ExecutionState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Spawn/BP_SpawnIntroState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Vulnerable/BP_BuffState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Vulnerable/BP_VulnerabilityWindowState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossID",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode",
+      "/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/ABP/AnimBP_Boss_C",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/CombatLoop/BP_CloseDistanceSwordState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/CombatLoop/BP_StrafeObserveATKState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_DefenseResetState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_EvadeState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Defense/BP_StrafeObserveDEFState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Execution/BP_ExecutionState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Spawn/BP_SpawnIntroState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Vulnerable/BP_BuffState_BossC"
+    ],
+    "non_architecture_dependency_count": 8,
+    "non_architecture_referencer_count": 3
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "AirSceneComp01",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:AirSceneComp01_GEN_VARIABLE"
+      },
+      {
+        "name": "ArrowComponent",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.Default__BP_Boss_C_C:Arrow"
+      },
+      {
+        "name": "BP_BossDirectorComponent",
+        "class": "BP_BossDirectorComponent_C",
+        "parent": "BP_Boss_C",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:BP_BossDirectorComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "BP_MetricsComponent",
+        "class": "BP_MetricsComponent_C",
+        "parent": "BP_Boss_C",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:BP_MetricsComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "CapsuleComponent",
+        "class": "CapsuleComponent",
+        "parent": "BP_Boss_C",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.Default__BP_Boss_C_C:CollisionCylinder"
+      },
+      {
+        "name": "CharacterMovement",
+        "class": "CharacterMovementComponent",
+        "parent": "BP_Boss_C",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.Default__BP_Boss_C_C:CharMoveComp"
+      },
+      {
+        "name": "ContextualAnimSceneActor",
+        "class": "ContextualAnimSceneActorComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:ContextualAnimSceneActor_GEN_VARIABLE"
+      },
+      {
+        "name": "HomingSceneComp",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:HomingSceneComp_GEN_VARIABLE"
+      },
+      {
+        "name": "Mesh",
+        "class": "SkeletalMeshComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.Default__BP_Boss_C_C:CharacterMesh0"
+      },
+      {
+        "name": "MotionWarping",
+        "class": "MotionWarpingComponent",
+        "parent": "BP_Boss_C",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:MotionWarping_GEN_VARIABLE"
+      },
+      {
+        "name": "ProjectileSpawner",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:ProjectileSpawner_GEN_VARIABLE"
+      },
+      {
+        "name": "S1",
+        "class": "StaticMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:S1_GEN_VARIABLE"
+      },
+      {
+        "name": "SwordCapsuleParent",
+        "class": "CapsuleComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:SwordCapsuleParent_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "AOETargetLocation",
+        "guid": "821F992F4AF8350AA5D01A967E49D62C",
+        "friendly_name": "AOETarget Location",
+        "category": "INVTEXT(\"Phase2\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Appear",
+        "guid": "662FA9154E8220F4FBF96F996B87FBE8",
+        "friendly_name": "Appear",
+        "category": "INVTEXT(\"Phase2\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bEnemySpawned",
+        "guid": "8FA9922C4B806AAB34DCAD8233FD3396",
+        "friendly_name": "Enemy Spawned",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BigCombo01",
+        "guid": "7538D142486DF7B0346E4BAA857D32C7",
+        "friendly_name": "Big Combo 01",
+        "category": "Combat Bool",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DashDown",
+        "guid": "D10C361747D6EA66EA40258D38B3DB37",
+        "friendly_name": "Dash Down",
+        "category": "Combat Bool",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DesertRealmDirector",
+        "guid": "F35D72AE4365781A34FBA5BEE9C7A920",
+        "friendly_name": "Desert Realm Director",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm.BP_LevelDirector_DesertRealm_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Disappear",
+        "guid": "2C39C2CD4DB6CC475E9AF6BACD0769AA",
+        "friendly_name": "Disappear",
+        "category": "INVTEXT(\"Phase2\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EnemyAIManager_0",
+        "guid": "A6D69DC8453DCC1A61B6BCB612A87484",
+        "friendly_name": "Enemy AIManager 0",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Evade",
+        "guid": "B27E14F04FF72220DD2D20B4E0E753C3",
+        "friendly_name": "Evade",
+        "category": "Combat Bool",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GhostMaterial",
+        "guid": "0AB552CA44E52939858D6EA918D1E042",
+        "friendly_name": "Ghost Material",
+        "category": "INVTEXT(\"Phase2\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInterface'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InitMaterials",
+        "guid": "958BE73D49182C6D36CA86B09CF8DEAB",
+        "friendly_name": "Init Materials",
+        "category": "INVTEXT(\"Phase2\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInterface'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "JumpAttack",
+        "guid": "8EAD9EDE451004DB20504A8B1439C184",
+        "friendly_name": "Jump Attack",
+        "category": "Combat Bool",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Rampage",
+        "guid": "06E9840A47436787950DE893411867B6",
+        "friendly_name": "Rampage",
+        "category": "Combat Bool",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SceneCenter_0",
+        "guid": "5A947C1C44375E380473D886DC504035",
+        "friendly_name": "Scene Center 0",
+        "category": "INVTEXT(\"Phase2\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SmallCombo01",
+        "guid": "9FCDD3494ABF42E7DB5E99A41AAD5A53",
+        "friendly_name": "Small Combo 01",
+        "category": "Combat Bool",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TargetFXNiagara",
+        "guid": "54BDA02245661F1CB3F023A3B60AC20E",
+        "friendly_name": "Target FXNiagara",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Transition",
+        "guid": "BB072FBA4D9162125286F9B165043D7F",
+        "friendly_name": "Transition",
+        "category": "INVTEXT(\"Combat Bool\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "VaultingAttack",
+        "guid": "AEBDFCE742CBA5B464FB58AC115B15F9",
+        "friendly_name": "Vaulting Attack",
+        "category": "INVTEXT(\"Phase2\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "VaultingPoint01",
+        "guid": "9120384D4BD6772265E9FC940FD6BF45",
+        "friendly_name": "Vaulting Point 01",
+        "category": "INVTEXT(\"Phase2\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "VaultingPoint02",
+        "guid": "E67F49BA433ECA27CD3C66A616E023A5",
+        "friendly_name": "Vaulting Point 02",
+        "category": "INVTEXT(\"Phase2\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "VaultingState",
+        "guid": "80F6A1744FDFD7BA29D6E297D9BA109D",
+        "friendly_name": "Vaulting State",
+        "category": "INVTEXT(\"Phase2\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "VaultWaveCount",
+        "guid": "916FA76D4B18C37E944906A02F4EA142",
+        "friendly_name": "Vault Wave Count",
+        "category": "Phase2",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "SetAllReferences",
+        "CreateHealthWidget",
+        "Initialize",
+        "InitializeFirstSequence",
+        "EnemySpawner",
+        "HalfHealthQuickAction",
+        "RegisterToDirector"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "CS_ResetTransition",
+        "CS_ResetStaggerFlag",
+        "CS_ResetVaultingAttack",
+        "CS_ResetAppear",
+        "CS_ResetDisappear",
+        "CS_ResetDashDown",
+        "CS_ResetIsInAir",
+        "CS_ResetRampage",
+        "CS_ResetJumpAttack",
+        "CS_ResetEvade",
+        "CS_ResetSmallCombo01",
+        "CS_ResetBigCombo01"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

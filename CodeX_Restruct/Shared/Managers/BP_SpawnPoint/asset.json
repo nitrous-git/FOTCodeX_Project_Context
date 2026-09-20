@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_SpawnPoint",
+    "package_name": "/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint",
+    "package_path": "/Game/CodeX_Restruct/Shared/Managers",
+    "object_path": "/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint.BP_SpawnPoint",
+    "relative_package": "Shared/Managers/BP_SpawnPoint"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner"
+    ],
+    "non_architecture_dependency_count": 0,
+    "non_architecture_referencer_count": 19
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint.BP_SpawnPoint_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint.BP_SpawnPoint_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint.BP_SpawnPoint_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_SpawnPoint",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint.BP_SpawnPoint_C:DefaultSceneRoot_GEN_VARIABLE"
+      },
+      {
+        "name": "SpawnComponent",
+        "class": "SceneComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint.BP_SpawnPoint_C:SpawnComponent_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "EnemyStyle",
+        "guid": "E12FE04743BC7D9B772B9391275BD403",
+        "friendly_name": "Enemy Style",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode.E_Enemy_CombatStyleMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SpawnClass",
+        "guid": "87FB86F84726DC2B46C1A4A71A4CBFBB",
+        "friendly_name": "Spawn Class",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

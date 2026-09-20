@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_WaitForExecuteState",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState.BP_WaitForExecuteState",
+    "relative_package": "Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    ],
+    "non_architecture_dependency_count": 4,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState.BP_WaitForExecuteState_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState.BP_WaitForExecuteState_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState.BP_WaitForExecuteState_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "As BP Boss A",
+        "guid": "107A8C77431820B11E35E3A161FC1C32",
+        "friendly_name": "As BP Boss A",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentStep",
+        "guid": "5E524EA2427DFD5ED90AF5BD1A3D2094",
+        "friendly_name": "Current Step",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Duration",
+        "guid": "EBC66B8445E4DC1D27B403B180B34D3C",
+        "friendly_name": "Duration",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Elapsed",
+        "guid": "A44603B24649008EB72872A708E74761",
+        "friendly_name": "Elapsed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StaggerLocation",
+        "guid": "BEE0159843E2C1FFBA7852A293262423",
+        "friendly_name": "Stagger Location",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Exit",
+        "Tick",
+        "Enter"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

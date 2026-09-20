@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_LevelDirector_DesertRealm",
+    "package_name": "/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm",
+    "package_path": "/Game/CodeX_Restruct/Shared/Directors",
+    "object_path": "/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm.BP_LevelDirector_DesertRealm",
+    "relative_package": "Shared/Directors/BP_LevelDirector_DesertRealm"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossID",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_TeleporterBase",
+      "/Game/CodeX_Restruct/Game/UI/Widget/WBP_DialogueSequence",
+      "/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C"
+    ],
+    "non_architecture_dependency_count": 7,
+    "non_architecture_referencer_count": 1
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm.BP_LevelDirector_DesertRealm_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm.BP_LevelDirector_DesertRealm_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm.BP_LevelDirector_DesertRealm_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_LevelDirector_DesertRealm",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm.BP_LevelDirector_DesertRealm_C:DefaultSceneRoot_GEN_VARIABLE"
+      },
+      {
+        "name": "IntroDialogueTriggerBox",
+        "class": "BoxComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm.BP_LevelDirector_DesertRealm_C:IntroDialogueTriggerBox_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "bDialogueTriggered",
+        "guid": "5DAEE3884CA904723113A19CFDC0D55E",
+        "friendly_name": "Dialogue Triggered",
+        "category": "INVTEXT(\"Presentation\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bFragmentSpawned",
+        "guid": "8E04D8044BC605142099B797D14039D0",
+        "friendly_name": "Fragment Spawned",
+        "category": "Events",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bHasBoundBossEvents",
+        "guid": "B8E8C9664FE22FC470C37485E8E1CDB8",
+        "friendly_name": "Has Bound Boss Events",
+        "category": "Events",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BoundConcubine ",
+        "guid": "E00626724709FAF5064233B54496F9A3",
+        "friendly_name": "Bound Concubine ",
+        "category": "Events",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BoundUndeadPrince ",
+        "guid": "B8999B4D4A96256EA2E682A0F23A1DDB",
+        "friendly_name": "Bound Undead Prince ",
+        "category": "Events",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPortalSpawned",
+        "guid": "1F4C15FD423B143B9CE59B9AE1D93334",
+        "friendly_name": "Portal Spawned",
+        "category": "Events",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ConcubineFragmentSpawnPoint",
+        "guid": "8A21F32F4E3447795092528A286DED93",
+        "friendly_name": "Concubine Fragment Spawn Point",
+        "category": "INVTEXT(\"SpawnPoints\")",
+        "property_flags": 2053,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.TargetPoint'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DialogueSequenceWidget",
+        "guid": "36FA79C341F95DFA3BDAB3975F0E1D84",
+        "friendly_name": "Dialogue Sequence Widget",
+        "category": "INVTEXT(\"Presentation\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/Widget/WBP_DialogueSequence.WBP_DialogueSequence_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LevelTitleWidget",
+        "guid": "14D3FDC9492AEF28682FA5B0335578FF",
+        "friendly_name": "Level Title Widget",
+        "category": "INVTEXT(\"Presentation\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerRef",
+        "guid": "4E40988F499673CE77647E975E5E39F4",
+        "friendly_name": "Player Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UndeadPrincePortalSpawnPoint",
+        "guid": "41C9042040CC59BF6A1514829237820B",
+        "friendly_name": "Undead Prince Portal Spawn Point",
+        "category": "SpawnPoints",
+        "property_flags": 2053,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.TargetPoint'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "StartDesertDialogueSequence",
+        "InitWidget",
+        "StartTitleIntro",
+        "RegisterBossActor",
+        "SpawnPortal",
+        "InitRef"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "CE_HandleConcubineDefeated",
+        "CE_HandleUndeadPrinceDefeated",
+        "BndEvt__BP_LevelDirector_DesertRealm_IntroDialogueTriggerBox_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

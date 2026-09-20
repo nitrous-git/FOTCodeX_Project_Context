@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_InventoryComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent",
+    "relative_package": "Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/DT_InventoryItemData",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_DescriptionBox",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer_wName",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview"
+    ],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 4
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "AttunementSlotCount",
+        "guid": "8916F4D8488118E7BE3E4786B0453933",
+        "friendly_name": "Attunement Slot Count",
+        "category": "INVTEXT(\"Slot counts\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AttunementSlots",
+        "guid": "B46E59BF47856824919ABEB274C67288",
+        "friendly_name": "Attunement Slots",
+        "category": "INVTEXT(\"Runtime arrays\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CombatStyleSlotCount",
+        "guid": "CF8557BE485CCA334706E19E790662A3",
+        "friendly_name": "Combat Style Slot Count",
+        "category": "Slot counts",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CombatStyleSlots",
+        "guid": "9C9E1E364B7EAAEFC8B4E79FDC97745D",
+        "friendly_name": "Combat Style Slots",
+        "category": "Runtime arrays",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ConsumableSlotCount",
+        "guid": "E151A9E8419478A1376CE9AC389D5D88",
+        "friendly_name": "Consumable Slot Count",
+        "category": "INVTEXT(\"Slot counts\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ConsumableSlots",
+        "guid": "D4754493407163CB2A1DD6A96AB141C8",
+        "friendly_name": "Consumable Slots",
+        "category": "INVTEXT(\"Runtime arrays\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EquipmentSlotCount",
+        "guid": "114D79D54E3EC4DD65F9A5A9E0D9C03F",
+        "friendly_name": "Equipment Slot Count",
+        "category": "INVTEXT(\"Slot counts\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EquipmentSlots",
+        "guid": "9B6D10F34698CCE3290B3D955BB49ECE",
+        "friendly_name": "Equipment Slots",
+        "category": "INVTEXT(\"Runtime arrays\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EquippedAttunementItemID",
+        "guid": "6904CB984412BD6E0C9F9CB17FF73542",
+        "friendly_name": "Equipped Attunement Item ID",
+        "category": "Equipped state",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EquippedCombatStyleItemID",
+        "guid": "4BA0C9114B2073429AFF53B55D0AFD88",
+        "friendly_name": "Equipped Combat Style Item ID",
+        "category": "Equipped state",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EquippedEquipmentItemID",
+        "guid": "B485BFC84F5117091C2739A8DA584DCA",
+        "friendly_name": "Equipped Equipment Item ID",
+        "category": "Equipped state",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FocusedCategory",
+        "guid": "08C684B8487D1783BFD524B4C7273A1B",
+        "friendly_name": "Focused Category",
+        "category": "Selected UI state",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/Item/EItemCategory.EItemCategory'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FocusedItemID",
+        "guid": "08D3DFD14D57D533069D19896BC32828",
+        "friendly_name": "Focused Item ID",
+        "category": "INVTEXT(\"Selected UI state\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FocusedSlotIndex",
+        "guid": "1C6C99CF4F1A9A079A385D8038E93247",
+        "friendly_name": "Focused Slot Index",
+        "category": "INVTEXT(\"Selected UI state\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FragmentSlotCount",
+        "guid": "03FC69FC423A5AE6C2EB2B9403791420",
+        "friendly_name": "Fragment Slot Count",
+        "category": "INVTEXT(\"Slot counts\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FragmentSlots",
+        "guid": "8F0D57F342029173F68D53B70AD08AF6",
+        "friendly_name": "Fragment Slots",
+        "category": "INVTEXT(\"Runtime arrays\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InventoryDataTable",
+        "guid": "F3C1379B41E410DE1A6D658687B5D119",
+        "friendly_name": "Inventory Data Table",
+        "category": "INVTEXT(\"References\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataTable'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnEquipmentChanged",
+        "guid": "163F5CD740BEBDD34011A29AB3D07BA6",
+        "friendly_name": "On Equipment Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnFocusedItemChanged",
+        "guid": "3B52A0414903F93930AF35B9F1BEA505",
+        "friendly_name": "On Focused Item Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnInventoryChanged",
+        "guid": "1E7FDDD84715C7B55110E4B6D65FECE0",
+        "friendly_name": "On Inventory Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OwnerPlayer",
+        "guid": "2D0D3DDF4AA5C03BBF7FF1BD375298EA",
+        "friendly_name": "Owner Player",
+        "category": "References",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "BuildEmptySlotArray",
+        "GetItemDefinition",
+        "SetSlotByCategoryAndIndex",
+        "GetSlotByCategoryAndIndex",
+        "GetSlotCountByCategory",
+        "AddItem",
+        "IsItemEquipped",
+        "TryAddToExistingStacks",
+        "TryAddToEmptySlots",
+        "EquipItemFromSlot",
+        "ApplyCombatStyle",
+        "ApplyEquipment",
+        "ApplyAttunement",
+        "FocusSlot",
+        "RemoveItemFromSlot",
+        "InitInventory",
+        "ClearInventorySlot",
+        "UseConsumableFromSlot",
+        "Debug_GiveStarterInventory",
+        "Debug_PrintSingleSlot",
+        "Debug_PrintInventory",
+        "TestEquip"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnInventoryChanged",
+        "OnEquipmentChanged",
+        "OnFocusedItemChanged"
+      ],
+      "generated_graphs": [
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

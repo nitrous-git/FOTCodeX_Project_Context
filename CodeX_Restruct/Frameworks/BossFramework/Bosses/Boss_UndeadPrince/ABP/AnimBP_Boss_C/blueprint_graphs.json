@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AnimBP_Boss_C",
+    "class": "/Script/Engine.AnimBlueprint",
+    "guid": "94EDAD164DE7322AC26EE6BD7A36DC24",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'"
+  },
+  "variables": [
+    {
+      "name": "BossRef",
+      "guid": "DFA257BC4B118D7A5299B5965FE941B3",
+      "friendly_name": "Boss Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "direction",
+      "guid": "5A7BB03B46D680B7C14EED963447303D",
+      "friendly_name": "Direction",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isDefending",
+      "guid": "D3E309994D947C1D4BDB83A9023C43CA",
+      "friendly_name": "Is Defending",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsInAir?",
+      "guid": "3E268073494E3294B68631B859A09989",
+      "friendly_name": "Is in Air?",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isRunning",
+      "guid": "46ED245F428C4D92E76929998D6A0A22",
+      "friendly_name": "Is Running",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "speed",
+      "guid": "20918B8542160E50AD215BAAEA794255",
+      "friendly_name": "Speed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "762C93DE484FF3A59BC22FBBCF34BEFC",
+      "node_count": 45,
+      "pin_count": 129,
+      "connection_count": 48,
+      "exec_connection_count": 19,
+      "data_connection_count": 29
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "AnimNotify_TransitionNotify",
+      "guid": "B0A5655D4AA45E2CFE5E29A4FFE15E67",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_StaggerFlag",
+      "guid": "E696A9474F353298BDC02F86529B38EF",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_Appear",
+      "guid": "7412BBD34AB2CB5284BD21B2E56C57EB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_Disappear",
+      "guid": "DE18932E452AFA9B85D897AFD58AFBA6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_DashDown",
+      "guid": "5A4E3B82494F03A126AA96870C3D52F4",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_IsInAir",
+      "guid": "0409C50741516CC18C529C98775E48F3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_Rampage",
+      "guid": "136335784029329D09BC2CA2B6D94DA1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_JumpAttack",
+      "guid": "0D69364B40350FE594BFC9822F0E405E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_Evade",
+      "guid": "B84C74EB4BCE435692044691E2965F4E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_SmallCombo01",
+      "guid": "C45710DC429CF059A0C9A29E13CF6211",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimNotify_BigCombo01",
+      "guid": "3E0429E2486E8B8FB3E0478F58E685F1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BlueprintBeginPlay",
+      "guid": "6747D7634FADBB5AB0AB0EB9FB7B1791",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BlueprintUpdateAnimation",
+      "guid": "28EE60674983194EFD0E5F8921B093BA",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_AnimBP_Boss_C_AnimGraphNode_TransitionResult_4C360864469A53717761B1AF6EE7AC11",
+      "guid": "29A462A5404247869CC339B5DEA26B0C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_AnimBP_Boss_C_AnimGraphNode_TransitionResult_39B77A02408C16E7AEB9879B451B1EE1",
+      "guid": "1D7B18274E27D35CDAC166932E80F472",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_AnimBP_Boss_C_AnimGraphNode_TransitionResult_9C8FB1A044895C9197FC3593292B5A62",
+      "guid": "B0E27CA4469FE227561B41A226AFB575",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_AnimBP_Boss_C_AnimGraphNode_TransitionResult_55F4A1F543A003B29674D59D255F421F",
+      "guid": "6E0DE2E448731FF0287A11B883A07917",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_AnimBP_Boss_C_AnimGraphNode_TransitionResult_0D9A18384375E9C797C61795B33F52A8",
+      "guid": "2C7FA8654485CA843E1F05AD77FCE113",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_AnimBP_Boss_C_AnimGraphNode_TransitionResult_3F22E00948FB9D42893680915B9FDA3C",
+      "guid": "B063E9B14F315AF3A2C5F09B4A2A3F4F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 19,
+    "authored_node_count": 45,
+    "authored_pin_count": 129,
+    "authored_connection_count": 48,
+    "generated_node_count": 39,
+    "generated_pin_count": 99
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

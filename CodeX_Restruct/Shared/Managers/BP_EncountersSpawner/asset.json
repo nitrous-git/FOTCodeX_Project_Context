@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_EncountersSpawner",
+    "package_name": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
+    "package_path": "/Game/CodeX_Restruct/Shared/Managers",
+    "object_path": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner.BP_EncountersSpawner",
+    "relative_package": "Shared/Managers/BP_EncountersSpawner"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 3,
+    "non_architecture_referencer_count": 7
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner.BP_EncountersSpawner_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner.BP_EncountersSpawner_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner.BP_EncountersSpawner_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "BoxCollider",
+        "class": "BoxComponent",
+        "parent": "Scene",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner.BP_EncountersSpawner_C:BoxCollider_GEN_VARIABLE"
+      },
+      {
+        "name": "Scene",
+        "class": "SceneComponent",
+        "parent": "BP_EncountersSpawner",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner.BP_EncountersSpawner_C:Scene_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "BossSpawnPoint",
+        "guid": "13CBF6E04C3228C539F44DBCE526A79A",
+        "friendly_name": "Boss Spawn Point",
+        "category": "Default",
+        "property_flags": 2053,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint.BP_SpawnPoint_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EnemySpawnPoints",
+        "guid": "5CC141EF4D521485CAA750B7EE457AFF",
+        "friendly_name": "Enemy Spawn Points",
+        "category": "Default",
+        "property_flags": 2053,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint.BP_SpawnPoint_C'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "NewWaveAllowed",
+        "guid": "9BA13BDF45150A506C7A988F196EEB42",
+        "friendly_name": "New Wave Allowed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerRef",
+        "guid": "9D288B9B41BC59876C52F68E54881AE8",
+        "friendly_name": "Player Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "EnemySpawner",
+        "BossSpawner"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "CE_ResetWaveAllowed",
+        "BndEvt__BP_EncountersSpawner_BoxCollider_K2Node_ComponentBoundEvent_0_ComponentEndOverlapSignature__DelegateSignature",
+        "ReceiveBeginPlay",
+        "BndEvt__BP_AISpawner_BoxCollider_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

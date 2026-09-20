@@ -1,0 +1,2346 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_BaseBoss",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "4628D72A4A67008BC6FD68B4B3774B78",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'"
+  },
+  "variables": [
+    {
+      "name": "ActiveInjectedState",
+      "guid": "5928F1DA410611773047E6BBF0A2B6BE",
+      "friendly_name": "Active Injected State",
+      "category": "INVTEXT(\"AfterInject\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ActiveState",
+      "guid": "7F17F9A549FF5B6D6973409FF25C2617",
+      "friendly_name": "Active State",
+      "category": "Stack Based FSM",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackClampTarget",
+      "guid": "4091F37F4261BF2A773320BC283AADA8",
+      "friendly_name": "Attack Clamp Target",
+      "category": "INVTEXT(\"AttackClamp\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BackHitMontage",
+      "guid": "A9AFC17046DFA41878D102A7644E1250",
+      "friendly_name": "Back Hit Montage",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bCanBeExecuted",
+      "guid": "F68B517A4CB6307A1E5E9A818DF4E2C0",
+      "friendly_name": "Can be Executed",
+      "category": "INVTEXT(\"Combat Bool\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bClampActive",
+      "guid": "2DED73314DA96D6E9B25A99B2D4EAD03",
+      "friendly_name": "Clamp Active",
+      "category": "AttackClamp",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bInjectAfterPending",
+      "guid": "6D50A0DE416B6A82CD12C4B3658D490F",
+      "friendly_name": "Inject After Pending",
+      "category": "AfterInject",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bInjectInterrupt_InProgress",
+      "guid": "F72ABF294177B29DDF2FC995DDEF606F",
+      "friendly_name": "Inject Interrupt in Progress",
+      "category": "INVTEXT(\"InjectInterrupt\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bInjectInterrupt_Pending",
+      "guid": "082959774BD36718207992A564008EC4",
+      "friendly_name": "Inject Interrupt Pending",
+      "category": "INVTEXT(\"InjectInterrupt\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bModeLocked",
+      "guid": "3D1DEFF74373F55E171DAAA9A2BE0EA5",
+      "friendly_name": "Mode Locked",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BossHasPhase2Transitions",
+      "guid": "2086F35D47A245C1FA0343B22E08CF29",
+      "friendly_name": "Boss Has Phase 2Transitions",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BossHealthWidgetRef",
+      "guid": "AA801BB340B903C435E2A0B14AB2339D",
+      "friendly_name": "Boss Health Widget Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI.WBP_BossUI_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BossName",
+      "guid": "DA5144014B50DCF6FC12AB835BE32C5F",
+      "friendly_name": "Boss Name",
+      "category": "Character",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPhase2RequestLatched",
+      "guid": "98BBD4334A5E6C285749358AB6CFCCB4",
+      "friendly_name": "Phase 2Request Latched",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPhase2Triggered",
+      "guid": "C742300F453B66BBE1319992FCF7924B",
+      "friendly_name": "Phase 2Triggered",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPlayerAggressing",
+      "guid": "0C12A3E147E86F92D3E1BC872D28F144",
+      "friendly_name": "Player Aggressing",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bRestoreMode",
+      "guid": "8F91DF724914F8CF1528D08E9196C854",
+      "friendly_name": "Restore Mode",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bStaggerRequested",
+      "guid": "2B608BDC4F63616BCB6FF5B849AF9F48",
+      "friendly_name": "Stagger Requested",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CacheDebugText",
+      "guid": "305B3B254FD553FD3476859B233C40BF",
+      "friendly_name": "Cache Debug Text",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ClampBuffer",
+      "guid": "484E98A04024C272F29C389B334827DA",
+      "friendly_name": "Clamp Buffer",
+      "category": "INVTEXT(\"AttackClamp\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ConsecutivePlayerHits",
+      "guid": "46274BFD43AFE40FFDA3B98E0E786054",
+      "friendly_name": "Consecutive Player Hits",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentAnimState",
+      "guid": "48217FD740F2C99E1FBA84A8BCFA484C",
+      "friendly_name": "Current Anim State",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentAttack",
+      "guid": "BA0EA21A4B6BF100A51F96A6AE9B77D7",
+      "friendly_name": "Current Attack",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext.S_AttackContext'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentCombatSequence",
+      "guid": "7AC740F74CAE313A426903BB2981D4C9",
+      "friendly_name": "Current Combat Sequence",
+      "category": "INVTEXT(\"Stack Based FSM\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentMode",
+      "guid": "5E694CDD4FEB2FB3F63DE0BF4287FD06",
+      "friendly_name": "Current Mode",
+      "category": "BT",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode.E_BossMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentPhase",
+      "guid": "706FC376485D9DF5904A469072377C7D",
+      "friendly_name": "Current Phase",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DeathState",
+      "guid": "46F4664548637565A704278416E57ECA",
+      "friendly_name": "Death State",
+      "category": "INVTEXT(\"Stack Based FSM\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefaultMode",
+      "guid": "598A26004C9E475CCAAD0F8D1069B626",
+      "friendly_name": "Default Mode",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode.E_BossMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefenseCooldown",
+      "guid": "E2063DF746992B8D54CAF4B98A3B750A",
+      "friendly_name": "Defense Cooldown",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefenseHitMontage",
+      "guid": "AD12409842CB8D0EA25631829698FA16",
+      "friendly_name": "Defense Hit Montage",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefenseResetState",
+      "guid": "6F36FD4D42C612FFB9CBDCA7DFD995E7",
+      "friendly_name": "Defense Reset State",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DirectionVector",
+      "guid": "F6DF6ED846B288287B482396F0AB0531",
+      "friendly_name": "Direction Vector",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DistanceToTarget",
+      "guid": "E397F759488390AB21FFFC97632277E2",
+      "friendly_name": "Distance to Target",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Duration",
+      "guid": "E752769140B5B4B9F990E4A6143603A7",
+      "friendly_name": "Duration",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Elapsed",
+      "guid": "716874F1480622AA8E2625AF349E9707",
+      "friendly_name": "Elapsed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EnemyAIManager",
+      "guid": "7A6536F443CEA07E64E309A84F743888",
+      "friendly_name": "Enemy AIManager",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HealthCurrent",
+      "guid": "6552CE314159DF37F372E3A7D9063B34",
+      "friendly_name": "Health Current",
+      "category": "HealthStamina_Phase",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HealthMax",
+      "guid": "7130373742A81C99324F9F98533E4B95",
+      "friendly_name": "Health Max",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitAnimArray",
+      "guid": "D7175B5C4E6BB469CCDBC78F1644D98F",
+      "friendly_name": "Hit Anim Array",
+      "category": "Character",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitAnimIndex",
+      "guid": "EF0B1F7B4ED22E749568EA9AE9D474EF",
+      "friendly_name": "Hit Anim Index",
+      "category": "Character",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectAfter_bRestoreMode",
+      "guid": "8B414B574D5F62B8C4A792AA2422176E",
+      "friendly_name": "Inject After B Restore Mode",
+      "category": "INVTEXT(\"AfterInject\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectAfter_Mode",
+      "guid": "F4AA35324748DA4A2855B494669FEDC4",
+      "friendly_name": "Inject After Mode",
+      "category": "INVTEXT(\"AfterInject\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode.E_BossMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectAfter_ModeToRestore",
+      "guid": "0601928F4B24BAC556DAC5AA91A35C30",
+      "friendly_name": "Inject After Mode to Restore",
+      "category": "INVTEXT(\"AfterInject\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode.E_BossMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectAfter_StateClass",
+      "guid": "504AC0F4437631045B6D5B86AA612605",
+      "friendly_name": "Inject After State Class",
+      "category": "INVTEXT(\"AfterInject\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectAfter_TargetState",
+      "guid": "AF92B9484CDC871772D9B3BB2BEF3E3D",
+      "friendly_name": "Inject After Target State",
+      "category": "INVTEXT(\"AfterInject\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectInterrupt_bRestoreMode",
+      "guid": "6282F75A4D1391005783DB94B3B73C9D",
+      "friendly_name": "Inject Interrupt B Restore Mode",
+      "category": "INVTEXT(\"InjectInterrupt\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectInterrupt_LastRequestTime",
+      "guid": "088245BA4ABEF9E24C69FC8E0AF437C5",
+      "friendly_name": "Inject Interrupt Last Request Time",
+      "category": "INVTEXT(\"InjectInterrupt\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectInterrupt_MinInterval",
+      "guid": "3E277DF54C1E37CDE57FB8893F86FEB1",
+      "friendly_name": "Inject Interrupt Min Interval",
+      "category": "INVTEXT(\"InjectInterrupt\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectInterrupt_Mode",
+      "guid": "1993F1F045232D59040AB19912412517",
+      "friendly_name": "Inject Interrupt Mode",
+      "category": "INVTEXT(\"InjectInterrupt\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode.E_BossMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectInterrupt_ModeToRestore",
+      "guid": "317921154732C4CD8E45E5ABFB4C0AFA",
+      "friendly_name": "Inject Interrupt Mode to Restore",
+      "category": "INVTEXT(\"InjectInterrupt\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode.E_BossMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectInterrupt_StateClass",
+      "guid": "037D97AD4408CD0B20857A9A00E5E2F2",
+      "friendly_name": "Inject Interrupt State Class",
+      "category": "InjectInterrupt",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InjectInterrupt_StopMontages",
+      "guid": "21D5FDE04183C8624FC05D9ACFFBE7D5",
+      "friendly_name": "Inject Interrupt Stop Montages",
+      "category": "INVTEXT(\"InjectInterrupt\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsDead",
+      "guid": "E4AD1E3E440A46A568BC4991A07212AC",
+      "friendly_name": "Is Dead",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isDefending",
+      "guid": "5AFD604B4420629D3528B29F9BD78DC0",
+      "friendly_name": "Is Defending",
+      "category": "INVTEXT(\"Combat Bool\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsInAir",
+      "guid": "4EB8F2B14B6F5F88F29659A8F811DE94",
+      "friendly_name": "Is in Air",
+      "category": "Combat Bool",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "isRunning",
+      "guid": "CDA4AC464DB6D7AC5ECAED86246FF6B9",
+      "friendly_name": "Is Running",
+      "category": "Combat Bool",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastDefenseTime",
+      "guid": "8BFF84AB46679B801692659632BD6951",
+      "friendly_name": "Last Defense Time",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastModeChangeTime",
+      "guid": "284EE0D049D77286120D2B96CA7EE299",
+      "friendly_name": "Last Mode Change Time",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastStaggerTime",
+      "guid": "4337A39C4EA9F95A62EA2385D358099C",
+      "friendly_name": "Last Stagger Time",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastVulnerableTime",
+      "guid": "BEE3CB7349F261E12227E2A0B60E6B9A",
+      "friendly_name": "Last Vulnerable Time",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LaunchMultiplier",
+      "guid": "B5E77A984A54ECBD029BF0A9973C0529",
+      "friendly_name": "Launch Multiplier",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LongRange",
+      "guid": "E1251A4E4DC709B1EE4F15A48C70AEB0",
+      "friendly_name": "Long Range",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ManualMove_Active",
+      "guid": "C04BF9894BE99803934D4386CDB83290",
+      "friendly_name": "Manual Move Active",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ManualMove_StartLoc",
+      "guid": "D2784782459D0E52A52DFE8FC8BEA1A3",
+      "friendly_name": "Manual Move Start Loc",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ManualMove_TargetLoc",
+      "guid": "929AE05E4AE78B0B8ACBF7B3ECE8F5B9",
+      "friendly_name": "Manual Move Target Loc",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MidRange",
+      "guid": "BD7FC0864978548D31AFB2885C2C4F09",
+      "friendly_name": "Mid Range",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MinSecondsBetweenModeChanges",
+      "guid": "DA77F6234F6A29A769C9D6AE8CF8610C",
+      "friendly_name": "Min Seconds Between Mode Changes",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ModeToRestore",
+      "guid": "68DB5056417C92004214DE980B69ECF5",
+      "friendly_name": "Mode to Restore",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode.E_BossMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "NewState",
+      "guid": "2CACFCE04B93F9735ACC1EBB12579BEB",
+      "friendly_name": "New State",
+      "category": "Stack Based FSM",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnBossDefeated",
+      "guid": "C614F78047523242EA09A5A04C094130",
+      "friendly_name": "On Boss Defeated",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Other Actor",
+      "guid": "F5CFF3A24F3D48AAFCCBE0AB6C311914",
+      "friendly_name": "Other Actor",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Outcome",
+      "guid": "EA695EAD40B72667B6DF55AA201300C0",
+      "friendly_name": "Outcome",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome.E_HitOutcome'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Phase2HealthThreshold",
+      "guid": "6214CEBF42FD22965120A9912DCD3C3D",
+      "friendly_name": "Phase 2Health Threshold",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "815FAF5944416B4C8A84C291D7A4781F",
+      "friendly_name": "Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Pressure",
+      "guid": "69E768BA4E4413A7202BA393172E763A",
+      "friendly_name": "Pressure",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SceneCenter",
+      "guid": "ED3A14D145E9EADE6AEF449901707024",
+      "friendly_name": "Scene Center",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SequenceDefense",
+      "guid": "21EE7216471AA5EA202E4CA93222BADF",
+      "friendly_name": "Sequence Defense",
+      "category": "INVTEXT(\"Stack Based FSM\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SequencePhase1",
+      "guid": "003C0E33488ECFA84DAD54ACE5134419",
+      "friendly_name": "Sequence Phase 1",
+      "category": "Stack Based FSM",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SequencePhase2",
+      "guid": "38FBDAC641391359675DEB9FF42ACC84",
+      "friendly_name": "Sequence Phase 2",
+      "category": "Stack Based FSM",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SequenceStagger",
+      "guid": "7A7848CF4EB6D3BAA9DBC99D26874683",
+      "friendly_name": "Sequence Stagger",
+      "category": "INVTEXT(\"Stack Based FSM\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SequenceTest",
+      "guid": "D374BBCE4A0F30E7552277B098675F4D",
+      "friendly_name": "Sequence Test",
+      "category": "Stack Based FSM",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SequenceTestPhase2",
+      "guid": "CE47E12B419C85FC437068B9ABACE1FD",
+      "friendly_name": "Sequence Test Phase 2",
+      "category": "INVTEXT(\"Stack Based FSM\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SequenceVulnerable",
+      "guid": "CFB016034B56158F825CF1B317DD883E",
+      "friendly_name": "Sequence Vulnerable",
+      "category": "INVTEXT(\"Stack Based FSM\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ShortRange",
+      "guid": "CE14D71C48867A5CFEA54FBEF1A25325",
+      "friendly_name": "Short Range",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpawnIntroClass",
+      "guid": "51795A7F49AD3C02C7CCA88863573464",
+      "friendly_name": "Spawn Intro Class",
+      "category": "INVTEXT(\"Stack Based FSM\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaggerCooldown",
+      "guid": "4AE746C949DE6118E017AFA3B4C6AA35",
+      "friendly_name": "Stagger Cooldown",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaggerFlag",
+      "guid": "AE590E5C4954045E11FE1BAD92911522",
+      "friendly_name": "Stagger Flag",
+      "category": "Combat Bool",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaggerState",
+      "guid": "0A9743C04E17DE0A383DC6960C04565C",
+      "friendly_name": "Stagger State",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaCurrent",
+      "guid": "262DC5804196B5968E573C8C2B3C9551",
+      "friendly_name": "Stamina Current",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaMax",
+      "guid": "B1A03F4643CC4147D7487DB4E362EF48",
+      "friendly_name": "Stamina Max",
+      "category": "INVTEXT(\"HealthStamina_Phase\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StateStack",
+      "guid": "56A8404247C8DA7FE0A26F88F0C47C09",
+      "friendly_name": "State Stack",
+      "category": "Stack Based FSM",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Top",
+      "guid": "FD4530A7436FF4AB15A35AB6968163C3",
+      "friendly_name": "Top",
+      "category": "Stack Based FSM",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TransitionToPhase2StateClass",
+      "guid": "E5DE3D354ED5DAF8511F55AE56E36523",
+      "friendly_name": "Transition to Phase 2State Class",
+      "category": "INVTEXT(\"Stack Based FSM\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "VulnerabilityWindowState",
+      "guid": "250A6B9045284433B92757B950CBAD63",
+      "friendly_name": "Vulnerability Window State",
+      "category": "Director",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "VulnerableCooldown",
+      "guid": "FCFE74C84C3C938F744D41BD66C3941E",
+      "friendly_name": "Vulnerable Cooldown",
+      "category": "INVTEXT(\"BT\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "81C844D74AA727491F4B50BE5398FCAD",
+      "node_count": 303,
+      "pin_count": 1047,
+      "connection_count": 294,
+      "exec_connection_count": 96,
+      "data_connection_count": 198
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "CF4E3DBC4DD4B6F090C40D8F88045AA3",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PushState",
+      "kind": "function",
+      "guid": "5E9FD8594FF55CFD48609BAF1C86CC07",
+      "node_count": 29,
+      "pin_count": 84,
+      "connection_count": 33,
+      "exec_connection_count": 12,
+      "data_connection_count": 21
+    },
+    {
+      "name": "PopState",
+      "kind": "function",
+      "guid": "AD515A71425CAD030DEB1CB246330385",
+      "node_count": 40,
+      "pin_count": 111,
+      "connection_count": 41,
+      "exec_connection_count": 13,
+      "data_connection_count": 28
+    },
+    {
+      "name": "TickActiveState",
+      "kind": "function",
+      "guid": "C80E03DF4FBDE7EE6B0515B94CAA345E",
+      "node_count": 26,
+      "pin_count": 73,
+      "connection_count": 26,
+      "exec_connection_count": 13,
+      "data_connection_count": 13
+    },
+    {
+      "name": "RefillStack",
+      "kind": "function",
+      "guid": "82FCCD9C4DA55D650BAB31B6D9C10F67",
+      "node_count": 14,
+      "pin_count": 46,
+      "connection_count": 20,
+      "exec_connection_count": 7,
+      "data_connection_count": 13
+    },
+    {
+      "name": "InMidRange",
+      "kind": "function",
+      "guid": "285A88724A93E52A0536B58A0B7883B9",
+      "node_count": 17,
+      "pin_count": 60,
+      "connection_count": 15,
+      "exec_connection_count": 3,
+      "data_connection_count": 12
+    },
+    {
+      "name": "In Short Range",
+      "kind": "function",
+      "guid": "55FE743247D2657BB846338E14221159",
+      "node_count": 13,
+      "pin_count": 40,
+      "connection_count": 12,
+      "exec_connection_count": 3,
+      "data_connection_count": 9
+    },
+    {
+      "name": "Set Strafe Direction",
+      "kind": "function",
+      "guid": "7FFA6BC148F7FE414278BD99653D8B5B",
+      "node_count": 41,
+      "pin_count": 132,
+      "connection_count": 44,
+      "exec_connection_count": 12,
+      "data_connection_count": 32
+    },
+    {
+      "name": "Manual Move Start",
+      "kind": "function",
+      "guid": "7421F9BC4E88DEDA784A6F955535AB71",
+      "node_count": 20,
+      "pin_count": 60,
+      "connection_count": 23,
+      "exec_connection_count": 10,
+      "data_connection_count": 13
+    },
+    {
+      "name": "ManualMove_End",
+      "kind": "function",
+      "guid": "42E6686840D326766208BA8ACCEB2439",
+      "node_count": 7,
+      "pin_count": 23,
+      "connection_count": 7,
+      "exec_connection_count": 4,
+      "data_connection_count": 3
+    },
+    {
+      "name": "Action Timer",
+      "kind": "function",
+      "guid": "0F6B878147BA7FF43A4862AED76DD27F",
+      "node_count": 10,
+      "pin_count": 32,
+      "connection_count": 12,
+      "exec_connection_count": 5,
+      "data_connection_count": 7
+    },
+    {
+      "name": "SetAllReferences",
+      "kind": "function",
+      "guid": "ED0099B140344F67E0EA179A1E506C5F",
+      "node_count": 11,
+      "pin_count": 45,
+      "connection_count": 14,
+      "exec_connection_count": 7,
+      "data_connection_count": 7
+    },
+    {
+      "name": "EnableDisableCollision",
+      "kind": "function",
+      "guid": "0322F377427D58A0ED66038CDB37091C",
+      "node_count": 7,
+      "pin_count": 18,
+      "connection_count": 8,
+      "exec_connection_count": 5,
+      "data_connection_count": 3
+    },
+    {
+      "name": "WeaponBeginOverlap",
+      "kind": "function",
+      "guid": "422E8BB54ADBCF5AC09A038BB76DDF07",
+      "node_count": 71,
+      "pin_count": 265,
+      "connection_count": 75,
+      "exec_connection_count": 19,
+      "data_connection_count": 56
+    },
+    {
+      "name": "GetSequenceForMode",
+      "kind": "function",
+      "guid": "CB03CD2941E0DCE9427A6DA6644F6C07",
+      "node_count": 10,
+      "pin_count": 26,
+      "connection_count": 10,
+      "exec_connection_count": 5,
+      "data_connection_count": 5
+    },
+    {
+      "name": "CanChangeMode",
+      "kind": "function",
+      "guid": "13C259AD4E62E97AAE29848A69AD124F",
+      "node_count": 43,
+      "pin_count": 113,
+      "connection_count": 43,
+      "exec_connection_count": 16,
+      "data_connection_count": 27
+    },
+    {
+      "name": "SetMode",
+      "kind": "function",
+      "guid": "7B2969B0415F93E4234F879788A6ABBE",
+      "node_count": 29,
+      "pin_count": 105,
+      "connection_count": 37,
+      "exec_connection_count": 19,
+      "data_connection_count": 18
+    },
+    {
+      "name": "RequestInjectionAfterThisState",
+      "kind": "function",
+      "guid": "55319D2C45EB894C9D1CE1994489853C",
+      "node_count": 34,
+      "pin_count": 114,
+      "connection_count": 35,
+      "exec_connection_count": 13,
+      "data_connection_count": 22
+    },
+    {
+      "name": "PostPop_ApplyInjection",
+      "kind": "function",
+      "guid": "195BAB054EF78AB702709C8D0E3E48A2",
+      "node_count": 35,
+      "pin_count": 102,
+      "connection_count": 33,
+      "exec_connection_count": 15,
+      "data_connection_count": 18
+    },
+    {
+      "name": "RequestInjectionWInterrupt",
+      "kind": "function",
+      "guid": "947DD7F9439110EBA0C8E9B5CCBB5C79",
+      "node_count": 37,
+      "pin_count": 121,
+      "connection_count": 39,
+      "exec_connection_count": 13,
+      "data_connection_count": 26
+    },
+    {
+      "name": "InjectInterrupt_Execute",
+      "kind": "function",
+      "guid": "CF4D1F1F40CD9CCB4C6563A64C9DE2F4",
+      "node_count": 46,
+      "pin_count": 159,
+      "connection_count": 44,
+      "exec_connection_count": 22,
+      "data_connection_count": 22
+    },
+    {
+      "name": "UpdateDebugTimer",
+      "kind": "function",
+      "guid": "0E10799A41CAA5C791814DACE1AC294E",
+      "node_count": 36,
+      "pin_count": 103,
+      "connection_count": 51,
+      "exec_connection_count": 2,
+      "data_connection_count": 49
+    },
+    {
+      "name": "CheckForPhase2Transition",
+      "kind": "function",
+      "guid": "5A04D0F240141498023722B44EAAEFEE",
+      "node_count": 16,
+      "pin_count": 49,
+      "connection_count": 15,
+      "exec_connection_count": 6,
+      "data_connection_count": 9
+    },
+    {
+      "name": "CanBeExecuted",
+      "kind": "function",
+      "guid": "76EE98D647A51BC73962359F3FC3A666",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Initialize",
+      "kind": "function",
+      "guid": "8C3DA42B4C29AB9D413B4DBF9209FCA9",
+      "node_count": 7,
+      "pin_count": 21,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "CreateHealthWidget",
+      "kind": "function",
+      "guid": "12AC221F4A42824B224E7093C14C2C4B",
+      "node_count": 5,
+      "pin_count": 19,
+      "connection_count": 7,
+      "exec_connection_count": 3,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InitializeCombat",
+      "kind": "function",
+      "guid": "CDEC05E44F3B1594BE3A64A3B9BE7D22",
+      "node_count": 7,
+      "pin_count": 21,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "InitializeFirstSequence",
+      "kind": "function",
+      "guid": "F4588BFB4F420DF2F9D88AA51193375F",
+      "node_count": 9,
+      "pin_count": 25,
+      "connection_count": 8,
+      "exec_connection_count": 3,
+      "data_connection_count": 5
+    },
+    {
+      "name": "HalfHealthQuickAction",
+      "kind": "function",
+      "guid": "7B0F75154C9AF378914F80BE937BFC8E",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "RegisterToDirector",
+      "kind": "function",
+      "guid": "8A9C9D4647B64AC91C4C89993B2B58DE",
+      "node_count": 2,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnBossDefeated",
+      "kind": "delegate",
+      "guid": "916347EA4BB8B7CABD3E33918230C50C",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "CS_RemoveHealthWidget",
+      "guid": "CCA4DF2141ED9393C07D54AC1A477BFB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_DashEvent",
+      "guid": "71D4B2034C144DDAF0C16C95705EDAB3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_BloodDecals",
+      "guid": "B6B28632422339FD00985D8CFA029759",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PlayCameraShake",
+      "guid": "49602BC54756408FB9C782B11EE95000",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CS_PushExecuteToDeathState",
+      "guid": "A9C45B9443C94684C17DB99976330D3E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_CheckForDeathSequence",
+      "guid": "41A8315D44C82E2048F058B9E87C8784",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "29BEEB6C449DD6B8BCF13186DFE2ABEB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveTick",
+      "guid": "EA6C01404A08415DEEDC3A8EEDF5A209",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CS_PlayDefenseHitMontage",
+      "guid": "3E8871FD41EBF63DBB9EF7BFAC33F666",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetHitMontageSeries",
+      "guid": "58D4D86A4D9413C9391318A87783137E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PlayHitMontage",
+      "guid": "11C301284CDB6FE51AE30F949D20E5B2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PushExecuteRecoveryState",
+      "guid": "B84A5FA749E4BEFDCDF622B6F32E9228",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PlayAnim",
+      "guid": "F693DC0C4D9DA21F07E5408A631C381E",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CS_FacePlayer",
+      "guid": "F37BF21740E2A5C7BBB0908298FDB2A5",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_TickAttackClamp",
+      "guid": "4AE6DB3C41110E96D9514A963983FB1F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_SetAttackClampActive",
+      "guid": "22DDF8D14EFBB78BB673DDB3F68A74C4",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__BP_Boss_SwordCapsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "E3E6913D494E70002BB69EA707793881",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    },
+    {
+      "name": "AN_AttackWindow_SetActive",
+      "guid": "F6459A4748A4FB888D125AAEB4D5A548",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "CS_DoDamage",
+      "guid": "5CB3BF9D4F93627A239770A536A93D40",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveAnyDamage",
+      "guid": "DA7582F141A09D1244A83993DC78AFE9",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "CS_LauchCharacterUtil",
+      "guid": "1E7132D544DE16848FD27EA45E1A1B9B",
+      "node_count": 3,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "TL_Dash__UpdateFunc",
+      "guid": "963A2E344BD2822AEA998E8FDE51CD0D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_Dash__FinishedFunc",
+      "guid": "97BDF45146F0C1638F55B7AD3846FD16",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_ManualMove__UpdateFunc",
+      "guid": "B619A842407D0292C144D7AA31C5C7B0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TL_ManualMove__FinishedFunc",
+      "guid": "51F55E7D430352D31B4BFDB748DE4C63",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 32,
+    "generated_graph_count": 25,
+    "authored_node_count": 931,
+    "authored_pin_count": 3023,
+    "authored_connection_count": 960,
+    "generated_node_count": 58,
+    "generated_pin_count": 183
+  },
+  "graph_files": [
+    {
+      "name": "OnBossDefeated",
+      "kind": "delegate",
+      "file": "graphs/OnBossDefeated.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "Action Timer",
+      "kind": "function",
+      "file": "graphs/Action Timer.json"
+    },
+    {
+      "name": "CanBeExecuted",
+      "kind": "function",
+      "file": "graphs/CanBeExecuted.json"
+    },
+    {
+      "name": "CanChangeMode",
+      "kind": "function",
+      "file": "graphs/CanChangeMode.json"
+    },
+    {
+      "name": "CheckForPhase2Transition",
+      "kind": "function",
+      "file": "graphs/CheckForPhase2Transition.json"
+    },
+    {
+      "name": "CreateHealthWidget",
+      "kind": "function",
+      "file": "graphs/CreateHealthWidget.json"
+    },
+    {
+      "name": "EnableDisableCollision",
+      "kind": "function",
+      "file": "graphs/EnableDisableCollision.json"
+    },
+    {
+      "name": "GetSequenceForMode",
+      "kind": "function",
+      "file": "graphs/GetSequenceForMode.json"
+    },
+    {
+      "name": "HalfHealthQuickAction",
+      "kind": "function",
+      "file": "graphs/HalfHealthQuickAction.json"
+    },
+    {
+      "name": "In Short Range",
+      "kind": "function",
+      "file": "graphs/In Short Range.json"
+    },
+    {
+      "name": "Initialize",
+      "kind": "function",
+      "file": "graphs/Initialize.json"
+    },
+    {
+      "name": "InitializeCombat",
+      "kind": "function",
+      "file": "graphs/InitializeCombat.json"
+    },
+    {
+      "name": "InitializeFirstSequence",
+      "kind": "function",
+      "file": "graphs/InitializeFirstSequence.json"
+    },
+    {
+      "name": "InjectInterrupt_Execute",
+      "kind": "function",
+      "file": "graphs/InjectInterrupt_Execute.json"
+    },
+    {
+      "name": "InMidRange",
+      "kind": "function",
+      "file": "graphs/InMidRange.json"
+    },
+    {
+      "name": "Manual Move Start",
+      "kind": "function",
+      "file": "graphs/Manual Move Start.json"
+    },
+    {
+      "name": "ManualMove_End",
+      "kind": "function",
+      "file": "graphs/ManualMove_End.json"
+    },
+    {
+      "name": "PopState",
+      "kind": "function",
+      "file": "graphs/PopState.json"
+    },
+    {
+      "name": "PostPop_ApplyInjection",
+      "kind": "function",
+      "file": "graphs/PostPop_ApplyInjection.json"
+    },
+    {
+      "name": "PushState",
+      "kind": "function",
+      "file": "graphs/PushState.json"
+    },
+    {
+      "name": "RefillStack",
+      "kind": "function",
+      "file": "graphs/RefillStack.json"
+    },
+    {
+      "name": "RegisterToDirector",
+      "kind": "function",
+      "file": "graphs/RegisterToDirector.json"
+    },
+    {
+      "name": "RequestInjectionAfterThisState",
+      "kind": "function",
+      "file": "graphs/RequestInjectionAfterThisState.json"
+    },
+    {
+      "name": "RequestInjectionWInterrupt",
+      "kind": "function",
+      "file": "graphs/RequestInjectionWInterrupt.json"
+    },
+    {
+      "name": "Set Strafe Direction",
+      "kind": "function",
+      "file": "graphs/Set Strafe Direction.json"
+    },
+    {
+      "name": "SetAllReferences",
+      "kind": "function",
+      "file": "graphs/SetAllReferences.json"
+    },
+    {
+      "name": "SetMode",
+      "kind": "function",
+      "file": "graphs/SetMode.json"
+    },
+    {
+      "name": "TickActiveState",
+      "kind": "function",
+      "file": "graphs/TickActiveState.json"
+    },
+    {
+      "name": "UpdateDebugTimer",
+      "kind": "function",
+      "file": "graphs/UpdateDebugTimer.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    },
+    {
+      "name": "WeaponBeginOverlap",
+      "kind": "function",
+      "file": "graphs/WeaponBeginOverlap.json"
+    }
+  ]
+}

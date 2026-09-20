@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_GhostEvade",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost/BP_GhostEvade",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost/BP_GhostEvade.BP_GhostEvade",
+    "relative_package": "Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost/BP_GhostEvade"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost/AN_SpawnGhost"
+    ],
+    "non_architecture_dependency_count": 10,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost/BP_GhostEvade.BP_GhostEvade_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost/BP_GhostEvade.BP_GhostEvade_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost/BP_GhostEvade.BP_GhostEvade_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "PoseableMesh",
+        "class": "PoseableMeshComponent",
+        "parent": "BP_GhostEvade",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost/BP_GhostEvade.BP_GhostEvade_C:PoseableMesh_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "As BP Base Boss",
+        "guid": "A1FFB1094E9F792228A463BC7034F793",
+        "friendly_name": "As BP Base Boss",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "As BP Boss B",
+        "guid": "A29EB4D94B1194A543A0AC977AE74AFE",
+        "friendly_name": "As BP Boss B",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B.BP_Boss_B_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BossRef",
+        "guid": "A8F486C94393F5AD964AE6940DA69FD4",
+        "friendly_name": "Boss Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DynamicMaterial",
+        "guid": "8BE89EA34E83FA441772019BB5A6EE04",
+        "friendly_name": "Dynamic Material",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MaterialInstanceDynamic'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerCharacterRef",
+        "guid": "C2039C184ED2152D8CFC1C9A869B8E46",
+        "friendly_name": "Player Character Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "CS_GhostTrail",
+        "ReceiveBeginPlay",
+        "Opacity__UpdateFunc",
+        "Opacity__FinishedFunc"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_WorldDataLayerManager",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager.BP_WorldDataLayerManager",
+    "relative_package": "Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_TeleporterBase"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent",
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_TeleporterBase"
+    ],
+    "non_architecture_dependency_count": 5,
+    "non_architecture_referencer_count": 2
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager.BP_WorldDataLayerManager_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager.BP_WorldDataLayerManager_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager.BP_WorldDataLayerManager_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_WorldDataLayerManager",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/BP_WorldDataLayerManager.BP_WorldDataLayerManager_C:DefaultSceneRoot_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "CurrentLightingLayer",
+        "guid": "A4223F294BF7BFA60AABEF8CECBEB26E",
+        "friendly_name": "Current Lighting Layer",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentWorldLayer",
+        "guid": "F44AF9674D514C7D661669868CF171AD",
+        "friendly_name": "Current World Layer",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataLayerAsset'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "UnloadAllDataLayers"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "CE_LoadWorldAndLightingLayer",
+        "CE_ActivateSpecificDataLayer",
+        "CE_LoadSpecificDataLayer",
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

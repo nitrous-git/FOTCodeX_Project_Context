@@ -1,0 +1,761 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "ABP_PlayerMaster",
+    "class": "/Script/Engine.AnimBlueprint",
+    "guid": "8E7495D24B69126F1679218C72701B44",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'"
+  },
+  "variables": [
+    {
+      "name": "AirMode",
+      "guid": "19016E694F7E357E28480283159A37F8",
+      "friendly_name": "Air Mode",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/ETraversalAirMode.ETraversalAirMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AnimChoice",
+      "guid": "FDDA700945BEC000ADB3A7B159889DA1",
+      "friendly_name": "Anim Choice",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice.EAnimationChoice'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "As BP Player Base",
+      "guid": "D708356C499CFF5A53F98EADDC93F405",
+      "friendly_name": "As BP Player Base",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bBlock",
+      "guid": "B753E94A481A26A21EC88087ACCB1B54",
+      "friendly_name": "Block",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bIsInAir?",
+      "guid": "709833124A37F68E679167821BF783F2",
+      "friendly_name": "Is in Air?",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bIsRunning",
+      "guid": "0C4903624A9BD9E3B458D480C1F32B51",
+      "friendly_name": "Is Running",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CombatStyleMode",
+      "guid": "EA2905514A614C1F43AB23A1518AAF51",
+      "friendly_name": "Combat Style Mode",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECombatStyleMode.ECombatStyleMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Direction",
+      "guid": "E3A66C4148CCA7831E9484BA11EEE2F1",
+      "friendly_name": "Direction",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Speed",
+      "guid": "7527C8114A03EFCB2BD06E94AA04F65E",
+      "friendly_name": "Speed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "EF3E559B4750842ED37358ADD59E335D",
+      "node_count": 41,
+      "pin_count": 121,
+      "connection_count": 40,
+      "exec_connection_count": 13,
+      "data_connection_count": 27
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "AnimNotify_doDamage",
+      "guid": "11832FD84FBF1DA0E89EDBB25498C27E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BlueprintBeginPlay",
+      "guid": "BCAD918F4BE0414EE350069267C8C198",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BlueprintUpdateAnimation",
+      "guid": "9B259C3F485F904CB40CBD805CE4E992",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_77E9F0674268A4C2A8C175870F2EC11B",
+      "guid": "1133D6014D0FA6AC49760584DE2E4046",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_94551F864388E567D2FA8CA2DDFDE462",
+      "guid": "0C4E4C424263D18B91E63BB6CDC77AA8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_EE0A32C34B29876EF82CF7B4CC731FB3",
+      "guid": "8799425F4D2F22338FF554A01A25ED96",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_37551FB84607AC87B19C1DA0A9A3C702",
+      "guid": "3AD615A243CA67FAECB53F8EE6B9151C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_D33004634D14D2960B01869DB818CCEF",
+      "guid": "AB2E236F470E49F6FC1B4E825DBEB4E0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_74D3EADF45897EFE9D0CF19E79B2FAC7",
+      "guid": "9CDF7E6F488E15200ACD8D862C667839",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_2090AC0C4605021593059FA547CE8047",
+      "guid": "1D611DD64D96184487A20AA33038DC7C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_9B5B8F3C496B2A8FABAB8CB63EDF32D1",
+      "guid": "2F31DE9B40298D670716A28E82E30D12",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_F6011ADA4BF6EBD63A53FAB6D507A5B8",
+      "guid": "AA39641F49DC7BBA7B3ABEB6625FB7CC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_FAF58B0D42732B4F86056F97D5833FF2",
+      "guid": "7FC1CBBC4E276A3E457008ACF228DC64",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_EBB78FDE48924E8861B81E91E6B29D78",
+      "guid": "AEB4EDB3458ED409BEBC5F9E5C9C4432",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_FFDD1BEC423D550F8A9CD6BAE6621B50",
+      "guid": "891940FC47F7C44F8E7D9DB7A1EC0757",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_895A58EC4FB66355A459F7AB4C8CF462",
+      "guid": "9BD6287246FE297648A8D2B078D11EA7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_7CCD89D047E2BB57E3DDDD821EB588C4",
+      "guid": "123CF549435E5AA2B4F1679CC0080101",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_5B0C76D24526A7E7B465C4928666845F",
+      "guid": "98E143244E4A0C03C34B0BAC6FB99110",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_A06513B14D84E3618DD938BB084D7D7B",
+      "guid": "88FCC94447D61DD26C15379B4D185C50",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_6E36523044391D1784F0FEB0A8078E94",
+      "guid": "19F1EE3E481D4FFBC50BDE8810F2FDD7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_5A7FB4724E014365DAB840A54AE368BA",
+      "guid": "0C1938F44C5F8CEE399C92892B27115F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_0A62D8904C49C0131A1F61BC146FAF9F",
+      "guid": "C0B9445445F1CB7C09DF919C7B7E7635",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_9922C9644E48A2D8B1476DB8490E0A9E",
+      "guid": "C803D66C426D9028FC2E7C8E19E38766",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_8A157497481B86ABD78E56995E771EDE",
+      "guid": "94CB2DCB45D8E2E6EE8457B07CCBA46C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_1450275A4B1C2ECDD1B405922B598AF1",
+      "guid": "9773F2C3423757E24CFD2985FA1E032B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_8A3C7ED94F6D841430FE4383528BA639",
+      "guid": "75FF515D4F73D6E8D2A4E3A9F4C9C0A9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_92AE5C9146486D430C34FC8077833BDA",
+      "guid": "8D8292544F3AC86707F848A4C45E1104",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_5FBC327949E232B24CE93CB8C3C196E7",
+      "guid": "677BF9284AE37D0E2EBCC3AF9C43C22A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_F0C1A0ED42218D6A3FCDA78A4B8944A7",
+      "guid": "9B510FD3477A34C896FE2D8DC6EF6F3C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_25C458EB438910B5356F0B8978AEB285",
+      "guid": "E98E36484DBA3A9DFCCA79996F493139",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_748EEE4A4EC5ECE4C76B07B4735C6944",
+      "guid": "B1C450FF4C84839ADE551BBFABA7986A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_8B789CDB420F9C1386082690D38165B7",
+      "guid": "D0648E81460CC168882BA38FAA01D9C5",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_A9865C40431A1E64C30B5C915985FCEA",
+      "guid": "AB39D95E41E8F5983BDE3185FDFF5B3B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_923FC1B94F1EEF21A2DE57AF56FFAE8E",
+      "guid": "ACBCFF03455CFD3CC717BC8D236BAFCE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_793FD84A4D818D37F83CEC9FEC1A4BEF",
+      "guid": "F4F342B94B32EA109AB41289B0D8CB96",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_1EDE845E422CFF803106C2850A9821FF",
+      "guid": "F98B5D394F9A4780A70F73B746B3833D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_9802F1984CDDFEDE3E267F90BC07186D",
+      "guid": "162DCB314ED08AFCDA3D8AB2B97A1DEF",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_B6D5DA1E48524452FA7DD5A2BB5115EE",
+      "guid": "DA5BA8AE4F0616BADAA45B9BDFF3127F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_89F1588D45E554F32D212DB2D9D6DC24",
+      "guid": "B3407F844C760E5CBD5731B4F839D35D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_ACB6DDD24A8E83A37B83A4966DC394AD",
+      "guid": "E2889AF44C66C1D28BACFEA87682BD57",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_9E643730469C3B95296B429C5A84E39E",
+      "guid": "DA67942847D23002D6DE608F38058879",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_6601AF3D40F028F538B58EA04FBB0560",
+      "guid": "E62F04304F9A672325E5EAB95F6BD2DA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_4518A1E9460AB3514D6FC3BD555B84AE",
+      "guid": "7A3EA37743BA9EA627E1A8B6E0D7AE62",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_87468139432E38E9BE744881FF93D390",
+      "guid": "4A7636114C5891FD63C0A58A9F3AE0A6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_5EF6DE2648DAE30611558A99B1C33530",
+      "guid": "02CAE6F54230EF669F37479A7EAECC09",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_E2384B9542EA8C5F5E4825ADFF2BFF9E",
+      "guid": "419F05644EE708B58E2C0AB946BAE5BC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_1E0266D74C8C68EB391BB68B1901311C",
+      "guid": "6D3694FE4BF301FD965A0E8E307B50DF",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_A12C9F7D4E360C4618471485C56C070F",
+      "guid": "C49DC521474F079F1331BA81520E209F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_D87F5A434F808CF0AE925BB6667D6C68",
+      "guid": "29BD57D644E2A79BA2BBA7866233406A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_C85863844546D4F9A129C39C437A8719",
+      "guid": "A6628B6341B486AB6EC057A37C237958",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_ECD3D7B94C9665572349FC9D8A69A7B5",
+      "guid": "5E8DF8BA4D3E7D4F4F39C3AB9EE40C62",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_B265EE3440AB251E0C8824A97EB24A51",
+      "guid": "C048575041A7E018B64478A5881D9E91",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_7A6491D4496F48500C4D2AB60547BE87",
+      "guid": "BDB5832D4C734B6D4B58A78D55CC28AE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_7681FF9441E9553D2E28A8A3CC3B9113",
+      "guid": "FCD858CA48853890E1E356B2F776CECE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_23020D3F41BFA023E28A3592C5897AEA",
+      "guid": "A8E4AB274C52233771C335B8017A1B84",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_ECA4342045C3385C46F0EC85184EA148",
+      "guid": "2A8A168E41F12A6F3ED305BB884CA3DD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_B0D648D048E4E10D23223CA127483B87",
+      "guid": "45D2C2B943979C841689E59D3B6D4F55",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_EB7CC4144B0DA19E3B213F9D0F362A56",
+      "guid": "14A3124D4DC639764CB313B4B763283C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_760D6A3E425913D61F0C1F848CCA0BE6",
+      "guid": "C4FB83AA4AEFCA77C7B4E1A6C10BBCFE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_D2B03E0C48E7D66FB40C1F92ED542AB3",
+      "guid": "A2E0828D478393CCC0F2879C750798D9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_D55ADDD0435E486F27B056B5DF120013",
+      "guid": "5C057F984C0EE19282B7C8B7C09D6495",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_6B1B120C44A240272B508C90ACCCC583",
+      "guid": "45027104418A963F018A09AD33182709",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PlayerMaster_AnimGraphNode_TransitionResult_4D60E53E487BF1E0415F4DB5B5D3BD07",
+      "guid": "C3F30A974527016D91DF3CB14F1623C0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 63,
+    "authored_node_count": 41,
+    "authored_pin_count": 121,
+    "authored_connection_count": 40,
+    "generated_node_count": 127,
+    "generated_pin_count": 319
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

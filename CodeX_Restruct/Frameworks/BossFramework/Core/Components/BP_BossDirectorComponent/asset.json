@@ -1,0 +1,597 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_BossDirectorComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent.BP_BossDirectorComponent",
+    "relative_package": "Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B_Clone",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/DirectorStates/BP_StaggerState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/Transitions/BP_SpawnIntroState_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/Transitions/BP_TransitionToPhase2State_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/MetricsDepletion/BP_DeathState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Spawn/BP_SpawnIntroState_BossC",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState"
+    ],
+    "non_architecture_dependency_count": 1,
+    "non_architecture_referencer_count": 1
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent.BP_BossDirectorComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent.BP_BossDirectorComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent.BP_BossDirectorComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bModeLock",
+        "guid": "CFCD4F4B4E22B33EB1958CA6FEB9A870",
+        "friendly_name": "Mode Lock",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPhase2RequestEmitted",
+        "guid": "E59B5A80408CE5A88D596FB35040BD50",
+        "friendly_name": "Phase 2Request Emitted",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPhase2RequestLatched",
+        "guid": "EF095DAD494F66E61A409F9982E8C0EE",
+        "friendly_name": "Phase 2Request Latched",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPhase2Triggered",
+        "guid": "8AFB4C7A48806DD03E43FB853B091471",
+        "friendly_name": "Phase 2Triggered",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bRequirePlayerAggressingForDefense",
+        "guid": "8D1627F2432EBA6AE09CBC9DC2CD751A",
+        "friendly_name": "Require Player Aggressing for Defense",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Debug_LastDecisionLine",
+        "guid": "14D304394890E3C071067984A99FE90D",
+        "friendly_name": "Debug Last Decision Line",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "string",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Defense_MaxDistance",
+        "guid": "D835AB274D5077D751B22C9B176ADC15",
+        "friendly_name": "Defense Max Distance",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Defense_PressureThreshold",
+        "guid": "8F0638C04E6B43C24AA69F8E34241785",
+        "friendly_name": "Defense Pressure Threshold",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DefenseCooldown",
+        "guid": "2695664C4E5E3F086A73ED81E99AD5E8",
+        "friendly_name": "Defense Cooldown",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DefenseResetState",
+        "guid": "7ECEB36B4AAB0B2DDCF8518262939334",
+        "friendly_name": "Defense Reset State",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DirectorUpdateInterval",
+        "guid": "5D4A3011473AC0160151298FF8E5821A",
+        "friendly_name": "Director Update Interval",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastDefenseTime",
+        "guid": "C2EA88204B74FEA2BAC232B4938160E3",
+        "friendly_name": "Last Defense Time",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastDirectorActionTime",
+        "guid": "8FE7BACE427C011B9ACCECA9F0AB4993",
+        "friendly_name": "Last Director Action Time",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastStaggerTime",
+        "guid": "99E10987484920AEF693A1AC77B61440",
+        "friendly_name": "Last Stagger Time",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastVulnerableTime",
+        "guid": "E83424294331893D654232BB7E6A36D8",
+        "friendly_name": "Last Vulnerable Time",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MetricsComp",
+        "guid": "838F27674473DB6CBAD1A7B337C5D139",
+        "friendly_name": "Metrics Comp",
+        "category": "References",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent.BP_MetricsComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MinSecondsBetweenDirectorActions",
+        "guid": "145CE09B43FD93737FE4DB8D32611AB3",
+        "friendly_name": "Min Seconds Between Director Actions",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Now",
+        "guid": "6637A91D43222630941C05A749916AC4",
+        "friendly_name": "Now",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OwnerBoss",
+        "guid": "0C837F73485BC98C5ADA90AD6711A819",
+        "friendly_name": "Owner Boss",
+        "category": "INVTEXT(\"References\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Phase2CooldownSeconds",
+        "guid": "6483D18543A986BC8D2B279478FD82FC",
+        "friendly_name": "Phase 2Cooldown Seconds",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Phase2HealthThreshold",
+        "guid": "D4B3B01D40E1E116BA5CDC93A963D0C9",
+        "friendly_name": "Phase 2Health Threshold",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PressureNormalized",
+        "guid": "6C0A31CF45CC68ED0D81428207021B26",
+        "friendly_name": "Pressure Normalized",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StaggerCooldown",
+        "guid": "8F094612455080FA37E22090F2A5E429",
+        "friendly_name": "Stagger Cooldown",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StaggerState",
+        "guid": "B2742BC54ED64026906E69B2CC31836F",
+        "friendly_name": "Stagger State",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "VulnerabilityWindowState",
+        "guid": "D396B7DA4FAB0928F2FB0CB4F6F0E153",
+        "friendly_name": "Vulnerability Window State",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Vulnerable_BossHitSuppressThreshold",
+        "guid": "DF6C0318439D602090CA93B7B0E5C364",
+        "friendly_name": "Vulnerable Boss Hit Suppress Threshold",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Vulnerable_MaxDistance",
+        "guid": "B07560684AF081B3857295B6E4A7C402",
+        "friendly_name": "Vulnerable Max Distance",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Vulnerable_PlayerHitThreshold",
+        "guid": "F4679C25429B596976FBE9BF1C5A15F5",
+        "friendly_name": "Vulnerable Player Hit Threshold",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Vulnerable_PressureThreshold",
+        "guid": "721A1DC0438F6717C07C74BC8D6EFA80",
+        "friendly_name": "Vulnerable Pressure Threshold",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "VulnerableCooldown",
+        "guid": "0AE00F8D410FF139C4CFBA9AC7882C78",
+        "friendly_name": "Vulnerable Cooldown",
+        "category": "Director",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UpdateDirectorTimer",
+        "Director_Evaluate",
+        "TryStagger_WInterrupt",
+        "TryDefenseReset_WInterrupt",
+        "TryVulnerable_AfterThisState",
+        "Debug_SetDecision",
+        "TryPhase2_AfterThisState"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}
