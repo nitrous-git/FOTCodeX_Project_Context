@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_EnemyAwareness",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "0567059141397F1F8208DF82B33B14C3",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "bEvaluatingTarget",
+      "guid": "B4BB2A6745CB5D19B7C420AA969994A9",
+      "friendly_name": "Evaluating Target",
+      "category": "Runtime",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bRequireLineOfSight",
+      "guid": "E7F7665B4A3DFF9CD366CB9E74C17A4F",
+      "friendly_name": "Require Line Of Sight",
+      "category": "Configuration",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CheckInterval",
+      "guid": "B4B2FECF43EEEC9F112CE0A844139626",
+      "friendly_name": "Check Interval",
+      "category": "Configuration",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentTarget",
+      "guid": "1A7E2EF04F51FFC6DAA961A68D115E36",
+      "friendly_name": "Current Target",
+      "category": "Runtime",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DetectionRange",
+      "guid": "ECE8F553454B56463BAE84979DB9B00C",
+      "friendly_name": "Detection Range",
+      "category": "Configuration",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EvaluationTimerHandle",
+      "guid": "268B99FF442DCE33BC5B49AE8C89B476",
+      "friendly_name": "Evaluation Timer Handle",
+      "category": "Runtime",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnTargetDetected",
+      "guid": "5BF3A7E94168420C6F8F9EB3FBDF7498",
+      "friendly_name": "On Target Detected",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "VisionAngle",
+      "guid": "F617E6FF40BD348D55FC4F926B05832E",
+      "friendly_name": "Vision Angle",
+      "category": "Configuration",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "BBD6399249FAA0A7DD0E2491C693135B",
+      "node_count": 7,
+      "pin_count": 25,
+      "connection_count": 6,
+      "exec_connection_count": 4,
+      "data_connection_count": 2
+    },
+    {
+      "name": "StopEvaluatingTarget",
+      "kind": "function",
+      "guid": "83E4B99C43AD535FE8D70E90875AECF0",
+      "node_count": 5,
+      "pin_count": 18,
+      "connection_count": 4,
+      "exec_connection_count": 3,
+      "data_connection_count": 1
+    },
+    {
+      "name": "StartEvaluatingTarget",
+      "kind": "function",
+      "guid": "CD5791394C02F7E3858D9281E891DF09",
+      "node_count": 12,
+      "pin_count": 48,
+      "connection_count": 14,
+      "exec_connection_count": 7,
+      "data_connection_count": 7
+    },
+    {
+      "name": "EvaluateTarget",
+      "kind": "function",
+      "guid": "4224D53F4FF70B35CDE46CAFC949B5C6",
+      "node_count": 38,
+      "pin_count": 128,
+      "connection_count": 39,
+      "exec_connection_count": 11,
+      "data_connection_count": 28
+    },
+    {
+      "name": "CheckLOS",
+      "kind": "function",
+      "guid": "EB95AEDC44F51E7E41D57296055D985A",
+      "node_count": 23,
+      "pin_count": 103,
+      "connection_count": 22,
+      "exec_connection_count": 8,
+      "data_connection_count": 14
+    },
+    {
+      "name": "OnTargetDetected",
+      "kind": "delegate",
+      "guid": "7000BAAA4C7EF51D02327B958407F72E",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "CE_TargetDetected",
+      "guid": "F1E1E10B4BF2298B209AF38D593F8DFC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 6,
+    "generated_graph_count": 1,
+    "authored_node_count": 86,
+    "authored_pin_count": 324,
+    "authored_connection_count": 85,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "OnTargetDetected",
+      "kind": "delegate",
+      "file": "graphs/OnTargetDetected.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CheckLOS",
+      "kind": "function",
+      "file": "graphs/CheckLOS.json"
+    },
+    {
+      "name": "EvaluateTarget",
+      "kind": "function",
+      "file": "graphs/EvaluateTarget.json"
+    },
+    {
+      "name": "StartEvaluatingTarget",
+      "kind": "function",
+      "file": "graphs/StartEvaluatingTarget.json"
+    },
+    {
+      "name": "StopEvaluatingTarget",
+      "kind": "function",
+      "file": "graphs/StopEvaluatingTarget.json"
+    }
+  ]
+}

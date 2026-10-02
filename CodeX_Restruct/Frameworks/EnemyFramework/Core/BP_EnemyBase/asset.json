@@ -20,12 +20,18 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Animations/ABP/ABP_Enemy",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Cleaver",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Cleaver_Instance",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Katana",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Katana_Instance",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Sword",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Sword_Instance",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyWorldBehavior",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatEntryMode",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_HitReactType",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_StrafeMode",
@@ -62,7 +68,7 @@
       "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     ],
     "non_architecture_dependency_count": 18,
-    "non_architecture_referencer_count": 10
+    "non_architecture_referencer_count": 12
   },
   "registry": {
     "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
@@ -84,6 +90,26 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.Default__BP_EnemyBase_C:Arrow"
+      },
+      {
+        "name": "Awareness",
+        "class": "AC_EnemyAwareness_C",
+        "parent": "BP_EnemyBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:Awareness_GEN_VARIABLE"
+      },
+      {
+        "name": "AwarenessSphere",
+        "class": "SphereComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:AwarenessSphere_GEN_VARIABLE"
       },
       {
         "name": "CapsuleComponent",
@@ -214,6 +240,16 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:StaticMesh_GEN_VARIABLE"
+      },
+      {
+        "name": "WorldBehavior",
+        "class": "AC_EnemyWorldBehavior_C",
+        "parent": "BP_EnemyBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:WorldBehavior_GEN_VARIABLE"
       }
     ],
     "variables": [
@@ -375,6 +411,23 @@
         "guid": "B1A82FD749BFEA1C54BC1BB7FC5F7E03",
         "friendly_name": "Can be Shadow Struck",
         "category": "Execution",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCombatActivated",
+        "guid": "15A7E1B3402568D9A0EDBE9E9FB023C7",
+        "friendly_name": "Combat Activated",
+        "category": "Combat Activation",
         "property_flags": 65541,
         "default_value": null,
         "type": {
@@ -660,11 +713,28 @@
         }
       },
       {
+        "name": "CombatEntryMode",
+        "guid": "BCC3E83C413E91D6BCE8BC842442B9AA",
+        "friendly_name": "Combat Entry Mode",
+        "category": "Configuration",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatEntryMode.E_Enemy_CombatEntryMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "CombatStyleMode",
         "guid": "277B3D854F8371B683FF0CB1103CD83D",
         "friendly_name": "Combat Style Mode",
-        "category": "Default",
-        "property_flags": 65541,
+        "category": "Configuration",
+        "property_flags": 5,
         "default_value": null,
         "type": {
           "category": "byte",
@@ -731,7 +801,7 @@
         "name": "CurrentCombatStyle",
         "guid": "B79667F24EAEF20A39DAD7ABCB35F692",
         "friendly_name": "Current Combat Style",
-        "category": "Default",
+        "category": "Configuration",
         "property_flags": 65541,
         "default_value": null,
         "type": {
@@ -1619,7 +1689,8 @@
         "SetWeaponVisibility",
         "UpdateExecutionDebugVisual",
         "UpdateExecutionEligibility",
-        "CanReceiveShadowStrike"
+        "CanReceiveShadowStrike",
+        "InitializePassiveAwareness"
       ],
       "macros": [
         "IsInAir"
@@ -1654,6 +1725,11 @@
         "CE_UpdateObserverState",
         "CE_StartObserverState",
         "CE_StopObserverState",
+        "CE_CompleteCombatEntry",
+        "CE_OnTargetDetected",
+        "BndEvt__BP_EnemyBase_AwarenessSphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature",
+        "BndEvt__BP_EnemyBase_AwarenessSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+        "CE_RequestCombatActivation",
         "CE_ResolveExecutionEnding",
         "CE_UpdateExecutionDamage",
         "CE_StopExecutionState",

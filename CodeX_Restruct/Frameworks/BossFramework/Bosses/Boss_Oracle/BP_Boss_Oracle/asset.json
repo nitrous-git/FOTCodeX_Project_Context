@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_Boss_Oracle",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle",
+    "relative_package": "Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/ABP/ABP_Boss_Oracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_DashToPlayerState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_GroundSlamState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SelfOrbState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SmallComboState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_StrafeObserveState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_TeleportCenterState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/ABP/ABP_Boss_Oracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_Cast01State_BossOracle1",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_DashToPlayerState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_GroundSlamState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SelfOrbState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SmallComboState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_StrafeObserveState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_TeleportCenterState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle"
+    ],
+    "non_architecture_dependency_count": 9,
+    "non_architecture_referencer_count": 2
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "AirSceneComp01",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:AirSceneComp01_GEN_VARIABLE"
+      },
+      {
+        "name": "ArrowComponent",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.Default__BP_Boss_Oracle_C:Arrow"
+      },
+      {
+        "name": "BP_BossDirectorComponent",
+        "class": "BP_BossDirectorComponent_C",
+        "parent": "BP_Boss_Oracle",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:BP_BossDirectorComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "BP_MetricsComponent",
+        "class": "BP_MetricsComponent_C",
+        "parent": "BP_Boss_Oracle",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:BP_MetricsComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "BP_ProjectileComponent",
+        "class": "BP_ProjectileComponent_C",
+        "parent": "BP_Boss_Oracle",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:BP_ProjectileComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "CapsuleComponent",
+        "class": "CapsuleComponent",
+        "parent": "BP_Boss_Oracle",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.Default__BP_Boss_Oracle_C:CollisionCylinder"
+      },
+      {
+        "name": "CharacterMovement",
+        "class": "CharacterMovementComponent",
+        "parent": "BP_Boss_Oracle",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.Default__BP_Boss_Oracle_C:CharMoveComp"
+      },
+      {
+        "name": "ContextualAnimSceneActor",
+        "class": "ContextualAnimSceneActorComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:ContextualAnimSceneActor_GEN_VARIABLE"
+      },
+      {
+        "name": "HomingSceneComp",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:HomingSceneComp_GEN_VARIABLE"
+      },
+      {
+        "name": "Mesh",
+        "class": "SkeletalMeshComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.Default__BP_Boss_Oracle_C:CharacterMesh0"
+      },
+      {
+        "name": "MotionWarping",
+        "class": "MotionWarpingComponent",
+        "parent": "BP_Boss_Oracle",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:MotionWarping_GEN_VARIABLE"
+      },
+      {
+        "name": "ProjectileSpawner",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:ProjectileSpawner_GEN_VARIABLE"
+      },
+      {
+        "name": "Staff",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:Staff_GEN_VARIABLE"
+      },
+      {
+        "name": "SwordCapsuleParent",
+        "class": "CapsuleComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:SwordCapsuleParent_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "AngleFloatArray",
+        "guid": "99B07B4C4839AC109BEAE7B36ED9C7AF",
+        "friendly_name": "Angle Float Array",
+        "category": "INVTEXT(\"AOE Sword\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SwordAOERadius",
+        "guid": "22197ADB4B92D828E7EF45B0163B6FCB",
+        "friendly_name": "Sword AOERadius",
+        "category": "AOE Sword",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SwordDropSystem",
+        "guid": "36CEDE0247A955B2D27129BCC43103E8",
+        "friendly_name": "Sword Drop System",
+        "category": "INVTEXT(\"AOE Sword\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SwordGroundLocations",
+        "guid": "4743E3354F4CE34AF10EFAAF9240C503",
+        "friendly_name": "Sword Ground Locations",
+        "category": "INVTEXT(\"AOE Sword\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SwordSpawnIndex",
+        "guid": "E8F3B3F343A6822729EFE9BFC61E4D72",
+        "friendly_name": "Sword Spawn Index",
+        "category": "INVTEXT(\"AOE Sword\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SwordSpawnInterval",
+        "guid": "A5B5C20E445682D32105AA94003EECDB",
+        "friendly_name": "Sword Spawn Interval",
+        "category": "INVTEXT(\"AOE Sword\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SwordTraceDistance",
+        "guid": "B090017549CD5BCAE67F9ABEC497DBD3",
+        "friendly_name": "Sword Trace Distance",
+        "category": "INVTEXT(\"AOE Sword\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "InitializeFirstSequence",
+        "Initialize",
+        "CreateHealthWidget",
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "InitializeFirstSequence_MERGED",
+        "Initialize_MERGED",
+        "CreateHealthWidget_MERGED",
+        "UserConstructionScript_MERGED",
+        "ReceiveBeginPlay",
+        "CE_BossEvent_SwordSemicircle",
+        "CE_SpawnNextOracleSword",
+        "CE_TriggerBossEvent",
+        "ExecuteUbergraph_BP_Boss_Oracle",
+        "EdGraph_0"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

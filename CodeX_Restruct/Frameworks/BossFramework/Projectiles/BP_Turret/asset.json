@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_Turret",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret.BP_Turret",
+    "relative_package": "Frameworks/BossFramework/Projectiles/BP_Turret"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/Projectiles_Child/BP_Projectile_07",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    ],
+    "non_architecture_dependency_count": 0,
+    "non_architecture_referencer_count": 2
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret.BP_Turret_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret.BP_Turret_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret.BP_Turret_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "Arrow",
+        "class": "ArrowComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret.BP_Turret_C:Arrow_GEN_VARIABLE"
+      },
+      {
+        "name": "BP_ProjectileComponent",
+        "class": "BP_ProjectileComponent_C",
+        "parent": "BP_Turret",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret.BP_Turret_C:BP_ProjectileComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_Turret",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret.BP_Turret_C:DefaultSceneRoot_GEN_VARIABLE"
+      }
+    ],
+    "variables": [],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Fire Projectiles Event"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

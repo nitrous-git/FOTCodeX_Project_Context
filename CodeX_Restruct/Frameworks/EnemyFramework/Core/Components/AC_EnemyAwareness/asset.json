@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_EnemyAwareness",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness.AC_EnemyAwareness",
+    "relative_package": "Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+    ],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 1
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness.AC_EnemyAwareness_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness.AC_EnemyAwareness_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness.AC_EnemyAwareness_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bEvaluatingTarget",
+        "guid": "B4BB2A6745CB5D19B7C420AA969994A9",
+        "friendly_name": "Evaluating Target",
+        "category": "Runtime",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bRequireLineOfSight",
+        "guid": "E7F7665B4A3DFF9CD366CB9E74C17A4F",
+        "friendly_name": "Require Line Of Sight",
+        "category": "Configuration",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CheckInterval",
+        "guid": "B4B2FECF43EEEC9F112CE0A844139626",
+        "friendly_name": "Check Interval",
+        "category": "Configuration",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentTarget",
+        "guid": "1A7E2EF04F51FFC6DAA961A68D115E36",
+        "friendly_name": "Current Target",
+        "category": "Runtime",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DetectionRange",
+        "guid": "ECE8F553454B56463BAE84979DB9B00C",
+        "friendly_name": "Detection Range",
+        "category": "Configuration",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EvaluationTimerHandle",
+        "guid": "268B99FF442DCE33BC5B49AE8C89B476",
+        "friendly_name": "Evaluation Timer Handle",
+        "category": "Runtime",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnTargetDetected",
+        "guid": "5BF3A7E94168420C6F8F9EB3FBDF7498",
+        "friendly_name": "On Target Detected",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "VisionAngle",
+        "guid": "F617E6FF40BD348D55FC4F926B05832E",
+        "friendly_name": "Vision Angle",
+        "category": "Configuration",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "StopEvaluatingTarget",
+        "StartEvaluatingTarget",
+        "EvaluateTarget",
+        "CheckLOS"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnTargetDetected"
+      ],
+      "generated_graphs": [
+        "CE_TargetDetected"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

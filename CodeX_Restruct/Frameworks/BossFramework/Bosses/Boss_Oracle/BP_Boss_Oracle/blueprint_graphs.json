@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_Boss_Oracle",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "FC6A71ED45AF3451AC1260AB84BC868A",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'"
+  },
+  "variables": [
+    {
+      "name": "AngleFloatArray",
+      "guid": "99B07B4C4839AC109BEAE7B36ED9C7AF",
+      "friendly_name": "Angle Float Array",
+      "category": "INVTEXT(\"AOE Sword\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SwordAOERadius",
+      "guid": "22197ADB4B92D828E7EF45B0163B6FCB",
+      "friendly_name": "Sword AOERadius",
+      "category": "AOE Sword",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SwordDropSystem",
+      "guid": "36CEDE0247A955B2D27129BCC43103E8",
+      "friendly_name": "Sword Drop System",
+      "category": "INVTEXT(\"AOE Sword\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SwordGroundLocations",
+      "guid": "4743E3354F4CE34AF10EFAAF9240C503",
+      "friendly_name": "Sword Ground Locations",
+      "category": "INVTEXT(\"AOE Sword\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SwordSpawnIndex",
+      "guid": "E8F3B3F343A6822729EFE9BFC61E4D72",
+      "friendly_name": "Sword Spawn Index",
+      "category": "INVTEXT(\"AOE Sword\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SwordSpawnInterval",
+      "guid": "A5B5C20E445682D32105AA94003EECDB",
+      "friendly_name": "Sword Spawn Interval",
+      "category": "INVTEXT(\"AOE Sword\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SwordTraceDistance",
+      "guid": "B090017549CD5BCAE67F9ABEC497DBD3",
+      "friendly_name": "Sword Trace Distance",
+      "category": "INVTEXT(\"AOE Sword\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "InitializeFirstSequence",
+      "kind": "function",
+      "guid": "188C3D7B42E8015DF58956A249B938D8",
+      "node_count": 7,
+      "pin_count": 18,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "Initialize",
+      "kind": "function",
+      "guid": "43241DBB41CF4237B5C4F58694B8DEE0",
+      "node_count": 6,
+      "pin_count": 15,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "CreateHealthWidget",
+      "kind": "function",
+      "guid": "D7F19EFF4CDBB163D07CCC89E4B7C618",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "CB8576E742D4A7D323D8B198170691C5",
+      "node_count": 2,
+      "pin_count": 4,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "F6753BB24DAE14EC545C73B07BB9E9A6",
+      "node_count": 46,
+      "pin_count": 181,
+      "connection_count": 45,
+      "exec_connection_count": 14,
+      "data_connection_count": 31
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "InitializeFirstSequence_MERGED",
+      "guid": "188C3D7B42E8015DF58956A249B938D8",
+      "node_count": 7,
+      "pin_count": 18,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "Initialize_MERGED",
+      "guid": "43241DBB41CF4237B5C4F58694B8DEE0",
+      "node_count": 6,
+      "pin_count": 15,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "CreateHealthWidget_MERGED",
+      "guid": "D7F19EFF4CDBB163D07CCC89E4B7C618",
+      "node_count": 7,
+      "pin_count": 18,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "UserConstructionScript_MERGED",
+      "guid": "CB8576E742D4A7D323D8B198170691C5",
+      "node_count": 2,
+      "pin_count": 4,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "5CB1BE0940A8946F3AE0ACB626CA4C8A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_BossEvent_SwordSemicircle",
+      "guid": "4C0031A94ABC75C836639B8586042203",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_SpawnNextOracleSword",
+      "guid": "D1B5E6B24559A51C890595AB42CCB47C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_TriggerBossEvent",
+      "guid": "3D8456254550181C1F94C3A5E3E89CDA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ExecuteUbergraph_BP_Boss_Oracle",
+      "guid": "EDEDAFAD41194145FB93EF8A2605E717",
+      "node_count": 82,
+      "pin_count": 273,
+      "connection_count": 70,
+      "exec_connection_count": 25,
+      "data_connection_count": 45
+    },
+    {
+      "name": "EdGraph_0",
+      "guid": "99DBFD5540A796041F72A5A9DA655026",
+      "node_count": 20,
+      "pin_count": 45,
+      "connection_count": 24,
+      "exec_connection_count": 9,
+      "data_connection_count": 15
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 10,
+    "authored_node_count": 67,
+    "authored_pin_count": 236,
+    "authored_connection_count": 62,
+    "generated_node_count": 132,
+    "generated_pin_count": 393
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CreateHealthWidget",
+      "kind": "function",
+      "file": "graphs/CreateHealthWidget.json"
+    },
+    {
+      "name": "Initialize",
+      "kind": "function",
+      "file": "graphs/Initialize.json"
+    },
+    {
+      "name": "InitializeFirstSequence",
+      "kind": "function",
+      "file": "graphs/InitializeFirstSequence.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

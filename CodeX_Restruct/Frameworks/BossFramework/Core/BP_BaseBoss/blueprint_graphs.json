@@ -943,6 +943,23 @@
       }
     },
     {
+      "name": "IsInStateAction",
+      "guid": "8101799849C4C4934A49D88A74DA1250",
+      "friendly_name": "Is in State Action",
+      "category": "INVTEXT(\"Combat Bool\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "isRunning",
       "guid": "CDA4AC464DB6D7AC5ECAED86246FF6B9",
       "friendly_name": "Is Running",
@@ -1628,11 +1645,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "81C844D74AA727491F4B50BE5398FCAD",
-      "node_count": 303,
-      "pin_count": 1047,
-      "connection_count": 294,
-      "exec_connection_count": 96,
-      "data_connection_count": 198
+      "node_count": 311,
+      "pin_count": 1070,
+      "connection_count": 299,
+      "exec_connection_count": 99,
+      "data_connection_count": 200
     },
     {
       "name": "UserConstructionScript",
@@ -1848,11 +1865,11 @@
       "name": "UpdateDebugTimer",
       "kind": "function",
       "guid": "0E10799A41CAA5C791814DACE1AC294E",
-      "node_count": 36,
-      "pin_count": 103,
-      "connection_count": 51,
+      "node_count": 37,
+      "pin_count": 105,
+      "connection_count": 52,
       "exec_connection_count": 2,
-      "data_connection_count": 49
+      "data_connection_count": 50
     },
     {
       "name": "CheckForPhase2Transition",
@@ -1947,8 +1964,26 @@
   ],
   "generated_graphs": [
     {
+      "name": "CE_TriggerBossEvent",
+      "guid": "4F2B80AD4F7D87EE8F65F884C082FB56",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_CallTurretToFire",
+      "guid": "A73B6707419BED1D23DBCDBBDE821201",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
       "name": "CS_RemoveHealthWidget",
-      "guid": "270B85794161712229DE5CBD400BB766",
+      "guid": "43A0D0504E272ABF6EC34D926356DA7D",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1957,7 +1992,7 @@
     },
     {
       "name": "CS_DashEvent",
-      "guid": "F53B6A4E45B7D9D8666087B01D756549",
+      "guid": "3FDC4F5544284427B23EE0BFE3022D7D",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1966,7 +2001,7 @@
     },
     {
       "name": "CS_BloodDecals",
-      "guid": "EAD13B6B485DD5075A36F8AD2B35C1A9",
+      "guid": "2B92E4044A6B2A273F2318AD29A16FBF",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1975,7 +2010,7 @@
     },
     {
       "name": "CS_PlayCameraShake",
-      "guid": "BDE96F804BFAC0E7647BF0963E001D7E",
+      "guid": "CFF246A744C901C7A746989AE5B4EE92",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1984,7 +2019,7 @@
     },
     {
       "name": "CS_PushExecuteToDeathState",
-      "guid": "4BE00F6143E0E318C81FCEA06D0ADEEA",
+      "guid": "CF0927294000D8702FE52C97089FCAB8",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1993,7 +2028,7 @@
     },
     {
       "name": "CS_CheckForDeathSequence",
-      "guid": "BC15BC71417BD1CD016253B6EBCAFF21",
+      "guid": "2C8F85894E49437378AFD68408E32EF8",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2002,7 +2037,7 @@
     },
     {
       "name": "ReceiveBeginPlay",
-      "guid": "FED41CF7436E14FD3526F7A970734E7F",
+      "guid": "FBC0FA38481C810AE5352D9BC4DD6641",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2011,7 +2046,7 @@
     },
     {
       "name": "ReceiveTick",
-      "guid": "A0EB52484A0A0E78470F30B4CC5AA39D",
+      "guid": "E97CD92A4CB7505D358678AB12E40088",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -2020,7 +2055,7 @@
     },
     {
       "name": "CS_PlayDefenseHitMontage",
-      "guid": "17FE9AF847787F73B2981A9F23CBE2DA",
+      "guid": "37578CB24F099798D22DA6A699B5D812",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2029,7 +2064,7 @@
     },
     {
       "name": "CS_ResetHitMontageSeries",
-      "guid": "535C13924EB18C7992753B8486C613B2",
+      "guid": "E40B45C8496BB469D1C55FA1020043CE",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2038,7 +2073,7 @@
     },
     {
       "name": "CS_PlayHitMontage",
-      "guid": "9C7107F14BA8B503F0014183975ED7E3",
+      "guid": "91648EEA487CAB0767C7F98D4981E92B",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2047,7 +2082,7 @@
     },
     {
       "name": "CS_PushExecuteRecoveryState",
-      "guid": "69C9CA31487C72210194A5B41F4C4F8D",
+      "guid": "FE5DB97B46F46E3A90D559958790BE69",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2056,7 +2091,7 @@
     },
     {
       "name": "CS_PlayAnim",
-      "guid": "3CCC81C344128A4F79704EB2E2230C85",
+      "guid": "30F44D7F4F997E4326F9FC8CD200CA10",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -2064,17 +2099,8 @@
       "data_connection_count": 1
     },
     {
-      "name": "CS_FacePlayer",
-      "guid": "3A5AEE384AC02492C0866DAA592C3D20",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
       "name": "CS_TickAttackClamp",
-      "guid": "C230E01F43D8A12D1FDD518559B0DE8D",
+      "guid": "3C527B5F46D9C07654B437AA799F6EE1",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2083,7 +2109,7 @@
     },
     {
       "name": "CS_SetAttackClampActive",
-      "guid": "B6B3490A45E364CC8376C3ABFAAA4889",
+      "guid": "57D46CEE45BA44734D1280AA31BED654",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -2092,7 +2118,7 @@
     },
     {
       "name": "BndEvt__BP_Boss_SwordCapsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-      "guid": "CA59DC324ED3500914B20BBDC996EAB8",
+      "guid": "B3C00C24446646FD78A931B35528562E",
       "node_count": 3,
       "pin_count": 19,
       "connection_count": 8,
@@ -2101,7 +2127,7 @@
     },
     {
       "name": "AN_AttackWindow_SetActive",
-      "guid": "FCCAF70D408666A3442EAB9F28FF85CC",
+      "guid": "2A27147444229D62754FB1A792632D1A",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -2110,7 +2136,7 @@
     },
     {
       "name": "CS_DoDamage",
-      "guid": "2069B7E140DE3FB8E7B012B20B57C950",
+      "guid": "2B21055546D22E8644701AAEDB31B8A6",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2119,7 +2145,7 @@
     },
     {
       "name": "ReceiveAnyDamage",
-      "guid": "DB8B47104FAFF79C411B01A84D9069D3",
+      "guid": "6CD2E9944B18DA3B1602AFAA179CC20C",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -2127,8 +2153,17 @@
       "data_connection_count": 4
     },
     {
+      "name": "CS_FacePlayer",
+      "guid": "A7D32A8D4CBB0C45D30A3DBACFC00712",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
       "name": "CS_LauchCharacterUtil",
-      "guid": "D674EF794BF9CE4986A85CA8893307FC",
+      "guid": "BCA3C75640F779366A68C8AA0FFAF4E3",
       "node_count": 3,
       "pin_count": 13,
       "connection_count": 5,
@@ -2137,7 +2172,7 @@
     },
     {
       "name": "TL_Dash__UpdateFunc",
-      "guid": "931367FE4945636BFE9A45857A106DE3",
+      "guid": "17821A354E53F4B6D9EC7EBA510FA12A",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2146,7 +2181,7 @@
     },
     {
       "name": "TL_Dash__FinishedFunc",
-      "guid": "A14C46034AAD3F2DA19EA8A31486404A",
+      "guid": "3E8C34AB430C3485D66EAEBC18179EDE",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2155,7 +2190,7 @@
     },
     {
       "name": "TL_ManualMove__UpdateFunc",
-      "guid": "CA27E99D4CBCC6777BB55AA94F29198F",
+      "guid": "B79CBE9045DE0F3C8FB92CA94DC5B850",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2164,7 +2199,7 @@
     },
     {
       "name": "TL_ManualMove__FinishedFunc",
-      "guid": "62693F2A42583C1C33DE07911AF1AD1B",
+      "guid": "CA6FF365480370017D2E549EEC90816C",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2174,12 +2209,12 @@
   ],
   "stats": {
     "authored_graph_count": 32,
-    "generated_graph_count": 25,
-    "authored_node_count": 931,
-    "authored_pin_count": 3023,
-    "authored_connection_count": 960,
-    "generated_node_count": 58,
-    "generated_pin_count": 183
+    "generated_graph_count": 27,
+    "authored_node_count": 940,
+    "authored_pin_count": 3048,
+    "authored_connection_count": 966,
+    "generated_node_count": 62,
+    "generated_pin_count": 193
   },
   "graph_files": [
     {

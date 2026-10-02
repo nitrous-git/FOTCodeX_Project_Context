@@ -30,6 +30,7 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_ExecuteRecoveryState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_ExecuteToDeathState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState",
@@ -62,6 +63,16 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/DirectorStates/BP_VulnerabilityWindowState_BossB",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/Transitions/BP_SpawnIntroState_BossB",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/States/Transitions/BP_TransitionToPhase2State_BossB",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/ABP/ABP_Boss_Oracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_Cast01State_BossOracle1",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_DashToPlayerState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_GroundSlamState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SelfOrbState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SmallComboState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_StrafeObserveState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_TeleportCenterState_BossOracle",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/ABP/AnimBP_Boss_C",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/CombatLoop/BP_CloseDistanceSwordState_BossC",
@@ -77,7 +88,10 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/AnimNotify/BP_CallTurret",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/ANS_AttackClampBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/AN_BossEvent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/AN_FinishCurrentStateAction",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/AN_LauchBoss",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/AN_ManualMoveEnd",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/AN_ManualMoveStart",
@@ -94,7 +108,7 @@
       "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner"
     ],
     "non_architecture_dependency_count": 16,
-    "non_architecture_referencer_count": 2
+    "non_architecture_referencer_count": 4
   },
   "registry": {
     "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
@@ -1165,6 +1179,23 @@
         }
       },
       {
+        "name": "IsInStateAction",
+        "guid": "8101799849C4C4934A49D88A74DA1250",
+        "friendly_name": "Is in State Action",
+        "category": "INVTEXT(\"Combat Bool\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "isRunning",
         "guid": "CDA4AC464DB6D7AC5ECAED86246FF6B9",
         "friendly_name": "Is Running",
@@ -1886,6 +1917,8 @@
         "OnBossDefeated"
       ],
       "generated_graphs": [
+        "CE_TriggerBossEvent",
+        "CE_CallTurretToFire",
         "CS_RemoveHealthWidget",
         "CS_DashEvent",
         "CS_BloodDecals",
@@ -1899,13 +1932,13 @@
         "CS_PlayHitMontage",
         "CS_PushExecuteRecoveryState",
         "CS_PlayAnim",
-        "CS_FacePlayer",
         "CS_TickAttackClamp",
         "CS_SetAttackClampActive",
         "BndEvt__BP_Boss_SwordCapsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
         "AN_AttackWindow_SetActive",
         "CS_DoDamage",
         "ReceiveAnyDamage",
+        "CS_FacePlayer",
         "CS_LauchCharacterUtil",
         "TL_Dash__UpdateFunc",
         "TL_Dash__FinishedFunc",

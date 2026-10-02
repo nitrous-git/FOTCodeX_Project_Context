@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 254,
-  "edge_count": 749,
+  "node_count": 276,
+  "edge_count": 824,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -640,6 +640,254 @@
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/ABP/ABP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/ABP/ABP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/ABP/ABP_Boss_Oracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_DashToPlayerState_BossOracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_GroundSlamState_BossOracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SelfOrbState_BossOracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SmallComboState_BossOracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_StrafeObserveState_BossOracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_TeleportCenterState_BossOracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitState"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_Cast01State_BossOracle1",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_Cast01State_BossOracle1",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_Cast01State_BossOracle1",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_Cast01State_BossOracle1",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_Cast01State_BossOracle1",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_Cast01State_BossOracle1",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_DashToPlayerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_DashToPlayerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_DashToPlayerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_DashToPlayerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_DashToPlayerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_GroundSlamState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_GroundSlamState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_GroundSlamState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_GroundSlamState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_GroundSlamState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_GroundSlamState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SelfOrbState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SelfOrbState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SelfOrbState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SelfOrbState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SelfOrbState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SmallComboState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SmallComboState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SmallComboState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SmallComboState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SmallComboState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_SmallComboState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_StrafeObserveState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_StrafeObserveState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_StrafeObserveState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_StrafeObserveState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_StrafeObserveState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_StrafeObserveState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_TeleportCenterState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_TeleportCenterState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_TeleportCenterState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_TeleportCenterState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/CombatLoop/Phase1/BP_TeleportCenterState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/States/DirectorStates/BP_StaggerState_BossOracle",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BPI_BossState"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/ABP/AnimBP_Boss_C",
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C"
     },
@@ -1045,6 +1293,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_ExecuteRecoveryState"
     },
     {
@@ -1136,6 +1388,10 @@
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/AnimNotify/BP_CallTurret",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/AnimNotify/BP_DirectProjectile_Notify",
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile"
     },
@@ -1184,6 +1440,22 @@
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/Projectiles_Child/BP_Projectile_07"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_Turret",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/Projectiles_Child/BP_Projectile_01",
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile"
     },
@@ -1197,6 +1469,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/Projectiles_Child/BP_Projectile_03_Variant",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/Projectiles_Child/BP_Projectile_03_VariantPurple",
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile"
     },
     {
@@ -1214,6 +1490,14 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/Projectiles_Child/BP_Projectile_07",
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/AN_BossEvent",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/AN_FinishCurrentStateAction",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/AN_LauchBoss",
@@ -1356,6 +1640,10 @@
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BB_BasicEnemy",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState"
     },
@@ -1457,6 +1745,14 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle"
     },
     {
@@ -1477,11 +1773,27 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Sword"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Sword_Instance"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatEntryMode"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyWorldBehavior"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
@@ -1520,6 +1832,10 @@
       "to": "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyWorldBehavior"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle",
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
@@ -1550,6 +1866,18 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Katana_Instance",
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Katana2"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Sword",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Sword_Instance",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Sword"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Sword_Instance",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Sword"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_ExecutionEnding",
@@ -2517,35 +2845,11 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent"
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
@@ -2961,19 +3265,15 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatEntryMode"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
     },
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
-      "to": "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     },
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
