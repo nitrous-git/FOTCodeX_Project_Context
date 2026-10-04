@@ -25,6 +25,23 @@
       }
     },
     {
+      "name": "CurrentPatrolPointIndex",
+      "guid": "F49EDAF248D8D9C7ED3BC28871E4C138",
+      "friendly_name": "Current Patrol Point Index",
+      "category": "INVTEXT(\"Spline Patrol\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "HomeLocation",
       "guid": "E7A082DF41014221D81A9E80E420D30E",
       "friendly_name": "Home Location",
@@ -35,6 +52,176 @@
         "category": "struct",
         "sub_category": null,
         "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PatrolAcceptanceRadius",
+      "guid": "3ACF3DE64AB653DE32F310883BFD53FF",
+      "friendly_name": "Patrol Acceptance Radius",
+      "category": "INVTEXT(\"Spline Patrol\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PatrolDirection",
+      "guid": "EAF00643417BDA1178332BAF7AC7C5BD",
+      "friendly_name": "Patrol Direction",
+      "category": "INVTEXT(\"Spline Patrol\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PatrolPathRef",
+      "guid": "C28EF683468B653E179D90B0A8E716FA",
+      "friendly_name": "Patrol Path Ref",
+      "category": "Spline Patrol",
+      "property_flags": 2053,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath.BP_EnemyPatrolPath_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PatrolTimerHandle",
+      "guid": "398ABBB34A47FAF88F724FBE64D2FC6D",
+      "friendly_name": "Patrol Timer Handle",
+      "category": "INVTEXT(\"Spline Patrol\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PatrolWaitTime",
+      "guid": "02F5394E4BB9E852D28B13A976589CD2",
+      "friendly_name": "Patrol Wait Time",
+      "category": "INVTEXT(\"Spline Patrol\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RoamAcceptanceRadius",
+      "guid": "34C34FA548A31A9AC23F0D82863E5D12",
+      "friendly_name": "Roam Acceptance Radius",
+      "category": "INVTEXT(\"Random Roam\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RoamRadius",
+      "guid": "B2C384C74330AC40FB0113B4799FF6A9",
+      "friendly_name": "Roam Radius",
+      "category": "Random Roam",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RoamTimerHandle",
+      "guid": "E792282B4BEC722884BF62BD87D1DF75",
+      "friendly_name": "Roam Timer Handle",
+      "category": "INVTEXT(\"Random Roam\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RoamWaitMax",
+      "guid": "88AED56442EFD2092B20BA898C121324",
+      "friendly_name": "Roam Wait Max",
+      "category": "INVTEXT(\"Random Roam\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RoamWaitMin",
+      "guid": "8F040B2542613ABEDA2CB38910A99F2A",
+      "friendly_name": "Roam Wait Min",
+      "category": "INVTEXT(\"Random Roam\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
         "container": null,
         "is_reference": false,
         "is_const": false,
@@ -64,48 +251,199 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "C6B6471040032AB565A58497FA0F0040",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
+      "node_count": 124,
+      "pin_count": 483,
+      "connection_count": 119,
+      "exec_connection_count": 54,
+      "data_connection_count": 65
     },
     {
       "name": "StopWorldBehavior",
       "kind": "function",
       "guid": "C315D40D4767D387559260BBCC28B1C3",
-      "node_count": 2,
-      "pin_count": 6,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
+      "node_count": 11,
+      "pin_count": 39,
+      "connection_count": 12,
+      "exec_connection_count": 6,
+      "data_connection_count": 6
     },
     {
       "name": "StartWorldBehavior",
       "kind": "function",
       "guid": "A2D031894733AC8D5EF7B28CFE308196",
-      "node_count": 1,
-      "pin_count": 1,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
+      "node_count": 12,
+      "pin_count": 46,
+      "connection_count": 11,
+      "exec_connection_count": 8,
+      "data_connection_count": 3
+    },
+    {
+      "name": "AdvancePatrolPoint",
+      "kind": "function",
+      "guid": "2CF987DC4B284B7A42769389AE4ED132",
+      "node_count": 44,
+      "pin_count": 115,
+      "connection_count": 41,
+      "exec_connection_count": 22,
+      "data_connection_count": 19
     }
   ],
-  "generated_graphs": [],
+  "generated_graphs": [
+    {
+      "name": "CE_StartRandomRoam",
+      "guid": "5176C63748CE299A33F294A13E37B8C3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "970DA01542B773C836751BA8B2E3402F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_MoveToRandomRoamPoint",
+      "guid": "6F540CB94999F35D006D89A807BE36EB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_PatrolWaitElapsed",
+      "guid": "6CD9736642ABCC586D4CFD92135114C1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_ScheduleNextPatrolMove",
+      "guid": "D1E8163D4A85730DCE7754A271338CF1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_OnPatrolMoveFailed",
+      "guid": "422F16FC40AD485567487B8832660CD7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_OnPatrolPointReached",
+      "guid": "3500F43E423F2EE1FA205C857F330EF8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_MoveToCurrentPatrolPoint",
+      "guid": "3EBCA71E450FE9F2C15DC58633BFD3DD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartSplinePatrol",
+      "guid": "4A0EE6A148EAFD2C90C50284F4D44FA2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_RoamTimerElapsed",
+      "guid": "439CA6074081483A87556C98C944CFDD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_ScheduleNextRoam",
+      "guid": "6A4DB58345331AA5F36ECFBEFB681049",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnSuccess_BB6E8E3149CBF2AC64A410A395C16E8D",
+      "guid": "3DF183CF45112F43E3E16486D7F2C111",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnFail_BB6E8E3149CBF2AC64A410A395C16E8D",
+      "guid": "E40B877A42E8183709DECFB11162F61B",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnSuccess_026FC64C4E93FE3880A5EF9C1AEA0B28",
+      "guid": "37E44E3E47D680081A10E590CAED3D90",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnFail_026FC64C4E93FE3880A5EF9C1AEA0B28",
+      "guid": "4B14470B4006FB668B696D80D73C0FEF",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    }
+  ],
   "stats": {
-    "authored_graph_count": 3,
-    "generated_graph_count": 0,
-    "authored_node_count": 5,
-    "authored_pin_count": 12,
-    "authored_connection_count": 1,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 4,
+    "generated_graph_count": 15,
+    "authored_node_count": 191,
+    "authored_pin_count": 683,
+    "authored_connection_count": 183,
+    "generated_node_count": 34,
+    "generated_pin_count": 91
   },
   "graph_files": [
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "AdvancePatrolPoint",
+      "kind": "function",
+      "file": "graphs/AdvancePatrolPoint.json"
     },
     {
       "name": "StartWorldBehavior",

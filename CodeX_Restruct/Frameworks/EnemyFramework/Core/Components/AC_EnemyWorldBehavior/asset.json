@@ -17,12 +17,13 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyWorldBehavior"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
     ],
-    "non_architecture_dependency_count": 0,
+    "non_architecture_dependency_count": 4,
     "non_architecture_referencer_count": 1
   },
   "registry": {
@@ -55,6 +56,23 @@
         }
       },
       {
+        "name": "CurrentPatrolPointIndex",
+        "guid": "F49EDAF248D8D9C7ED3BC28871E4C138",
+        "friendly_name": "Current Patrol Point Index",
+        "category": "INVTEXT(\"Spline Patrol\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "HomeLocation",
         "guid": "E7A082DF41014221D81A9E80E420D30E",
         "friendly_name": "Home Location",
@@ -65,6 +83,176 @@
           "category": "struct",
           "sub_category": null,
           "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PatrolAcceptanceRadius",
+        "guid": "3ACF3DE64AB653DE32F310883BFD53FF",
+        "friendly_name": "Patrol Acceptance Radius",
+        "category": "INVTEXT(\"Spline Patrol\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PatrolDirection",
+        "guid": "EAF00643417BDA1178332BAF7AC7C5BD",
+        "friendly_name": "Patrol Direction",
+        "category": "INVTEXT(\"Spline Patrol\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PatrolPathRef",
+        "guid": "C28EF683468B653E179D90B0A8E716FA",
+        "friendly_name": "Patrol Path Ref",
+        "category": "Spline Patrol",
+        "property_flags": 2053,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath.BP_EnemyPatrolPath_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PatrolTimerHandle",
+        "guid": "398ABBB34A47FAF88F724FBE64D2FC6D",
+        "friendly_name": "Patrol Timer Handle",
+        "category": "INVTEXT(\"Spline Patrol\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PatrolWaitTime",
+        "guid": "02F5394E4BB9E852D28B13A976589CD2",
+        "friendly_name": "Patrol Wait Time",
+        "category": "INVTEXT(\"Spline Patrol\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RoamAcceptanceRadius",
+        "guid": "34C34FA548A31A9AC23F0D82863E5D12",
+        "friendly_name": "Roam Acceptance Radius",
+        "category": "INVTEXT(\"Random Roam\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RoamRadius",
+        "guid": "B2C384C74330AC40FB0113B4799FF6A9",
+        "friendly_name": "Roam Radius",
+        "category": "Random Roam",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RoamTimerHandle",
+        "guid": "E792282B4BEC722884BF62BD87D1DF75",
+        "friendly_name": "Roam Timer Handle",
+        "category": "INVTEXT(\"Random Roam\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RoamWaitMax",
+        "guid": "88AED56442EFD2092B20BA898C121324",
+        "friendly_name": "Roam Wait Max",
+        "category": "INVTEXT(\"Random Roam\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RoamWaitMin",
+        "guid": "8F040B2542613ABEDA2CB38910A99F2A",
+        "friendly_name": "Roam Wait Min",
+        "category": "INVTEXT(\"Random Roam\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -95,11 +283,28 @@
       ],
       "functions": [
         "StopWorldBehavior",
-        "StartWorldBehavior"
+        "StartWorldBehavior",
+        "AdvancePatrolPoint"
       ],
       "macros": [],
       "delegates": [],
-      "generated_graphs": []
+      "generated_graphs": [
+        "CE_StartRandomRoam",
+        "ReceiveBeginPlay",
+        "CE_MoveToRandomRoamPoint",
+        "CE_PatrolWaitElapsed",
+        "CE_ScheduleNextPatrolMove",
+        "CE_OnPatrolMoveFailed",
+        "CE_OnPatrolPointReached",
+        "CE_MoveToCurrentPatrolPoint",
+        "CE_StartSplinePatrol",
+        "CE_RoamTimerElapsed",
+        "CE_ScheduleNextRoam",
+        "OnSuccess_BB6E8E3149CBF2AC64A410A395C16E8D",
+        "OnFail_BB6E8E3149CBF2AC64A410A395C16E8D",
+        "OnSuccess_026FC64C4E93FE3880A5EF9C1AEA0B28",
+        "OnFail_026FC64C4E93FE3880A5EF9C1AEA0B28"
+      ]
     },
     "extraction_status": {
       "parent_class": "complete",

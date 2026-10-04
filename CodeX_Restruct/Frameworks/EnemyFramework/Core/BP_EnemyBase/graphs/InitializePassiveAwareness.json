@@ -8,8 +8,8 @@
   "stats": {
     "node_count": 11,
     "pin_count": 34,
-    "connection_count": 11,
-    "exec_connection_count": 4,
+    "connection_count": 13,
+    "exec_connection_count": 6,
     "data_connection_count": 7
   },
   "nodes": [
@@ -749,7 +749,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_CallFunction_1",
+              "pin_id": "2042C0644B2D324C333DF6B8E852AD16"
+            }
+          ]
         },
         {
           "id": "D980B0CD4F126FC2AD573D9756C60084",
@@ -771,7 +776,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_CallFunction_1",
+              "pin_id": "2042C0644B2D324C333DF6B8E852AD16"
+            }
+          ]
         },
         {
           "id": "F750C6C24A200CBAB4AD94A7692EAD62",
@@ -1036,6 +1046,14 @@
             {
               "node": "K2Node_SwitchEnum_0",
               "pin_id": "82CCD1D44C449728FE1B50A62167EDB1"
+            },
+            {
+              "node": "K2Node_SwitchEnum_0",
+              "pin_id": "F9A8F22D4FE7057F700A6FBC9A6EB67F"
+            },
+            {
+              "node": "K2Node_SwitchEnum_0",
+              "pin_id": "D980B0CD4F126FC2AD573D9756C60084"
             }
           ]
         },
@@ -1159,6 +1177,32 @@
         "node": "K2Node_SwitchEnum_0",
         "pin_id": "82CCD1D44C449728FE1B50A62167EDB1",
         "pin_name": "NewEnumerator1"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_1",
+        "pin_id": "2042C0644B2D324C333DF6B8E852AD16",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_SwitchEnum_0",
+        "pin_id": "F9A8F22D4FE7057F700A6FBC9A6EB67F",
+        "pin_name": "NewEnumerator2"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_1",
+        "pin_id": "2042C0644B2D324C333DF6B8E852AD16",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_SwitchEnum_0",
+        "pin_id": "D980B0CD4F126FC2AD573D9756C60084",
+        "pin_name": "NewEnumerator3"
       },
       "to": {
         "node": "K2Node_CallFunction_1",

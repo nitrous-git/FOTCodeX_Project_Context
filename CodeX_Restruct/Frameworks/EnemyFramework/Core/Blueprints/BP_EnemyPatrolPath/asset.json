@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_EnemyPatrolPath",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath.BP_EnemyPatrolPath",
+    "relative_package": "Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior"
+    ],
+    "non_architecture_dependency_count": 1,
+    "non_architecture_referencer_count": 1
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath.BP_EnemyPatrolPath_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath.BP_EnemyPatrolPath_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath.BP_EnemyPatrolPath_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_EnemyPatrolPath",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath.BP_EnemyPatrolPath_C:DefaultSceneRoot_GEN_VARIABLE"
+      },
+      {
+        "name": "Spline",
+        "class": "SplineComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath.BP_EnemyPatrolPath_C:Spline_GEN_VARIABLE"
+      }
+    ],
+    "variables": [],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "GetPatrolPointCount",
+        "GetPatrolPointLocation",
+        "IsClosedPatrol",
+        "FindNearestPatrolPointIndex"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}
