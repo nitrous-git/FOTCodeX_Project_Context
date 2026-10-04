@@ -18,10 +18,13 @@
   "architecture": {
     "dependencies": [
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyDisengagePolicy",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyWorldBehavior"
     ],
     "referencers": [
-      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner"
     ],
     "non_architecture_dependency_count": 4,
     "non_architecture_referencer_count": 1
@@ -39,6 +42,40 @@
     "components": [],
     "variables": [
       {
+        "name": "bHomeLocationInitialized",
+        "guid": "D53D9DE541069C6B96DD23B97FBAC08E",
+        "friendly_name": "Home Location Initialized",
+        "category": "Runtime",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bReturningToWorld",
+        "guid": "2C31D4AF41AD0DD31D65FA93807CA389",
+        "friendly_name": "Returning to World",
+        "category": "INVTEXT(\"Disengage_Runtime\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "bWorldBehaviorActive",
         "guid": "209CEB7F418EFC868DFDEE9635030086",
         "friendly_name": "World Behavior Active",
@@ -49,6 +86,23 @@
           "category": "bool",
           "sub_category": null,
           "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CombatTarget",
+        "guid": "9D0D82DF42BE5C653ACFFE810B9E72A6",
+        "friendly_name": "Combat Target",
+        "category": "Disengage_Runtime",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -73,6 +127,57 @@
         }
       },
       {
+        "name": "DisengageCheckInterval",
+        "guid": "4F4440044DA4FDA912357D80516AFA1E",
+        "friendly_name": "Disengage Check Interval",
+        "category": "INVTEXT(\"Disengage\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisengagePolicy",
+        "guid": "805BBC854DAEC097C91AF3A94D5E9443",
+        "friendly_name": "Disengage Policy",
+        "category": "Disengage",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyDisengagePolicy.E_EnemyDisengagePolicy'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisengageTimerHandle",
+        "guid": "841339494CD1BC7654AF409FF0540E87",
+        "friendly_name": "Disengage Timer Handle",
+        "category": "INVTEXT(\"Disengage_Runtime\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "HomeLocation",
         "guid": "E7A082DF41014221D81A9E80E420D30E",
         "friendly_name": "Home Location",
@@ -83,6 +188,91 @@
           "category": "struct",
           "sub_category": null,
           "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LeashRange",
+        "guid": "88D1C8474E0BB830A5A9BDAA01D52138",
+        "friendly_name": "Leash Range",
+        "category": "INVTEXT(\"Disengage\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LostTargetElapsed",
+        "guid": "A4E6339B45A8717A003C79AD8FFF8A66",
+        "friendly_name": "Lost Target Elapsed",
+        "category": "INVTEXT(\"Disengage_Runtime\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LostTargetGraceTime",
+        "guid": "E9DBCACC467715FEF6EB3DAD2BD79321",
+        "friendly_name": "Lost Target Grace Time",
+        "category": "INVTEXT(\"Disengage\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnDisengageRequested",
+        "guid": "8609FE164A32943D4A699AB919D415CE",
+        "friendly_name": "On Disengage Requested",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnWorldReturnCompleted",
+        "guid": "C891D6934368B87A9007E69AE8B18A78",
+        "friendly_name": "On World Return Completed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -163,6 +353,23 @@
         "friendly_name": "Patrol Wait Time",
         "category": "INVTEXT(\"Spline Patrol\")",
         "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ReturnAcceptanceRadius",
+        "guid": "D51993AF48FD94A4F4D4088E587703D2",
+        "friendly_name": "Return Acceptance Radius",
+        "category": "INVTEXT(\"Disengage\")",
+        "property_flags": 65541,
         "default_value": null,
         "type": {
           "category": "real",
@@ -284,14 +491,20 @@
       "functions": [
         "StopWorldBehavior",
         "StartWorldBehavior",
-        "AdvancePatrolPoint"
+        "AdvancePatrolPoint",
+        "StartDisengageMonitoring",
+        "EvaluateDisengage",
+        "StopDisengageMonitoring"
       ],
       "macros": [],
-      "delegates": [],
+      "delegates": [
+        "OnDisengageRequested",
+        "OnWorldReturnCompleted"
+      ],
       "generated_graphs": [
-        "CE_StartRandomRoam",
-        "ReceiveBeginPlay",
-        "CE_MoveToRandomRoamPoint",
+        "CE_CompleteWorldReturn",
+        "CE_MoveToReturnDestination",
+        "CE_BeginWorldReturn",
         "CE_PatrolWaitElapsed",
         "CE_ScheduleNextPatrolMove",
         "CE_OnPatrolMoveFailed",
@@ -300,6 +513,10 @@
         "CE_StartSplinePatrol",
         "CE_RoamTimerElapsed",
         "CE_ScheduleNextRoam",
+        "CE_MoveToRandomRoamPoint",
+        "CE_StartRandomRoam",
+        "OnSuccess_4962143445FEB987B6A02CAA96F8CA24",
+        "OnFail_4962143445FEB987B6A02CAA96F8CA24",
         "OnSuccess_BB6E8E3149CBF2AC64A410A395C16E8D",
         "OnFail_BB6E8E3149CBF2AC64A410A395C16E8D",
         "OnSuccess_026FC64C4E93FE3880A5EF9C1AEA0B28",

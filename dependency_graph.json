@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 277,
-  "edge_count": 825,
+  "node_count": 278,
+  "edge_count": 829,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -1837,6 +1837,14 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyDisengagePolicy"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyWorldBehavior"
     },
     {
@@ -3269,11 +3277,19 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatEntryMode"
     },
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyDisengagePolicy"
     },
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
