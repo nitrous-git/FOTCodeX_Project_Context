@@ -144,6 +144,23 @@
       }
     },
     {
+      "name": "ForgetDistance",
+      "guid": "7D8C5832492BA8AB84D9E1B2C52F977B",
+      "friendly_name": "Forget Distance",
+      "category": "INVTEXT(\"Disengage\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "HomeLocation",
       "guid": "E7A082DF41014221D81A9E80E420D30E",
       "friendly_name": "Home Location",
@@ -154,6 +171,40 @@
         "category": "struct",
         "sub_category": null,
         "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LeashElapsed",
+      "guid": "7958C40E456B0CC3793DE49C618E2BB5",
+      "friendly_name": "Leash Elapsed",
+      "category": "INVTEXT(\"Disengage_Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LeashGraceTime",
+      "guid": "12BCAC7E404068E461AD0586E5AD1FD0",
+      "friendly_name": "Leash Grace Time",
+      "category": "INVTEXT(\"Disengage\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
         "container": null,
         "is_reference": false,
         "is_const": false,
@@ -455,10 +506,10 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "C6B6471040032AB565A58497FA0F0040",
-      "node_count": 164,
-      "pin_count": 649,
-      "connection_count": 163,
-      "exec_connection_count": 84,
+      "node_count": 167,
+      "pin_count": 652,
+      "connection_count": 168,
+      "exec_connection_count": 89,
       "data_connection_count": 79
     },
     {
@@ -475,10 +526,10 @@
       "name": "StartWorldBehavior",
       "kind": "function",
       "guid": "A2D031894733AC8D5EF7B28CFE308196",
-      "node_count": 18,
-      "pin_count": 63,
-      "connection_count": 18,
-      "exec_connection_count": 14,
+      "node_count": 19,
+      "pin_count": 68,
+      "connection_count": 19,
+      "exec_connection_count": 15,
       "data_connection_count": 4
     },
     {
@@ -495,30 +546,30 @@
       "name": "StartDisengageMonitoring",
       "kind": "function",
       "guid": "55136FF9471274C0A3A51C95F198A5E0",
-      "node_count": 15,
-      "pin_count": 54,
-      "connection_count": 16,
-      "exec_connection_count": 8,
+      "node_count": 16,
+      "pin_count": 59,
+      "connection_count": 17,
+      "exec_connection_count": 9,
       "data_connection_count": 8
     },
     {
       "name": "EvaluateDisengage",
       "kind": "function",
       "guid": "DF97F4A040FA20FE5C57FB835CBB69D9",
-      "node_count": 26,
-      "pin_count": 81,
-      "connection_count": 26,
-      "exec_connection_count": 11,
-      "data_connection_count": 15
+      "node_count": 53,
+      "pin_count": 148,
+      "connection_count": 50,
+      "exec_connection_count": 19,
+      "data_connection_count": 31
     },
     {
       "name": "StopDisengageMonitoring",
       "kind": "function",
       "guid": "EC54DAC4410D145453E26CB4CC545C7F",
-      "node_count": 5,
-      "pin_count": 18,
-      "connection_count": 4,
-      "exec_connection_count": 3,
+      "node_count": 6,
+      "pin_count": 23,
+      "connection_count": 5,
+      "exec_connection_count": 4,
       "data_connection_count": 1
     },
     {
@@ -544,152 +595,8 @@
   ],
   "generated_graphs": [
     {
-      "name": "CE_CompleteWorldReturn",
-      "guid": "F8B1EA8C4126FC2A77C106BDF198E4B5",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_MoveToReturnDestination",
-      "guid": "C4E726794010014D84454FB8E61E93B8",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CE_BeginWorldReturn",
-      "guid": "31E63FE245690E1F2621FEA65D1EA811",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_PatrolWaitElapsed",
-      "guid": "567806C046D3279757ADE9A6F39D88DD",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_ScheduleNextPatrolMove",
-      "guid": "440FA1874B240B958A4DADA39C5C8BDE",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_OnPatrolMoveFailed",
-      "guid": "2560AAED4F202C17AAD508AFE9763C9B",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_OnPatrolPointReached",
-      "guid": "B275C652438F2E818B0192946E147F6D",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_MoveToCurrentPatrolPoint",
-      "guid": "28B198E647C02286ABA1AC8047764C3A",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_StartSplinePatrol",
-      "guid": "4064866843136A91A25E3690650981CC",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_RoamTimerElapsed",
-      "guid": "59005AB64148D5573B90829AF7D133C1",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_ScheduleNextRoam",
-      "guid": "E513DE73483C4C371700398C1DC71CFA",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_MoveToRandomRoamPoint",
-      "guid": "6F4A5E50462AE8C9531A64A46CE20152",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_StartRandomRoam",
-      "guid": "F5CF636D464EB2BC4DE94798E97B03AF",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "OnSuccess_4962143445FEB987B6A02CAA96F8CA24",
-      "guid": "E44901C34CD681E249F60DB963E93B0E",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnFail_4962143445FEB987B6A02CAA96F8CA24",
-      "guid": "4314B7DC4FB17F59CBCF3FBCCC449545",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnSuccess_BB6E8E3149CBF2AC64A410A395C16E8D",
-      "guid": "8B7B6213409B3056AA40D0AD35D2DE18",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnFail_BB6E8E3149CBF2AC64A410A395C16E8D",
-      "guid": "F679AF9142D87437F6FA189EC5D00ACE",
+      "name": "OnFail_026FC64C4E93FE3880A5EF9C1AEA0B28",
+      "guid": "413A99754FC82747AE47E0BDE9C17915",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -698,7 +605,7 @@
     },
     {
       "name": "OnSuccess_026FC64C4E93FE3880A5EF9C1AEA0B28",
-      "guid": "CB12B8114383CF15E32BC4BE3D21759F",
+      "guid": "348E3F214EA84E9F54DF7FABDB553C09",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -706,21 +613,165 @@
       "data_connection_count": 1
     },
     {
-      "name": "OnFail_026FC64C4E93FE3880A5EF9C1AEA0B28",
-      "guid": "DCE7CF7E41631E3F05D3A6A0BA26A72F",
+      "name": "OnFail_BB6E8E3149CBF2AC64A410A395C16E8D",
+      "guid": "49D3A3F44E27D7292653398143A1E713",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
       "exec_connection_count": 2,
       "data_connection_count": 1
+    },
+    {
+      "name": "OnSuccess_BB6E8E3149CBF2AC64A410A395C16E8D",
+      "guid": "7279DF4848EE58C6F71D5DBD5191FE25",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnFail_4962143445FEB987B6A02CAA96F8CA24",
+      "guid": "99F3233F40DA6293CFB36B9FB25601B5",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnSuccess_4962143445FEB987B6A02CAA96F8CA24",
+      "guid": "9647AEA146609F0BD84A248AC2ABF5EE",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartRandomRoam",
+      "guid": "629DEAB24FF7E5A7D9A083B94860CB0D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_MoveToRandomRoamPoint",
+      "guid": "392C13234B7AE77F3825DAA307C10A84",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_ScheduleNextRoam",
+      "guid": "4583F4504AEC321FDC4560A91BE68F85",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_RoamTimerElapsed",
+      "guid": "D3E5D1A14795D3578BBB0E9DFE0EAC9E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartSplinePatrol",
+      "guid": "ABD542B14BF5AD5D9E8DDD8E5176176E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_MoveToCurrentPatrolPoint",
+      "guid": "A1A924B34C27A26070F3B09DF6AA3711",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_OnPatrolPointReached",
+      "guid": "85A6703148788924D5B9609C34EC4E60",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_OnPatrolMoveFailed",
+      "guid": "61CF61094D226DEF6F59599042C2DD01",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_ScheduleNextPatrolMove",
+      "guid": "8A5792DC4002B217B837AF8E3532D793",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_PatrolWaitElapsed",
+      "guid": "8090F0224A1D612A9B9FDA9FFD56EF37",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_BeginWorldReturn",
+      "guid": "7637A8D04BA17333A083A190EFF0FA3A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_MoveToReturnDestination",
+      "guid": "BFDB8BBD4E48E01D0261B68A0E1F06CD",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_CompleteWorldReturn",
+      "guid": "D4B899B24C54D74365C50C8B07F2B206",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     }
   ],
   "stats": {
     "authored_graph_count": 9,
     "generated_graph_count": 19,
-    "authored_node_count": 285,
-    "authored_pin_count": 1021,
-    "authored_connection_count": 280,
+    "authored_node_count": 318,
+    "authored_pin_count": 1106,
+    "authored_connection_count": 312,
     "generated_node_count": 45,
     "generated_pin_count": 123
   },

@@ -178,6 +178,23 @@
         }
       },
       {
+        "name": "ForgetDistance",
+        "guid": "7D8C5832492BA8AB84D9E1B2C52F977B",
+        "friendly_name": "Forget Distance",
+        "category": "INVTEXT(\"Disengage\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "HomeLocation",
         "guid": "E7A082DF41014221D81A9E80E420D30E",
         "friendly_name": "Home Location",
@@ -188,6 +205,40 @@
           "category": "struct",
           "sub_category": null,
           "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LeashElapsed",
+        "guid": "7958C40E456B0CC3793DE49C618E2BB5",
+        "friendly_name": "Leash Elapsed",
+        "category": "INVTEXT(\"Disengage_Runtime\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LeashGraceTime",
+        "guid": "12BCAC7E404068E461AD0586E5AD1FD0",
+        "friendly_name": "Leash Grace Time",
+        "category": "INVTEXT(\"Disengage\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -502,25 +553,25 @@
         "OnWorldReturnCompleted"
       ],
       "generated_graphs": [
-        "CE_CompleteWorldReturn",
-        "CE_MoveToReturnDestination",
-        "CE_BeginWorldReturn",
-        "CE_PatrolWaitElapsed",
-        "CE_ScheduleNextPatrolMove",
-        "CE_OnPatrolMoveFailed",
-        "CE_OnPatrolPointReached",
-        "CE_MoveToCurrentPatrolPoint",
-        "CE_StartSplinePatrol",
-        "CE_RoamTimerElapsed",
-        "CE_ScheduleNextRoam",
-        "CE_MoveToRandomRoamPoint",
-        "CE_StartRandomRoam",
-        "OnSuccess_4962143445FEB987B6A02CAA96F8CA24",
-        "OnFail_4962143445FEB987B6A02CAA96F8CA24",
-        "OnSuccess_BB6E8E3149CBF2AC64A410A395C16E8D",
-        "OnFail_BB6E8E3149CBF2AC64A410A395C16E8D",
+        "OnFail_026FC64C4E93FE3880A5EF9C1AEA0B28",
         "OnSuccess_026FC64C4E93FE3880A5EF9C1AEA0B28",
-        "OnFail_026FC64C4E93FE3880A5EF9C1AEA0B28"
+        "OnFail_BB6E8E3149CBF2AC64A410A395C16E8D",
+        "OnSuccess_BB6E8E3149CBF2AC64A410A395C16E8D",
+        "OnFail_4962143445FEB987B6A02CAA96F8CA24",
+        "OnSuccess_4962143445FEB987B6A02CAA96F8CA24",
+        "CE_StartRandomRoam",
+        "CE_MoveToRandomRoamPoint",
+        "CE_ScheduleNextRoam",
+        "CE_RoamTimerElapsed",
+        "CE_StartSplinePatrol",
+        "CE_MoveToCurrentPatrolPoint",
+        "CE_OnPatrolPointReached",
+        "CE_OnPatrolMoveFailed",
+        "CE_ScheduleNextPatrolMove",
+        "CE_PatrolWaitElapsed",
+        "CE_BeginWorldReturn",
+        "CE_MoveToReturnDestination",
+        "CE_CompleteWorldReturn"
       ]
     },
     "extraction_status": {

@@ -8,6 +8,23 @@
   },
   "variables": [
     {
+      "name": "bIsSleeping",
+      "guid": "4281A46E44FCC82C051686B44C3AAF09",
+      "friendly_name": "Is Sleeping",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "CurrentCombatStyle",
       "guid": "DFBBF05249ABA76BDBE7BDBD20F1A5C8",
       "friendly_name": "Current Combat Style",
@@ -81,17 +98,26 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "CA34A14C4409884A12B2B0A6B105350B",
-      "node_count": 17,
-      "pin_count": 59,
-      "connection_count": 21,
-      "exec_connection_count": 7,
-      "data_connection_count": 14
+      "node_count": 24,
+      "pin_count": 76,
+      "connection_count": 29,
+      "exec_connection_count": 8,
+      "data_connection_count": 21
     }
   ],
   "generated_graphs": [
     {
-      "name": "AnimNotify_doDamage",
-      "guid": "1F0ECDFA49DF86A9D771268FF64C9CC1",
+      "name": "AnimGraph__AnimFunc",
+      "guid": "E60F264E47C4CDC1AA8D8794538D6373",
+      "node_count": 68,
+      "pin_count": 102,
+      "connection_count": 34,
+      "exec_connection_count": 34,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_08C881914A52C1F1749AE1B7A89D1C06",
+      "guid": "6B985CA04D4D8ECC9B5788A3B9187CDF",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -99,35 +125,8 @@
       "data_connection_count": 0
     },
     {
-      "name": "BlueprintUpdateAnimation",
-      "guid": "DBA1548E42A3AACC481642A66B1AAB62",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_7F0123554F720B977C21F3B411098889",
-      "guid": "2B0E7F9249B20E22CD0A94A655F2625A",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_1DC7716244B6156E706FCF8D6AEA8FA0",
-      "guid": "41D0FB8E40B5CC0C8BE8E3ACD2442353",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_239905F2453E9819F6CD3DBC497A61B8",
-      "guid": "4F3428134BDABFF9E5C65F8D4EFB1913",
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_682C9F1C41FAD782C36B95BC73C1E661",
+      "guid": "C173C0D6408C9C643A7656B429D455E6",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -136,7 +135,52 @@
     },
     {
       "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_BB30D527431B0FEFC8F9DFB8133D958D",
-      "guid": "05112DDC4E21F13F900D3895D895DE8F",
+      "guid": "A37E326746E9DC3E812230959FEBD77B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_239905F2453E9819F6CD3DBC497A61B8",
+      "guid": "928A7AA64DA7D2C6F068E0816F6AA0DA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_1DC7716244B6156E706FCF8D6AEA8FA0",
+      "guid": "1682FFAF4DC88A4B9FC07685F27F2DB5",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Enemy_AnimGraphNode_TransitionResult_7F0123554F720B977C21F3B411098889",
+      "guid": "281D656B4D7AE1198C7122A7DB47F0AD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BlueprintUpdateAnimation",
+      "guid": "B55A0F1C4417A946516552B5EF43F6AE",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "AnimNotify_doDamage",
+      "guid": "C8F99B1D4B2AD7DB1BD20FA241A617BA",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -146,12 +190,12 @@
   ],
   "stats": {
     "authored_graph_count": 1,
-    "generated_graph_count": 6,
-    "authored_node_count": 17,
-    "authored_pin_count": 59,
-    "authored_connection_count": 21,
-    "generated_node_count": 13,
-    "generated_pin_count": 34
+    "generated_graph_count": 9,
+    "authored_node_count": 24,
+    "authored_pin_count": 76,
+    "authored_connection_count": 29,
+    "generated_node_count": 85,
+    "generated_pin_count": 146
   },
   "graph_files": [
     {
