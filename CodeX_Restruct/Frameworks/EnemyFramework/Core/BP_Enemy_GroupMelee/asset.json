@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_Enemy_GroupMelee",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee",
+    "relative_package": "Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 3,
+    "non_architecture_referencer_count": 1
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "AC_EnemyCombat_GroupMelee",
+        "class": "AC_EnemyCombat_GroupMelee_C",
+        "parent": "BP_Enemy_GroupMelee",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:AC_EnemyCombat_GroupMelee_GEN_VARIABLE"
+      },
+      {
+        "name": "ArrowComponent",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.Default__BP_Enemy_GroupMelee_C:Arrow"
+      },
+      {
+        "name": "Awareness",
+        "class": "AC_EnemyAwareness_C",
+        "parent": "BP_Enemy_GroupMelee",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:Awareness_GEN_VARIABLE"
+      },
+      {
+        "name": "AwarenessSphere",
+        "class": "SphereComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:AwarenessSphere_GEN_VARIABLE"
+      },
+      {
+        "name": "CapsuleComponent",
+        "class": "CapsuleComponent",
+        "parent": "BP_Enemy_GroupMelee",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.Default__BP_Enemy_GroupMelee_C:CollisionCylinder"
+      },
+      {
+        "name": "CharacterMovement",
+        "class": "CharacterMovementComponent",
+        "parent": "BP_Enemy_GroupMelee",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.Default__BP_Enemy_GroupMelee_C:CharMoveComp"
+      },
+      {
+        "name": "CombatTargetPoint ",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:CombatTargetPoint _GEN_VARIABLE"
+      },
+      {
+        "name": "ContextualAnimSceneActor",
+        "class": "ContextualAnimSceneActorComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:ContextualAnimSceneActor_GEN_VARIABLE"
+      },
+      {
+        "name": "DamageArrow",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:DamageArrow_GEN_VARIABLE"
+      },
+      {
+        "name": "DeathNiagara",
+        "class": "NiagaraComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:DeathNiagara_GEN_VARIABLE"
+      },
+      {
+        "name": "DebugText",
+        "class": "TextRenderComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:DebugText_GEN_VARIABLE"
+      },
+      {
+        "name": "Mesh",
+        "class": "SkeletalMeshComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.Default__BP_Enemy_GroupMelee_C:CharacterMesh0"
+      },
+      {
+        "name": "MotionWarping",
+        "class": "MotionWarpingComponent",
+        "parent": "BP_Enemy_GroupMelee",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:MotionWarping_GEN_VARIABLE"
+      },
+      {
+        "name": "SceneKnock",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:SceneKnock_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_PrimaryWeapon",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:SK_PrimaryWeapon_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_SecondaryWeapon",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:SK_SecondaryWeapon_GEN_VARIABLE"
+      },
+      {
+        "name": "StaticMesh",
+        "class": "StaticMeshComponent",
+        "parent": "SK_PrimaryWeapon",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:StaticMesh_GEN_VARIABLE"
+      },
+      {
+        "name": "WorldBehavior",
+        "class": "AC_EnemyWorldBehavior_C",
+        "parent": "BP_Enemy_GroupMelee",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee_C:WorldBehavior_GEN_VARIABLE"
+      }
+    ],
+    "variables": [],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

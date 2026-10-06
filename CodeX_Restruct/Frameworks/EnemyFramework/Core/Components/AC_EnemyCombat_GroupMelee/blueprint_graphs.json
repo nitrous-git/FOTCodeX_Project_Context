@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_EnemyCombat_GroupMelee",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "12CBFE874D5B3FE9CAFB16991B5458B6",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "AttackCooldown",
+      "guid": "2CF0CEB746385A9A8E28A6841DB915A4",
+      "friendly_name": "Attack Cooldown",
+      "category": "INVTEXT(\"Attacker_Config\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackerMoveRefreshInterval",
+      "guid": "F4BA5CC141698A963FFD98A99D2295E0",
+      "friendly_name": "Attacker Move Refresh Interval",
+      "category": "INVTEXT(\"Attacker_Config\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackerMoveRefreshTimer",
+      "guid": "470A42894A6C7FF04BD955859B5DDFA0",
+      "friendly_name": "Attacker Move Refresh Timer",
+      "category": "INVTEXT(\"Attacker_Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bAttackInProgress",
+      "guid": "2B23E2E1416787AA561AE4AB7657AEAB",
+      "friendly_name": "Attack in Progress",
+      "category": "INVTEXT(\"Attacker_Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bObserverReenteringAggroRange",
+      "guid": "537DB4E74A6D7405C7FC74ACDD18A343",
+      "friendly_name": "Observer Reentering Aggro Range",
+      "category": "INVTEXT(\"Observer_Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentAttack",
+      "guid": "D700A6BE4F57D443825C26BF02E94DAC",
+      "friendly_name": "Current Attack",
+      "category": "INVTEXT(\"Attacker_Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext.S_AttackContext'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentAttackAnim",
+      "guid": "553344724F3A5FFC22A68286A8461CA3",
+      "friendly_name": "Current Attack Anim",
+      "category": "INVTEXT(\"Attacker_Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentObserverStrafeMode",
+      "guid": "DF8C09E9446F30578816CF8A85373CA8",
+      "friendly_name": "Current Observer Strafe Mode",
+      "category": "Observer_Runtime",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_StrafeMode.E_StrafeMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastAttackTime",
+      "guid": "358AD6B64F461B383ADED3B98ADCE477",
+      "friendly_name": "Last Attack Time",
+      "category": "INVTEXT(\"Attacker_Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MoveDirection",
+      "guid": "FCA01F6C40AC651BB77BDF903D272990",
+      "friendly_name": "Move Direction",
+      "category": "INVTEXT(\"Observer_Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ObserverDirectionChangeInterval",
+      "guid": "F4A11A05421EF4D4CA3D6DB2F12FCBAA",
+      "friendly_name": "Observer Direction Change Interval",
+      "category": "Observer_Config",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ObserverDirectionTimer",
+      "guid": "A34C9A9A4CC5257122CA318BDDC96ABF",
+      "friendly_name": "Observer Direction Timer",
+      "category": "INVTEXT(\"Observer_Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ObserverReenterBuffer",
+      "guid": "815A26FC4378F880EC0E749BF43966E1",
+      "friendly_name": "Observer Reenter Buffer",
+      "category": "Observer_Config",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OwnerEnemy",
+      "guid": "13968C4C4CCF7707D51D33B6526B0F24",
+      "friendly_name": "Owner Enemy",
+      "category": "Runtime",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "DD2EE800487072259CD856A5DE4F025B",
+      "node_count": 224,
+      "pin_count": 734,
+      "connection_count": 198,
+      "exec_connection_count": 81,
+      "data_connection_count": 117
+    },
+    {
+      "name": "ComputeStrafeDirection",
+      "kind": "function",
+      "guid": "A5719CB0413812947CCDDA931D1C36A3",
+      "node_count": 39,
+      "pin_count": 111,
+      "connection_count": 39,
+      "exec_connection_count": 12,
+      "data_connection_count": 27
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Combat_CanAttackPlayer",
+      "guid": "FE5CAD4C4E0100E0F551A1B3A2DDEFE2",
+      "node_count": 31,
+      "pin_count": 132,
+      "connection_count": 30,
+      "exec_connection_count": 13,
+      "data_connection_count": 17
+    },
+    {
+      "name": "OnFail_3C46673745FA21A7FE107281F21058AD",
+      "guid": "203B98A9427A749F9BDB5D8C75761887",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnSuccess_3C46673745FA21A7FE107281F21058AD",
+      "guid": "8ED2857B41AAA236FE98BC8F9C15FC01",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "20FA5C174CFBB7476774EABB5FBA0176",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_MoveToPlayer",
+      "guid": "F5B89C554396C8A207B74FBF20D059C6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateAttackerCooldownMovement",
+      "guid": "181F145F4AAC4D8EB43E8784A1E558F0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_OnAttackFinished",
+      "guid": "88A252BC45727777E1BB7F8D26E0270B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_AttackPlayer",
+      "guid": "07F93E164DAC27F30219A5B2739B8BC2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_BeginAttacker",
+      "guid": "0591911F4EC3421412B02285D7D46919",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_UpdateAttacker",
+      "guid": "6516AA2240672ABF469EE7A6BF949FE5",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Combat_EndAttacker",
+      "guid": "49783EDB4E806B77B68BBB8535B0BC34",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_OnAttackFinished",
+      "guid": "25173809433E809A95123EAE153F9BD8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_BeginObserver",
+      "guid": "77E449A0432C75C625F4538E813279C6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_UpdateObserver",
+      "guid": "3BDA0F194FFD10A6ACF7979878CAEEEB",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Combat_EndObserver",
+      "guid": "515568DA437CDA8E60F462AF3CDA0809",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 2,
+    "generated_graph_count": 15,
+    "authored_node_count": 263,
+    "authored_pin_count": 845,
+    "authored_connection_count": 237,
+    "generated_node_count": 63,
+    "generated_pin_count": 218
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ComputeStrafeDirection",
+      "kind": "function",
+      "file": "graphs/ComputeStrafeDirection.json"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 278,
-  "edge_count": 829,
+  "node_count": 281,
+  "edge_count": 843,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -1697,6 +1697,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Attacker",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Attacker",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
     },
     {
@@ -1717,6 +1721,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Observer",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Observer",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
     },
     {
@@ -1732,6 +1740,22 @@
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext"
     },
@@ -1742,6 +1766,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Animations/ABP/ABP_Enemy"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
@@ -1832,6 +1860,30 @@
       "to": "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_StrafeMode"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath"
     },
@@ -1894,6 +1946,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_ExecutionEnding",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_OnEnemyAttackFinished",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_OnEnemyAttackFinished",

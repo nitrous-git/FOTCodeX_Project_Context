@@ -20,6 +20,7 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Animations/ABP/ABP_Enemy",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle",
@@ -57,6 +58,8 @@
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Retreat",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Animations/ABP/ABP_Enemy",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_ExecutionEnding",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_OnEnemyAttackFinished",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_SpawnDeathNiagara",
@@ -740,6 +743,23 @@
           "category": "class",
           "sub_category": null,
           "sub_category_object": "/Script/CoreUObject.Class'/Script/EngineCameras.LegacyCameraShake'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CombatBehaviorComponent",
+        "guid": "DDCE984B4E264413457473BE62BB5C55",
+        "friendly_name": "Combat Behavior Component",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -1741,7 +1761,8 @@
         "UpdateExecutionDebugVisual",
         "UpdateExecutionEligibility",
         "CanReceiveShadowStrike",
-        "InitializePassiveAwareness"
+        "InitializePassiveAwareness",
+        "RegisterCombatBehavior"
       ],
       "macros": [
         "IsInAir"
@@ -1754,6 +1775,7 @@
         "BPI_CanBeCombatTargeted",
         "BPI_CanBeExecuted",
         "BPI_GetExecutionTargetLocation",
+        "Combat_CanAttackPlayer",
         "Timeline_SpawnDissolve__FinishedFunc",
         "Timeline_SpawnDissolve__UpdateFunc",
         "Timeline_DeathDissolve__FinishedFunc",
@@ -1794,6 +1816,13 @@
         "CE_RequestCombatDisengage",
         "CE_StartWakeUp",
         "CE_FinishWakeUp",
+        "Combat_BeginAttacker",
+        "Combat_BeginObserver",
+        "Combat_EndAttacker",
+        "Combat_EndObserver",
+        "Combat_UpdateAttacker",
+        "Combat_UpdateObserver",
+        "Combat_OnAttackFinished",
         "CE_StopObserverState",
         "CE_StartObserverState",
         "CE_UpdateObserverState",
