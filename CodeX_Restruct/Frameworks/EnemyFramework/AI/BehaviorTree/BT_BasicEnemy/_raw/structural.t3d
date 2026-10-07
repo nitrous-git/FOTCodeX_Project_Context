@@ -77,8 +77,6 @@ Begin Object Class=/Script/AIModule.BehaviorTree Name="BT_BasicEnemy" ExportPath
    End Object
    Begin Object Class=/Script/AIModule.BTDecorator_Blackboard Name="BTDecorator_Blackboard_7" ExportPath="/Script/AIModule.BTDecorator_Blackboard'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTDecorator_Blackboard_7'"
    End Object
-   Begin Object Class=/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Attacker.BTTask_Attacker_C Name="BTTask_Attack_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Attacker.BTTask_Attacker_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_Attack_C_0'"
-   End Object
    Begin Object Class=/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Awakening.BTTask_Awakening_C Name="BTTask_Awakening_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Awakening.BTTask_Awakening_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_Awakening_C_0'"
    End Object
    Begin Object Class=/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Damage.BTTask_Damage_C Name="BTTask_Damage_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Damage.BTTask_Damage_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_Damage_C_0'"
@@ -87,9 +85,11 @@ Begin Object Class=/Script/AIModule.BehaviorTree Name="BT_BasicEnemy" ExportPath
    End Object
    Begin Object Class=/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Execution.BTTask_Execution_C Name="BTTask_Execution_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Execution.BTTask_Execution_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_Execution_C_0'"
    End Object
-   Begin Object Class=/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Observer.BTTask_Observer_C Name="BTTask_RandomStrafe_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Observer.BTTask_Observer_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_RandomStrafe_C_0'"
-   End Object
    Begin Object Class=/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Retreat.BTTask_Retreat_C Name="BTTask_Retreat_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Retreat.BTTask_Retreat_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_Retreat_C_0'"
+   End Object
+   Begin Object Class=/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Attacker.BTTask_Attacker_C Name="BTTask_Attack_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Attacker.BTTask_Attacker_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_Attack_C_0'"
+   End Object
+   Begin Object Class=/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Observer.BTTask_Observer_C Name="BTTask_RandomStrafe_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Observer.BTTask_Observer_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_RandomStrafe_C_0'"
    End Object
    Begin Object Name="Behavior Tree" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:Behavior Tree'"
       Begin Object Name="BehaviorTreeGraphNode_Composite_0" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:Behavior Tree.BehaviorTreeGraphNode_Composite_0'"
@@ -403,10 +403,6 @@ Begin Object Class=/Script/AIModule.BehaviorTree Name="BT_BasicEnemy" ExportPath
       TreeAsset="/Script/AIModule.BehaviorTree'BT_BasicEnemy'"
       ParentNode="/Script/AIModule.BTComposite_Selector'BT_BasicEnemy:BTComposite_Selector_3'"
    End Object
-   Begin Object Name="BTTask_Attack_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Attacker.BTTask_Attacker_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_Attack_C_0'"
-      TreeAsset="/Script/AIModule.BehaviorTree'BT_BasicEnemy'"
-      ParentNode="/Script/AIModule.BTComposite_Selector'BT_BasicEnemy:BTComposite_Selector_0'"
-   End Object
    Begin Object Name="BTTask_Awakening_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Awakening.BTTask_Awakening_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_Awakening_C_0'"
       TreeAsset="/Script/AIModule.BehaviorTree'BT_BasicEnemy'"
       ParentNode="/Script/AIModule.BTComposite_Selector'BT_BasicEnemy:BTComposite_Selector_2'"
@@ -423,13 +419,17 @@ Begin Object Class=/Script/AIModule.BehaviorTree Name="BT_BasicEnemy" ExportPath
       TreeAsset="/Script/AIModule.BehaviorTree'BT_BasicEnemy'"
       ParentNode="/Script/AIModule.BTComposite_Selector'BT_BasicEnemy:BTComposite_Selector_4'"
    End Object
-   Begin Object Name="BTTask_RandomStrafe_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Observer.BTTask_Observer_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_RandomStrafe_C_0'"
-      TreeAsset="/Script/AIModule.BehaviorTree'BT_BasicEnemy'"
-      ParentNode="/Script/AIModule.BTComposite_Selector'BT_BasicEnemy:BTComposite_Selector_5'"
-   End Object
    Begin Object Name="BTTask_Retreat_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Retreat.BTTask_Retreat_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_Retreat_C_0'"
       TreeAsset="/Script/AIModule.BehaviorTree'BT_BasicEnemy'"
       ParentNode="/Script/AIModule.BTComposite_Selector'BT_BasicEnemy:BTComposite_Selector_6'"
+   End Object
+   Begin Object Name="BTTask_Attack_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Attacker.BTTask_Attacker_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_Attack_C_0'"
+      TreeAsset="/Script/AIModule.BehaviorTree'BT_BasicEnemy'"
+      ParentNode="/Script/AIModule.BTComposite_Selector'BT_BasicEnemy:BTComposite_Selector_0'"
+   End Object
+   Begin Object Name="BTTask_RandomStrafe_C_0" ExportPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Observer.BTTask_Observer_C'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy.BT_BasicEnemy:BTTask_RandomStrafe_C_0'"
+      TreeAsset="/Script/AIModule.BehaviorTree'BT_BasicEnemy'"
+      ParentNode="/Script/AIModule.BTComposite_Selector'BT_BasicEnemy:BTComposite_Selector_5'"
    End Object
    RootNode="/Script/AIModule.BTComposite_Selector'BTComposite_Selector_3'"
    BTGraph="/Script/BehaviorTreeEditor.BehaviorTreeGraph'Behavior Tree'"

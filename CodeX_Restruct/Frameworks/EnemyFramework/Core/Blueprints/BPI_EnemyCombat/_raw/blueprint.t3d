@@ -35,6 +35,10 @@ Begin Object Class=/Script/Engine.Blueprint Name="BPI_EnemyCombat" ExportPath="/
    End Object
    Begin Object Class=/Script/UnrealEd.SceneThumbnailInfo Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:SceneThumbnailInfo_0'"
    End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="Combat_Interrupt" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_Interrupt'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_Interrupt.K2Node_FunctionEntry_0'"
+      End Object
+   End Object
    Begin Object Name="Combat_BeginAttacker" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_BeginAttacker'"
       Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_BeginAttacker.K2Node_FunctionEntry_0'"
          ExtraFlags=201457664
@@ -147,6 +151,18 @@ Begin Object Class=/Script/Engine.Blueprint Name="BPI_EnemyCombat" ExportPath="/
    End Object
    Begin Object Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:SceneThumbnailInfo_0'"
    End Object
+   Begin Object Name="Combat_Interrupt" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_Interrupt'"
+      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_Interrupt.K2Node_FunctionEntry_0'"
+         ExtraFlags=201457664
+         FunctionReference=(MemberName="Combat_Interrupt")
+         bIsEditable=True
+         NodeGuid=6120D1EF41985BBED26FB6A050DE54A0
+         CustomProperties Pin (PinId=B20DCB4F4C165D57F57EA38FD5347BF6,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
+      GraphGuid=C1A6BBF44A290DA14D9EC4990E5AFA7B
+   End Object
    ParentClass="/Script/CoreUObject.Class'/Script/CoreUObject.Interface'"
    BlueprintType=BPTYPE_Interface
    BlueprintSystemVersion=2
@@ -158,6 +174,7 @@ Begin Object Class=/Script/Engine.Blueprint Name="BPI_EnemyCombat" ExportPath="/
    FunctionGraphs(5)="/Script/Engine.EdGraph'Combat_EndObserver'"
    FunctionGraphs(6)="/Script/Engine.EdGraph'Combat_CanAttackPlayer'"
    FunctionGraphs(7)="/Script/Engine.EdGraph'Combat_OnAttackFinished'"
+   FunctionGraphs(8)="/Script/Engine.EdGraph'Combat_Interrupt'"
    CategorySorting(0)=""
    LastEditedDocuments(0)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_BeginAttacker",SavedViewOffset=(X=-357.323547,Y=-326.625000),SavedZoomAmount=1.000000)
    LastEditedDocuments(1)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_UpdateAttacker",SavedViewOffset=(X=-361.150116,Y=-379.931427),SavedZoomAmount=1.000000)
@@ -167,6 +184,7 @@ Begin Object Class=/Script/Engine.Blueprint Name="BPI_EnemyCombat" ExportPath="/
    LastEditedDocuments(5)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_CanAttackPlayer",SavedViewOffset=(X=-385.573578,Y=-405.625000),SavedZoomAmount=1.000000)
    LastEditedDocuments(6)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_UpdateObserver",SavedViewOffset=(X=-385.573578,Y=-405.625000),SavedZoomAmount=1.000000)
    LastEditedDocuments(7)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_OnAttackFinished",SavedViewOffset=(X=-345.081970,Y=-405.625000),SavedZoomAmount=1.000000)
+   LastEditedDocuments(8)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_Interrupt",SavedViewOffset=(X=-244.895813,Y=-416.625000),SavedZoomAmount=1.000000)
    ThumbnailInfo="/Script/UnrealEd.SceneThumbnailInfo'SceneThumbnailInfo_0'"
    GeneratedClass="/Script/Engine.BlueprintGeneratedClass'BPI_EnemyCombat_C'"
    bLegacyNeedToPurgeSkelRefs=False
