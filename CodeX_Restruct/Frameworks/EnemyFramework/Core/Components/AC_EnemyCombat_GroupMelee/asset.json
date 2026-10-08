@@ -20,9 +20,13 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Struct/S_AttackContext",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat",
-      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Cleaver",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_StrafeMode",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee"
@@ -179,6 +183,23 @@
         }
       },
       {
+        "name": "GroupMeleeProfile",
+        "guid": "D9B046BA4D756D9D865CEA807D55C1D1",
+        "friendly_name": "Group Melee Profile",
+        "category": "Profile",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile.DA_Enemy_GroupMeleeProfile_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "LastAttackTime",
         "guid": "358AD6B64F461B383ADED3B98ADCE477",
         "friendly_name": "Last Attack Time",
@@ -286,7 +307,8 @@
         "EventGraph"
       ],
       "functions": [
-        "ComputeStrafeDirection"
+        "ComputeStrafeDirection",
+        "ApplyGroupMeleeProfile"
       ],
       "macros": [],
       "delegates": [],
@@ -294,19 +316,21 @@
         "Combat_CanAttackPlayer",
         "OnFail_3C46673745FA21A7FE107281F21058AD",
         "OnSuccess_3C46673745FA21A7FE107281F21058AD",
-        "ReceiveBeginPlay",
+        "Combat_BeginObserver",
+        "Combat_EndAttacker",
+        "Combat_UpdateAttacker",
+        "Combat_BeginAttacker",
+        "Combat_UpdateObserver",
+        "Combat_EndObserver",
         "CE_MoveToPlayer",
         "CE_UpdateAttackerCooldownMovement",
         "CE_OnAttackFinished",
         "CE_AttackPlayer",
-        "Combat_BeginAttacker",
-        "Combat_UpdateAttacker",
         "Combat_OnAttackFinished",
-        "Combat_EndAttacker",
-        "Combat_BeginObserver",
-        "Combat_UpdateObserver",
-        "Combat_EndObserver",
-        "Combat_Interrupt"
+        "ReceiveBeginPlay",
+        "Combat_Interrupt",
+        "Combat_InitializeProfileFromStyle",
+        "Combat_ApplyProfile"
       ]
     },
     "extraction_status": {

@@ -33,10 +33,20 @@ Begin Object Class=/Script/Engine.Blueprint Name="BPI_EnemyCombat" ExportPath="/
       Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_OnAttackFinished.K2Node_FunctionEntry_0'"
       End Object
    End Object
-   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfo Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:SceneThumbnailInfo_0'"
-   End Object
    Begin Object Class=/Script/Engine.EdGraph Name="Combat_Interrupt" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_Interrupt'"
       Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_Interrupt.K2Node_FunctionEntry_0'"
+      End Object
+   End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="Combat_InitializeProfileFromStyle" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_InitializeProfileFromStyle'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_InitializeProfileFromStyle.K2Node_FunctionEntry_0'"
+      End Object
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfo Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:SceneThumbnailInfo_0'"
+   End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="Combat_ApplyProfile" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_ApplyProfile'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionResult Name="K2Node_FunctionResult_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionResult'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_ApplyProfile.K2Node_FunctionResult_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_ApplyProfile.K2Node_FunctionEntry_0'"
       End Object
    End Object
    Begin Object Name="Combat_BeginAttacker" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_BeginAttacker'"
@@ -149,8 +159,6 @@ Begin Object Class=/Script/Engine.Blueprint Name="BPI_EnemyCombat" ExportPath="/
       Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
       GraphGuid=FB4A3D8D452155BA98F11388FC64F4FE
    End Object
-   Begin Object Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:SceneThumbnailInfo_0'"
-   End Object
    Begin Object Name="Combat_Interrupt" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_Interrupt'"
       Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_Interrupt.K2Node_FunctionEntry_0'"
          ExtraFlags=201457664
@@ -162,6 +170,46 @@ Begin Object Class=/Script/Engine.Blueprint Name="BPI_EnemyCombat" ExportPath="/
       Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
       Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
       GraphGuid=C1A6BBF44A290DA14D9EC4990E5AFA7B
+   End Object
+   Begin Object Name="Combat_InitializeProfileFromStyle" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_InitializeProfileFromStyle'"
+      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_InitializeProfileFromStyle.K2Node_FunctionEntry_0'"
+         ExtraFlags=201457664
+         FunctionReference=(MemberName="Combat_InitializeProfileFromStyle")
+         bIsEditable=True
+         NodeGuid=19BEB349405E6374D2AE6FA521E9D76F
+         CustomProperties Pin (PinId=29ED955F492A1961E10F5FA8F3B6E6DC,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=70699E764327345249D832A962C1F4D2,PinName="StyleMode",Direction="EGPD_Output",PinType.PinCategory="byte",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode.E_Enemy_CombatStyleMode'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="NewEnumerator0",AutogeneratedDefaultValue="NewEnumerator0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties UserDefinedPin (PinName="StyleMode",PinType=(PinCategory="byte",PinSubCategoryObject="/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode.E_Enemy_CombatStyleMode'"),DesiredPinDirection=EGPD_Output,PinDefaultValue="NewEnumerator0")
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
+      GraphGuid=722FE83D4AC838028767E0883319C0FE
+   End Object
+   Begin Object Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:SceneThumbnailInfo_0'"
+   End Object
+   Begin Object Name="Combat_ApplyProfile" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_ApplyProfile'"
+      Begin Object Name="K2Node_FunctionResult_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionResult'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_ApplyProfile.K2Node_FunctionResult_0'"
+         FunctionReference=(MemberName="Combat_ApplyProfile")
+         bIsEditable=True
+         NodePosX=256
+         NodeGuid=221638B44689BAA56636C9B3CE5F6196
+         CustomProperties Pin (PinId=36F4598D410075CCEB1CE99049474D6B,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 B66C163749BDB62F16289CA097335548,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=2E83A91F4C4DD7E0E20A3CA45540FD90,PinName="bSuccess",PinType.PinCategory="bool",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="false",AutogeneratedDefaultValue="false",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties UserDefinedPin (PinName="bSuccess",PinType=(PinCategory="bool"),DesiredPinDirection=EGPD_Input,PinDefaultValue="false")
+      End Object
+      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_ApplyProfile.K2Node_FunctionEntry_0'"
+         ExtraFlags=201457664
+         FunctionReference=(MemberName="Combat_ApplyProfile")
+         bIsEditable=True
+         NodeGuid=D521A1E248BD8C36C53EB7907C01339F
+         CustomProperties Pin (PinId=B66C163749BDB62F16289CA097335548,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionResult_0 36F4598D410075CCEB1CE99049474D6B,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=81A71D0E44DB6A2192F559813F5542C0,PinName="NewProfile",Direction="EGPD_Output",PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/CoreUObject.Class'/Script/Engine.PrimaryDataAsset'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties UserDefinedPin (PinName="NewProfile",PinType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/Engine.PrimaryDataAsset'"),DesiredPinDirection=EGPD_Output)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
+      Nodes(1)="/Script/BlueprintGraph.K2Node_FunctionResult'K2Node_FunctionResult_0'"
+      GraphGuid=95004C644D80EEAA49A5A1BC6A0A6C7F
    End Object
    ParentClass="/Script/CoreUObject.Class'/Script/CoreUObject.Interface'"
    BlueprintType=BPTYPE_Interface
@@ -175,6 +223,8 @@ Begin Object Class=/Script/Engine.Blueprint Name="BPI_EnemyCombat" ExportPath="/
    FunctionGraphs(6)="/Script/Engine.EdGraph'Combat_CanAttackPlayer'"
    FunctionGraphs(7)="/Script/Engine.EdGraph'Combat_OnAttackFinished'"
    FunctionGraphs(8)="/Script/Engine.EdGraph'Combat_Interrupt'"
+   FunctionGraphs(9)="/Script/Engine.EdGraph'Combat_InitializeProfileFromStyle'"
+   FunctionGraphs(10)="/Script/Engine.EdGraph'Combat_ApplyProfile'"
    CategorySorting(0)=""
    LastEditedDocuments(0)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_BeginAttacker",SavedViewOffset=(X=-357.323547,Y=-326.625000),SavedZoomAmount=1.000000)
    LastEditedDocuments(1)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_UpdateAttacker",SavedViewOffset=(X=-361.150116,Y=-379.931427),SavedZoomAmount=1.000000)
@@ -185,6 +235,8 @@ Begin Object Class=/Script/Engine.Blueprint Name="BPI_EnemyCombat" ExportPath="/
    LastEditedDocuments(6)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_UpdateObserver",SavedViewOffset=(X=-385.573578,Y=-405.625000),SavedZoomAmount=1.000000)
    LastEditedDocuments(7)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_OnAttackFinished",SavedViewOffset=(X=-345.081970,Y=-405.625000),SavedZoomAmount=1.000000)
    LastEditedDocuments(8)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_Interrupt",SavedViewOffset=(X=-244.895813,Y=-416.625000),SavedZoomAmount=1.000000)
+   LastEditedDocuments(9)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_InitializeProfileFromStyle",SavedViewOffset=(X=-340.478851,Y=-405.625000),SavedZoomAmount=1.000000)
+   LastEditedDocuments(10)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat.BPI_EnemyCombat:Combat_ApplyProfile",SavedViewOffset=(X=-375.589783,Y=-383.625000),SavedZoomAmount=1.000000)
    ThumbnailInfo="/Script/UnrealEd.SceneThumbnailInfo'SceneThumbnailInfo_0'"
    GeneratedClass="/Script/Engine.BlueprintGeneratedClass'BPI_EnemyCombat_C'"
    bLegacyNeedToPurgeSkelRefs=False

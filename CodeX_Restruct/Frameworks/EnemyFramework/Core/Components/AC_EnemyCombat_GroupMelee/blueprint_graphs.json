@@ -144,6 +144,23 @@
       }
     },
     {
+      "name": "GroupMeleeProfile",
+      "guid": "D9B046BA4D756D9D865CEA807D55C1D1",
+      "friendly_name": "Group Melee Profile",
+      "category": "Profile",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile.DA_Enemy_GroupMeleeProfile_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "LastAttackTime",
       "guid": "358AD6B64F461B383ADED3B98ADCE477",
       "friendly_name": "Last Attack Time",
@@ -251,11 +268,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "DD2EE800487072259CD856A5DE4F025B",
-      "node_count": 224,
-      "pin_count": 758,
-      "connection_count": 210,
+      "node_count": 207,
+      "pin_count": 715,
+      "connection_count": 198,
       "exec_connection_count": 93,
-      "data_connection_count": 117
+      "data_connection_count": 105
     },
     {
       "name": "ComputeStrafeDirection",
@@ -266,21 +283,31 @@
       "connection_count": 39,
       "exec_connection_count": 12,
       "data_connection_count": 27
+    },
+    {
+      "name": "ApplyGroupMeleeProfile",
+      "kind": "function",
+      "guid": "ED89B1F9449854E57A3399A45BB8C804",
+      "node_count": 16,
+      "pin_count": 46,
+      "connection_count": 24,
+      "exec_connection_count": 3,
+      "data_connection_count": 21
     }
   ],
   "generated_graphs": [
     {
       "name": "Combat_CanAttackPlayer",
       "guid": "FE5CAD4C4E0100E0F551A1B3A2DDEFE2",
-      "node_count": 30,
-      "pin_count": 132,
+      "node_count": 20,
+      "pin_count": 52,
       "connection_count": 20,
       "exec_connection_count": 8,
       "data_connection_count": 12
     },
     {
       "name": "OnFail_3C46673745FA21A7FE107281F21058AD",
-      "guid": "90FD2AC5495130A10A8A5E889ABA425D",
+      "guid": "6138BC0E4C9A4AD10D60B597B28C5575",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -289,7 +316,7 @@
     },
     {
       "name": "OnSuccess_3C46673745FA21A7FE107281F21058AD",
-      "guid": "30865DF44DB52883CA55839E6B7F893C",
+      "guid": "4ED213CC425B3270C0AB6797B6D17BCB",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -297,71 +324,8 @@
       "data_connection_count": 1
     },
     {
-      "name": "ReceiveBeginPlay",
-      "guid": "497D31104DD001AFFC1BC2B7E3707675",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_MoveToPlayer",
-      "guid": "E62AB65047075E663B3938A0A0C42714",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_UpdateAttackerCooldownMovement",
-      "guid": "FDB378CB473C3A2E35256AB9F64DB5A5",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_OnAttackFinished",
-      "guid": "18450624439674194DF4418E4ED76C1C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_AttackPlayer",
-      "guid": "C0A357B246CFF39FD83FED9C8BAF8A46",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Combat_BeginAttacker",
-      "guid": "229331684FE8539ACA13B4AA2727AFDD",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Combat_UpdateAttacker",
-      "guid": "363C27B145C89223F4C5DBA17E108CD2",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Combat_OnAttackFinished",
-      "guid": "B5AB8B8A42C33B72323F7C982EDA67F1",
+      "name": "Combat_BeginObserver",
+      "guid": "DC7BEE17403126E950B32EBC9DD691DA",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -370,7 +334,7 @@
     },
     {
       "name": "Combat_EndAttacker",
-      "guid": "86A1EAA14C97E970CD918DB7D70328B5",
+      "guid": "FE49AA434C47B6A9A0A5328F0BDF248B",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -378,8 +342,17 @@
       "data_connection_count": 0
     },
     {
-      "name": "Combat_BeginObserver",
-      "guid": "C6AEBC624C94FD4BC54494BCA8C04CEC",
+      "name": "Combat_UpdateAttacker",
+      "guid": "E3BDA4BA4B96C2D168A4DC8F17D2E223",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Combat_BeginAttacker",
+      "guid": "882D63BF4A150C1CD57280826D2049C6",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -388,7 +361,7 @@
     },
     {
       "name": "Combat_UpdateObserver",
-      "guid": "566A185A42B0B463B08533A27CD6EC9B",
+      "guid": "EF6267474EA93E9BDEBAEBB4B3E10986",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -397,7 +370,61 @@
     },
     {
       "name": "Combat_EndObserver",
-      "guid": "9103FC1048D5AB0CA5F8FD8379C20294",
+      "guid": "9972F3EC44E36CF39D72A2896357EC35",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_MoveToPlayer",
+      "guid": "9100DF044AAC933A45775F8B15469954",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateAttackerCooldownMovement",
+      "guid": "CD3269BA461E671779079EB686D17434",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_OnAttackFinished",
+      "guid": "BA852A5C4152C5E736ED6AA9734F23CE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_AttackPlayer",
+      "guid": "BEAF920A4E3B6F95F08B3EB9D749223D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_OnAttackFinished",
+      "guid": "14DFADB0404614D9E9FEF3948ED6D871",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "FB3E1A0A4D1418928B23A58F368C0058",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -406,28 +433,51 @@
     },
     {
       "name": "Combat_Interrupt",
-      "guid": "2D27612C44CD0C90B649DC8762834AD1",
+      "guid": "3162FFA946F68F3F87CAD9AF62985CBE",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
       "exec_connection_count": 1,
       "data_connection_count": 0
+    },
+    {
+      "name": "Combat_InitializeProfileFromStyle",
+      "guid": "B1B82C1146D278437012A89E7C154359",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Combat_ApplyProfile",
+      "guid": "AEC75A4543165C8F6F0BC68B97DDD4D0",
+      "node_count": 5,
+      "pin_count": 16,
+      "connection_count": 6,
+      "exec_connection_count": 4,
+      "data_connection_count": 2
     }
   ],
   "stats": {
-    "authored_graph_count": 2,
-    "generated_graph_count": 16,
-    "authored_node_count": 257,
-    "authored_pin_count": 846,
-    "authored_connection_count": 249,
-    "generated_node_count": 64,
-    "generated_pin_count": 223
+    "authored_graph_count": 3,
+    "generated_graph_count": 18,
+    "authored_node_count": 256,
+    "authored_pin_count": 849,
+    "authored_connection_count": 261,
+    "generated_node_count": 62,
+    "generated_pin_count": 168
   },
   "graph_files": [
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplyGroupMeleeProfile",
+      "kind": "function",
+      "file": "graphs/ApplyGroupMeleeProfile.json"
     },
     {
       "name": "ComputeStrafeDirection",

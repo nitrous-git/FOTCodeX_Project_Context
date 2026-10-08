@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "exporter_version": "0.4.0",
-  "generated_utc": "2026-10-07T04:24:48.275647+00:00",
+  "generated_utc": "2026-10-08T20:02:48.477260+00:00",
   "root_path": "/Game/CodeX_Restruct",
   "settings": {
     "excluded_paths": [
@@ -52,14 +52,14 @@
   },
   "discovery": {
     "summary": {
-      "scanned": 6021,
+      "scanned": 6023,
       "full_graph": 207,
       "excluded_by_path": 4250,
       "ignored_by_class": 1482,
       "excluded_individual_asset": 4,
-      "structural": 74,
+      "structural": 76,
       "deprecated": 4,
-      "export_candidates": 281
+      "export_candidates": 283
     },
     "class_breakdown": {
       "AnimBlueprint": 8,
@@ -91,6 +91,7 @@
       "DA_Enemy_CombatStyle_Cleaver_C": 1,
       "DA_Enemy_CombatStyle_Katana_C": 1,
       "DA_Enemy_CombatStyle_Sword_C": 1,
+      "DA_Enemy_GroupMeleeProfile_C": 2,
       "DataLayerAsset": 6,
       "DataTable": 2,
       "FoliageType_InstancedStaticMesh": 29,
@@ -1380,20 +1381,6 @@
           "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy"
         },
         {
-          "asset_name": "BTDecorator_inAtkRange",
-          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco/BTDecorator_inAtkRange",
-          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco",
-          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco/BTDecorator_inAtkRange.BTDecorator_inAtkRange",
-          "relative_package": "Frameworks/EnemyFramework/AI/BTDeco/BTDecorator_inAtkRange",
-          "asset_class": {
-            "package": "/Script/Engine",
-            "name": "Blueprint"
-          },
-          "category": "FULL_GRAPH",
-          "classification_reason": "Logic-bearing Blueprint class",
-          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco/BTDecorator_inAtkRange"
-        },
-        {
           "asset_name": "BTDecorator_isAttacker",
           "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco/BTDecorator_isAttacker",
           "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco",
@@ -1644,6 +1631,20 @@
           "category": "FULL_GRAPH",
           "classification_reason": "Logic-bearing Blueprint class",
           "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle"
+        },
+        {
+          "asset_name": "DA_Enemy_GroupMeleeProfile",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile.DA_Enemy_GroupMeleeProfile",
+          "relative_package": "Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile"
         },
         {
           "asset_name": "DA_Enemy_CombatStyle_Cleaver",
@@ -3158,6 +3159,34 @@
           "category": "STRUCTURAL",
           "classification_reason": "Included by CodeX structural naming convention",
           "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle_Instance"
+        },
+        {
+          "asset_name": "DA_GM_Cleaver",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Cleaver",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Cleaver.DA_GM_Cleaver",
+          "relative_package": "Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Cleaver",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile",
+            "name": "DA_Enemy_GroupMeleeProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by CodeX structural naming convention",
+          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Cleaver"
+        },
+        {
+          "asset_name": "DA_GM_Sword",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword.DA_GM_Sword",
+          "relative_package": "Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile",
+            "name": "DA_Enemy_GroupMeleeProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by CodeX structural naming convention",
+          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword"
         },
         {
           "asset_name": "DA_Enemy_CombatStyle_Cleaver_Instance",

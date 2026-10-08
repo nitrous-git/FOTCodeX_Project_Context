@@ -16,13 +16,17 @@
     "reason": "Logic-bearing Blueprint class"
   },
   "architecture": {
-    "dependencies": [],
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
+    ],
     "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Attacker",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Observer",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
-      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_OnEnemyAttackFinished"
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Notifies/AN_OnEnemyAttackFinished",
+      "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner"
     ],
     "non_architecture_dependency_count": 0,
     "non_architecture_referencer_count": 0
@@ -50,7 +54,9 @@
         "Combat_EndObserver",
         "Combat_CanAttackPlayer",
         "Combat_OnAttackFinished",
-        "Combat_Interrupt"
+        "Combat_Interrupt",
+        "Combat_InitializeProfileFromStyle",
+        "Combat_ApplyProfile"
       ],
       "macros": [],
       "delegates": [],

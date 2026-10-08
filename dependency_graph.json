@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 281,
-  "edge_count": 841,
+  "node_count": 283,
+  "edge_count": 845,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -957,11 +957,11 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C",
@@ -1680,10 +1680,6 @@
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTTask/BTTask_Retreat"
     },
     {
-      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco/BTDecorator_inAtkRange",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
-    },
-    {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BTDeco/BTDecorator_isAttacker",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
     },
@@ -1740,6 +1736,10 @@
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
     },
@@ -1774,30 +1774,6 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Cleaver"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Cleaver_Instance"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Katana"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Katana_Instance"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Sword"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Sword_Instance"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
@@ -1865,7 +1841,19 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle"
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Cleaver"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
@@ -1874,6 +1862,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior",
@@ -1898,6 +1890,30 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle_Instance",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/DA_Enemy_CombatStyle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Cleaver",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Cleaver",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Cleaver"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Sword"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/Styles/DA_Enemy_CombatStyle_Cleaver",
@@ -3321,6 +3337,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
     },
     {
@@ -3362,10 +3382,6 @@
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint",
-      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode"
     }
   ]
 }
