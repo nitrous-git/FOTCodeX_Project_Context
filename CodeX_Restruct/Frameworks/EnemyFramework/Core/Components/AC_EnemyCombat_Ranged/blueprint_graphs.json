@@ -1,0 +1,576 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_EnemyCombat_Ranged",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "55C1CF4B443FE1C8ED109C9D4D7A3FFF",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "ApproachStartDistance",
+      "guid": "3C99C512472C61971F20F09AFC170C9F",
+      "friendly_name": "Approach Start Distance",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ApproachStopDistance",
+      "guid": "9D1374994F0FA839ADEBAFB3D414AC47",
+      "friendly_name": "Approach Stop Distance",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackCooldown",
+      "guid": "C6E9602D44E8164868B29E9B554F124B",
+      "friendly_name": "Attack Cooldown",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bApproaching",
+      "guid": "2C766E594FD47C96C9843A9778B35FAE",
+      "friendly_name": "Approaching",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bAttackInProgress",
+      "guid": "75E2E1E745C04948DFE191A53FA03439",
+      "friendly_name": "Attack in Progress",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bHasFiredProjectile",
+      "guid": "8988612B4593A44A2675EC9CAA7AD8A3",
+      "friendly_name": "Has Fired Projectile",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentObserverStrafeMode",
+      "guid": "4173AEE44F4C70A2FA8078A6C9E192A6",
+      "friendly_name": "Current Observer Strafe Mode",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_StrafeMode.E_StrafeMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DistanceToPlayer",
+      "guid": "D8CB0B5F4551297E53BCC69A10A0852E",
+      "friendly_name": "Distance to Player",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastAttackTime",
+      "guid": "49D71D0948039ADC4E67CA887B1153B3",
+      "friendly_name": "Last Attack Time",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MoveDirection",
+      "guid": "5D87740C454F1ADDB9F28BACEE7DC2E5",
+      "friendly_name": "Move Direction",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MoveRefreshTimer",
+      "guid": "3FF26E48427B44CE66216E8C8541D539",
+      "friendly_name": "Move Refresh Timer",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "NextApproachRetryTime",
+      "guid": "B4AFBEFE490F2904726D6BB34D33BFF4",
+      "friendly_name": "Next Approach Retry Time",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ObserverDirectionChangeInterval",
+      "guid": "ECBC79204189624E4B2E308157C25CE0",
+      "friendly_name": "Observer Direction Change Interval",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ObserverDirectionTimer",
+      "guid": "D8BDE612476BAD3FCEDB3CA2772A1041",
+      "friendly_name": "Observer Direction Timer",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OwnerEnemy",
+      "guid": "74A57D69409C678DE405EB8FFE032FCB",
+      "friendly_name": "Owner Enemy",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RangedProfile",
+      "guid": "F046050749966CEA386C38A1B13C8C95",
+      "friendly_name": "Ranged Profile",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_RangedProfile.DA_Enemy_RangedProfile_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StrafeChangeTimer",
+      "guid": "BD9E2547480159FA32972D86C2F2E650",
+      "friendly_name": "Strafe Change Timer",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "E86C31604BB173E657E158976DDD599E",
+      "node_count": 158,
+      "pin_count": 508,
+      "connection_count": 147,
+      "exec_connection_count": 63,
+      "data_connection_count": 84
+    },
+    {
+      "name": "ApplyRangedProfile",
+      "kind": "function",
+      "guid": "5FE80C4D494EFA23DFFE1E9B9B6EE0D6",
+      "node_count": 15,
+      "pin_count": 44,
+      "connection_count": 22,
+      "exec_connection_count": 3,
+      "data_connection_count": 19
+    },
+    {
+      "name": "HasLineOfSightTo",
+      "kind": "function",
+      "guid": "94DA18724B7F4E61043903ACFD585935",
+      "node_count": 18,
+      "pin_count": 74,
+      "connection_count": 19,
+      "exec_connection_count": 2,
+      "data_connection_count": 17
+    },
+    {
+      "name": "ComputeStrafeDirection",
+      "kind": "function",
+      "guid": "10DAF8DA4F64F5D162F7858BB223CB37",
+      "node_count": 33,
+      "pin_count": 88,
+      "connection_count": 39,
+      "exec_connection_count": 12,
+      "data_connection_count": 27
+    },
+    {
+      "name": "GetDistanceToPlayer",
+      "kind": "function",
+      "guid": "B54E856D45E6B48635B8DC884C8FFB87",
+      "node_count": 9,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 1,
+      "data_connection_count": 7
+    },
+    {
+      "name": "CanPerformCombatUpdate",
+      "kind": "function",
+      "guid": "6232600A45A52C4B4A3F3EA33C204681",
+      "node_count": 6,
+      "pin_count": 10,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Combat_ApplyProfile",
+      "guid": "9E97978046D8E2238CD71F92F03A69E6",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 6,
+      "exec_connection_count": 4,
+      "data_connection_count": 2
+    },
+    {
+      "name": "Combat_CanAttackPlayer",
+      "guid": "2B2D5B45427FFACC5B92748BBA00D67B",
+      "node_count": 20,
+      "pin_count": 52,
+      "connection_count": 20,
+      "exec_connection_count": 8,
+      "data_connection_count": 12
+    },
+    {
+      "name": "OnFail_848B367F4A86674031755A8A49008285",
+      "guid": "1595948447735C2ED301E1A44DD176F1",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnSuccess_848B367F4A86674031755A8A49008285",
+      "guid": "68E30E8042312509D699DB8E2BBD3C0A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Combat_UpdateObserver",
+      "guid": "402FA5F846F4F717EB6346846DB5EE9E",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Combat_UpdateAttacker",
+      "guid": "B971B47C42D6749AC6CFCEA00420D4CB",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Combat_BeginAttacker",
+      "guid": "B4B47C8A4ED479F0B347C3BDAF82DF85",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_EndObserver",
+      "guid": "C18DDC254FF150CBA0A1A7A0E723BCC1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_EndAttacker",
+      "guid": "29089A7B4F3D89C5700AC68CED26CAAB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_BeginObserver",
+      "guid": "578264564DE5E21555603D9927200232",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_OnAttackFinished",
+      "guid": "34F158504A24C79E7CE462AEF3A7C967",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_Interrupt",
+      "guid": "D842D5674025B74860FC829762318725",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartApproach",
+      "guid": "4C92208F4DE986D7804B4DB4CD7C3F82",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "6EA545904FAB7A5E602773BC53127997",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StopApproach",
+      "guid": "22F04106450599ADF7B1F69796DD8BFC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateStrafe",
+      "guid": "2C55D8294C59AC9C487335AB4579468A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Combat_InitializeProfileFromStyle",
+      "guid": "9EEDC9DE42762512F1A4369C7C18A776",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartCast",
+      "guid": "BEAF186F4A6D9AB27AFE7F8F044F9F61",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdatePositioning",
+      "guid": "4476E8174C50E71577C530A7F60668BB",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 6,
+    "generated_graph_count": 19,
+    "authored_node_count": 239,
+    "authored_pin_count": 743,
+    "authored_connection_count": 239,
+    "generated_node_count": 67,
+    "generated_pin_count": 185
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplyRangedProfile",
+      "kind": "function",
+      "file": "graphs/ApplyRangedProfile.json"
+    },
+    {
+      "name": "CanPerformCombatUpdate",
+      "kind": "function",
+      "file": "graphs/CanPerformCombatUpdate.json"
+    },
+    {
+      "name": "ComputeStrafeDirection",
+      "kind": "function",
+      "file": "graphs/ComputeStrafeDirection.json"
+    },
+    {
+      "name": "GetDistanceToPlayer",
+      "kind": "function",
+      "file": "graphs/GetDistanceToPlayer.json"
+    },
+    {
+      "name": "HasLineOfSightTo",
+      "kind": "function",
+      "file": "graphs/HasLineOfSightTo.json"
+    }
+  ]
+}

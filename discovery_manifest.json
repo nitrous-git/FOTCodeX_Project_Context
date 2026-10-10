@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "exporter_version": "0.4.0",
-  "generated_utc": "2026-10-08T20:02:48.477260+00:00",
+  "generated_utc": "2026-10-10T17:38:52.739499+00:00",
   "root_path": "/Game/CodeX_Restruct",
   "settings": {
     "excluded_paths": [
@@ -52,23 +52,23 @@
   },
   "discovery": {
     "summary": {
-      "scanned": 6023,
-      "full_graph": 207,
+      "scanned": 6050,
+      "full_graph": 212,
       "excluded_by_path": 4250,
-      "ignored_by_class": 1482,
-      "excluded_individual_asset": 4,
-      "structural": 76,
+      "ignored_by_class": 1504,
+      "excluded_individual_asset": 3,
+      "structural": 77,
       "deprecated": 4,
-      "export_candidates": 283
+      "export_candidates": 289
     },
     "class_breakdown": {
       "AnimBlueprint": 8,
-      "AnimMontage": 177,
-      "AnimSequence": 749,
+      "AnimMontage": 179,
+      "AnimSequence": 765,
       "BehaviorTree": 1,
       "BlackboardData": 1,
-      "BlendSpace": 25,
-      "Blueprint": 206,
+      "BlendSpace": 26,
+      "Blueprint": 210,
       "CameraAnimationSequence": 2,
       "ContextualAnimRolesAsset": 2,
       "ContextualAnimSceneAsset": 15,
@@ -92,6 +92,7 @@
       "DA_Enemy_CombatStyle_Katana_C": 1,
       "DA_Enemy_CombatStyle_Sword_C": 1,
       "DA_Enemy_GroupMeleeProfile_C": 2,
+      "DA_Enemy_RangedProfile_C": 1,
       "DataLayerAsset": 6,
       "DataTable": 2,
       "FoliageType_InstancedStaticMesh": 29,
@@ -113,7 +114,7 @@
       "NiagaraEmitter": 38,
       "NiagaraScript": 3,
       "NiagaraSystem": 300,
-      "ObjectRedirector": 43,
+      "ObjectRedirector": 46,
       "ParticleSystem": 67,
       "PhysicalMaterial": 1,
       "PhysicsAsset": 28,
@@ -1521,6 +1522,48 @@
           "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Animations/ABP/ABP_Enemy"
         },
         {
+          "asset_name": "BP_Enemy_GroupMelee",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_GroupMelee",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee",
+          "relative_package": "Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_GroupMelee",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_GroupMelee"
+        },
+        {
+          "asset_name": "BP_Enemy_Ranged",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged.BP_Enemy_Ranged",
+          "relative_package": "Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged"
+        },
+        {
+          "asset_name": "BP_Enemy_Ranged_Warlock",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock",
+          "relative_package": "Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock"
+        },
+        {
           "asset_name": "BP_EnemyPatrolPath",
           "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath",
           "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints",
@@ -1547,20 +1590,6 @@
           "category": "FULL_GRAPH",
           "classification_reason": "Logic-bearing Blueprint class",
           "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat"
-        },
-        {
-          "asset_name": "BP_Enemy_GroupMelee",
-          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee",
-          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core",
-          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee.BP_Enemy_GroupMelee",
-          "relative_package": "Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee",
-          "asset_class": {
-            "package": "/Script/Engine",
-            "name": "Blueprint"
-          },
-          "category": "FULL_GRAPH",
-          "classification_reason": "Logic-bearing Blueprint class",
-          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_Enemy_GroupMelee"
         },
         {
           "asset_name": "BP_EnemyBase",
@@ -1605,6 +1634,20 @@
           "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee"
         },
         {
+          "asset_name": "AC_EnemyCombat_Ranged",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged.AC_EnemyCombat_Ranged",
+          "relative_package": "Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged"
+        },
+        {
           "asset_name": "AC_EnemyWorldBehavior",
           "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior",
           "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components",
@@ -1645,6 +1688,20 @@
           "category": "FULL_GRAPH",
           "classification_reason": "Logic-bearing Blueprint class",
           "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile"
+        },
+        {
+          "asset_name": "DA_Enemy_RangedProfile",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_RangedProfile",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_RangedProfile.DA_Enemy_RangedProfile",
+          "relative_package": "Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_RangedProfile",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_RangedProfile"
         },
         {
           "asset_name": "DA_Enemy_CombatStyle_Cleaver",
@@ -2781,6 +2838,20 @@
           "planned_export_path": "CodeX_Restruct/Game/Items/Weapons/BP_Shield"
         },
         {
+          "asset_name": "BP_Staff01",
+          "package_name": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Staff01",
+          "package_path": "/Game/CodeX_Restruct/Game/Items/Weapons",
+          "object_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Staff01.BP_Staff01",
+          "relative_package": "Game/Items/Weapons/BP_Staff01",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "CodeX_Restruct/Game/Items/Weapons/BP_Staff01"
+        },
+        {
           "asset_name": "BP_Sword",
           "package_name": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Sword",
           "package_path": "/Game/CodeX_Restruct/Game/Items/Weapons",
@@ -3187,6 +3258,20 @@
           "category": "STRUCTURAL",
           "classification_reason": "Included by CodeX structural naming convention",
           "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword"
+        },
+        {
+          "asset_name": "DA_Ranged_SkeletonWarlock",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Ranged_SkeletonWarlock",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Ranged_SkeletonWarlock.DA_Ranged_SkeletonWarlock",
+          "relative_package": "Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Ranged_SkeletonWarlock",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_RangedProfile",
+            "name": "DA_Enemy_RangedProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by CodeX structural naming convention",
+          "planned_export_path": "CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Ranged_SkeletonWarlock"
         },
         {
           "asset_name": "DA_Enemy_CombatStyle_Cleaver_Instance",

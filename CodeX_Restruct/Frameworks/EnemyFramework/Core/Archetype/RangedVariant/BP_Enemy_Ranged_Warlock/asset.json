@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_Enemy_Ranged_Warlock",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock",
+    "relative_package": "Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 9,
+    "non_architecture_referencer_count": 1
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged.BP_Enemy_Ranged_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged.BP_Enemy_Ranged_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "AC_EnemyCombat_Ranged",
+        "class": "AC_EnemyCombat_Ranged_C",
+        "parent": "BP_Enemy_Ranged_Warlock",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:AC_EnemyCombat_Ranged_GEN_VARIABLE"
+      },
+      {
+        "name": "ArrowComponent",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.Default__BP_Enemy_Ranged_Warlock_C:Arrow"
+      },
+      {
+        "name": "Awareness",
+        "class": "AC_EnemyAwareness_C",
+        "parent": "BP_Enemy_Ranged_Warlock",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:Awareness_GEN_VARIABLE"
+      },
+      {
+        "name": "AwarenessSphere",
+        "class": "SphereComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:AwarenessSphere_GEN_VARIABLE"
+      },
+      {
+        "name": "CapsuleComponent",
+        "class": "CapsuleComponent",
+        "parent": "BP_Enemy_Ranged_Warlock",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.Default__BP_Enemy_Ranged_Warlock_C:CollisionCylinder"
+      },
+      {
+        "name": "CharacterMovement",
+        "class": "CharacterMovementComponent",
+        "parent": "BP_Enemy_Ranged_Warlock",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.Default__BP_Enemy_Ranged_Warlock_C:CharMoveComp"
+      },
+      {
+        "name": "CombatTargetPoint ",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:CombatTargetPoint _GEN_VARIABLE"
+      },
+      {
+        "name": "ContextualAnimSceneActor",
+        "class": "ContextualAnimSceneActorComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:ContextualAnimSceneActor_GEN_VARIABLE"
+      },
+      {
+        "name": "DamageArrow",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:DamageArrow_GEN_VARIABLE"
+      },
+      {
+        "name": "DeathNiagara",
+        "class": "NiagaraComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:DeathNiagara_GEN_VARIABLE"
+      },
+      {
+        "name": "DebugText",
+        "class": "TextRenderComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:DebugText_GEN_VARIABLE"
+      },
+      {
+        "name": "Mesh",
+        "class": "SkeletalMeshComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.Default__BP_Enemy_Ranged_Warlock_C:CharacterMesh0"
+      },
+      {
+        "name": "MotionWarping",
+        "class": "MotionWarpingComponent",
+        "parent": "BP_Enemy_Ranged_Warlock",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:MotionWarping_GEN_VARIABLE"
+      },
+      {
+        "name": "SceneKnock",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:SceneKnock_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_ma_meta_tal_nrw_cultist_dress_knight_02",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:SK_ma_meta_tal_nrw_cultist_dress_knight_02_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_ma_meta_tal_nrw_cultist_shoe_01_b",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:SK_ma_meta_tal_nrw_cultist_shoe_01_b_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_ma_meta_tal_nrw_scarf_single",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:SK_ma_meta_tal_nrw_scarf_single_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_PrimaryWeapon",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:SK_PrimaryWeapon_GEN_VARIABLE"
+      },
+      {
+        "name": "SK_SecondaryWeapon",
+        "class": "SkeletalMeshComponent",
+        "parent": "Mesh",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:SK_SecondaryWeapon_GEN_VARIABLE"
+      },
+      {
+        "name": "StaticMesh",
+        "class": "StaticMeshComponent",
+        "parent": "SK_PrimaryWeapon",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:StaticMesh_GEN_VARIABLE"
+      },
+      {
+        "name": "WorldBehavior",
+        "class": "AC_EnemyWorldBehavior_C",
+        "parent": "BP_Enemy_Ranged_Warlock",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock.BP_Enemy_Ranged_Warlock_C:WorldBehavior_GEN_VARIABLE"
+      }
+    ],
+    "variables": [],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}
