@@ -17,6 +17,7 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged",
@@ -78,6 +79,16 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged.BP_Enemy_Ranged_C:AwarenessSphere_GEN_VARIABLE"
+      },
+      {
+        "name": "BP_ProjectileComponent",
+        "class": "BP_ProjectileComponent_C",
+        "parent": "BP_Enemy_Ranged",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged.BP_Enemy_Ranged_C:BP_ProjectileComponent_GEN_VARIABLE"
       },
       {
         "name": "CapsuleComponent",
