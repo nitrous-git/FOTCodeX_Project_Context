@@ -28,6 +28,7 @@
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_SKMage",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock"
     ],
     "non_architecture_dependency_count": 4,
@@ -45,6 +46,23 @@
     "interfaces": [],
     "components": [],
     "variables": [
+      {
+        "name": "AggroRange",
+        "guid": "AD753A5145B86169F8E10C9B802DBA84",
+        "friendly_name": "Aggro Range",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "ApproachStartDistance",
         "guid": "3C99C512472C61971F20F09AFC170C9F",
@@ -351,23 +369,23 @@
       "generated_graphs": [
         "Combat_ApplyProfile",
         "Combat_CanAttackPlayer",
-        "OnFail_848B367F4A86674031755A8A49008285",
-        "OnSuccess_848B367F4A86674031755A8A49008285",
-        "ReceiveBeginPlay",
-        "Combat_BeginObserver",
-        "Combat_EndAttacker",
-        "Combat_EndObserver",
-        "Combat_UpdateObserver",
-        "Combat_UpdateAttacker",
-        "Combat_BeginAttacker",
-        "Combat_Interrupt",
-        "CE_StartApproach",
-        "CE_StopApproach",
-        "CE_UpdateStrafe",
-        "CE_UpdatePositioning",
-        "Combat_InitializeProfileFromStyle",
+        "Combat_OnAttackFinished",
         "CE_CastSpell",
-        "Combat_OnAttackFinished"
+        "Combat_InitializeProfileFromStyle",
+        "CE_UpdatePositioning",
+        "CE_UpdateObserverStrafe",
+        "CE_StopApproach",
+        "CE_StartApproach",
+        "Combat_Interrupt",
+        "Combat_BeginAttacker",
+        "Combat_UpdateAttacker",
+        "Combat_UpdateObserver",
+        "Combat_EndObserver",
+        "Combat_EndAttacker",
+        "Combat_BeginObserver",
+        "ReceiveBeginPlay",
+        "OnSuccess_848B367F4A86674031755A8A49008285",
+        "OnFail_848B367F4A86674031755A8A49008285"
       ]
     },
     "extraction_status": {

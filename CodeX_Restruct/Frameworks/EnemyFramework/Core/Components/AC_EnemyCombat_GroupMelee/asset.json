@@ -22,14 +22,17 @@
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_GroupMeleeProfile",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Cleaver",
-      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/Melee/DA_GM_SKSpear",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/Melee/DA_GM_SKSword",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_StrafeMode",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     ],
     "referencers": [
-      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_GroupMelee"
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_GroupMelee",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSpear",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSword"
     ],
     "non_architecture_dependency_count": 3,
     "non_architecture_referencer_count": 1
@@ -315,22 +318,22 @@
       "generated_graphs": [
         "Combat_CanAttackPlayer",
         "Combat_ApplyProfile",
-        "Combat_InitializeProfileFromStyle",
-        "Combat_Interrupt",
-        "ReceiveBeginPlay",
-        "Combat_OnAttackFinished",
-        "CE_AttackPlayer",
-        "CE_OnAttackFinished",
-        "CE_UpdateAttackerCooldownMovement",
-        "CE_MoveToPlayer",
+        "OnFail_3C46673745FA21A7FE107281F21058AD",
+        "OnSuccess_3C46673745FA21A7FE107281F21058AD",
         "Combat_EndObserver",
         "Combat_UpdateObserver",
-        "Combat_BeginAttacker",
-        "Combat_UpdateAttacker",
-        "Combat_EndAttacker",
         "Combat_BeginObserver",
-        "OnSuccess_3C46673745FA21A7FE107281F21058AD",
-        "OnFail_3C46673745FA21A7FE107281F21058AD"
+        "Combat_EndAttacker",
+        "Combat_UpdateAttacker",
+        "Combat_BeginAttacker",
+        "CE_MoveToPlayer",
+        "CE_UpdateAttackerCooldownMovement",
+        "CE_OnAttackFinished",
+        "CE_AttackPlayer",
+        "Combat_OnAttackFinished",
+        "ReceiveBeginPlay",
+        "Combat_Interrupt",
+        "Combat_InitializeProfileFromStyle"
       ]
     },
     "extraction_status": {

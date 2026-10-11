@@ -17,6 +17,7 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BP_EnemyPatrolPath",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyDisengagePolicy",
@@ -24,6 +25,9 @@
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSpear",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSword",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_SKMage",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner"
@@ -43,6 +47,23 @@
     "interfaces": [],
     "components": [],
     "variables": [
+      {
+        "name": "bCheckTargetBeyondLeash",
+        "guid": "29A1268C4FEDB14217D42C8BB5348951",
+        "friendly_name": "Check Target Beyond Leash",
+        "category": "INVTEXT(\"Disengage\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "bHomeLocationInitialized",
         "guid": "D53D9DE541069C6B96DD23B97FBAC08E",
@@ -64,6 +85,23 @@
         "name": "bReturningToWorld",
         "guid": "2C31D4AF41AD0DD31D65FA93807CA389",
         "friendly_name": "Returning to World",
+        "category": "INVTEXT(\"Disengage_Runtime\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bTargetOutsideLeash",
+        "guid": "B13F966E44C0418A98E7D18E87635FB2",
+        "friendly_name": "Target Outside Leash",
         "category": "INVTEXT(\"Disengage_Runtime\")",
         "property_flags": 65541,
         "default_value": null,
@@ -535,6 +573,23 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "WorldBehaviorMovementSpeed",
+        "guid": "BF1CDE024DA14AEBB7C3BD94503C5818",
+        "friendly_name": "World Behavior Movement Speed",
+        "category": "Movement",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
@@ -547,7 +602,8 @@
         "AdvancePatrolPoint",
         "StartDisengageMonitoring",
         "EvaluateDisengage",
-        "StopDisengageMonitoring"
+        "StopDisengageMonitoring",
+        "ApplyWorldBehaviorLocomotion"
       ],
       "macros": [],
       "delegates": [
