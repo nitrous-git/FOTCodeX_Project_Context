@@ -6,11 +6,11 @@
     "guid": "43F94A114A798658850143AE9C8EF2E0"
   },
   "stats": {
-    "node_count": 16,
-    "pin_count": 59,
-    "connection_count": 17,
-    "exec_connection_count": 9,
-    "data_connection_count": 8
+    "node_count": 20,
+    "pin_count": 71,
+    "connection_count": 21,
+    "exec_connection_count": 11,
+    "data_connection_count": 10
   },
   "nodes": [
     {
@@ -133,8 +133,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableSet_1",
-              "pin_id": "58B7E34E4C2F45CA59376E8513550308"
+              "node": "K2Node_CallArrayFunction_1",
+              "pin_id": "420096B14B25B0121EBDC48FA2F3DC35"
             }
           ]
         },
@@ -212,7 +212,7 @@
       "guid": "4E98E73C41F90A739567AD9B1D6E1866",
       "title": "Set CurrentAttacker",
       "position": {
-        "x": 496,
+        "x": 1072,
         "y": 16
       },
       "comment": null,
@@ -249,8 +249,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableSet_3",
-              "pin_id": "BB5577E645D0D04C250FDCB38C9D44D4"
+              "node": "K2Node_CallArrayFunction_0",
+              "pin_id": "3436B2B548A07B5390BE49833F13857F"
             }
           ]
         },
@@ -355,7 +355,7 @@
       "guid": "0ADFB6D44B0659E0139F76B7221F832B",
       "title": "Set LastAttacker",
       "position": {
-        "x": 736,
+        "x": 1312,
         "y": 16
       },
       "comment": null,
@@ -498,7 +498,7 @@
       "guid": "6BCCAF6444A28C342B292D80B1608424",
       "title": "Get Enemies",
       "position": {
-        "x": 944,
+        "x": 1616,
         "y": -32
       },
       "comment": null,
@@ -570,7 +570,7 @@
       "guid": "5D237BEF4A1BF58C10DA739B5DFE2B95",
       "title": "Macro /Script/Engine.EdGraph'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros:ForEachLoop'",
       "position": {
-        "x": 944,
+        "x": 1616,
         "y": 0
       },
       "comment": null,
@@ -758,7 +758,7 @@
       "guid": "FB1A493C496C14871B13DE972EED47AC",
       "title": "Macro /Script/Engine.EdGraph'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros:IsValid'",
       "position": {
-        "x": 1184,
+        "x": 1856,
         "y": 0
       },
       "comment": null,
@@ -884,7 +884,7 @@
       "guid": "C70061104ABF42241C6BEFB552E9F47F",
       "title": "Branch",
       "position": {
-        "x": 1440,
+        "x": 2112,
         "y": 0
       },
       "comment": null,
@@ -1004,7 +1004,7 @@
       "guid": "7AF4E10B4FB1546F8ED64CA8BA969F7C",
       "title": "Reroute",
       "position": {
-        "x": 1200,
+        "x": 1872,
         "y": 121
       },
       "comment": null,
@@ -1075,7 +1075,7 @@
       "guid": "BAF406A34880DDC4B2D896A7EB31671C",
       "title": "Reroute",
       "position": {
-        "x": 1200,
+        "x": 1872,
         "y": 160
       },
       "comment": null,
@@ -1146,7 +1146,7 @@
       "guid": "85A7674444E631802C230ABB08094A48",
       "title": "SetEnemyState",
       "position": {
-        "x": 1696,
+        "x": 2368,
         "y": -18
       },
       "comment": null,
@@ -1267,7 +1267,7 @@
       "guid": "229B96C44D9E8F4FC8E4A4993B1C9296",
       "title": "Reroute",
       "position": {
-        "x": 1584,
+        "x": 2256,
         "y": 160
       },
       "comment": null,
@@ -1338,7 +1338,7 @@
       "guid": "9B02A7D84DF0F2BB253F708CE04DFB0A",
       "title": "StartManagerTimers",
       "position": {
-        "x": 1200,
+        "x": 1872,
         "y": 240
       },
       "comment": null,
@@ -1432,7 +1432,7 @@
       "guid": "D882765744B24D017F2F8187E9852A61",
       "title": "Reroute",
       "position": {
-        "x": 1632,
+        "x": 2304,
         "y": 32
       },
       "comment": null,
@@ -1745,7 +1745,7 @@
       "guid": "E82AB88040F3EDFA123A43914F9EF459",
       "title": "Get bIsDead",
       "position": {
-        "x": 1424,
+        "x": 2096,
         "y": 112
       },
       "comment": null,
@@ -1815,9 +1815,429 @@
           ]
         }
       ]
+    },
+    {
+      "name": "K2Node_VariableGet_1",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "7CE37D8C4656C9F506A8F7A5E0C361AA",
+      "title": "Get ActiveMeleeAttackers",
+      "position": {
+        "x": 528,
+        "y": 96
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "ActiveMeleeAttackers",
+          "MemberGuid": "A4C05C9949F8548687E5AF909796AD41",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "B5A6AE7E4B4416753F3533B38558046D",
+          "name": "ActiveMeleeAttackers",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+            "container": "Array",
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallArrayFunction_1",
+              "pin_id": "36A8DBC745907519EB48AC9E4AAAF18C"
+            }
+          ]
+        },
+        {
+          "id": "7D1CEB94438FC5C3113FEE90658D99F4",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_4",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "769EF9FE471AD37C8964E691CD049811",
+      "title": "Get ActiveRangedAttackers",
+      "position": {
+        "x": 752,
+        "y": 96
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "ActiveRangedAttackers",
+          "MemberGuid": "5599C23748299AC9632E7E955147D21C",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "23716C7A4457DB07E0A43FA70ACE1A00",
+          "name": "ActiveRangedAttackers",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+            "container": "Array",
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallArrayFunction_0",
+              "pin_id": "36A8DBC745907519EB48AC9E4AAAF18C"
+            }
+          ]
+        },
+        {
+          "id": "ED08228B4C50371E2A9C548A01BF9816",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallArrayFunction_1",
+      "class": "/Script/BlueprintGraph.K2Node_CallArrayFunction",
+      "guid": "16AB1C974516A083568550B126F5CB5D",
+      "title": "K2Node_CallArrayFunction",
+      "position": {
+        "x": 544,
+        "y": 16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetArrayLibrary'",
+          "MemberName": "Array_Clear"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "420096B14B25B0121EBDC48FA2F3DC35",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableSet_3",
+              "pin_id": "BB5577E645D0D04C250FDCB38C9D44D4"
+            }
+          ]
+        },
+        {
+          "id": "3436B2B548A07B5390BE49833F13857F",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallArrayFunction_0",
+              "pin_id": "420096B14B25B0121EBDC48FA2F3DC35"
+            }
+          ]
+        },
+        {
+          "id": "FD49FACD42915A0B4F9C31B1DA774713",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetArrayLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetArrayLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "36A8DBC745907519EB48AC9E4AAAF18C",
+          "name": "TargetArray",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+            "container": "Array",
+            "is_reference": true,
+            "is_const": true,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_1",
+              "pin_id": "B5A6AE7E4B4416753F3533B38558046D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallArrayFunction_0",
+      "class": "/Script/BlueprintGraph.K2Node_CallArrayFunction",
+      "guid": "958D7C34476C7EF2D402CE9977E9249B",
+      "title": "K2Node_CallArrayFunction",
+      "position": {
+        "x": 768,
+        "y": 16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetArrayLibrary'",
+          "MemberName": "Array_Clear"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "420096B14B25B0121EBDC48FA2F3DC35",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallArrayFunction_1",
+              "pin_id": "3436B2B548A07B5390BE49833F13857F"
+            }
+          ]
+        },
+        {
+          "id": "3436B2B548A07B5390BE49833F13857F",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableSet_1",
+              "pin_id": "58B7E34E4C2F45CA59376E8513550308"
+            }
+          ]
+        },
+        {
+          "id": "FD49FACD42915A0B4F9C31B1DA774713",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetArrayLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetArrayLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "36A8DBC745907519EB48AC9E4AAAF18C",
+          "name": "TargetArray",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+            "container": "Array",
+            "is_reference": true,
+            "is_const": true,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_4",
+              "pin_id": "23716C7A4457DB07E0A43FA70ACE1A00"
+            }
+          ]
+        }
+      ]
     }
   ],
   "connections": [
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallArrayFunction_0",
+        "pin_id": "3436B2B548A07B5390BE49833F13857F",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_VariableSet_1",
+        "pin_id": "58B7E34E4C2F45CA59376E8513550308",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallArrayFunction_1",
+        "pin_id": "3436B2B548A07B5390BE49833F13857F",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallArrayFunction_0",
+        "pin_id": "420096B14B25B0121EBDC48FA2F3DC35",
+        "pin_name": "execute"
+      }
+    },
     {
       "kind": "exec",
       "from": {
@@ -1990,6 +2410,19 @@
     {
       "kind": "data",
       "from": {
+        "node": "K2Node_VariableGet_1",
+        "pin_id": "B5A6AE7E4B4416753F3533B38558046D",
+        "pin_name": "ActiveMeleeAttackers"
+      },
+      "to": {
+        "node": "K2Node_CallArrayFunction_1",
+        "pin_id": "36A8DBC745907519EB48AC9E4AAAF18C",
+        "pin_name": "TargetArray"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
         "node": "K2Node_VariableGet_2",
         "pin_id": "AC166E8947DF2FB29A93E1BCE04CFC92",
         "pin_name": "bIsDead"
@@ -1998,6 +2431,19 @@
         "node": "K2Node_IfThenElse_0",
         "pin_id": "13FAA426406685479B5002B2CB033FA7",
         "pin_name": "Condition"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_4",
+        "pin_id": "23716C7A4457DB07E0A43FA70ACE1A00",
+        "pin_name": "ActiveRangedAttackers"
+      },
+      "to": {
+        "node": "K2Node_CallArrayFunction_0",
+        "pin_id": "36A8DBC745907519EB48AC9E4AAAF18C",
+        "pin_name": "TargetArray"
       }
     },
     {
@@ -2034,8 +2480,8 @@
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_VariableSet_1",
-        "pin_id": "58B7E34E4C2F45CA59376E8513550308",
+        "node": "K2Node_CallArrayFunction_1",
+        "pin_id": "420096B14B25B0121EBDC48FA2F3DC35",
         "pin_name": "execute"
       }
     }

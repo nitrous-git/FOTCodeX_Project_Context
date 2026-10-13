@@ -18,6 +18,8 @@
   "architecture": {
     "dependencies": [
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_EnemyState",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_HitReactType",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
@@ -57,6 +59,40 @@
       }
     ],
     "variables": [
+      {
+        "name": "ActiveMeleeAttackers",
+        "guid": "A4C05C9949F8548687E5AF909796AD41",
+        "friendly_name": "Active Melee Attackers",
+        "category": "AttackSlots_Runtime",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ActiveRangedAttackers",
+        "guid": "5599C23748299AC9632E7E955147D21C",
+        "friendly_name": "Active Ranged Attackers",
+        "category": "INVTEXT(\"AttackSlots_Runtime\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "AttackerInterruptPause_LargeHit",
         "guid": "00B1C35449B2AF38F6CFD9A92675C8EF",
@@ -160,6 +196,23 @@
         }
       },
       {
+        "name": "bRotateMeleeNext",
+        "guid": "354B0802416BA30370C7A09D4879AD45",
+        "friendly_name": "Rotate Melee Next",
+        "category": "INVTEXT(\"AttackSlots_Runtime\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "CurrentAttacker",
         "guid": "A900046F4C8ABEB75C645AB13CB16757",
         "friendly_name": "Current Attacker",
@@ -238,6 +291,40 @@
           "category": "object",
           "sub_category": null,
           "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxMeleeAttackers",
+        "guid": "9E48649B427DF08ADEC7A5A37428C004",
+        "friendly_name": "Max Melee Attackers",
+        "category": "AttackSlots_Config",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxRangedAttackers",
+        "guid": "C791C54843B89BC88F1428A1CC500AE3",
+        "friendly_name": "Max Ranged Attackers",
+        "category": "INVTEXT(\"AttackSlots_Config\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -387,7 +474,10 @@
         "EndGroupRetreat",
         "NotifyEnemyEnteredDamageState",
         "NotifyEnemyExitedDamageState",
-        "DamageInterruptGuard"
+        "DamageInterruptGuard",
+        "GetEnemyCombatCategory",
+        "FillOpenAttackerSlots",
+        "ReconcileAttackerSlots"
       ],
       "macros": [],
       "delegates": [],

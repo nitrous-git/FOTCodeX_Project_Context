@@ -8,6 +8,40 @@
   },
   "variables": [
     {
+      "name": "ActiveMeleeAttackers",
+      "guid": "A4C05C9949F8548687E5AF909796AD41",
+      "friendly_name": "Active Melee Attackers",
+      "category": "AttackSlots_Runtime",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ActiveRangedAttackers",
+      "guid": "5599C23748299AC9632E7E955147D21C",
+      "friendly_name": "Active Ranged Attackers",
+      "category": "INVTEXT(\"AttackSlots_Runtime\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "AttackerInterruptPause_LargeHit",
       "guid": "00B1C35449B2AF38F6CFD9A92675C8EF",
       "friendly_name": "Attacker Interrupt Pause Large Hit",
@@ -110,6 +144,23 @@
       }
     },
     {
+      "name": "bRotateMeleeNext",
+      "guid": "354B0802416BA30370C7A09D4879AD45",
+      "friendly_name": "Rotate Melee Next",
+      "category": "INVTEXT(\"AttackSlots_Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "CurrentAttacker",
       "guid": "A900046F4C8ABEB75C645AB13CB16757",
       "friendly_name": "Current Attacker",
@@ -188,6 +239,40 @@
         "category": "object",
         "sub_category": null,
         "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MaxMeleeAttackers",
+      "guid": "9E48649B427DF08ADEC7A5A37428C004",
+      "friendly_name": "Max Melee Attackers",
+      "category": "AttackSlots_Config",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MaxRangedAttackers",
+      "guid": "C791C54843B89BC88F1428A1CC500AE3",
+      "friendly_name": "Max Ranged Attackers",
+      "category": "INVTEXT(\"AttackSlots_Config\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
         "container": null,
         "is_reference": false,
         "is_const": false,
@@ -339,21 +424,21 @@
       "name": "RegisterEnemy",
       "kind": "function",
       "guid": "D8076CC54BC497678400DBB7580ABA27",
-      "node_count": 22,
-      "pin_count": 66,
-      "connection_count": 21,
-      "exec_connection_count": 10,
-      "data_connection_count": 11
+      "node_count": 30,
+      "pin_count": 98,
+      "connection_count": 30,
+      "exec_connection_count": 12,
+      "data_connection_count": 18
     },
     {
       "name": "UnregisterEnemy",
       "kind": "function",
       "guid": "3676F16E43A4B388DA14E6B7D8088792",
-      "node_count": 29,
-      "pin_count": 108,
-      "connection_count": 29,
-      "exec_connection_count": 13,
-      "data_connection_count": 16
+      "node_count": 21,
+      "pin_count": 75,
+      "connection_count": 23,
+      "exec_connection_count": 9,
+      "data_connection_count": 14
     },
     {
       "name": "ScheduleRotateTimer",
@@ -369,48 +454,48 @@
       "name": "GetEligibleEnemies",
       "kind": "function",
       "guid": "9D3ECB62485863B30CB686942765782E",
-      "node_count": 27,
-      "pin_count": 88,
-      "connection_count": 27,
-      "exec_connection_count": 9,
-      "data_connection_count": 18
+      "node_count": 65,
+      "pin_count": 197,
+      "connection_count": 70,
+      "exec_connection_count": 19,
+      "data_connection_count": 51
     },
     {
       "name": "ClearAttacker",
       "kind": "function",
       "guid": "FC21DF23464F24C26883838E8235B75F",
-      "node_count": 14,
-      "pin_count": 43,
-      "connection_count": 14,
-      "exec_connection_count": 8,
-      "data_connection_count": 6
+      "node_count": 28,
+      "pin_count": 69,
+      "connection_count": 29,
+      "exec_connection_count": 14,
+      "data_connection_count": 15
     },
     {
       "name": "SetAttacker",
       "kind": "function",
       "guid": "A1B409BA408958F3332083ADAE698251",
-      "node_count": 26,
-      "pin_count": 84,
-      "connection_count": 24,
-      "exec_connection_count": 11,
-      "data_connection_count": 13
+      "node_count": 66,
+      "pin_count": 178,
+      "connection_count": 67,
+      "exec_connection_count": 27,
+      "data_connection_count": 40
     },
     {
       "name": "EvaluateRoster",
       "kind": "function",
       "guid": "EAF7BCAE4B77C445A5C9A19AA4C1A081",
-      "node_count": 62,
-      "pin_count": 169,
-      "connection_count": 63,
-      "exec_connection_count": 28,
-      "data_connection_count": 35
+      "node_count": 90,
+      "pin_count": 262,
+      "connection_count": 88,
+      "exec_connection_count": 41,
+      "data_connection_count": 47
     },
     {
       "name": "TryRotateAttacker",
       "kind": "function",
       "guid": "BBFDC7DD4F64D544E35DA99F848B418A",
       "node_count": 41,
-      "pin_count": 107,
+      "pin_count": 110,
       "connection_count": 42,
       "exec_connection_count": 21,
       "data_connection_count": 21
@@ -421,8 +506,8 @@
       "guid": "A88BD19A4736DD6962EF03BD46997E23",
       "node_count": 6,
       "pin_count": 22,
-      "connection_count": 5,
-      "exec_connection_count": 3,
+      "connection_count": 4,
+      "exec_connection_count": 2,
       "data_connection_count": 2
     },
     {
@@ -469,31 +554,31 @@
       "name": "RequestGroupRetreat",
       "kind": "function",
       "guid": "E74654544612D3FED5B8BCBA0ECC4859",
-      "node_count": 19,
-      "pin_count": 75,
-      "connection_count": 21,
-      "exec_connection_count": 12,
-      "data_connection_count": 9
+      "node_count": 23,
+      "pin_count": 87,
+      "connection_count": 25,
+      "exec_connection_count": 14,
+      "data_connection_count": 11
     },
     {
       "name": "EndGroupRetreat",
       "kind": "function",
       "guid": "43F94A114A798658850143AE9C8EF2E0",
-      "node_count": 16,
-      "pin_count": 59,
-      "connection_count": 17,
-      "exec_connection_count": 9,
-      "data_connection_count": 8
+      "node_count": 20,
+      "pin_count": 71,
+      "connection_count": 21,
+      "exec_connection_count": 11,
+      "data_connection_count": 10
     },
     {
       "name": "NotifyEnemyEnteredDamageState",
       "kind": "function",
       "guid": "6E81E3A042DC43FDD65151B3A1566F8C",
-      "node_count": 29,
-      "pin_count": 84,
-      "connection_count": 31,
-      "exec_connection_count": 15,
-      "data_connection_count": 16
+      "node_count": 35,
+      "pin_count": 99,
+      "connection_count": 36,
+      "exec_connection_count": 16,
+      "data_connection_count": 20
     },
     {
       "name": "NotifyEnemyExitedDamageState",
@@ -514,12 +599,42 @@
       "connection_count": 28,
       "exec_connection_count": 16,
       "data_connection_count": 12
+    },
+    {
+      "name": "GetEnemyCombatCategory",
+      "kind": "function",
+      "guid": "8B79F99F41C3DFC6E6DBD788B66C0068",
+      "node_count": 14,
+      "pin_count": 42,
+      "connection_count": 16,
+      "exec_connection_count": 8,
+      "data_connection_count": 8
+    },
+    {
+      "name": "FillOpenAttackerSlots",
+      "kind": "function",
+      "guid": "743CF93B4626ED5C397BBA934A02AAF9",
+      "node_count": 34,
+      "pin_count": 97,
+      "connection_count": 35,
+      "exec_connection_count": 10,
+      "data_connection_count": 25
+    },
+    {
+      "name": "ReconcileAttackerSlots",
+      "kind": "function",
+      "guid": "5E810EC7456844B12A3ABCB5B3D0D92F",
+      "node_count": 70,
+      "pin_count": 222,
+      "connection_count": 83,
+      "exec_connection_count": 25,
+      "data_connection_count": 58
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "534C138D42BB6F9835905C8E11C9D4FD",
+      "guid": "5977503A432F95BB0D06AE94453884FA",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -528,11 +643,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 20,
+    "authored_graph_count": 23,
     "generated_graph_count": 1,
-    "authored_node_count": 413,
-    "authored_pin_count": 1276,
-    "authored_connection_count": 417,
+    "authored_node_count": 665,
+    "authored_pin_count": 2000,
+    "authored_connection_count": 692,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -573,9 +688,19 @@
       "file": "graphs/EvaluateRoster.json"
     },
     {
+      "name": "FillOpenAttackerSlots",
+      "kind": "function",
+      "file": "graphs/FillOpenAttackerSlots.json"
+    },
+    {
       "name": "GetEligibleEnemies",
       "kind": "function",
       "file": "graphs/GetEligibleEnemies.json"
+    },
+    {
+      "name": "GetEnemyCombatCategory",
+      "kind": "function",
+      "file": "graphs/GetEnemyCombatCategory.json"
     },
     {
       "name": "NotifyEnemyEnteredDamageState",
@@ -586,6 +711,11 @@
       "name": "NotifyEnemyExitedDamageState",
       "kind": "function",
       "file": "graphs/NotifyEnemyExitedDamageState.json"
+    },
+    {
+      "name": "ReconcileAttackerSlots",
+      "kind": "function",
+      "file": "graphs/ReconcileAttackerSlots.json"
     },
     {
       "name": "RegisterEnemy",
