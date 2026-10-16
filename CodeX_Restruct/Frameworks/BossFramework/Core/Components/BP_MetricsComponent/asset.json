@@ -18,6 +18,7 @@
   "architecture": {
     "dependencies": [
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossEncounterState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
@@ -33,7 +34,7 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_ExecuteToDeathState"
     ],
     "non_architecture_dependency_count": 1,
-    "non_architecture_referencer_count": 3
+    "non_architecture_referencer_count": 4
   },
   "registry": {
     "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
@@ -245,6 +246,23 @@
           "category": "real",
           "sub_category": "double",
           "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MetricsTimerHandle",
+        "guid": "EA69264746634806CD7CE4A7ABB56D6C",
+        "friendly_name": "Metrics Timer Handle",
+        "category": "Runtime",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -624,12 +642,13 @@
         "UpdateStaminaMetrics",
         "RequestStaggerFromDepletion",
         "ConsumeStaggerRequest",
-        "isStaggerRequested"
+        "isStaggerRequested",
+        "StartMetricsUpdates",
+        "StopMetricsUpdates"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "CS_UpdateMetricsTimer",
         "ReceiveBeginPlay"
       ]
     },

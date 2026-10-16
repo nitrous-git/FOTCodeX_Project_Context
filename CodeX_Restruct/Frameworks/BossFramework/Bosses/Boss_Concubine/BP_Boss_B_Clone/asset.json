@@ -25,14 +25,16 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossEncounterState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase",
-      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent"
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B"
     ],
-    "non_architecture_dependency_count": 8,
+    "non_architecture_dependency_count": 9,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -65,6 +67,46 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B_Clone.Default__BP_Boss_B_Clone_C:Arrow"
+      },
+      {
+        "name": "Awareness",
+        "class": "AC_EnemyAwareness_C",
+        "parent": "BP_Boss_B_Clone",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B_Clone.BP_Boss_B_Clone_C:Awareness_GEN_VARIABLE"
+      },
+      {
+        "name": "AwarenessSphere",
+        "class": "SphereComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B_Clone.BP_Boss_B_Clone_C:AwarenessSphere_GEN_VARIABLE"
+      },
+      {
+        "name": "BossHealthAnchor ",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B_Clone.BP_Boss_B_Clone_C:BossHealthAnchor _GEN_VARIABLE"
+      },
+      {
+        "name": "BossOverheadWidget ",
+        "class": "WidgetComponent",
+        "parent": "BossHealthAnchor ",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B_Clone.BP_Boss_B_Clone_C:BossOverheadWidget _GEN_VARIABLE"
       },
       {
         "name": "BP_BossDirectorComponent",
@@ -218,8 +260,8 @@
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "CS_CheckDepletion",
-        "ReceiveBeginPlay"
+        "ReceiveBeginPlay",
+        "CS_CheckDepletion"
       ]
     },
     "extraction_status": {

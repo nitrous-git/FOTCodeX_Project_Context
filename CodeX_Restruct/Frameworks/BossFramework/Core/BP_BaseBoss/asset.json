@@ -23,6 +23,8 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Controller/AIController_Bosses",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossEncounterState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossHealthBarMode",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_StateHitReactPolicy",
@@ -35,9 +37,10 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_ExecuteToDeathState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
-      "/Game/CodeX_Restruct/Shared/CameraShake/CameraShakeSmool",
       "/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome",
       "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatReceiver",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
@@ -88,6 +91,7 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_BossDirectorComponent",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossActivationTrigger",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/AnimNotify/BP_CallTurret",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/ANS_AttackClampBoss",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedAnimNotify/AN_BossEvent",
@@ -100,6 +104,7 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_ExecuteToDeathState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitState",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost/BP_GhostEvade",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_Execution",
@@ -107,8 +112,8 @@
       "/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner"
     ],
-    "non_architecture_dependency_count": 16,
-    "non_architecture_referencer_count": 4
+    "non_architecture_dependency_count": 15,
+    "non_architecture_referencer_count": 5
   },
   "registry": {
     "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
@@ -140,6 +145,46 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.Default__BP_BaseBoss_C:Arrow"
+      },
+      {
+        "name": "Awareness",
+        "class": "AC_EnemyAwareness_C",
+        "parent": "BP_BaseBoss",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C:Awareness_GEN_VARIABLE"
+      },
+      {
+        "name": "AwarenessSphere",
+        "class": "SphereComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C:AwarenessSphere_GEN_VARIABLE"
+      },
+      {
+        "name": "BossHealthAnchor ",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C:BossHealthAnchor _GEN_VARIABLE"
+      },
+      {
+        "name": "BossOverheadWidget ",
+        "class": "WidgetComponent",
+        "parent": "BossHealthAnchor ",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C:BossOverheadWidget _GEN_VARIABLE"
       },
       {
         "name": "BP_BossDirectorComponent",
@@ -434,7 +479,7 @@
         "name": "BossHealthWidgetRef",
         "guid": "AA801BB340B903C435E2A0B14AB2339D",
         "friendly_name": "Boss Health Widget Ref",
-        "category": "Default",
+        "category": "INVTEXT(\"Encounter\")",
         "property_flags": 65541,
         "default_value": null,
         "type": {
@@ -538,6 +583,23 @@
         "friendly_name": "Stagger Requested",
         "category": "INVTEXT(\"HealthStamina_Phase\")",
         "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bUseLocalAwareness",
+        "guid": "BC0EF0C643F59E54D58F2AB295062D10",
+        "friendly_name": "Use Local Awareness",
+        "category": "INVTEXT(\"Encounter\")",
+        "property_flags": 5,
         "default_value": null,
         "type": {
           "category": "bool",
@@ -839,6 +901,23 @@
         }
       },
       {
+        "name": "EncounterState",
+        "guid": "9D3C0F984983AEF43A8D3889B44F678A",
+        "friendly_name": "Encounter State",
+        "category": "Encounter",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossEncounterState.E_BossEncounterState'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "EnemyAIManager",
         "guid": "7A6536F443CEA07E64E309A84F743888",
         "friendly_name": "Enemy AIManager",
@@ -849,6 +928,23 @@
           "category": "object",
           "sub_category": null,
           "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HealthBarMode",
+        "guid": "2388D3254AF684B89AB60CBEC9932C38",
+        "friendly_name": "Health Bar Mode",
+        "category": "INVTEXT(\"Encounter\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossHealthBarMode.E_BossHealthBarMode'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -1910,40 +2006,50 @@
         "InitializeCombat",
         "InitializeFirstSequence",
         "HalfHealthQuickAction",
-        "RegisterToDirector"
+        "RegisterToDirector",
+        "InitializePassiveAwareness",
+        "StopPassiveAwareness",
+        "ShowHealthUI",
+        "HideHealthUI"
       ],
       "macros": [],
       "delegates": [
         "OnBossDefeated"
       ],
       "generated_graphs": [
-        "CE_TriggerBossEvent",
-        "CE_CallTurretToFire",
-        "CS_RemoveHealthWidget",
-        "CS_DashEvent",
-        "CS_BloodDecals",
-        "CS_PlayCameraShake",
-        "CS_PushExecuteToDeathState",
-        "CS_CheckForDeathSequence",
-        "ReceiveBeginPlay",
-        "ReceiveTick",
-        "CS_PlayDefenseHitMontage",
-        "CS_ResetHitMontageSeries",
-        "CS_PlayHitMontage",
-        "CS_PushExecuteRecoveryState",
-        "CS_PlayAnim",
-        "CS_TickAttackClamp",
-        "CS_SetAttackClampActive",
-        "BndEvt__BP_Boss_SwordCapsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-        "AN_AttackWindow_SetActive",
-        "CS_DoDamage",
-        "ReceiveAnyDamage",
-        "CS_FacePlayer",
-        "CS_LauchCharacterUtil",
-        "TL_Dash__UpdateFunc",
-        "TL_Dash__FinishedFunc",
+        "TL_ManualMove__FinishedFunc",
         "TL_ManualMove__UpdateFunc",
-        "TL_ManualMove__FinishedFunc"
+        "TL_Dash__FinishedFunc",
+        "TL_Dash__UpdateFunc",
+        "CS_LauchCharacterUtil",
+        "CS_FacePlayer",
+        "ReceiveAnyDamage",
+        "CS_DoDamage",
+        "AN_AttackWindow_SetActive",
+        "BndEvt__BP_Boss_SwordCapsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+        "CS_SetAttackClampActive",
+        "CS_TickAttackClamp",
+        "CS_PlayAnim",
+        "CS_PushExecuteRecoveryState",
+        "CS_PlayHitMontage",
+        "CS_ResetHitMontageSeries",
+        "CS_PlayDefenseHitMontage",
+        "ReceiveTick",
+        "ReceiveBeginPlay",
+        "CS_CheckForDeathSequence",
+        "CS_PushExecuteToDeathState",
+        "CS_PlayCameraShake",
+        "CS_BloodDecals",
+        "CS_DashEvent",
+        "CE_RemoveHealthWidget",
+        "CE_CallTurretToFire",
+        "CE_TriggerBossEvent",
+        "CE_StartCombat",
+        "CE_RequestActivation",
+        "BndEvt__BP_BaseBoss_Awareness_K2Node_ComponentBoundEvent_0_OnTargetDetected__DelegateSignature",
+        "BndEvt__BP_BaseBoss_AwarenessSphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature",
+        "BndEvt__BP_BaseBoss_AwarenessSphere_K2Node_ComponentBoundEvent_2_ComponentEndOverlapSignature__DelegateSignature",
+        "ReceiveEndPlay"
       ]
     },
     "extraction_status": {

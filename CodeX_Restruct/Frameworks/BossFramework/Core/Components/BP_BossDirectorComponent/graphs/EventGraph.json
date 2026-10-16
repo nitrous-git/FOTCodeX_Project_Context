@@ -8,8 +8,8 @@
   "stats": {
     "node_count": 16,
     "pin_count": 55,
-    "connection_count": 15,
-    "exec_connection_count": 7,
+    "connection_count": 14,
+    "exec_connection_count": 6,
     "data_connection_count": 8
   },
   "nodes": [
@@ -803,12 +803,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_2",
-              "pin_id": "09DF04F54AA90E11A24256BBB2594C20"
-            }
-          ]
+          "links": []
         },
         {
           "id": "C35B222D4807899C85134B8B6E96377D",
@@ -889,7 +884,7 @@
       "guid": "FA23B3B04841EB7814B58DBAF55F4EEE",
       "title": "K2_SetTimer",
       "position": {
-        "x": 2432,
+        "x": 2688,
         "y": 0
       },
       "comment": null,
@@ -923,12 +918,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableSet_3",
-              "pin_id": "F2FF5FA4467E67DF230021A11888F531"
-            }
-          ]
+          "links": []
         },
         {
           "id": "E39FA9314954CC454CD2F5A8B39397F6",
@@ -1168,7 +1158,7 @@
       "guid": "C3B6B7E941757EBC32E0078F1C774173",
       "title": "Get DirectorUpdateInterval",
       "position": {
-        "x": 2208,
+        "x": 2464,
         "y": 144
       },
       "comment": null,
@@ -1240,7 +1230,7 @@
       "guid": "A3B0194346F6E1BA90BDDA8F90FA69B5",
       "title": "K2Node_Self",
       "position": {
-        "x": 2240,
+        "x": 2496,
         "y": 64
       },
       "comment": null,
@@ -1284,7 +1274,7 @@
       "guid": "FCBD4DF044FD3F411522FEBD3D58ED51",
       "title": "EdGraphNode_Comment",
       "position": {
-        "x": 2048,
+        "x": 2304,
         "y": -544
       },
       "comment": "The Director is a policy/selector layer; metrics is the simulation layer. \r\n\r\nDirector: just pass Now = GetGameTimeInSeconds into Director_Evaluate(Now)\r\n\r\nEverything Director does is based on absolute-time comparisons:\r\n\r\n    Now - LastStaggerTime >= StaggerCooldown\r\n\r\n    Now - LastDefenseTime >= DefenseCooldown\r\n\r\n    Now - LastDirectorActionTime >= MinSecondsBetweenDirectorActions\r\n\r\nThose comparisons do not require DeltaTime accumulation; they are already robust to timer jitter.",
@@ -1892,19 +1882,6 @@
       "to": {
         "node": "K2Node_VariableSet_3",
         "pin_id": "2DAF658F488336F17E06F6BF71231080",
-        "pin_name": "execute"
-      }
-    },
-    {
-      "kind": "exec",
-      "from": {
-        "node": "K2Node_VariableSet_3",
-        "pin_id": "F2FF5FA4467E67DF230021A11888F531",
-        "pin_name": "then"
-      },
-      "to": {
-        "node": "K2Node_CallFunction_2",
-        "pin_id": "09DF04F54AA90E11A24256BBB2594C20",
         "pin_name": "execute"
       }
     }

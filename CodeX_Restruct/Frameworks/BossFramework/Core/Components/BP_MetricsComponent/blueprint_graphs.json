@@ -212,6 +212,23 @@
       }
     },
     {
+      "name": "MetricsTimerHandle",
+      "guid": "EA69264746634806CD7CE4A7ABB56D6C",
+      "friendly_name": "Metrics Timer Handle",
+      "category": "Runtime",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "MetricsUpdateInterval",
       "guid": "05F5641340E6A100D4E82B9BF76561F6",
       "friendly_name": "Metrics Update Interval",
@@ -574,21 +591,21 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "7AC3CF39472B3715684D9BA12E2AC601",
-      "node_count": 26,
-      "pin_count": 96,
-      "connection_count": 26,
-      "exec_connection_count": 12,
-      "data_connection_count": 14
+      "node_count": 13,
+      "pin_count": 55,
+      "connection_count": 13,
+      "exec_connection_count": 6,
+      "data_connection_count": 7
     },
     {
       "name": "UpdateMetricsTimer",
       "kind": "function",
       "guid": "577BC19F46C755F3A557C39020AD1AF5",
-      "node_count": 25,
-      "pin_count": 68,
-      "connection_count": 25,
-      "exec_connection_count": 12,
-      "data_connection_count": 13
+      "node_count": 31,
+      "pin_count": 84,
+      "connection_count": 32,
+      "exec_connection_count": 15,
+      "data_connection_count": 17
     },
     {
       "name": "UpdateDistance",
@@ -689,21 +706,32 @@
       "connection_count": 2,
       "exec_connection_count": 1,
       "data_connection_count": 1
+    },
+    {
+      "name": "StartMetricsUpdates",
+      "kind": "function",
+      "guid": "EB666B0747A28D37AB46B18405A2EE09",
+      "node_count": 14,
+      "pin_count": 49,
+      "connection_count": 13,
+      "exec_connection_count": 6,
+      "data_connection_count": 7
+    },
+    {
+      "name": "StopMetricsUpdates",
+      "kind": "function",
+      "guid": "28D2F874416DB66C54554793B32213A3",
+      "node_count": 3,
+      "pin_count": 8,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
     }
   ],
   "generated_graphs": [
     {
-      "name": "CS_UpdateMetricsTimer",
-      "guid": "B178EF4B42D1AD7B2F1A1896EE07DE7B",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
       "name": "ReceiveBeginPlay",
-      "guid": "8DE6093E4F6D24A72C38FF839C26FC89",
+      "guid": "56F123734E8E6AAE9B61F78EDCB44FEE",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -712,13 +740,13 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 12,
-    "generated_graph_count": 2,
-    "authored_node_count": 308,
-    "authored_pin_count": 909,
-    "authored_connection_count": 313,
-    "generated_node_count": 4,
-    "generated_pin_count": 10
+    "authored_graph_count": 14,
+    "generated_graph_count": 1,
+    "authored_node_count": 318,
+    "authored_pin_count": 941,
+    "authored_connection_count": 322,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
   },
   "graph_files": [
     {
@@ -750,6 +778,16 @@
       "name": "RequestStaggerFromDepletion",
       "kind": "function",
       "file": "graphs/RequestStaggerFromDepletion.json"
+    },
+    {
+      "name": "StartMetricsUpdates",
+      "kind": "function",
+      "file": "graphs/StartMetricsUpdates.json"
+    },
+    {
+      "name": "StopMetricsUpdates",
+      "kind": "function",
+      "file": "graphs/StopMetricsUpdates.json"
     },
     {
       "name": "UpdateAgression",

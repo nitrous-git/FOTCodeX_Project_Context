@@ -34,6 +34,7 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Blueprints/BPI_EnemyCombat",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness",
       "/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager",
       "/Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint"
@@ -51,7 +52,7 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/States/Vulnerable/BP_BuffState_BossC"
     ],
     "non_architecture_dependency_count": 8,
-    "non_architecture_referencer_count": 3
+    "non_architecture_referencer_count": 4
   },
   "registry": {
     "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'",
@@ -83,6 +84,46 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.Default__BP_Boss_C_C:Arrow"
+      },
+      {
+        "name": "Awareness",
+        "class": "AC_EnemyAwareness_C",
+        "parent": "BP_Boss_C",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:Awareness_GEN_VARIABLE"
+      },
+      {
+        "name": "AwarenessSphere",
+        "class": "SphereComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:AwarenessSphere_GEN_VARIABLE"
+      },
+      {
+        "name": "BossHealthAnchor ",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:BossHealthAnchor _GEN_VARIABLE"
+      },
+      {
+        "name": "BossOverheadWidget ",
+        "class": "WidgetComponent",
+        "parent": "BossHealthAnchor ",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_UndeadPrince/BP_Boss_C.BP_Boss_C_C:BossOverheadWidget _GEN_VARIABLE"
       },
       {
         "name": "BP_BossDirectorComponent",
@@ -588,18 +629,18 @@
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "CS_ResetTransition",
-        "CS_ResetStaggerFlag",
-        "CS_ResetVaultingAttack",
-        "CS_ResetAppear",
-        "CS_ResetDisappear",
-        "CS_ResetDashDown",
-        "CS_ResetIsInAir",
-        "CS_ResetRampage",
-        "CS_ResetJumpAttack",
-        "CS_ResetEvade",
+        "CS_ResetBigCombo01",
         "CS_ResetSmallCombo01",
-        "CS_ResetBigCombo01"
+        "CS_ResetEvade",
+        "CS_ResetJumpAttack",
+        "CS_ResetRampage",
+        "CS_ResetIsInAir",
+        "CS_ResetDashDown",
+        "CS_ResetDisappear",
+        "CS_ResetAppear",
+        "CS_ResetVaultingAttack",
+        "CS_ResetStaggerFlag",
+        "CS_ResetTransition"
       ]
     },
     "extraction_status": {

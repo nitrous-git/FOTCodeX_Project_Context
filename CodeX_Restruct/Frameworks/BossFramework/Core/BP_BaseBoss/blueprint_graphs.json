@@ -198,7 +198,7 @@
       "name": "BossHealthWidgetRef",
       "guid": "AA801BB340B903C435E2A0B14AB2339D",
       "friendly_name": "Boss Health Widget Ref",
-      "category": "Default",
+      "category": "INVTEXT(\"Encounter\")",
       "property_flags": 65541,
       "default_value": null,
       "type": {
@@ -302,6 +302,23 @@
       "friendly_name": "Stagger Requested",
       "category": "INVTEXT(\"HealthStamina_Phase\")",
       "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bUseLocalAwareness",
+      "guid": "BC0EF0C643F59E54D58F2AB295062D10",
+      "friendly_name": "Use Local Awareness",
+      "category": "INVTEXT(\"Encounter\")",
+      "property_flags": 5,
       "default_value": null,
       "type": {
         "category": "bool",
@@ -603,6 +620,23 @@
       }
     },
     {
+      "name": "EncounterState",
+      "guid": "9D3C0F984983AEF43A8D3889B44F678A",
+      "friendly_name": "Encounter State",
+      "category": "Encounter",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossEncounterState.E_BossEncounterState'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "EnemyAIManager",
       "guid": "7A6536F443CEA07E64E309A84F743888",
       "friendly_name": "Enemy AIManager",
@@ -613,6 +647,23 @@
         "category": "object",
         "sub_category": null,
         "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HealthBarMode",
+      "guid": "2388D3254AF684B89AB60CBEC9932C38",
+      "friendly_name": "Health Bar Mode",
+      "category": "INVTEXT(\"Encounter\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossHealthBarMode.E_BossHealthBarMode'",
         "container": null,
         "is_reference": false,
         "is_const": false,
@@ -1645,11 +1696,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "81C844D74AA727491F4B50BE5398FCAD",
-      "node_count": 311,
-      "pin_count": 1070,
-      "connection_count": 299,
-      "exec_connection_count": 99,
-      "data_connection_count": 200
+      "node_count": 359,
+      "pin_count": 1200,
+      "connection_count": 348,
+      "exec_connection_count": 121,
+      "data_connection_count": 227
     },
     {
       "name": "UserConstructionScript",
@@ -1685,11 +1736,11 @@
       "name": "TickActiveState",
       "kind": "function",
       "guid": "C80E03DF4FBDE7EE6B0515B94CAA345E",
-      "node_count": 26,
-      "pin_count": 73,
-      "connection_count": 26,
-      "exec_connection_count": 13,
-      "data_connection_count": 13
+      "node_count": 30,
+      "pin_count": 82,
+      "connection_count": 29,
+      "exec_connection_count": 15,
+      "data_connection_count": 14
     },
     {
       "name": "RefillStack",
@@ -1952,6 +2003,46 @@
       "data_connection_count": 0
     },
     {
+      "name": "InitializePassiveAwareness",
+      "kind": "function",
+      "guid": "B2BBD90941FFD5B3EBBA4F8E34DE8EAD",
+      "node_count": 11,
+      "pin_count": 30,
+      "connection_count": 10,
+      "exec_connection_count": 4,
+      "data_connection_count": 6
+    },
+    {
+      "name": "StopPassiveAwareness",
+      "kind": "function",
+      "guid": "3F95FA1949BFD7A04F9CE0B7B168187E",
+      "node_count": 5,
+      "pin_count": 12,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "ShowHealthUI",
+      "kind": "function",
+      "guid": "2440FC0C4B5393A5A011F2BFFE6733A2",
+      "node_count": 31,
+      "pin_count": 85,
+      "connection_count": 34,
+      "exec_connection_count": 17,
+      "data_connection_count": 17
+    },
+    {
+      "name": "HideHealthUI",
+      "kind": "function",
+      "guid": "63DFA8EC4ADDE8EF0E3A6A9A1DD7C014",
+      "node_count": 7,
+      "pin_count": 19,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
       "name": "OnBossDefeated",
       "kind": "delegate",
       "guid": "916347EA4BB8B7CABD3E33918230C50C",
@@ -1964,224 +2055,8 @@
   ],
   "generated_graphs": [
     {
-      "name": "CE_TriggerBossEvent",
-      "guid": "5A8512334407372294D903ACCF3FBED4",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_CallTurretToFire",
-      "guid": "09E03E0045B5E4E76356B69C53218E54",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_RemoveHealthWidget",
-      "guid": "D135C31E4C97DC957B08AFA0A0EC96DD",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_DashEvent",
-      "guid": "CCFDC965406BFC4E68305496BF58C237",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_BloodDecals",
-      "guid": "FB38BC6245AB2DB58492F58A46F3D882",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_PlayCameraShake",
-      "guid": "2C00CD284A11472CACED72A6863EBBE1",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CS_PushExecuteToDeathState",
-      "guid": "A88D3A7F49BFC9267625CAB4184A342B",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_CheckForDeathSequence",
-      "guid": "D2E93AE644D82B02B19D6FB4E16C12C7",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ReceiveBeginPlay",
-      "guid": "488DDD28483E455C20351C86C213DA5C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ReceiveTick",
-      "guid": "D655B3F44305E0482557FFB3C5382018",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CS_PlayDefenseHitMontage",
-      "guid": "F47759AB4472B25745D3DE82AFC12625",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_ResetHitMontageSeries",
-      "guid": "2690B1234094EBE7D90B94BA9234ABAB",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_PlayHitMontage",
-      "guid": "5696CDAB4842C9CE02B9C8B592240151",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_PushExecuteRecoveryState",
-      "guid": "7925A3DA4DF307858EC5E68357EE250A",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_PlayAnim",
-      "guid": "BE7890184785B383DC88A6B9E86D6974",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CS_TickAttackClamp",
-      "guid": "FA5281D04DAD6773712E6FA153D6C8E6",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_SetAttackClampActive",
-      "guid": "56A73A004B7729BA1719B4A749F7F013",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__BP_Boss_SwordCapsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-      "guid": "F9676B0147BA0A16F06F2CAED0929A62",
-      "node_count": 3,
-      "pin_count": 19,
-      "connection_count": 8,
-      "exec_connection_count": 2,
-      "data_connection_count": 6
-    },
-    {
-      "name": "AN_AttackWindow_SetActive",
-      "guid": "4BE4B38A499C0A9447CA00882D465650",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "CS_DoDamage",
-      "guid": "7641E48E4FB2B171F4D78BBA323EE74C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ReceiveAnyDamage",
-      "guid": "E98AF6224C652B9CFAE67BA1BDBE4BB6",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "CS_FacePlayer",
-      "guid": "16221F504C60D273A22CAABEC6848424",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_LauchCharacterUtil",
-      "guid": "1EEF159A4A24BADD33B8CF97CE8693B1",
-      "node_count": 3,
-      "pin_count": 13,
-      "connection_count": 5,
-      "exec_connection_count": 2,
-      "data_connection_count": 3
-    },
-    {
-      "name": "TL_Dash__UpdateFunc",
-      "guid": "A58DE61C41D7E6914FA5B8A83727C736",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "TL_Dash__FinishedFunc",
-      "guid": "AEEA70ED40EE8ABB88630FB182548B0B",
+      "name": "TL_ManualMove__FinishedFunc",
+      "guid": "BAD8A598439674F2F8F309B4AD2179E7",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2190,7 +2065,7 @@
     },
     {
       "name": "TL_ManualMove__UpdateFunc",
-      "guid": "908977084C19F9BBD77B38BDCB4DE936",
+      "guid": "8D7D3635490D9619FA31BBA4FCACD371",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2198,23 +2073,293 @@
       "data_connection_count": 0
     },
     {
-      "name": "TL_ManualMove__FinishedFunc",
-      "guid": "38AB59B942E64294096D2F984249C96E",
+      "name": "TL_Dash__FinishedFunc",
+      "guid": "095EE0DC44456A3C85A44A87FFE1A8D2",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
       "exec_connection_count": 1,
       "data_connection_count": 0
+    },
+    {
+      "name": "TL_Dash__UpdateFunc",
+      "guid": "C63A5AF24DC0AF8205D94394CCD73340",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_LauchCharacterUtil",
+      "guid": "ABF553894C276B879DCDA88CCE60DF2B",
+      "node_count": 3,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "CS_FacePlayer",
+      "guid": "43CF2BBD47407287E5283E8AA39A0737",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveAnyDamage",
+      "guid": "68B14D0E416AFA0A4592D9BBB5A32E97",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "CS_DoDamage",
+      "guid": "04A1233D4F16EA0DF5404CB40AEA46B9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AN_AttackWindow_SetActive",
+      "guid": "09FC36BC438BDBEC4104FAAFC6B09005",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "BndEvt__BP_Boss_SwordCapsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "D0F51C5941C00CED03D853B61E403763",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    },
+    {
+      "name": "CS_SetAttackClampActive",
+      "guid": "D6036D554475D1189E790599B3775440",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CS_TickAttackClamp",
+      "guid": "CF1A3DBD409788D0BE30DF8924B16EDD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PlayAnim",
+      "guid": "123F9F734C7CA9EFEC2C7A81209CCB13",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CS_PushExecuteRecoveryState",
+      "guid": "E10410644FC7304304CA049A5EC7CD45",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PlayHitMontage",
+      "guid": "566AB4FA40EAB066563AC5A2A01BD41B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetHitMontageSeries",
+      "guid": "A016B1AD4B2D6BDC92B2F0B8E14B4044",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PlayDefenseHitMontage",
+      "guid": "3E3C5BE34D0B4330F2DF28B86691F934",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveTick",
+      "guid": "5844C4E14B5D5B6E7049F1B2101E6646",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "8CF29BA94BE454A95F130491D5C8B935",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_CheckForDeathSequence",
+      "guid": "4A7D4BCA4A9533B3CD8148B6AE5D7E96",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PushExecuteToDeathState",
+      "guid": "7739320A4B100AD485AA9E84DA7635C6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PlayCameraShake",
+      "guid": "EDC74FBD4E6351C7B2A63483D8FD5EB1",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CS_BloodDecals",
+      "guid": "D0D8BD2D4DC7FCAD47A86BB80FFB328A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_DashEvent",
+      "guid": "9273450D4B5B130E1B5EE1AD2D2AE6D2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_RemoveHealthWidget",
+      "guid": "767B42764A6A895E15499EACC929263E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_CallTurretToFire",
+      "guid": "279E0EC141BFD586A0211C921B0DC7CB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_TriggerBossEvent",
+      "guid": "BF3046E1494D25C18AB9E2BA1CDFCB62",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartCombat",
+      "guid": "E92AFF764D20CD2EF996DEA9173F15CE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_RequestActivation",
+      "guid": "48380D23450D29A8754229AE57CF7BA7",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__BP_BaseBoss_Awareness_K2Node_ComponentBoundEvent_0_OnTargetDetected__DelegateSignature",
+      "guid": "CD328AD24E2851B21D04C8AC222AB4D2",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__BP_BaseBoss_AwarenessSphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "3C37A07D4A972D4CD57B9FB9588D2C0C",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    },
+    {
+      "name": "BndEvt__BP_BaseBoss_AwarenessSphere_K2Node_ComponentBoundEvent_2_ComponentEndOverlapSignature__DelegateSignature",
+      "guid": "21F9E8E84310DF8E544E859EEE36BE41",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "ReceiveEndPlay",
+      "guid": "9059556C4BA3834F680045B8387BF5F3",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
     }
   ],
   "stats": {
-    "authored_graph_count": 32,
-    "generated_graph_count": 27,
-    "authored_node_count": 940,
-    "authored_pin_count": 3048,
-    "authored_connection_count": 966,
-    "generated_node_count": 62,
-    "generated_pin_count": 193
+    "authored_graph_count": 36,
+    "generated_graph_count": 33,
+    "authored_node_count": 1046,
+    "authored_pin_count": 3333,
+    "authored_connection_count": 1072,
+    "generated_node_count": 79,
+    "generated_pin_count": 259
   },
   "graph_files": [
     {
@@ -2268,6 +2413,11 @@
       "file": "graphs/HalfHealthQuickAction.json"
     },
     {
+      "name": "HideHealthUI",
+      "kind": "function",
+      "file": "graphs/HideHealthUI.json"
+    },
+    {
       "name": "In Short Range",
       "kind": "function",
       "file": "graphs/In Short Range.json"
@@ -2286,6 +2436,11 @@
       "name": "InitializeFirstSequence",
       "kind": "function",
       "file": "graphs/InitializeFirstSequence.json"
+    },
+    {
+      "name": "InitializePassiveAwareness",
+      "kind": "function",
+      "file": "graphs/InitializePassiveAwareness.json"
     },
     {
       "name": "InjectInterrupt_Execute",
@@ -2356,6 +2511,16 @@
       "name": "SetMode",
       "kind": "function",
       "file": "graphs/SetMode.json"
+    },
+    {
+      "name": "ShowHealthUI",
+      "kind": "function",
+      "file": "graphs/ShowHealthUI.json"
+    },
+    {
+      "name": "StopPassiveAwareness",
+      "kind": "function",
+      "file": "graphs/StopPassiveAwareness.json"
     },
     {
       "name": "TickActiveState",

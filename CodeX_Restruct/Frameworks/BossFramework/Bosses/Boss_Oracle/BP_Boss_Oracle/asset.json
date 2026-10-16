@@ -30,7 +30,8 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitState",
-      "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI"
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/ABP/ABP_Boss_Oracle",
@@ -76,6 +77,46 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.Default__BP_Boss_Oracle_C:Arrow"
+      },
+      {
+        "name": "Awareness",
+        "class": "AC_EnemyAwareness_C",
+        "parent": "BP_Boss_Oracle",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:Awareness_GEN_VARIABLE"
+      },
+      {
+        "name": "AwarenessSphere",
+        "class": "SphereComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:AwarenessSphere_GEN_VARIABLE"
+      },
+      {
+        "name": "BossHealthAnchor ",
+        "class": "SceneComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:BossHealthAnchor _GEN_VARIABLE"
+      },
+      {
+        "name": "BossOverheadWidget ",
+        "class": "WidgetComponent",
+        "parent": "BossHealthAnchor ",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:BossOverheadWidget _GEN_VARIABLE"
       },
       {
         "name": "BP_BossDirectorComponent",
@@ -324,24 +365,18 @@
         "EventGraph"
       ],
       "functions": [
-        "InitializeFirstSequence",
-        "Initialize",
+        "UserConstructionScript",
         "CreateHealthWidget",
-        "UserConstructionScript"
+        "Initialize",
+        "InitializeFirstSequence"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "InitializeFirstSequence_MERGED",
-        "Initialize_MERGED",
-        "CreateHealthWidget_MERGED",
-        "UserConstructionScript_MERGED",
         "ReceiveBeginPlay",
         "CE_BossEvent_SwordSemicircle",
         "CE_SpawnNextOracleSword",
-        "CE_TriggerBossEvent",
-        "ExecuteUbergraph_BP_Boss_Oracle",
-        "EdGraph_0"
+        "CE_TriggerBossEvent"
       ]
     },
     "extraction_status": {

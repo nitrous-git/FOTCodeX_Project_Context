@@ -178,6 +178,23 @@
       }
     },
     {
+      "name": "DirectorTimerHandle",
+      "guid": "2D475C7E465C37B5D9C4589FAF0BA0F6",
+      "friendly_name": "Director Timer Handle",
+      "category": "Runtime",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "DirectorUpdateInterval",
       "guid": "5D4A3011473AC0160151298FF8E5821A",
       "friendly_name": "Director Update Interval",
@@ -525,8 +542,8 @@
       "guid": "ECCCF3E645955CDAC3766EAB286B7591",
       "node_count": 16,
       "pin_count": 55,
-      "connection_count": 15,
-      "exec_connection_count": 7,
+      "connection_count": 14,
+      "exec_connection_count": 6,
       "data_connection_count": 8
     },
     {
@@ -543,11 +560,11 @@
       "name": "Director_Evaluate",
       "kind": "function",
       "guid": "E59D7EA6438D20ECFFA8E392AFE5B3CA",
-      "node_count": 36,
-      "pin_count": 96,
-      "connection_count": 42,
-      "exec_connection_count": 20,
-      "data_connection_count": 22
+      "node_count": 44,
+      "pin_count": 118,
+      "connection_count": 50,
+      "exec_connection_count": 21,
+      "data_connection_count": 29
     },
     {
       "name": "TryStagger_WInterrupt",
@@ -598,12 +615,32 @@
       "connection_count": 27,
       "exec_connection_count": 15,
       "data_connection_count": 12
+    },
+    {
+      "name": "StartDirectorUpdates",
+      "kind": "function",
+      "guid": "DEEEB4224432F6D0BB51D0AD44F602B1",
+      "node_count": 11,
+      "pin_count": 40,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
+    },
+    {
+      "name": "StopDirectorUpdates",
+      "kind": "function",
+      "guid": "AC73720C487408DE3840EF98CF66335C",
+      "node_count": 3,
+      "pin_count": 8,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "1F0EA77949A535B89BF7E790CE26D0D3",
+      "guid": "77A181C04CE8987578680196FBE7F066",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -612,11 +649,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 8,
+    "authored_graph_count": 10,
     "generated_graph_count": 1,
-    "authored_node_count": 301,
-    "authored_pin_count": 771,
-    "authored_connection_count": 280,
+    "authored_node_count": 323,
+    "authored_pin_count": 841,
+    "authored_connection_count": 300,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -635,6 +672,16 @@
       "name": "Director_Evaluate",
       "kind": "function",
       "file": "graphs/Director_Evaluate.json"
+    },
+    {
+      "name": "StartDirectorUpdates",
+      "kind": "function",
+      "file": "graphs/StartDirectorUpdates.json"
+    },
+    {
+      "name": "StopDirectorUpdates",
+      "kind": "function",
+      "file": "graphs/StopDirectorUpdates.json"
     },
     {
       "name": "TryDefenseReset_WInterrupt",

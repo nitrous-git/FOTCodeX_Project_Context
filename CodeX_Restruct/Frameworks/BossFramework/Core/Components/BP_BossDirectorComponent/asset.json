@@ -19,6 +19,7 @@
     "dependencies": [
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Components/BP_MetricsComponent",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossEncounterState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase"
     ],
@@ -37,7 +38,7 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Shared/SharedStates/BP_WaitForExecuteState"
     ],
     "non_architecture_dependency_count": 1,
-    "non_architecture_referencer_count": 3
+    "non_architecture_referencer_count": 4
   },
   "registry": {
     "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
@@ -215,6 +216,23 @@
           "category": "class",
           "sub_category": null,
           "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/States/BP_BossStateBase.BP_BossStateBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DirectorTimerHandle",
+        "guid": "2D475C7E465C37B5D9C4589FAF0BA0F6",
+        "friendly_name": "Director Timer Handle",
+        "category": "Runtime",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -573,7 +591,9 @@
         "TryDefenseReset_WInterrupt",
         "TryVulnerable_AfterThisState",
         "Debug_SetDecision",
-        "TryPhase2_AfterThisState"
+        "TryPhase2_AfterThisState",
+        "StartDirectorUpdates",
+        "StopDirectorUpdates"
       ],
       "macros": [],
       "delegates": [],
