@@ -25,6 +25,7 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Controller/AIController_Bosses",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossEncounterState",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossHealthBarMode",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossIntroMode",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossMode",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossStateExitReason",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_StateHitReactPolicy",
@@ -112,7 +113,7 @@
       "/Game/CodeX_Restruct/Shared/Directors/BP_LevelDirector_DesertRealm",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner"
     ],
-    "non_architecture_dependency_count": 15,
+    "non_architecture_dependency_count": 19,
     "non_architecture_referencer_count": 5
   },
   "registry": {
@@ -229,11 +230,11 @@
       {
         "name": "ContextualAnimSceneActor",
         "class": "ContextualAnimSceneActorComponent",
-        "parent": "CapsuleComponent",
+        "parent": "BP_BaseBoss",
         "inherited": false,
         "native": false,
         "root_component": false,
-        "scene_component": true,
+        "scene_component": false,
         "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C:ContextualAnimSceneActor_GEN_VARIABLE"
       },
       {
@@ -429,6 +430,57 @@
         "guid": "082959774BD36718207992A564008EC4",
         "friendly_name": "Inject Interrupt Pending",
         "category": "INVTEXT(\"InjectInterrupt\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIntroInputLocked",
+        "guid": "C7413C7B478C69F8072829AC927C7327",
+        "friendly_name": "Intro Input Locked",
+        "category": "Cinematic",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIntroPending",
+        "guid": "3DA384AF4F7560529A66F18C870520F0",
+        "friendly_name": "Intro Pending",
+        "category": "INVTEXT(\"Encounter\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIntroSkipped",
+        "guid": "A835E9B54A32B13FF8C27FA452A005B6",
+        "friendly_name": "Intro Skipped",
+        "category": "INVTEXT(\"Encounter\")",
         "property_flags": 65541,
         "default_value": null,
         "type": {
@@ -1224,6 +1276,74 @@
         }
       },
       {
+        "name": "IntroMode",
+        "guid": "C2E4C4C640EDC6934AA4B09BA1E9CC3D",
+        "friendly_name": "Intro Mode",
+        "category": "INVTEXT(\"Encounter\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossIntroMode.E_BossIntroMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IntroPlayerController",
+        "guid": "2937AC05446DA0282386F6AF11C918BA",
+        "friendly_name": "Intro Player Controller",
+        "category": "Cinematic",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.PlayerController'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IntroSequenceActor",
+        "guid": "C6FDF781479E71988D4D6A968D74F4EB",
+        "friendly_name": "Intro Sequence Actor",
+        "category": "Cinematic",
+        "property_flags": 2053,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/LevelSequence.LevelSequenceActor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IntroSequencePlayer",
+        "guid": "6DBBB8D447E0E047483B12AAC7FD6468",
+        "friendly_name": "Intro Sequence Player",
+        "category": "Cinematic",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/LevelSequence.LevelSequencePlayer'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "IsDead",
         "guid": "E4AD1E3E440A46A568BC4991A07212AC",
         "friendly_name": "Is Dead",
@@ -1547,6 +1667,57 @@
         }
       },
       {
+        "name": "OnBossIntroAborted",
+        "guid": "E6B511A54D9B085C88E34CBF198C3216",
+        "friendly_name": "On Boss Intro Aborted",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnBossIntroFinished",
+        "guid": "B3513F3C4549677C01726FACCD2EEA39",
+        "friendly_name": "On Boss Intro Finished",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnBossIntroStarted",
+        "guid": "2F8404244B5C53AC9A03C4B3B907C9B4",
+        "friendly_name": "On Boss Intro Started",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "Other Actor",
         "guid": "F5CFF3A24F3D48AAFCCBE0AB6C311914",
         "friendly_name": "Other Actor",
@@ -1608,6 +1779,23 @@
           "category": "object",
           "sub_category": null,
           "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PreIntroViewTarget",
+        "guid": "45572C754DDFDC295E0C5CB587EC7D0E",
+        "friendly_name": "Pre Intro View Target",
+        "category": "Cinematic",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -1970,6 +2158,23 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "WakeMontage",
+        "guid": "D4F6D7624CEBAA47C058C5B49A198D06",
+        "friendly_name": "Wake Montage",
+        "category": "INVTEXT(\"Encounter\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
@@ -2014,42 +2219,60 @@
       ],
       "macros": [],
       "delegates": [
-        "OnBossDefeated"
+        "OnBossDefeated",
+        "OnBossIntroStarted",
+        "OnBossIntroFinished",
+        "OnBossIntroAborted"
       ],
       "generated_graphs": [
-        "TL_ManualMove__FinishedFunc",
-        "TL_ManualMove__UpdateFunc",
-        "TL_Dash__FinishedFunc",
-        "TL_Dash__UpdateFunc",
+        "CE_SkipBossIntro",
+        "CE_AbortBossIntro",
+        "CE_OnBossSequenceStop",
+        "CE_OnBossSequenceFinished",
+        "CE_LockCinematicInput",
+        "CE_ReleaseIntroPresentation",
+        "CE_PlayBossCinematic",
+        "CE_PlayBossWakeMontage",
+        "CE_CompleteBossIntro",
+        "CE_BeginBossIntro",
+        "ReceiveEndPlay",
+        "BndEvt__BP_BaseBoss_AwarenessSphere_K2Node_ComponentBoundEvent_2_ComponentEndOverlapSignature__DelegateSignature",
+        "BndEvt__BP_BaseBoss_AwarenessSphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature",
+        "BndEvt__BP_BaseBoss_Awareness_K2Node_ComponentBoundEvent_0_OnTargetDetected__DelegateSignature",
+        "CE_RequestActivation",
+        "CE_StartCombat",
+        "CE_TriggerBossEvent",
+        "CE_CallTurretToFire",
+        "CE_RemoveHealthWidget",
+        "CS_DashEvent",
+        "CS_BloodDecals",
+        "CS_PlayCameraShake",
+        "CS_PushExecuteToDeathState",
+        "CS_CheckForDeathSequence",
+        "ReceiveBeginPlay",
+        "ReceiveTick",
+        "CS_PlayDefenseHitMontage",
+        "CS_ResetHitMontageSeries",
+        "CS_PlayHitMontage",
+        "CS_PushExecuteRecoveryState",
+        "CS_TickAttackClamp",
+        "CS_SetAttackClampActive",
+        "BndEvt__BP_Boss_SwordCapsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+        "AN_AttackWindow_SetActive",
+        "CS_DoDamage",
+        "ReceiveAnyDamage",
         "CS_LauchCharacterUtil",
         "CS_FacePlayer",
-        "ReceiveAnyDamage",
-        "CS_DoDamage",
-        "AN_AttackWindow_SetActive",
-        "BndEvt__BP_Boss_SwordCapsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-        "CS_SetAttackClampActive",
-        "CS_TickAttackClamp",
         "CS_PlayAnim",
-        "CS_PushExecuteRecoveryState",
-        "CS_PlayHitMontage",
-        "CS_ResetHitMontageSeries",
-        "CS_PlayDefenseHitMontage",
-        "ReceiveTick",
-        "ReceiveBeginPlay",
-        "CS_CheckForDeathSequence",
-        "CS_PushExecuteToDeathState",
-        "CS_PlayCameraShake",
-        "CS_BloodDecals",
-        "CS_DashEvent",
-        "CE_RemoveHealthWidget",
-        "CE_CallTurretToFire",
-        "CE_TriggerBossEvent",
-        "CE_StartCombat",
-        "CE_RequestActivation",
-        "BndEvt__BP_BaseBoss_Awareness_K2Node_ComponentBoundEvent_0_OnTargetDetected__DelegateSignature",
-        "BndEvt__BP_BaseBoss_AwarenessSphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature",
-        "BndEvt__BP_BaseBoss_AwarenessSphere_K2Node_ComponentBoundEvent_2_ComponentEndOverlapSignature__DelegateSignature",
-        "ReceiveEndPlay"
+        "OnCompleted_9FE8B8344B996017060DA5B8F83E83F2",
+        "OnBlendOut_9FE8B8344B996017060DA5B8F83E83F2",
+        "OnInterrupted_9FE8B8344B996017060DA5B8F83E83F2",
+        "OnNotifyBegin_9FE8B8344B996017060DA5B8F83E83F2",
+        "OnNotifyEnd_9FE8B8344B996017060DA5B8F83E83F2",
+        "TL_Dash__UpdateFunc",
+        "TL_Dash__FinishedFunc",
+        "TL_ManualMove__UpdateFunc",
+        "TL_ManualMove__FinishedFunc"
       ]
     },
     "extraction_status": {

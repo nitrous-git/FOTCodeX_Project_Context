@@ -171,11 +171,11 @@
       {
         "name": "ContextualAnimSceneActor",
         "class": "ContextualAnimSceneActorComponent",
-        "parent": "CapsuleComponent",
+        "parent": "BP_Boss_Oracle",
         "inherited": true,
         "native": false,
         "root_component": false,
-        "scene_component": true,
+        "scene_component": false,
         "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Oracle/BP_Boss_Oracle.BP_Boss_Oracle_C:ContextualAnimSceneActor_GEN_VARIABLE"
       },
       {
@@ -365,18 +365,24 @@
         "EventGraph"
       ],
       "functions": [
-        "UserConstructionScript",
-        "CreateHealthWidget",
+        "InitializeFirstSequence",
         "Initialize",
-        "InitializeFirstSequence"
+        "CreateHealthWidget",
+        "UserConstructionScript"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
+        "InitializeFirstSequence_MERGED",
+        "Initialize_MERGED",
+        "CreateHealthWidget_MERGED",
+        "UserConstructionScript_MERGED",
         "ReceiveBeginPlay",
         "CE_BossEvent_SwordSemicircle",
         "CE_SpawnNextOracleSword",
-        "CE_TriggerBossEvent"
+        "CE_TriggerBossEvent",
+        "ExecuteUbergraph_BP_Boss_Oracle",
+        "EdGraph_0"
       ]
     },
     "extraction_status": {
