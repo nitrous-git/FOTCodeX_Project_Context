@@ -977,6 +977,23 @@
       }
     },
     {
+      "name": "PrimaryWeaponClassOverride",
+      "guid": "09A083854B67E51AB63D169825F585AB",
+      "friendly_name": "Primary Weapon Class Override",
+      "category": "Equipment_Weapon Resolution",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "RunningSpeed",
       "guid": "5A07DDB04B5280E31AF50387E151EC7C",
       "friendly_name": "Running Speed",
@@ -1002,6 +1019,23 @@
       "default_value": null,
       "type": {
         "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SecondaryWeaponClassOverride",
+      "guid": "60F8A5AF4FEC59EAD259F0AB07228D16",
+      "friendly_name": "Secondary Weapon Class Override",
+      "category": "Equipment_Weapon Resolution",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
         "sub_category": null,
         "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
         "container": null,
@@ -1174,20 +1208,20 @@
       "name": "SetCombatStyleWeapon",
       "kind": "function",
       "guid": "9FECC4AE4CC3A9F08DD266ACA2C0F499",
-      "node_count": 31,
-      "pin_count": 116,
-      "connection_count": 33,
-      "exec_connection_count": 11,
-      "data_connection_count": 22
+      "node_count": 60,
+      "pin_count": 209,
+      "connection_count": 45,
+      "exec_connection_count": 17,
+      "data_connection_count": 28
     },
     {
       "name": "UnequipAllWeapon",
       "kind": "function",
       "guid": "D060BAB24EF1D787F3A1AB9B3CA4A89A",
-      "node_count": 10,
-      "pin_count": 26,
-      "connection_count": 11,
-      "exec_connection_count": 5,
+      "node_count": 12,
+      "pin_count": 37,
+      "connection_count": 13,
+      "exec_connection_count": 7,
       "data_connection_count": 6
     },
     {
@@ -1229,6 +1263,16 @@
       "connection_count": 22,
       "exec_connection_count": 2,
       "data_connection_count": 20
+    },
+    {
+      "name": "RefreshEquippedWeapons",
+      "kind": "function",
+      "guid": "8C7976834686DCAD59C443A31B978C40",
+      "node_count": 3,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
     }
   ],
   "generated_graphs": [
@@ -1251,53 +1295,8 @@
       "data_connection_count": 6
     },
     {
-      "name": "CE_SetTemplarTunic",
-      "guid": "6812E0F14B840AEA5716D7A2A3FE8A36",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_SetAssassinTunic",
-      "guid": "0FA2D08B430D63BE1D2E83AE795FCE25",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_SetKnightTunic",
-      "guid": "D6907CD6415FAC6C0E6F8ABD91C21271",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_SetPrinceTunic",
-      "guid": "B583C06148B20302BCA07994FCBD5FBC",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_SetVillagerTunic",
-      "guid": "3782390042C173DDB83A4E8A38F0C7CF",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_EquipTwinblades",
-      "guid": "28EA03944005A7D331D884A0CE1388AA",
+      "name": "InpActEvt_E_K2Node_InputKeyEvent_3",
+      "guid": "019ED88E493B4CE85DB6438C933BA547",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1305,17 +1304,8 @@
       "data_connection_count": 1
     },
     {
-      "name": "CE_EquipCommon",
-      "guid": "A6B7416548676E48596DD9AB4B0F52F4",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_EquipSNS",
-      "guid": "2BF9BE9543C1B367D1ED37BAB3DFC2B1",
+      "name": "InpActEvt_Gamepad_RightShoulder_K2Node_InputKeyEvent_2",
+      "guid": "4F23E7754985AE6661B05C90E6CAE81B",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1323,8 +1313,26 @@
       "data_connection_count": 1
     },
     {
-      "name": "CE_EquipKatana",
-      "guid": "466664254C9BB14EED2E13B1888117D9",
+      "name": "InpActEvt_One_K2Node_InputDebugKeyEvent_1",
+      "guid": "B42EAF5740C3DC4E624795820CB9951D",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "InpActEvt_Zero_K2Node_InputDebugKeyEvent_0",
+      "guid": "3986D853493DBA41346B6E8D7B50A4B7",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "InpActEvt_F_K2Node_InputKeyEvent_1",
+      "guid": "A5AC9E7543F69D11FB6F0A902CB8365D",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1332,269 +1340,8 @@
       "data_connection_count": 1
     },
     {
-      "name": "CE_ForceBackToCommon",
-      "guid": "5BFDD3B047D2C270746E20802C6BBBDC",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "BndEvt__BP_ThirdPersonCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_29_ComponentHitSignature__DelegateSignature",
-      "guid": "B82301D84F00EA85EBE280B7127D72A0",
-      "node_count": 3,
-      "pin_count": 17,
-      "connection_count": 7,
-      "exec_connection_count": 2,
-      "data_connection_count": 5
-    },
-    {
-      "name": "BndEvt__ThirdPersonCharacter_BP_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-      "guid": "B45D036E4FFBA7E5E53E33A2C91E92FC",
-      "node_count": 3,
-      "pin_count": 19,
-      "connection_count": 8,
-      "exec_connection_count": 2,
-      "data_connection_count": 6
-    },
-    {
-      "name": "OnLanded",
-      "guid": "E2D3B40344B5E18A5CEDE98F88DB7308",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CS_PlayCameraShake",
-      "guid": "6DACEC6B4F4C2BE2057369A917DE5B32",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CS_ResetHitCounter",
-      "guid": "F51EB8204BB6C498083A67B20BB5CD3C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_HitTImer",
-      "guid": "1540AD034CA33CDFFE8EA985B6496B36",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_PlayExecutionCamera",
-      "guid": "3BF34B09403FA4113AFAE7B32DCEA861",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_ToggleLocomotion",
-      "guid": "08575D614F031BFDFFDCDCB7FC0ECFBB",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_BossLookUp",
-      "guid": "7731D57C4036383B7AB4EABBA40CB783",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_PlayExecutedCamera",
-      "guid": "9C6CC4294B060A67A1F2F7B2A778F7CB",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_SetExecuted",
-      "guid": "993CB7A64A3EC20BB0F914AB7271DAF6",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_ReceiveBossDebugText",
-      "guid": "3CDB31F74568689FEEE20A8EB5321E4E",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CS_CreateDebugWidget",
-      "guid": "4860EDA24DA02AB636E04E8286472E60",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_SetOrientationAndFace",
-      "guid": "9BB8E1794CAE33B2F306B88A372576EC",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_FaceTarget",
-      "guid": "C3F7CA2543337B96FBBA338037C12B6A",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ApplyResolvedHit",
-      "guid": "7E2B93204B180D64099380B7BB0E976A",
-      "node_count": 3,
-      "pin_count": 17,
-      "connection_count": 7,
-      "exec_connection_count": 2,
-      "data_connection_count": 5
-    },
-    {
-      "name": "CS_ResetGlobalTimeDilation",
-      "guid": "28884BC3415FBC6E113107B4C1F13AA8",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_SlowGlobalTimeDilation",
-      "guid": "68247ABD467F16818375239F73D5B500",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ReceiveTick",
-      "guid": "28D55CF74576DB8641103096BE57C3C9",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CS_TickAttackClamp",
-      "guid": "7DAD0A544882E1F69F957998CAF79E75",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "SetAttackClampActive",
-      "guid": "032DE553403F36DE817504A2FF972579",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CS_LauchCharacterUtil",
-      "guid": "941EF5CE4AAD0BD24FA11EBE72984538",
-      "node_count": 3,
-      "pin_count": 13,
-      "connection_count": 5,
-      "exec_connection_count": 2,
-      "data_connection_count": 3
-    },
-    {
-      "name": "CS_SetAllReferences",
-      "guid": "8145FC8A4D79A44ECECD74B2E317CF76",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ReceiveAnyDamage",
-      "guid": "6521F2974D8283BC4C886FACA14FCDFF",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "CS_ResetBlock",
-      "guid": "692729C84082DFAFC273668EF025361C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_PlayAnim",
-      "guid": "AD06560642899CD8CC00C0A7FA05AFF2",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CS_DoDamage",
-      "guid": "F06415E149185EB94B2BAF9E3DDBDA10",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_1_ComponentOnTargetLockedOnOff__DelegateSignature",
-      "guid": "D018088F499F97361F3F8FBD50B6F811",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_0_ComponentOnTargetLockedOnOff__DelegateSignature",
-      "guid": "B956AC40497BED53FD12E39F00F06E65",
+      "name": "InpActEvt_MiddleMouseButton_K2Node_InputKeyEvent_0",
+      "guid": "1762D12A44540A4416F45EACCEEC72AE",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1603,7 +1350,7 @@
     },
     {
       "name": "ReceiveBeginPlay",
-      "guid": "3D8FF4C84D4F7B0B5E1FC7A0B89C0AAA",
+      "guid": "D432C4044693C6CB07C50CB8D93672A6",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1611,8 +1358,8 @@
       "data_connection_count": 0
     },
     {
-      "name": "InpActEvt_MiddleMouseButton_K2Node_InputKeyEvent_0",
-      "guid": "6C651F724845B4F50497A89520AF7627",
+      "name": "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_0_ComponentOnTargetLockedOnOff__DelegateSignature",
+      "guid": "EE793B13476C12A5473F6A8018C9D13E",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1620,8 +1367,8 @@
       "data_connection_count": 1
     },
     {
-      "name": "InpActEvt_F_K2Node_InputKeyEvent_1",
-      "guid": "A8E549044EA498DE44010FA95C3F8806",
+      "name": "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_1_ComponentOnTargetLockedOnOff__DelegateSignature",
+      "guid": "A485C82C4B6573F1233D78B181849CDA",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1629,26 +1376,17 @@
       "data_connection_count": 1
     },
     {
-      "name": "InpActEvt_Zero_K2Node_InputDebugKeyEvent_0",
-      "guid": "273BF62040BCFFD5BD3E5DA82A02D7A6",
-      "node_count": 3,
-      "pin_count": 11,
-      "connection_count": 4,
-      "exec_connection_count": 2,
-      "data_connection_count": 2
+      "name": "CS_DoDamage",
+      "guid": "4209FBAB458622AB805ED7B2C32831C8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     },
     {
-      "name": "InpActEvt_One_K2Node_InputDebugKeyEvent_1",
-      "guid": "80A3D80D4138D4A918D36E9D509DFF74",
-      "node_count": 3,
-      "pin_count": 11,
-      "connection_count": 4,
-      "exec_connection_count": 2,
-      "data_connection_count": 2
-    },
-    {
-      "name": "InpActEvt_Gamepad_RightShoulder_K2Node_InputKeyEvent_2",
-      "guid": "87A9A9E048242B896A2D1AA59CD9B587",
+      "name": "CS_PlayAnim",
+      "guid": "3143E75A49360A21E3A381B87394343A",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1656,21 +1394,327 @@
       "data_connection_count": 1
     },
     {
-      "name": "InpActEvt_E_K2Node_InputKeyEvent_3",
-      "guid": "FD9D81954077EA9FBF5A8E97DBF3695E",
+      "name": "CS_ResetBlock",
+      "guid": "6457582F4C6DEB17457C1CA76D990E56",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveAnyDamage",
+      "guid": "5D94DD2F45199EF83EFD80B6E319D0FE",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "CS_SetAllReferences",
+      "guid": "5CD6603C4754D5720FAB6DADCD2569B5",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_LauchCharacterUtil",
+      "guid": "5EFA08F740B57171ED078D98B02A3A47",
+      "node_count": 3,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "SetAttackClampActive",
+      "guid": "6FFC499C4B7FE35700B1F3A9A81D7EE6",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
       "exec_connection_count": 2,
       "data_connection_count": 1
+    },
+    {
+      "name": "CS_TickAttackClamp",
+      "guid": "776DAEAE4A9BC42988F09F854B5A6550",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveTick",
+      "guid": "035AF3644649E6E2C6A14797DC5D66B2",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CS_SlowGlobalTimeDilation",
+      "guid": "64C70C9A4B7BE29230CEC9B04C3E3882",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetGlobalTimeDilation",
+      "guid": "01294DEE47676ACF585B22B506D83A22",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ApplyResolvedHit",
+      "guid": "CBF0A1EF48F5B4C7B0E14AB767154218",
+      "node_count": 3,
+      "pin_count": 17,
+      "connection_count": 7,
+      "exec_connection_count": 2,
+      "data_connection_count": 5
+    },
+    {
+      "name": "CS_FaceTarget",
+      "guid": "8F5048DF43DCDFBD5C49E5A7C7964950",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_SetOrientationAndFace",
+      "guid": "3101991E428933C1062FF8A37FBB1C71",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_CreateDebugWidget",
+      "guid": "BA400D4C42F27DE8B7BFC58DEC37C975",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ReceiveBossDebugText",
+      "guid": "5BA08E204D1CD105B49EDA876688B2A7",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CS_SetExecuted",
+      "guid": "BE259AE140CAC40A7FAA148A58CBCF25",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PlayExecutedCamera",
+      "guid": "7F64AEBE48A012E8F48BD3942E6D8548",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_BossLookUp",
+      "guid": "28D08CCB45F102E11485A68A07EB07F2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ToggleLocomotion",
+      "guid": "9BBD9587475A525A3DA247AF1AD23EE2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PlayExecutionCamera",
+      "guid": "E19631744EEE1397F283D8AC42675AF1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_HitTImer",
+      "guid": "CFCD9EA14321657672B6FBB584986C27",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_ResetHitCounter",
+      "guid": "8DF3C9B34D6B800526BB27805FA965F8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_PlayCameraShake",
+      "guid": "D0434CB24BA75CCD3FFC26A91184D14A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnLanded",
+      "guid": "7BCBA6F0420BF782A522F1AE176F30E4",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__ThirdPersonCharacter_BP_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "1C1B49EF447F68A5CD7FB5805E40D14E",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    },
+    {
+      "name": "BndEvt__BP_ThirdPersonCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_29_ComponentHitSignature__DelegateSignature",
+      "guid": "A6CAC1D942D07592855FAFB8C0F24CF0",
+      "node_count": 3,
+      "pin_count": 17,
+      "connection_count": 7,
+      "exec_connection_count": 2,
+      "data_connection_count": 5
+    },
+    {
+      "name": "CE_ForceBackToCommon",
+      "guid": "5F1FB12A42DE3861198ECBA4A345FB17",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_EquipKatana",
+      "guid": "5F5FD00A4385EFA543AEBA84BF3E5A41",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_EquipSNS",
+      "guid": "DB8309A649E1F54E86EC19847CD86285",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_EquipCommon",
+      "guid": "5BD7C1314B34E94083A37596207E1909",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_EquipTwinblades",
+      "guid": "EF1CAC1E4ABF2D20C6D8DE8AC80082C3",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_SetVillagerTunic",
+      "guid": "19E3FFE34E204F21DA8F9487116C7385",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_SetPrinceTunic",
+      "guid": "5A0820FD45CB40C03703C283892B1726",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_SetKnightTunic",
+      "guid": "F3EA06A842745EA8BE48E7B6A1DFCE11",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_SetAssassinTunic",
+      "guid": "2155C4314B1A747F09F021B1E5461E0D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_SetTemplarTunic",
+      "guid": "65291181491DCC883A08C8871A7750B7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     }
   ],
   "stats": {
-    "authored_graph_count": 15,
+    "authored_graph_count": 16,
     "generated_graph_count": 48,
-    "authored_node_count": 674,
-    "authored_pin_count": 2254,
-    "authored_connection_count": 628,
+    "authored_node_count": 708,
+    "authored_pin_count": 2365,
+    "authored_connection_count": 644,
     "generated_node_count": 129,
     "generated_pin_count": 397
   },
@@ -1699,6 +1743,11 @@
       "name": "InitPlayerUI",
       "kind": "function",
       "file": "graphs/InitPlayerUI.json"
+    },
+    {
+      "name": "RefreshEquippedWeapons",
+      "kind": "function",
+      "file": "graphs/RefreshEquippedWeapons.json"
     },
     {
       "name": "Set Combat Style from Enum",

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 293,
-  "edge_count": 911,
+  "node_count": 299,
+  "edge_count": 936,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -2157,7 +2157,7 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_GM_Sword",
-      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Sword"
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_IronSword"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/Melee/DA_GM_SKSpear",
@@ -2173,7 +2173,7 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/Melee/DA_GM_SKSword",
-      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Sword"
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_IronSword"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/Ranged/DA_Ranged_SkeletonWarlock",
@@ -2229,7 +2229,15 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/EItemCategory"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
       "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_WeaponDefinition"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
@@ -2248,6 +2256,14 @@
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/EItemCategory"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master",
       "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent"
     },
@@ -2258,6 +2274,22 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/DT_InventoryItemData",
       "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/DT_InventoryItemData",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_Weapon_IronSword"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/DT_InventoryItemData",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_Weapon_KnightShield"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/DT_InventoryItemData",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_Weapon_KnightSword"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/DT_InventoryItemData",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_WeaponDefinition"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/DT_InventoryItemData",
@@ -2325,11 +2357,47 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/EItemCategory"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_WeaponDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_Weapon_IronSword",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_WeaponDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_Weapon_IronSword",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_IronSword"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_Weapon_KnightShield",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_WeaponDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_Weapon_KnightShield",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_Weapon_KnightSword",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_WeaponDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_Weapon_KnightSword",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_KnightSword"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_WeaponDefinition",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/ItemPickup/BP_Pickup_ChampionFragment01",
@@ -2361,7 +2429,15 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_DescriptionBox",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/EItemCategory"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_DescriptionBox",
       "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_DescriptionBox",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_WeaponDefinition"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_DescriptionBox",
@@ -2385,7 +2461,15 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/EItemCategory"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot",
       "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_WeaponDefinition"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot",
@@ -2406,6 +2490,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual",
       "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/EItemCategory"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual",
@@ -2433,11 +2521,19 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/EItemCategory"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer",
       "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer_wName",
       "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer_wName",
+      "to": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/EItemCategory"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_SlotContainer_wName",
@@ -3049,11 +3145,11 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_SNS_Instance",
-      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield"
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_IronSword"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_SNS_Instance",
-      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Sword"
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_Twinblades",
@@ -3504,6 +3600,10 @@
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
     {
+      "from": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_IronSword",
+      "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Katana",
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
@@ -3512,11 +3612,11 @@
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
     {
-      "from": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield",
+      "from": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_KnightSword",
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
     {
-      "from": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Sword",
+      "from": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield",
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
     {

@@ -19,11 +19,14 @@
     "dependencies": [
       "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData",
       "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/DT_InventoryItemData",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/EItemCategory",
       "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/Item/DA_WeaponDefinition",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master",
@@ -238,6 +241,23 @@
         }
       },
       {
+        "name": "EquippedItemsBySlot",
+        "guid": "60B07FDC4A1BC15302EAB6ACEF3D4D24",
+        "friendly_name": "Equipped Items by Slot",
+        "category": "Equipped state",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+          "container": "Map",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "FocusedCategory",
         "guid": "08C684B8487D1783BFD524B4C7273A1B",
         "friendly_name": "Focused Category",
@@ -247,7 +267,7 @@
         "type": {
           "category": "byte",
           "sub_category": null,
-          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/Item/EItemCategory.EItemCategory'",
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/EItemCategory.EItemCategory'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -406,6 +426,40 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "WeaponSlotCount",
+        "guid": "635B66A841C773362C70B7A738C3557C",
+        "friendly_name": "Weapon Slot Count",
+        "category": "INVTEXT(\"Slot counts\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WeaponSlots",
+        "guid": "F2D77D4643EDCFE0A5CADC941C79E1D2",
+        "friendly_name": "Weapon Slots",
+        "category": "INVTEXT(\"Runtime arrays\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
@@ -434,7 +488,12 @@
         "Debug_GiveStarterInventory",
         "Debug_PrintSingleSlot",
         "Debug_PrintInventory",
-        "TestEquip"
+        "TestEquip",
+        "GetEquippedItemAtSlot",
+        "UnequipItemFromSlot",
+        "TryEquipItemToSlot",
+        "ResolveEquippedWeaponClass",
+        "Debug_TestWeaponEquipment"
       ],
       "macros": [],
       "delegates": [
