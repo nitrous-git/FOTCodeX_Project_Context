@@ -17,12 +17,10 @@
   },
   "architecture": {
     "dependencies": [
-      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_AttackLight",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Block",
@@ -39,7 +37,7 @@
       "/Game/CodeX_Restruct/Core/GameModes/BP_CPC_GameMode",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     ],
-    "non_architecture_dependency_count": 7,
+    "non_architecture_dependency_count": 4,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -75,23 +73,6 @@
       }
     ],
     "variables": [
-      {
-        "name": "bIsInventoryOpen",
-        "guid": "B19FE0164AA79C9C1818EFA0553D2AE0",
-        "friendly_name": "Is Inventory Open",
-        "category": "INVTEXT(\"Inventory\")",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "bool",
-          "sub_category": null,
-          "sub_category_object": null,
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
       {
         "name": "EnemyAIManager",
         "guid": "AC404964477C53B18AD09CB568982F89",
@@ -154,40 +135,6 @@
           "category": "real",
           "sub_category": "double",
           "sub_category_object": null,
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
-        "name": "InventoryHUD",
-        "guid": "1EDA0A6E4A76B21AEBE69EA4815C313F",
-        "friendly_name": "Inventory HUD",
-        "category": "Inventory",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "object",
-          "sub_category": null,
-          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual.WBP_PlayerInventoryHUD_manual_C'",
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
-        "name": "InventoryHUDClass",
-        "guid": "36B73628423BF2581CB23FB18AEC4FC2",
-        "friendly_name": "Inventory HUDClass",
-        "category": "INVTEXT(\"Inventory\")",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "class",
-          "sub_category": null,
-          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual.WBP_PlayerInventoryHUD_manual_C'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -336,31 +283,28 @@
         "EventGraph"
       ],
       "functions": [
-        "UserConstructionScript",
-        "OpenInventory",
-        "CloseInventory",
-        "ToggleInventory"
+        "UserConstructionScript"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "ReceiveBeginPlay",
-        "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_0",
-        "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_1",
-        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_2",
-        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_3",
-        "InpActEvt_N_K2Node_InputKeyEvent_0",
-        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_4",
-        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_5",
-        "InpActEvt_I_K2Node_InputKeyEvent_1",
-        "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_6",
-        "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_7",
-        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_8",
-        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_9",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_10",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_11",
+        "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_13",
         "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
-        "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_13"
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_11",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_10",
+        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_9",
+        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_8",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_7",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_6",
+        "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_5",
+        "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_4",
+        "InpActEvt_I_K2Node_InputKeyEvent_1",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_3",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_2",
+        "InpActEvt_N_K2Node_InputKeyEvent_0",
+        "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_1",
+        "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_0",
+        "ReceiveBeginPlay"
       ]
     },
     "extraction_status": {

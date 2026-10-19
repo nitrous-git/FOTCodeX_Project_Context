@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_EquipmentComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "E8B0D1BF4CCBCB316EA40A850D71A578",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "bEquipmentInitialized",
+      "guid": "DA5D6F9F417D8C70D04DF39BB122B942",
+      "friendly_name": "Equipment Initialized",
+      "category": "Initialization",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EquippedItemsBySlot",
+      "guid": "1FF55EB84C3AE4CE7A12BEAAAFA6980C",
+      "friendly_name": "Equipped Items by Slot",
+      "category": "Equipment_State",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": "Map",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InventoryRef",
+      "guid": "6A215A7E4ABB1DF1AE8E16988025F3C7",
+      "friendly_name": "Inventory Ref",
+      "category": "References",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnEquipmentSlotChanged",
+      "guid": "82A6733741BF2EA110D575B8EA189153",
+      "friendly_name": "On Equipment Slot Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "OnEquipmentSlotChanged",
+      "kind": "delegate",
+      "guid": "9429DD364B8AA516B539F1BA6E6744D3",
+      "node_count": 1,
+      "pin_count": 4,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "1617B62C403537D2D19F7E80ECC6C3D4",
+      "node_count": 7,
+      "pin_count": 24,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ResolveEquippedWeaponClass",
+      "kind": "function",
+      "guid": "952B9F26428C049CABEBBE823A895D6B",
+      "node_count": 20,
+      "pin_count": 75,
+      "connection_count": 26,
+      "exec_connection_count": 11,
+      "data_connection_count": 15
+    },
+    {
+      "name": "UnequipItemFromSlot",
+      "kind": "function",
+      "guid": "661D9EB34707FF2078257F8134D7DB08",
+      "node_count": 14,
+      "pin_count": 42,
+      "connection_count": 16,
+      "exec_connection_count": 6,
+      "data_connection_count": 10
+    },
+    {
+      "name": "TryEquipItemToSlot",
+      "kind": "function",
+      "guid": "27D0B401451850845F8FC0B239CC62CA",
+      "node_count": 58,
+      "pin_count": 221,
+      "connection_count": 63,
+      "exec_connection_count": 24,
+      "data_connection_count": 39
+    },
+    {
+      "name": "IsItemEquipped",
+      "kind": "function",
+      "guid": "472E21334521F3D627F59C8257823D70",
+      "node_count": 6,
+      "pin_count": 16,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "GetEquippedItemAtSlot",
+      "kind": "function",
+      "guid": "D5F2F36647215056D8E4058A4F66CD9D",
+      "node_count": 4,
+      "pin_count": 12,
+      "connection_count": 5,
+      "exec_connection_count": 1,
+      "data_connection_count": 4
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "4D52FCEC4F020F51D301DC89DEABA833",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 7,
+    "generated_graph_count": 1,
+    "authored_node_count": 110,
+    "authored_pin_count": 394,
+    "authored_connection_count": 122,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "OnEquipmentSlotChanged",
+      "kind": "delegate",
+      "file": "graphs/OnEquipmentSlotChanged.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "GetEquippedItemAtSlot",
+      "kind": "function",
+      "file": "graphs/GetEquippedItemAtSlot.json"
+    },
+    {
+      "name": "IsItemEquipped",
+      "kind": "function",
+      "file": "graphs/IsItemEquipped.json"
+    },
+    {
+      "name": "ResolveEquippedWeaponClass",
+      "kind": "function",
+      "file": "graphs/ResolveEquippedWeaponClass.json"
+    },
+    {
+      "name": "TryEquipItemToSlot",
+      "kind": "function",
+      "file": "graphs/TryEquipItemToSlot.json"
+    },
+    {
+      "name": "UnequipItemFromSlot",
+      "kind": "function",
+      "file": "graphs/UnequipItemFromSlot.json"
+    }
+  ]
+}

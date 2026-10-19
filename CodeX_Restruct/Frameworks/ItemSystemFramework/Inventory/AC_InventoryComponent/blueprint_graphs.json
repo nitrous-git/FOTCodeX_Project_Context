@@ -1,0 +1,686 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_InventoryComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "5D39434E4C9AD2A8212816A2D45E345E",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "AttunementSlotCount",
+      "guid": "8916F4D8488118E7BE3E4786B0453933",
+      "friendly_name": "Attunement Slot Count",
+      "category": "INVTEXT(\"Slot counts\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttunementSlots",
+      "guid": "B46E59BF47856824919ABEB274C67288",
+      "friendly_name": "Attunement Slots",
+      "category": "INVTEXT(\"Runtime arrays\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ConsumableSlotCount",
+      "guid": "E151A9E8419478A1376CE9AC389D5D88",
+      "friendly_name": "Consumable Slot Count",
+      "category": "INVTEXT(\"Slot counts\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ConsumableSlots",
+      "guid": "D4754493407163CB2A1DD6A96AB141C8",
+      "friendly_name": "Consumable Slots",
+      "category": "INVTEXT(\"Runtime arrays\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EquipmentSlotCount",
+      "guid": "114D79D54E3EC4DD65F9A5A9E0D9C03F",
+      "friendly_name": "Equipment Slot Count",
+      "category": "INVTEXT(\"Slot counts\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EquipmentSlots",
+      "guid": "9B6D10F34698CCE3290B3D955BB49ECE",
+      "friendly_name": "Equipment Slots",
+      "category": "INVTEXT(\"Runtime arrays\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FocusedCategory",
+      "guid": "08C684B8487D1783BFD524B4C7273A1B",
+      "friendly_name": "Focused Category",
+      "category": "Selected UI state",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory.EItemCategory'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FocusedItemID",
+      "guid": "08D3DFD14D57D533069D19896BC32828",
+      "friendly_name": "Focused Item ID",
+      "category": "INVTEXT(\"Selected UI state\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FocusedSlotIndex",
+      "guid": "1C6C99CF4F1A9A079A385D8038E93247",
+      "friendly_name": "Focused Slot Index",
+      "category": "INVTEXT(\"Selected UI state\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FragmentSlotCount",
+      "guid": "03FC69FC423A5AE6C2EB2B9403791420",
+      "friendly_name": "Fragment Slot Count",
+      "category": "INVTEXT(\"Slot counts\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FragmentSlots",
+      "guid": "8F0D57F342029173F68D53B70AD08AF6",
+      "friendly_name": "Fragment Slots",
+      "category": "INVTEXT(\"Runtime arrays\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InventoryDataTable",
+      "guid": "F3C1379B41E410DE1A6D658687B5D119",
+      "friendly_name": "Inventory Data Table",
+      "category": "INVTEXT(\"References\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataTable'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnEquipmentChanged",
+      "guid": "163F5CD740BEBDD34011A29AB3D07BA6",
+      "friendly_name": "On Equipment Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnFocusedItemChanged",
+      "guid": "3B52A0414903F93930AF35B9F1BEA505",
+      "friendly_name": "On Focused Item Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnInventoryChanged",
+      "guid": "1E7FDDD84715C7B55110E4B6D65FECE0",
+      "friendly_name": "On Inventory Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OwnerPlayer",
+      "guid": "2D0D3DDF4AA5C03BBF7FF1BD375298EA",
+      "friendly_name": "Owner Player",
+      "category": "References",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WeaponSlotCount",
+      "guid": "635B66A841C773362C70B7A738C3557C",
+      "friendly_name": "Weapon Slot Count",
+      "category": "INVTEXT(\"Slot counts\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WeaponSlots",
+      "guid": "F2D77D4643EDCFE0A5CADC941C79E1D2",
+      "friendly_name": "Weapon Slots",
+      "category": "INVTEXT(\"Runtime arrays\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "55BA94B54F833377926D4AA3B92A8233",
+      "node_count": 9,
+      "pin_count": 37,
+      "connection_count": 7,
+      "exec_connection_count": 5,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BuildEmptySlotArray",
+      "kind": "function",
+      "guid": "5BF2E22244C9EC13526B9DAE97FCCAE1",
+      "node_count": 12,
+      "pin_count": 35,
+      "connection_count": 12,
+      "exec_connection_count": 4,
+      "data_connection_count": 8
+    },
+    {
+      "name": "GetItemDefinition",
+      "kind": "function",
+      "guid": "AC797C30444D8A8F9C32EA9322F81B32",
+      "node_count": 6,
+      "pin_count": 17,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "SetSlotByCategoryAndIndex",
+      "kind": "function",
+      "guid": "E2F91C40417920CE94E373905319FC5D",
+      "node_count": 22,
+      "pin_count": 69,
+      "connection_count": 22,
+      "exec_connection_count": 6,
+      "data_connection_count": 16
+    },
+    {
+      "name": "GetSlotByCategoryAndIndex",
+      "kind": "function",
+      "guid": "4D0DE6C84C4F247D2968CB97E5C6327C",
+      "node_count": 47,
+      "pin_count": 128,
+      "connection_count": 47,
+      "exec_connection_count": 16,
+      "data_connection_count": 31
+    },
+    {
+      "name": "GetSlotCountByCategory",
+      "kind": "function",
+      "guid": "7205EC464D58C90097E9858A75A42255",
+      "node_count": 17,
+      "pin_count": 47,
+      "connection_count": 17,
+      "exec_connection_count": 6,
+      "data_connection_count": 11
+    },
+    {
+      "name": "AddItem",
+      "kind": "function",
+      "guid": "D13532624C5CC2DD77D0208BCAD5B22F",
+      "node_count": 47,
+      "pin_count": 156,
+      "connection_count": 52,
+      "exec_connection_count": 23,
+      "data_connection_count": 29
+    },
+    {
+      "name": "TryAddToExistingStacks",
+      "kind": "function",
+      "guid": "B7F5D4664A6EFC1FE03D5A8994756331",
+      "node_count": 61,
+      "pin_count": 200,
+      "connection_count": 70,
+      "exec_connection_count": 19,
+      "data_connection_count": 51
+    },
+    {
+      "name": "TryAddToEmptySlots",
+      "kind": "function",
+      "guid": "CE8460E249D5AFFDD4D34FBB470A834E",
+      "node_count": 46,
+      "pin_count": 143,
+      "connection_count": 54,
+      "exec_connection_count": 19,
+      "data_connection_count": 35
+    },
+    {
+      "name": "EquipItemFromSlot",
+      "kind": "function",
+      "guid": "BA6289F447891BC3F3FC32ADF176927B",
+      "node_count": 59,
+      "pin_count": 243,
+      "connection_count": 56,
+      "exec_connection_count": 26,
+      "data_connection_count": 30
+    },
+    {
+      "name": "FocusSlot",
+      "kind": "function",
+      "guid": "E95CFBFB4EBCDE87CD220D9D0B9AE015",
+      "node_count": 23,
+      "pin_count": 71,
+      "connection_count": 26,
+      "exec_connection_count": 14,
+      "data_connection_count": 12
+    },
+    {
+      "name": "RemoveItemFromSlot",
+      "kind": "function",
+      "guid": "1B09E24940291BC3DDE7F883AF2684BB",
+      "node_count": 38,
+      "pin_count": 122,
+      "connection_count": 44,
+      "exec_connection_count": 19,
+      "data_connection_count": 25
+    },
+    {
+      "name": "InitInventory",
+      "kind": "function",
+      "guid": "BF6BF6CE475F36075B8B4A9DA939442F",
+      "node_count": 25,
+      "pin_count": 93,
+      "connection_count": 29,
+      "exec_connection_count": 15,
+      "data_connection_count": 14
+    },
+    {
+      "name": "ClearInventorySlot",
+      "kind": "function",
+      "guid": "C6776EBA41D88AAB498775B32002FF41",
+      "node_count": 9,
+      "pin_count": 25,
+      "connection_count": 9,
+      "exec_connection_count": 2,
+      "data_connection_count": 7
+    },
+    {
+      "name": "UseConsumableFromSlot",
+      "kind": "function",
+      "guid": "DE200C61400510F26DDB26AA8422A892",
+      "node_count": 36,
+      "pin_count": 141,
+      "connection_count": 42,
+      "exec_connection_count": 24,
+      "data_connection_count": 18
+    },
+    {
+      "name": "Debug_GiveStarterInventory",
+      "kind": "function",
+      "guid": "0F8DA23A44327CF34F16D0B6E0D7FE7B",
+      "node_count": 17,
+      "pin_count": 113,
+      "connection_count": 16,
+      "exec_connection_count": 16,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Debug_PrintSingleSlot",
+      "kind": "function",
+      "guid": "8E7E5C5542444C9993E571AAB88E8525",
+      "node_count": 30,
+      "pin_count": 134,
+      "connection_count": 35,
+      "exec_connection_count": 7,
+      "data_connection_count": 28
+    },
+    {
+      "name": "Debug_PrintInventory",
+      "kind": "function",
+      "guid": "0A3ECECE437F3F1E3A7273B53A4BB2D4",
+      "node_count": 31,
+      "pin_count": 172,
+      "connection_count": 35,
+      "exec_connection_count": 20,
+      "data_connection_count": 15
+    },
+    {
+      "name": "Debug_GiveTestWeapon",
+      "kind": "function",
+      "guid": "19860B9346DD540DB379AD9DC931A361",
+      "node_count": 4,
+      "pin_count": 22,
+      "connection_count": 3,
+      "exec_connection_count": 3,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnInventoryChanged",
+      "kind": "delegate",
+      "guid": "81EE87BD47508F59243F2293DE4086A1",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnEquipmentChanged",
+      "kind": "delegate",
+      "guid": "931427634F72A18F9467A1BACE829EE7",
+      "node_count": 1,
+      "pin_count": 3,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnFocusedItemChanged",
+      "kind": "delegate",
+      "guid": "5672075F4E0404B8C1219981BF7178C8",
+      "node_count": 1,
+      "pin_count": 3,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "HasItem",
+      "kind": "function",
+      "guid": "F265994F4939D981DCA6B49F127B8EC4",
+      "node_count": 27,
+      "pin_count": 102,
+      "connection_count": 34,
+      "exec_connection_count": 14,
+      "data_connection_count": 20
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "F350572749F4815A0587D79C593368AA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 23,
+    "generated_graph_count": 1,
+    "authored_node_count": 569,
+    "authored_pin_count": 2077,
+    "authored_connection_count": 616,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "OnEquipmentChanged",
+      "kind": "delegate",
+      "file": "graphs/OnEquipmentChanged.json"
+    },
+    {
+      "name": "OnFocusedItemChanged",
+      "kind": "delegate",
+      "file": "graphs/OnFocusedItemChanged.json"
+    },
+    {
+      "name": "OnInventoryChanged",
+      "kind": "delegate",
+      "file": "graphs/OnInventoryChanged.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "AddItem",
+      "kind": "function",
+      "file": "graphs/AddItem.json"
+    },
+    {
+      "name": "BuildEmptySlotArray",
+      "kind": "function",
+      "file": "graphs/BuildEmptySlotArray.json"
+    },
+    {
+      "name": "ClearInventorySlot",
+      "kind": "function",
+      "file": "graphs/ClearInventorySlot.json"
+    },
+    {
+      "name": "Debug_GiveStarterInventory",
+      "kind": "function",
+      "file": "graphs/Debug_GiveStarterInventory.json"
+    },
+    {
+      "name": "Debug_GiveTestWeapon",
+      "kind": "function",
+      "file": "graphs/Debug_GiveTestWeapon.json"
+    },
+    {
+      "name": "Debug_PrintInventory",
+      "kind": "function",
+      "file": "graphs/Debug_PrintInventory.json"
+    },
+    {
+      "name": "Debug_PrintSingleSlot",
+      "kind": "function",
+      "file": "graphs/Debug_PrintSingleSlot.json"
+    },
+    {
+      "name": "EquipItemFromSlot",
+      "kind": "function",
+      "file": "graphs/EquipItemFromSlot.json"
+    },
+    {
+      "name": "FocusSlot",
+      "kind": "function",
+      "file": "graphs/FocusSlot.json"
+    },
+    {
+      "name": "GetItemDefinition",
+      "kind": "function",
+      "file": "graphs/GetItemDefinition.json"
+    },
+    {
+      "name": "GetSlotByCategoryAndIndex",
+      "kind": "function",
+      "file": "graphs/GetSlotByCategoryAndIndex.json"
+    },
+    {
+      "name": "GetSlotCountByCategory",
+      "kind": "function",
+      "file": "graphs/GetSlotCountByCategory.json"
+    },
+    {
+      "name": "HasItem",
+      "kind": "function",
+      "file": "graphs/HasItem.json"
+    },
+    {
+      "name": "InitInventory",
+      "kind": "function",
+      "file": "graphs/InitInventory.json"
+    },
+    {
+      "name": "RemoveItemFromSlot",
+      "kind": "function",
+      "file": "graphs/RemoveItemFromSlot.json"
+    },
+    {
+      "name": "SetSlotByCategoryAndIndex",
+      "kind": "function",
+      "file": "graphs/SetSlotByCategoryAndIndex.json"
+    },
+    {
+      "name": "TryAddToEmptySlots",
+      "kind": "function",
+      "file": "graphs/TryAddToEmptySlots.json"
+    },
+    {
+      "name": "TryAddToExistingStacks",
+      "kind": "function",
+      "file": "graphs/TryAddToExistingStacks.json"
+    },
+    {
+      "name": "UseConsumableFromSlot",
+      "kind": "function",
+      "file": "graphs/UseConsumableFromSlot.json"
+    }
+  ]
+}

@@ -48,9 +48,9 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_LevelTitle" Expor
       End Object
    End Object
    Begin Object Class=/Script/Engine.EdGraph Name="Construct" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:Construct'"
-      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:Construct.K2Node_FunctionEntry_0'"
-      End Object
       Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:Construct.K2Node_CallFunction_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:Construct.K2Node_FunctionEntry_0'"
       End Object
    End Object
    Begin Object Name="WidgetTree" ExportPath="/Script/UMG.WidgetTree'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:WidgetTree'"
@@ -83,16 +83,20 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_LevelTitle" Expor
       Begin Object Name="TextBlock_70" ExportPath="/Script/UMG.TextBlock'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:WidgetTree.TextBlock_70'"
          Text=NSLOCTEXT("[5C5D39037CE100140FD7364462B81499]", "10E407824ED9DD548BACE9AE59B77CE8", "The Desert Rift")
          ColorAndOpacity=(SpecifiedColor=(R=0.869792,G=0.869792,B=0.869792,A=1.000000))
-         Font=(FontObject="/Script/Engine.Font'/Game/CodeX_Restruct/Game/UI/AssetsContent/Fonts/Starstruck_Font.Starstruck_Font'",TypefaceFontName="Default",Size=31.500000)
+         Font=(FontObject="/Script/Engine.Font'/Game/CodeX_Restruct/External/AssetContent/UI/AssetsContent/Fonts/Starstruck_Font.Starstruck_Font'",TypefaceFontName="Default",Size=31.500000)
          Slot="/Script/UMG.CanvasPanelSlot'WBP_LevelTitle:WidgetTree.TitleContainer01.CanvasPanelSlot_2'"
       End Object
       Begin Object Name="TextBlock" ExportPath="/Script/UMG.TextBlock'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:WidgetTree.TextBlock'"
          Text=NSLOCTEXT("[5C5D39037CE100140FD7364462B81499]", "F9622FD842CECC552583B98C653FFC81", "PROLOGUE : ")
          ColorAndOpacity=(SpecifiedColor=(R=0.869792,G=0.869792,B=0.869792,A=1.000000))
-         Font=(FontObject="/Script/Engine.Font'/Game/CodeX_Restruct/Game/UI/AssetsContent/Fonts/Oxanium-Regular_Font.Oxanium-Regular_Font'",TypefaceFontName="Default",Size=16.500000)
+         Font=(FontObject="/Script/Engine.Font'/Game/CodeX_Restruct/External/AssetContent/UI/AssetsContent/Fonts/Oxanium-Regular_Font.Oxanium-Regular_Font'",TypefaceFontName="Default",Size=16.500000)
          Slot="/Script/UMG.CanvasPanelSlot'WBP_LevelTitle:WidgetTree.TitleContainer01.CanvasPanelSlot_3'"
       End Object
       RootWidget="/Script/UMG.CanvasPanel'CanvasPanel_21'"
+      AllWidgets(0)="/Script/UMG.CanvasPanel'CanvasPanel_21'"
+      AllWidgets(1)="/Script/UMG.CanvasPanel'TitleContainer01'"
+      AllWidgets(2)="/Script/UMG.TextBlock'TextBlock_70'"
+      AllWidgets(3)="/Script/UMG.TextBlock'TextBlock'"
    End Object
    Begin Object Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:EventGraph'"
       Begin Object Name="K2Node_Event_0" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:EventGraph.K2Node_Event_0'"
@@ -219,6 +223,17 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_LevelTitle" Expor
       Signature=6358E306469EEEB5967CD291301BD68A
    End Object
    Begin Object Name="Construct" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:Construct'"
+      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:Construct.K2Node_CallFunction_0'"
+         FunctionReference=(MemberName="ExecuteUbergraph_WBP_LevelTitle",bSelfContext=True)
+         NodePosX=300
+         NodePosY=-2000
+         bIsIntermediateNode=True
+         NodeGuid=E11B4142BA9539A7A6A7C03232C6241F
+         CustomProperties Pin (PinId=B1FB057D4E6C3D43D9DA6BBB4D1EBE01,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 DB68C74D40FE41D4DAF6BFB391B85844,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=A5442A2B438B821EF8DC2F85761DDE55,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=603B13C741EA289380453CAFED67DDA1,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="self",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.SKEL_WBP_LevelTitle_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=450ACFCB4387977D09C1B680CCEFEF4F,PinName="EntryPoint",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0",AutogeneratedDefaultValue="0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
       Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:Construct.K2Node_FunctionEntry_0'"
          CustomGeneratedFunctionName="Construct"
          FunctionReference=(MemberParent="/Script/CoreUObject.Class'/Script/UMG.UserWidget'",MemberName="Construct")
@@ -226,23 +241,12 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_LevelTitle" Expor
          NodePosY=-2000
          bIsIntermediateNode=True
          NodeGuid=EA0AF2128D1B30D7A96D9811B35ADFB5
-         CustomProperties Pin (PinId=73F81A634F7737657DA07EB3F15E9673,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 923EACD94E3F72C56B300F831E434D31,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-      End Object
-      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.WBP_LevelTitle:Construct.K2Node_CallFunction_0'"
-         FunctionReference=(MemberName="ExecuteUbergraph_WBP_LevelTitle",bSelfContext=True)
-         NodePosX=300
-         NodePosY=-2000
-         bIsIntermediateNode=True
-         NodeGuid=E11B4142BA9539A7A6A7C03232C6241F
-         CustomProperties Pin (PinId=923EACD94E3F72C56B300F831E434D31,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 73F81A634F7737657DA07EB3F15E9673,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=A21B4FA745D1418117533DB06A9A0F9F,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=537646CD4B4905C2168447A01D435D91,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="self",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle.SKEL_WBP_LevelTitle_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=B305583F43C6E7B052E833BB080C5EB9,PinName="EntryPoint",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0",AutogeneratedDefaultValue="0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=DB68C74D40FE41D4DAF6BFB391B85844,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 B1FB057D4E6C3D43D9DA6BBB4D1EBE01,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
       End Object
       Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
       Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
       Nodes(1)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_0'"
-      GraphGuid=92D08715471E12AD2A9CE0BAE6C97020
+      GraphGuid=3615F7E6467C6FF3A34CABA347EED2E4
    End Object
    Animations(0)="/Script/UMG.WidgetAnimation'Anim_TitleIntro'"
    WidgetVariableNameToGuidMap=(("CanvasPanel_21", BB60385A4FB7132CA07A0CA78E563FA9),("TitleContainer01", BA3CDBE04C610A1B5030909174988B00),("TextBlock_70", D8FF39E849E4EED3DED34AB7FB90A1A9),("TextBlock", 259E8626407022C08FBCA286F5970623),("Anim_TitleIntro", A1FBF49E4DF64227149DBBA7CE172820))

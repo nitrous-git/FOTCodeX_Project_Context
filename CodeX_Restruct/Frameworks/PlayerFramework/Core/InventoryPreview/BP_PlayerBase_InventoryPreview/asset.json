@@ -17,18 +17,24 @@
   },
   "architecture": {
     "dependencies": [
-      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent",
+      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent",
+      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent",
       "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     ],
     "referencers": [
-      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
-      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_CharacterPreviewPanel",
-      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual"
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/CharacterPreview/WBP_CharacterPreviewPanel"
     ],
-    "non_architecture_dependency_count": 3,
+    "non_architecture_dependency_count": 9,
     "non_architecture_referencer_count": 1
   },
   "registry": {
@@ -51,6 +57,16 @@
         "root_component": false,
         "scene_component": false,
         "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:AC_CameraModeComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_EquipmentComponent",
+        "class": "AC_EquipmentComponent_C",
+        "parent": "BP_PlayerBase_InventoryPreview",
+        "inherited": true,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:AC_EquipmentComponent_GEN_VARIABLE"
       },
       {
         "name": "AC_InventoryComponent",
@@ -614,7 +630,7 @@
         "type": {
           "category": "object",
           "sub_category": null,
-          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -663,7 +679,7 @@
       "functions": [
         "UserConstructionScript",
         "InitInventoryPreview",
-        "SyncPreviewFromInventory",
+        "SyncPreviewFromEquipment",
         "RotatePreview",
         "CapturePreview"
       ],

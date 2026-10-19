@@ -22,7 +22,8 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
-      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster",
@@ -49,7 +50,6 @@
       "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent",
       "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent",
       "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase",
-      "/Game/CodeX_Restruct/Game/UI/Widget/WBP_PlayerGUI",
       "/Game/CodeX_Restruct/Shared/Animation/CameraAnimations/BP_CameraAnimationPlayer",
       "/Game/CodeX_Restruct/Shared/CameraShake/BP_CameraShake",
       "/Game/CodeX_Restruct/Shared/CameraShake/CameraShakeSmool",
@@ -82,10 +82,8 @@
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged",
-      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent",
-      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/Item/BP_ItemPickup_Master",
-      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_InventorySlot",
-      "/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/InventorySystemRefactor/UI/WBP_PlayerInventoryHUD_manual",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_Execution",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo",
@@ -114,8 +112,8 @@
       "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     ],
-    "non_architecture_dependency_count": 59,
-    "non_architecture_referencer_count": 7
+    "non_architecture_dependency_count": 58,
+    "non_architecture_referencer_count": 3
   },
   "registry": {
     "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
@@ -137,6 +135,16 @@
         "root_component": false,
         "scene_component": false,
         "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_CameraModeComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_EquipmentComponent",
+        "class": "AC_EquipmentComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_EquipmentComponent_GEN_VARIABLE"
       },
       {
         "name": "AC_InventoryComponent",
@@ -967,23 +975,6 @@
         }
       },
       {
-        "name": "bIsInventoryOpen",
-        "guid": "75A534B949C242D33FA5B5A13E706F5E",
-        "friendly_name": "Is Inventory Open",
-        "category": "Default",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "bool",
-          "sub_category": null,
-          "sub_category_object": null,
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
         "name": "bIsRunning",
         "guid": "F09435FA4BDA66DD01C19BB6337BB5E7",
         "friendly_name": "Is Running",
@@ -1596,23 +1587,6 @@
         }
       },
       {
-        "name": "PlayerInventoryHUDRef",
-        "guid": "470D95B84E45F99A187B34801F554365",
-        "friendly_name": "Player Inventory HUDRef",
-        "category": "Default",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "object",
-          "sub_category": null,
-          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InventorySystemFramework/UI/WBP_PlayerInventoryHUD_dep.WBP_PlayerInventoryHUD_dep_C'",
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
         "name": "PrimaryWeapon",
         "guid": "F05B86EB49A9AE0D3CD04D8271ED1C30",
         "friendly_name": "Primary Weapon",
@@ -1621,23 +1595,6 @@
         "default_value": null,
         "type": {
           "category": "object",
-          "sub_category": null,
-          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
-        "name": "PrimaryWeaponClassOverride",
-        "guid": "09A083854B67E51AB63D169825F585AB",
-        "friendly_name": "Primary Weapon Class Override",
-        "category": "Equipment_Weapon Resolution",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "class",
           "sub_category": null,
           "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
           "container": null,
@@ -1672,23 +1629,6 @@
         "default_value": null,
         "type": {
           "category": "object",
-          "sub_category": null,
-          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
-        "name": "SecondaryWeaponClassOverride",
-        "guid": "60F8A5AF4FEC59EAD259F0AB07228D16",
-        "friendly_name": "Secondary Weapon Class Override",
-        "category": "Equipment_Weapon Resolution",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "class",
           "sub_category": null,
           "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
           "container": null,
@@ -1837,7 +1777,9 @@
         "CE_SetPrinceTunic",
         "CE_SetKnightTunic",
         "CE_SetAssassinTunic",
-        "CE_SetTemplarTunic"
+        "CE_SetTemplarTunic",
+        "BndEvt__BP_PlayerBase_AC_EquipmentComponent_K2Node_ComponentBoundEvent_2_OnEquipmentSlotChanged__DelegateSignature",
+        "CE_DebugEquipStarterWeapons"
       ]
     },
     "extraction_status": {
