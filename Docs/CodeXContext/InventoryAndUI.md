@@ -1,25 +1,17 @@
-# CodeX — Item, Inventory, Equipment and Game Menu Architecture
+# CodeX — Inventory, Equipment and Game Menu architecture
 
-**Decision status:** Accepted target architecture, October 18–19, 2026.  
-**Export inspected:** `main` at `89cb1449543df9d25465d194e6b1c7e575158cc6` (generated 2026-10-19 04:37:07 UTC).  
-**Important provenance:** The user performed an additional **local cleanup after this export**. The live Unreal Editor is authoritative; a still-exported legacy node does **not** prove that it remains in the current project.
+**Status:** Approved CodeX architecture; **B0 foundation completed 2026-10-19**; B1.1 SLF reference audit next. The running UE 5.8.3 editor is authoritative. The GitHub Blueprint exporter may omit non-Blueprint UI resources, new local changes or empty folders.
 
-## Purpose and design principles
+## Goals
 
-CodeX is adopting **SLF / Soulslike / Elden Ring-style menu semantics** while **retaining CodeX-native gameplay, item records and combat**. SLF is a *soft architectural and UX reference*, not a dependency or an instruction to transplant `AC_InventoryManager`, `AC_EquipmentManager`, its Blueprint widget logic, or its combat systems.
+Adopt the **Soulslike Framework (SLF)** style of menu information architecture and selectively reuse its visual assets **without importing SLF gameplay logic or making CodeX depend on original SLF widget classes**. Keep CodeX-native player combat, inventory/equipment components, Attunement and item definitions. The old direct-equip Inventory HUD has been retired; do not re-create it.
 
-Four responsibilities must remain separate:
+- **Inventory:** "What items do I own?" `AC_InventoryComponent` holds arrays, quantities and definitions. `WBP_Inventory` is only a browser/actions view.
+- **Equipment:** "What is assigned to each equipped position?" `AC_EquipmentComponent` alone owns the slot assignment Map. `WBP_Equipment` shows slots and opens its **own** compatible-owned-item selector.
+- **Game Menu:** `WBP_GameMenu` navigates four sibling pages: Inventory, Equipment, Status and System. It does not own inventory arrays or equipment assignments.
+- **Permanent HUD:** `WBP_PlayerGUI` remains separate. The working character preview/rotation/capture system must be preserved.
 
-1. **Inventory** answers *What does the character own?* Storage, stack quantities, item definitions, item acquisition/removal. `WBP_Inventory` **displays** owned items; the widget never stores the authoritative inventory.
-2. **Equipment** answers *What is assigned to each equipment position?* `AC_EquipmentComponent` owns loadout state; `WBP_Equipment` is the dedicated interactive loadout page. Selecting an equipment slot opens the **compatible-owned-item selection view**, not the general Inventory page.
-3. **Game Menu** answers *Which page is open?* `WBP_GameMenu` hosts sibling Inventory, Equipment, Status and System pages. No crafting page in this foundation.
-4. **Status/System** are independent pages; placeholders are acceptable until their dedicated functionality is implemented.
-
-The permanent gameplay HUD `WBP_PlayerGUI` is **not** the Game Menu.
-
-## Canonical ownership and package paths
-
-All Unreal paths below start with `/Game/CodeX_Restruct`. Keep **one** consolidated Item System; do **not** create separate Inventory Framework, Equipment Framework and Game Menu Framework under `Frameworks/`.
+## Canonical UE folder structure
 
 ```text
 /Game/CodeX_Restruct/
@@ -30,180 +22,134 @@ All Unreal paths below start with `/Game/CodeX_Restruct`. Keep **one** consolida
         FInventorySlotData
       Equipment/
         AC_EquipmentComponent
-        Data/                         # future equipment rules, if needed
       Items/
         EItemCategory
         FInventoryItemDefinition
         DT_InventoryItemData
-        Definitions/
-          Weapons/
-            DA_WeaponDefinition
-            DA_Weapon_KnightSword
-            DA_Weapon_IronSword
-            DA_Weapon_KnightShield
-          Armor/                      # future
-          Talismans/                  # future
-          Tools/                      # future
+        Definitions/Weapons/
+          DA_WeaponDefinition
+          DA_Weapon_KnightSword
+          DA_Weapon_IronSword
+          DA_Weapon_KnightShield
       Pickups/
         BP_ItemPickup_Master
-        BP_Pickup_*                   # existing subclasses
+        BP_Pickup_*
     PlayerFramework/
-      Core/
-        BP_PlayerBase
-        InventoryPreview/BP_PlayerBase_InventoryPreview
-        DataAssets/DA_CombatStyle/    # existing player combat assets
-        DataAssets/DA_Attunement/     # existing attunement assets
-    ... existing unrelated frameworks ...
+      Core/BP_PlayerBase
+      Core/InventoryPreview/BP_PlayerBase_InventoryPreview
+      # combat, attunement and other frameworks retained
   Game/
-    Items/Weapons/                    # physical weapon actors; retain as-is
+    Items/Weapons/                     # existing physical weapon actors
     UI/
+      Widget/WBP_PlayerGUI              # permanent gameplay HUD
       GameMenu/
-        WBP_GameMenu                  # PLANNED, MCP foundation
-        WBP_GameMenuButton            # PLANNED
-        EGameMenuPage                 # PLANNED, or equivalent local enum
+        WBP_GameMenu                    # B0 COMPLETE: empty shell
+        WBP_GameMenuButton              # B0 COMPLETE: empty shell
+        EGameMenuPage                   # B0 COMPLETE: enum
         Inventory/
-          WBP_Inventory               # PLANNED
-          WBP_InventorySlot           # PLANNED
-          WBP_InventoryAction         # PLANNED
-          WBP_InventoryCategoryTab    # PLANNED, only if useful
+          WBP_Inventory
+          WBP_InventorySlot
+          WBP_InventoryAction
+          WBP_InventoryCategoryTab
         Equipment/
-          WBP_Equipment               # PLANNED
-          WBP_EquipmentSlot           # PLANNED
-          WBP_EquipmentSelectionPanel # PLANNED
-          WBP_EquipmentChoiceEntry    # PLANNED
-          Data/
-            FEquipmentSlotUIData      # PLANNED, UI metadata, not gameplay state
-            DT_EquipmentSlots_UI      # PLANNED
-        Status/WBP_Status             # PLANNED placeholder
-        System/WBP_System             # PLANNED placeholder
-        Shared/
-          WBP_ItemDescriptionPanel    # PLANNED
-          CharacterPreview/
-            WBP_CharacterPreviewPanel # exported retained asset
-            ... retained capture UI resources ...
-      Widget/WBP_PlayerGUI            # existing gameplay HUD; KEEP
+          WBP_Equipment
+          WBP_EquipmentSlot
+          WBP_EquipmentSelectionPanel
+          WBP_EquipmentChoiceEntry
+          Data/FEquipmentSlotUIData
+          Data/DT_EquipmentSlots_UI
+        Status/WBP_Status
+        System/WBP_System
+        Shared/WBP_ItemDescriptionPanel
+        Shared/CharacterPreview/WBP_CharacterPreviewPanel  # EXISTING, preserve
+  External/
+    AssetContent/
+      UI/SLF/                           # user-prepared CodeX copies; live-only resources
   Core/Controllers/BP_CPC_PlayerController
+
+# Original source assets — reference only; must not become CodeX runtime dependencies
+/Game/SoulslikeFramework/Widgets/HUD/W_GameMenu
+/Game/SoulslikeFramework/Widgets/HUD/W_GameMenu_Button
+/Game/SoulslikeFramework/Widgets/_Materials/
+/Game/SoulslikeFramework/Widgets/_Textures/
+/Game/SoulslikeFramework/Fonts/
 ```
 
-**Reality check:** GitHub's Blueprint exporter is not an inventory of all raw materials, textures or empty directories. Confirm live render-target/material locations before renaming or moving preview resources. Planned widget names are **contracts**, not claims that assets exist.
+The `External/AssetContent/UI/SLF` subtree contains **user-copied textures, materials and fonts**. The user reports checking material/material-function dependency resolution back into CodeX. **Exact individual copied asset object paths have not been exported; B1.1 must inspect them live.** Do not assume a particular folder nesting or duplicate resources by guessed names.
 
-## Gameplay state: `AC_InventoryComponent`
+## Authoritative gameplay data
 
-Authoritative owner of inventory collections and item metadata. The current exported component provides:
+### `AC_InventoryComponent`
 
-- Arrays / capacities for `WeaponSlots`, `EquipmentSlots`, `AttunementSlots`, `ConsumableSlots`, `FragmentSlots` (all inventory collections, **not** actual loadout positions).
-- `GetItemDefinition`, `GetSlotCountByCategory`, `GetSlotByCategoryAndIndex`, `SetSlotByCategoryAndIndex`, `AddItem`, `RemoveItemFromSlot`, `HasItem` and supporting collection functions.
-- Inventory change notification (`OnInventoryChanged`).
+Owns inventory collection slots/quantities and item queries: e.g., `WeaponSlots`, `EquipmentSlots` (legacy-named *owned clothing/armor collection*, not equipped positions), `AttunementSlots`, `ConsumableSlots`, `FragmentSlots`, `AddItem`, `RemoveItemFromSlot`, `GetItemDefinition`, `HasItem`, inventory-change events. `FInventorySlotData`: `bIsEmpty`, `ItemID`, `ItemCategory`, `Quantity`, `SlotIndex`. It must not store the loadout map or UMG focus state.
 
-`FInventorySlotData` represents *stored inventory entries*: `bIsEmpty`, `ItemID`, `ItemCategory`, `Quantity`, `SlotIndex`. Do not embed equipped positions, weapon actors or UMG selection flags in it.
+Current exported `EItemCategory` historically includes `Consumable`, `Equipment`, `Others`, `CombatStyle`, `Attunement`, `Fragment`, `Weapon`; future `Armor`, `Talisman`, `Tool` taxonomy migration is **deferred**. Do not modify `EItemCategory` during Game Menu visual work. `FInventoryItemDefinition` contains item metadata and a `WeaponData` definition reference; actual Data Table rows remain CodeX-native.
 
-`FInventoryItemDefinition` currently includes `ItemID`, `ItemCategory`, `ItemName`, `ItemDescription`, `ItemIcon`, `MaxQuantity`, `bCanEquip`, `bCanStack`, `bCanUse`, `WeaponData` plus existing legacy-specialized data and `WorldPickupClass`. It is a data record; the Data Table and weapon definitions remain CodeX's item source.
+### `AC_EquipmentComponent`
 
-**The category naming is not fully migrated:** the exported `EItemCategory` contains `Consumable`, `Equipment`, `Others`, `CombatStyle`, `Attunement`, `Fragment`, `Weapon`. `EquipmentSlots` here means **owned legacy armor/clothing inventory items**, NOT map slots such as RightHand1. Future item-taxonomy changes (`Armor`, `Talisman`, `Tool`, etc.) should be a separate deliberate data migration. Avoid casually renaming enumerators or rewriting rows before that migration.
-
-The user reports having removed remaining obsolete `FocusSlot`, old `OnEquipmentChanged`, old `EquipItemFromSlot` and player-owned inventory UI state *locally after the latest export*; **verify live**, do not re-create this obsolete design from the snapshot.
-
-## Gameplay state: `AC_EquipmentComponent`
-
-**Sole authoritative owner of equipped assignments**, attached to `BP_PlayerBase` alongside `AC_InventoryComponent`.
-
-Current exported contract:
+**Single loadout authority**, attached to `BP_PlayerBase`:
 
 ```text
-InventoryRef                  : AC_InventoryComponent reference
-EquippedItemsBySlot           : Map<GameplayTag, Name (ItemID)>
-bEquipmentInitialized         : Boolean
-
-GetEquippedItemAtSlot(Tag)    -> ItemID, Found
-IsItemEquipped(ItemID)        -> Boolean
-TryEquipItemToSlot(ItemID, Tag) -> Success
-UnequipItemFromSlot(Tag)
-ResolveEquippedWeaponClass(Tag) -> BP_WeaponBase class, Found
-OnEquipmentSlotChanged(Tag, PreviousItemID, NewItemID)
+InventoryRef : AC_InventoryComponent object reference
+EquippedItemsBySlot : Map<GameplayTag, Name(ItemID)>
+GetEquippedItemAtSlot(SlotTag) -> ItemID, Found
+TryEquipItemToSlot(ItemID, SlotTag) -> Success
+UnequipItemFromSlot(SlotTag)
+IsItemEquipped(ItemID) -> Boolean
+ResolveEquippedWeaponClass(SlotTag) -> BP_WeaponBase Class, Found
+OnEquipmentSlotChanged(SlotTag, PreviousItemID, NewItemID)
 ```
 
-Slot tags in the tested weapon slice:
+Currently tested hand slots: `Equipment.Slot.RightHand1`, `Equipment.Slot.LeftHand1`; compatible weapon definitions have `AllowedEquipSlots` and a physical `WeaponActorClass`. Equipping validates ownership and exact-tag compatibility, updates Map, broadcasts the change; the player separately refreshes spawned/attached weapon Actors. **Do not make UI spawn weapons or implement SLF's equipment backend.** `DA_CombatStyle` continues to own combat animation/moveset choices; equipping and drawing/sheathing are distinct.
 
-- `Equipment.Slot.RightHand1`
-- `Equipment.Slot.LeftHand1`
+Future required integrity contract: selling, dropping or removing the final owned copy of an equipped item must resolve the assignment consistently. Multi-instance upgraded weapons will need persistent instance identities. Neither is part of B1.1.
 
-Illustrative assignment: `RightHand1 -> Weapon_IronSword`, `LeftHand1 -> Weapon_KnightShield`. These are **positions**; they are not inventory arrays. Inventory retains owned items when assigned to a loadout slot.
-
-Equipping must validate a real owned item (via `InventoryRef.HasItem`), its definition and slot compatibility before updating `EquippedItemsBySlot`. Current weapon definitions are instances of `DA_WeaponDefinition`, which exposes `WeaponActorClass`, `WeaponFamilyTag`, and `AllowedEquipSlots`. Compatibility uses an **exact Gameplay Tag match** for each requested slot. The equipment component then broadcasts `OnEquipmentSlotChanged` with old/new item IDs; no UMG manipulation inside the gameplay component.
-
-**Important integrity invariant:** Removing, selling, dropping, or consuming the last owned instance of an equipped item must either clear its assignment or reject the operation. This cross-component ownership policy is **not yet a documented fully verified feature**. Design it explicitly when implementing item removal and vendors. Another future concern is instance IDs when the game supports multiple separately upgraded copies of one ItemID.
-
-## Player combat integration (preserve)
-
-`BP_PlayerBase.SetCombatStyleWeapon` resolves weapon classes through `AC_EquipmentComponent.ResolveEquippedWeaponClass` for RightHand1 and LeftHand1; existing spawn, attach, transform, `PrimaryWeapon` / `SecondaryWeapon`, collision and ABP/CombatStyle logic remain CodeX-native. The player reacts to `OnEquipmentSlotChanged` (weapon-hand assignments) by refreshing the physical actors.
-
-**Do not conflate equipped state with drawn/sheath state.** `DA_CombatStyle` remains responsible for attack/defense animation behavior and action contracts, not ownership of physical weapon identity. Preserve `AC_PlayerAttunementComponent`, associated VFX/weapon reapplication, locomotion and `ABP_PlayerMaster`. The general weapon-family-to-CombatStyle decision for all combinations is future work; the working sword-and-shield vertical slice does not establish every combination.
-
-## UI ownership and navigation
+## Game Menu UX contract — not built yet
 
 ```text
-WBP_GameMenu
-  Navigation buttons (Inventory | Equipment | Status | System)
-  WidgetSwitcher_Page
-    [0] WBP_Inventory
-    [1] WBP_Equipment
-    [2] WBP_Status
-    [3] WBP_System
-
-WBP_Inventory
-  Category filter; owned-item cells; description; inventory actions
-  Reads AC_InventoryComponent only for storage/query contracts
-  SelectedInventoryItemID lives here (presentation state)
+WBP_GameMenu                         # CodeX page navigation
+  Inventory                           # WBP_Inventory: owned-item browser
+  Equipment                           # WBP_Equipment: slot editor
+  Status                              # WBP_Status
+  System                              # WBP_System
 
 WBP_Equipment
-  WidgetSwitcher_Equipment
-    [0] EquipmentSlotsView
-        weapons / armor / talismans / quick-tool groups
-        reusable WBP_EquipmentSlot instances
-    [1] WBP_EquipmentSelectionPanel
-        compatible owned items (WBP_EquipmentChoiceEntry)
-  SelectedEquipmentSlot : GameplayTag (UI-only transient state)
-  Reads AC_EquipmentComponent and inventory queries
-  Equips only after explicit selection of a compatible owned ItemID
+  EquipmentSlotsView                  # generic WBP_EquipmentSlot per position
+    click Equipment.Slot.RightHand1
+       -> SelectedEquipmentSlot stored *in WBP_Equipment*
+       -> compatible-item subview (WBP_EquipmentSelectionPanel)
+       -> player picks eligible owned ItemID / Unequip / Cancel
+       -> AC_EquipmentComponent interface call
+       -> OnEquipmentSlotChanged / player and UI refresh
 ```
 
-The root Game Menu owns navigation/page selection, **not equipped items or inventory arrays**. The Equipment page owns `SelectedEquipmentSlot`, not the root Game Menu, Inventory page, or a gameplay component. `WBP_InventorySlot` should not automatically equip a weapon on click. `WBP_EquipmentSlot` should only report which tag was clicked; the parent manages selection and requests the equipment API.
+Inventory browsing must **not** act as the Equipment selection subview. `WBP_InventorySlot` does not equip on click. `WBP_GameMenu` and the button receive transient navigation state only. The full UMG layout, navigation wiring, controller input and runtime item filtering remain *planned later*, not part of B0/B1.1.
 
-Preferred interaction:
+`EGameMenuPage` holds `Inventory`, `Equipment`, `Status`, `System`. `WBP_GameMenu.ActivePage` uses that enum. `WBP_GameMenuButton.Page` and `OnPageRequested(Page)` were created and typed during B0. The complete asset and dispatcher contract lives in `GameMenuFoundationSpec.md`.
 
-```text
-Click WBP_EquipmentSlot(Tag)
-  -> WBP_Equipment stores SelectedEquipmentSlot
-  -> Switch equipment subview from slot grid to selection panel
-  -> Fetch inventory-owned, exact-tag-compatible items
-  -> Select ItemID / Unequip / Cancel
-  -> AC_EquipmentComponent.TryEquipItemToSlot(ItemID, Tag)
-  -> OnEquipmentSlotChanged
-  -> BP_PlayerBase refreshes relevant equipment
-  -> WBP_Equipment refreshes; return to slot grid
-```
+### Initial equipment UI metadata (B0 complete)
 
-Inventory browse is a **different page**, not the `WBP_EquipmentSelectionPanel`. The selection subview replaces the equipment-slot view **inside** the Equipment page, matching SLF's `W_Equipment` conceptual structure. UI should show empty placeholders for unassigned positions and fallback art for ItemIcon=None.
+`FEquipmentSlotUIData`: `SlotTag : GameplayTag`, `SlotLabel : Text`, `SlotGroup : GameplayTag`, `EmptyIcon : Texture2D object`, `GridRow/Column : Integer`, `bEnabled : Boolean`. `DT_EquipmentSlots_UI` has exactly `RightHand1` and `LeftHand1`. Both `EmptyIcon = None`, and at B0 completion `SlotGroup` remains unset because `Equipment.Group.Weapons` was not yet registered. This optional UI group tag does **not** replace equipment position tags. No speculative future slot records in B1.1.
 
-### Scalable slot configuration
+## SLF visual resource adaptation — B1.1 current scope
 
-Plan reusable slot UI metadata (`FEquipmentSlotUIData` / `DT_EquipmentSlots_UI`) with `SlotTag` (unique key), label, group, default empty icon, row/column or ordering and enabled state. The **equipment Gameplay Tag must be unique per position**; duplicated tags cannot coexist as independent entries in a Map keyed by tag. `Equipment.Group.*` tags, if used, describe UI groups, not equipped Map keys.
+The user has migrated selected SLF UI **textures, materials and fonts** to CodeX's **External** subtree, and locally verified that relevant material parents/functions resolve there. Preserve the original reference widgets under `/Game/SoulslikeFramework` for comparison only.
 
-Initial **functional scope**: `RightHand1`, `LeftHand1` with Knight Sword, Iron Sword, and Knight Shield. Reserve the UI structure for additional hands, four armor pieces (Head, Chest, Arms/Gloves, Legs/Greaves), talismans, quick tools, and potential ammunition, but do not implement unrequested categories/rows. Filter owned candidates through an Inventory/Equipment-side helper, not by hardcoding weapon-only logic in UMG. The inventory's present `WeaponSlots` array is the immediate source for weapon candidates.
+B1.1 is an **inspection-only** task. Compare the live reference `W_GameMenu`, `W_GameMenu_Button`, their widget trees/Brush styles, colors, alignments, selected/hovered states, inputs and animation behavior to the prepared CodeX asset copies. The SLF original includes a Crafting button and its own navigation helpers; CodeX deliberately has **four** pages and its own enum/dispatcher contracts. Do not clone SLF `W_Navigable`, `W_Navigable_InputReader`, SLF controllers/interfaces/actions, or insert SLF widget subclasses into CodeX.
 
-### Character preview and permanent HUD
+B1.1 should identify the exact local CodeX asset counterparts of the original faded-panel materials, navigation icon textures, fonts and dependencies. **No additional asset copying in B1.1. No CodeX widget layout creation or EventGraph edits.** Distinguish reported user checks from MCP-verified paths. For source visuals confirmed in the SLF Blueprint export, see `GameMenuReferenceAudit.md`.
 
-Keep the existing `BP_PlayerBase_InventoryPreview`, `WBP_CharacterPreviewPanel`, capture material/render target and rotation controls. Preview should ultimately resolve the **same equipment assignments** as the real player; avoid a duplicate authoritative appearance/loadout state. Latest locally polished capture assets may exceed the export's coverage: inspect live before altering. Do not rebuild/revert working transparent compositing, preview lighting/gradient, capture framing or rotation behaviors in the foundation task.
+### Preview and game HUD protection
 
-`WBP_PlayerGUI` remains the in-game HUD and must not be reparented under `WBP_GameMenu`.
+Preserve `BP_PlayerBase_InventoryPreview`, the retained `WBP_CharacterPreviewPanel`, working transparent capture/compositing resources, lighting/gradient, camera framing and rotation. They are not part of `WBP_GameMenuButton`/`WBP_GameMenu` reference audit or immediate visual reconstruction. Likewise leave `WBP_PlayerGUI` alone.
 
-## Status and implementation boundary
+## Work status and next steps
 
-- **Export verified (2026-10-19):** consolidated item folder structure; both Actor Components; `EquippedItemsBySlot` exists only in Equipment; player weapon resolver targets Equipment; old HUD widget classes absent; retained preview widget exported.
-- **User reported local changes after export:** final obsolete-focus/event/direct-equip cleanup. Treat the live project as up to date and confirm only if a targeted operation depends on the detail.
-- **Not yet built in export:** root Game Menu, separate Inventory/Equipment pages and reusable equipment-selection widgets. They are the **next MCP foundation assignment**, not completed code.
-- **Next stage:** create the clean UMG/widget hierarchy and event/variable contracts in `Game/UI/GameMenu` without reviving old widgets. See `GameMenuFoundationSpec.md`.
+- **A1–A4:** user-completed Item System restructuring, component separation, legacy UI removal. Newer local changes may not be represented in an older exported Blueprint graph; live Editor wins.
+- **B0:** MCP reported creation/save of 16 assets; 13 empty Widget Blueprints compiled, typed variables/dispatchers and two-row slot table verified. Exported definitions confirm the foundation exists.
+- **B1 preparation:** user moved/copied SLF visuals to `External/AssetContent/UI/SLF` and checked material graph dependencies. Non-Blueprint files not guaranteed visible in the exporter; trust user report until read-only live confirmation.
+- **B1.1 (now):** read-only reference audit and exact reconstruction specification, per `GameMenuReferenceAudit.md`.
+- **B1.2 (conditional):** fix only demonstrably missing/misdirected copied visual assets after approval.
+- **B2 (future separate task):** implement `WBP_GameMenuButton` then `WBP_GameMenu` with CodeX-native navigation and CodeX-only resource references; only after visual review connect controller input, build other pages and later equipment/inventory logic.
 
-## MCP guidance
-
-For Game Menu tasks read this file plus `GameMenuFoundationSpec.md`, then inspect the specific live assets. The user explicitly authorized creating the base widgets and hierarchy. Proceed with routine live asset creation/Designer operations, compile and save; avoid editing exported JSON or renaming `.uasset` files on disk. Do not transplant SLF Blueprints, rebuild player combat, auto-create every speculative future feature, or claim runtime tests based solely on exported graph presence. Consult `AGENTS.md` and `DevelopmentRules.md` for escalation rules.
+Read `AGENTS.md`, the frozen `GameMenuFoundationSpec.md` and `GameMenuReferenceAudit.md` before scoped Game Menu work. Do not treat the foundation as an instruction to generate assets again.

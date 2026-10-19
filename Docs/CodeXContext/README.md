@@ -1,30 +1,22 @@
-# CodeX context — document router
+# CodeX context — selective document routing
 
-This repository holds **design decisions and searchable exported Blueprint snapshots** for a separate live Unreal Engine project. Start with `AGENTS.md`, then open **only relevant** documents. The running Editor/MCP is authoritative for current `.uasset` state; exports may predate local changes.
+The live Unreal Editor/MCP is authoritative. GitHub Blueprint exports are dated snapshots. Read **AGENTS.md** first (once per session), then only the relevant guide and assets. Do not perform a general document audit for a routine change.
 
-| Topic or task | Start here |
+| Task | First guide |
 |---|---|
-| Item data, inventory collections, equipment slots and UI semantics | `InventoryAndUI.md` |
-| Next task: create Game Menu/Inventory/Equipment UMG foundations | `GameMenuFoundationSpec.md` (also consult `InventoryAndUI.md`) |
-| Player CombatStyle, weapon actor refresh and Attunement | `PlayerCombat.md` |
-| Regular enemies, patrol/detection and group attackers | `EnemyFramework.md` |
-| Boss awakening, attacks, state stack/Director, UI | `BossFramework.md` |
-| Cross-framework dependency and path orientation | `Architecture.md` |
-| Current export metrics vs locally completed work | `CurrentState.md` |
-| Accepted decisions and deferred work | `DecisionLog.md` |
-| Blueprint JSON lookup and known parser warnings | `ExportGuide.md` |
-| Changes/compile/save/permissions | `DevelopmentRules.md` |
-| Live MCP connector/editor procedure | `MCPWorkflow.md` |
+| **Current Game Menu, Inventory, Equipment, Status/System UI construction** | **`UIDevelopment.md`** — the only routine UI guide |
+| Deep Inventory / Equipment ownership, schema or gameplay change | `InventoryAndUI.md` |
+| Player CombatStyle, physical weapon, Attunement, preview systems | `PlayerCombat.md` |
+| Enemy AI behaviors | `EnemyFramework.md` |
+| Boss design or behavior | `BossFramework.md` |
+| Cross-framework dependencies or package boundaries | `Architecture.md` |
+| Prior status, design decisions | `CurrentState.md`, `DecisionLog.md` |
+| Tool permissions, exporting and connection issues | `DevelopmentRules.md`, `MCPWorkflow.md`, `ExportGuide.md` |
 
-## Navigation examples
+**Historical references (do not load by default):** `GameMenuFoundationSpec.md` (B0 completed; do not regenerate assets), earlier B1.1 SLF visual audit (completed), legacy Inventory HUD history.
 
-- Inventory: `CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent/{asset.json,graphs/...}`.
-- Equipment: `CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent/{asset.json,graphs/...}`.
-- Player: `CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase/{asset.json,graphs/...}`.
-- Proposed Game Menu widget location: `/Game/CodeX_Restruct/Game/UI/GameMenu/`; most widgets are **planned** and not in the latest exported asset tree.
+UI target assets: `/Game/CodeX_Restruct/Game/UI/GameMenu/`.
+Migrated visual library: `/Game/CodeX_Restruct/External/AssetContent/UI/SLF/`.
+Source SLF reference widgets: `/Game/SoulslikeFramework/Widgets/` (never make these runtime dependencies).
 
-## Explicit status boundary
-
-The October 19, 2026 published export (`export_manifest.json`) captured the component and folder reset, but the user has performed further final cleanup **locally after the export**. Do not treat stale `EquipItemFromSlot` or focus-state graphs from the published JSON as instructions to reimplement them. Verify in live Unreal when needed.
-
-Do not modify exported JSON, metadata or raw T3D to simulate project edits. Edit through supported Unreal Editor/MCP actions, compile/save, then rerun the exporter when the user wants a refreshed snapshot.
+For each new UI feature: inspect the specific live widget, use screenshot/design intent, edit, compile/save, report concisely. Do not rewrite these docs on every iteration.
