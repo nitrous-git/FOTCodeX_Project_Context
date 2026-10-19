@@ -19,13 +19,12 @@
     "dependencies": [
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryAction",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryCategoryTab",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventorySlot",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDescriptionPanel"
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventorySlot"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
     ],
-    "non_architecture_dependency_count": 20,
+    "non_architecture_dependency_count": 23,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -40,6 +39,193 @@
     "interfaces": [],
     "components": [],
     "variables": [
+      {
+        "name": "bPreviewInventoryDetails",
+        "guid": "063F38514A3DC38843618A8340B85F08",
+        "friendly_name": "Preview Inventory Details",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPreviewInventoryInfo",
+        "guid": "446B63444AF362551C63B7B9839D83FE",
+        "friendly_name": "Preview Inventory Info",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InfoDescription",
+        "guid": "2D577DCE4CBF602972C362A1A3E80EC3",
+        "friendly_name": "Info Description",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InfoHeldAmount",
+        "guid": "0E91D7CE402A3C8809F11197351AC70D",
+        "friendly_name": "Info Held Amount",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InfoIcon",
+        "guid": "75910B1E415FAA3D1D6B90BB822C62EF",
+        "friendly_name": "Info Icon",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InfoItemCategory",
+        "guid": "185F25B64B4C0C1700F892A6E6B39B85",
+        "friendly_name": "Info Item Category",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InfoItemName",
+        "guid": "0096CA76403D845A7879CDBDE3628668",
+        "friendly_name": "Info Item Name",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InfoLongDescription",
+        "guid": "7822465047545A863679C1A26F37BABA",
+        "friendly_name": "Info Long Description",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InfoMaxStack",
+        "guid": "6F4D249A4C75F8761BE7FCB4B0E353EE",
+        "friendly_name": "Info Max Stack",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InfoOnUseDescription",
+        "guid": "FC1F170E43137A38D398B3AC240DCD4E",
+        "friendly_name": "Info on Use Description",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InfoStoredAmount",
+        "guid": "08F754D24E7379C50202BCA521678D74",
+        "friendly_name": "Info Stored Amount",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "SelectedCategoryKey",
         "guid": "28C5E01C45312FC8CF9DF1B05A81D07F",
@@ -99,7 +285,10 @@
       "functions": [
         "RefreshCategories",
         "RefreshItemSelection",
-        "SelectInventoryItem"
+        "SelectInventoryItem",
+        "SetInventoryInfoView",
+        "RefreshInventoryInfoPresentation",
+        "UpdateInventoryInfoPreview"
       ],
       "macros": [],
       "delegates": [],
@@ -154,6 +343,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 92
+    "widget_count": 146
   }
 }

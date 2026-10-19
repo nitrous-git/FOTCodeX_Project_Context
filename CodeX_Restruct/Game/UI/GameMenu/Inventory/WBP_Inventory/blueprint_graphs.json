@@ -8,6 +8,193 @@
   },
   "variables": [
     {
+      "name": "bPreviewInventoryDetails",
+      "guid": "063F38514A3DC38843618A8340B85F08",
+      "friendly_name": "Preview Inventory Details",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPreviewInventoryInfo",
+      "guid": "446B63444AF362551C63B7B9839D83FE",
+      "friendly_name": "Preview Inventory Info",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InfoDescription",
+      "guid": "2D577DCE4CBF602972C362A1A3E80EC3",
+      "friendly_name": "Info Description",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InfoHeldAmount",
+      "guid": "0E91D7CE402A3C8809F11197351AC70D",
+      "friendly_name": "Info Held Amount",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InfoIcon",
+      "guid": "75910B1E415FAA3D1D6B90BB822C62EF",
+      "friendly_name": "Info Icon",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InfoItemCategory",
+      "guid": "185F25B64B4C0C1700F892A6E6B39B85",
+      "friendly_name": "Info Item Category",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InfoItemName",
+      "guid": "0096CA76403D845A7879CDBDE3628668",
+      "friendly_name": "Info Item Name",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InfoLongDescription",
+      "guid": "7822465047545A863679C1A26F37BABA",
+      "friendly_name": "Info Long Description",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InfoMaxStack",
+      "guid": "6F4D249A4C75F8761BE7FCB4B0E353EE",
+      "friendly_name": "Info Max Stack",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InfoOnUseDescription",
+      "guid": "FC1F170E43137A38D398B3AC240DCD4E",
+      "friendly_name": "Info on Use Description",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InfoStoredAmount",
+      "guid": "08F754D24E7379C50202BCA521678D74",
+      "friendly_name": "Info Stored Amount",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "SelectedCategoryKey",
       "guid": "28C5E01C45312FC8CF9DF1B05A81D07F",
       "friendly_name": "Selected Category Key",
@@ -64,11 +251,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "84A94BEB46A0F587E433FD981F3D5264",
-      "node_count": 109,
-      "pin_count": 300,
-      "connection_count": 107,
-      "exec_connection_count": 39,
-      "data_connection_count": 68
+      "node_count": 110,
+      "pin_count": 304,
+      "connection_count": 109,
+      "exec_connection_count": 40,
+      "data_connection_count": 69
     },
     {
       "name": "RefreshCategories",
@@ -84,8 +271,8 @@
       "name": "RefreshItemSelection",
       "kind": "function",
       "guid": "475C39EE4A2F258AB6C6DCA11980D7D1",
-      "node_count": 17,
-      "pin_count": 56,
+      "node_count": 18,
+      "pin_count": 58,
       "connection_count": 21,
       "exec_connection_count": 6,
       "data_connection_count": 15
@@ -99,12 +286,42 @@
       "connection_count": 8,
       "exec_connection_count": 3,
       "data_connection_count": 5
+    },
+    {
+      "name": "SetInventoryInfoView",
+      "kind": "function",
+      "guid": "67585B22427445A14D4C8F9135DB89AB",
+      "node_count": 8,
+      "pin_count": 23,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    },
+    {
+      "name": "RefreshInventoryInfoPresentation",
+      "kind": "function",
+      "guid": "D96E60FE413A85F882327886C74E2B12",
+      "node_count": 51,
+      "pin_count": 153,
+      "connection_count": 60,
+      "exec_connection_count": 11,
+      "data_connection_count": 49
+    },
+    {
+      "name": "UpdateInventoryInfoPreview",
+      "kind": "function",
+      "guid": "49587DDA4BAEEC5C4A3F28984E9DBDAD",
+      "node_count": 18,
+      "pin_count": 55,
+      "connection_count": 21,
+      "exec_connection_count": 6,
+      "data_connection_count": 15
     }
   ],
   "generated_graphs": [
     {
       "name": "PreConstruct",
-      "guid": "E724FB164696D042D92A3A959CAC7436",
+      "guid": "5859D9E941A6ADDB770166A0C0CC94CA",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -113,7 +330,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
-      "guid": "D5DA17E04C73BB590D7F759F7D70EDB8",
+      "guid": "AE3D706342BEE2E91BD3B689832DB56B",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -122,7 +339,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
-      "guid": "0F535902449F2FA5B2A4EC9EF944004D",
+      "guid": "27D3378141B17E45DFB5879804961783",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -131,7 +348,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
-      "guid": "715911EF41E6728EB22DFD9AE361E89E",
+      "guid": "2215448A4E775014DB8E1296F3ABDA7E",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -140,7 +357,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
-      "guid": "BDA5F45045A5B0C193C025BE4CC1D795",
+      "guid": "3BF199B14B88830EAC4FB4A6D1E649DD",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -149,7 +366,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell00_K2Node_ComponentBoundEvent_4_OnInventoryItemPressed__DelegateSignature",
-      "guid": "DB5A516F4CB9D28875859D848B1046D7",
+      "guid": "037720A74743399A210C2AA219432640",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -158,7 +375,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell01_K2Node_ComponentBoundEvent_5_OnInventoryItemPressed__DelegateSignature",
-      "guid": "5184092A472878CD72606586B0260368",
+      "guid": "E4BF1B28499E5EA39B297BB29CAA2800",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -167,7 +384,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell02_K2Node_ComponentBoundEvent_6_OnInventoryItemPressed__DelegateSignature",
-      "guid": "4FC7B6E7456FA1C658D87C8076AA35E2",
+      "guid": "1CAF44DD4EC520CE4E213AA96B566298",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -176,7 +393,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell03_K2Node_ComponentBoundEvent_7_OnInventoryItemPressed__DelegateSignature",
-      "guid": "8E868D3C40EF658D6B3A7AA5DC3E15B3",
+      "guid": "E2B743AA4B85A13E7ABE19B3D6F2FCF6",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -185,7 +402,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell04_K2Node_ComponentBoundEvent_8_OnInventoryItemPressed__DelegateSignature",
-      "guid": "C64288494A46735B0B632185FD81267F",
+      "guid": "897F0ED94526961C0F8478A62B62E624",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -194,7 +411,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell05_K2Node_ComponentBoundEvent_9_OnInventoryItemPressed__DelegateSignature",
-      "guid": "E895022C4579546EAC25078340B32861",
+      "guid": "B443F94F4D67559142C8FEB4191C3A61",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -203,7 +420,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell06_K2Node_ComponentBoundEvent_10_OnInventoryItemPressed__DelegateSignature",
-      "guid": "471F3CE3404BA96165058A958E8EF7A6",
+      "guid": "A2F42909408E128159411589CA9A0AB2",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -212,7 +429,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell07_K2Node_ComponentBoundEvent_11_OnInventoryItemPressed__DelegateSignature",
-      "guid": "3CC2F0744A8B90255E76C9B12CF27546",
+      "guid": "5B7618124D665163237122A8026BF9C8",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -221,7 +438,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell08_K2Node_ComponentBoundEvent_12_OnInventoryItemPressed__DelegateSignature",
-      "guid": "640F1BEF409B33709BFC02A0E3BB4A31",
+      "guid": "E51DD9684EFAEE7725D5BBA6B12F59AA",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -230,7 +447,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell09_K2Node_ComponentBoundEvent_13_OnInventoryItemPressed__DelegateSignature",
-      "guid": "CDC29BB544500A702E5FD18F2A5B26E4",
+      "guid": "D5F379F8467C91088424B188491C14D2",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -239,7 +456,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell10_K2Node_ComponentBoundEvent_14_OnInventoryItemPressed__DelegateSignature",
-      "guid": "364D75874A33E9D8481490AA21366B23",
+      "guid": "44BDF30949E81664F1B170929320B199",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -248,7 +465,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell11_K2Node_ComponentBoundEvent_15_OnInventoryItemPressed__DelegateSignature",
-      "guid": "2F2F0CA1432589D801BE09A6E1112A4D",
+      "guid": "F7579B04451037F011FABB820AC627D1",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -257,7 +474,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell12_K2Node_ComponentBoundEvent_16_OnInventoryItemPressed__DelegateSignature",
-      "guid": "6CFB14F54CC5390140CA17991D0539B1",
+      "guid": "1AF593CB4EB81E218E4FF8935C57478D",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -266,7 +483,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell13_K2Node_ComponentBoundEvent_17_OnInventoryItemPressed__DelegateSignature",
-      "guid": "F9890B0F4391D49B69309B81948C9EC5",
+      "guid": "7A2167754D4A98D2BA49DD9A995570E6",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -275,7 +492,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell14_K2Node_ComponentBoundEvent_18_OnInventoryItemPressed__DelegateSignature",
-      "guid": "180EC9CB43BA62B84BA8B2B09AB20B79",
+      "guid": "59B9ECD34C36237CB6CF81A717E8E40F",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -284,7 +501,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell15_K2Node_ComponentBoundEvent_19_OnInventoryItemPressed__DelegateSignature",
-      "guid": "C63C8FCC457787EDA5440EA4E7B90E61",
+      "guid": "D20D197247E9C28D90EBBB803B305D46",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -293,7 +510,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell16_K2Node_ComponentBoundEvent_20_OnInventoryItemPressed__DelegateSignature",
-      "guid": "C39029154381F8C3E88697A7CD4D231A",
+      "guid": "FE4D37B94C24446E2E1AE8B62D56CCE1",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -302,7 +519,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell17_K2Node_ComponentBoundEvent_21_OnInventoryItemPressed__DelegateSignature",
-      "guid": "F54D5070445FC1246B349FA3AF63071F",
+      "guid": "80222D0C4C27C5D227F7D7A2D4A6FA2F",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -311,7 +528,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell18_K2Node_ComponentBoundEvent_22_OnInventoryItemPressed__DelegateSignature",
-      "guid": "57BA75CC4537A9512B9FD4BFD9C795BA",
+      "guid": "256B2E7A431A28FEBB50A792209BA437",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -320,7 +537,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell19_K2Node_ComponentBoundEvent_23_OnInventoryItemPressed__DelegateSignature",
-      "guid": "3CBE22BD4975796A56F290AEF3DE43DA",
+      "guid": "51B2373047603EEC3778F8ACCE0B6E85",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -329,7 +546,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell20_K2Node_ComponentBoundEvent_24_OnInventoryItemPressed__DelegateSignature",
-      "guid": "6F94EC0741AD3F09E1BA68A9978458FD",
+      "guid": "6931AC094C23F8739DCB3DADD26138D3",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -338,7 +555,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell21_K2Node_ComponentBoundEvent_25_OnInventoryItemPressed__DelegateSignature",
-      "guid": "51711CE5499281DC47DCEEAE90D8EA22",
+      "guid": "440E690D450DBC0DFC71CE9400A9C602",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -347,7 +564,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell22_K2Node_ComponentBoundEvent_26_OnInventoryItemPressed__DelegateSignature",
-      "guid": "C8D18EEF49143A90AD7805A3C4C6CB8E",
+      "guid": "1EB4103E40C9931D62DA99AD4F65116A",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -356,7 +573,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell23_K2Node_ComponentBoundEvent_27_OnInventoryItemPressed__DelegateSignature",
-      "guid": "5654410E491BF99778AA538B5C25CDBB",
+      "guid": "B7448B5247B98171B28FABB874098DEF",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -365,7 +582,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_InventoryCell24_K2Node_ComponentBoundEvent_28_OnInventoryItemPressed__DelegateSignature",
-      "guid": "DDB794424A1B686AACA63F8CCA55237A",
+      "guid": "32F2CB884C7B94AF9959ED988FBE7C78",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -374,11 +591,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 4,
+    "authored_graph_count": 7,
     "generated_graph_count": 30,
-    "authored_node_count": 154,
-    "authored_pin_count": 437,
-    "authored_connection_count": 163,
+    "authored_node_count": 233,
+    "authored_pin_count": 674,
+    "authored_connection_count": 254,
     "generated_node_count": 90,
     "generated_pin_count": 270
   },
@@ -394,6 +611,11 @@
       "file": "graphs/RefreshCategories.json"
     },
     {
+      "name": "RefreshInventoryInfoPresentation",
+      "kind": "function",
+      "file": "graphs/RefreshInventoryInfoPresentation.json"
+    },
+    {
       "name": "RefreshItemSelection",
       "kind": "function",
       "file": "graphs/RefreshItemSelection.json"
@@ -402,6 +624,16 @@
       "name": "SelectInventoryItem",
       "kind": "function",
       "file": "graphs/SelectInventoryItem.json"
+    },
+    {
+      "name": "SetInventoryInfoView",
+      "kind": "function",
+      "file": "graphs/SetInventoryInfoView.json"
+    },
+    {
+      "name": "UpdateInventoryInfoPreview",
+      "kind": "function",
+      "file": "graphs/UpdateInventoryInfoPreview.json"
     }
   ]
 }
