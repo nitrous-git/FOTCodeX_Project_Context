@@ -17,8 +17,10 @@
   },
   "architecture": {
     "dependencies": [],
-    "referencers": [],
-    "non_architecture_dependency_count": 3,
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory"
+    ],
+    "non_architecture_dependency_count": 6,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -32,15 +34,153 @@
     "generated_class_object": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryCategoryTab.WBP_InventoryCategoryTab_C",
     "interfaces": [],
     "components": [],
-    "variables": [],
+    "variables": [
+      {
+        "name": "bHovered",
+        "guid": "2925F956403C85040AC724BE21190E05",
+        "friendly_name": "Hovered",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPressed",
+        "guid": "EE724F79487EAC3B13E9F5999795AF1E",
+        "friendly_name": "Pressed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bSelected",
+        "guid": "061F44D045BAFD980B886C9254FBBDC0",
+        "friendly_name": "Selected",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CategoryKey",
+        "guid": "B74C52B44F2B32C1781213821E3508F8",
+        "friendly_name": "Category Key",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CategoryLabel",
+        "guid": "79AACECB4D3AC768AE61E6994F616605",
+        "friendly_name": "Category Label",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Icon",
+        "guid": "2E38F89A43101D3C9BA2DFA345E101AC",
+        "friendly_name": "Icon",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnCategoryRequested",
+        "guid": "824FD3944F2636458261D1AE5913BB21",
+        "friendly_name": "On Category Requested",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
     "graphs": {
       "event_graphs": [
         "EventGraph"
       ],
-      "functions": [],
+      "functions": [
+        "RefreshAppearance",
+        "ApplySelection",
+        "RefreshContent"
+      ],
       "macros": [],
-      "delegates": [],
-      "generated_graphs": []
+      "delegates": [
+        "OnCategoryRequested"
+      ],
+      "generated_graphs": [
+        "ExecuteUbergraph_WBP_InventoryCategoryTab",
+        "BndEvt__WBP_InventoryCategoryTab_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+        "BndEvt__WBP_InventoryCategoryTab_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+        "BndEvt__WBP_InventoryCategoryTab_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_InventoryCategoryTab_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_InventoryCategoryTab_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+        "PreConstruct",
+        "RefreshAppearance_MERGED",
+        "ApplySelection_MERGED",
+        "RefreshContent_MERGED",
+        "OnCategoryRequested_MERGED"
+      ]
     },
     "extraction_status": {
       "parent_class": "complete",
@@ -56,5 +196,10 @@
       "raw_t3d": "_raw/blueprint.t3d",
       "graph_directory": "graphs"
     }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 7
   }
 }

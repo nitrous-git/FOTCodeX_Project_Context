@@ -17,8 +17,10 @@
   },
   "architecture": {
     "dependencies": [],
-    "referencers": [],
-    "non_architecture_dependency_count": 3,
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory"
+    ],
+    "non_architecture_dependency_count": 5,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -32,15 +34,56 @@
     "generated_class_object": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDescriptionPanel.WBP_ItemDescriptionPanel_C",
     "interfaces": [],
     "components": [],
-    "variables": [],
+    "variables": [
+      {
+        "name": "ItemDescription",
+        "guid": "9704F5A64C5CDCB8A1933282047AC178",
+        "friendly_name": "Item Description",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ItemTitle",
+        "guid": "F59BB2CE40F19D53D1ADBF872E68342D",
+        "friendly_name": "Item Title",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
     "graphs": {
       "event_graphs": [
         "EventGraph"
       ],
-      "functions": [],
+      "functions": [
+        "RefreshDescription"
+      ],
       "macros": [],
       "delegates": [],
-      "generated_graphs": []
+      "generated_graphs": [
+        "ExecuteUbergraph_WBP_ItemDescriptionPanel",
+        "PreConstruct",
+        "RefreshDescription_MERGED"
+      ]
     },
     "extraction_status": {
       "parent_class": "complete",
@@ -56,5 +99,10 @@
       "raw_t3d": "_raw/blueprint.t3d",
       "graph_directory": "graphs"
     }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 7
   }
 }

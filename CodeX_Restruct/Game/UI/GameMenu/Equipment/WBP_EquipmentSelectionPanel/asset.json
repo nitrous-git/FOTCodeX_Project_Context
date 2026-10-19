@@ -17,8 +17,10 @@
   },
   "architecture": {
     "dependencies": [],
-    "referencers": [],
-    "non_architecture_dependency_count": 4,
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment"
+    ],
+    "non_architecture_dependency_count": 7,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -100,20 +102,47 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "SlotLabel",
+        "guid": "B4E76D16465D78D23766E09DBFBC7757",
+        "friendly_name": "Slot Label",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
       "event_graphs": [
         "EventGraph"
       ],
-      "functions": [],
+      "functions": [
+        "RefreshPanel"
+      ],
       "macros": [],
       "delegates": [
-        "OnSelectionCancelled",
+        "OnItemChosen",
         "OnUnequipRequested",
-        "OnItemChosen"
+        "OnSelectionCancelled"
       ],
-      "generated_graphs": []
+      "generated_graphs": [
+        "ExecuteUbergraph_WBP_EquipmentSelectionPanel",
+        "BndEvt__WBP_EquipmentSelectionPanel_BackButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+        "PreConstruct",
+        "RefreshPanel_MERGED",
+        "OnItemChosen_MERGED",
+        "OnUnequipRequested_MERGED",
+        "OnSelectionCancelled_MERGED"
+      ]
     },
     "extraction_status": {
       "parent_class": "complete",
@@ -129,5 +158,10 @@
       "raw_t3d": "_raw/blueprint.t3d",
       "graph_directory": "graphs"
     }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 17
   }
 }

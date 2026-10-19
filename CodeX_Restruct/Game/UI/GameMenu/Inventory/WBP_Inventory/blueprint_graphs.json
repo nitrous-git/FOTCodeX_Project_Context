@@ -8,6 +8,40 @@
   },
   "variables": [
     {
+      "name": "SelectedCategoryKey",
+      "guid": "28C5E01C45312FC8CF9DF1B05A81D07F",
+      "friendly_name": "Selected Category Key",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SelectedCategoryLabel",
+      "guid": "C5A57BC6422744B1E2BEB087D9F6ED9C",
+      "friendly_name": "Selected Category Label",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "SelectedInventoryItemID",
       "guid": "402F4EDD43CF9EA755F45A89BC85113B",
       "friendly_name": "Selected Inventory Item ID",
@@ -30,28 +64,389 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "84A94BEB46A0F587E433FD981F3D5264",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
+      "node_count": 109,
+      "pin_count": 300,
+      "connection_count": 107,
+      "exec_connection_count": 39,
+      "data_connection_count": 68
+    },
+    {
+      "name": "RefreshCategories",
+      "kind": "function",
+      "guid": "AF6779514580A324C60826AF0801758B",
+      "node_count": 21,
+      "pin_count": 59,
+      "connection_count": 27,
+      "exec_connection_count": 5,
+      "data_connection_count": 22
+    },
+    {
+      "name": "RefreshItemSelection",
+      "kind": "function",
+      "guid": "475C39EE4A2F258AB6C6DCA11980D7D1",
+      "node_count": 17,
+      "pin_count": 56,
+      "connection_count": 21,
+      "exec_connection_count": 6,
+      "data_connection_count": 15
+    },
+    {
+      "name": "SelectInventoryItem",
+      "kind": "function",
+      "guid": "CD00A5F748D22AEC849B448C17468B23",
+      "node_count": 7,
+      "pin_count": 22,
+      "connection_count": 8,
+      "exec_connection_count": 3,
+      "data_connection_count": 5
     }
   ],
-  "generated_graphs": [],
+  "generated_graphs": [
+    {
+      "name": "EdGraph_0",
+      "guid": "99DBFD5540A796041F72A5A9DA655026",
+      "node_count": 20,
+      "pin_count": 45,
+      "connection_count": 24,
+      "exec_connection_count": 9,
+      "data_connection_count": 15
+    },
+    {
+      "name": "ExecuteUbergraph_WBP_Inventory",
+      "guid": "0F3E96BE4DAD7064F64D528ED2B86828",
+      "node_count": 108,
+      "pin_count": 288,
+      "connection_count": 107,
+      "exec_connection_count": 39,
+      "data_connection_count": 68
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell24_K2Node_ComponentBoundEvent_28_OnInventoryItemPressed__DelegateSignature",
+      "guid": "EEAC809F4D90415DD889518F683EBC5A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell23_K2Node_ComponentBoundEvent_27_OnInventoryItemPressed__DelegateSignature",
+      "guid": "A84964934BC0B847A158B6BA8AFF28E8",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell22_K2Node_ComponentBoundEvent_26_OnInventoryItemPressed__DelegateSignature",
+      "guid": "42E6C80B438A4BBA0A0547ACD2CB2E2F",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell21_K2Node_ComponentBoundEvent_25_OnInventoryItemPressed__DelegateSignature",
+      "guid": "C92D37B34F72D1E47A3F7C89492762A8",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell20_K2Node_ComponentBoundEvent_24_OnInventoryItemPressed__DelegateSignature",
+      "guid": "27785FD94ABF829219BCD6B8B35DE71E",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell19_K2Node_ComponentBoundEvent_23_OnInventoryItemPressed__DelegateSignature",
+      "guid": "3FBDD6D6485BDEABB94FEDAA97FA4CED",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell18_K2Node_ComponentBoundEvent_22_OnInventoryItemPressed__DelegateSignature",
+      "guid": "6CB0105042A09E532D89A4B91E95E80D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell17_K2Node_ComponentBoundEvent_21_OnInventoryItemPressed__DelegateSignature",
+      "guid": "0CB62E22450C392D3E8008A7CE066FC3",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell16_K2Node_ComponentBoundEvent_20_OnInventoryItemPressed__DelegateSignature",
+      "guid": "5B34A4A542EDAFD0668967BB41E2A70A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell15_K2Node_ComponentBoundEvent_19_OnInventoryItemPressed__DelegateSignature",
+      "guid": "382FBAE34ACC8DA6A4D6E1936B48169D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell14_K2Node_ComponentBoundEvent_18_OnInventoryItemPressed__DelegateSignature",
+      "guid": "E41B660B4AAD0102354812B8404835FD",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell13_K2Node_ComponentBoundEvent_17_OnInventoryItemPressed__DelegateSignature",
+      "guid": "882E2AC44A75DEEF2A6A5291872F3A06",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell12_K2Node_ComponentBoundEvent_16_OnInventoryItemPressed__DelegateSignature",
+      "guid": "BA987AAC4D41D99177E059B20733BE19",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell11_K2Node_ComponentBoundEvent_15_OnInventoryItemPressed__DelegateSignature",
+      "guid": "A25F852F4D2A4D3A1EFB22BEDF59C444",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell10_K2Node_ComponentBoundEvent_14_OnInventoryItemPressed__DelegateSignature",
+      "guid": "585FDB434DBEFE7D7AB055B142E292F8",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell09_K2Node_ComponentBoundEvent_13_OnInventoryItemPressed__DelegateSignature",
+      "guid": "677D0A3A45F4497C8583268728BB655B",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell08_K2Node_ComponentBoundEvent_12_OnInventoryItemPressed__DelegateSignature",
+      "guid": "FAE9651B4FD42ED72E83B98BCE0C789A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell07_K2Node_ComponentBoundEvent_11_OnInventoryItemPressed__DelegateSignature",
+      "guid": "B9EDCEA749C2D8B192D5ADB982863268",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell06_K2Node_ComponentBoundEvent_10_OnInventoryItemPressed__DelegateSignature",
+      "guid": "8C9560304E03059E9BAEF5BCC44A8FA7",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell05_K2Node_ComponentBoundEvent_9_OnInventoryItemPressed__DelegateSignature",
+      "guid": "E6D593FE4A98FB805790B9881F4BA5F9",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell04_K2Node_ComponentBoundEvent_8_OnInventoryItemPressed__DelegateSignature",
+      "guid": "BC69677143C30B5E31BF9586053CCBCC",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell03_K2Node_ComponentBoundEvent_7_OnInventoryItemPressed__DelegateSignature",
+      "guid": "EFF16FF14DCB6D85AF4A7BA04D37831D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell02_K2Node_ComponentBoundEvent_6_OnInventoryItemPressed__DelegateSignature",
+      "guid": "151C985C45ED2E115C68CE87D4679641",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell01_K2Node_ComponentBoundEvent_5_OnInventoryItemPressed__DelegateSignature",
+      "guid": "1F3586A34738CC25FF166D8B3A31A58B",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_InventoryCell00_K2Node_ComponentBoundEvent_4_OnInventoryItemPressed__DelegateSignature",
+      "guid": "43E62B854EE2DEB8358444B3F4AAB948",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
+      "guid": "219463D946A477F814C0688408F31BCC",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
+      "guid": "80A3A761472FC070668E24BDB7DD8ED5",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+      "guid": "CE9B45CE4DAAC87EFA4E7081784BF6FC",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
+      "guid": "E348AF1A4F6D6D4171A832A2C65CEEA2",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "C0EAC78F499D6AEF7F2F7F9C3F3E1623",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "RefreshCategories_MERGED",
+      "guid": "AF6779514580A324C60826AF0801758B",
+      "node_count": 25,
+      "pin_count": 75,
+      "connection_count": 27,
+      "exec_connection_count": 5,
+      "data_connection_count": 22
+    },
+    {
+      "name": "RefreshItemSelection_MERGED",
+      "guid": "475C39EE4A2F258AB6C6DCA11980D7D1",
+      "node_count": 45,
+      "pin_count": 124,
+      "connection_count": 44,
+      "exec_connection_count": 16,
+      "data_connection_count": 28
+    },
+    {
+      "name": "SelectInventoryItem_MERGED",
+      "guid": "CD00A5F748D22AEC849B448C17468B23",
+      "node_count": 9,
+      "pin_count": 28,
+      "connection_count": 9,
+      "exec_connection_count": 3,
+      "data_connection_count": 6
+    }
+  ],
   "stats": {
-    "authored_graph_count": 1,
-    "generated_graph_count": 0,
-    "authored_node_count": 3,
-    "authored_pin_count": 9,
-    "authored_connection_count": 0,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 4,
+    "generated_graph_count": 35,
+    "authored_node_count": 154,
+    "authored_pin_count": 437,
+    "authored_connection_count": 163,
+    "generated_node_count": 297,
+    "generated_pin_count": 830
   },
   "graph_files": [
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "RefreshCategories",
+      "kind": "function",
+      "file": "graphs/RefreshCategories.json"
+    },
+    {
+      "name": "RefreshItemSelection",
+      "kind": "function",
+      "file": "graphs/RefreshItemSelection.json"
+    },
+    {
+      "name": "SelectInventoryItem",
+      "kind": "function",
+      "file": "graphs/SelectInventoryItem.json"
     }
   ]
 }

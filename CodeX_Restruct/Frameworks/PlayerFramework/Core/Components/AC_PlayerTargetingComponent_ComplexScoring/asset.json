@@ -1,0 +1,745 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_PlayerTargetingComponent_ComplexScoring",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent_ComplexScoring",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent_ComplexScoring.AC_PlayerTargetingComponent_ComplexScoring",
+    "relative_package": "Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent_ComplexScoring"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatTargetable"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent_ComplexScoring.AC_PlayerTargetingComponent_ComplexScoring_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent_ComplexScoring.AC_PlayerTargetingComponent_ComplexScoring_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent_ComplexScoring.AC_PlayerTargetingComponent_ComplexScoring_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "AttackCommittedTarget ",
+        "guid": "7F2142A84E2C06AF47CC4F91494018E1",
+        "friendly_name": "Attack Committed Target ",
+        "category": "INVTEXT(\"References\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDebugLockOnTarget",
+        "guid": "606C74CF42DD6DD5BE2127BCC6E40DD9",
+        "friendly_name": "Debug Lock on Target",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDebugMovementIntent",
+        "guid": "897A9A5C4A308214888522A3C9868FC2",
+        "friendly_name": "Debug Movement Intent",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDebugSoftTarget",
+        "guid": "200A841944D6194BA3F5288A0936CBD3",
+        "friendly_name": "Debug Soft Target",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bUseLineOfSight",
+        "guid": "154C4E58421BC1285DF65D8800F57840",
+        "friendly_name": "Use Line Of Sight",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CameraAngleWeight_NoInput",
+        "guid": "BB95F2D14F6980B9E938938585FE5830",
+        "friendly_name": "Camera Angle Weight No Input",
+        "category": "Scoring",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CameraAngleWeight_WithInput",
+        "guid": "9F0AC884476F8677C8BE11B40592FF4C",
+        "friendly_name": "Camera Angle Weight with Input",
+        "category": "Scoring",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentSoftTarget ",
+        "guid": "E28065534D6E254DE4A06EBBCD7008F0",
+        "friendly_name": "Current Soft Target ",
+        "category": "INVTEXT(\"References\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentSoftTargetBonus",
+        "guid": "177082724AC9901FFA39498665318B56",
+        "friendly_name": "Current Soft Target Bonus",
+        "category": "Scoring",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentTargetBadCameraDot",
+        "guid": "774B70A94C76E1FCA5B8A89638B13A97",
+        "friendly_name": "Current Target Bad Camera Dot",
+        "category": "INVTEXT(\"HardSwitch\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentTargetBadInputDot",
+        "guid": "96ED7068444A0567DA7AF499BD3FA3BF",
+        "friendly_name": "Current Target Bad Input Dot",
+        "category": "INVTEXT(\"HardSwitch\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DistanceWeight",
+        "guid": "580FC06A42FCE32CB035919C82DA2810",
+        "friendly_name": "Distance Weight",
+        "category": "Scoring",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FacingInterpSpeed_Attack",
+        "guid": "DD16727446901817B3DA4198AF76C7A4",
+        "friendly_name": "Facing Interp Speed Attack",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FacingInterpSpeed_FreeCombat",
+        "guid": "01C009ED4E6C52096B942C9E06D1D5B6",
+        "friendly_name": "Facing Interp Speed Free Combat",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InputIntentDeadzone",
+        "guid": "3342F817481C4CF4AD8A92872815F4A7",
+        "friendly_name": "Input Intent Deadzone",
+        "category": "INVTEXT(\"MoveIntent\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InputIntentWeight",
+        "guid": "8E05F3FA495A2E1B059D69882E2865FC",
+        "friendly_name": "Input Intent Weight",
+        "category": "Scoring",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastCombatTarget ",
+        "guid": "42C1A2954AF6BA2514A59E9A302EDAEC",
+        "friendly_name": "Last Combat Target ",
+        "category": "INVTEXT(\"References\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastMovementInputStrength",
+        "guid": "292FA21B4E830D1F5715B094E39B73FD",
+        "friendly_name": "Last Movement Input Strength",
+        "category": "MoveIntent",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastMovementInputWorldDirection",
+        "guid": "09FB403D4191F42C25AB6B85ADAA6B51",
+        "friendly_name": "Last Movement Input World Direction",
+        "category": "MoveIntent",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastMovementIntentTime",
+        "guid": "E4E4FB5644481FFAEA3EDF934C554CFC",
+        "friendly_name": "Last Movement Intent Time",
+        "category": "MoveIntent",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastTargetBonus",
+        "guid": "09D7EBAE4191EB4D0E40F7B7CEF22862",
+        "friendly_name": "Last Target Bonus",
+        "category": "Scoring",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LockOnBreakDistance ",
+        "guid": "9A997FC6441F08D8F6A73D83598E6EF6",
+        "friendly_name": "Lock on Break Distance ",
+        "category": "LockOnSettings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LockOnConeAngle ",
+        "guid": "78A45D7D40484CC29CA78194C58074A3",
+        "friendly_name": "Lock on Cone Angle ",
+        "category": "LockOnSettings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LockOnCurrentTargetPenalty ",
+        "guid": "FA172D3E42E013C2BA11D9B53A00A2C9",
+        "friendly_name": "Lock on Current Target Penalty ",
+        "category": "LockOnSettings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LockOnFacingInterpSpeed ",
+        "guid": "019C431E412472A99AF729B3087393ED",
+        "friendly_name": "Lock on Facing Interp Speed ",
+        "category": "LockOnSettings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LockOnRadius ",
+        "guid": "B26122474DBF6812D1E970956201AD7F",
+        "friendly_name": "Lock on Radius ",
+        "category": "LockOnSettings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxHeightDelta",
+        "guid": "39B9E830416A865EC4F1D6974AD461B1",
+        "friendly_name": "Max Height Delta",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MovementIntentBufferTime",
+        "guid": "4F206BBA42D46C297E405C858D828B57",
+        "friendly_name": "Movement Intent Buffer Time",
+        "category": "INVTEXT(\"MoveIntent\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OwnerPlayer",
+        "guid": "F145CEA94B74AF53B16C60A14B5D961C",
+        "friendly_name": "Owner Player",
+        "category": "References",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerAngleWeight",
+        "guid": "EB45659A4FA651F5271C9DA5F1BFCD74",
+        "friendly_name": "Player Angle Weight",
+        "category": "Scoring",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PriorityWeight",
+        "guid": "CFE6D9BB4BC8A03023F5DFA6E02C3DA6",
+        "friendly_name": "Priority Weight",
+        "category": "Scoring",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SoftTargetConeAngle",
+        "guid": "A2C49C364F4CD07BE10C69B24F705290",
+        "friendly_name": "Soft Target Cone Angle",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SoftTargetRadius ",
+        "guid": "0B159CE0484DB6394BE77AB71C2F816A",
+        "friendly_name": "Soft Target Radius ",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StrongCameraOverrideDot",
+        "guid": "442DC75147257FA2AE9389B1E38E090D",
+        "friendly_name": "Strong Camera Override Dot",
+        "category": "INVTEXT(\"HardSwitch\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StrongInputOverrideDot",
+        "guid": "6BA0B0894D08D05E0E140FB473FB4D1E",
+        "friendly_name": "Strong Input Override Dot",
+        "category": "INVTEXT(\"HardSwitch\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SwitchMargin",
+        "guid": "3A022DDD4A359A06C72ED8BE295B0783",
+        "friendly_name": "Switch Margin",
+        "category": "HardSwitch",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "InitializeTargeting",
+        "RefreshSoftCombatTarget",
+        "FindBestSoftCombatTarget",
+        "IsValidCombatCandidate",
+        "GetTargetingConeBasis",
+        "IsInsideTargetCone",
+        "HasTargetLineOfSight",
+        "ScoreTargetCandidate",
+        "GetBestCombatTarget",
+        "GetActiveFacingTarget",
+        "CommitAttackTarget",
+        "EndAttackTargeting",
+        "FaceTargetActor",
+        "UpdateCombatFacing",
+        "UpdateMovementIntent",
+        "ClearMovementIntent",
+        "HasRecentMovementIntent",
+        "GetMovementIntentDirection",
+        "GetInputIntentAlphaToTarget",
+        "ShouldSwitchSoftTarget",
+        "-------------------------",
+        "FindBestLockOnTarget",
+        "ToggleLockOn",
+        "ReleaseLockOn",
+        "AcquireLockOnTarget",
+        "GetInputDotToTarget",
+        "GetCameraDotToTarget"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "EdGraph_0",
+        "EdGraph_1",
+        "EdGraph_2",
+        "EdGraph_3",
+        "EdGraph_4",
+        "EdGraph_5",
+        "EdGraph_6",
+        "EdGraph_7",
+        "EdGraph_8",
+        "EdGraph_9",
+        "EdGraph_10",
+        "ExecuteUbergraph_AC_PlayerTargetingComponent_ComplexScoring",
+        "ReceiveBeginPlay",
+        "InitializeTargeting_MERGED",
+        "RefreshSoftCombatTarget_MERGED",
+        "FindBestSoftCombatTarget_MERGED",
+        "IsValidCombatCandidate_MERGED",
+        "GetTargetingConeBasis_MERGED",
+        "IsInsideTargetCone_MERGED",
+        "HasTargetLineOfSight_MERGED",
+        "ScoreTargetCandidate_MERGED",
+        "GetBestCombatTarget_MERGED",
+        "GetActiveFacingTarget_MERGED",
+        "CommitAttackTarget_MERGED",
+        "EndAttackTargeting_MERGED",
+        "FaceTargetActor_MERGED",
+        "UpdateCombatFacing_MERGED",
+        "UpdateMovementIntent_MERGED",
+        "ClearMovementIntent_MERGED",
+        "HasRecentMovementIntent_MERGED",
+        "GetMovementIntentDirection_MERGED",
+        "GetInputIntentAlphaToTarget_MERGED",
+        "ShouldSwitchSoftTarget_MERGED",
+        "-------------------------_MERGED",
+        "FindBestLockOnTarget_MERGED",
+        "ToggleLockOn_MERGED",
+        "ReleaseLockOn_MERGED",
+        "AcquireLockOnTarget_MERGED",
+        "GetInputDotToTarget_MERGED",
+        "GetCameraDotToTarget_MERGED"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

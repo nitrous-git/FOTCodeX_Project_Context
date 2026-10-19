@@ -8,6 +8,23 @@
   },
   "variables": [
     {
+      "name": "bSelectionOpen",
+      "guid": "9FD56A294FC3437B15CEE68E5B60DB05",
+      "friendly_name": "Selection Open",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "SelectedEquipmentSlot",
       "guid": "26DC38B445D54D8F8F97BA9D1D623470",
       "friendly_name": "Selected Equipment Slot",
@@ -30,28 +47,98 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "7BB65F034838082ADC1B95B1555EA433",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
+      "node_count": 23,
+      "pin_count": 70,
+      "connection_count": 19,
+      "exec_connection_count": 11,
+      "data_connection_count": 8
+    },
+    {
+      "name": "RefreshEquipment",
+      "kind": "function",
+      "guid": "7BE06EEA46E99728B096299E2C49D189",
+      "node_count": 32,
+      "pin_count": 97,
+      "connection_count": 41,
+      "exec_connection_count": 8,
+      "data_connection_count": 33
     }
   ],
-  "generated_graphs": [],
+  "generated_graphs": [
+    {
+      "name": "ExecuteUbergraph_WBP_Equipment",
+      "guid": "9D9EF0054FD52ECB2626828089FA5BD6",
+      "node_count": 22,
+      "pin_count": 61,
+      "connection_count": 19,
+      "exec_connection_count": 11,
+      "data_connection_count": 8
+    },
+    {
+      "name": "BndEvt__WBP_Equipment_LeftHandSlot_K2Node_ComponentBoundEvent_2_OnEquipmentSlotPressed__DelegateSignature",
+      "guid": "8C8521A44AA2034B7EE4178ED5642C58",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Equipment_RightHandSlot_K2Node_ComponentBoundEvent_1_OnEquipmentSlotPressed__DelegateSignature",
+      "guid": "4CC9DFC94FC79FBAEA9C8083284A138A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_0_OnSelectionCancelled__DelegateSignature",
+      "guid": "5BA1933045D2EBF7E895CAB76FA1323A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "7C4FE9EC41282BD0669B36B6E2E7930E",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "RefreshEquipment_MERGED",
+      "guid": "7BE06EEA46E99728B096299E2C49D189",
+      "node_count": 38,
+      "pin_count": 107,
+      "connection_count": 47,
+      "exec_connection_count": 8,
+      "data_connection_count": 39
+    }
+  ],
   "stats": {
-    "authored_graph_count": 1,
-    "generated_graph_count": 0,
-    "authored_node_count": 3,
-    "authored_pin_count": 9,
-    "authored_connection_count": 0,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 2,
+    "generated_graph_count": 6,
+    "authored_node_count": 55,
+    "authored_pin_count": 167,
+    "authored_connection_count": 60,
+    "generated_node_count": 71,
+    "generated_pin_count": 200
   },
   "graph_files": [
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "RefreshEquipment",
+      "kind": "function",
+      "file": "graphs/RefreshEquipment.json"
     }
   ]
 }

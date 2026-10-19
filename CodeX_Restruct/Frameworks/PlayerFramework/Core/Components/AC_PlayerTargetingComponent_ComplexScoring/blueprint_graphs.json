@@ -1,0 +1,1418 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_PlayerTargetingComponent_ComplexScoring",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "48E40B57441190F22C5E0DB58D46B8E0",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "AttackCommittedTarget ",
+      "guid": "7F2142A84E2C06AF47CC4F91494018E1",
+      "friendly_name": "Attack Committed Target ",
+      "category": "INVTEXT(\"References\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDebugLockOnTarget",
+      "guid": "606C74CF42DD6DD5BE2127BCC6E40DD9",
+      "friendly_name": "Debug Lock on Target",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDebugMovementIntent",
+      "guid": "897A9A5C4A308214888522A3C9868FC2",
+      "friendly_name": "Debug Movement Intent",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDebugSoftTarget",
+      "guid": "200A841944D6194BA3F5288A0936CBD3",
+      "friendly_name": "Debug Soft Target",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bUseLineOfSight",
+      "guid": "154C4E58421BC1285DF65D8800F57840",
+      "friendly_name": "Use Line Of Sight",
+      "category": "Settings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CameraAngleWeight_NoInput",
+      "guid": "BB95F2D14F6980B9E938938585FE5830",
+      "friendly_name": "Camera Angle Weight No Input",
+      "category": "Scoring",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CameraAngleWeight_WithInput",
+      "guid": "9F0AC884476F8677C8BE11B40592FF4C",
+      "friendly_name": "Camera Angle Weight with Input",
+      "category": "Scoring",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentSoftTarget ",
+      "guid": "E28065534D6E254DE4A06EBBCD7008F0",
+      "friendly_name": "Current Soft Target ",
+      "category": "INVTEXT(\"References\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentSoftTargetBonus",
+      "guid": "177082724AC9901FFA39498665318B56",
+      "friendly_name": "Current Soft Target Bonus",
+      "category": "Scoring",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentTargetBadCameraDot",
+      "guid": "774B70A94C76E1FCA5B8A89638B13A97",
+      "friendly_name": "Current Target Bad Camera Dot",
+      "category": "INVTEXT(\"HardSwitch\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentTargetBadInputDot",
+      "guid": "96ED7068444A0567DA7AF499BD3FA3BF",
+      "friendly_name": "Current Target Bad Input Dot",
+      "category": "INVTEXT(\"HardSwitch\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DistanceWeight",
+      "guid": "580FC06A42FCE32CB035919C82DA2810",
+      "friendly_name": "Distance Weight",
+      "category": "Scoring",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FacingInterpSpeed_Attack",
+      "guid": "DD16727446901817B3DA4198AF76C7A4",
+      "friendly_name": "Facing Interp Speed Attack",
+      "category": "Settings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FacingInterpSpeed_FreeCombat",
+      "guid": "01C009ED4E6C52096B942C9E06D1D5B6",
+      "friendly_name": "Facing Interp Speed Free Combat",
+      "category": "Settings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InputIntentDeadzone",
+      "guid": "3342F817481C4CF4AD8A92872815F4A7",
+      "friendly_name": "Input Intent Deadzone",
+      "category": "INVTEXT(\"MoveIntent\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InputIntentWeight",
+      "guid": "8E05F3FA495A2E1B059D69882E2865FC",
+      "friendly_name": "Input Intent Weight",
+      "category": "Scoring",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastCombatTarget ",
+      "guid": "42C1A2954AF6BA2514A59E9A302EDAEC",
+      "friendly_name": "Last Combat Target ",
+      "category": "INVTEXT(\"References\")",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastMovementInputStrength",
+      "guid": "292FA21B4E830D1F5715B094E39B73FD",
+      "friendly_name": "Last Movement Input Strength",
+      "category": "MoveIntent",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastMovementInputWorldDirection",
+      "guid": "09FB403D4191F42C25AB6B85ADAA6B51",
+      "friendly_name": "Last Movement Input World Direction",
+      "category": "MoveIntent",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastMovementIntentTime",
+      "guid": "E4E4FB5644481FFAEA3EDF934C554CFC",
+      "friendly_name": "Last Movement Intent Time",
+      "category": "MoveIntent",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastTargetBonus",
+      "guid": "09D7EBAE4191EB4D0E40F7B7CEF22862",
+      "friendly_name": "Last Target Bonus",
+      "category": "Scoring",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LockOnBreakDistance ",
+      "guid": "9A997FC6441F08D8F6A73D83598E6EF6",
+      "friendly_name": "Lock on Break Distance ",
+      "category": "LockOnSettings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LockOnConeAngle ",
+      "guid": "78A45D7D40484CC29CA78194C58074A3",
+      "friendly_name": "Lock on Cone Angle ",
+      "category": "LockOnSettings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LockOnCurrentTargetPenalty ",
+      "guid": "FA172D3E42E013C2BA11D9B53A00A2C9",
+      "friendly_name": "Lock on Current Target Penalty ",
+      "category": "LockOnSettings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LockOnFacingInterpSpeed ",
+      "guid": "019C431E412472A99AF729B3087393ED",
+      "friendly_name": "Lock on Facing Interp Speed ",
+      "category": "LockOnSettings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LockOnRadius ",
+      "guid": "B26122474DBF6812D1E970956201AD7F",
+      "friendly_name": "Lock on Radius ",
+      "category": "LockOnSettings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MaxHeightDelta",
+      "guid": "39B9E830416A865EC4F1D6974AD461B1",
+      "friendly_name": "Max Height Delta",
+      "category": "Settings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MovementIntentBufferTime",
+      "guid": "4F206BBA42D46C297E405C858D828B57",
+      "friendly_name": "Movement Intent Buffer Time",
+      "category": "INVTEXT(\"MoveIntent\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OwnerPlayer",
+      "guid": "F145CEA94B74AF53B16C60A14B5D961C",
+      "friendly_name": "Owner Player",
+      "category": "References",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerAngleWeight",
+      "guid": "EB45659A4FA651F5271C9DA5F1BFCD74",
+      "friendly_name": "Player Angle Weight",
+      "category": "Scoring",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PriorityWeight",
+      "guid": "CFE6D9BB4BC8A03023F5DFA6E02C3DA6",
+      "friendly_name": "Priority Weight",
+      "category": "Scoring",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SoftTargetConeAngle",
+      "guid": "A2C49C364F4CD07BE10C69B24F705290",
+      "friendly_name": "Soft Target Cone Angle",
+      "category": "Settings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SoftTargetRadius ",
+      "guid": "0B159CE0484DB6394BE77AB71C2F816A",
+      "friendly_name": "Soft Target Radius ",
+      "category": "Settings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StrongCameraOverrideDot",
+      "guid": "442DC75147257FA2AE9389B1E38E090D",
+      "friendly_name": "Strong Camera Override Dot",
+      "category": "INVTEXT(\"HardSwitch\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StrongInputOverrideDot",
+      "guid": "6BA0B0894D08D05E0E140FB473FB4D1E",
+      "friendly_name": "Strong Input Override Dot",
+      "category": "INVTEXT(\"HardSwitch\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SwitchMargin",
+      "guid": "3A022DDD4A359A06C72ED8BE295B0783",
+      "friendly_name": "Switch Margin",
+      "category": "HardSwitch",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "EAD149FC4A89C4304AF92A8F16C89B40",
+      "node_count": 3,
+      "pin_count": 8,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "InitializeTargeting",
+      "kind": "function",
+      "guid": "3774691249968EECDDE7F18A6393000D",
+      "node_count": 4,
+      "pin_count": 14,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshSoftCombatTarget",
+      "kind": "function",
+      "guid": "D4FB8E934CF0C4936C3E459608089E49",
+      "node_count": 28,
+      "pin_count": 87,
+      "connection_count": 32,
+      "exec_connection_count": 15,
+      "data_connection_count": 17
+    },
+    {
+      "name": "FindBestSoftCombatTarget",
+      "kind": "function",
+      "guid": "4BC94D0B406E7F630290B0AFAA7C92EA",
+      "node_count": 66,
+      "pin_count": 218,
+      "connection_count": 70,
+      "exec_connection_count": 24,
+      "data_connection_count": 46
+    },
+    {
+      "name": "IsValidCombatCandidate",
+      "kind": "function",
+      "guid": "A8AC545B4A6B03BBFD14E9939D2429C1",
+      "node_count": 35,
+      "pin_count": 105,
+      "connection_count": 37,
+      "exec_connection_count": 15,
+      "data_connection_count": 22
+    },
+    {
+      "name": "GetTargetingConeBasis",
+      "kind": "function",
+      "guid": "A43AFBC54F6C673AAD0BA68C2819B5A1",
+      "node_count": 24,
+      "pin_count": 65,
+      "connection_count": 28,
+      "exec_connection_count": 10,
+      "data_connection_count": 18
+    },
+    {
+      "name": "IsInsideTargetCone",
+      "kind": "function",
+      "guid": "F18F480942BD81F791ABE8942430DE85",
+      "node_count": 31,
+      "pin_count": 89,
+      "connection_count": 32,
+      "exec_connection_count": 10,
+      "data_connection_count": 22
+    },
+    {
+      "name": "HasTargetLineOfSight",
+      "kind": "function",
+      "guid": "B0144D414102F62896E8A499F1CAA356",
+      "node_count": 22,
+      "pin_count": 84,
+      "connection_count": 24,
+      "exec_connection_count": 9,
+      "data_connection_count": 15
+    },
+    {
+      "name": "ScoreTargetCandidate",
+      "kind": "function",
+      "guid": "8488EF3248ED8FAC2A6F56B85572DC12",
+      "node_count": 166,
+      "pin_count": 442,
+      "connection_count": 165,
+      "exec_connection_count": 40,
+      "data_connection_count": 125
+    },
+    {
+      "name": "GetBestCombatTarget",
+      "kind": "function",
+      "guid": "507185954C491CA0FE619EB228E2CD27",
+      "node_count": 34,
+      "pin_count": 83,
+      "connection_count": 32,
+      "exec_connection_count": 11,
+      "data_connection_count": 21
+    },
+    {
+      "name": "GetActiveFacingTarget",
+      "kind": "function",
+      "guid": "093631FC40D173C5C84E6A9164AB9DE1",
+      "node_count": 23,
+      "pin_count": 54,
+      "connection_count": 21,
+      "exec_connection_count": 7,
+      "data_connection_count": 14
+    },
+    {
+      "name": "CommitAttackTarget",
+      "kind": "function",
+      "guid": "57505305473515CAF8334D9411E60765",
+      "node_count": 40,
+      "pin_count": 113,
+      "connection_count": 44,
+      "exec_connection_count": 19,
+      "data_connection_count": 25
+    },
+    {
+      "name": "EndAttackTargeting",
+      "kind": "function",
+      "guid": "21BA33504AE00AC46E75088385687EDF",
+      "node_count": 12,
+      "pin_count": 33,
+      "connection_count": 13,
+      "exec_connection_count": 8,
+      "data_connection_count": 5
+    },
+    {
+      "name": "FaceTargetActor",
+      "kind": "function",
+      "guid": "079D4FBC4A6E83BBE854DDA98D0FA9F4",
+      "node_count": 31,
+      "pin_count": 89,
+      "connection_count": 34,
+      "exec_connection_count": 13,
+      "data_connection_count": 21
+    },
+    {
+      "name": "UpdateCombatFacing",
+      "kind": "function",
+      "guid": "806F887B4C9DA67BCFFC60B1458D0D90",
+      "node_count": 29,
+      "pin_count": 82,
+      "connection_count": 30,
+      "exec_connection_count": 16,
+      "data_connection_count": 14
+    },
+    {
+      "name": "UpdateMovementIntent",
+      "kind": "function",
+      "guid": "15749173483A327EB00F0B9F9E1795BE",
+      "node_count": 25,
+      "pin_count": 91,
+      "connection_count": 25,
+      "exec_connection_count": 10,
+      "data_connection_count": 15
+    },
+    {
+      "name": "ClearMovementIntent",
+      "kind": "function",
+      "guid": "790E31EC497FF9BC7C219AABD99E2732",
+      "node_count": 5,
+      "pin_count": 22,
+      "connection_count": 4,
+      "exec_connection_count": 3,
+      "data_connection_count": 1
+    },
+    {
+      "name": "HasRecentMovementIntent",
+      "kind": "function",
+      "guid": "0F6A01A04ECB2D4440B4AFB66FE0530E",
+      "node_count": 17,
+      "pin_count": 44,
+      "connection_count": 16,
+      "exec_connection_count": 4,
+      "data_connection_count": 12
+    },
+    {
+      "name": "GetMovementIntentDirection",
+      "kind": "function",
+      "guid": "6601C40F4087241BC8A4679FED445D92",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "GetInputIntentAlphaToTarget",
+      "kind": "function",
+      "guid": "9182D97640EF80B0B4B91598E69DCB01",
+      "node_count": 23,
+      "pin_count": 70,
+      "connection_count": 25,
+      "exec_connection_count": 8,
+      "data_connection_count": 17
+    },
+    {
+      "name": "ShouldSwitchSoftTarget",
+      "kind": "function",
+      "guid": "31FDFB7843378A9AD439D8B8753DA92F",
+      "node_count": 75,
+      "pin_count": 208,
+      "connection_count": 83,
+      "exec_connection_count": 34,
+      "data_connection_count": 49
+    },
+    {
+      "name": "-------------------------",
+      "kind": "function",
+      "guid": "D7B7D6F6477FAD63BED1ED9DDA92955B",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "FindBestLockOnTarget",
+      "kind": "function",
+      "guid": "71449E2A42C79EF79E0FC9ADC0266C87",
+      "node_count": 53,
+      "pin_count": 184,
+      "connection_count": 58,
+      "exec_connection_count": 20,
+      "data_connection_count": 38
+    },
+    {
+      "name": "ToggleLockOn",
+      "kind": "function",
+      "guid": "0D093F8442F3F4EDD1A6B5A1D669ACD0",
+      "node_count": 10,
+      "pin_count": 26,
+      "connection_count": 9,
+      "exec_connection_count": 3,
+      "data_connection_count": 6
+    },
+    {
+      "name": "ReleaseLockOn",
+      "kind": "function",
+      "guid": "2E686B274EF1C69FB143DFAD91F994DE",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AcquireLockOnTarget",
+      "kind": "function",
+      "guid": "20BADDD641331DF28F34A3BD1068295A",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "GetInputDotToTarget",
+      "kind": "function",
+      "guid": "8CD95C084AB0634FEC6AF6B7552A2BB7",
+      "node_count": 23,
+      "pin_count": 65,
+      "connection_count": 24,
+      "exec_connection_count": 8,
+      "data_connection_count": 16
+    },
+    {
+      "name": "GetCameraDotToTarget",
+      "kind": "function",
+      "guid": "6D4566FA4D48D6E2109B71A36430538C",
+      "node_count": 19,
+      "pin_count": 57,
+      "connection_count": 22,
+      "exec_connection_count": 7,
+      "data_connection_count": 15
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "EdGraph_0",
+      "guid": "99DBFD5540A796041F72A5A9DA655026",
+      "node_count": 20,
+      "pin_count": 45,
+      "connection_count": 24,
+      "exec_connection_count": 9,
+      "data_connection_count": 15
+    },
+    {
+      "name": "EdGraph_1",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "EdGraph_2",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "EdGraph_3",
+      "guid": "99DBFD5540A796041F72A5A9DA655026",
+      "node_count": 20,
+      "pin_count": 45,
+      "connection_count": 24,
+      "exec_connection_count": 9,
+      "data_connection_count": 15
+    },
+    {
+      "name": "EdGraph_4",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "EdGraph_5",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "EdGraph_6",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "EdGraph_7",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "EdGraph_8",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "EdGraph_9",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "EdGraph_10",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "ExecuteUbergraph_AC_PlayerTargetingComponent_ComplexScoring",
+      "guid": "1476A0644A6ADDEF8A8C9D97FF7307F1",
+      "node_count": 3,
+      "pin_count": 7,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "C948EA7246ABBBD479640A9DF646C596",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "InitializeTargeting_MERGED",
+      "guid": "3774691249968EECDDE7F18A6393000D",
+      "node_count": 4,
+      "pin_count": 13,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshSoftCombatTarget_MERGED",
+      "guid": "D4FB8E934CF0C4936C3E459608089E49",
+      "node_count": 38,
+      "pin_count": 106,
+      "connection_count": 25,
+      "exec_connection_count": 14,
+      "data_connection_count": 11
+    },
+    {
+      "name": "FindBestSoftCombatTarget_MERGED",
+      "guid": "4BC94D0B406E7F630290B0AFAA7C92EA",
+      "node_count": 95,
+      "pin_count": 282,
+      "connection_count": 92,
+      "exec_connection_count": 36,
+      "data_connection_count": 56
+    },
+    {
+      "name": "IsValidCombatCandidate_MERGED",
+      "guid": "A8AC545B4A6B03BBFD14E9939D2429C1",
+      "node_count": 54,
+      "pin_count": 168,
+      "connection_count": 52,
+      "exec_connection_count": 27,
+      "data_connection_count": 25
+    },
+    {
+      "name": "GetTargetingConeBasis_MERGED",
+      "guid": "A43AFBC54F6C673AAD0BA68C2819B5A1",
+      "node_count": 26,
+      "pin_count": 67,
+      "connection_count": 25,
+      "exec_connection_count": 9,
+      "data_connection_count": 16
+    },
+    {
+      "name": "IsInsideTargetCone_MERGED",
+      "guid": "F18F480942BD81F791ABE8942430DE85",
+      "node_count": 42,
+      "pin_count": 124,
+      "connection_count": 40,
+      "exec_connection_count": 18,
+      "data_connection_count": 22
+    },
+    {
+      "name": "HasTargetLineOfSight_MERGED",
+      "guid": "B0144D414102F62896E8A499F1CAA356",
+      "node_count": 29,
+      "pin_count": 110,
+      "connection_count": 31,
+      "exec_connection_count": 14,
+      "data_connection_count": 17
+    },
+    {
+      "name": "ScoreTargetCandidate_MERGED",
+      "guid": "8488EF3248ED8FAC2A6F56B85572DC12",
+      "node_count": 207,
+      "pin_count": 583,
+      "connection_count": 136,
+      "exec_connection_count": 42,
+      "data_connection_count": 94
+    },
+    {
+      "name": "GetBestCombatTarget_MERGED",
+      "guid": "507185954C491CA0FE619EB228E2CD27",
+      "node_count": 42,
+      "pin_count": 102,
+      "connection_count": 16,
+      "exec_connection_count": 5,
+      "data_connection_count": 11
+    },
+    {
+      "name": "GetActiveFacingTarget_MERGED",
+      "guid": "093631FC40D173C5C84E6A9164AB9DE1",
+      "node_count": 23,
+      "pin_count": 54,
+      "connection_count": 21,
+      "exec_connection_count": 7,
+      "data_connection_count": 14
+    },
+    {
+      "name": "CommitAttackTarget_MERGED",
+      "guid": "57505305473515CAF8334D9411E60765",
+      "node_count": 56,
+      "pin_count": 146,
+      "connection_count": 30,
+      "exec_connection_count": 15,
+      "data_connection_count": 15
+    },
+    {
+      "name": "EndAttackTargeting_MERGED",
+      "guid": "21BA33504AE00AC46E75088385687EDF",
+      "node_count": 12,
+      "pin_count": 30,
+      "connection_count": 11,
+      "exec_connection_count": 6,
+      "data_connection_count": 5
+    },
+    {
+      "name": "FaceTargetActor_MERGED",
+      "guid": "079D4FBC4A6E83BBE854DDA98D0FA9F4",
+      "node_count": 46,
+      "pin_count": 128,
+      "connection_count": 44,
+      "exec_connection_count": 20,
+      "data_connection_count": 24
+    },
+    {
+      "name": "UpdateCombatFacing_MERGED",
+      "guid": "806F887B4C9DA67BCFFC60B1458D0D90",
+      "node_count": 46,
+      "pin_count": 118,
+      "connection_count": 36,
+      "exec_connection_count": 21,
+      "data_connection_count": 15
+    },
+    {
+      "name": "UpdateMovementIntent_MERGED",
+      "guid": "15749173483A327EB00F0B9F9E1795BE",
+      "node_count": 28,
+      "pin_count": 96,
+      "connection_count": 26,
+      "exec_connection_count": 11,
+      "data_connection_count": 15
+    },
+    {
+      "name": "ClearMovementIntent_MERGED",
+      "guid": "790E31EC497FF9BC7C219AABD99E2732",
+      "node_count": 5,
+      "pin_count": 21,
+      "connection_count": 4,
+      "exec_connection_count": 3,
+      "data_connection_count": 1
+    },
+    {
+      "name": "HasRecentMovementIntent_MERGED",
+      "guid": "0F6A01A04ECB2D4440B4AFB66FE0530E",
+      "node_count": 20,
+      "pin_count": 53,
+      "connection_count": 16,
+      "exec_connection_count": 4,
+      "data_connection_count": 12
+    },
+    {
+      "name": "GetMovementIntentDirection_MERGED",
+      "guid": "6601C40F4087241BC8A4679FED445D92",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "GetInputIntentAlphaToTarget_MERGED",
+      "guid": "9182D97640EF80B0B4B91598E69DCB01",
+      "node_count": 28,
+      "pin_count": 83,
+      "connection_count": 27,
+      "exec_connection_count": 10,
+      "data_connection_count": 17
+    },
+    {
+      "name": "ShouldSwitchSoftTarget_MERGED",
+      "guid": "31FDFB7843378A9AD439D8B8753DA92F",
+      "node_count": 107,
+      "pin_count": 300,
+      "connection_count": 103,
+      "exec_connection_count": 49,
+      "data_connection_count": 54
+    },
+    {
+      "name": "-------------------------_MERGED",
+      "guid": "D7B7D6F6477FAD63BED1ED9DDA92955B",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "FindBestLockOnTarget_MERGED",
+      "guid": "71449E2A42C79EF79E0FC9ADC0266C87",
+      "node_count": 80,
+      "pin_count": 244,
+      "connection_count": 75,
+      "exec_connection_count": 30,
+      "data_connection_count": 45
+    },
+    {
+      "name": "ToggleLockOn_MERGED",
+      "guid": "0D093F8442F3F4EDD1A6B5A1D669ACD0",
+      "node_count": 10,
+      "pin_count": 26,
+      "connection_count": 9,
+      "exec_connection_count": 3,
+      "data_connection_count": 6
+    },
+    {
+      "name": "ReleaseLockOn_MERGED",
+      "guid": "2E686B274EF1C69FB143DFAD91F994DE",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AcquireLockOnTarget_MERGED",
+      "guid": "20BADDD641331DF28F34A3BD1068295A",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "GetInputDotToTarget_MERGED",
+      "guid": "8CD95C084AB0634FEC6AF6B7552A2BB7",
+      "node_count": 28,
+      "pin_count": 78,
+      "connection_count": 26,
+      "exec_connection_count": 10,
+      "data_connection_count": 16
+    },
+    {
+      "name": "GetCameraDotToTarget_MERGED",
+      "guid": "6D4566FA4D48D6E2109B71A36430538C",
+      "node_count": 29,
+      "pin_count": 89,
+      "connection_count": 31,
+      "exec_connection_count": 14,
+      "data_connection_count": 17
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 28,
+    "generated_graph_count": 40,
+    "authored_node_count": 804,
+    "authored_pin_count": 2341,
+    "authored_connection_count": 835,
+    "generated_node_count": 1142,
+    "generated_pin_count": 3230
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "-------------------------",
+      "kind": "function",
+      "file": "graphs/-------------------------.json"
+    },
+    {
+      "name": "AcquireLockOnTarget",
+      "kind": "function",
+      "file": "graphs/AcquireLockOnTarget.json"
+    },
+    {
+      "name": "ClearMovementIntent",
+      "kind": "function",
+      "file": "graphs/ClearMovementIntent.json"
+    },
+    {
+      "name": "CommitAttackTarget",
+      "kind": "function",
+      "file": "graphs/CommitAttackTarget.json"
+    },
+    {
+      "name": "EndAttackTargeting",
+      "kind": "function",
+      "file": "graphs/EndAttackTargeting.json"
+    },
+    {
+      "name": "FaceTargetActor",
+      "kind": "function",
+      "file": "graphs/FaceTargetActor.json"
+    },
+    {
+      "name": "FindBestLockOnTarget",
+      "kind": "function",
+      "file": "graphs/FindBestLockOnTarget.json"
+    },
+    {
+      "name": "FindBestSoftCombatTarget",
+      "kind": "function",
+      "file": "graphs/FindBestSoftCombatTarget.json"
+    },
+    {
+      "name": "GetActiveFacingTarget",
+      "kind": "function",
+      "file": "graphs/GetActiveFacingTarget.json"
+    },
+    {
+      "name": "GetBestCombatTarget",
+      "kind": "function",
+      "file": "graphs/GetBestCombatTarget.json"
+    },
+    {
+      "name": "GetCameraDotToTarget",
+      "kind": "function",
+      "file": "graphs/GetCameraDotToTarget.json"
+    },
+    {
+      "name": "GetInputDotToTarget",
+      "kind": "function",
+      "file": "graphs/GetInputDotToTarget.json"
+    },
+    {
+      "name": "GetInputIntentAlphaToTarget",
+      "kind": "function",
+      "file": "graphs/GetInputIntentAlphaToTarget.json"
+    },
+    {
+      "name": "GetMovementIntentDirection",
+      "kind": "function",
+      "file": "graphs/GetMovementIntentDirection.json"
+    },
+    {
+      "name": "GetTargetingConeBasis",
+      "kind": "function",
+      "file": "graphs/GetTargetingConeBasis.json"
+    },
+    {
+      "name": "HasRecentMovementIntent",
+      "kind": "function",
+      "file": "graphs/HasRecentMovementIntent.json"
+    },
+    {
+      "name": "HasTargetLineOfSight",
+      "kind": "function",
+      "file": "graphs/HasTargetLineOfSight.json"
+    },
+    {
+      "name": "InitializeTargeting",
+      "kind": "function",
+      "file": "graphs/InitializeTargeting.json"
+    },
+    {
+      "name": "IsInsideTargetCone",
+      "kind": "function",
+      "file": "graphs/IsInsideTargetCone.json"
+    },
+    {
+      "name": "IsValidCombatCandidate",
+      "kind": "function",
+      "file": "graphs/IsValidCombatCandidate.json"
+    },
+    {
+      "name": "RefreshSoftCombatTarget",
+      "kind": "function",
+      "file": "graphs/RefreshSoftCombatTarget.json"
+    },
+    {
+      "name": "ReleaseLockOn",
+      "kind": "function",
+      "file": "graphs/ReleaseLockOn.json"
+    },
+    {
+      "name": "ScoreTargetCandidate",
+      "kind": "function",
+      "file": "graphs/ScoreTargetCandidate.json"
+    },
+    {
+      "name": "ShouldSwitchSoftTarget",
+      "kind": "function",
+      "file": "graphs/ShouldSwitchSoftTarget.json"
+    },
+    {
+      "name": "ToggleLockOn",
+      "kind": "function",
+      "file": "graphs/ToggleLockOn.json"
+    },
+    {
+      "name": "UpdateCombatFacing",
+      "kind": "function",
+      "file": "graphs/UpdateCombatFacing.json"
+    },
+    {
+      "name": "UpdateMovementIntent",
+      "kind": "function",
+      "file": "graphs/UpdateMovementIntent.json"
+    }
+  ]
+}

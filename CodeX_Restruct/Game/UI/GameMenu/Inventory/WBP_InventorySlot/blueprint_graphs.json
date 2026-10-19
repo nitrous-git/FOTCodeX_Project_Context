@@ -8,14 +8,99 @@
   },
   "variables": [
     {
-      "name": "ItemID",
-      "guid": "F2E133174B50292F5CFA20916479DD0A",
-      "friendly_name": "Item ID",
+      "name": "bHovered",
+      "guid": "FD7A0B5E433BC3BD653E049ECDE34D8B",
+      "friendly_name": "Hovered",
       "category": "Default",
       "property_flags": 65541,
       "default_value": null,
       "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPressed",
+      "guid": "A9AFA9A64D69FA08A42669A9F3D8AF15",
+      "friendly_name": "Pressed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSelected",
+      "guid": "A8672C9740404D960184889754239A13",
+      "friendly_name": "Selected",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Icon",
+      "guid": "5ABB03E04287FBF6A22A6681C378053C",
+      "friendly_name": "Icon",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ItemID",
+      "guid": "F2E133174B50292F5CFA20916479DD0A",
+      "friendly_name": "Item ID",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
         "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ItemLabel",
+      "guid": "677108864E9177B0EE47A080054DC435",
+      "friendly_name": "Item Label",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
         "sub_category": null,
         "sub_category_object": null,
         "container": null,
@@ -40,9 +125,66 @@
         "is_const": false,
         "is_weak_pointer": false
       }
+    },
+    {
+      "name": "StackQuantity",
+      "guid": "6665E4454788C824F79FF09A6027F8FF",
+      "friendly_name": "Stack Quantity",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
     }
   ],
   "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "C66CCFD54717013A21B194ABA14A0536",
+      "node_count": 30,
+      "pin_count": 84,
+      "connection_count": 22,
+      "exec_connection_count": 12,
+      "data_connection_count": 10
+    },
+    {
+      "name": "RefreshAppearance",
+      "kind": "function",
+      "guid": "57E088AF4339DA90EA8B0AAF6C9E4015",
+      "node_count": 32,
+      "pin_count": 102,
+      "connection_count": 36,
+      "exec_connection_count": 3,
+      "data_connection_count": 33
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "guid": "17144FA749441FE8672F61A1BBE16CF0",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshContent",
+      "kind": "function",
+      "guid": "B78471884F06FDFE3E32FFB0B41C8554",
+      "node_count": 24,
+      "pin_count": 73,
+      "connection_count": 25,
+      "exec_connection_count": 5,
+      "data_connection_count": 20
+    },
     {
       "name": "OnInventoryItemPressed",
       "kind": "delegate",
@@ -52,27 +194,117 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ExecuteUbergraph_WBP_InventorySlot",
+      "guid": "93DD9669448DACA79F7E7E8DD869CCA7",
+      "node_count": 31,
+      "pin_count": 82,
+      "connection_count": 23,
+      "exec_connection_count": 12,
+      "data_connection_count": 11
     },
     {
-      "name": "EventGraph",
-      "kind": "event",
-      "guid": "C66CCFD54717013A21B194ABA14A0536",
+      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+      "guid": "55561D634BE339D69DC69188722362A1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+      "guid": "1AE953A8438B0764E43D93BAC3954989",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "793F9DB44B2A2EB309326D8D16CE402D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+      "guid": "B7EFC78C4D6DACF3292A3F9D56B65B55",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "5D823B634EAA2AB97E36F0BE71ACB994",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "EAC9BCE1456BEF663D566996411769F2",
       "node_count": 3,
       "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "RefreshAppearance_MERGED",
+      "guid": "57E088AF4339DA90EA8B0AAF6C9E4015",
+      "node_count": 49,
+      "pin_count": 137,
+      "connection_count": 52,
+      "exec_connection_count": 3,
+      "data_connection_count": 49
+    },
+    {
+      "name": "ApplySelection_MERGED",
+      "guid": "17144FA749441FE8672F61A1BBE16CF0",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshContent_MERGED",
+      "guid": "B78471884F06FDFE3E32FFB0B41C8554",
+      "node_count": 29,
+      "pin_count": 88,
+      "connection_count": 28,
+      "exec_connection_count": 5,
+      "data_connection_count": 23
+    },
+    {
+      "name": "OnInventoryItemPressed_MERGED",
+      "guid": "201969D845144B2733E614A4CC34CFD3",
+      "node_count": 1,
+      "pin_count": 2,
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
     }
   ],
-  "generated_graphs": [],
   "stats": {
-    "authored_graph_count": 2,
-    "generated_graph_count": 0,
-    "authored_node_count": 4,
-    "authored_pin_count": 11,
-    "authored_connection_count": 0,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 5,
+    "generated_graph_count": 11,
+    "authored_node_count": 91,
+    "authored_pin_count": 272,
+    "authored_connection_count": 87,
+    "generated_node_count": 127,
+    "generated_pin_count": 353
   },
   "graph_files": [
     {
@@ -84,6 +316,21 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "file": "graphs/ApplySelection.json"
+    },
+    {
+      "name": "RefreshAppearance",
+      "kind": "function",
+      "file": "graphs/RefreshAppearance.json"
+    },
+    {
+      "name": "RefreshContent",
+      "kind": "function",
+      "file": "graphs/RefreshContent.json"
     }
   ]
 }

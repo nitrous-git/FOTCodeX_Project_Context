@@ -6,34 +6,112 @@
     "guid": "EA327105444F4B0F6E97CA8A038E916D",
     "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
   },
-  "variables": [],
+  "variables": [
+    {
+      "name": "ItemDescription",
+      "guid": "9704F5A64C5CDCB8A1933282047AC178",
+      "friendly_name": "Item Description",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ItemTitle",
+      "guid": "F59BB2CE40F19D53D1ADBF872E68342D",
+      "friendly_name": "Item Title",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
   "graphs": [
     {
       "name": "EventGraph",
       "kind": "event",
       "guid": "2DE69EFB4A6C4C95FE202FA5673F3C50",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
+      "node_count": 5,
+      "pin_count": 13,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "RefreshDescription",
+      "kind": "function",
+      "guid": "31EB61574DDB254D9068D1BF66F718FE",
+      "node_count": 7,
+      "pin_count": 17,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
     }
   ],
-  "generated_graphs": [],
+  "generated_graphs": [
+    {
+      "name": "ExecuteUbergraph_WBP_ItemDescriptionPanel",
+      "guid": "374AA6F845B071FBD8DA7C9FB3839F64",
+      "node_count": 4,
+      "pin_count": 9,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "9E5304674C8BD0506F3CC080FB3E81BC",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "RefreshDescription_MERGED",
+      "guid": "31EB61574DDB254D9068D1BF66F718FE",
+      "node_count": 7,
+      "pin_count": 17,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    }
+  ],
   "stats": {
-    "authored_graph_count": 1,
-    "generated_graph_count": 0,
-    "authored_node_count": 3,
-    "authored_pin_count": 9,
-    "authored_connection_count": 0,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 2,
+    "generated_graph_count": 3,
+    "authored_node_count": 12,
+    "authored_pin_count": 30,
+    "authored_connection_count": 8,
+    "generated_node_count": 14,
+    "generated_pin_count": 35
   },
   "graph_files": [
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "RefreshDescription",
+      "kind": "function",
+      "file": "graphs/RefreshDescription.json"
     }
   ]
 }

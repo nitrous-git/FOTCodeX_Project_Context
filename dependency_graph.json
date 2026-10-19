@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 311,
-  "edge_count": 920,
+  "node_count": 315,
+  "edge_count": 939,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -70,6 +70,14 @@
     {
       "from": "/Game/CodeX_Restruct/Core/GameModes/BP_CPC_GameMode",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/ABP/ABP_Boss_B",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/BP_Boss_B"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/ABP/ABP_Boss_B",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Bosses/Boss_Concubine/ABP/ABP_BossB",
@@ -1349,6 +1357,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Shared/VFX/AnimatedBloodSprayDecals/Decal_blood/B_D_7"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     },
     {
@@ -1990,6 +2002,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_StrafeMode"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Shared/VFX/AnimatedBloodSprayDecals/Decal_blood/B_D_7"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
@@ -2928,6 +2944,14 @@
       "to": "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatTargetable"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent_ComplexScoring",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent_ComplexScoring",
+      "to": "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatTargetable"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase"
     },
@@ -3568,12 +3592,64 @@
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/FEquipmentSlotUIData"
     },
     {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSelectionPanel"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/DT_EquipmentSlots_UI"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/FEquipmentSlotUIData"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryAction"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryCategoryTab"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventorySlot"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDescriptionPanel"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/CharacterPreview/WBP_CharacterPreviewPanel",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/EGameMenuPage"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_Status"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenuButton"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenuButton",

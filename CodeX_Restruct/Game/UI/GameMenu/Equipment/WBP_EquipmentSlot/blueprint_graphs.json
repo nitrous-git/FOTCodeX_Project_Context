@@ -8,6 +8,91 @@
   },
   "variables": [
     {
+      "name": "bAvailable",
+      "guid": "B09942CE4CA414356B47C2A11D23DF4F",
+      "friendly_name": "Available",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bHovered",
+      "guid": "7409FC574031E6AAC1C1E49B545DEF87",
+      "friendly_name": "Hovered",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPressed",
+      "guid": "E7DBE5C14B302CB4C16B04A67F6E9ED1",
+      "friendly_name": "Pressed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSelected",
+      "guid": "94C6BE8642CDC84CD8DC54A3F75B67FF",
+      "friendly_name": "Selected",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Icon",
+      "guid": "5EBE673C4ADB616A9B5481BAABAE361B",
+      "friendly_name": "Icon",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "OnEquipmentSlotPressed",
       "guid": "03DEF8314394565176EEFBA809B36839",
       "friendly_name": "On Equipment Slot Pressed",
@@ -25,11 +110,28 @@
       }
     },
     {
+      "name": "SlotLabel",
+      "guid": "6BCC70EB43148BA89D860CA447BE9193",
+      "friendly_name": "Slot Label",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "SlotTag",
       "guid": "4DD1F19B44CCF033C2AF26A9B44AD617",
       "friendly_name": "Slot Tag",
       "category": "Default",
-      "property_flags": 65541,
+      "property_flags": 5,
       "default_value": null,
       "type": {
         "category": "struct",
@@ -44,6 +146,56 @@
   ],
   "graphs": [
     {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "8A932B784E57DB0D115E429475028931",
+      "node_count": 28,
+      "pin_count": 77,
+      "connection_count": 20,
+      "exec_connection_count": 12,
+      "data_connection_count": 8
+    },
+    {
+      "name": "RefreshAppearance",
+      "kind": "function",
+      "guid": "1D88DAE74C0831F7E4318F8CD3357B55",
+      "node_count": 34,
+      "pin_count": 105,
+      "connection_count": 36,
+      "exec_connection_count": 4,
+      "data_connection_count": 32
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "guid": "100C2A6245EBAA1E45E3D29E51DB3557",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshContent",
+      "kind": "function",
+      "guid": "C081B37F4575DAD023BC3C966BA95B2B",
+      "node_count": 9,
+      "pin_count": 22,
+      "connection_count": 8,
+      "exec_connection_count": 3,
+      "data_connection_count": 5
+    },
+    {
+      "name": "ConfigureFromMetadata",
+      "kind": "function",
+      "guid": "A7FF8A50459F746562036C838B7030A7",
+      "node_count": 10,
+      "pin_count": 43,
+      "connection_count": 14,
+      "exec_connection_count": 7,
+      "data_connection_count": 7
+    },
+    {
       "name": "OnEquipmentSlotPressed",
       "kind": "delegate",
       "guid": "61288C11415D911227A07E8DA6E26ABC",
@@ -52,27 +204,126 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ExecuteUbergraph_WBP_EquipmentSlot",
+      "guid": "6C56A4F5466238EF10B0738A921B6F8E",
+      "node_count": 27,
+      "pin_count": 68,
+      "connection_count": 20,
+      "exec_connection_count": 12,
+      "data_connection_count": 8
     },
     {
-      "name": "EventGraph",
-      "kind": "event",
-      "guid": "8A932B784E57DB0D115E429475028931",
+      "name": "BndEvt__WBP_EquipmentSlot_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+      "guid": "4F85A84442F66CDF5FABF2A3E10DC22A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentSlot_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+      "guid": "8BC29B1C46B59426F501278D7F6A689F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentSlot_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "8546E1BC4114F89723A771B49C9C5268",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentSlot_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+      "guid": "4A7F73B1455A006E33568BB6C3CCCEE7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentSlot_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "E96C89EC4567B52487C037B1FA91D424",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "08A91198414BC280F7D9DD805FDAB659",
       "node_count": 3,
       "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "RefreshAppearance_MERGED",
+      "guid": "1D88DAE74C0831F7E4318F8CD3357B55",
+      "node_count": 49,
+      "pin_count": 136,
+      "connection_count": 50,
+      "exec_connection_count": 4,
+      "data_connection_count": 46
+    },
+    {
+      "name": "ApplySelection_MERGED",
+      "guid": "100C2A6245EBAA1E45E3D29E51DB3557",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshContent_MERGED",
+      "guid": "C081B37F4575DAD023BC3C966BA95B2B",
+      "node_count": 9,
+      "pin_count": 22,
+      "connection_count": 8,
+      "exec_connection_count": 3,
+      "data_connection_count": 5
+    },
+    {
+      "name": "ConfigureFromMetadata_MERGED",
+      "guid": "A7FF8A50459F746562036C838B7030A7",
+      "node_count": 12,
+      "pin_count": 50,
+      "connection_count": 16,
+      "exec_connection_count": 8,
+      "data_connection_count": 8
+    },
+    {
+      "name": "OnEquipmentSlotPressed_MERGED",
+      "guid": "61288C11415D911227A07E8DA6E26ABC",
+      "node_count": 1,
+      "pin_count": 2,
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
     }
   ],
-  "generated_graphs": [],
   "stats": {
-    "authored_graph_count": 2,
-    "generated_graph_count": 0,
-    "authored_node_count": 4,
-    "authored_pin_count": 11,
-    "authored_connection_count": 0,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 6,
+    "generated_graph_count": 12,
+    "authored_node_count": 86,
+    "authored_pin_count": 260,
+    "authored_connection_count": 82,
+    "generated_node_count": 115,
+    "generated_pin_count": 322
   },
   "graph_files": [
     {
@@ -84,6 +335,26 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "file": "graphs/ApplySelection.json"
+    },
+    {
+      "name": "ConfigureFromMetadata",
+      "kind": "function",
+      "file": "graphs/ConfigureFromMetadata.json"
+    },
+    {
+      "name": "RefreshAppearance",
+      "kind": "function",
+      "file": "graphs/RefreshAppearance.json"
+    },
+    {
+      "name": "RefreshContent",
+      "kind": "function",
+      "file": "graphs/RefreshContent.json"
     }
   ]
 }

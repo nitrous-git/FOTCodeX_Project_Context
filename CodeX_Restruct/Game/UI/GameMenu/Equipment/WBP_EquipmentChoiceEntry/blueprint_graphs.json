@@ -8,14 +8,99 @@
   },
   "variables": [
     {
-      "name": "ItemID",
-      "guid": "C716ECEF49BA708CE6F7A185168E1314",
-      "friendly_name": "Item ID",
+      "name": "bHovered",
+      "guid": "F4928873460760DE59C8DEB85BB4793F",
+      "friendly_name": "Hovered",
       "category": "Default",
       "property_flags": 65541,
       "default_value": null,
       "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPressed",
+      "guid": "4D177FB148FDD76F100C78A2134E9AFA",
+      "friendly_name": "Pressed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSelected",
+      "guid": "3C370505425168690E8271BA670825DC",
+      "friendly_name": "Selected",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Icon",
+      "guid": "37F04F2748C7A37479B753A283D89C40",
+      "friendly_name": "Icon",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ItemID",
+      "guid": "C716ECEF49BA708CE6F7A185168E1314",
+      "friendly_name": "Item ID",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
         "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ItemLabel",
+      "guid": "96FC243F40FEFC65AC15D7B01918C038",
+      "friendly_name": "Item Label",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
         "sub_category": null,
         "sub_category_object": null,
         "container": null,
@@ -44,6 +129,46 @@
   ],
   "graphs": [
     {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "3C625ED243EDCF6751081BA4CF33273C",
+      "node_count": 26,
+      "pin_count": 71,
+      "connection_count": 18,
+      "exec_connection_count": 11,
+      "data_connection_count": 7
+    },
+    {
+      "name": "RefreshAppearance",
+      "kind": "function",
+      "guid": "9812B21047DFA864EB00EDA4B74BAD9A",
+      "node_count": 25,
+      "pin_count": 79,
+      "connection_count": 27,
+      "exec_connection_count": 2,
+      "data_connection_count": 25
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "guid": "149A6D82405504D1BE3B4DBB43E58898",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshContent",
+      "kind": "function",
+      "guid": "151E1C204A2C084B03FC1F96126965B5",
+      "node_count": 9,
+      "pin_count": 22,
+      "connection_count": 8,
+      "exec_connection_count": 3,
+      "data_connection_count": 5
+    },
+    {
       "name": "OnChoicePressed",
       "kind": "delegate",
       "guid": "18E3D80C4DECC4CB15881293A1A0149E",
@@ -52,27 +177,117 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ExecuteUbergraph_WBP_EquipmentChoiceEntry",
+      "guid": "59F913D4452F5E7C051298BDE751DF4D",
+      "node_count": 25,
+      "pin_count": 62,
+      "connection_count": 18,
+      "exec_connection_count": 11,
+      "data_connection_count": 7
     },
     {
-      "name": "EventGraph",
-      "kind": "event",
-      "guid": "3C625ED243EDCF6751081BA4CF33273C",
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+      "guid": "309784AF40F2B8C68CDA2E92E62946CD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+      "guid": "28C167D74E4838BAAAC22586AAB83DA5",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "4722EDD34E7CDA5172AF62BFEA7DB8E7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+      "guid": "0BA23B7D4B63BF91102671B102E7E533",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "927CBEDF440B259CB094F3904EE4438C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "521B1228482C3FB7AB3A6383C6B42DE0",
       "node_count": 3,
       "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "RefreshAppearance_MERGED",
+      "guid": "9812B21047DFA864EB00EDA4B74BAD9A",
+      "node_count": 38,
+      "pin_count": 106,
+      "connection_count": 39,
+      "exec_connection_count": 2,
+      "data_connection_count": 37
+    },
+    {
+      "name": "ApplySelection_MERGED",
+      "guid": "149A6D82405504D1BE3B4DBB43E58898",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshContent_MERGED",
+      "guid": "151E1C204A2C084B03FC1F96126965B5",
+      "node_count": 9,
+      "pin_count": 22,
+      "connection_count": 8,
+      "exec_connection_count": 3,
+      "data_connection_count": 5
+    },
+    {
+      "name": "OnChoicePressed_MERGED",
+      "guid": "18E3D80C4DECC4CB15881293A1A0149E",
+      "node_count": 1,
+      "pin_count": 2,
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
     }
   ],
-  "generated_graphs": [],
   "stats": {
-    "authored_graph_count": 2,
-    "generated_graph_count": 0,
-    "authored_node_count": 4,
-    "authored_pin_count": 11,
-    "authored_connection_count": 0,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 5,
+    "generated_graph_count": 11,
+    "authored_node_count": 65,
+    "authored_pin_count": 185,
+    "authored_connection_count": 57,
+    "generated_node_count": 90,
+    "generated_pin_count": 236
   },
   "graph_files": [
     {
@@ -84,6 +299,21 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "file": "graphs/ApplySelection.json"
+    },
+    {
+      "name": "RefreshAppearance",
+      "kind": "function",
+      "file": "graphs/RefreshAppearance.json"
+    },
+    {
+      "name": "RefreshContent",
+      "kind": "function",
+      "file": "graphs/RefreshContent.json"
     }
   ]
 }

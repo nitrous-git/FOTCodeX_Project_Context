@@ -17,8 +17,10 @@
   },
   "architecture": {
     "dependencies": [],
-    "referencers": [],
-    "non_architecture_dependency_count": 3,
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory"
+    ],
+    "non_architecture_dependency_count": 6,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -34,14 +36,99 @@
     "components": [],
     "variables": [
       {
-        "name": "ItemID",
-        "guid": "F2E133174B50292F5CFA20916479DD0A",
-        "friendly_name": "Item ID",
+        "name": "bHovered",
+        "guid": "FD7A0B5E433BC3BD653E049ECDE34D8B",
+        "friendly_name": "Hovered",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
         "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPressed",
+        "guid": "A9AFA9A64D69FA08A42669A9F3D8AF15",
+        "friendly_name": "Pressed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bSelected",
+        "guid": "A8672C9740404D960184889754239A13",
+        "friendly_name": "Selected",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Icon",
+        "guid": "5ABB03E04287FBF6A22A6681C378053C",
+        "friendly_name": "Icon",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ItemID",
+        "guid": "F2E133174B50292F5CFA20916479DD0A",
+        "friendly_name": "Item ID",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
           "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ItemLabel",
+        "guid": "677108864E9177B0EE47A080054DC435",
+        "friendly_name": "Item Label",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
           "sub_category": null,
           "sub_category_object": null,
           "container": null,
@@ -66,18 +153,51 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "StackQuantity",
+        "guid": "6665E4454788C824F79FF09A6027F8FF",
+        "friendly_name": "Stack Quantity",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
       "event_graphs": [
         "EventGraph"
       ],
-      "functions": [],
+      "functions": [
+        "RefreshAppearance",
+        "ApplySelection",
+        "RefreshContent"
+      ],
       "macros": [],
       "delegates": [
         "OnInventoryItemPressed"
       ],
-      "generated_graphs": []
+      "generated_graphs": [
+        "ExecuteUbergraph_WBP_InventorySlot",
+        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+        "PreConstruct",
+        "RefreshAppearance_MERGED",
+        "ApplySelection_MERGED",
+        "RefreshContent_MERGED",
+        "OnInventoryItemPressed_MERGED"
+      ]
     },
     "extraction_status": {
       "parent_class": "complete",
@@ -93,5 +213,10 @@
       "raw_t3d": "_raw/blueprint.t3d",
       "graph_directory": "graphs"
     }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 8
   }
 }

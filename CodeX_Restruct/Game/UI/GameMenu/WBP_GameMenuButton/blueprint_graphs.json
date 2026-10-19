@@ -8,6 +8,91 @@
   },
   "variables": [
     {
+      "name": "bHovered",
+      "guid": "F7CDE36642807BE134FA09919350E2C2",
+      "friendly_name": "Hovered",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPressed",
+      "guid": "DFC3FD5F46BFEC55FB5EE1BC0F179619",
+      "friendly_name": "Pressed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSelected",
+      "guid": "99F31D264E28DED13A8CECABAD5C907F",
+      "friendly_name": "Selected",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Icon",
+      "guid": "FDEE9B1C4F82226235AAFE9687AE1B90",
+      "friendly_name": "Icon",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Label",
+      "guid": "FAEA5D264FA97120092C8FAB075EE422",
+      "friendly_name": "Label",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "OnPageRequested",
       "guid": "96B7462E4DAADD446D2CC9B05E05140C",
       "friendly_name": "On Page Requested",
@@ -29,7 +114,7 @@
       "guid": "51B7EADA41FD722D2BEBAA950641B10B",
       "friendly_name": "Page",
       "category": "Default",
-      "property_flags": 65541,
+      "property_flags": 5,
       "default_value": null,
       "type": {
         "category": "byte",
@@ -44,6 +129,36 @@
   ],
   "graphs": [
     {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "E717E9844C07562DC3F4988C649266A3",
+      "node_count": 27,
+      "pin_count": 83,
+      "connection_count": 19,
+      "exec_connection_count": 13,
+      "data_connection_count": 6
+    },
+    {
+      "name": "RefreshVisuals",
+      "kind": "function",
+      "guid": "0BB5BBAD426D7512C36B709D0D5432FE",
+      "node_count": 59,
+      "pin_count": 194,
+      "connection_count": 73,
+      "exec_connection_count": 6,
+      "data_connection_count": 67
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "guid": "7F0096E343A0A65BD3B1AA9F4D35FB06",
+      "node_count": 3,
+      "pin_count": 10,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
       "name": "OnPageRequested",
       "kind": "delegate",
       "guid": "71A01C524CE0F61EAB53BD85FA5DCE7B",
@@ -52,27 +167,108 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ExecuteUbergraph_WBP_GameMenuButton",
+      "guid": "D7586BB542A357334FE07B933EAD836F",
+      "node_count": 26,
+      "pin_count": 74,
+      "connection_count": 19,
+      "exec_connection_count": 13,
+      "data_connection_count": 6
     },
     {
-      "name": "EventGraph",
-      "kind": "event",
-      "guid": "E717E9844C07562DC3F4988C649266A3",
+      "name": "BndEvt__WBP_GameMenuButton_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+      "guid": "4CD7B6DE454D9C079BE3778579601DD4",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_GameMenuButton_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+      "guid": "1CF8FDDA430410D5C22AF7B284F2CB2A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_GameMenuButton_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "8191E8B045FA82BC9291BC93E6A9787C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_GameMenuButton_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+      "guid": "508967754C05C0CCA8B4C6994CBAF010",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_GameMenuButton_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "71EA1D37484EB08BE711878ACF0F1778",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "E6BACA9C433BB96FCD41429CB9D7A126",
       "node_count": 3,
       "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "RefreshVisuals_MERGED",
+      "guid": "0BB5BBAD426D7512C36B709D0D5432FE",
+      "node_count": 93,
+      "pin_count": 264,
+      "connection_count": 105,
+      "exec_connection_count": 6,
+      "data_connection_count": 99
+    },
+    {
+      "name": "ApplySelection_MERGED",
+      "guid": "7F0096E343A0A65BD3B1AA9F4D35FB06",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnPageRequested_MERGED",
+      "guid": "71A01C524CE0F61EAB53BD85FA5DCE7B",
+      "node_count": 1,
+      "pin_count": 2,
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
     }
   ],
-  "generated_graphs": [],
   "stats": {
-    "authored_graph_count": 2,
-    "generated_graph_count": 0,
-    "authored_node_count": 4,
-    "authored_pin_count": 11,
-    "authored_connection_count": 0,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 4,
+    "generated_graph_count": 10,
+    "authored_node_count": 90,
+    "authored_pin_count": 289,
+    "authored_connection_count": 95,
+    "generated_node_count": 136,
+    "generated_pin_count": 383
   },
   "graph_files": [
     {
@@ -84,6 +280,16 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "file": "graphs/ApplySelection.json"
+    },
+    {
+      "name": "RefreshVisuals",
+      "kind": "function",
+      "file": "graphs/RefreshVisuals.json"
     }
   ]
 }

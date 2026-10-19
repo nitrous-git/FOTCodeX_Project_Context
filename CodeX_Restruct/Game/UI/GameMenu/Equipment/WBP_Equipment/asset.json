@@ -16,9 +16,14 @@
     "reason": "Logic-bearing Blueprint class"
   },
   "architecture": {
-    "dependencies": [],
-    "referencers": [],
-    "non_architecture_dependency_count": 4,
+    "dependencies": [
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSelectionPanel",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
+    ],
+    "non_architecture_dependency_count": 18,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -33,6 +38,23 @@
     "interfaces": [],
     "components": [],
     "variables": [
+      {
+        "name": "bSelectionOpen",
+        "guid": "9FD56A294FC3437B15CEE68E5B60DB05",
+        "friendly_name": "Selection Open",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "SelectedEquipmentSlot",
         "guid": "26DC38B445D54D8F8F97BA9D1D623470",
@@ -55,10 +77,19 @@
       "event_graphs": [
         "EventGraph"
       ],
-      "functions": [],
+      "functions": [
+        "RefreshEquipment"
+      ],
       "macros": [],
       "delegates": [],
-      "generated_graphs": []
+      "generated_graphs": [
+        "ExecuteUbergraph_WBP_Equipment",
+        "BndEvt__WBP_Equipment_LeftHandSlot_K2Node_ComponentBoundEvent_2_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_RightHandSlot_K2Node_ComponentBoundEvent_1_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_0_OnSelectionCancelled__DelegateSignature",
+        "PreConstruct",
+        "RefreshEquipment_MERGED"
+      ]
     },
     "extraction_status": {
       "parent_class": "complete",
@@ -74,5 +105,10 @@
       "raw_t3d": "_raw/blueprint.t3d",
       "graph_directory": "graphs"
     }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 60
   }
 }

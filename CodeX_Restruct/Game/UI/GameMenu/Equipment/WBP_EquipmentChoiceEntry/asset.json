@@ -18,7 +18,7 @@
   "architecture": {
     "dependencies": [],
     "referencers": [],
-    "non_architecture_dependency_count": 3,
+    "non_architecture_dependency_count": 5,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -34,14 +34,99 @@
     "components": [],
     "variables": [
       {
-        "name": "ItemID",
-        "guid": "C716ECEF49BA708CE6F7A185168E1314",
-        "friendly_name": "Item ID",
+        "name": "bHovered",
+        "guid": "F4928873460760DE59C8DEB85BB4793F",
+        "friendly_name": "Hovered",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
         "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPressed",
+        "guid": "4D177FB148FDD76F100C78A2134E9AFA",
+        "friendly_name": "Pressed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bSelected",
+        "guid": "3C370505425168690E8271BA670825DC",
+        "friendly_name": "Selected",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Icon",
+        "guid": "37F04F2748C7A37479B753A283D89C40",
+        "friendly_name": "Icon",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ItemID",
+        "guid": "C716ECEF49BA708CE6F7A185168E1314",
+        "friendly_name": "Item ID",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
           "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ItemLabel",
+        "guid": "96FC243F40FEFC65AC15D7B01918C038",
+        "friendly_name": "Item Label",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
           "sub_category": null,
           "sub_category_object": null,
           "container": null,
@@ -72,12 +157,28 @@
       "event_graphs": [
         "EventGraph"
       ],
-      "functions": [],
+      "functions": [
+        "RefreshAppearance",
+        "ApplySelection",
+        "RefreshContent"
+      ],
       "macros": [],
       "delegates": [
         "OnChoicePressed"
       ],
-      "generated_graphs": []
+      "generated_graphs": [
+        "ExecuteUbergraph_WBP_EquipmentChoiceEntry",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+        "PreConstruct",
+        "RefreshAppearance_MERGED",
+        "ApplySelection_MERGED",
+        "RefreshContent_MERGED",
+        "OnChoicePressed_MERGED"
+      ]
     },
     "extraction_status": {
       "parent_class": "complete",
@@ -93,5 +194,10 @@
       "raw_t3d": "_raw/blueprint.t3d",
       "graph_directory": "graphs"
     }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 9
   }
 }
