@@ -1,142 +1,124 @@
-# CodeX — Game Menu UI Foundation: MCP Build Specification
+# CodeX — Game Menu foundation, B0: asset contracts only
 
-**Status:** Approved **design contract** for the next Unreal MCP assignment; widget creation **not yet confirmed** in the 2026-10-19 GitHub export. Refer to the live Unreal project before edits. Read `InventoryAndUI.md` for full system semantics.
+**Decision:** Approved B0 scope, 2026-10-19. **Replaces the earlier `GameMenuFoundationSpec.md`**, which requested Designer hierarchies, WidgetSwitchers and navigation wiring too early.
 
-## Task objective
+## B0 objective and stopping point
 
-Create **clean, reusable, compile-safe UMG foundation assets** under `/Game/CodeX_Restruct/Game/UI/GameMenu/` with consistent naming, correct page separation and typed event contracts. This is a **base creation task**, not the final implemented inventory/equipment menu. The previous inventory HUD/widgets and direct-equip UI were intentionally removed: do not duplicate, restore or derive from them.
+Create the **correct Unreal UMG asset shells, package structure and typed data/contracts** for CodeX's Soulslike-inspired Game Menu. **Do not build the visual UI or working navigation.** The user will import relevant SLF UI textures/materials, inspect SLF `W_` widgets and screenshots, and build the visual screens with the assistant one by one in later phases.
 
-The user approved live MCP creation/modification of in-scope assets. Discover what UMG Designer and Blueprint tools can actually do; compile/save and report supported validation. For unsupported operations provide a concise exact blocker and manual steps; do **not** claim creation from a JSON export.
+The user authorizes creating, compiling and saving the in-scope new UE assets through supported Unreal MCP/editor APIs. Existing working assets are not to be deleted, renamed, reparented, edited or cloned unless a strictly required in-scope dependency is identified and the user agrees. Live editor state is authoritative; repository exports are snapshots.
 
-## Architectural rules
+## Architectural separation
 
-- Root `WBP_GameMenu` switches sibling pages Inventory, Equipment, Status and System. **No crafting** in initial build.
-- `WBP_Inventory` is for browsing items owned by `AC_InventoryComponent` (inventory slot grid, category tabs, item detail/actions). Clicking an owned item must **not automatically equip it**.
-- `WBP_Equipment` displays equipment position slots and a **second internal choice view**. Clicking `WBP_EquipmentSlot` switches **within Equipment** to the compatible-item selection subview, not to `WBP_Inventory`.
-- All equipped assignments stay in `AC_EquipmentComponent.EquippedItemsBySlot`. All owned items stay in `AC_InventoryComponent`. Widgets have only transient presentation state.
-- `WBP_EquipmentSlot` is generic; the initial displayed slots are `Equipment.Slot.RightHand1`, `Equipment.Slot.LeftHand1`. UI design must admit additional hands, four armor pieces, talismans and quick tools **without creating them all now**.
-- Existing Player Framework, `WBP_PlayerGUI`, CombatStyle, Attunement/ABP, and preview actor/material/rotation are outside the edit scope. Reuse existing `Shared/CharacterPreview/WBP_CharacterPreviewPanel` rather than creating a `_v2` or duplicate actor.
-- Use **one** `ItemSystemFramework`, no new top-level Inventory/Equipment/GameMenu frameworks.
+- `AC_InventoryComponent`: owns collected items and storage. `WBP_Inventory`: separate **owned-items browser**, *not* the equipment selection page.
+- `AC_EquipmentComponent`: owns `EquippedItemsBySlot` (Gameplay Tag -> ItemID), validates equip/unequip and emits equipment-change events. `WBP_Equipment`: a separate **loadout editor**; its eventual selection subview is inside Equipment, not Inventory.
+- `WBP_GameMenu`: eventually hosts sibling Inventory, Equipment, Status and System pages; no Crafting page in this phase.
+- Widget shells own **only transient UI state**. Do not duplicate the inventory arrays or equipped-item Map.
+- Preserve player combat, CombatStyle, Attunement, locomotion, `ABP_PlayerMaster`, `WBP_PlayerGUI`, `BP_PlayerBase_InventoryPreview` and all existing preview materials, render targets and rotation/capture behavior.
+- SLF is a design/UX reference only; do not import or directly depend on SLF Blueprints, UI assets or plugins as part of B0.
 
-## Required asset list and locations
+## Canonical UE asset paths
+
+Create exactly the missing items below under `/Game/CodeX_Restruct/Game/UI/GameMenu`. Check for existing assets to avoid duplicates.
 
 ```text
 /Game/CodeX_Restruct/Game/UI/GameMenu/
-  WBP_GameMenu                 # parent page navigation
-  WBP_GameMenuButton           # generic nav item
-  EGameMenuPage                # Inventory, Equipment, Status, System
+  WBP_GameMenu                      (new Widget Blueprint)
+  WBP_GameMenuButton                (new Widget Blueprint)
+  EGameMenuPage                     (new Blueprint enum)
   Inventory/
-    WBP_Inventory
-    WBP_InventorySlot
-    WBP_InventoryAction
-    WBP_InventoryCategoryTab   # only if necessary for clean category navigation
+    WBP_Inventory                   (new Widget Blueprint)
+    WBP_InventorySlot               (new Widget Blueprint)
+    WBP_InventoryAction             (new Widget Blueprint)
+    WBP_InventoryCategoryTab        (new Widget Blueprint)
   Equipment/
-    WBP_Equipment
-    WBP_EquipmentSlot
-    WBP_EquipmentSelectionPanel
-    WBP_EquipmentChoiceEntry
+    WBP_Equipment                   (new Widget Blueprint)
+    WBP_EquipmentSlot               (new Widget Blueprint)
+    WBP_EquipmentSelectionPanel     (new Widget Blueprint)
+    WBP_EquipmentChoiceEntry        (new Widget Blueprint)
     Data/
-      FEquipmentSlotUIData     # if UDS creation is supported
-      DT_EquipmentSlots_UI     # optional initial 2-row metadata (supported tools only)
-  Status/WBP_Status
-  System/WBP_System
+      FEquipmentSlotUIData          (new Blueprint struct)
+      DT_EquipmentSlots_UI          (new Data Table using FEquipmentSlotUIData)
+  Status/
+    WBP_Status                      (new Widget Blueprint)
+  System/
+    WBP_System                      (new Widget Blueprint)
   Shared/
-    WBP_ItemDescriptionPanel
+    WBP_ItemDescriptionPanel        (new Widget Blueprint)
     CharacterPreview/
-      WBP_CharacterPreviewPanel  # already exists, PRESERVE
+      WBP_CharacterPreviewPanel     (EXISTING, preserve; do not duplicate)
 ```
 
-Do **not** make placeholder assets for every category (e.g., separate armor-slot widgets or 10 quick-tool widgets). Reuse a generic slot and generic candidate entry.
+Do not create separate Armor, Talisman, Ammunition or Tool-specific Widget Blueprints. `WBP_EquipmentSlot` and `WBP_EquipmentChoiceEntry` are generic reusable types. The existing `/Game/CodeX_Restruct/Frameworks/ItemSystemFramework` is the only Item System framework and stays untouched in B0.
 
-## Expected Designer hierarchy
+## Designer boundaries
 
-Exact panel names should be stable to simplify later guidance; use appropriate Slot wrappers, padding and responsive sizing instead of absolute Canvas offsets for every entry.
+**No Designer implementation**: no panels/grid layout, WidgetSwitchers, `Button`/`Image`/`TextBlock` placement, slots, anchors, sizing, padding, styles, animation, navigation buttons, preview placement, textures or materials. A minimal empty root widget/container is allowed **only if required by Unreal to create and compile the asset**. No UI construction, screenshots, visual theme or placeholder `Coming Soon` text in B0.
 
-```text
-WBP_GameMenu
-  Root overlay / border
-    HorizontalBox_Main
-      VerticalBox_Navigation
-        GameMenuButton_Inventory
-        GameMenuButton_Equipment
-        GameMenuButton_Status
-        GameMenuButton_System
-      WidgetSwitcher_Pages
-        [0] WBP_Inventory
-        [1] WBP_Equipment
-        [2] WBP_Status
-        [3] WBP_System
+Do not create controller bindings (`OpenGameMenu`), runtime `CreateWidget` calls, menu input mode changes, page switcher graphs, gameplay equip calls, inventory query loops, inventory UI filtering or event subscriptions. No PIE functionality is expected from empty shells.
 
-WBP_Inventory
-  Root
-    Category selector / tabs
-    ScrollBox / uniform or wrap item grid container
-    Selected item information area (WBP_ItemDescriptionPanel)
-    Contextual action area (future WBP_InventoryAction)
+## Data definitions
 
-WBP_Equipment
-  Root
-    WidgetSwitcher_Equipment
-      [0] EquipmentSlotsView
-        grouped weapon, armor, talisman and quick-item containers
-        [initially instantiate only RightHand1 and LeftHand1]
-      [1] WBP_EquipmentSelectionPanel
-        ScrollBox_CompatibleItems
-        Button_Unequip
-        Button_Back
-    Equipment item description area (reuse WBP_ItemDescriptionPanel)
+### `EGameMenuPage` (Blueprint enum)
 
-WBP_EquipmentSlot
-  Button_Slot
-    Overlay with Image_EmptyIcon, Image_ItemIcon, optional Text_SlotLabel
+Create precisely: `Inventory`, `Equipment`, `Status`, `System`. This is **UI-only navigation state**, not `EItemCategory`.
 
-WBP_EquipmentChoiceEntry
-  Button_Choice
-    Item icon, name, optional count/current-equipped indicator
+### `FEquipmentSlotUIData` (Blueprint struct)
 
-WBP_Status and WBP_System
-  Minimal named roots with neutral 'Coming later' placeholder content
-```
-
-The Game Menu preview (if placed in the foundation layout) should be an existing reusable panel, with **no new preview actor spawning logic or lighting changes** in this stage. Existing preview may remain unused until integration.
-
-## Proposed minimal Blueprint contracts
-
-Prefer event dispatchers and explicit initialization functions; implement only what is needed for the widget tree to compile.
-
-| Widget | UI-only variable(s) | Event / contract |
+| Field | UE type | Meaning |
 |---|---|---|
-| `WBP_GameMenu` | `ActivePage : EGameMenuPage` | `ShowPage(EGameMenuPage)` sets page switcher index; don't change controller input yet |
-| `WBP_GameMenuButton` | `Page : EGameMenuPage` | `OnPageRequested(Page)` dispatcher |
-| `WBP_Inventory` | `SelectedInventoryItemID : Name`, optional `SelectedCategory` | Selection event placeholder; no auto-equip |
-| `WBP_InventorySlot` | `ItemID : Name` | `OnInventoryItemPressed(ItemID)` dispatcher |
-| `WBP_Equipment` | `SelectedEquipmentSlot : GameplayTag` | `HandleEquipmentSlotPressed(Tag)` stores tag and opens subview; subview Back returns to slots |
-| `WBP_EquipmentSlot` | `SlotTag : GameplayTag` | `OnEquipmentSlotPressed(SlotTag)` dispatcher |
-| `WBP_EquipmentSelectionPanel` | `RequestedSlotTag : GameplayTag` | `OnItemChosen(ItemID)` / `OnUnequipRequested` / `OnSelectionCancelled` |
-| `WBP_EquipmentChoiceEntry` | `ItemID : Name` | `OnChoicePressed(ItemID)` dispatcher |
-| `WBP_ItemDescriptionPanel` | no authoritative selection | Basic `SetItemDetails` / display placeholder when no selection |
+| `SlotTag` | Gameplay Tag | Unique equipment-position identifier |
+| `SlotLabel` | Text | Display label; *not* the ItemID |
+| `SlotGroup` | Gameplay Tag | Optional future UI grouping, separate from map key |
+| `EmptyIcon` | Texture2D Object Reference | May be None until art import |
+| `GridRow` | Integer | Planned within-group UI row |
+| `GridColumn` | Integer | Planned within-group UI column |
+| `bEnabled` | Boolean | Slot available for display |
 
-No Blueprint `TryEquipItemToSlot` calls, dynamic inventory filtering, no Data Table enumeration migration, no controller input changes, and no general gameplay interaction in this **foundation** pass. The future implementation connects the selector to `AC_EquipmentComponent` and Inventory ownership/compatibility queries.
+Do not add `InventoryCategory` to this UI struct solely for candidate compatibility filtering; the eventual Equipment/Inventory backend owns item eligibility. Do not add weapon classes, item ownership arrays, equipped ItemIDs or combat state to this struct.
 
-### Optional two-row UI slot metadata
+### `DT_EquipmentSlots_UI` (Data Table)
 
-Only if editor tools support real structure/Data Table creation: `FEquipmentSlotUIData` fields `SlotTag` (GameplayTag), `SlotLabel` (Text), `SlotGroup` (GameplayTag), `EmptyIcon` (Texture2D reference), `GridRow` (Int), `GridColumn` (Int), `bEnabled` (Bool). `DT_EquipmentSlots_UI` initial entries are RightHand1 and LeftHand1. Slot UI metadata is not the authoritative loadout Map. Category filtering belongs in backend queries, **not** solely to `InventoryCategory` hardcoded inside the selector.
+If supported by MCP/editor tools, create the Data Table **using** `FEquipmentSlotUIData` and only **two initial rows**:
 
-Do not create invalid/unusable empty Data Tables merely to satisfy a checklist; report unsupported operations explicitly.
+| Row name | SlotTag | SlotLabel | GridRow | GridColumn | bEnabled |
+|---|---|---|---:|---:|---|
+| `RightHand1` | `Equipment.Slot.RightHand1` | `Right Hand 1` | 0 | 0 | true |
+| `LeftHand1` | `Equipment.Slot.LeftHand1` | `Left Hand 1` | 1 | 0 | true |
 
-## Visual specification (foundation only)
+`EmptyIcon = None` for both. Use existing `Equipment.Group.Weapons` for `SlotGroup` **only if the tag already exists**; otherwise leave `SlotGroup` unset and report that the UI group tag can be registered later. Do not invent tag paths or globally modify Gameplay Tags in B0. Confirm both slot tags exist before creating rows. If either is unavailable, create the structure/table shell but report the missing tag rather than fabricate a valid-looking record. Data Table rows are **UI metadata**, not the authoritative `AC_EquipmentComponent.EquippedItemsBySlot`.
 
-- Professional, restrained dark-fantasy / Soulslike visual language, consistent typography, subtle separators, dark translucent surfaces; leave final polish for later iteration.
-- Keep page navigation obvious, separate owned inventory browsing from interactive loadout editing, and preserve room for character preview.
-- Use reusable buttons/entries and content containers; don't copy SLF's implementation or create a huge single `WBP_GameMenu` EventGraph.
-- Avoid expensive animated effects, tick-driven refresh, persistent preview captures, new render targets or experimental materials in the foundation pass.
+Do **not** create guessed future armor, talisman, ammo, additional hand or quick-item rows. Do not rename the current `EItemCategory` or legacy item-table records.
 
-## Build phases and acceptance
+## Minimal widget Blueprint contracts
 
-1. **Inspect live:** verify current paths/components and preserved preview asset, and discover supported editor widget APIs; no full unrelated project audit.
-2. **Create:** all feasible in-scope folders, Widget Blueprints, enum and minimal Designer hierarchy. Reuse existing Shared preview.
-3. **Wire only UI navigation:** page buttons drive `WidgetSwitcher_Pages`; equipment slot press switches Equipment's internal view; Back restores it. Default page = Inventory; default equipment subview = slots. Item equip action stays unwired.
-4. **Compile/save:** all created Blueprints that editor tools can compile; report individual failures and unsupported UMG operations.
-5. **Report:** exact created/modified asset paths, hierarchy achieved, compile/save results, and remaining manual items. No PIE or production integration claims unless actually performed.
+Create only the following typed variables and dispatchers where supported by the editor API. No event firing/binding and no implementation graphs are required.
 
-**Stop point:** The user can open `WBP_GameMenu` Designer and see an Inventory/Equipment/Status/System page layout; clicking navigation in a relevant widget test (if supported) switches pages; Equipment has independent Slots and Selection views. There is **no duplicated authoritative state and no old Inventory HUD**. Later tasks implement inventory data population, item matching, actual equip/unequip, controller opening/closing, preview synchronization and full polish.
+| Widget | Variables | Dispatcher(s) |
+|---|---|---|
+| `WBP_GameMenu` | `ActivePage : EGameMenuPage` | none yet |
+| `WBP_GameMenuButton` | `Page : EGameMenuPage` | `OnPageRequested(Page : EGameMenuPage)` |
+| `WBP_Inventory` | `SelectedInventoryItemID : Name` | none yet |
+| `WBP_InventorySlot` | `ItemID : Name` | `OnInventoryItemPressed(ItemID : Name)` |
+| `WBP_Equipment` | `SelectedEquipmentSlot : GameplayTag` | none yet |
+| `WBP_EquipmentSlot` | `SlotTag : GameplayTag` | `OnEquipmentSlotPressed(SlotTag : GameplayTag)` |
+| `WBP_EquipmentSelectionPanel` | `RequestedSlotTag : GameplayTag` | `OnItemChosen(ItemID : Name)`, `OnUnequipRequested()`, `OnSelectionCancelled()` |
+| `WBP_EquipmentChoiceEntry` | `ItemID : Name` | `OnChoicePressed(ItemID : Name)` |
+| `WBP_InventoryAction`, `WBP_InventoryCategoryTab`, `WBP_ItemDescriptionPanel`, `WBP_Status`, `WBP_System` | no additional variables required in B0 | none required in B0 |
+
+Keep these data contracts strongly typed. Do not add speculative actions, enums, functions or stub business logic. When additional contracts become necessary during the individual widget build, define them then.
+
+## Execution and verification
+
+1. Read `AGENTS.md`, `Docs/CodeXContext/InventoryAndUI.md` and **this updated document**; do not perform a full unrelated project audit.
+2. Inspect the **live** `/Game/CodeX_Restruct/Game/UI/GameMenu` paths and determine which assets already exist. Review supported MCP creation, Blueprint variable/dispatcher, struct, enum and Data Table APIs.
+3. Create only missing in-scope assets and the typed data/contracts above. No duplicates or SLF asset imports.
+4. Compile and save each new widget/enum/struct where supported; verify Data Table schema and row contents through editor queries. If a required operation is unsupported, **do not simulate it by writing export JSON, T3D or `.uasset` files to disk**. Report exactly what was created and what must be done manually.
+5. Return a concise inventory of created asset paths, data schema/rows, Blueprint compilation and save results, and any blockers.
+
+**B0 acceptance:** all feasible asset shells exist in the agreed package locations, the enum/struct/table metadata is correct, core UI-only variables and dispatchers are typed, and no actual Game Menu visual layouts or gameplay navigation/equipping behavior has been built. **Stop here.**
+
+## Subsequent phases (NOT authorized as part of B0)
+
+- **B1**: bring SLF visual references/textures/materials into the project by user-controlled selection/import; inspect SLF `W_Inventory`, `W_Equipment`, `W_GameMenu` and screenshots.
+- **B2+**: build the actual widget Designer hierarchies **one widget at a time**, review styling, add interactions and later integrate Inventory/Equipment components and controller input.
