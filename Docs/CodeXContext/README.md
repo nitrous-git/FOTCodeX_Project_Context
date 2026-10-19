@@ -1,25 +1,30 @@
 # CodeX context — document router
 
-This repository is a **searchable snapshot and design reference** for the separate live Unreal Engine project. Codex should **not load every document for every task**. Start with the applicable `AGENTS.md`, then fetch only information needed for the user's goal.
+This repository holds **design decisions and searchable exported Blueprint snapshots** for a separate live Unreal Engine project. Start with `AGENTS.md`, then open **only relevant** documents. The running Editor/MCP is authoritative for current `.uasset` state; exports may predate local changes.
 
-| Work area / question | First reference to consult |
+| Topic or task | Start here |
 |---|---|
-| Ordinary enemies, patrol, detection, attacker coordination | `EnemyFramework.md` |
-| Boss attacks, awakening, intro, state stacks and health UI | `BossFramework.md` |
-| Player animation, locomotion, CombatStyle, Attunement | `PlayerCombat.md` |
-| Items, equipment, inventory and UI | `InventoryAndUI.md` |
-| Change crosses several frameworks | `Architecture.md` |
-| What was last exported, or what was tested historically? | `CurrentState.md` and optionally `DecisionLog.md` |
-| Find an asset, function, pin or dependency in exported JSON | `ExportGuide.md` |
-| Risky shared-asset modification | `DevelopmentRules.md` |
-| MCP tools, connection and workspace troubleshooting | `MCPWorkflow.md` |
+| Item data, inventory collections, equipment slots and UI semantics | `InventoryAndUI.md` |
+| Next task: create Game Menu/Inventory/Equipment UMG foundations | `GameMenuFoundationSpec.md` (also consult `InventoryAndUI.md`) |
+| Player CombatStyle, weapon actor refresh and Attunement | `PlayerCombat.md` |
+| Regular enemies, patrol/detection and group attackers | `EnemyFramework.md` |
+| Boss awakening, attacks, state stack/Director, UI | `BossFramework.md` |
+| Cross-framework dependency and path orientation | `Architecture.md` |
+| Current export metrics vs locally completed work | `CurrentState.md` |
+| Accepted decisions and deferred work | `DecisionLog.md` |
+| Blueprint JSON lookup and known parser warnings | `ExportGuide.md` |
+| Changes/compile/save/permissions | `DevelopmentRules.md` |
+| Live MCP connector/editor procedure | `MCPWorkflow.md` |
 
-## Source hierarchy
+## Navigation examples
 
-- **Live Unreal Editor (MCP):** actual current asset state and tool-confirmed changes.
-- **Documentation:** agreed design constraints and recorded decisions; may need updating.
-- **Blueprint export:** `CodeX_Restruct/**/asset.json`, `graphs/*.json`, `dependency_graph.json` and manifests are **export-time** representations, not live `.uasset` files.
+- Inventory: `CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent/{asset.json,graphs/...}`.
+- Equipment: `CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent/{asset.json,graphs/...}`.
+- Player: `CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase/{asset.json,graphs/...}`.
+- Proposed Game Menu widget location: `/Game/CodeX_Restruct/Game/UI/GameMenu/`; most widgets are **planned** and not in the latest exported asset tree.
 
-Example: `/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase` corresponds to `CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase/asset.json` and graph JSON files below the same folder.
+## Explicit status boundary
 
-Prefer specific metadata/graphs and live queries over opening all exports. The UE 5.8.3 baseline provenance is in `CurrentState.md`. After significant Unreal changes, the user can rerun the exporter and update the GitHub snapshot; do not edit export files to mimic an Unreal edit.
+The October 19, 2026 published export (`export_manifest.json`) captured the component and folder reset, but the user has performed further final cleanup **locally after the export**. Do not treat stale `EquipItemFromSlot` or focus-state graphs from the published JSON as instructions to reimplement them. Verify in live Unreal when needed.
+
+Do not modify exported JSON, metadata or raw T3D to simulate project edits. Edit through supported Unreal Editor/MCP actions, compile/save, then rerun the exporter when the user wants a refreshed snapshot.

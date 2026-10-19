@@ -1,32 +1,71 @@
-# Current state and export provenance
+# CodeX — Current state and export provenance
 
-As of **2026-10-17**, the GitHub `main` export includes a UE **5.8.3** snapshot. This document is a historical baseline, **not** a mandatory pre-read for every development task. Use live MCP for the latest state.
+**Updated:** October 19, 2026. This page is a historical checkpoint, not a guarantee of live editor state. Do not preload it for every task; consult it for migration context, tested-vs-planned status, or export provenance.
 
-## Verified from GitHub export
+## Latest inspected repository snapshot
 
-- Repository: `nitrous-git/FOTCodeX_Project_Context`.
-- Baseline commit: `96fb78b3f02a78916bf01148623c6cb0f47b34c6` (`upgrade to 5.8 version`).
-- `export_manifest.json` generated: `2026-10-17T18:06:46.931932+00:00`.
-- Engine: `5.8.3-58210709+++UE5+Release-5.8`; exporter: `0.4.0`; root: `/Game/CodeX_Restruct`.
-- Scanned **6,085** assets; exported **293** (**214** full-graph; **79** structural).
-- **734** authored graphs, **863** generated graphs, **1,400** variables, **17,047** nodes, **55,944** pins, **17,438** connections.
-- Structural exports: 1 behavior tree, 1 blackboard, 18 data assets, 1 data table, 16 input actions, 1 input mapping context, 31 enums, 10 structs.
-- Dependency graph **911** edges; **0** fatal export errors, **11** graph-parsing-warning assets (see `ExportGuide.md`).
+| Property | Value |
+|---|---|
+| Repository | `nitrous-git/FOTCodeX_Project_Context` (`main`) |
+| GitHub commit inspected | `89cb1449543df9d25465d194e6b1c7e575158cc6` — `Inventory - Equipment Refactor Reset` |
+| Export generated | `2026-10-19T04:37:07.790582+00:00` |
+| Live project engine reported / exported | Unreal Engine `5.8.3-58210709+++UE5+Release-5.8` |
+| Exporter / schema | `0.4.0` / `1` |
+| Content root | `/Game/CodeX_Restruct` |
+| Asset scan | `6,058` |
+| Export candidates / exported | `295` / `295` |
+| Full-graph / structural | `212` / `83` |
+| Authored / generated graphs | `712` / `819` |
+| Variables / nodes / pins / links | `1,376` / `16,655` / `54,874` / `17,052` |
+| Dependency edges | `917` |
+| Metadata errors / graph errors | `0` / `0` |
+| Graph parse warning assets | `11` (known raw T3D vs parsed pin-count discrepancies, see `export_manifest.json` / `ExportGuide.md`) |
 
-Do not extrapolate from this snapshot to unsaved or post-export editor changes.
+These metrics describe the export's snapshot, not current in-editor compilation or gameplay validation.
 
-## Proven MCP milestone
+## Item System / Game Menu — latest milestone
 
-The user verified that local Codex correctly identified live selected actor **`BP_Pickup_HPPotion_C_1`**. Live read connectivity works; specific mutation, compilation and save abilities remain tool-dependent and should be verified during actual development tasks.
+**Architecture explicitly approved October 18–19:** a single `/Frameworks/ItemSystemFramework` containing `Inventory`, `Equipment`, `Items` and `Pickups`, with menu widgets under `/Game/UI/GameMenu` rather than more framework roots. SLF-style semantic separation is adopted; SLF code is not imported as the new system.
 
-## Recorded development state — verify specifics as needed
+### Verified in the published export
 
-- **Enemy framework:** modular group melee and ranged components; awareness, placed-enemy world behaviors, roam/patrol and disengagement hooks exist in the export. Earlier playtests reported basic WorldBehavior and patrol milestones working.
-- **Group AI:** `BP_EnemyAIManager` exports `FillOpenAttackerSlots`, `ReconcileAttackerSlots`, `GetEnemyCombatCategory`, and rotation/roster functions. Current attacker capacities and fairness should be checked live if relevant.
-- **Boss framework:** `BP_BaseBoss`, activation trigger, Director/Metrics, boss health UI and intro-related graphs are present. Boss intro skip/abort and cinematic runtime behavior are not proven merely by graph existence.
-- **Player:** `BP_PlayerBase`, `ABP_PlayerMaster`, CombatStyle/Attunement data assets are present; respect established integration.
-- **Inventory:** `AC_InventoryComponent` and existing widgets/item data structures are present. Third-party inventory migration has not been established by this baseline.
+- `AC_InventoryComponent` in `Frameworks/ItemSystemFramework/Inventory/` owns inventory arrays, item records/queries and `HasItem`.
+- `AC_EquipmentComponent` in `Frameworks/ItemSystemFramework/Equipment/` owns `EquippedItemsBySlot : Map<GameplayTag, Name>`, equip/unequip/lookup/resolve functions and `OnEquipmentSlotChanged(EquipmentSlot, PreviousItemID, NewItemID)`.
+- `BP_PlayerBase.SetCombatStyleWeapon` uses the Equipment Component's `ResolveEquippedWeaponClass` for the two first hand slots; physical weapon spawn/attachment remains in the player.
+- Existing definition assets: `DA_WeaponDefinition`, Knight Sword, Iron Sword, Knight Shield; item table/struct and pickup actors have been moved into the consolidated framework.
+- Previous `InventorySystemFramework/InventorySystemRefactor` path and old inventory Widget Blueprints do **not** appear in the exported asset tree. Retained preview widget is under `Game/UI/GameMenu/Shared/CharacterPreview/`.
+- `BP_CPC_PlayerController` no longer exports the former `OpenInventory` / `CloseInventory` / `ToggleInventory` functions or old HUD variables.
 
-This document records context, **not a restriction on future work**. Codex should implement whatever development task the user requests within the rules in `AGENTS.md`.
+### Subsequent local work — not yet published in this export
 
-Refresh these claims after the export is regenerated or a relevant subsystem changes substantially.
+The user explicitly reports completing **additional final Blueprint cleanup locally** after the above export. In the *exported* Inventory Component, the old `EquipItemFromSlot`, `FocusSlot`, `FocusedCategory`, `FocusedItemID`, `FocusedSlotIndex`, `OwnerPlayer`, `OnEquipmentChanged`, and `OnFocusedItemChanged` were still present. Their continued presence in GitHub **must not be mistaken for the current live state**. A refreshed export or focused MCP query can confirm when necessary; do not recreate them.
+
+The user also reports having finished A1–A4: component split, player integration, old-menu disconnection, retained-asset relocation and UI cleanup. Earlier W3 PIE tests confirmed independent sword swapping before the split. A full **post-cleanup** PIE regression and any changes made after the export must be reported as locally verified only if an actual test is performed; don't fabricate a test pass.
+
+### Next implementation milestone (not yet built)
+
+MCP agent creates the **base Game Menu framework UI**:
+
+- Root `WBP_GameMenu`, navigation `WBP_GameMenuButton` and page-switch contract.
+- Separate `WBP_Inventory` and `WBP_Equipment` sibling pages.
+- Equipment's internal two-view switcher, reusable `WBP_EquipmentSlot`, `WBP_EquipmentSelectionPanel`, `WBP_EquipmentChoiceEntry`.
+- Shared item description and existing preview asset reuse; Status/System placeholder pages.
+- Only minimal typed variables / event dispatchers and compile-safe Designer hierarchy. The first milestone is **foundation**, not full inventory actions, final polish, or arbitrary player combat changes.
+
+See `InventoryAndUI.md` for authoritative design and `GameMenuFoundationSpec.md` for the next agent scope.
+
+## Other framework continuity
+
+- **Player:** keep `BP_PlayerBase`, CombatStyle, Attunement, locomotion, `ABP_PlayerMaster`, weapon actors, and the existing gameplay HUD. Weapon physical classes are decoupled from choosing a general CombatStyle in the first-hand slice; other combinations remain future work.
+- **Enemies:** ordinary enemy modular awareness, WorldBehavior, melee/ranged styles and group coordination remain in their existing framework. No change requested in this migration.
+- **Bosses:** keep `BP_BaseBoss`, boss-specific state/Director/Metrics, awareness/area activation and UI; do not route bosses through ordinary enemy attacker tokens by default.
+- **MCP:** live inspection was previously validated on `BP_Pickup_HPPotion_C_1`. Graph editing, UMG Designer manipulation, compiling/saving and PIE must each be confirmed via the *actual* connected tools during the next task.
+
+## Source-of-truth order
+
+1. Running Unreal Editor through Unreal MCP for current assets, compile status and actual functionality.
+2. Explicit current user decisions / local work report (do not falsely claim independent verification).
+3. Current architecture documents for agreed design.
+4. GitHub export as a read-only point-in-time reference.
+
+Do not patch `graphs/*.json`, T3D or exported manifests to simulate `.uasset` modifications. User pushes a refreshed export after local work.

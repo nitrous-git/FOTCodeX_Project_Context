@@ -1,59 +1,85 @@
-# CodeX architecture map
+# CodeX — Architecture map
 
-## Project architecture
+**Updated October 19, 2026.** The live Unreal Editor is authoritative; this document records established ownership and the accepted Item System / Game Menu redesign.
 
-CodeX is a **Blueprint-first third-person action-adventure** organized around reusable player combat, ordinary enemy AI/coordination, authored boss encounters, traversal and world presentation. The implementation is modular, but it is **not** a mandate to replace working components with a new generic framework.
+## Project overview
 
-The live Unreal asset root is `/Game/CodeX_Restruct`. The exported snapshot has matching top-level folders:
+Blueprint-first UE 5.8.3 third-person action-adventure / soulslike. Existing player combat, regular-enemy AI/coordination, authored boss encounters and traversal should be reused rather than replaced by imported frameworks. The user authorized a deliberate Inventory/Equipment/UI reset; that authorization does **not** imply refactoring unrelated subsystems.
 
-| Area | Export folder | Primary responsibility |
+## Primary owners and directories
+
+Paths are relative to exported `CodeX_Restruct/`; in Unreal prefix with `/Game/CodeX_Restruct/`.
+
+| Domain | Location | Authoritative responsibility |
 |---|---|---|
-| Player | `Frameworks/PlayerFramework/` | Player actor, combat style selection, attunement, actions, animation/locomotion |
-| Regular enemies | `Frameworks/EnemyFramework/` | Enemy base, perception, noncombat world behavior, group melee/ranged styles, BT/blackboard |
-| Bosses | `Frameworks/BossFramework/` | Placed bosses, activation lifecycle, state orchestration, boss UI, bespoke attacks |
-| Inventory | `Frameworks/InventorySystemFramework/` | Item records, inventory component, inventory widgets and pickup contracts |
-| Shared orchestration | `Shared/Managers/` | Group enemy manager, encounters spawner and related shared services |
-| Game | `Game/Items/`, `Game/UI/` | Items/weapons and game-facing UI |
-| Other existing frameworks | `Frameworks/TeleporterFramework/`, `TraversalDeviceFramework/`, `TraversalHomingFramework/` | Teleport and traversal capabilities; inspect before use |
-| Core | `Core/` | Controllers and game modes |
+| Player | `Frameworks/PlayerFramework/` | `BP_PlayerBase`, CombatStyle, Attunement, locomotion/`ABP_PlayerMaster`, player equipment-actor presentation |
+| Items / Inventory / Equipment | `Frameworks/ItemSystemFramework/` | Item definitions/data, owned inventory arrays, equipped-slot assignments, world pickup actors |
+| Game Menu UI | `Game/UI/GameMenu/` | Sibling Inventory/Equipment/Status/System pages; local selection and navigation state; **no authoritative items** |
+| Permanent gameplay HUD | `Game/UI/Widget/WBP_PlayerGUI/` | Always-on gameplay HUD; not a Game Menu page |
+| Physical weapon actors | `Game/Items/Weapons/` | Real weapon subclasses and their effects/collision; resolved via equipment data |
+| Regular enemies | `Frameworks/EnemyFramework/` | Base enemy identity, awareness, WorldBehavior, GroupMelee/Ranged combat styles and BT/BB |
+| Bosses | `Frameworks/BossFramework/` | Placed activation lifecycle, boss state and Director/Metrics, special attack behavior, health UI |
+| Group / encounters | `Shared/Managers/` | Ordinary-enemy coordination / encounter spawning (not general boss attack scheduling) |
+| Controllers/modes | `Core/` | Input/menu lifecycle, possession, world-level core contracts |
+| Other frameworks | `Frameworks/TeleporterFramework/`, `TraversalDeviceFramework/`, `TraversalHomingFramework/` | Existing traversal capabilities |
 
-Paths above are relative to exported `CodeX_Restruct/` unless noted otherwise.
+The former `InventorySystemFramework/InventorySystemRefactor` path was retired in the October 19 exported reset. **Do not recreate it** or split the accepted Item System into extra top-level Frameworks.
 
-## Established ownership boundaries
+## Canonical ownership contracts
 
-- **Player:** `BP_PlayerBase`, player components, CombatStyle/Attunement data assets and `ABP_PlayerMaster`. New features should integrate rather than bypass these contracts.
-- **Ordinary enemies:** `BP_EnemyBase` retains common identity/lifecycle. `AC_EnemyAwareness` detects targets; `AC_EnemyWorldBehavior` handles non-combat behavior and disengagement; dedicated combat-style components own group melee/ranged behavior. AI Controller + Behavior Tree govern routine combat AI.
-- **Group coordination:** `Shared/Managers/BP_EnemyAIManager` manages regular enemy participation and attacker slots. It is not the source of a boss's attack decisions.
-- **Boss encounters:** `BP_BaseBoss` and boss-specific state Blueprints own the encounter lifecycle, stack/state logic, phase behaviors and presentation. `BP_BossDirectorComponent` and `BP_MetricsComponent` support the boss's combat decision loop. Boss activation is intentionally separate from regular enemy group AI.
-- **Inventory/UI:** `AC_InventoryComponent` and inventory data/UI widgets are the existing implementation. UI changes must respect current data and Player framework contracts.
+```text
+AC_InventoryComponent        # owns inventory collections and quantities
+  GetItemDefinition, AddItem, RemoveItemFromSlot, HasItem, ...
+                |
+                | owned-item/definition query
+                v
+AC_EquipmentComponent        # owns EquippedItemsBySlot: GameplayTag -> ItemID
+  TryEquipItemToSlot, UnequipItemFromSlot, GetEquippedItemAtSlot,
+  IsItemEquipped, ResolveEquippedWeaponClass, OnEquipmentSlotChanged
+                |
+                +--> BP_PlayerBase  # acts on equipment event; physical weapon spawn
+                +--> WBP_Equipment  # displays assignment state and allows editing
 
-## Important entry points
+WBP_GameMenu                  # parent page navigation only
+  +-- WBP_Inventory           # reads stored items; browse/actions
+  +-- WBP_Equipment           # interactive loadout, internal slot/choice switcher
+  +-- WBP_Status              # stats
+  +-- WBP_System              # system menu
+```
+
+For full slot contracts, paths and UI semantics consult **`InventoryAndUI.md`**. For the MCP foundation build consult **`GameMenuFoundationSpec.md`**.
+
+## Player and other-system boundaries
+
+- `BP_PlayerBase.SetCombatStyleWeapon` currently resolves right/left class through the new Equipment Component and continues spawning/attaching physical actor instances using existing player logic. Preserve weapon sockets/transforms, `PrimaryWeapon`/`SecondaryWeapon`, and Attunement reapplication.
+- CombatStyle defines combat move/animation behavior and is distinct from equipped **physical ItemID**. Drawing/sheathing is also separate from loadout editing.
+- Regular enemies: `AC_EnemyAwareness` handles discovery, `AC_EnemyWorldBehavior` handles roaming/patrol/return, and dedicated combat-style components handle combat. `BP_EnemyAIManager` coordinates regular attacker slots.
+- Bosses: state logic and `BP_BossDirectorComponent`/`BP_MetricsComponent` own encounter orchestration. Placed dormant bosses may activate through awareness/area/fog triggers; do not assume they use regular group attacker scheduling.
+- Player and Game Menu may share a capture actor for visual preview; it must not create an independent authoritative equipped-items model.
+
+## Export and MCP navigation
+
+Selected entries:
 
 ```text
 CodeX_Restruct/
-  Frameworks/
-    PlayerFramework/Core/BP_PlayerBase/
-    PlayerFramework/Animations/ABP/ABP_PlayerMaster/
-    EnemyFramework/Core/BP_EnemyBase/
-    EnemyFramework/Core/Components/AC_EnemyAwareness/
-    EnemyFramework/Core/Components/AC_EnemyWorldBehavior/
-    EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee/
-    EnemyFramework/Core/Components/AC_EnemyCombat_Ranged/
-    EnemyFramework/AI/BehaviorTree/BT_BasicEnemy/
-    BossFramework/Core/BP_BaseBoss/
-    BossFramework/Core/Components/BP_BossDirectorComponent/
-    BossFramework/Core/Components/BP_MetricsComponent/
-    BossFramework/Core/Triggers/BP_BossActivationTrigger/
-    InventorySystemFramework/InventorySystemRefactor/Inventory/AC_InventoryComponent/
-  Shared/Managers/BP_EnemyAIManager/
-  Shared/Managers/BP_EncountersSpawner/
+  Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent/
+  Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent/
+  Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition/
+  Frameworks/ItemSystemFramework/Items/DT_InventoryItemData/
+  Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition/
+  Frameworks/PlayerFramework/Core/BP_PlayerBase/
+  Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview/
+  Frameworks/EnemyFramework/Core/BP_EnemyBase/
+  Frameworks/BossFramework/Core/BP_BaseBoss/
+  Core/Controllers/BP_CPC_PlayerController/
 ```
 
-Every directory shown is present in the October 17, 2026 export; this does not by itself prove a particular runtime test has passed.
+The `Game/UI/GameMenu` page widget assets are **planned**, not represented in the latest GitHub export. Some cleanup occurred locally after that export; use live MCP before making deletion or reconstruction decisions.
 
-## Cross-framework dependency warnings
+## Cross-system safeguards
 
-- Bosses and regular enemies share some combat contracts and may reference each other (e.g. certain boss archetypes reference `BP_EnemyBase`). **Do not infer that all bosses use the same AI lifecycle** from such references.
-- Changes to player data assets/animation can affect inventory, combat and presentation simultaneously.
-- Changes to `BP_EnemyBase`, `BP_BaseBoss`, or shared interfaces have a large downstream impact. Inspect `architecture.referencers` and `dependency_graph.json` before editing.
-- Editor asset operations, not filesystem renames, should maintain Unreal references.
+- Inventory item removal vs equipped assignments is a cross-component integrity rule; do not silently leave stale equipment after the last owned instance disappears.
+- High-impact changes to Player, Enemy, Boss base classes, shared structs/interfaces, gameplay tags, or Data Table enumerators need targeted live referencer/dependency checks.
+- Do not force old Inventory selection semantics into new widgets, or import SLF gameplay systems as replacements.
+- Operate on `.uasset` through Unreal Editor/MCP, not by filesystem edits or exported JSON reconstruction.
