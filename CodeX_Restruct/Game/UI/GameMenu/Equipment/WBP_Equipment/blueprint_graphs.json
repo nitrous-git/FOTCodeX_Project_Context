@@ -8,6 +8,40 @@
   },
   "variables": [
     {
+      "name": "bPreviewItemInfo",
+      "guid": "EB5C67E342802AFE894B8B9046994A02",
+      "friendly_name": "Preview Item Info",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPreviewLongInfo",
+      "guid": "E3281A0B4117ACCCD313BAAF61795849",
+      "friendly_name": "Preview Long Info",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bSelectionOpen",
       "guid": "9FD56A294FC3437B15CEE68E5B60DB05",
       "friendly_name": "Selection Open",
@@ -16,6 +50,91 @@
       "default_value": null,
       "type": {
         "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PresentedAbilityIcon",
+      "guid": "3DC07D5A4AFD1747E43057B71D3AC596",
+      "friendly_name": "Presented Ability Icon",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PresentedIcon",
+      "guid": "801A36404EF05670D5F6F5828C562DA8",
+      "friendly_name": "Presented Icon",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PresentedItemName",
+      "guid": "144D4D744DA8B88DA34F51964ED706AE",
+      "friendly_name": "Presented Item Name",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PresentedLongDescription",
+      "guid": "62DC7FBD4D77FDDC622114B56764152C",
+      "friendly_name": "Presented Long Description",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PreviewCategoryIndex",
+      "guid": "486F1F3944ADF038B13BC687B0848F17",
+      "friendly_name": "Preview Category Index",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
         "sub_category": null,
         "sub_category_object": null,
         "container": null,
@@ -47,11 +166,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "7BB65F034838082ADC1B95B1555EA433",
-      "node_count": 23,
-      "pin_count": 70,
-      "connection_count": 19,
-      "exec_connection_count": 11,
-      "data_connection_count": 8
+      "node_count": 24,
+      "pin_count": 74,
+      "connection_count": 21,
+      "exec_connection_count": 12,
+      "data_connection_count": 9
     },
     {
       "name": "RefreshEquipment",
@@ -62,12 +181,42 @@
       "connection_count": 41,
       "exec_connection_count": 8,
       "data_connection_count": 33
+    },
+    {
+      "name": "RefreshItemInfoPresentation",
+      "kind": "function",
+      "guid": "9904559C4FCECE96F20304B9A3DCAE07",
+      "node_count": 17,
+      "pin_count": 48,
+      "connection_count": 18,
+      "exec_connection_count": 6,
+      "data_connection_count": 12
+    },
+    {
+      "name": "UpdateItemInfoPreview",
+      "kind": "function",
+      "guid": "CA7A44B6461246E29213B2AAF344C2A2",
+      "node_count": 7,
+      "pin_count": 19,
+      "connection_count": 7,
+      "exec_connection_count": 1,
+      "data_connection_count": 6
+    },
+    {
+      "name": "SetItemInfoView",
+      "kind": "function",
+      "guid": "EFE7E7CF42609AB0A81D44A8DA3F9770",
+      "node_count": 32,
+      "pin_count": 105,
+      "connection_count": 37,
+      "exec_connection_count": 7,
+      "data_connection_count": 30
     }
   ],
   "generated_graphs": [
     {
       "name": "PreConstruct",
-      "guid": "96223B6C4E82DE189A71538AF7F28D74",
+      "guid": "B7C1ABFA47FD4926CA29D58BA5B5AE5A",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -76,7 +225,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_0_OnSelectionCancelled__DelegateSignature",
-      "guid": "384BE13741DE14FD52790699A8FE123D",
+      "guid": "BE5C8ED64E3916CFD59C378EAB9EF3A3",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -85,7 +234,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_RightHandSlot_K2Node_ComponentBoundEvent_1_OnEquipmentSlotPressed__DelegateSignature",
-      "guid": "683CCC654DD4B0683F6124BF1F412394",
+      "guid": "2E048E094C5FDEF8ADD819A1F8C14330",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -94,7 +243,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_LeftHandSlot_K2Node_ComponentBoundEvent_2_OnEquipmentSlotPressed__DelegateSignature",
-      "guid": "6EA9EB3548690D213DEBBE9D71513DA1",
+      "guid": "EA532C6345F14D71A5A096AF8F1C2D6F",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -103,11 +252,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 2,
+    "authored_graph_count": 5,
     "generated_graph_count": 4,
-    "authored_node_count": 55,
-    "authored_pin_count": 167,
-    "authored_connection_count": 60,
+    "authored_node_count": 112,
+    "authored_pin_count": 343,
+    "authored_connection_count": 124,
     "generated_node_count": 11,
     "generated_pin_count": 32
   },
@@ -121,6 +270,21 @@
       "name": "RefreshEquipment",
       "kind": "function",
       "file": "graphs/RefreshEquipment.json"
+    },
+    {
+      "name": "RefreshItemInfoPresentation",
+      "kind": "function",
+      "file": "graphs/RefreshItemInfoPresentation.json"
+    },
+    {
+      "name": "SetItemInfoView",
+      "kind": "function",
+      "file": "graphs/SetItemInfoView.json"
+    },
+    {
+      "name": "UpdateItemInfoPreview",
+      "kind": "function",
+      "file": "graphs/UpdateItemInfoPreview.json"
     }
   ]
 }
