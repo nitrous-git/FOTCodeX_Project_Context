@@ -17,6 +17,8 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryAction",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryCategoryTab",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventorySlot"
@@ -39,6 +41,23 @@
     "interfaces": [],
     "components": [],
     "variables": [
+      {
+        "name": "bHasInventorySelection",
+        "guid": "CE9AFC0E4B4AE2E863233F9F456B24CE",
+        "friendly_name": "Has Inventory Selection",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "bPreviewInventoryDetails",
         "guid": "063F38514A3DC38843618A8340B85F08",
@@ -68,6 +87,23 @@
           "sub_category": null,
           "sub_category_object": null,
           "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisplayEntries",
+        "guid": "13ECC0484A04CC37E88EE58E32FFB19B",
+        "friendly_name": "Display Entries",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": "Array",
           "is_reference": false,
           "is_const": false,
           "is_weak_pointer": false
@@ -227,6 +263,23 @@
         }
       },
       {
+        "name": "MinimumVisualCells",
+        "guid": "937941BE44D5730B8E5337B3EF73D8FD",
+        "friendly_name": "Minimum Visual Cells",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "SelectedCategoryKey",
         "guid": "28C5E01C45312FC8CF9DF1B05A81D07F",
         "friendly_name": "Selected Category Key",
@@ -261,6 +314,23 @@
         }
       },
       {
+        "name": "SelectedCategoryTabIndex",
+        "guid": "C0B0F8324F9D2870AE490992B622F323",
+        "friendly_name": "Selected Category Tab Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "SelectedInventoryItemID",
         "guid": "402F4EDD43CF9EA755F45A89BC85113B",
         "friendly_name": "Selected Inventory Item ID",
@@ -276,6 +346,23 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "SelectedSourceSlotData",
+        "guid": "C529ACC740ABE3581E90A0B412E592E9",
+        "friendly_name": "Selected Source Slot Data",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
@@ -285,7 +372,9 @@
       "functions": [
         "RefreshCategories",
         "RefreshItemSelection",
-        "SelectInventoryItem",
+        "SelectInventoryCategory",
+        "SelectInventoryEntry",
+        "RebuildInventoryGrid",
         "SetInventoryInfoView",
         "RefreshInventoryInfoPresentation",
         "UpdateInventoryInfoPreview"
@@ -298,31 +387,7 @@
         "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
         "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
         "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell00_K2Node_ComponentBoundEvent_4_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell01_K2Node_ComponentBoundEvent_5_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell02_K2Node_ComponentBoundEvent_6_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell03_K2Node_ComponentBoundEvent_7_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell04_K2Node_ComponentBoundEvent_8_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell05_K2Node_ComponentBoundEvent_9_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell06_K2Node_ComponentBoundEvent_10_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell07_K2Node_ComponentBoundEvent_11_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell08_K2Node_ComponentBoundEvent_12_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell09_K2Node_ComponentBoundEvent_13_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell10_K2Node_ComponentBoundEvent_14_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell11_K2Node_ComponentBoundEvent_15_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell12_K2Node_ComponentBoundEvent_16_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell13_K2Node_ComponentBoundEvent_17_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell14_K2Node_ComponentBoundEvent_18_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell15_K2Node_ComponentBoundEvent_19_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell16_K2Node_ComponentBoundEvent_20_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell17_K2Node_ComponentBoundEvent_21_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell18_K2Node_ComponentBoundEvent_22_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell19_K2Node_ComponentBoundEvent_23_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell20_K2Node_ComponentBoundEvent_24_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell21_K2Node_ComponentBoundEvent_25_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell22_K2Node_ComponentBoundEvent_26_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell23_K2Node_ComponentBoundEvent_27_OnInventoryItemPressed__DelegateSignature",
-        "BndEvt__WBP_Inventory_InventoryCell24_K2Node_ComponentBoundEvent_28_OnInventoryItemPressed__DelegateSignature"
+        "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature"
       ]
     },
     "extraction_status": {
@@ -343,6 +408,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 146
+    "widget_count": 121
   }
 }

@@ -8,6 +8,23 @@
   },
   "variables": [
     {
+      "name": "bHasInventorySelection",
+      "guid": "CE9AFC0E4B4AE2E863233F9F456B24CE",
+      "friendly_name": "Has Inventory Selection",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bPreviewInventoryDetails",
       "guid": "063F38514A3DC38843618A8340B85F08",
       "friendly_name": "Preview Inventory Details",
@@ -36,6 +53,23 @@
         "sub_category": null,
         "sub_category_object": null,
         "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DisplayEntries",
+      "guid": "13ECC0484A04CC37E88EE58E32FFB19B",
+      "friendly_name": "Display Entries",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
         "is_reference": false,
         "is_const": false,
         "is_weak_pointer": false
@@ -195,6 +229,23 @@
       }
     },
     {
+      "name": "MinimumVisualCells",
+      "guid": "937941BE44D5730B8E5337B3EF73D8FD",
+      "friendly_name": "Minimum Visual Cells",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "SelectedCategoryKey",
       "guid": "28C5E01C45312FC8CF9DF1B05A81D07F",
       "friendly_name": "Selected Category Key",
@@ -229,6 +280,23 @@
       }
     },
     {
+      "name": "SelectedCategoryTabIndex",
+      "guid": "C0B0F8324F9D2870AE490992B622F323",
+      "friendly_name": "Selected Category Tab Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "SelectedInventoryItemID",
       "guid": "402F4EDD43CF9EA755F45A89BC85113B",
       "friendly_name": "Selected Inventory Item ID",
@@ -244,6 +312,23 @@
         "is_const": false,
         "is_weak_pointer": false
       }
+    },
+    {
+      "name": "SelectedSourceSlotData",
+      "guid": "C529ACC740ABE3581E90A0B412E592E9",
+      "friendly_name": "Selected Source Slot Data",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
     }
   ],
   "graphs": [
@@ -251,41 +336,61 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "84A94BEB46A0F587E433FD981F3D5264",
-      "node_count": 110,
-      "pin_count": 304,
-      "connection_count": 109,
-      "exec_connection_count": 40,
-      "data_connection_count": 69
+      "node_count": 189,
+      "pin_count": 575,
+      "connection_count": 25,
+      "exec_connection_count": 8,
+      "data_connection_count": 17
     },
     {
       "name": "RefreshCategories",
       "kind": "function",
       "guid": "AF6779514580A324C60826AF0801758B",
-      "node_count": 21,
-      "pin_count": 59,
-      "connection_count": 27,
-      "exec_connection_count": 5,
+      "node_count": 45,
+      "pin_count": 134,
+      "connection_count": 28,
+      "exec_connection_count": 6,
       "data_connection_count": 22
     },
     {
       "name": "RefreshItemSelection",
       "kind": "function",
       "guid": "475C39EE4A2F258AB6C6DCA11980D7D1",
-      "node_count": 18,
-      "pin_count": 58,
-      "connection_count": 21,
-      "exec_connection_count": 6,
-      "data_connection_count": 15
+      "node_count": 58,
+      "pin_count": 208,
+      "connection_count": 39,
+      "exec_connection_count": 13,
+      "data_connection_count": 26
     },
     {
-      "name": "SelectInventoryItem",
+      "name": "SelectInventoryCategory",
       "kind": "function",
-      "guid": "CD00A5F748D22AEC849B448C17468B23",
-      "node_count": 7,
-      "pin_count": 22,
-      "connection_count": 8,
-      "exec_connection_count": 3,
-      "data_connection_count": 5
+      "guid": "045031BC436C12DEDF6C5787EBE2366E",
+      "node_count": 11,
+      "pin_count": 44,
+      "connection_count": 15,
+      "exec_connection_count": 5,
+      "data_connection_count": 10
+    },
+    {
+      "name": "SelectInventoryEntry",
+      "kind": "function",
+      "guid": "FD6EE02F4356D496E9F9B698649CAC08",
+      "node_count": 17,
+      "pin_count": 66,
+      "connection_count": 22,
+      "exec_connection_count": 5,
+      "data_connection_count": 17
+    },
+    {
+      "name": "RebuildInventoryGrid",
+      "kind": "function",
+      "guid": "98EE31AA4C7D3DB32580DDABD9513369",
+      "node_count": 59,
+      "pin_count": 226,
+      "connection_count": 59,
+      "exec_connection_count": 16,
+      "data_connection_count": 43
     },
     {
       "name": "SetInventoryInfoView",
@@ -321,7 +426,7 @@
   "generated_graphs": [
     {
       "name": "PreConstruct",
-      "guid": "5859D9E941A6ADDB770166A0C0CC94CA",
+      "guid": "773153C643CFE3AFE35943B0D01C9A46",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -330,7 +435,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
-      "guid": "AE3D706342BEE2E91BD3B689832DB56B",
+      "guid": "606994C945DED380E4E8E2ADAE17F288",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -339,7 +444,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
-      "guid": "27D3378141B17E45DFB5879804961783",
+      "guid": "E71B909847CACE0A905B1595BF7FE675",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -348,7 +453,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
-      "guid": "2215448A4E775014DB8E1296F3ABDA7E",
+      "guid": "31B393A948A5FE40475B348854E82463",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -357,7 +462,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
-      "guid": "3BF199B14B88830EAC4FB4A6D1E649DD",
+      "guid": "B6324FD1430B2AB6E0F6348930A6C60D",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -365,224 +470,8 @@
       "data_connection_count": 1
     },
     {
-      "name": "BndEvt__WBP_Inventory_InventoryCell00_K2Node_ComponentBoundEvent_4_OnInventoryItemPressed__DelegateSignature",
-      "guid": "037720A74743399A210C2AA219432640",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell01_K2Node_ComponentBoundEvent_5_OnInventoryItemPressed__DelegateSignature",
-      "guid": "E4BF1B28499E5EA39B297BB29CAA2800",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell02_K2Node_ComponentBoundEvent_6_OnInventoryItemPressed__DelegateSignature",
-      "guid": "1CAF44DD4EC520CE4E213AA96B566298",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell03_K2Node_ComponentBoundEvent_7_OnInventoryItemPressed__DelegateSignature",
-      "guid": "E2B743AA4B85A13E7ABE19B3D6F2FCF6",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell04_K2Node_ComponentBoundEvent_8_OnInventoryItemPressed__DelegateSignature",
-      "guid": "897F0ED94526961C0F8478A62B62E624",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell05_K2Node_ComponentBoundEvent_9_OnInventoryItemPressed__DelegateSignature",
-      "guid": "B443F94F4D67559142C8FEB4191C3A61",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell06_K2Node_ComponentBoundEvent_10_OnInventoryItemPressed__DelegateSignature",
-      "guid": "A2F42909408E128159411589CA9A0AB2",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell07_K2Node_ComponentBoundEvent_11_OnInventoryItemPressed__DelegateSignature",
-      "guid": "5B7618124D665163237122A8026BF9C8",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell08_K2Node_ComponentBoundEvent_12_OnInventoryItemPressed__DelegateSignature",
-      "guid": "E51DD9684EFAEE7725D5BBA6B12F59AA",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell09_K2Node_ComponentBoundEvent_13_OnInventoryItemPressed__DelegateSignature",
-      "guid": "D5F379F8467C91088424B188491C14D2",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell10_K2Node_ComponentBoundEvent_14_OnInventoryItemPressed__DelegateSignature",
-      "guid": "44BDF30949E81664F1B170929320B199",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell11_K2Node_ComponentBoundEvent_15_OnInventoryItemPressed__DelegateSignature",
-      "guid": "F7579B04451037F011FABB820AC627D1",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell12_K2Node_ComponentBoundEvent_16_OnInventoryItemPressed__DelegateSignature",
-      "guid": "1AF593CB4EB81E218E4FF8935C57478D",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell13_K2Node_ComponentBoundEvent_17_OnInventoryItemPressed__DelegateSignature",
-      "guid": "7A2167754D4A98D2BA49DD9A995570E6",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell14_K2Node_ComponentBoundEvent_18_OnInventoryItemPressed__DelegateSignature",
-      "guid": "59B9ECD34C36237CB6CF81A717E8E40F",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell15_K2Node_ComponentBoundEvent_19_OnInventoryItemPressed__DelegateSignature",
-      "guid": "D20D197247E9C28D90EBBB803B305D46",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell16_K2Node_ComponentBoundEvent_20_OnInventoryItemPressed__DelegateSignature",
-      "guid": "FE4D37B94C24446E2E1AE8B62D56CCE1",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell17_K2Node_ComponentBoundEvent_21_OnInventoryItemPressed__DelegateSignature",
-      "guid": "80222D0C4C27C5D227F7D7A2D4A6FA2F",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell18_K2Node_ComponentBoundEvent_22_OnInventoryItemPressed__DelegateSignature",
-      "guid": "256B2E7A431A28FEBB50A792209BA437",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell19_K2Node_ComponentBoundEvent_23_OnInventoryItemPressed__DelegateSignature",
-      "guid": "51B2373047603EEC3778F8ACCE0B6E85",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell20_K2Node_ComponentBoundEvent_24_OnInventoryItemPressed__DelegateSignature",
-      "guid": "6931AC094C23F8739DCB3DADD26138D3",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell21_K2Node_ComponentBoundEvent_25_OnInventoryItemPressed__DelegateSignature",
-      "guid": "440E690D450DBC0DFC71CE9400A9C602",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell22_K2Node_ComponentBoundEvent_26_OnInventoryItemPressed__DelegateSignature",
-      "guid": "1EB4103E40C9931D62DA99AD4F65116A",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell23_K2Node_ComponentBoundEvent_27_OnInventoryItemPressed__DelegateSignature",
-      "guid": "B7448B5247B98171B28FABB874098DEF",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_InventoryCell24_K2Node_ComponentBoundEvent_28_OnInventoryItemPressed__DelegateSignature",
-      "guid": "32F2CB884C7B94AF9959ED988FBE7C78",
+      "name": "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
+      "guid": "3FCA50A740785A7A637A898394733918",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -591,19 +480,24 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 7,
-    "generated_graph_count": 30,
-    "authored_node_count": 233,
-    "authored_pin_count": 674,
-    "authored_connection_count": 254,
-    "generated_node_count": 90,
-    "generated_pin_count": 270
+    "authored_graph_count": 9,
+    "generated_graph_count": 6,
+    "authored_node_count": 456,
+    "authored_pin_count": 1484,
+    "authored_connection_count": 277,
+    "generated_node_count": 18,
+    "generated_pin_count": 54
   },
   "graph_files": [
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "RebuildInventoryGrid",
+      "kind": "function",
+      "file": "graphs/RebuildInventoryGrid.json"
     },
     {
       "name": "RefreshCategories",
@@ -621,9 +515,14 @@
       "file": "graphs/RefreshItemSelection.json"
     },
     {
-      "name": "SelectInventoryItem",
+      "name": "SelectInventoryCategory",
       "kind": "function",
-      "file": "graphs/SelectInventoryItem.json"
+      "file": "graphs/SelectInventoryCategory.json"
+    },
+    {
+      "name": "SelectInventoryEntry",
+      "kind": "function",
+      "file": "graphs/SelectInventoryEntry.json"
     },
     {
       "name": "SetInventoryInfoView",

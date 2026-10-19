@@ -70,9 +70,9 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_GameMenu" ExportP
       End Object
       Begin Object Class=/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System.WBP_System_C Name="SystemPage" ExportPath="/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System.WBP_System_C'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu:WidgetTree.SystemPage'"
       End Object
-      Begin Object Class=/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory.WBP_Inventory_C Name="InventoryPage" ExportPath="/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory.WBP_Inventory_C'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu:WidgetTree.InventoryPage'"
-      End Object
       Begin Object Class=/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment.WBP_Equipment_C Name="EquipmentPage" ExportPath="/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment.WBP_Equipment_C'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu:WidgetTree.EquipmentPage'"
+      End Object
+      Begin Object Class=/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory.WBP_Inventory_C Name="InventoryPage" ExportPath="/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory.WBP_Inventory_C'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu:WidgetTree.InventoryPage'"
       End Object
    End Object
    Begin Object Class=/Script/Engine.EdGraph Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu:EventGraph'"
@@ -441,6 +441,18 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_GameMenu" ExportP
          bIsVariable=False
          DisplayLabel="SystemPage"
       End Object
+      Begin Object Name="EquipmentPage" ExportPath="/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment.WBP_Equipment_C'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu:WidgetTree.EquipmentPage'"
+         SelectedEquipmentSlot=(TagName="")
+         bPreviewItemInfo=False
+         PresentedItemName=""
+         PresentedLongDescription=""
+         PresentedIcon=None
+         PresentedAbilityIcon=None
+         TickFrequency=Auto
+         Slot="/Script/UMG.WidgetSwitcherSlot'WBP_GameMenu:WidgetTree.PageSwitcher.WidgetSwitcherSlot_1'"
+         bIsVariable=False
+         DisplayLabel="EquipmentPage"
+      End Object
       Begin Object Name="InventoryPage" ExportPath="/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory.WBP_Inventory_C'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu:WidgetTree.InventoryPage'"
          SelectedCategoryKey=""
          SelectedCategoryLabel=""
@@ -454,22 +466,11 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_GameMenu" ExportP
          InfoStoredAmount=""
          InfoMaxStack=""
          InfoIcon=None
+         MinimumVisualCells=0
          TickFrequency=Auto
          Slot="/Script/UMG.WidgetSwitcherSlot'WBP_GameMenu:WidgetTree.PageSwitcher.WidgetSwitcherSlot_0'"
          bIsVariable=False
          DisplayLabel="InventoryPage"
-      End Object
-      Begin Object Name="EquipmentPage" ExportPath="/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment.WBP_Equipment_C'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu:WidgetTree.EquipmentPage'"
-         SelectedEquipmentSlot=(TagName="")
-         bPreviewItemInfo=False
-         PresentedItemName=""
-         PresentedLongDescription=""
-         PresentedIcon=None
-         PresentedAbilityIcon=None
-         TickFrequency=Auto
-         Slot="/Script/UMG.WidgetSwitcherSlot'WBP_GameMenu:WidgetTree.PageSwitcher.WidgetSwitcherSlot_1'"
-         bIsVariable=False
-         DisplayLabel="EquipmentPage"
       End Object
       RootWidget="/Script/UMG.Overlay'MenuRoot'"
       AllWidgets(0)="/Script/UMG.Overlay'MenuRoot'"

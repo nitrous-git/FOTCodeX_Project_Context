@@ -16,7 +16,10 @@
     "reason": "Logic-bearing Blueprint class"
   },
   "architecture": {
-    "dependencies": [],
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory"
+    ],
     "referencers": [
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory"
     ],
@@ -39,6 +42,23 @@
         "name": "bHovered",
         "guid": "FD7A0B5E433BC3BD653E049ECDE34D8B",
         "friendly_name": "Hovered",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bIsOwnedEntry",
+        "guid": "D052100441B45EBD66231280598C8607",
+        "friendly_name": "Is Owned Entry",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
@@ -78,6 +98,23 @@
         "default_value": null,
         "type": {
           "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisplayIndex",
+        "guid": "030389F34B147BC6A8CCCFAC36E83B75",
+        "friendly_name": "Display Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
           "sub_category": null,
           "sub_category_object": null,
           "container": null,
@@ -155,6 +192,40 @@
         }
       },
       {
+        "name": "OnInventorySlotPressed",
+        "guid": "5E3BDD1B4A5EA6D0F3EC0C9134DDE49F",
+        "friendly_name": "On Inventory Slot Pressed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SourceSlotData",
+        "guid": "2A2E0E72419C89554E5D4D82A2FBF13B",
+        "friendly_name": "Source Slot Data",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "StackQuantity",
         "guid": "6665E4454788C824F79FF09A6027F8FF",
         "friendly_name": "Stack Quantity",
@@ -179,19 +250,22 @@
       "functions": [
         "RefreshAppearance",
         "ApplySelection",
-        "RefreshContent"
+        "RefreshContent",
+        "ActivateInventoryCell",
+        "ConfigureInventoryCell"
       ],
       "macros": [],
       "delegates": [
-        "OnInventoryItemPressed"
+        "OnInventoryItemPressed",
+        "OnInventorySlotPressed"
       ],
       "generated_graphs": [
-        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
-        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
-        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
-        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+        "PreConstruct",
         "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-        "PreConstruct"
+        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+        "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature"
       ]
     },
     "extraction_status": {

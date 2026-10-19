@@ -25,6 +25,23 @@
       }
     },
     {
+      "name": "bIsOwnedEntry",
+      "guid": "D052100441B45EBD66231280598C8607",
+      "friendly_name": "Is Owned Entry",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bPressed",
       "guid": "A9AFA9A64D69FA08A42669A9F3D8AF15",
       "friendly_name": "Pressed",
@@ -50,6 +67,23 @@
       "default_value": null,
       "type": {
         "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DisplayIndex",
+      "guid": "030389F34B147BC6A8CCCFAC36E83B75",
+      "friendly_name": "Display Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
         "sub_category": null,
         "sub_category_object": null,
         "container": null,
@@ -127,6 +161,40 @@
       }
     },
     {
+      "name": "OnInventorySlotPressed",
+      "guid": "5E3BDD1B4A5EA6D0F3EC0C9134DDE49F",
+      "friendly_name": "On Inventory Slot Pressed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SourceSlotData",
+      "guid": "2A2E0E72419C89554E5D4D82A2FBF13B",
+      "friendly_name": "Source Slot Data",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "StackQuantity",
       "guid": "6665E4454788C824F79FF09A6027F8FF",
       "friendly_name": "Stack Quantity",
@@ -149,11 +217,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "C66CCFD54717013A21B194ABA14A0536",
-      "node_count": 30,
-      "pin_count": 84,
-      "connection_count": 22,
-      "exec_connection_count": 12,
-      "data_connection_count": 10
+      "node_count": 47,
+      "pin_count": 145,
+      "connection_count": 11,
+      "exec_connection_count": 11,
+      "data_connection_count": 0
     },
     {
       "name": "RefreshAppearance",
@@ -179,11 +247,11 @@
       "name": "RefreshContent",
       "kind": "function",
       "guid": "B78471884F06FDFE3E32FFB0B41C8554",
-      "node_count": 24,
-      "pin_count": 73,
-      "connection_count": 25,
+      "node_count": 44,
+      "pin_count": 135,
+      "connection_count": 21,
       "exec_connection_count": 5,
-      "data_connection_count": 20
+      "data_connection_count": 16
     },
     {
       "name": "OnInventoryItemPressed",
@@ -194,30 +262,51 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "ActivateInventoryCell",
+      "kind": "function",
+      "guid": "03F9352C409A2CA81FFF2484C43D95C7",
+      "node_count": 7,
+      "pin_count": 19,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ConfigureInventoryCell",
+      "kind": "function",
+      "guid": "67341320404D650D975332B65D164B6A",
+      "node_count": 27,
+      "pin_count": 110,
+      "connection_count": 37,
+      "exec_connection_count": 9,
+      "data_connection_count": 28
+    },
+    {
+      "name": "OnInventorySlotPressed",
+      "kind": "delegate",
+      "guid": "6FFE5B4B4B205D0E51A579B0E7B56862",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
     }
   ],
   "generated_graphs": [
     {
-      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
-      "guid": "55561D634BE339D69DC69188722362A1",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
+      "name": "PreConstruct",
+      "guid": "60A380E844CB2B754B6CE18172C57FC2",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
     },
     {
-      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
-      "guid": "1AE953A8438B0764E43D93BAC3954989",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
-      "guid": "793F9DB44B2A2EB309326D8D16CE402D",
+      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "8190D0A642BD07E30559078D904F4DAC",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -226,7 +315,7 @@
     },
     {
       "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
-      "guid": "B7EFC78C4D6DACF3292A3F9D56B65B55",
+      "guid": "CA9CD234408EC78E716ED49BD48E64F9",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -234,8 +323,8 @@
       "data_connection_count": 0
     },
     {
-      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-      "guid": "5D823B634EAA2AB97E36F0BE71ACB994",
+      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "A7BEAD24411613C2F136B3A2EF111C11",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -243,21 +332,30 @@
       "data_connection_count": 0
     },
     {
-      "name": "PreConstruct",
-      "guid": "EAC9BCE1456BEF663D566996411769F2",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
+      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+      "guid": "55C17BCA4A3B0C571430CEBB64999811",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventorySlot_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+      "guid": "F096491043C66133304DC7AC66A24FBA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     }
   ],
   "stats": {
-    "authored_graph_count": 5,
+    "authored_graph_count": 8,
     "generated_graph_count": 6,
-    "authored_node_count": 91,
-    "authored_pin_count": 272,
-    "authored_connection_count": 87,
+    "authored_node_count": 163,
+    "authored_pin_count": 526,
+    "authored_connection_count": 115,
     "generated_node_count": 13,
     "generated_pin_count": 34
   },
@@ -268,14 +366,29 @@
       "file": "graphs/OnInventoryItemPressed.json"
     },
     {
+      "name": "OnInventorySlotPressed",
+      "kind": "delegate",
+      "file": "graphs/OnInventorySlotPressed.json"
+    },
+    {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
     },
     {
+      "name": "ActivateInventoryCell",
+      "kind": "function",
+      "file": "graphs/ActivateInventoryCell.json"
+    },
+    {
       "name": "ApplySelection",
       "kind": "function",
       "file": "graphs/ApplySelection.json"
+    },
+    {
+      "name": "ConfigureInventoryCell",
+      "kind": "function",
+      "file": "graphs/ConfigureInventoryCell.json"
     },
     {
       "name": "RefreshAppearance",
