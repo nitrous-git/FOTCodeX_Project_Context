@@ -8,6 +8,40 @@
   },
   "variables": [
     {
+      "name": "ArmorSlotCount",
+      "guid": "114D79D54E3EC4DD65F9A5A9E0D9C03F",
+      "friendly_name": "Armor Slot Count",
+      "category": "INVTEXT(\"Slot counts\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ArmorSlots",
+      "guid": "9B6D10F34698CCE3290B3D955BB49ECE",
+      "friendly_name": "Armor Slots",
+      "category": "INVTEXT(\"Runtime arrays\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "AttunementSlotCount",
       "guid": "8916F4D8488118E7BE3E4786B0453933",
       "friendly_name": "Attunement Slot Count",
@@ -62,40 +96,6 @@
       "name": "ConsumableSlots",
       "guid": "D4754493407163CB2A1DD6A96AB141C8",
       "friendly_name": "Consumable Slots",
-      "category": "INVTEXT(\"Runtime arrays\")",
-      "property_flags": 65541,
-      "default_value": null,
-      "type": {
-        "category": "struct",
-        "sub_category": null,
-        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
-        "container": "Array",
-        "is_reference": false,
-        "is_const": false,
-        "is_weak_pointer": false
-      }
-    },
-    {
-      "name": "EquipmentSlotCount",
-      "guid": "114D79D54E3EC4DD65F9A5A9E0D9C03F",
-      "friendly_name": "Equipment Slot Count",
-      "category": "INVTEXT(\"Slot counts\")",
-      "property_flags": 65541,
-      "default_value": null,
-      "type": {
-        "category": "int",
-        "sub_category": null,
-        "sub_category_object": null,
-        "container": null,
-        "is_reference": false,
-        "is_const": false,
-        "is_weak_pointer": false
-      }
-    },
-    {
-      "name": "EquipmentSlots",
-      "guid": "9B6D10F34698CCE3290B3D955BB49ECE",
-      "friendly_name": "Equipment Slots",
       "category": "INVTEXT(\"Runtime arrays\")",
       "property_flags": 65541,
       "default_value": null,
@@ -383,8 +383,8 @@
       "guid": "0F8DA23A44327CF34F16D0B6E0D7FE7B",
       "node_count": 17,
       "pin_count": 113,
-      "connection_count": 16,
-      "exec_connection_count": 16,
+      "connection_count": 15,
+      "exec_connection_count": 15,
       "data_connection_count": 0
     },
     {
@@ -401,11 +401,11 @@
       "name": "Debug_PrintInventory",
       "kind": "function",
       "guid": "0A3ECECE437F3F1E3A7273B53A4BB2D4",
-      "node_count": 31,
-      "pin_count": 172,
-      "connection_count": 35,
-      "exec_connection_count": 20,
-      "data_connection_count": 15
+      "node_count": 32,
+      "pin_count": 174,
+      "connection_count": 20,
+      "exec_connection_count": 12,
+      "data_connection_count": 8
     },
     {
       "name": "Debug_GiveTestWeapon",
@@ -451,7 +451,7 @@
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "5626166C4F9D5183AD0F32BACDD39C03",
+      "guid": "BA77FF8D42D26645B97E5986BABF56F0",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -462,9 +462,9 @@
   "stats": {
     "authored_graph_count": 20,
     "generated_graph_count": 1,
-    "authored_node_count": 486,
-    "authored_pin_count": 1760,
-    "authored_connection_count": 534,
+    "authored_node_count": 487,
+    "authored_pin_count": 1762,
+    "authored_connection_count": 518,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
