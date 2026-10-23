@@ -17,6 +17,7 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/EGameMenuPage",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
@@ -24,8 +25,10 @@
       "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenuButton"
     ],
-    "referencers": [],
-    "non_architecture_dependency_count": 9,
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+    ],
+    "non_architecture_dependency_count": 10,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -63,17 +66,18 @@
         "EventGraph"
       ],
       "functions": [
-        "RefreshPage"
+        "RefreshPage",
+        "OnPreviewKeyDown"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "OnInitialized",
-        "BndEvt__WBP_GameMenu_SystemButton_K2Node_ComponentBoundEvent_3_OnPageRequested__DelegateSignature",
-        "BndEvt__WBP_GameMenu_StatusButton_K2Node_ComponentBoundEvent_2_OnPageRequested__DelegateSignature",
-        "BndEvt__WBP_GameMenu_EquipmentButton_K2Node_ComponentBoundEvent_1_OnPageRequested__DelegateSignature",
+        "PreConstruct",
         "BndEvt__WBP_GameMenu_InventoryButton_K2Node_ComponentBoundEvent_0_OnPageRequested__DelegateSignature",
-        "PreConstruct"
+        "BndEvt__WBP_GameMenu_EquipmentButton_K2Node_ComponentBoundEvent_1_OnPageRequested__DelegateSignature",
+        "BndEvt__WBP_GameMenu_StatusButton_K2Node_ComponentBoundEvent_2_OnPageRequested__DelegateSignature",
+        "BndEvt__WBP_GameMenu_SystemButton_K2Node_ComponentBoundEvent_3_OnPageRequested__DelegateSignature",
+        "OnInitialized"
       ]
     },
     "extraction_status": {
