@@ -8,9 +8,9 @@
   "stats": {
     "node_count": 47,
     "pin_count": 128,
-    "connection_count": 47,
-    "exec_connection_count": 16,
-    "data_connection_count": 31
+    "connection_count": 38,
+    "exec_connection_count": 13,
+    "data_connection_count": 25
   },
   "nodes": [
     {
@@ -279,7 +279,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_3",
+              "pin_id": "0D70C175498417FFE4E297BCAC04E54D"
+            }
+          ]
         },
         {
           "id": "00DE0F5D4894C3AA0FF2F8AE4E8FC1AB",
@@ -350,12 +355,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_IfThenElse_3",
-              "pin_id": "0D70C175498417FFE4E297BCAC04E54D"
-            }
-          ]
+          "links": []
         },
         {
           "id": "2EFD54DF45A601E9763F65928665714A",
@@ -377,12 +377,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_IfThenElse_4",
-              "pin_id": "0D70C175498417FFE4E297BCAC04E54D"
-            }
-          ]
+          "links": []
         }
       ]
     },
@@ -393,7 +388,7 @@
       "title": "Return",
       "position": {
         "x": 1792,
-        "y": -176
+        "y": -240
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -490,7 +485,7 @@
       "title": "Get ArmorSlots",
       "position": {
         "x": 736,
-        "y": -106
+        "y": -170
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -562,7 +557,7 @@
       "title": "K2Node_CallArrayFunction",
       "position": {
         "x": 896,
-        "y": -112
+        "y": -176
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -687,7 +682,7 @@
       "title": "Get SlotIndex",
       "position": {
         "x": 736,
-        "y": -64
+        "y": -128
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -736,7 +731,7 @@
       "title": "Branch",
       "position": {
         "x": 1152,
-        "y": -176
+        "y": -240
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -861,7 +856,7 @@
       "title": "Get ArmorSlots",
       "position": {
         "x": 1408,
-        "y": -106
+        "y": -170
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -933,7 +928,7 @@
       "title": "K2Node_GetArrayItem",
       "position": {
         "x": 1584,
-        "y": -112
+        "y": -176
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1031,7 +1026,7 @@
       "title": "Get SlotIndex",
       "position": {
         "x": 1424,
-        "y": -64
+        "y": -128
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1079,8 +1074,8 @@
       "guid": "80EFDEB048AA545C4D92188DD5E4678A",
       "title": "Return",
       "position": {
-        "x": 1792,
-        "y": 160
+        "x": 1808,
+        "y": 240
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1174,17 +1169,17 @@
       "name": "K2Node_VariableGet_12",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "8D7BA0D449B7E7BF3735EDAA64C3F1C8",
-      "title": "Get AttunementSlots",
+      "title": "Get TalismanSlots",
       "position": {
-        "x": 720,
-        "y": 229
+        "x": 736,
+        "y": 309
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "AttunementSlots",
+          "MemberName": "TalismanSlots",
           "MemberGuid": "B46E59BF47856824919ABEB274C67288",
           "bSelfContext": true
         }
@@ -1193,7 +1188,7 @@
       "pins": [
         {
           "id": "0A1A78BF48175BC3013B65BF48C01D0B",
-          "name": "AttunementSlots",
+          "name": "TalismanSlots",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -1248,8 +1243,8 @@
       "guid": "897957F34655D30BFA165786D60F0363",
       "title": "K2Node_CallArrayFunction",
       "position": {
-        "x": 896,
-        "y": 224
+        "x": 912,
+        "y": 304
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1373,8 +1368,8 @@
       "guid": "73779ACF40DD0F33F35EB386E09747BE",
       "title": "Get SlotIndex",
       "position": {
-        "x": 736,
-        "y": 272
+        "x": 752,
+        "y": 352
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1422,8 +1417,8 @@
       "guid": "42BDBCD64AE013BFC773D18BB6BCE27F",
       "title": "Branch",
       "position": {
-        "x": 1152,
-        "y": 160
+        "x": 1168,
+        "y": 240
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1454,7 +1449,7 @@
           "links": [
             {
               "node": "K2Node_SwitchEnum_0",
-              "pin_id": "C8F8BDD8498D2404E6EF03AD1C16E9AE"
+              "pin_id": "4E3807464065CE01E608399BF8FF8820"
             }
           ]
         },
@@ -1545,17 +1540,17 @@
       "name": "K2Node_VariableGet_14",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "3C07FC2D4F01B39603230D82CA489FB3",
-      "title": "Get AttunementSlots",
+      "title": "Get TalismanSlots",
       "position": {
-        "x": 1408,
-        "y": 229
+        "x": 1424,
+        "y": 309
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "AttunementSlots",
+          "MemberName": "TalismanSlots",
           "MemberGuid": "B46E59BF47856824919ABEB274C67288",
           "bSelfContext": true
         }
@@ -1564,7 +1559,7 @@
       "pins": [
         {
           "id": "0A1A78BF48175BC3013B65BF48C01D0B",
-          "name": "AttunementSlots",
+          "name": "TalismanSlots",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -1619,8 +1614,8 @@
       "guid": "32F469014C23DD0EF5104EAF12BEEAD7",
       "title": "K2Node_GetArrayItem",
       "position": {
-        "x": 1584,
-        "y": 224
+        "x": 1600,
+        "y": 304
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1717,8 +1712,8 @@
       "guid": "48017E1A45E5872D1CE1ACA5C381A47C",
       "title": "Get SlotIndex",
       "position": {
-        "x": 1424,
-        "y": 272
+        "x": 1440,
+        "y": 352
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1799,12 +1794,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_IfThenElse_4",
-              "pin_id": "E40A37C14F99AF27937882A1405306AC"
-            }
-          ]
+          "links": []
         },
         {
           "id": "FBFA67C741D47FC335A2D3BF0C5F2761",
@@ -1848,12 +1838,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_GetArrayItem_4",
-              "pin_id": "94161B8843CF22495E8274B0AD4A6AFD"
-            }
-          ]
+          "links": []
         }
       ]
     },
@@ -1898,12 +1883,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallArrayFunction_4",
-              "pin_id": "693FF8E64B689D044B96D99803A5FC7E"
-            }
-          ]
+          "links": []
         },
         {
           "id": "13FB5F5942721C8126D6AA946C474CC9",
@@ -1977,9 +1957,9 @@
           "friendly_name": null,
           "direction": "input",
           "type": {
-            "category": "struct",
+            "category": "wildcard",
             "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+            "sub_category_object": null,
             "container": "Array",
             "is_reference": true,
             "is_const": true,
@@ -1991,12 +1971,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableGet_16",
-              "pin_id": "0A1A78BF48175BC3013B65BF48C01D0B"
-            }
-          ]
+          "links": []
         },
         {
           "id": "8CC4CCE1479FD8079D90278842F56F7C",
@@ -2018,12 +1993,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableGet_17",
-              "pin_id": "B03724554F91D833D08C5F93E069E687"
-            }
-          ]
+          "links": []
         },
         {
           "id": "188B9865430D9A4834040CB7F32929D3",
@@ -2045,12 +2015,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_IfThenElse_4",
-              "pin_id": "86B11DA44BE331F1F2783E80822A1876"
-            }
-          ]
+          "links": []
         }
       ]
     },
@@ -2094,12 +2059,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallArrayFunction_4",
-              "pin_id": "8CC4CCE1479FD8079D90278842F56F7C"
-            }
-          ]
+          "links": []
         }
       ]
     },
@@ -2138,12 +2098,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_SwitchEnum_0",
-              "pin_id": "2EFD54DF45A601E9763F65928665714A"
-            }
-          ]
+          "links": []
         },
         {
           "id": "86B11DA44BE331F1F2783E80822A1876",
@@ -2165,12 +2120,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallArrayFunction_4",
-              "pin_id": "188B9865430D9A4834040CB7F32929D3"
-            }
-          ]
+          "links": []
         },
         {
           "id": "E40A37C14F99AF27937882A1405306AC",
@@ -2192,12 +2142,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_FunctionResult_4",
-              "pin_id": "01FC1CDB4B05E2080CF2CFBBF21F9496"
-            }
-          ]
+          "links": []
         },
         {
           "id": "966757834433F1FFEFF16A9B90D42B4D",
@@ -2219,12 +2164,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_FunctionResult_7",
-              "pin_id": "01FC1CDB4B05E2080CF2CFBBF21F9496"
-            }
-          ]
+          "links": []
         }
       ]
     },
@@ -2269,12 +2209,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_GetArrayItem_4",
-              "pin_id": "131E029F4BA506B5B68119AB002D6BE1"
-            }
-          ]
+          "links": []
         },
         {
           "id": "13FB5F5942721C8126D6AA946C474CC9",
@@ -2321,9 +2256,9 @@
           "friendly_name": null,
           "direction": "input",
           "type": {
-            "category": "struct",
+            "category": "wildcard",
             "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+            "sub_category_object": null,
             "container": "Array",
             "is_reference": false,
             "is_const": false,
@@ -2335,12 +2270,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableGet_18",
-              "pin_id": "0A1A78BF48175BC3013B65BF48C01D0B"
-            }
-          ]
+          "links": []
         },
         {
           "id": "2BB302D1489DE8494C2EA0B432AC70E5",
@@ -2362,12 +2292,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableGet_19",
-              "pin_id": "B03724554F91D833D08C5F93E069E687"
-            }
-          ]
+          "links": []
         },
         {
           "id": "94161B8843CF22495E8274B0AD4A6AFD",
@@ -2375,9 +2300,9 @@
           "friendly_name": null,
           "direction": "output",
           "type": {
-            "category": "struct",
+            "category": "wildcard",
             "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+            "sub_category_object": null,
             "container": null,
             "is_reference": false,
             "is_const": false,
@@ -2389,12 +2314,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_FunctionResult_4",
-              "pin_id": "30F344834BCCF53D9C3C21A0E0E09913"
-            }
-          ]
+          "links": []
         }
       ]
     },
@@ -2438,12 +2358,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_GetArrayItem_4",
-              "pin_id": "2BB302D1489DE8494C2EA0B432AC70E5"
-            }
-          ]
+          "links": []
         }
       ]
     },
@@ -2453,8 +2368,8 @@
       "guid": "7BD333574B9F73893B2EA3A4B7F7D92C",
       "title": "Return",
       "position": {
-        "x": 1792,
-        "y": 880
+        "x": 1760,
+        "y": 704
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -2548,17 +2463,17 @@
       "name": "K2Node_VariableGet_20",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "43F4219B4D79C36F495C1D9705F20E6F",
-      "title": "Get ConsumableSlots",
+      "title": "Get ToolSlots",
       "position": {
-        "x": 720,
-        "y": 949
+        "x": 688,
+        "y": 773
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "ConsumableSlots",
+          "MemberName": "ToolSlots",
           "MemberGuid": "D4754493407163CB2A1DD6A96AB141C8",
           "bSelfContext": true
         }
@@ -2567,7 +2482,7 @@
       "pins": [
         {
           "id": "0A1A78BF48175BC3013B65BF48C01D0B",
-          "name": "ConsumableSlots",
+          "name": "ToolSlots",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -2622,8 +2537,8 @@
       "guid": "3CC4A4514922F6B4C1D333B7CC444FE9",
       "title": "K2Node_CallArrayFunction",
       "position": {
-        "x": 896,
-        "y": 944
+        "x": 864,
+        "y": 768
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -2747,8 +2662,8 @@
       "guid": "78DAEAC64715CA6C5663F0BC82AB9CEA",
       "title": "Get SlotIndex",
       "position": {
-        "x": 736,
-        "y": 992
+        "x": 704,
+        "y": 816
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -2796,8 +2711,8 @@
       "guid": "ADCC186C4B97CCFA71EC38A23BCC148E",
       "title": "Branch",
       "position": {
-        "x": 1152,
-        "y": 880
+        "x": 1120,
+        "y": 704
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -2919,17 +2834,17 @@
       "name": "K2Node_VariableGet_22",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "4F37E6634E20B4EDC27DA98BA8F5F840",
-      "title": "Get ConsumableSlots",
+      "title": "Get ToolSlots",
       "position": {
-        "x": 1408,
-        "y": 949
+        "x": 1376,
+        "y": 773
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "ConsumableSlots",
+          "MemberName": "ToolSlots",
           "MemberGuid": "D4754493407163CB2A1DD6A96AB141C8",
           "bSelfContext": true
         }
@@ -2938,7 +2853,7 @@
       "pins": [
         {
           "id": "0A1A78BF48175BC3013B65BF48C01D0B",
-          "name": "ConsumableSlots",
+          "name": "ToolSlots",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -2993,8 +2908,8 @@
       "guid": "F6D67896456FE9F3445E459BF931F4B9",
       "title": "K2Node_GetArrayItem",
       "position": {
-        "x": 1584,
-        "y": 944
+        "x": 1552,
+        "y": 768
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3091,8 +3006,8 @@
       "guid": "9BC3F9134372F651090F7DA22D2BC0A2",
       "title": "Get SlotIndex",
       "position": {
-        "x": 1424,
-        "y": 992
+        "x": 1392,
+        "y": 816
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3173,12 +3088,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_IfThenElse_4",
-              "pin_id": "966757834433F1FFEFF16A9B90D42B4D"
-            }
-          ]
+          "links": []
         },
         {
           "id": "FBFA67C741D47FC335A2D3BF0C5F2761",
@@ -3232,8 +3142,8 @@
       "guid": "38D7FE04457CDD1B7BD6EF9DD37367C5",
       "title": "Return",
       "position": {
-        "x": 1392,
-        "y": 336
+        "x": 1408,
+        "y": 416
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3325,7 +3235,7 @@
       "title": "Return",
       "position": {
         "x": 1392,
-        "y": 0
+        "y": -64
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3416,8 +3326,8 @@
       "guid": "08E9F99F4B9CE09278CD1F97F75B5F9E",
       "title": "Return",
       "position": {
-        "x": 1408,
-        "y": 1056
+        "x": 1376,
+        "y": 880
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3509,7 +3419,7 @@
       "title": "Return",
       "position": {
         "x": 1792,
-        "y": 1296
+        "y": -672
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3606,7 +3516,7 @@
       "title": "Get WeaponSlots",
       "position": {
         "x": 720,
-        "y": 1360
+        "y": -608
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3678,7 +3588,7 @@
       "title": "K2Node_CallArrayFunction",
       "position": {
         "x": 896,
-        "y": 1360
+        "y": -608
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3803,7 +3713,7 @@
       "title": "Get SlotIndex",
       "position": {
         "x": 736,
-        "y": 1408
+        "y": -560
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3852,7 +3762,7 @@
       "title": "Branch",
       "position": {
         "x": 1152,
-        "y": 1296
+        "y": -672
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3977,7 +3887,7 @@
       "title": "Get WeaponSlots",
       "position": {
         "x": 1408,
-        "y": 1360
+        "y": -608
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -4049,7 +3959,7 @@
       "title": "K2Node_GetArrayItem",
       "position": {
         "x": 1584,
-        "y": 1360
+        "y": -608
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -4147,7 +4057,7 @@
       "title": "Get SlotIndex",
       "position": {
         "x": 1424,
-        "y": 1408
+        "y": -560
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -4196,7 +4106,7 @@
       "title": "Return",
       "position": {
         "x": 1408,
-        "y": 1472
+        "y": -496
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -4325,19 +4235,6 @@
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_CallArrayFunction_4",
-        "pin_id": "188B9865430D9A4834040CB7F32929D3",
-        "pin_name": "ReturnValue"
-      },
-      "to": {
-        "node": "K2Node_IfThenElse_4",
-        "pin_id": "86B11DA44BE331F1F2783E80822A1876",
-        "pin_name": "Condition"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
         "node": "K2Node_CallArrayFunction_5",
         "pin_id": "188B9865430D9A4834040CB7F32929D3",
         "pin_name": "ReturnValue"
@@ -4409,19 +4306,6 @@
       },
       "to": {
         "node": "K2Node_FunctionResult_5",
-        "pin_id": "30F344834BCCF53D9C3C21A0E0E09913",
-        "pin_name": "SlotData "
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
-        "node": "K2Node_GetArrayItem_4",
-        "pin_id": "94161B8843CF22495E8274B0AD4A6AFD",
-        "pin_name": "Output"
-      },
-      "to": {
-        "node": "K2Node_FunctionResult_4",
         "pin_id": "30F344834BCCF53D9C3C21A0E0E09913",
         "pin_name": "SlotData "
       }
@@ -4520,32 +4404,6 @@
     {
       "kind": "exec",
       "from": {
-        "node": "K2Node_IfThenElse_4",
-        "pin_id": "966757834433F1FFEFF16A9B90D42B4D",
-        "pin_name": "else"
-      },
-      "to": {
-        "node": "K2Node_FunctionResult_7",
-        "pin_id": "01FC1CDB4B05E2080CF2CFBBF21F9496",
-        "pin_name": "execute"
-      }
-    },
-    {
-      "kind": "exec",
-      "from": {
-        "node": "K2Node_IfThenElse_4",
-        "pin_id": "E40A37C14F99AF27937882A1405306AC",
-        "pin_name": "then"
-      },
-      "to": {
-        "node": "K2Node_FunctionResult_4",
-        "pin_id": "01FC1CDB4B05E2080CF2CFBBF21F9496",
-        "pin_name": "execute"
-      }
-    },
-    {
-      "kind": "exec",
-      "from": {
         "node": "K2Node_IfThenElse_5",
         "pin_id": "966757834433F1FFEFF16A9B90D42B4D",
         "pin_name": "else"
@@ -4599,37 +4457,24 @@
       "kind": "exec",
       "from": {
         "node": "K2Node_SwitchEnum_0",
-        "pin_id": "C8F8BDD8498D2404E6EF03AD1C16E9AE",
-        "pin_name": "NewEnumerator4"
-      },
-      "to": {
-        "node": "K2Node_IfThenElse_3",
-        "pin_id": "0D70C175498417FFE4E297BCAC04E54D",
-        "pin_name": "execute"
-      }
-    },
-    {
-      "kind": "exec",
-      "from": {
-        "node": "K2Node_SwitchEnum_0",
-        "pin_id": "2EFD54DF45A601E9763F65928665714A",
-        "pin_name": "NewEnumerator5"
-      },
-      "to": {
-        "node": "K2Node_IfThenElse_4",
-        "pin_id": "0D70C175498417FFE4E297BCAC04E54D",
-        "pin_name": "execute"
-      }
-    },
-    {
-      "kind": "exec",
-      "from": {
-        "node": "K2Node_SwitchEnum_0",
         "pin_id": "C54A74C24BD3695B8B97F1BC6E6BB93B",
         "pin_name": "NewEnumerator7"
       },
       "to": {
         "node": "K2Node_IfThenElse_0",
+        "pin_id": "0D70C175498417FFE4E297BCAC04E54D",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_SwitchEnum_0",
+        "pin_id": "4E3807464065CE01E608399BF8FF8820",
+        "pin_name": "NewEnumerator8"
+      },
+      "to": {
+        "node": "K2Node_IfThenElse_3",
         "pin_id": "0D70C175498417FFE4E297BCAC04E54D",
         "pin_name": "execute"
       }
@@ -4691,7 +4536,7 @@
       "from": {
         "node": "K2Node_VariableGet_12",
         "pin_id": "0A1A78BF48175BC3013B65BF48C01D0B",
-        "pin_name": "AttunementSlots"
+        "pin_name": "TalismanSlots"
       },
       "to": {
         "node": "K2Node_CallArrayFunction_3",
@@ -4717,7 +4562,7 @@
       "from": {
         "node": "K2Node_VariableGet_14",
         "pin_id": "0A1A78BF48175BC3013B65BF48C01D0B",
-        "pin_name": "AttunementSlots"
+        "pin_name": "TalismanSlots"
       },
       "to": {
         "node": "K2Node_GetArrayItem_3",
@@ -4741,58 +4586,6 @@
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_VariableGet_16",
-        "pin_id": "0A1A78BF48175BC3013B65BF48C01D0B",
-        "pin_name": "FragmentSlots"
-      },
-      "to": {
-        "node": "K2Node_CallArrayFunction_4",
-        "pin_id": "693FF8E64B689D044B96D99803A5FC7E",
-        "pin_name": "TargetArray"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
-        "node": "K2Node_VariableGet_17",
-        "pin_id": "B03724554F91D833D08C5F93E069E687",
-        "pin_name": "SlotIndex"
-      },
-      "to": {
-        "node": "K2Node_CallArrayFunction_4",
-        "pin_id": "8CC4CCE1479FD8079D90278842F56F7C",
-        "pin_name": "IndexToTest"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
-        "node": "K2Node_VariableGet_18",
-        "pin_id": "0A1A78BF48175BC3013B65BF48C01D0B",
-        "pin_name": "FragmentSlots"
-      },
-      "to": {
-        "node": "K2Node_GetArrayItem_4",
-        "pin_id": "131E029F4BA506B5B68119AB002D6BE1",
-        "pin_name": "Array"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
-        "node": "K2Node_VariableGet_19",
-        "pin_id": "B03724554F91D833D08C5F93E069E687",
-        "pin_name": "SlotIndex"
-      },
-      "to": {
-        "node": "K2Node_GetArrayItem_4",
-        "pin_id": "2BB302D1489DE8494C2EA0B432AC70E5",
-        "pin_name": "Dimension 1"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
         "node": "K2Node_VariableGet_2",
         "pin_id": "0A1A78BF48175BC3013B65BF48C01D0B",
         "pin_name": "WeaponSlots"
@@ -4808,7 +4601,7 @@
       "from": {
         "node": "K2Node_VariableGet_20",
         "pin_id": "0A1A78BF48175BC3013B65BF48C01D0B",
-        "pin_name": "ConsumableSlots"
+        "pin_name": "ToolSlots"
       },
       "to": {
         "node": "K2Node_CallArrayFunction_5",
@@ -4834,7 +4627,7 @@
       "from": {
         "node": "K2Node_VariableGet_22",
         "pin_id": "0A1A78BF48175BC3013B65BF48C01D0B",
-        "pin_name": "ConsumableSlots"
+        "pin_name": "ToolSlots"
       },
       "to": {
         "node": "K2Node_GetArrayItem_5",

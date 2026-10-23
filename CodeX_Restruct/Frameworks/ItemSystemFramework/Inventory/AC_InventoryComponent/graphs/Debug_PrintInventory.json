@@ -8,9 +8,9 @@
   "stats": {
     "node_count": 32,
     "pin_count": 174,
-    "connection_count": 20,
+    "connection_count": 19,
     "exec_connection_count": 12,
-    "data_connection_count": 8
+    "data_connection_count": 7
   },
   "nodes": [
     {
@@ -69,7 +69,7 @@
       "guid": "42F9CB944361BDEAF5BADEB5B172187B",
       "title": "PrintString",
       "position": {
-        "x": 272,
+        "x": 384,
         "y": 0
       },
       "comment": null,
@@ -3491,7 +3491,7 @@
       "name": "K2Node_VariableGet_6",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "D91C647F4B5E9AB9388BCAABD00C2F2C",
-      "title": "Get AttunementSlots",
+      "title": "Get TalismanSlots",
       "position": {
         "x": 1488,
         "y": 640
@@ -3501,7 +3501,7 @@
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "AttunementSlots",
+          "MemberName": "TalismanSlots",
           "MemberGuid": "B46E59BF47856824919ABEB274C67288",
           "bSelfContext": true
         }
@@ -3510,7 +3510,7 @@
       "pins": [
         {
           "id": "5EB1A2C141E9C8B5A368E684D2FB7F50",
-          "name": "AttunementSlots",
+          "name": "TalismanSlots",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -3627,12 +3627,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableGet_7",
-              "pin_id": "5EB1A2C141E9C8B5A368E684D2FB7F50"
-            }
-          ]
+          "links": []
         },
         {
           "id": "BE644912471BAA5A8E5D4CB526A3D7D3",
@@ -3775,12 +3770,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_MacroInstance_4",
-              "pin_id": "01934CF1424067AFEF9C82B02980D256"
-            }
-          ]
+          "links": []
         },
         {
           "id": "7E0261C3442F8F1311055C8A0577D1F0",
@@ -4997,23 +4987,10 @@
       "from": {
         "node": "K2Node_VariableGet_6",
         "pin_id": "5EB1A2C141E9C8B5A368E684D2FB7F50",
-        "pin_name": "AttunementSlots"
+        "pin_name": "TalismanSlots"
       },
       "to": {
         "node": "K2Node_MacroInstance_3",
-        "pin_id": "01934CF1424067AFEF9C82B02980D256",
-        "pin_name": "Array"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
-        "node": "K2Node_VariableGet_7",
-        "pin_id": "5EB1A2C141E9C8B5A368E684D2FB7F50",
-        "pin_name": "FragmentSlots"
-      },
-      "to": {
-        "node": "K2Node_MacroInstance_4",
         "pin_id": "01934CF1424067AFEF9C82B02980D256",
         "pin_name": "Array"
       }
