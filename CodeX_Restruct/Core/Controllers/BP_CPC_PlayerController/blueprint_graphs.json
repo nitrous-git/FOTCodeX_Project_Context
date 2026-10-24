@@ -8,6 +8,23 @@
   },
   "variables": [
     {
+      "name": "ActiveMenuPageIndex",
+      "guid": "9311F1EE4C5A52C8CD5E54AFA06CBBF1",
+      "friendly_name": "Active Menu Page Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bGameMenuOpen",
       "guid": "5B7103CF476279B9B1276780BBD0A16D",
       "friendly_name": "Game Menu Open",
@@ -69,6 +86,23 @@
         "category": "struct",
         "sub_category": null,
         "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FullScreenPagesReady",
+      "guid": "E01186434657EE7A714B31B3FD80302E",
+      "friendly_name": "Full Screen Pages Ready",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
         "container": null,
         "is_reference": false,
         "is_const": false,
@@ -251,8 +285,8 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "54B5DF38479743A61F43B19406610AD4",
-      "node_count": 132,
-      "pin_count": 465,
+      "node_count": 129,
+      "pin_count": 443,
       "connection_count": 121,
       "exec_connection_count": 41,
       "data_connection_count": 80
@@ -268,167 +302,119 @@
       "data_connection_count": 0
     },
     {
-      "name": "CloseGameMenu",
+      "name": "InitializeGameMenu",
       "kind": "function",
-      "guid": "E9426E4B48196740140182BF96A6B969",
+      "guid": "BD4AA52B47BA320781A77A9ED1741C30",
       "node_count": 9,
-      "pin_count": 30,
-      "connection_count": 8,
+      "pin_count": 28,
+      "connection_count": 9,
       "exec_connection_count": 5,
-      "data_connection_count": 3
-    },
-    {
-      "name": "OpenGameMenu",
-      "kind": "function",
-      "guid": "28F786D04899B7E173B151A8B7A3E828",
-      "node_count": 14,
-      "pin_count": 44,
-      "connection_count": 13,
-      "exec_connection_count": 7,
-      "data_connection_count": 6
+      "data_connection_count": 4
     },
     {
       "name": "ToggleGameMenu",
       "kind": "function",
       "guid": "D20204B6447BE7099A218FB39BD5EDA9",
-      "node_count": 8,
-      "pin_count": 23,
+      "node_count": 7,
+      "pin_count": 19,
       "connection_count": 6,
       "exec_connection_count": 4,
       "data_connection_count": 2
     },
     {
-      "name": "InitializeGameMenu",
+      "name": "OpenGameMenu",
       "kind": "function",
-      "guid": "BD4AA52B47BA320781A77A9ED1741C30",
-      "node_count": 7,
-      "pin_count": 22,
-      "connection_count": 8,
-      "exec_connection_count": 4,
+      "guid": "28F786D04899B7E173B151A8B7A3E828",
+      "node_count": 15,
+      "pin_count": 47,
+      "connection_count": 14,
+      "exec_connection_count": 8,
+      "data_connection_count": 6
+    },
+    {
+      "name": "CloseGameMenu",
+      "kind": "function",
+      "guid": "E9426E4B48196740140182BF96A6B969",
+      "node_count": 10,
+      "pin_count": 33,
+      "connection_count": 9,
+      "exec_connection_count": 6,
+      "data_connection_count": 3
+    },
+    {
+      "name": "InitializeFullScreenPages",
+      "kind": "function",
+      "guid": "B36401754E588AE7868709B12404D774",
+      "node_count": 26,
+      "pin_count": 80,
+      "connection_count": 33,
+      "exec_connection_count": 15,
+      "data_connection_count": 18
+    },
+    {
+      "name": "ShowMenuNavigation",
+      "kind": "function",
+      "guid": "39A42C384D91B315C03384AACFFD6F4F",
+      "node_count": 10,
+      "pin_count": 31,
+      "connection_count": 9,
+      "exec_connection_count": 5,
       "data_connection_count": 4
+    },
+    {
+      "name": "HideMenuViews",
+      "kind": "function",
+      "guid": "383FCF9044E9AA866D330DAA298C594A",
+      "node_count": 15,
+      "pin_count": 39,
+      "connection_count": 14,
+      "exec_connection_count": 5,
+      "data_connection_count": 9
+    },
+    {
+      "name": "NavigateMenuBack",
+      "kind": "function",
+      "guid": "7387F87E45917DC07104CB9CADBB9758",
+      "node_count": 18,
+      "pin_count": 54,
+      "connection_count": 19,
+      "exec_connection_count": 8,
+      "data_connection_count": 11
+    },
+    {
+      "name": "OpenMenuPage",
+      "kind": "function",
+      "guid": "41FA00754B0F11959BBBCBA508993C47",
+      "node_count": 60,
+      "pin_count": 190,
+      "connection_count": 72,
+      "exec_connection_count": 23,
+      "data_connection_count": 49
+    },
+    {
+      "name": "G31_RuntimeCheck",
+      "kind": "function",
+      "guid": "1FBF18134A01D556C06947A622EA0484",
+      "node_count": 3,
+      "pin_count": 8,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
     }
   ],
   "generated_graphs": [
     {
-      "name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_14",
-      "guid": "CD343AC646ECFA15C9DDBA9D8CF0937A",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
+      "name": "ReceiveBeginPlay",
+      "guid": "6E3734854E6FA63E1ACCE183FA24FC10",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     },
     {
-      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_13",
-      "guid": "ACCBE5E44248B505C3B0388B4B2C5BE8",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
-      "guid": "935A7122420C4787A1ED18A458BC7E37",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_11",
-      "guid": "38F080A94F53560714E6379725663451",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_10",
-      "guid": "D29BC95D410BE8A9EEA25C9EB540D441",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_9",
-      "guid": "27BF77124C88972BD4BE4EBC2BA124C6",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_8",
-      "guid": "F890793F4D2C515BDF4CBD88CA513E35",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_7",
-      "guid": "F7CAFC1F49E6093F126EE6B2C4A2A4D8",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_6",
-      "guid": "5BFBB2E24FFBA08553942E9B827392C7",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_5",
-      "guid": "BF9476B94633BA5A65721FA995ECB8CA",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_N_K2Node_InputKeyEvent_0",
-      "guid": "692E60B64A104CA78B05B8BF32AE7C6F",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_4",
-      "guid": "4361B6014E52B078781555A5A8E6996E",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_3",
-      "guid": "EC5EBEB94894D6807C90ACBEF24D994A",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_2",
-      "guid": "0432CF3F44BFDB5099FA198424625934",
+      "name": "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_0",
+      "guid": "ACE612B046CB9E8374AB42BC766B02D2",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -437,7 +423,7 @@
     },
     {
       "name": "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_1",
-      "guid": "F343DA8344D134BA965E7C81C9689BC2",
+      "guid": "13AFE86545C965018378B9995A743D2D",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -445,8 +431,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_0",
-      "guid": "B6083A2F457B48B039341CA2A1EF5928",
+      "name": "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_2",
+      "guid": "AC9F1CD2427F3D38E3B9B6B5EC796B67",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -454,21 +440,129 @@
       "data_connection_count": 4
     },
     {
-      "name": "ReceiveBeginPlay",
-      "guid": "3542FB104DE8FD4FF61945892FB6F36C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
+      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_3",
+      "guid": "C37912A34DDADEF117C4F98E6CD8F623",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_4",
+      "guid": "9619DFD64D362C36F74E5480B10A34B8",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_N_K2Node_InputKeyEvent_0",
+      "guid": "0C67266F4FD83B60CDECFB81FA3719D2",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_5",
+      "guid": "4FB1FC7445C0E8C01D1DA289FBE11C87",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_6",
+      "guid": "B88A9E7F4130CDDE820EB28682EC6519",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_7",
+      "guid": "83F29C07439F1A9A543F52B43AB9ED1D",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_8",
+      "guid": "774F194346043D9755335787D3288A20",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_9",
+      "guid": "CE6148DE454ECE8903B6D68909987FFC",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_10",
+      "guid": "8976988343AC5C0FB226DCBBA8C0565B",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_11",
+      "guid": "3451ED204279E12362DEF59E11D149D5",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
+      "guid": "175FD94D40E32176AA7BD68B654BE1AE",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_13",
+      "guid": "22B7A96B4B6862D062B94798952F078D",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_14",
+      "guid": "1839ADAA40D51676D39C6286ABEA816C",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
     }
   ],
   "stats": {
-    "authored_graph_count": 6,
+    "authored_graph_count": 12,
     "generated_graph_count": 17,
-    "authored_node_count": 171,
-    "authored_pin_count": 585,
-    "authored_connection_count": 156,
+    "authored_node_count": 303,
+    "authored_pin_count": 973,
+    "authored_connection_count": 308,
     "generated_node_count": 50,
     "generated_pin_count": 239
   },
@@ -484,14 +578,44 @@
       "file": "graphs/CloseGameMenu.json"
     },
     {
+      "name": "G31_RuntimeCheck",
+      "kind": "function",
+      "file": "graphs/G31_RuntimeCheck.json"
+    },
+    {
+      "name": "HideMenuViews",
+      "kind": "function",
+      "file": "graphs/HideMenuViews.json"
+    },
+    {
+      "name": "InitializeFullScreenPages",
+      "kind": "function",
+      "file": "graphs/InitializeFullScreenPages.json"
+    },
+    {
       "name": "InitializeGameMenu",
       "kind": "function",
       "file": "graphs/InitializeGameMenu.json"
     },
     {
+      "name": "NavigateMenuBack",
+      "kind": "function",
+      "file": "graphs/NavigateMenuBack.json"
+    },
+    {
       "name": "OpenGameMenu",
       "kind": "function",
       "file": "graphs/OpenGameMenu.json"
+    },
+    {
+      "name": "OpenMenuPage",
+      "kind": "function",
+      "file": "graphs/OpenMenuPage.json"
+    },
+    {
+      "name": "ShowMenuNavigation",
+      "kind": "function",
+      "file": "graphs/ShowMenuNavigation.json"
     },
     {
       "name": "ToggleGameMenu",

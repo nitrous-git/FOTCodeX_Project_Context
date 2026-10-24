@@ -20,7 +20,7 @@
     "referencers": [
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment"
     ],
-    "non_architecture_dependency_count": 5,
+    "non_architecture_dependency_count": 4,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -35,6 +35,23 @@
     "interfaces": [],
     "components": [],
     "variables": [
+      {
+        "name": "bEquipped",
+        "guid": "E97A002C41DA2DD98056918DEF0179F3",
+        "friendly_name": "Equipped",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "bHovered",
         "guid": "F4928873460760DE59C8DEB85BB4793F",
@@ -153,6 +170,23 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "OnChoicePreviewed",
+        "guid": "300507D8424F32DD0A5F4AA3EFCD1EAE",
+        "friendly_name": "On Choice Previewed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
@@ -166,15 +200,16 @@
       ],
       "macros": [],
       "delegates": [
-        "OnChoicePressed"
+        "OnChoicePressed",
+        "OnChoicePreviewed"
       ],
       "generated_graphs": [
-        "PreConstruct",
-        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
-        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
         "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
-        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature"
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+        "PreConstruct"
       ]
     },
     "extraction_status": {
@@ -195,6 +230,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 9
+    "widget_count": 8
   }
 }

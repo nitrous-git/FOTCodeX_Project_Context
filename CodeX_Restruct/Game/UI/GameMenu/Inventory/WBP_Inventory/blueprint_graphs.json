@@ -390,8 +390,8 @@
       "name": "RefreshItemSelection",
       "kind": "function",
       "guid": "475C39EE4A2F258AB6C6DCA11980D7D1",
-      "node_count": 60,
-      "pin_count": 207,
+      "node_count": 31,
+      "pin_count": 99,
       "connection_count": 36,
       "exec_connection_count": 13,
       "data_connection_count": 23
@@ -400,11 +400,11 @@
       "name": "RefreshInventoryInfoPresentation",
       "kind": "function",
       "guid": "D96E60FE413A85F882327886C74E2B12",
-      "node_count": 51,
-      "pin_count": 153,
-      "connection_count": 60,
+      "node_count": 61,
+      "pin_count": 164,
+      "connection_count": 61,
       "exec_connection_count": 11,
-      "data_connection_count": 49
+      "data_connection_count": 50
     },
     {
       "name": "SetInventoryInfoView",
@@ -460,11 +460,31 @@
       "name": "InitializeGameplay",
       "kind": "function",
       "guid": "EA2F80304CAE47A625B8BF80BBE055F5",
-      "node_count": 29,
-      "pin_count": 100,
-      "connection_count": 25,
-      "exec_connection_count": 11,
-      "data_connection_count": 14
+      "node_count": 13,
+      "pin_count": 44,
+      "connection_count": 18,
+      "exec_connection_count": 8,
+      "data_connection_count": 10
+    },
+    {
+      "name": "RefreshOwnedInventory",
+      "kind": "function",
+      "guid": "E1AE832B4CB0AD99C7748F8CB585E055",
+      "node_count": 129,
+      "pin_count": 434,
+      "connection_count": 156,
+      "exec_connection_count": 36,
+      "data_connection_count": 120
+    },
+    {
+      "name": "RefreshSelectedItemInfo",
+      "kind": "function",
+      "guid": "28C107E741B811635E3921B0ACB3ECB8",
+      "node_count": 28,
+      "pin_count": 124,
+      "connection_count": 34,
+      "exec_connection_count": 15,
+      "data_connection_count": 19
     },
     {
       "name": "UnbindInventoryEvents",
@@ -477,57 +497,20 @@
       "data_connection_count": 4
     },
     {
-      "name": "RefreshSelectedItemInfo",
+      "name": "OnPreviewKeyDown",
       "kind": "function",
-      "guid": "28C107E741B811635E3921B0ACB3ECB8",
-      "node_count": 30,
-      "pin_count": 130,
-      "connection_count": 34,
-      "exec_connection_count": 15,
+      "guid": "220DA4CC4DB758C2DB6904BFEFA1DE8C",
+      "node_count": 26,
+      "pin_count": 75,
+      "connection_count": 30,
+      "exec_connection_count": 11,
       "data_connection_count": 19
-    },
-    {
-      "name": "RefreshOwnedInventory",
-      "kind": "function",
-      "guid": "E1AE832B4CB0AD99C7748F8CB585E055",
-      "node_count": 186,
-      "pin_count": 720,
-      "connection_count": 138,
-      "exec_connection_count": 32,
-      "data_connection_count": 106
     }
   ],
   "generated_graphs": [
     {
-      "name": "PreConstruct",
-      "guid": "73E8F8AD41148F44E6358BB09F464810",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
-      "guid": "9CF30B844DEF578FDAAC1EAE28F49768",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
-      "guid": "252ABB6B4B5BDA4CE488F79FB9FA8527",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
-      "guid": "53C625D349DF6D13FF64ADA3EF9693FA",
+      "name": "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
+      "guid": "AAF526A84A73C4A93DA696AC0496BF67",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -536,7 +519,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
-      "guid": "FA997022423830F96CC081BD1A221895",
+      "guid": "77A846AB4EC7146077FE87841CE920EE",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -544,8 +527,35 @@
       "data_connection_count": 1
     },
     {
-      "name": "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
-      "guid": "2A20A4BE46B0EC44C818BA8870C23633",
+      "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
+      "guid": "CAF047E54173F2C7335839AC2C77F17D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+      "guid": "23CC385B42320C8E8C73CCBFF4D263A9",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
+      "guid": "8CE2F54A4BA6DDD5B674129DA4D91218",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "4BA89D1842F9B7B485624CA4806D2355",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -554,11 +564,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 13,
+    "authored_graph_count": 14,
     "generated_graph_count": 6,
-    "authored_node_count": 506,
-    "authored_pin_count": 1817,
-    "authored_connection_count": 478,
+    "authored_node_count": 438,
+    "authored_pin_count": 1447,
+    "authored_connection_count": 520,
     "generated_node_count": 18,
     "generated_pin_count": 54
   },
@@ -572,6 +582,11 @@
       "name": "InitializeGameplay",
       "kind": "function",
       "file": "graphs/InitializeGameplay.json"
+    },
+    {
+      "name": "OnPreviewKeyDown",
+      "kind": "function",
+      "file": "graphs/OnPreviewKeyDown.json"
     },
     {
       "name": "RebuildInventoryGrid",

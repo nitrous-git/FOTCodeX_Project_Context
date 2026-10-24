@@ -386,7 +386,7 @@
                       "class": "Button",
                       "path": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSelectionPanel.WBP_EquipmentSelectionPanel:WidgetTree.BackButton",
                       "properties": {
-                        "visibility": "<SlateVisibility.VISIBLE: 0>",
+                        "visibility": "<SlateVisibility.COLLAPSED: 1>",
                         "is_enabled": true,
                         "render_opacity": 1.0,
                         "render_transform": {
@@ -875,7 +875,7 @@
                       "children": [
                         {
                           "name": "ChoiceList",
-                          "class": "VerticalBox",
+                          "class": "UniformGridPanel",
                           "path": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSelectionPanel.WBP_EquipmentSelectionPanel:WidgetTree.ChoiceList",
                           "properties": {
                             "visibility": "<SlateVisibility.SELF_HIT_TEST_INVISIBLE: 4>",
@@ -913,7 +913,15 @@
                             "clipping": "<WidgetClipping.INHERIT: 0>",
                             "tool_tip_text": "",
                             "cursor": "<MouseCursor.DEFAULT: 1>",
-                            "flow_direction_preference": "<FlowDirectionPreference.INHERIT: 0>"
+                            "flow_direction_preference": "<FlowDirectionPreference.INHERIT: 0>",
+                            "slot_padding": {
+                              "struct": "Margin",
+                              "left": 8.0,
+                              "top": 18.0,
+                              "right": 8.0,
+                              "bottom": 18.0,
+                              "text": "(Left=8.000000,Top=18.000000,Right=8.000000,Bottom=18.000000)"
+                            }
                           },
                           "slot": {
                             "class": "ScrollBoxSlot",
@@ -930,8 +938,8 @@
                                 "bottom": 0.0,
                                 "text": "(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000)"
                               },
-                              "horizontal_alignment": "<HorizontalAlignment.H_ALIGN_FILL: 0>",
-                              "vertical_alignment": "<VerticalAlignment.V_ALIGN_FILL: 0>"
+                              "horizontal_alignment": "<HorizontalAlignment.H_ALIGN_LEFT: 1>",
+                              "vertical_alignment": "<VerticalAlignment.V_ALIGN_TOP: 1>"
                             }
                           },
                           "children": []
@@ -1312,7 +1320,7 @@
                             "tool_tip_text": "",
                             "cursor": "<MouseCursor.DEFAULT: 1>",
                             "flow_direction_preference": "<FlowDirectionPreference.INHERIT: 0>",
-                            "text": "Compatible owned equipment will appear here.",
+                            "text": "No compatible owned items for this slot.",
                             "color_and_opacity": {
                               "struct": "SlateColor",
                               "specified_color": {

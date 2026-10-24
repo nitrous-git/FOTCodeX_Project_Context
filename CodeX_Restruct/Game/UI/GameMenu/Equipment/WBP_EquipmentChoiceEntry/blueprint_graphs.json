@@ -8,6 +8,23 @@
   },
   "variables": [
     {
+      "name": "bEquipped",
+      "guid": "E97A002C41DA2DD98056918DEF0179F3",
+      "friendly_name": "Equipped",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bHovered",
       "guid": "F4928873460760DE59C8DEB85BB4793F",
       "friendly_name": "Hovered",
@@ -125,6 +142,23 @@
         "is_const": false,
         "is_weak_pointer": false
       }
+    },
+    {
+      "name": "OnChoicePreviewed",
+      "guid": "300507D8424F32DD0A5F4AA3EFCD1EAE",
+      "friendly_name": "On Choice Previewed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
     }
   ],
   "graphs": [
@@ -132,21 +166,21 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "3C625ED243EDCF6751081BA4CF33273C",
-      "node_count": 26,
-      "pin_count": 71,
-      "connection_count": 18,
-      "exec_connection_count": 11,
-      "data_connection_count": 7
+      "node_count": 28,
+      "pin_count": 77,
+      "connection_count": 20,
+      "exec_connection_count": 12,
+      "data_connection_count": 8
     },
     {
       "name": "RefreshAppearance",
       "kind": "function",
       "guid": "9812B21047DFA864EB00EDA4B74BAD9A",
-      "node_count": 25,
-      "pin_count": 79,
-      "connection_count": 27,
+      "node_count": 34,
+      "pin_count": 108,
+      "connection_count": 39,
       "exec_connection_count": 2,
-      "data_connection_count": 25
+      "data_connection_count": 37
     },
     {
       "name": "ApplySelection",
@@ -162,11 +196,11 @@
       "name": "RefreshContent",
       "kind": "function",
       "guid": "151E1C204A2C084B03FC1F96126965B5",
-      "node_count": 9,
-      "pin_count": 22,
-      "connection_count": 8,
-      "exec_connection_count": 3,
-      "data_connection_count": 5
+      "node_count": 6,
+      "pin_count": 14,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
     },
     {
       "name": "OnChoicePressed",
@@ -177,39 +211,22 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "OnChoicePreviewed",
+      "kind": "delegate",
+      "guid": "9EAEF9D945BF7E6620C16C8772E7A981",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
     }
   ],
   "generated_graphs": [
     {
-      "name": "PreConstruct",
-      "guid": "7B100CAD40D442CD0FCDB0BB4F8C7DFC",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-      "guid": "4500182848B191EAA013028A04D66E14",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
-      "guid": "B057B1F14BCAE6A119431CAB45659804",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
-      "guid": "F4A54CE4439495C3AFCE948D8A406933",
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+      "guid": "22AE7D1D483FDB6B221C56ADC5949D09",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -218,7 +235,7 @@
     },
     {
       "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
-      "guid": "645DB622428CBC4BC6CCAD9122D2A99F",
+      "guid": "6CC056BB447FD8AA2B014F852ED9D0D2",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -226,21 +243,48 @@
       "data_connection_count": 0
     },
     {
-      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
-      "guid": "A4AA8D1D4A59401D892702A31189C4D6",
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "ACE97C2047819FC907243893C5022568",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
       "exec_connection_count": 1,
       "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+      "guid": "4D274E6C4D12387467BB2E9CD3E35AF6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "6A85F71442D6BED9080BE7B58C5F691D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "7E1FBCAF4018015AE36CFBA3F16B5C45",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
     }
   ],
   "stats": {
-    "authored_graph_count": 5,
+    "authored_graph_count": 6,
     "generated_graph_count": 6,
-    "authored_node_count": 65,
-    "authored_pin_count": 185,
-    "authored_connection_count": 57,
+    "authored_node_count": 74,
+    "authored_pin_count": 214,
+    "authored_connection_count": 68,
     "generated_node_count": 13,
     "generated_pin_count": 34
   },
@@ -249,6 +293,11 @@
       "name": "OnChoicePressed",
       "kind": "delegate",
       "file": "graphs/OnChoicePressed.json"
+    },
+    {
+      "name": "OnChoicePreviewed",
+      "kind": "delegate",
+      "file": "graphs/OnChoicePreviewed.json"
     },
     {
       "name": "EventGraph",

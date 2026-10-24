@@ -33,12 +33,20 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Move",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Sprint",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_ToggleLocomotion",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_Status",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Core/GameModes/BP_CPC_GameMode",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_Status",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
     ],
     "non_architecture_dependency_count": 7,
@@ -77,6 +85,23 @@
       }
     ],
     "variables": [
+      {
+        "name": "ActiveMenuPageIndex",
+        "guid": "9311F1EE4C5A52C8CD5E54AFA06CBBF1",
+        "friendly_name": "Active Menu Page Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "bGameMenuOpen",
         "guid": "5B7103CF476279B9B1276780BBD0A16D",
@@ -139,6 +164,23 @@
           "category": "struct",
           "sub_category": null,
           "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FullScreenPagesReady",
+        "guid": "E01186434657EE7A714B31B3FD80302E",
+        "friendly_name": "Full Screen Pages Ready",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -322,31 +364,37 @@
       ],
       "functions": [
         "UserConstructionScript",
-        "CloseGameMenu",
-        "OpenGameMenu",
+        "InitializeGameMenu",
         "ToggleGameMenu",
-        "InitializeGameMenu"
+        "OpenGameMenu",
+        "CloseGameMenu",
+        "InitializeFullScreenPages",
+        "ShowMenuNavigation",
+        "HideMenuViews",
+        "NavigateMenuBack",
+        "OpenMenuPage",
+        "G31_RuntimeCheck"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_14",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_13",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_11",
-        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_10",
-        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_9",
-        "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_8",
-        "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_7",
-        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_6",
-        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_5",
-        "InpActEvt_N_K2Node_InputKeyEvent_0",
-        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_4",
-        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_3",
-        "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_2",
-        "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_1",
+        "ReceiveBeginPlay",
         "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_0",
-        "ReceiveBeginPlay"
+        "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_1",
+        "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_2",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_3",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_4",
+        "InpActEvt_N_K2Node_InputKeyEvent_0",
+        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_5",
+        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_6",
+        "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_7",
+        "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_8",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_9",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_10",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_11",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_13",
+        "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_14"
       ]
     },
     "extraction_status": {
