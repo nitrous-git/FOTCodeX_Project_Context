@@ -59,6 +59,57 @@
       }
     },
     {
+      "name": "ChoiceItemIDs",
+      "guid": "D1579E25486C77E80128F08585F976C9",
+      "friendly_name": "Choice Item IDs",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EquipmentRef",
+      "guid": "8DED830A45E40A5AF362E6B796F9353F",
+      "friendly_name": "Equipment Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent.AC_EquipmentComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InventoryRef",
+      "guid": "E6B357CE4724078EA2DCAA853A0C3CC0",
+      "friendly_name": "Inventory Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "PresentedAbilityIcon",
       "guid": "3DC07D5A4AFD1747E43057B71D3AC596",
       "friendly_name": "Presented Ability Icon",
@@ -166,21 +217,21 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "7BB65F034838082ADC1B95B1555EA433",
-      "node_count": 34,
-      "pin_count": 102,
-      "connection_count": 31,
-      "exec_connection_count": 16,
-      "data_connection_count": 15
+      "node_count": 46,
+      "pin_count": 143,
+      "connection_count": 34,
+      "exec_connection_count": 17,
+      "data_connection_count": 17
     },
     {
       "name": "RefreshEquipment",
       "kind": "function",
       "guid": "7BE06EEA46E99728B096299E2C49D189",
-      "node_count": 32,
-      "pin_count": 97,
-      "connection_count": 41,
-      "exec_connection_count": 8,
-      "data_connection_count": 33
+      "node_count": 65,
+      "pin_count": 201,
+      "connection_count": 33,
+      "exec_connection_count": 12,
+      "data_connection_count": 21
     },
     {
       "name": "RefreshItemInfoPresentation",
@@ -211,12 +262,132 @@
       "connection_count": 7,
       "exec_connection_count": 1,
       "data_connection_count": 6
+    },
+    {
+      "name": "ChooseEquipmentItem",
+      "kind": "function",
+      "guid": "487905774D7879090BB7E4961AB53102",
+      "node_count": 16,
+      "pin_count": 52,
+      "connection_count": 18,
+      "exec_connection_count": 8,
+      "data_connection_count": 10
+    },
+    {
+      "name": "AddEquipmentChoice",
+      "kind": "function",
+      "guid": "CB38C1E248A749530825199E2E25DFEA",
+      "node_count": 15,
+      "pin_count": 53,
+      "connection_count": 25,
+      "exec_connection_count": 8,
+      "data_connection_count": 17
+    },
+    {
+      "name": "AppendCompatibleChoice",
+      "kind": "function",
+      "guid": "3877FD8D4325ACF93EB0C29A07AB9D2E",
+      "node_count": 55,
+      "pin_count": 226,
+      "connection_count": 54,
+      "exec_connection_count": 12,
+      "data_connection_count": 42
+    },
+    {
+      "name": "RebuildEquipmentChoices",
+      "kind": "function",
+      "guid": "0BCC5BD44AE965CC7C1EA08877CA4C1C",
+      "node_count": 60,
+      "pin_count": 201,
+      "connection_count": 45,
+      "exec_connection_count": 18,
+      "data_connection_count": 27
+    },
+    {
+      "name": "HandleEquipmentSlot",
+      "kind": "function",
+      "guid": "939692A7406AC2EBC75F28B0719EE8A9",
+      "node_count": 4,
+      "pin_count": 15,
+      "connection_count": 4,
+      "exec_connection_count": 3,
+      "data_connection_count": 1
+    },
+    {
+      "name": "RefreshEquipmentSlot",
+      "kind": "function",
+      "guid": "E78FD3CA45DFB4A7A6E456912ECA834A",
+      "node_count": 30,
+      "pin_count": 117,
+      "connection_count": 47,
+      "exec_connection_count": 18,
+      "data_connection_count": 29
+    },
+    {
+      "name": "InitializeGameplay",
+      "kind": "function",
+      "guid": "92FA52F1403261952AF178933D87B4CA",
+      "node_count": 23,
+      "pin_count": 81,
+      "connection_count": 36,
+      "exec_connection_count": 16,
+      "data_connection_count": 20
+    },
+    {
+      "name": "UnbindEquipmentInventoryEvents",
+      "kind": "function",
+      "guid": "2431DDC54EBC364AE45B269473764D60",
+      "node_count": 7,
+      "pin_count": 16,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "UnbindEquipmentEvents",
+      "kind": "function",
+      "guid": "48E8F2024471EA308DE6608C6AF4FEEF",
+      "node_count": 7,
+      "pin_count": 16,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "HandleEquipmentChanged",
+      "kind": "function",
+      "guid": "9259F0B94A03A12400DFA0818CEDBD2E",
+      "node_count": 2,
+      "pin_count": 7,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PresentEquipmentItem",
+      "kind": "function",
+      "guid": "AF5EE7734A38675EE69D7F99D76A4700",
+      "node_count": 59,
+      "pin_count": 206,
+      "connection_count": 68,
+      "exec_connection_count": 26,
+      "data_connection_count": 42
+    },
+    {
+      "name": "UnequipSelectedSlot",
+      "kind": "function",
+      "guid": "4AAF9B3842C0AAABFD7F62A68A3DC80A",
+      "node_count": 8,
+      "pin_count": 23,
+      "connection_count": 7,
+      "exec_connection_count": 4,
+      "data_connection_count": 3
     }
   ],
   "generated_graphs": [
     {
       "name": "PreConstruct",
-      "guid": "F79C73B940ABD24C9D8FD1BF3E4FD683",
+      "guid": "70ACC77149F279BC5E25619BD82BAF23",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -225,7 +396,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_0_OnSelectionCancelled__DelegateSignature",
-      "guid": "0464738F4E9385B012BA63A0F6960439",
+      "guid": "DAF4216A48C2ECC48249BBA8350801EF",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -234,7 +405,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_RightHandSlot_K2Node_ComponentBoundEvent_1_OnEquipmentSlotPressed__DelegateSignature",
-      "guid": "62265DBB4E5FA049A0772ABAAD53CE13",
+      "guid": "4D7558DC4BFDA3059613368B6202DDEA",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -243,22 +414,67 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_LeftHandSlot_K2Node_ComponentBoundEvent_2_OnEquipmentSlotPressed__DelegateSignature",
-      "guid": "40B65DAC403E0A708DF4C392612AA2ED",
+      "guid": "54F2A4444CA0042B9E2289A8175E539A",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
       "exec_connection_count": 2,
       "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Equipment_HeadSlot_K2Node_ComponentBoundEvent_3_OnEquipmentSlotPressed__DelegateSignature",
+      "guid": "4E3988584C1DBCD6FCDEE7BA1FB5A2ED",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Equipment_ChestSlot_K2Node_ComponentBoundEvent_4_OnEquipmentSlotPressed__DelegateSignature",
+      "guid": "383FE5EF434D47531D6D0D87C0480CFD",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Equipment_ArmsSlot_K2Node_ComponentBoundEvent_5_OnEquipmentSlotPressed__DelegateSignature",
+      "guid": "2A7724A24A639F3BDED1DD81E1D0F9A2",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Equipment_LegsSlot_K2Node_ComponentBoundEvent_6_OnEquipmentSlotPressed__DelegateSignature",
+      "guid": "A943C6DC40D611B12BDC0392933095C6",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_7_OnUnequipRequested__DelegateSignature",
+      "guid": "180047CA45F500A776F7179DED84D7B8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     }
   ],
   "stats": {
-    "authored_graph_count": 5,
-    "generated_graph_count": 4,
-    "authored_node_count": 122,
-    "authored_pin_count": 371,
-    "authored_connection_count": 134,
-    "generated_node_count": 11,
-    "generated_pin_count": 32
+    "authored_graph_count": 17,
+    "generated_graph_count": 9,
+    "authored_node_count": 453,
+    "authored_pin_count": 1529,
+    "authored_connection_count": 446,
+    "generated_node_count": 25,
+    "generated_pin_count": 73
   },
   "graph_files": [
     {
@@ -267,9 +483,54 @@
       "file": "graphs/EventGraph.json"
     },
     {
+      "name": "AddEquipmentChoice",
+      "kind": "function",
+      "file": "graphs/AddEquipmentChoice.json"
+    },
+    {
+      "name": "AppendCompatibleChoice",
+      "kind": "function",
+      "file": "graphs/AppendCompatibleChoice.json"
+    },
+    {
+      "name": "ChooseEquipmentItem",
+      "kind": "function",
+      "file": "graphs/ChooseEquipmentItem.json"
+    },
+    {
+      "name": "HandleEquipmentChanged",
+      "kind": "function",
+      "file": "graphs/HandleEquipmentChanged.json"
+    },
+    {
+      "name": "HandleEquipmentSlot",
+      "kind": "function",
+      "file": "graphs/HandleEquipmentSlot.json"
+    },
+    {
+      "name": "InitializeGameplay",
+      "kind": "function",
+      "file": "graphs/InitializeGameplay.json"
+    },
+    {
+      "name": "PresentEquipmentItem",
+      "kind": "function",
+      "file": "graphs/PresentEquipmentItem.json"
+    },
+    {
+      "name": "RebuildEquipmentChoices",
+      "kind": "function",
+      "file": "graphs/RebuildEquipmentChoices.json"
+    },
+    {
       "name": "RefreshEquipment",
       "kind": "function",
       "file": "graphs/RefreshEquipment.json"
+    },
+    {
+      "name": "RefreshEquipmentSlot",
+      "kind": "function",
+      "file": "graphs/RefreshEquipmentSlot.json"
     },
     {
       "name": "RefreshItemInfoPresentation",
@@ -280,6 +541,21 @@
       "name": "SetItemInfoView",
       "kind": "function",
       "file": "graphs/SetItemInfoView.json"
+    },
+    {
+      "name": "UnbindEquipmentEvents",
+      "kind": "function",
+      "file": "graphs/UnbindEquipmentEvents.json"
+    },
+    {
+      "name": "UnbindEquipmentInventoryEvents",
+      "kind": "function",
+      "file": "graphs/UnbindEquipmentInventoryEvents.json"
+    },
+    {
+      "name": "UnequipSelectedSlot",
+      "kind": "function",
+      "file": "graphs/UnequipSelectedSlot.json"
     },
     {
       "name": "UpdateItemInfoPreview",

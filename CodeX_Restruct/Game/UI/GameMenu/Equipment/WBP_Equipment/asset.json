@@ -17,6 +17,15 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_AttackPower",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_DamageNegation",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_ItemEffect",
@@ -26,13 +35,14 @@
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_StatScaling",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_StatsGranted",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_ItemInfoEntry",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentChoiceEntry",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSelectionPanel",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
     ],
-    "non_architecture_dependency_count": 26,
+    "non_architecture_dependency_count": 27,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -92,6 +102,57 @@
           "category": "bool",
           "sub_category": null,
           "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ChoiceItemIDs",
+        "guid": "D1579E25486C77E80128F08585F976C9",
+        "friendly_name": "Choice Item IDs",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EquipmentRef",
+        "guid": "8DED830A45E40A5AF362E6B796F9353F",
+        "friendly_name": "Equipment Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent.AC_EquipmentComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InventoryRef",
+        "guid": "E6B357CE4724078EA2DCAA853A0C3CC0",
+        "friendly_name": "Inventory Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -209,7 +270,19 @@
         "RefreshEquipment",
         "RefreshItemInfoPresentation",
         "SetItemInfoView",
-        "UpdateItemInfoPreview"
+        "UpdateItemInfoPreview",
+        "ChooseEquipmentItem",
+        "AddEquipmentChoice",
+        "AppendCompatibleChoice",
+        "RebuildEquipmentChoices",
+        "HandleEquipmentSlot",
+        "RefreshEquipmentSlot",
+        "InitializeGameplay",
+        "UnbindEquipmentInventoryEvents",
+        "UnbindEquipmentEvents",
+        "HandleEquipmentChanged",
+        "PresentEquipmentItem",
+        "UnequipSelectedSlot"
       ],
       "macros": [],
       "delegates": [],
@@ -217,7 +290,12 @@
         "PreConstruct",
         "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_0_OnSelectionCancelled__DelegateSignature",
         "BndEvt__WBP_Equipment_RightHandSlot_K2Node_ComponentBoundEvent_1_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_LeftHandSlot_K2Node_ComponentBoundEvent_2_OnEquipmentSlotPressed__DelegateSignature"
+        "BndEvt__WBP_Equipment_LeftHandSlot_K2Node_ComponentBoundEvent_2_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_HeadSlot_K2Node_ComponentBoundEvent_3_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_ChestSlot_K2Node_ComponentBoundEvent_4_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_ArmsSlot_K2Node_ComponentBoundEvent_5_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_LegsSlot_K2Node_ComponentBoundEvent_6_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_7_OnUnequipRequested__DelegateSignature"
       ]
     },
     "extraction_status": {
