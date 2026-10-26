@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_ProgressionComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent.AC_ProgressionComponent",
+    "relative_package": "Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    ],
+    "non_architecture_dependency_count": 0,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent.AC_ProgressionComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent.AC_ProgressionComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent.AC_ProgressionComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "CharacterLevel",
+        "guid": "8DCCF95F40A11B563AFE64908944ED6B",
+        "friendly_name": "Character Level",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentSouls",
+        "guid": "09C9366B4FE4EEFF174AD492907467EE",
+        "friendly_name": "Current Souls",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Initialized",
+        "guid": "108162EE4D4456F26B6C66A4F6B31891",
+        "friendly_name": "Initialized",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LevelCostBase",
+        "guid": "A95A06A943FFE4098133FCB12EC685CF",
+        "friendly_name": "Level Cost Base",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LevelCostLinear",
+        "guid": "1E8D1F334F324418165CB097F2E3AEEA",
+        "friendly_name": "Level Cost Linear",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LevelCostQuadratic",
+        "guid": "7D16BD134E28AEBD881A29858DD2199A",
+        "friendly_name": "Level Cost Quadratic",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnProgressionChanged",
+        "guid": "B6DA33D44C45302DF1B98DB78BD3BEAF",
+        "friendly_name": "On Progression Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "InitializeProgression",
+        "GetLevel",
+        "GetSouls",
+        "GetSoulsRequiredForNextLevel",
+        "GrantSouls",
+        "CanSpendSouls",
+        "SpendSouls",
+        "DebugValidateProgression"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnProgressionChanged"
+      ],
+      "generated_graphs": [
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_ProgressionComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "AB65D2694F5903D3097768B4EB729AC8",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "CharacterLevel",
+      "guid": "8DCCF95F40A11B563AFE64908944ED6B",
+      "friendly_name": "Character Level",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentSouls",
+      "guid": "09C9366B4FE4EEFF174AD492907467EE",
+      "friendly_name": "Current Souls",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Initialized",
+      "guid": "108162EE4D4456F26B6C66A4F6B31891",
+      "friendly_name": "Initialized",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LevelCostBase",
+      "guid": "A95A06A943FFE4098133FCB12EC685CF",
+      "friendly_name": "Level Cost Base",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LevelCostLinear",
+      "guid": "1E8D1F334F324418165CB097F2E3AEEA",
+      "friendly_name": "Level Cost Linear",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LevelCostQuadratic",
+      "guid": "7D16BD134E28AEBD881A29858DD2199A",
+      "friendly_name": "Level Cost Quadratic",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnProgressionChanged",
+      "guid": "B6DA33D44C45302DF1B98DB78BD3BEAF",
+      "friendly_name": "On Progression Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "FDBE4FDA486E64EA2D5CA7AB35C40D2F",
+      "node_count": 3,
+      "pin_count": 8,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "InitializeProgression",
+      "kind": "function",
+      "guid": "84A731DB4879984D903767B3F5C0C4C6",
+      "node_count": 13,
+      "pin_count": 43,
+      "connection_count": 12,
+      "exec_connection_count": 5,
+      "data_connection_count": 7
+    },
+    {
+      "name": "GetLevel",
+      "kind": "function",
+      "guid": "713B796848F0453CB30DE1A24199B52A",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "GetSouls",
+      "kind": "function",
+      "guid": "3504656B49846C2A30436F8C1390B943",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "GetSoulsRequiredForNextLevel",
+      "kind": "function",
+      "guid": "ACC78F7843B111E6CFD3B5BE46D164F7",
+      "node_count": 17,
+      "pin_count": 54,
+      "connection_count": 18,
+      "exec_connection_count": 1,
+      "data_connection_count": 17
+    },
+    {
+      "name": "GrantSouls",
+      "kind": "function",
+      "guid": "947F094C482351D3EB57818745E53971",
+      "node_count": 17,
+      "pin_count": 50,
+      "connection_count": 19,
+      "exec_connection_count": 6,
+      "data_connection_count": 13
+    },
+    {
+      "name": "CanSpendSouls",
+      "kind": "function",
+      "guid": "54E71B9D4AF20C735F9906A02DCCCEEC",
+      "node_count": 7,
+      "pin_count": 21,
+      "connection_count": 8,
+      "exec_connection_count": 1,
+      "data_connection_count": 7
+    },
+    {
+      "name": "SpendSouls",
+      "kind": "function",
+      "guid": "3CD5243E44A1F8D9AA6275AE34298093",
+      "node_count": 11,
+      "pin_count": 32,
+      "connection_count": 13,
+      "exec_connection_count": 7,
+      "data_connection_count": 6
+    },
+    {
+      "name": "DebugValidateProgression",
+      "kind": "function",
+      "guid": "93FC7CD54F6C8138E0A938ADFAF99316",
+      "node_count": 73,
+      "pin_count": 246,
+      "connection_count": 80,
+      "exec_connection_count": 27,
+      "data_connection_count": 53
+    },
+    {
+      "name": "OnProgressionChanged",
+      "kind": "delegate",
+      "guid": "E386D2B44637EAC517A7D8A0919D4296",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "B59B4BC24DA2A17A056111B2CD7E8D90",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 10,
+    "generated_graph_count": 1,
+    "authored_node_count": 148,
+    "authored_pin_count": 465,
+    "authored_connection_count": 155,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "OnProgressionChanged",
+      "kind": "delegate",
+      "file": "graphs/OnProgressionChanged.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CanSpendSouls",
+      "kind": "function",
+      "file": "graphs/CanSpendSouls.json"
+    },
+    {
+      "name": "DebugValidateProgression",
+      "kind": "function",
+      "file": "graphs/DebugValidateProgression.json"
+    },
+    {
+      "name": "GetLevel",
+      "kind": "function",
+      "file": "graphs/GetLevel.json"
+    },
+    {
+      "name": "GetSouls",
+      "kind": "function",
+      "file": "graphs/GetSouls.json"
+    },
+    {
+      "name": "GetSoulsRequiredForNextLevel",
+      "kind": "function",
+      "file": "graphs/GetSoulsRequiredForNextLevel.json"
+    },
+    {
+      "name": "GrantSouls",
+      "kind": "function",
+      "file": "graphs/GrantSouls.json"
+    },
+    {
+      "name": "InitializeProgression",
+      "kind": "function",
+      "file": "graphs/InitializeProgression.json"
+    },
+    {
+      "name": "SpendSouls",
+      "kind": "function",
+      "file": "graphs/SpendSouls.json"
+    }
+  ]
+}

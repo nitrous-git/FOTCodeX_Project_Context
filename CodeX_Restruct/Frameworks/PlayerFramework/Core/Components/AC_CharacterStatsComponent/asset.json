@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_CharacterStatsComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent",
+    "relative_package": "Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CharacterStatBalance",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CharacterStatBalance_Default",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    ],
+    "non_architecture_dependency_count": 1,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "BaseAttributes",
+        "guid": "0C0873E943D5964BAD50E68BC4742778",
+        "friendly_name": "Base Attributes",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes.FPrimaryAttributes'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bStatsInitialized",
+        "guid": "908D11CA4E2F62C014E43092756CB620",
+        "friendly_name": "Stats Initialized",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentFP",
+        "guid": "FDE4A2FA4306E53D062ACE93EC5B998C",
+        "friendly_name": "Current FP",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentStamina",
+        "guid": "C32264B54CA824507F99FEAAB9F4129A",
+        "friendly_name": "Current Stamina",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EffectiveAttributes",
+        "guid": "8789430C41F14FF758127A9051BDCC72",
+        "friendly_name": "Effective Attributes",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes.FPrimaryAttributes'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxEquipmentLoad",
+        "guid": "D17CE1504E62FDBB29E1C4AB19BDD594",
+        "friendly_name": "Max Equipment Load",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxFP",
+        "guid": "B6FA8CF543C617E25D15DFA3A428C185",
+        "friendly_name": "Max FP",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxHP",
+        "guid": "6D1F06CA4DCF3AF92DB7489586A610AE",
+        "friendly_name": "Max HP",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxStamina",
+        "guid": "C17298ED477630B7D359CA942B6724ED",
+        "friendly_name": "Max Stamina",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ModifiersBySource",
+        "guid": "62A1EB7240C107DCE0DDE9AAE16DD078",
+        "friendly_name": "Modifiers by Source",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "string",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": "Map",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnStatsChanged",
+        "guid": "DBBCE8814452CCA527D8CDA91522B58D",
+        "friendly_name": "On Stats Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StatBalance",
+        "guid": "47207D9245F955FF49A02A8E11B233F4",
+        "friendly_name": "Stat Balance",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CharacterStatBalance.DA_CharacterStatBalance_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "CalculateDerivedValue",
+        "ReadAttribute",
+        "GetPrimaryAttribute",
+        "GetEffectiveAttribute",
+        "DebugSetBaseAttribute",
+        "SetModifierForSource",
+        "RemoveModifiersBySource",
+        "RecalculateDerivedStats",
+        "InitializeStats",
+        "DebugPrintStats",
+        "EnsureStatBalance"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnStatsChanged"
+      ],
+      "generated_graphs": [
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

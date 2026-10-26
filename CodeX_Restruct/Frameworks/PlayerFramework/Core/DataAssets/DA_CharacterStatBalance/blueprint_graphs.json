@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "DA_CharacterStatBalance",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "8348451C4A6BAAAE5D9C99B39288211A",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PrimaryDataAsset'"
+  },
+  "variables": [
+    {
+      "name": "AttributeLimit",
+      "guid": "80DFC51944EAA762E40D9092FDF2BFCB",
+      "friendly_name": "Attribute Limit",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FPBase",
+      "guid": "CDF5666F49C4D21AEA5A5D901F110734",
+      "friendly_name": "FPBase",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FPRates",
+      "guid": "D6BCE25447141471F2B544A32C371372",
+      "friendly_name": "FPRates",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HPBase",
+      "guid": "C62D7D90409AE177970BEA80AA063294",
+      "friendly_name": "HPBase",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HPRates",
+      "guid": "C6A2ECBD4B35D8D31B404C8F506F6B32",
+      "friendly_name": "HPRates",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LoadBase",
+      "guid": "C3AB0B7E45905A627AA2839ABBD973CF",
+      "friendly_name": "Load Base",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LoadRates",
+      "guid": "EC8BEF274F82BF457C646CA544F6B081",
+      "friendly_name": "Load Rates",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SoftCap1",
+      "guid": "3D951C0147911DAAD9F38E92752718F4",
+      "friendly_name": "Soft Cap 1",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SoftCap2",
+      "guid": "488B4D284248A97460C3CAB5C74A2393",
+      "friendly_name": "Soft Cap 2",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaBase",
+      "guid": "2785C6E94060C56F86E796BC4A06BD2E",
+      "friendly_name": "Stamina Base",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaRates",
+      "guid": "13B2FE6C4BE41D5CF23123B2E8609550",
+      "friendly_name": "Stamina Rates",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "7927E534434294844B082F89DE3FDFDB",
+      "node_count": 0,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 0,
+    "authored_node_count": 0,
+    "authored_pin_count": 0,
+    "authored_connection_count": 0,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

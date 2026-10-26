@@ -32,9 +32,11 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_Common",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_Common_Instance",
@@ -51,6 +53,8 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECombatStyleMode",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ELocomotionMode",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes",
       "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent",
       "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent",
       "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent",
@@ -144,6 +148,16 @@
         "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_CameraModeComponent_GEN_VARIABLE"
       },
       {
+        "name": "AC_CharacterStatsComponent",
+        "class": "AC_CharacterStatsComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_CharacterStatsComponent_GEN_VARIABLE"
+      },
+      {
         "name": "AC_EquipmentComponent",
         "class": "AC_EquipmentComponent_C",
         "parent": "BP_PlayerBase",
@@ -192,6 +206,16 @@
         "root_component": false,
         "scene_component": false,
         "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_PlayerTargetingComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_ProgressionComponent",
+        "class": "AC_ProgressionComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_ProgressionComponent_GEN_VARIABLE"
       },
       {
         "name": "AC_TeleporterComponent",
@@ -1266,6 +1290,23 @@
         }
       },
       {
+        "name": "OnCharacterStatusChanged",
+        "guid": "6441C94842DDA59EC72EADADF8DCFAC2",
+        "friendly_name": "On Character Status Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "ParryAnimArray",
         "guid": "D1AC329847C6980A324A6DBCAB34C32F",
         "friendly_name": "Parry Anim Array",
@@ -1476,13 +1517,20 @@
         "GetArmorComponentForSlot",
         "ApplyArmorPieceVisual",
         "RefreshArmorSlotFromEquipment",
-        "RefreshAllArmorVisuals"
+        "RefreshAllArmorVisuals",
+        "GetCharacterStatusSnapshot",
+        "DebugPrintCharacterStatusSnapshot",
+        "NotifyLegacyHealthChanged"
       ],
       "macros": [],
-      "delegates": [],
+      "delegates": [
+        "OnCharacterStatusChanged"
+      ],
       "generated_graphs": [
         "IsTargetable",
         "ResolveIncomingHit",
+        "BndEvt__BP_PlayerBase_AC_ProgressionComponent_K2Node_ComponentBoundEvent_5_OnProgressionChanged__DelegateSignature",
+        "BndEvt__BP_PlayerBase_AC_CharacterStatsComponent_K2Node_ComponentBoundEvent_3_OnStatsChanged__DelegateSignature",
         "CE_DebugEquipStarterInventory",
         "BndEvt__BP_PlayerBase_AC_EquipmentComponent_K2Node_ComponentBoundEvent_2_OnEquipmentSlotChanged__DelegateSignature",
         "CE_EquipTwinblades",

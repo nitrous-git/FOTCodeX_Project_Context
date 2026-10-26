@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_CharacterStatsComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "5F4FFA1F4ED1014AF895CE89DCA7478A",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "BaseAttributes",
+      "guid": "0C0873E943D5964BAD50E68BC4742778",
+      "friendly_name": "Base Attributes",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes.FPrimaryAttributes'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bStatsInitialized",
+      "guid": "908D11CA4E2F62C014E43092756CB620",
+      "friendly_name": "Stats Initialized",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentFP",
+      "guid": "FDE4A2FA4306E53D062ACE93EC5B998C",
+      "friendly_name": "Current FP",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentStamina",
+      "guid": "C32264B54CA824507F99FEAAB9F4129A",
+      "friendly_name": "Current Stamina",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EffectiveAttributes",
+      "guid": "8789430C41F14FF758127A9051BDCC72",
+      "friendly_name": "Effective Attributes",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes.FPrimaryAttributes'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MaxEquipmentLoad",
+      "guid": "D17CE1504E62FDBB29E1C4AB19BDD594",
+      "friendly_name": "Max Equipment Load",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MaxFP",
+      "guid": "B6FA8CF543C617E25D15DFA3A428C185",
+      "friendly_name": "Max FP",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MaxHP",
+      "guid": "6D1F06CA4DCF3AF92DB7489586A610AE",
+      "friendly_name": "Max HP",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MaxStamina",
+      "guid": "C17298ED477630B7D359CA942B6724ED",
+      "friendly_name": "Max Stamina",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ModifiersBySource",
+      "guid": "62A1EB7240C107DCE0DDE9AAE16DD078",
+      "friendly_name": "Modifiers by Source",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "string",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Map",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnStatsChanged",
+      "guid": "DBBCE8814452CCA527D8CDA91522B58D",
+      "friendly_name": "On Stats Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StatBalance",
+      "guid": "47207D9245F955FF49A02A8E11B233F4",
+      "friendly_name": "Stat Balance",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CharacterStatBalance.DA_CharacterStatBalance_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "8B7ECB9F49C407F70906D6B9C23E85E5",
+      "node_count": 3,
+      "pin_count": 8,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CalculateDerivedValue",
+      "kind": "function",
+      "guid": "ABA5176A42D97EC168571B83CCF8C048",
+      "node_count": 29,
+      "pin_count": 94,
+      "connection_count": 33,
+      "exec_connection_count": 1,
+      "data_connection_count": 32
+    },
+    {
+      "name": "ReadAttribute",
+      "kind": "function",
+      "guid": "F5B3F7D94B366714841F44B7744861A9",
+      "node_count": 43,
+      "pin_count": 135,
+      "connection_count": 50,
+      "exec_connection_count": 17,
+      "data_connection_count": 33
+    },
+    {
+      "name": "GetPrimaryAttribute",
+      "kind": "function",
+      "guid": "1780E2D248EBA8EFCC1CECBA8CBBA003",
+      "node_count": 4,
+      "pin_count": 14,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "GetEffectiveAttribute",
+      "kind": "function",
+      "guid": "DB2606AF45872E9993C5EE91CD018696",
+      "node_count": 4,
+      "pin_count": 14,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "DebugSetBaseAttribute",
+      "kind": "function",
+      "guid": "DA9C13D84C3FE9F6980388BF8184ECFF",
+      "node_count": 47,
+      "pin_count": 188,
+      "connection_count": 78,
+      "exec_connection_count": 7,
+      "data_connection_count": 71
+    },
+    {
+      "name": "SetModifierForSource",
+      "kind": "function",
+      "guid": "95C0062D4852E0F064FCC885D0B39318",
+      "node_count": 28,
+      "pin_count": 115,
+      "connection_count": 38,
+      "exec_connection_count": 6,
+      "data_connection_count": 32
+    },
+    {
+      "name": "RemoveModifiersBySource",
+      "kind": "function",
+      "guid": "8956DD884E414DC7888BD8AD587CA08A",
+      "node_count": 7,
+      "pin_count": 22,
+      "connection_count": 10,
+      "exec_connection_count": 6,
+      "data_connection_count": 4
+    },
+    {
+      "name": "RecalculateDerivedStats",
+      "kind": "function",
+      "guid": "3504BDD347D70E4ECA0486ABE2D30CD2",
+      "node_count": 164,
+      "pin_count": 565,
+      "connection_count": 227,
+      "exec_connection_count": 41,
+      "data_connection_count": 186
+    },
+    {
+      "name": "InitializeStats",
+      "kind": "function",
+      "guid": "276A75034C34BA34CB34AA89EC4C75E3",
+      "node_count": 11,
+      "pin_count": 35,
+      "connection_count": 10,
+      "exec_connection_count": 6,
+      "data_connection_count": 4
+    },
+    {
+      "name": "DebugPrintStats",
+      "kind": "function",
+      "guid": "DCB0F03F4122666BB4268EBC659D9248",
+      "node_count": 113,
+      "pin_count": 597,
+      "connection_count": 64,
+      "exec_connection_count": 22,
+      "data_connection_count": 42
+    },
+    {
+      "name": "EnsureStatBalance",
+      "kind": "function",
+      "guid": "00877F8D4721F7825B4B82AE9C23D74F",
+      "node_count": 4,
+      "pin_count": 12,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnStatsChanged",
+      "kind": "delegate",
+      "guid": "CFFCF468444B18AAA515B7A5D84DB375",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "D89FB09B47A7517255898E9203C1DEB2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 13,
+    "generated_graph_count": 1,
+    "authored_node_count": 458,
+    "authored_pin_count": 1800,
+    "authored_connection_count": 526,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "OnStatsChanged",
+      "kind": "delegate",
+      "file": "graphs/OnStatsChanged.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CalculateDerivedValue",
+      "kind": "function",
+      "file": "graphs/CalculateDerivedValue.json"
+    },
+    {
+      "name": "DebugPrintStats",
+      "kind": "function",
+      "file": "graphs/DebugPrintStats.json"
+    },
+    {
+      "name": "DebugSetBaseAttribute",
+      "kind": "function",
+      "file": "graphs/DebugSetBaseAttribute.json"
+    },
+    {
+      "name": "EnsureStatBalance",
+      "kind": "function",
+      "file": "graphs/EnsureStatBalance.json"
+    },
+    {
+      "name": "GetEffectiveAttribute",
+      "kind": "function",
+      "file": "graphs/GetEffectiveAttribute.json"
+    },
+    {
+      "name": "GetPrimaryAttribute",
+      "kind": "function",
+      "file": "graphs/GetPrimaryAttribute.json"
+    },
+    {
+      "name": "InitializeStats",
+      "kind": "function",
+      "file": "graphs/InitializeStats.json"
+    },
+    {
+      "name": "ReadAttribute",
+      "kind": "function",
+      "file": "graphs/ReadAttribute.json"
+    },
+    {
+      "name": "RecalculateDerivedStats",
+      "kind": "function",
+      "file": "graphs/RecalculateDerivedStats.json"
+    },
+    {
+      "name": "RemoveModifiersBySource",
+      "kind": "function",
+      "file": "graphs/RemoveModifiersBySource.json"
+    },
+    {
+      "name": "SetModifierForSource",
+      "kind": "function",
+      "file": "graphs/SetModifierForSource.json"
+    }
+  ]
+}
