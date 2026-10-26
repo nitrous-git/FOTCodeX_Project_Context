@@ -244,8 +244,8 @@
       "name": "CalculateDerivedValue",
       "kind": "function",
       "guid": "ABA5176A42D97EC168571B83CCF8C048",
-      "node_count": 29,
-      "pin_count": 94,
+      "node_count": 28,
+      "pin_count": 92,
       "connection_count": 33,
       "exec_connection_count": 1,
       "data_connection_count": 32
@@ -304,21 +304,21 @@
       "name": "RemoveModifiersBySource",
       "kind": "function",
       "guid": "8956DD884E414DC7888BD8AD587CA08A",
-      "node_count": 7,
-      "pin_count": 22,
-      "connection_count": 10,
+      "node_count": 9,
+      "pin_count": 26,
+      "connection_count": 12,
       "exec_connection_count": 6,
-      "data_connection_count": 4
+      "data_connection_count": 6
     },
     {
       "name": "RecalculateDerivedStats",
       "kind": "function",
       "guid": "3504BDD347D70E4ECA0486ABE2D30CD2",
-      "node_count": 170,
-      "pin_count": 583,
-      "connection_count": 233,
-      "exec_connection_count": 42,
-      "data_connection_count": 191
+      "node_count": 180,
+      "pin_count": 628,
+      "connection_count": 18,
+      "exec_connection_count": 7,
+      "data_connection_count": 11
     },
     {
       "name": "InitializeStats",
@@ -334,8 +334,8 @@
       "name": "DebugPrintStats",
       "kind": "function",
       "guid": "DCB0F03F4122666BB4268EBC659D9248",
-      "node_count": 113,
-      "pin_count": 597,
+      "node_count": 57,
+      "pin_count": 299,
       "connection_count": 64,
       "exec_connection_count": 22,
       "data_connection_count": 42
@@ -351,6 +351,16 @@
       "data_connection_count": 1
     },
     {
+      "name": "SetCurrentHP",
+      "kind": "function",
+      "guid": "B03F52A84150052F1A8920B45635A2E2",
+      "node_count": 9,
+      "pin_count": 29,
+      "connection_count": 10,
+      "exec_connection_count": 4,
+      "data_connection_count": 6
+    },
+    {
       "name": "OnStatsChanged",
       "kind": "delegate",
       "guid": "CFFCF468444B18AAA515B7A5D84DB375",
@@ -361,20 +371,50 @@
       "data_connection_count": 0
     },
     {
-      "name": "SetCurrentHP",
+      "name": "ResolveEffectiveAttributes",
       "kind": "function",
-      "guid": "B03F52A84150052F1A8920B45635A2E2",
-      "node_count": 11,
-      "pin_count": 39,
-      "connection_count": 10,
-      "exec_connection_count": 4,
-      "data_connection_count": 6
+      "guid": "9394C29746EF5AD9E8D10D8B82844EDC",
+      "node_count": 76,
+      "pin_count": 278,
+      "connection_count": 106,
+      "exec_connection_count": 19,
+      "data_connection_count": 87
+    },
+    {
+      "name": "CalculateResourceMaximums",
+      "kind": "function",
+      "guid": "B9AC8C49477FCFBB993249AE18FB70F4",
+      "node_count": 20,
+      "pin_count": 78,
+      "connection_count": 40,
+      "exec_connection_count": 5,
+      "data_connection_count": 35
+    },
+    {
+      "name": "ApplyRecalculatedStats",
+      "kind": "function",
+      "guid": "F0EE560E47BCD6420F3330AFEC7B207E",
+      "node_count": 48,
+      "pin_count": 167,
+      "connection_count": 62,
+      "exec_connection_count": 7,
+      "data_connection_count": 55
+    },
+    {
+      "name": "ClampCurrentResources",
+      "kind": "function",
+      "guid": "4337A1194A17D0C38066378B030FFA09",
+      "node_count": 24,
+      "pin_count": 76,
+      "connection_count": 26,
+      "exec_connection_count": 5,
+      "data_connection_count": 21
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "AE8F51E3444BA25C0361008C72D01FB3",
+      "guid": "E0ACB9314F6CB98FF40FF4AF4FBF61E2",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -383,11 +423,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 14,
+    "authored_graph_count": 18,
     "generated_graph_count": 1,
-    "authored_node_count": 477,
-    "authored_pin_count": 1864,
-    "authored_connection_count": 544,
+    "authored_node_count": 598,
+    "authored_pin_count": 2202,
+    "authored_connection_count": 565,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -403,9 +443,24 @@
       "file": "graphs/EventGraph.json"
     },
     {
+      "name": "ApplyRecalculatedStats",
+      "kind": "function",
+      "file": "graphs/ApplyRecalculatedStats.json"
+    },
+    {
       "name": "CalculateDerivedValue",
       "kind": "function",
       "file": "graphs/CalculateDerivedValue.json"
+    },
+    {
+      "name": "CalculateResourceMaximums",
+      "kind": "function",
+      "file": "graphs/CalculateResourceMaximums.json"
+    },
+    {
+      "name": "ClampCurrentResources",
+      "kind": "function",
+      "file": "graphs/ClampCurrentResources.json"
     },
     {
       "name": "DebugPrintStats",
@@ -451,6 +506,11 @@
       "name": "RemoveModifiersBySource",
       "kind": "function",
       "file": "graphs/RemoveModifiersBySource.json"
+    },
+    {
+      "name": "ResolveEffectiveAttributes",
+      "kind": "function",
+      "file": "graphs/ResolveEffectiveAttributes.json"
     },
     {
       "name": "SetCurrentHP",
