@@ -6,17 +6,35 @@
     "guid": "1C3F21384A2B2778992E76B6CEB40900",
     "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
   },
-  "variables": [],
+  "variables": [
+    {
+      "name": "StatusPlayerRef",
+      "guid": "52BA025346A03CA970142F9BA93440A8",
+      "friendly_name": "Status Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
   "graphs": [
     {
       "name": "EventGraph",
       "kind": "event",
       "guid": "B77F6E2E470B352EEF2F26A7A63A0E31",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
+      "node_count": 9,
+      "pin_count": 27,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
     },
     {
       "name": "OnPreviewKeyDown",
@@ -27,17 +45,86 @@
       "connection_count": 30,
       "exec_connection_count": 11,
       "data_connection_count": 19
+    },
+    {
+      "name": "FormatResource",
+      "kind": "function",
+      "guid": "F4F460FC4B48D47D3939978038835C54",
+      "node_count": 9,
+      "pin_count": 42,
+      "connection_count": 10,
+      "exec_connection_count": 1,
+      "data_connection_count": 9
+    },
+    {
+      "name": "UnbindStatusEvents",
+      "kind": "function",
+      "guid": "A0F08A724C850A5106A58B988898A7D2",
+      "node_count": 7,
+      "pin_count": 16,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "HandleCharacterStatusChanged",
+      "kind": "function",
+      "guid": "1B0535CA466A0CA591CBF489AACDB2D4",
+      "node_count": 2,
+      "pin_count": 4,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "RefreshStatus",
+      "kind": "function",
+      "guid": "1DB361A54B8547FE758BCD88F680F59D",
+      "node_count": 55,
+      "pin_count": 241,
+      "connection_count": 75,
+      "exec_connection_count": 20,
+      "data_connection_count": 55
+    },
+    {
+      "name": "InitializeGameplay",
+      "kind": "function",
+      "guid": "73FFF66D4B46419B27A736844EDC784C",
+      "node_count": 8,
+      "pin_count": 24,
+      "connection_count": 10,
+      "exec_connection_count": 5,
+      "data_connection_count": 5
     }
   ],
-  "generated_graphs": [],
+  "generated_graphs": [
+    {
+      "name": "Construct",
+      "guid": "11B3AE6944C210382FC9878D6DE78DFA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Destruct",
+      "guid": "CD07C42F47519C7AEB4C75A1B25F6AFA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
   "stats": {
-    "authored_graph_count": 2,
-    "generated_graph_count": 0,
-    "authored_node_count": 29,
-    "authored_pin_count": 84,
-    "authored_connection_count": 30,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 7,
+    "generated_graph_count": 2,
+    "authored_node_count": 116,
+    "authored_pin_count": 429,
+    "authored_connection_count": 138,
+    "generated_node_count": 4,
+    "generated_pin_count": 10
   },
   "graph_files": [
     {
@@ -46,9 +133,34 @@
       "file": "graphs/EventGraph.json"
     },
     {
+      "name": "FormatResource",
+      "kind": "function",
+      "file": "graphs/FormatResource.json"
+    },
+    {
+      "name": "HandleCharacterStatusChanged",
+      "kind": "function",
+      "file": "graphs/HandleCharacterStatusChanged.json"
+    },
+    {
+      "name": "InitializeGameplay",
+      "kind": "function",
+      "file": "graphs/InitializeGameplay.json"
+    },
+    {
       "name": "OnPreviewKeyDown",
       "kind": "function",
       "file": "graphs/OnPreviewKeyDown.json"
+    },
+    {
+      "name": "RefreshStatus",
+      "kind": "function",
+      "file": "graphs/RefreshStatus.json"
+    },
+    {
+      "name": "UnbindStatusEvents",
+      "kind": "function",
+      "file": "graphs/UnbindStatusEvents.json"
     }
   ]
 }

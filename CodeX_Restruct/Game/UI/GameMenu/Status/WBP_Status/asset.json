@@ -17,13 +17,18 @@
   },
   "architecture": {
     "dependencies": [
-      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_StatusStatBlock",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_StatusStatEntry"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
     ],
-    "non_architecture_dependency_count": 4,
+    "non_architecture_dependency_count": 9,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -37,17 +42,43 @@
     "generated_class_object": "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_Status.WBP_Status_C",
     "interfaces": [],
     "components": [],
-    "variables": [],
+    "variables": [
+      {
+        "name": "StatusPlayerRef",
+        "guid": "52BA025346A03CA970142F9BA93440A8",
+        "friendly_name": "Status Player Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
     "graphs": {
       "event_graphs": [
         "EventGraph"
       ],
       "functions": [
-        "OnPreviewKeyDown"
+        "OnPreviewKeyDown",
+        "FormatResource",
+        "UnbindStatusEvents",
+        "HandleCharacterStatusChanged",
+        "RefreshStatus",
+        "InitializeGameplay"
       ],
       "macros": [],
       "delegates": [],
-      "generated_graphs": []
+      "generated_graphs": [
+        "Construct",
+        "Destruct"
+      ]
     },
     "extraction_status": {
       "parent_class": "complete",

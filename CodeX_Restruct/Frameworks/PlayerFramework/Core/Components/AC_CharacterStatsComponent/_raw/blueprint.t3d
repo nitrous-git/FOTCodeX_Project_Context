@@ -1085,12 +1085,6 @@ Begin Object Class=/Script/Engine.Blueprint Name="AC_CharacterStatsComponent" Ex
       Begin Object Class=/Script/BlueprintGraph.K2Node_BreakStruct Name="K2Node_BreakStruct_0" ExportPath="/Script/BlueprintGraph.K2Node_BreakStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:CalculateResourceMaximums.K2Node_BreakStruct_0'"
       End Object
    End Object
-   Begin Object Class=/Script/Engine.EdGraph Name="ReceiveBeginPlay" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay'"
-      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay.K2Node_CallFunction_0'"
-      End Object
-      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay.K2Node_FunctionEntry_0'"
-      End Object
-   End Object
    Begin Object Class=/Script/Engine.EdGraph Name="ApplyRecalculatedStats" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ApplyRecalculatedStats'"
       Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ApplyRecalculatedStats.K2Node_FunctionEntry_0'"
       End Object
@@ -1237,6 +1231,12 @@ Begin Object Class=/Script/Engine.Blueprint Name="AC_CharacterStatsComponent" Ex
       Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_1" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ClampCurrentResources.K2Node_VariableGet_1'"
       End Object
       Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_0" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ClampCurrentResources.K2Node_VariableGet_0'"
+      End Object
+   End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="ReceiveBeginPlay" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay.K2Node_CallFunction_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay.K2Node_FunctionEntry_0'"
       End Object
    End Object
    Begin Object Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:EventGraph'"
@@ -7031,32 +7031,6 @@ Begin Object Class=/Script/Engine.Blueprint Name="AC_CharacterStatsComponent" Ex
       Nodes(19)="/Script/BlueprintGraph.K2Node_VariableGet'K2Node_VariableGet_11'"
       GraphGuid=B9AC8C49477FCFBB993249AE18FB70F4
    End Object
-   Begin Object Name="ReceiveBeginPlay" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay'"
-      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay.K2Node_CallFunction_0'"
-         FunctionReference=(MemberName="ExecuteUbergraph_AC_CharacterStatsComponent",bSelfContext=True)
-         NodePosX=300
-         NodePosY=-2000
-         bIsIntermediateNode=True
-         NodeGuid=1E195DB2A3AC35DB898D0B6EA5DB8FD4
-         CustomProperties Pin (PinId=ADE1CC904CE9E105A12DE79D58E651D6,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 CCE37B2F4482591A8ADDCEB58E6D30CC,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=FEBA98124042D7FFE38C3ABC3C7CEFE3,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=A7D469704CC6B91541E214B14FB5E76B,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="self",PinType.PinSubCategoryObject="/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.SKEL_AC_CharacterStatsComponent_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=F0A8DC884D3E39E1A0693B8233AC179C,PinName="EntryPoint",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0",AutogeneratedDefaultValue="0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-      End Object
-      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay.K2Node_FunctionEntry_0'"
-         CustomGeneratedFunctionName="ReceiveBeginPlay"
-         FunctionReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",MemberName="ReceiveBeginPlay")
-         NodePosX=-200
-         NodePosY=-2000
-         bIsIntermediateNode=True
-         NodeGuid=6AC177020746343BB1FB636B22D9807D
-         CustomProperties Pin (PinId=CCE37B2F4482591A8ADDCEB58E6D30CC,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 ADE1CC904CE9E105A12DE79D58E651D6,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-      End Object
-      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
-      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
-      Nodes(1)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_0'"
-      GraphGuid=E0ACB9314F6CB98FF40FF4AF4FBF61E2
-   End Object
    Begin Object Name="ApplyRecalculatedStats" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ApplyRecalculatedStats'"
       Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ApplyRecalculatedStats.K2Node_FunctionEntry_0'"
          LocalVariables(0)=(VarName="bChanged",VarGuid=CB5A68F24B0A0FB47D9D22B5EE125A93,VarType=(PinCategory="bool"),FriendlyName="Changed",Category=NSLOCTEXT("KismetSchema", "Default", "Default"),PropertyFlags=5)
@@ -7890,6 +7864,32 @@ Begin Object Class=/Script/Engine.Blueprint Name="AC_CharacterStatsComponent" Ex
       Nodes(23)="/Script/BlueprintGraph.K2Node_VariableGet'K2Node_VariableGet_9'"
       GraphGuid=4337A1194A17D0C38066378B030FFA09
    End Object
+   Begin Object Name="ReceiveBeginPlay" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay'"
+      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay.K2Node_CallFunction_0'"
+         FunctionReference=(MemberName="ExecuteUbergraph_AC_CharacterStatsComponent",bSelfContext=True)
+         NodePosX=300
+         NodePosY=-2000
+         bIsIntermediateNode=True
+         NodeGuid=1E195DB2A3AC35DB898D0B6EA5DB8FD4
+         CustomProperties Pin (PinId=C067CE104AF719987B336B903CB27DA8,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 AEBF654A4131D7A29613C19AE3EB36B2,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=81B395D94EB47FCD155765B7D071691D,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=F2AF67D44EB5F1AFA5AA43A7BEDAE1F1,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="self",PinType.PinSubCategoryObject="/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.SKEL_AC_CharacterStatsComponent_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=8E4697CB46D44A9971B350BE22F1383B,PinName="EntryPoint",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0",AutogeneratedDefaultValue="0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReceiveBeginPlay.K2Node_FunctionEntry_0'"
+         CustomGeneratedFunctionName="ReceiveBeginPlay"
+         FunctionReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",MemberName="ReceiveBeginPlay")
+         NodePosX=-200
+         NodePosY=-2000
+         bIsIntermediateNode=True
+         NodeGuid=6AC177020746343BB1FB636B22D9807D
+         CustomProperties Pin (PinId=AEBF654A4131D7A29613C19AE3EB36B2,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 C067CE104AF719987B336B903CB27DA8,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
+      Nodes(1)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_0'"
+      GraphGuid=5E4A21D04C4DC1127FDE21B134062D04
+   End Object
    ParentClass="/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
    BlueprintSystemVersion=2
    UbergraphPages(0)="/Script/Engine.EdGraph'EventGraph'"
@@ -7926,7 +7926,7 @@ Begin Object Class=/Script/Engine.Blueprint Name="AC_CharacterStatsComponent" Ex
    CategorySorting(0)="Default"
    CategorySorting(1)=""
    CategorySorting(2)="Event Graph"
-   LastEditedDocuments(0)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:EventGraph",SavedViewOffset=(X=-483.153931,Y=-184.805115),SavedZoomAmount=1.000000)
+   LastEditedDocuments(0)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:EventGraph",SavedViewOffset=(X=-408.235138,Y=-732.489929),SavedZoomAmount=0.500000)
    LastEditedDocuments(1)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:GetPrimaryAttribute",SavedViewOffset=(X=-98.542786,Y=-355.327576),SavedZoomAmount=0.675000)
    LastEditedDocuments(2)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ReadAttribute",SavedViewOffset=(X=340.316895,Y=-1640.968872),SavedZoomAmount=0.125000)
    LastEditedDocuments(3)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:DebugSetBaseAttribute",SavedViewOffset=(X=-682.515381,Y=-1334.138550),SavedZoomAmount=0.250000)
@@ -7936,14 +7936,13 @@ Begin Object Class=/Script/Engine.Blueprint Name="AC_CharacterStatsComponent" Ex
    LastEditedDocuments(7)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:OnStatsChanged",SavedViewOffset=(X=-663.653931,Y=-295.805115),SavedZoomAmount=1.000000)
    LastEditedDocuments(8)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:InitializeStats",SavedViewOffset=(X=-1525.353149,Y=-1807.781494),SavedZoomAmount=0.200000)
    LastEditedDocuments(9)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:SetCurrentHP",SavedViewOffset=(X=-165.875122,Y=-474.368286),SavedZoomAmount=0.500000)
-   LastEditedDocuments(10)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:RecalculateDerivedStats",SavedViewOffset=(X=-319.523132,Y=-1518.473389),SavedZoomAmount=0.225000)
+   LastEditedDocuments(10)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:RecalculateDerivedStats",SavedViewOffset=(X=935.366516,Y=-729.823242),SavedZoomAmount=0.375000)
    LastEditedDocuments(11)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ResolveEffectiveAttributes",SavedViewOffset=(X=-3542.903809,Y=-176.536865),SavedZoomAmount=0.100000)
-   LastEditedDocuments(12)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:CalculateResourceMaximums",SavedViewOffset=(X=2586.370361,Y=1160.449097),SavedZoomAmount=0.750000)
-   LastEditedDocuments(13)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ApplyRecalculatedStats",SavedViewOffset=(X=44.898193,Y=-1605.399780),SavedZoomAmount=0.100000)
-   LastEditedDocuments(14)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ClampCurrentResources",SavedViewOffset=(X=-205.485382,Y=1405.233276),SavedZoomAmount=0.750000)
-   LastEditedDocuments(15)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:DebugPrintStats",SavedViewOffset=(X=4702.559570,Y=-2812.888184),SavedZoomAmount=0.100000)
-   LastEditedDocuments(16)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:GetEffectiveAttribute",SavedViewOffset=(X=-32.888580,Y=-357.571899),SavedZoomAmount=0.750000)
-   LastEditedDocuments(17)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:EventGraph",SavedViewOffset=(X=-408.235138,Y=-732.489929),SavedZoomAmount=0.500000)
+   LastEditedDocuments(12)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ApplyRecalculatedStats",SavedViewOffset=(X=44.898193,Y=-1605.399780),SavedZoomAmount=0.100000)
+   LastEditedDocuments(13)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:ClampCurrentResources",SavedViewOffset=(X=-205.485382,Y=1405.233276),SavedZoomAmount=0.750000)
+   LastEditedDocuments(14)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:DebugPrintStats",SavedViewOffset=(X=4702.559570,Y=-2812.888184),SavedZoomAmount=0.100000)
+   LastEditedDocuments(15)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:GetEffectiveAttribute",SavedViewOffset=(X=-32.888580,Y=-357.571899),SavedZoomAmount=0.750000)
+   LastEditedDocuments(16)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent:CalculateResourceMaximums",SavedViewOffset=(X=-208.740723,Y=-1305.407959),SavedZoomAmount=0.175000)
    ThumbnailInfo="/Script/UnrealEd.SceneThumbnailInfo'SceneThumbnailInfo_0'"
    GeneratedClass="/Script/Engine.BlueprintGeneratedClass'AC_CharacterStatsComponent_C'"
    bLegacyNeedToPurgeSkelRefs=False
