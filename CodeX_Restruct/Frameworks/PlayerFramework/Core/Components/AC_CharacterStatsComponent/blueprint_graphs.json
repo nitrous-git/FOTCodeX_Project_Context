@@ -59,6 +59,23 @@
       }
     },
     {
+      "name": "CurrentHP",
+      "guid": "F28B190147608C3A529F7FB0B694383F",
+      "friendly_name": "Current HP",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "CurrentStamina",
       "guid": "C32264B54CA824507F99FEAAB9F4129A",
       "friendly_name": "Current Stamina",
@@ -297,21 +314,21 @@
       "name": "RecalculateDerivedStats",
       "kind": "function",
       "guid": "3504BDD347D70E4ECA0486ABE2D30CD2",
-      "node_count": 164,
-      "pin_count": 565,
-      "connection_count": 227,
-      "exec_connection_count": 41,
-      "data_connection_count": 186
+      "node_count": 170,
+      "pin_count": 583,
+      "connection_count": 233,
+      "exec_connection_count": 42,
+      "data_connection_count": 191
     },
     {
       "name": "InitializeStats",
       "kind": "function",
       "guid": "276A75034C34BA34CB34AA89EC4C75E3",
-      "node_count": 11,
-      "pin_count": 35,
-      "connection_count": 10,
-      "exec_connection_count": 6,
-      "data_connection_count": 4
+      "node_count": 13,
+      "pin_count": 42,
+      "connection_count": 12,
+      "exec_connection_count": 7,
+      "data_connection_count": 5
     },
     {
       "name": "DebugPrintStats",
@@ -342,12 +359,22 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "SetCurrentHP",
+      "kind": "function",
+      "guid": "B03F52A84150052F1A8920B45635A2E2",
+      "node_count": 11,
+      "pin_count": 39,
+      "connection_count": 10,
+      "exec_connection_count": 4,
+      "data_connection_count": 6
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "D89FB09B47A7517255898E9203C1DEB2",
+      "guid": "AE8F51E3444BA25C0361008C72D01FB3",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -356,11 +383,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 13,
+    "authored_graph_count": 14,
     "generated_graph_count": 1,
-    "authored_node_count": 458,
-    "authored_pin_count": 1800,
-    "authored_connection_count": 526,
+    "authored_node_count": 477,
+    "authored_pin_count": 1864,
+    "authored_connection_count": 544,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -424,6 +451,11 @@
       "name": "RemoveModifiersBySource",
       "kind": "function",
       "file": "graphs/RemoveModifiersBySource.json"
+    },
+    {
+      "name": "SetCurrentHP",
+      "kind": "function",
+      "file": "graphs/SetCurrentHP.json"
     },
     {
       "name": "SetModifierForSource",
