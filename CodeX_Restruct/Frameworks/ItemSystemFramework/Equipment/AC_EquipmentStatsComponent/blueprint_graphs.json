@@ -110,6 +110,23 @@
       }
     },
     {
+      "name": "ScalingNormalization",
+      "guid": "774F1D2B4A36B1393030199B0A461583",
+      "friendly_name": "Scaling Normalization",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "StatsRef",
       "guid": "E16C0E6B41F22E882426B1BE4006EED6",
       "friendly_name": "Stats Ref",
@@ -172,21 +189,21 @@
       "name": "ApplyScalingRule",
       "kind": "function",
       "guid": "02172AD94CD0E0B74C20EBBC86F2EF30",
-      "node_count": 49,
-      "pin_count": 175,
-      "connection_count": 72,
-      "exec_connection_count": 2,
-      "data_connection_count": 70
+      "node_count": 133,
+      "pin_count": 481,
+      "connection_count": 118,
+      "exec_connection_count": 5,
+      "data_connection_count": 113
     },
     {
       "name": "CalculateWeaponRating",
       "kind": "function",
       "guid": "EA23D24B45F2167E5D943FA156D8CA7B",
-      "node_count": 19,
-      "pin_count": 65,
-      "connection_count": 30,
-      "exec_connection_count": 12,
-      "data_connection_count": 18
+      "node_count": 44,
+      "pin_count": 168,
+      "connection_count": 42,
+      "exec_connection_count": 14,
+      "data_connection_count": 28
     },
     {
       "name": "ResolveEquippedDefinitions",
@@ -337,12 +354,32 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "IsUniqueScalingRule",
+      "kind": "function",
+      "guid": "BAACC9424789AE1CB5335E81D64314CD",
+      "node_count": 21,
+      "pin_count": 84,
+      "connection_count": 21,
+      "exec_connection_count": 5,
+      "data_connection_count": 16
+    },
+    {
+      "name": "GetScalingCoefficient",
+      "kind": "function",
+      "guid": "BDA8A3D648E587E7A0801590ECB45B6D",
+      "node_count": 4,
+      "pin_count": 19,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveEndPlay",
-      "guid": "6AD9E20A4005079D5547BE9BFFDA9D39",
+      "guid": "48303DA84AB7DE54DB5E019601B5601B",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -351,11 +388,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 21,
+    "authored_graph_count": 23,
     "generated_graph_count": 1,
-    "authored_node_count": 479,
-    "authored_pin_count": 1832,
-    "authored_connection_count": 692,
+    "authored_node_count": 613,
+    "authored_pin_count": 2344,
+    "authored_connection_count": 775,
     "generated_node_count": 3,
     "generated_pin_count": 9
   },
@@ -416,6 +453,11 @@
       "file": "graphs/EvaluateRequirements.json"
     },
     {
+      "name": "GetScalingCoefficient",
+      "kind": "function",
+      "file": "graphs/GetScalingCoefficient.json"
+    },
+    {
       "name": "GetWeaponWeight",
       "kind": "function",
       "file": "graphs/GetWeaponWeight.json"
@@ -434,6 +476,11 @@
       "name": "InitializeEquipmentStats",
       "kind": "function",
       "file": "graphs/InitializeEquipmentStats.json"
+    },
+    {
+      "name": "IsUniqueScalingRule",
+      "kind": "function",
+      "file": "graphs/IsUniqueScalingRule.json"
     },
     {
       "name": "RecalculateEquipmentStats",

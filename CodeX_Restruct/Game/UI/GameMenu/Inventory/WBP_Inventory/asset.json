@@ -19,11 +19,9 @@
     "dependencies": [
       "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FWeaponScalingRule",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
@@ -35,13 +33,6 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_AttackPower",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_DamageNegation",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_RequiredStats",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_Resistance",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_StatScaling",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_StatsGranted",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_ItemInfoEntry",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryAction",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryCategoryTab",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventorySlot"
@@ -461,20 +452,18 @@
         "RefreshCharacterStatsSidebar",
         "HandleCharacterStatusChanged",
         "UnbindCharacterStatusEvents",
-        "InitializeCharacterStatsSidebar",
-        "RefreshSelectedEquipmentStats",
-        "RefreshCurrentSelectionStats"
+        "InitializeCharacterStatsSidebar"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "Destruct",
-        "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
-        "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
-        "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
-        "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+        "PreConstruct",
         "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
-        "PreConstruct"
+        "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+        "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
+        "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
+        "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
+        "Destruct"
       ]
     },
     "extraction_status": {
@@ -495,6 +484,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 128
+    "widget_count": 121
   }
 }
