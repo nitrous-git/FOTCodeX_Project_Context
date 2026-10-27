@@ -363,6 +363,23 @@
         "is_const": false,
         "is_weak_pointer": false
       }
+    },
+    {
+      "name": "StatusPlayerRef",
+      "guid": "57DC045D4F9B66A39D8891A243605688",
+      "friendly_name": "Status Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
     }
   ],
   "graphs": [
@@ -370,10 +387,10 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "84A94BEB46A0F587E433FD981F3D5264",
-      "node_count": 27,
-      "pin_count": 87,
-      "connection_count": 25,
-      "exec_connection_count": 8,
+      "node_count": 29,
+      "pin_count": 92,
+      "connection_count": 26,
+      "exec_connection_count": 9,
       "data_connection_count": 17
     },
     {
@@ -460,11 +477,11 @@
       "name": "InitializeGameplay",
       "kind": "function",
       "guid": "EA2F80304CAE47A625B8BF80BBE055F5",
-      "node_count": 13,
-      "pin_count": 44,
-      "connection_count": 18,
-      "exec_connection_count": 8,
-      "data_connection_count": 10
+      "node_count": 14,
+      "pin_count": 48,
+      "connection_count": 20,
+      "exec_connection_count": 9,
+      "data_connection_count": 11
     },
     {
       "name": "RefreshOwnedInventory",
@@ -480,10 +497,10 @@
       "name": "RefreshSelectedItemInfo",
       "kind": "function",
       "guid": "28C107E741B811635E3921B0ACB3ECB8",
-      "node_count": 28,
-      "pin_count": 124,
-      "connection_count": 34,
-      "exec_connection_count": 15,
+      "node_count": 30,
+      "pin_count": 130,
+      "connection_count": 36,
+      "exec_connection_count": 17,
       "data_connection_count": 19
     },
     {
@@ -505,39 +522,81 @@
       "connection_count": 30,
       "exec_connection_count": 11,
       "data_connection_count": 19
+    },
+    {
+      "name": "RefreshCharacterStatsSidebar",
+      "kind": "function",
+      "guid": "021FEF2742EAECCC8A7B67A7DF1A79F5",
+      "node_count": 88,
+      "pin_count": 420,
+      "connection_count": 108,
+      "exec_connection_count": 6,
+      "data_connection_count": 102
+    },
+    {
+      "name": "HandleCharacterStatusChanged",
+      "kind": "function",
+      "guid": "BE8ACDFF4C6D043A0AA65EBDF92E5768",
+      "node_count": 3,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
+    },
+    {
+      "name": "UnbindCharacterStatusEvents",
+      "kind": "function",
+      "guid": "1C18B2354CEC712A74480D909BFDB0BA",
+      "node_count": 7,
+      "pin_count": 16,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InitializeCharacterStatsSidebar",
+      "kind": "function",
+      "guid": "7A364D0B4BA3F1DE8812E59D1BD73C5C",
+      "node_count": 10,
+      "pin_count": 32,
+      "connection_count": 13,
+      "exec_connection_count": 6,
+      "data_connection_count": 7
+    },
+    {
+      "name": "RefreshSelectedEquipmentStats",
+      "kind": "function",
+      "guid": "8B5EA73C43B7C99B8A841DB6A0745C14",
+      "node_count": 95,
+      "pin_count": 323,
+      "connection_count": 114,
+      "exec_connection_count": 44,
+      "data_connection_count": 70
+    },
+    {
+      "name": "RefreshCurrentSelectionStats",
+      "kind": "function",
+      "guid": "C9A351394DF2AAE300511F8BDC8FCE3D",
+      "node_count": 6,
+      "pin_count": 17,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
     }
   ],
   "generated_graphs": [
     {
-      "name": "PreConstruct",
-      "guid": "6B8B3E624CE5BF63D41FF492CA4C7996",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
+      "name": "Destruct",
+      "guid": "6EEF4BF1404A1B43E82F448295899C37",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     },
     {
-      "name": "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
-      "guid": "729049404F58015BAF71EB9302A41293",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
-      "guid": "1734D33D491989FDE8CF55B7D01E6DE8",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
-      "guid": "4B7539E949AE397501683EA7EB5BF85F",
+      "name": "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
+      "guid": "709980D346BFD00DC3AA929A0FF68D80",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -546,7 +605,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
-      "guid": "DA1D140946AB58DE7FD7099324AAC5D0",
+      "guid": "E89025CF41943C4E36CD709089F06E5A",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -554,8 +613,35 @@
       "data_connection_count": 1
     },
     {
-      "name": "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
-      "guid": "9C0A6C4B4827EFC18B9F0F97769A84C1",
+      "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
+      "guid": "16C1725243DB280CE4FAF193030D3A02",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+      "guid": "EDB8A766416EC08198156B9532848EFA",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
+      "guid": "0DE00E7B4673D5C19E3EEDBF6F3E100C",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "EAA8F69D4973F02B7AE1DDAC2D7DD139",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -564,19 +650,29 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 14,
-    "generated_graph_count": 6,
-    "authored_node_count": 439,
-    "authored_pin_count": 1448,
-    "authored_connection_count": 520,
-    "generated_node_count": 18,
-    "generated_pin_count": 54
+    "authored_graph_count": 20,
+    "generated_graph_count": 7,
+    "authored_node_count": 653,
+    "authored_pin_count": 2278,
+    "authored_connection_count": 773,
+    "generated_node_count": 20,
+    "generated_pin_count": 59
   },
   "graph_files": [
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "HandleCharacterStatusChanged",
+      "kind": "function",
+      "file": "graphs/HandleCharacterStatusChanged.json"
+    },
+    {
+      "name": "InitializeCharacterStatsSidebar",
+      "kind": "function",
+      "file": "graphs/InitializeCharacterStatsSidebar.json"
     },
     {
       "name": "InitializeGameplay",
@@ -599,6 +695,16 @@
       "file": "graphs/RefreshCategories.json"
     },
     {
+      "name": "RefreshCharacterStatsSidebar",
+      "kind": "function",
+      "file": "graphs/RefreshCharacterStatsSidebar.json"
+    },
+    {
+      "name": "RefreshCurrentSelectionStats",
+      "kind": "function",
+      "file": "graphs/RefreshCurrentSelectionStats.json"
+    },
+    {
       "name": "RefreshInventoryInfoPresentation",
       "kind": "function",
       "file": "graphs/RefreshInventoryInfoPresentation.json"
@@ -612,6 +718,11 @@
       "name": "RefreshOwnedInventory",
       "kind": "function",
       "file": "graphs/RefreshOwnedInventory.json"
+    },
+    {
+      "name": "RefreshSelectedEquipmentStats",
+      "kind": "function",
+      "file": "graphs/RefreshSelectedEquipmentStats.json"
     },
     {
       "name": "RefreshSelectedItemInfo",
@@ -632,6 +743,11 @@
       "name": "SetInventoryInfoView",
       "kind": "function",
       "file": "graphs/SetInventoryInfoView.json"
+    },
+    {
+      "name": "UnbindCharacterStatusEvents",
+      "kind": "function",
+      "file": "graphs/UnbindCharacterStatusEvents.json"
     },
     {
       "name": "UnbindInventoryEvents",

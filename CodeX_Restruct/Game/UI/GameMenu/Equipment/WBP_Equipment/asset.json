@@ -19,14 +19,22 @@
     "dependencies": [
       "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FWeaponScalingRule",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_AttackPower",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_DamageNegation",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_ItemEffect",
@@ -122,6 +130,23 @@
           "sub_category": null,
           "sub_category_object": null,
           "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisplayedStatsItemID",
+        "guid": "A3FF18A847007A02F28499AC8E8B2E3D",
+        "friendly_name": "Displayed Stats Item ID",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
           "is_reference": false,
           "is_const": false,
           "is_weak_pointer": false
@@ -279,6 +304,23 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "StatusPlayerRef",
+        "guid": "33B1F9E348F4E4DA3781658D8F89E9D6",
+        "friendly_name": "Status Player Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
@@ -305,20 +347,27 @@
         "OnPreviewKeyDown",
         "RefreshChoiceStates",
         "HandleEquipmentInventoryChanged",
-        "PreviewEquipmentItem"
+        "PreviewEquipmentItem",
+        "RefreshCharacterStatsSidebar",
+        "HandleCharacterStatusChanged",
+        "UnbindCharacterStatusEvents",
+        "InitializeCharacterStatsSidebar",
+        "RefreshSelectedEquipmentStats",
+        "RefreshPresentedItemStats"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "PreConstruct",
-        "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_0_OnSelectionCancelled__DelegateSignature",
-        "BndEvt__WBP_Equipment_RightHandSlot_K2Node_ComponentBoundEvent_1_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_LeftHandSlot_K2Node_ComponentBoundEvent_2_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_HeadSlot_K2Node_ComponentBoundEvent_3_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_ChestSlot_K2Node_ComponentBoundEvent_4_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_ArmsSlot_K2Node_ComponentBoundEvent_5_OnEquipmentSlotPressed__DelegateSignature",
+        "Destruct",
+        "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_7_OnUnequipRequested__DelegateSignature",
         "BndEvt__WBP_Equipment_LegsSlot_K2Node_ComponentBoundEvent_6_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_7_OnUnequipRequested__DelegateSignature"
+        "BndEvt__WBP_Equipment_ArmsSlot_K2Node_ComponentBoundEvent_5_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_ChestSlot_K2Node_ComponentBoundEvent_4_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_HeadSlot_K2Node_ComponentBoundEvent_3_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_LeftHandSlot_K2Node_ComponentBoundEvent_2_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_RightHandSlot_K2Node_ComponentBoundEvent_1_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_0_OnSelectionCancelled__DelegateSignature",
+        "PreConstruct"
       ]
     },
     "extraction_status": {
@@ -339,6 +388,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 129
+    "widget_count": 130
   }
 }

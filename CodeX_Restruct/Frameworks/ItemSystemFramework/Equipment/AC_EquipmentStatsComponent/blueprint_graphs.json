@@ -129,34 +129,14 @@
   ],
   "graphs": [
     {
-      "name": "SetEquipmentSubscription",
-      "kind": "function",
-      "guid": "C3D1D1CC4D7473491F7DCBAFC62E64A9",
-      "node_count": 8,
-      "pin_count": 24,
-      "connection_count": 10,
-      "exec_connection_count": 4,
-      "data_connection_count": 6
-    },
-    {
-      "name": "OnEquipmentStatsChanged",
-      "kind": "delegate",
-      "guid": "625B02344CBF1B3F8EBF5DBFA627D2BC",
-      "node_count": 1,
-      "pin_count": 1,
-      "connection_count": 0,
-      "exec_connection_count": 0,
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "0C51714F4B88C2C5AB62A78DCA332274",
+      "node_count": 2,
+      "pin_count": 6,
+      "connection_count": 1,
+      "exec_connection_count": 1,
       "data_connection_count": 0
-    },
-    {
-      "name": "GetWeaponWeight",
-      "kind": "function",
-      "guid": "75DBCEC4437D1F5CF9DD1DA3CC2BB34A",
-      "node_count": 9,
-      "pin_count": 26,
-      "connection_count": 11,
-      "exec_connection_count": 3,
-      "data_connection_count": 8
     },
     {
       "name": "CombineNegation",
@@ -169,24 +149,84 @@
       "data_connection_count": 75
     },
     {
-      "name": "EventGraph",
-      "kind": "event",
-      "guid": "0C51714F4B88C2C5AB62A78DCA332274",
-      "node_count": 4,
-      "pin_count": 11,
-      "connection_count": 1,
+      "name": "AddResistances",
+      "kind": "function",
+      "guid": "04832BC04AF304A3662D6794E48FA235",
+      "node_count": 25,
+      "pin_count": 88,
+      "connection_count": 36,
       "exec_connection_count": 1,
-      "data_connection_count": 0
+      "data_connection_count": 35
     },
     {
-      "name": "ShutdownEquipmentStats",
+      "name": "EvaluateRequirements",
       "kind": "function",
-      "guid": "6DF250894F309B4C480F56BF962F1BFF",
-      "node_count": 13,
-      "pin_count": 55,
+      "guid": "8BAE0AB646088176A5EB708E044F658A",
+      "node_count": 28,
+      "pin_count": 127,
+      "connection_count": 50,
+      "exec_connection_count": 9,
+      "data_connection_count": 41
+    },
+    {
+      "name": "ApplyScalingRule",
+      "kind": "function",
+      "guid": "02172AD94CD0E0B74C20EBBC86F2EF30",
+      "node_count": 49,
+      "pin_count": 175,
+      "connection_count": 72,
+      "exec_connection_count": 2,
+      "data_connection_count": 70
+    },
+    {
+      "name": "CalculateWeaponRating",
+      "kind": "function",
+      "guid": "EA23D24B45F2167E5D943FA156D8CA7B",
+      "node_count": 19,
+      "pin_count": 65,
+      "connection_count": 30,
+      "exec_connection_count": 12,
+      "data_connection_count": 18
+    },
+    {
+      "name": "ResolveEquippedDefinitions",
+      "kind": "function",
+      "guid": "4D0D85564C9879325570E2BFBCFC122E",
+      "node_count": 11,
+      "pin_count": 50,
       "connection_count": 16,
-      "exec_connection_count": 11,
-      "data_connection_count": 5
+      "exec_connection_count": 7,
+      "data_connection_count": 9
+    },
+    {
+      "name": "ApplyArmorSource",
+      "kind": "function",
+      "guid": "355D717E4ACC9F2E6A8E118770663C4D",
+      "node_count": 33,
+      "pin_count": 128,
+      "connection_count": 47,
+      "exec_connection_count": 5,
+      "data_connection_count": 42
+    },
+    {
+      "name": "AccumulateArmor",
+      "kind": "function",
+      "guid": "90B80AA84670D9A7F3F30EAEB96555B5",
+      "node_count": 16,
+      "pin_count": 62,
+      "connection_count": 30,
+      "exec_connection_count": 5,
+      "data_connection_count": 25
+    },
+    {
+      "name": "GetWeaponWeight",
+      "kind": "function",
+      "guid": "75DBCEC4437D1F5CF9DD1DA3CC2BB34A",
+      "node_count": 9,
+      "pin_count": 26,
+      "connection_count": 11,
+      "exec_connection_count": 3,
+      "data_connection_count": 8
     },
     {
       "name": "BuildEquipmentSnapshot",
@@ -209,6 +249,26 @@
       "data_connection_count": 110
     },
     {
+      "name": "RecalculateEquipmentStats",
+      "kind": "function",
+      "guid": "7CC3B8B641C9B3714A226A8567C5447A",
+      "node_count": 15,
+      "pin_count": 55,
+      "connection_count": 17,
+      "exec_connection_count": 9,
+      "data_connection_count": 8
+    },
+    {
+      "name": "UpdateArmorModifier",
+      "kind": "function",
+      "guid": "A90D098C43BB542847E1D79E50D85A13",
+      "node_count": 34,
+      "pin_count": 123,
+      "connection_count": 43,
+      "exec_connection_count": 3,
+      "data_connection_count": 40
+    },
+    {
       "name": "HandleEquipmentSlotChanged",
       "kind": "function",
       "guid": "4862BEB7481A005CA3B33D9162DB0FF5",
@@ -217,26 +277,6 @@
       "connection_count": 10,
       "exec_connection_count": 5,
       "data_connection_count": 5
-    },
-    {
-      "name": "SetStatsSubscription",
-      "kind": "function",
-      "guid": "2100CD4445574E3CC1A91AA30980CAEC",
-      "node_count": 8,
-      "pin_count": 24,
-      "connection_count": 10,
-      "exec_connection_count": 4,
-      "data_connection_count": 6
-    },
-    {
-      "name": "InitializeEquipmentStats",
-      "kind": "function",
-      "guid": "48BD182E4710BC803DD4B495DB848D4F",
-      "node_count": 34,
-      "pin_count": 127,
-      "connection_count": 42,
-      "exec_connection_count": 19,
-      "data_connection_count": 23
     },
     {
       "name": "HandleCharacterStatsChanged",
@@ -249,100 +289,60 @@
       "data_connection_count": 0
     },
     {
-      "name": "RecalculateEquipmentStats",
+      "name": "SetEquipmentSubscription",
       "kind": "function",
-      "guid": "7CC3B8B641C9B3714A226A8567C5447A",
-      "node_count": 15,
+      "guid": "C3D1D1CC4D7473491F7DCBAFC62E64A9",
+      "node_count": 8,
+      "pin_count": 24,
+      "connection_count": 10,
+      "exec_connection_count": 4,
+      "data_connection_count": 6
+    },
+    {
+      "name": "SetStatsSubscription",
+      "kind": "function",
+      "guid": "2100CD4445574E3CC1A91AA30980CAEC",
+      "node_count": 8,
+      "pin_count": 24,
+      "connection_count": 10,
+      "exec_connection_count": 4,
+      "data_connection_count": 6
+    },
+    {
+      "name": "ShutdownEquipmentStats",
+      "kind": "function",
+      "guid": "6DF250894F309B4C480F56BF962F1BFF",
+      "node_count": 13,
       "pin_count": 55,
-      "connection_count": 17,
-      "exec_connection_count": 9,
-      "data_connection_count": 8
-    },
-    {
-      "name": "ApplyArmorSource",
-      "kind": "function",
-      "guid": "355D717E4ACC9F2E6A8E118770663C4D",
-      "node_count": 33,
-      "pin_count": 128,
-      "connection_count": 47,
-      "exec_connection_count": 5,
-      "data_connection_count": 42
-    },
-    {
-      "name": "UpdateArmorModifier",
-      "kind": "function",
-      "guid": "A90D098C43BB542847E1D79E50D85A13",
-      "node_count": 36,
-      "pin_count": 134,
-      "connection_count": 43,
-      "exec_connection_count": 3,
-      "data_connection_count": 40
-    },
-    {
-      "name": "AccumulateArmor",
-      "kind": "function",
-      "guid": "90B80AA84670D9A7F3F30EAEB96555B5",
-      "node_count": 16,
-      "pin_count": 62,
-      "connection_count": 30,
-      "exec_connection_count": 5,
-      "data_connection_count": 25
-    },
-    {
-      "name": "EvaluateRequirements",
-      "kind": "function",
-      "guid": "8BAE0AB646088176A5EB708E044F658A",
-      "node_count": 28,
-      "pin_count": 127,
-      "connection_count": 50,
-      "exec_connection_count": 9,
-      "data_connection_count": 41
-    },
-    {
-      "name": "ResolveEquippedDefinitions",
-      "kind": "function",
-      "guid": "4D0D85564C9879325570E2BFBCFC122E",
-      "node_count": 11,
-      "pin_count": 50,
       "connection_count": 16,
-      "exec_connection_count": 7,
-      "data_connection_count": 9
+      "exec_connection_count": 11,
+      "data_connection_count": 5
     },
     {
-      "name": "CalculateWeaponRating",
+      "name": "InitializeEquipmentStats",
       "kind": "function",
-      "guid": "EA23D24B45F2167E5D943FA156D8CA7B",
-      "node_count": 26,
-      "pin_count": 88,
-      "connection_count": 30,
-      "exec_connection_count": 12,
-      "data_connection_count": 18
+      "guid": "48BD182E4710BC803DD4B495DB848D4F",
+      "node_count": 34,
+      "pin_count": 127,
+      "connection_count": 42,
+      "exec_connection_count": 19,
+      "data_connection_count": 23
     },
     {
-      "name": "ApplyScalingRule",
-      "kind": "function",
-      "guid": "02172AD94CD0E0B74C20EBBC86F2EF30",
-      "node_count": 49,
-      "pin_count": 175,
-      "connection_count": 72,
-      "exec_connection_count": 2,
-      "data_connection_count": 70
-    },
-    {
-      "name": "AddResistances",
-      "kind": "function",
-      "guid": "04832BC04AF304A3662D6794E48FA235",
-      "node_count": 25,
-      "pin_count": 88,
-      "connection_count": 36,
-      "exec_connection_count": 1,
-      "data_connection_count": 35
+      "name": "OnEquipmentStatsChanged",
+      "kind": "delegate",
+      "guid": "625B02344CBF1B3F8EBF5DBFA627D2BC",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveEndPlay",
-      "guid": "B01311BD4903907B495CFCAA9541F5C3",
+      "guid": "6AD9E20A4005079D5547BE9BFFDA9D39",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -353,8 +353,8 @@
   "stats": {
     "authored_graph_count": 21,
     "generated_graph_count": 1,
-    "authored_node_count": 490,
-    "authored_pin_count": 1871,
+    "authored_node_count": 479,
+    "authored_pin_count": 1832,
     "authored_connection_count": 692,
     "generated_node_count": 3,
     "generated_pin_count": 9
