@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_EquipmentStatsComponent",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent.AC_EquipmentStatsComponent",
+    "relative_package": "Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FWeaponScalingRule",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    ],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent.AC_EquipmentStatsComponent_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent.AC_EquipmentStatsComponent_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent.AC_EquipmentStatsComponent_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bEquipmentStatsInitialized",
+        "guid": "9356D23C4C08576204933F8FF53D6BB4",
+        "friendly_name": "Equipment Stats Initialized",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bRecalculating",
+        "guid": "24AD4CE54DC27E0B6711B8ABB59466D4",
+        "friendly_name": "Recalculating",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EquipmentRef",
+        "guid": "687F918A4D6CDA7EEA17EF9B6963E544",
+        "friendly_name": "Equipment Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent.AC_EquipmentComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EquipmentStats",
+        "guid": "820437F74B52D61A0883C9B5F88CD4D4",
+        "friendly_name": "Equipment Stats",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot.FEquipmentStatSnapshot'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InventoryRef",
+        "guid": "7A47965A47333B26EDB05DB1F0C3BEA2",
+        "friendly_name": "Inventory Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnEquipmentStatsChanged",
+        "guid": "CA7087284A0107664FC892BFA8262F8C",
+        "friendly_name": "On Equipment Stats Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StatsRef",
+        "guid": "E16C0E6B41F22E882426B1BE4006EED6",
+        "friendly_name": "Stats Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "SetEquipmentSubscription",
+        "GetWeaponWeight",
+        "CombineNegation",
+        "ShutdownEquipmentStats",
+        "BuildEquipmentSnapshot",
+        "EquipmentSnapshotsEqual",
+        "HandleEquipmentSlotChanged",
+        "SetStatsSubscription",
+        "InitializeEquipmentStats",
+        "HandleCharacterStatsChanged",
+        "RecalculateEquipmentStats",
+        "ApplyArmorSource",
+        "UpdateArmorModifier",
+        "AccumulateArmor",
+        "EvaluateRequirements",
+        "ResolveEquippedDefinitions",
+        "CalculateWeaponRating",
+        "ApplyScalingRule",
+        "AddResistances"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnEquipmentStatsChanged"
+      ],
+      "generated_graphs": [
+        "ReceiveEndPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

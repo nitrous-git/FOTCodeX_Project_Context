@@ -30,8 +30,8 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "B77F6E2E470B352EEF2F26A7A63A0E31",
-      "node_count": 9,
-      "pin_count": 27,
+      "node_count": 8,
+      "pin_count": 23,
       "connection_count": 6,
       "exec_connection_count": 3,
       "data_connection_count": 3
@@ -47,24 +47,24 @@
       "data_connection_count": 19
     },
     {
-      "name": "FormatResource",
+      "name": "InitializeGameplay",
       "kind": "function",
-      "guid": "F4F460FC4B48D47D3939978038835C54",
-      "node_count": 9,
-      "pin_count": 42,
+      "guid": "73FFF66D4B46419B27A736844EDC784C",
+      "node_count": 8,
+      "pin_count": 24,
       "connection_count": 10,
-      "exec_connection_count": 1,
-      "data_connection_count": 9
+      "exec_connection_count": 5,
+      "data_connection_count": 5
     },
     {
-      "name": "UnbindStatusEvents",
+      "name": "RefreshStatus",
       "kind": "function",
-      "guid": "A0F08A724C850A5106A58B988898A7D2",
-      "node_count": 7,
-      "pin_count": 16,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
+      "guid": "1DB361A54B8547FE758BCD88F680F59D",
+      "node_count": 56,
+      "pin_count": 246,
+      "connection_count": 70,
+      "exec_connection_count": 20,
+      "data_connection_count": 50
     },
     {
       "name": "HandleCharacterStatusChanged",
@@ -77,30 +77,40 @@
       "data_connection_count": 0
     },
     {
-      "name": "RefreshStatus",
+      "name": "UnbindStatusEvents",
       "kind": "function",
-      "guid": "1DB361A54B8547FE758BCD88F680F59D",
-      "node_count": 55,
-      "pin_count": 241,
-      "connection_count": 75,
-      "exec_connection_count": 20,
-      "data_connection_count": 55
+      "guid": "A0F08A724C850A5106A58B988898A7D2",
+      "node_count": 7,
+      "pin_count": 16,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
     },
     {
-      "name": "InitializeGameplay",
+      "name": "FormatResource",
       "kind": "function",
-      "guid": "73FFF66D4B46419B27A736844EDC784C",
-      "node_count": 8,
-      "pin_count": 24,
+      "guid": "F4F460FC4B48D47D3939978038835C54",
+      "node_count": 9,
+      "pin_count": 42,
       "connection_count": 10,
-      "exec_connection_count": 5,
-      "data_connection_count": 5
+      "exec_connection_count": 1,
+      "data_connection_count": 9
+    },
+    {
+      "name": "RefreshEquipmentStatus",
+      "kind": "function",
+      "guid": "5374CE934EDBBFA5338B1FB121507284",
+      "node_count": 132,
+      "pin_count": 565,
+      "connection_count": 151,
+      "exec_connection_count": 35,
+      "data_connection_count": 116
     }
   ],
   "generated_graphs": [
     {
       "name": "Construct",
-      "guid": "11B3AE6944C210382FC9878D6DE78DFA",
+      "guid": "47539DC8493FC3BB97389A8F73A8F1CD",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -109,7 +119,7 @@
     },
     {
       "name": "Destruct",
-      "guid": "CD07C42F47519C7AEB4C75A1B25F6AFA",
+      "guid": "AD77CA38496EEC265CB2BA8932C4A9F4",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -118,11 +128,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 7,
+    "authored_graph_count": 8,
     "generated_graph_count": 2,
-    "authored_node_count": 116,
-    "authored_pin_count": 429,
-    "authored_connection_count": 138,
+    "authored_node_count": 248,
+    "authored_pin_count": 995,
+    "authored_connection_count": 284,
     "generated_node_count": 4,
     "generated_pin_count": 10
   },
@@ -151,6 +161,11 @@
       "name": "OnPreviewKeyDown",
       "kind": "function",
       "file": "graphs/OnPreviewKeyDown.json"
+    },
+    {
+      "name": "RefreshEquipmentStatus",
+      "kind": "function",
+      "file": "graphs/RefreshEquipmentStatus.json"
     },
     {
       "name": "RefreshStatus",

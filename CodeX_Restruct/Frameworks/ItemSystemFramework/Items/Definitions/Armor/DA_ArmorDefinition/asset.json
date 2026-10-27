@@ -16,15 +16,20 @@
     "reason": "Logic-bearing Blueprint class"
   },
   "architecture": {
-    "dependencies": [],
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes"
+    ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/DT_InventoryItemData",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DarkKnight/DA_Armor_DarkKnight_Head",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DarkKnight/DA_Armor_DarkKnight_Legs",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DarkKnight/DA_DarkKnight_Mercenary_Arms",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DarkKnight/DA_DarkKnight_Mercenary_Chest",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DarkKnight/DA_DarkKnight_Arms",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DarkKnight/DA_DarkKnight_Chest",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
@@ -97,6 +102,23 @@
         }
       },
       {
+        "name": "DamageNegationPercent",
+        "guid": "5207D9F9491441B7CB83EA982840D64D",
+        "friendly_name": "Damage Negation Percent",
+        "category": "INVTEXT(\"Equipment Stats\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues.FEquipmentChannelValues'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "EquipLoadWeight",
         "guid": "214BE1134D65573C5C91FC92E8C235F0",
         "friendly_name": "Equip Load Weight",
@@ -107,6 +129,40 @@
           "category": "real",
           "sub_category": "double",
           "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PrimaryAttributeBonuses",
+        "guid": "768023D64632BFEE5A38E09E5A6456D8",
+        "friendly_name": "Primary Attribute Bonuses",
+        "category": "INVTEXT(\"Equipment Stats\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes.FPrimaryAttributes'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Resistances",
+        "guid": "83A3F50C43A6C9F40C55D284FD33ED06",
+        "friendly_name": "Resistances",
+        "category": "INVTEXT(\"Equipment Stats\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances.FEquipmentResistances'",
           "container": null,
           "is_reference": false,
           "is_const": false,

@@ -23,6 +23,8 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
@@ -167,6 +169,16 @@
         "root_component": false,
         "scene_component": false,
         "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_EquipmentComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_EquipmentStatsComponent",
+        "class": "AC_EquipmentStatsComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_EquipmentStatsComponent_GEN_VARIABLE"
       },
       {
         "name": "AC_InventoryComponent",
@@ -1503,7 +1515,9 @@
         "RefreshArmorSlotFromEquipment",
         "RefreshAllArmorVisuals",
         "GetCharacterStatusSnapshot",
-        "DebugPrintCharacterStatusSnapshot"
+        "DebugPrintCharacterStatusSnapshot",
+        "HandleEquipmentStatsChanged",
+        "InitializeEquipmentStatResolver"
       ],
       "macros": [],
       "delegates": [

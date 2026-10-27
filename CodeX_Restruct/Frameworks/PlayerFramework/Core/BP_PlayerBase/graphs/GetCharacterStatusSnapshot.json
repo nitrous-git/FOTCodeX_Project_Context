@@ -6,11 +6,11 @@
     "guid": "3E7D15CD4661B0324125479B44D83657"
   },
   "stats": {
-    "node_count": 17,
-    "pin_count": 51,
-    "connection_count": 29,
+    "node_count": 20,
+    "pin_count": 58,
+    "connection_count": 33,
     "exec_connection_count": 4,
-    "data_connection_count": 25
+    "data_connection_count": 29
   },
   "nodes": [
     {
@@ -69,8 +69,8 @@
       "guid": "AA1D653D48488114E82ABF884BABF8DF",
       "title": "Get AC_CharacterStatsComponent",
       "position": {
-        "x": 2064,
-        "y": 912
+        "x": 2656,
+        "y": 896
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -644,8 +644,8 @@
       "guid": "A20D1C484872326BA79F9594A830E699",
       "title": "Get MaxHP",
       "position": {
-        "x": 3600,
-        "y": 768
+        "x": 3392,
+        "y": 800
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -721,8 +721,8 @@
       "guid": "D0E4E93646F0C4FEE4C456BF097C085F",
       "title": "Get BaseAttributes",
       "position": {
-        "x": 3520,
-        "y": 496
+        "x": 3312,
+        "y": 528
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -798,8 +798,8 @@
       "guid": "5EB4FDDB4273FD5D688F4EA751F1D064",
       "title": "Get EffectiveAttributes",
       "position": {
-        "x": 3488,
-        "y": 576
+        "x": 3280,
+        "y": 608
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -875,8 +875,8 @@
       "guid": "094A10A94357086AB10CA3892F4380AE",
       "title": "Get CurrentFP",
       "position": {
-        "x": 3600,
-        "y": 848
+        "x": 3392,
+        "y": 880
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -952,8 +952,8 @@
       "guid": "12DD0B4747A519C511A704B0DFA01D21",
       "title": "Get MaxFP",
       "position": {
-        "x": 3632,
-        "y": 912
+        "x": 3424,
+        "y": 944
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1029,8 +1029,8 @@
       "guid": "0419E33642ABB88A58C5A1A5B4EC72E1",
       "title": "Get CurrentStamina",
       "position": {
-        "x": 3584,
-        "y": 992
+        "x": 3376,
+        "y": 1024
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1106,8 +1106,8 @@
       "guid": "7C69F7D5407A8059E0B07FADAE8C663D",
       "title": "Get MaxStamina",
       "position": {
-        "x": 3616,
-        "y": 1056
+        "x": 3408,
+        "y": 1088
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1183,8 +1183,8 @@
       "guid": "671FF70C4B30C603142DFFB894C5F621",
       "title": "Get MaxEquipmentLoad",
       "position": {
-        "x": 3584,
-        "y": 1136
+        "x": 3376,
+        "y": 1168
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1640,7 +1640,39 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_VariableGet_13",
+              "pin_id": "8C11319440D8BEF9567D2EB0BEC9E032"
+            }
+          ]
+        },
+        {
+          "id": "48CE23EB409BCB38EBD854AADFF7750B",
+          "name": "EquipmentStats_44_78E29EE3439EAFAED49C2F92AF9657B8",
+          "friendly_name": "INVTEXT(\"EquipmentStats\")",
+          "direction": "input",
+          "type": {
+            "category": "struct",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot.FEquipmentStatSnapshot'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "(CurrentEquipmentLoad_38_514A69114301B47FFDD8F797A921A405=0.000000,LoadRatio_39_D6B6AFD8407168943E2A409242994FA1=0.000000,BaseAttack_44_BEE29EE542412C42051C68BDE2CB543C=(Physical_26_514A69114301B47FFDD8F797A921A405=0.000000,Magic_29_D6B6AFD8407168943E2A409242994FA1=0.000000,Fire_31_BEE29EE542412C42051C68BDE2CB543C=0.000000,Frost_33_304D5849449D3C88D82D35BC4D090B16=0.000000,Lightning_35_3B0AAB1B48D903CA5915E99F1CE7F41D=0.000000,Holy_37_9B4B156D4F8BB87FD004BA90D97901D6=0.000000),AttackRating_45_304D5849449D3C88D82D35BC4D090B16=(Physical_26_514A69114301B47FFDD8F797A921A405=0.000000,Magic_29_D6B6AFD8407168943E2A409242994FA1=0.000000,Fire_31_BEE29EE542412C42051C68BDE2CB543C=0.000000,Frost_33_304D5849449D3C88D82D35BC4D090B16=0.000000,Lightning_35_3B0AAB1B48D903CA5915E99F1CE7F41D=0.000000,Holy_37_9B4B156D4F8BB87FD004BA90D97901D6=0.000000),DamageNegation_46_3B0AAB1B48D903CA5915E99F1CE7F41D=(Physical_26_514A69114301B47FFDD8F797A921A405=0.000000,Magic_29_D6B6AFD8407168943E2A409242994FA1=0.000000,Fire_31_BEE29EE542412C42051C68BDE2CB543C=0.000000,Frost_33_304D5849449D3C88D82D35BC4D090B16=0.000000,Lightning_35_3B0AAB1B48D903CA5915E99F1CE7F41D=0.000000,Holy_37_9B4B156D4F8BB87FD004BA90D97901D6=0.000000),Resistances_47_9B4B156D4F8BB87FD004BA90D97901D6=(Immunity_38_514A69114301B47FFDD8F797A921A405=0.000000,Focus_39_D6B6AFD8407168943E2A409242994FA1=0.000000,Robustness_40_BEE29EE542412C42051C68BDE2CB543C=0.000000,Vitality_41_304D5849449D3C88D82D35BC4D090B16=0.000000),bPrimaryRequirementsMet_50_1D486B5E45AE8C27687C3DBC57AE92D2=False)",
+          "autogenerated_default_value": "(CurrentEquipmentLoad_38_514A69114301B47FFDD8F797A921A405=0.000000,LoadRatio_39_D6B6AFD8407168943E2A409242994FA1=0.000000,BaseAttack_44_BEE29EE542412C42051C68BDE2CB543C=(Physical_26_514A69114301B47FFDD8F797A921A405=0.000000,Magic_29_D6B6AFD8407168943E2A409242994FA1=0.000000,Fire_31_BEE29EE542412C42051C68BDE2CB543C=0.000000,Frost_33_304D5849449D3C88D82D35BC4D090B16=0.000000,Lightning_35_3B0AAB1B48D903CA5915E99F1CE7F41D=0.000000,Holy_37_9B4B156D4F8BB87FD004BA90D97901D6=0.000000),AttackRating_45_304D5849449D3C88D82D35BC4D090B16=(Physical_26_514A69114301B47FFDD8F797A921A405=0.000000,Magic_29_D6B6AFD8407168943E2A409242994FA1=0.000000,Fire_31_BEE29EE542412C42051C68BDE2CB543C=0.000000,Frost_33_304D5849449D3C88D82D35BC4D090B16=0.000000,Lightning_35_3B0AAB1B48D903CA5915E99F1CE7F41D=0.000000,Holy_37_9B4B156D4F8BB87FD004BA90D97901D6=0.000000),DamageNegation_46_3B0AAB1B48D903CA5915E99F1CE7F41D=(Physical_26_514A69114301B47FFDD8F797A921A405=0.000000,Magic_29_D6B6AFD8407168943E2A409242994FA1=0.000000,Fire_31_BEE29EE542412C42051C68BDE2CB543C=0.000000,Frost_33_304D5849449D3C88D82D35BC4D090B16=0.000000,Lightning_35_3B0AAB1B48D903CA5915E99F1CE7F41D=0.000000,Holy_37_9B4B156D4F8BB87FD004BA90D97901D6=0.000000),Resistances_47_9B4B156D4F8BB87FD004BA90D97901D6=(Immunity_38_514A69114301B47FFDD8F797A921A405=0.000000,Focus_39_D6B6AFD8407168943E2A409242994FA1=0.000000,Robustness_40_BEE29EE542412C42051C68BDE2CB543C=0.000000,Vitality_41_304D5849449D3C88D82D35BC4D090B16=0.000000),bPrimaryRequirementsMet_50_1D486B5E45AE8C27687C3DBC57AE92D2=False)",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_6",
+              "pin_id": "981FF1B74E34108627D545BEB67C652F"
+            }
+          ]
         }
       ]
     },
@@ -1725,8 +1757,8 @@
       "guid": "255BB68A41145B7B893230B9E3658CBF",
       "title": "Get CurrentHP",
       "position": {
-        "x": 3584,
-        "y": 672
+        "x": 3376,
+        "y": 704
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1793,6 +1825,235 @@
               "pin_id": "ABA458F14BB1B78CCBA2A69850F40B59"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_13",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "B81B78C146178D242EEAB88E5F3BDCF9",
+      "title": "Get bEquipmentStatsInitialized",
+      "position": {
+        "x": 3408,
+        "y": 1376
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent.AC_EquipmentStatsComponent_C'",
+          "MemberName": "bEquipmentStatsInitialized",
+          "MemberGuid": "9356D23C4C08576204933F8FF53D6BB4"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "8C11319440D8BEF9567D2EB0BEC9E032",
+          "name": "bEquipmentStatsInitialized",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MakeStruct_1",
+              "pin_id": "0C22F32B49016914B15113BA71E934A3"
+            }
+          ]
+        },
+        {
+          "id": "B4DB055940E4CD0B750A95808AF3172D",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent.AC_EquipmentStatsComponent_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_0",
+              "pin_id": "2F303436446AE2165821AB9D5A33DA07"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_6",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "63CBD5F041E13CE5A591A1A7509C8F0C",
+      "title": "Get EquipmentStats",
+      "position": {
+        "x": 3584,
+        "y": 1488
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent.AC_EquipmentStatsComponent_C'",
+          "MemberName": "EquipmentStats",
+          "MemberGuid": "820437F74B52D61A0883C9B5F88CD4D4"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "981FF1B74E34108627D545BEB67C652F",
+          "name": "EquipmentStats",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "struct",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot.FEquipmentStatSnapshot'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MakeStruct_1",
+              "pin_id": "48CE23EB409BCB38EBD854AADFF7750B"
+            }
+          ]
+        },
+        {
+          "id": "2923A49A48413731019C5CAA2693D1B4",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent.AC_EquipmentStatsComponent_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_0",
+              "pin_id": "2F303436446AE2165821AB9D5A33DA07"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_0",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "708D9730463A3B6EC4CB1BA8E757AB0D",
+      "title": "Get AC_EquipmentStatsComponent",
+      "position": {
+        "x": 3024,
+        "y": 1488
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "AC_EquipmentStatsComponent",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "2F303436446AE2165821AB9D5A33DA07",
+          "name": "AC_EquipmentStatsComponent",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent.AC_EquipmentStatsComponent_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_6",
+              "pin_id": "2923A49A48413731019C5CAA2693D1B4"
+            },
+            {
+              "node": "K2Node_VariableGet_13",
+              "pin_id": "B4DB055940E4CD0B750A95808AF3172D"
+            }
+          ]
+        },
+        {
+          "id": "D1CD65B848523608727412A8B4169CF1",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
         }
       ]
     }
@@ -1900,6 +2161,32 @@
         "node": "K2Node_FunctionResult_1",
         "pin_id": "D00171494DE80B4072F5B887E9AF43E7",
         "pin_name": "Snapshot"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_0",
+        "pin_id": "2F303436446AE2165821AB9D5A33DA07",
+        "pin_name": "AC_EquipmentStatsComponent"
+      },
+      "to": {
+        "node": "K2Node_VariableGet_13",
+        "pin_id": "B4DB055940E4CD0B750A95808AF3172D",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_0",
+        "pin_id": "2F303436446AE2165821AB9D5A33DA07",
+        "pin_name": "AC_EquipmentStatsComponent"
+      },
+      "to": {
+        "node": "K2Node_VariableGet_6",
+        "pin_id": "2923A49A48413731019C5CAA2693D1B4",
+        "pin_name": "self"
       }
     },
     {
@@ -2061,6 +2348,19 @@
     {
       "kind": "data",
       "from": {
+        "node": "K2Node_VariableGet_13",
+        "pin_id": "8C11319440D8BEF9567D2EB0BEC9E032",
+        "pin_name": "bEquipmentStatsInitialized"
+      },
+      "to": {
+        "node": "K2Node_MakeStruct_1",
+        "pin_id": "0C22F32B49016914B15113BA71E934A3",
+        "pin_name": "bEquipmentStatsAvailable_35_2D04BF10486A1F258C05FE92291647CD"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
         "node": "K2Node_VariableGet_2",
         "pin_id": "54F6E928401561366418CCA4CD504AAA",
         "pin_name": "AC_ProgressionComponent"
@@ -2134,6 +2434,19 @@
         "node": "K2Node_MakeStruct_1",
         "pin_id": "5213CF184AD04B9AED978AA2485BDF94",
         "pin_name": "EffectiveAttributes_41_B5A5C173487C22931B5D11ACC4425386"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_6",
+        "pin_id": "981FF1B74E34108627D545BEB67C652F",
+        "pin_name": "EquipmentStats"
+      },
+      "to": {
+        "node": "K2Node_MakeStruct_1",
+        "pin_id": "48CE23EB409BCB38EBD854AADFF7750B",
+        "pin_name": "EquipmentStats_44_78E29EE3439EAFAED49C2F92AF9657B8"
       }
     },
     {
