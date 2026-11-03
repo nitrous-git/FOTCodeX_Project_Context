@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AnimGraph_HandIK",
+    "package_name": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK",
+    "package_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common",
+    "object_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK.AnimGraph_HandIK",
+    "relative_package": "LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "AnimBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_HandIKBones",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config_HandIK"
+    ],
+    "referencers": [
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5"
+    ],
+    "non_architecture_dependency_count": 3,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK.AnimGraph_HandIK_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK.AnimGraph_HandIK_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class_object": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK.AnimGraph_HandIK_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "DisableControlRig",
+        "guid": "F9871B69431CBC5874645FBEEE93BD58",
+        "friendly_name": "Disable Control Rig",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableLHandIK",
+        "guid": "03AD31A347E19CE8B34DE9B14F565858",
+        "friendly_name": "Disable LHand IK",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableRHandIK",
+        "guid": "F0938BC74B4142994C6D3BB310B23E41",
+        "friendly_name": "Disable RHand IK",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EffectorLocationHandL",
+        "guid": "38750A6547F5D06CAD4CAC84574643CF",
+        "friendly_name": "Effector Location Hand L",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EffectorLocationHandR",
+        "guid": "1E3920524168648E71FC1AA38807893B",
+        "friendly_name": "Effector Location Hand R",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Hand FKWeight",
+        "guid": "98661AAE41BAA6DF032E168BEF7F7DFA",
+        "friendly_name": "Hand FKWeight",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HandIK",
+        "guid": "3C53EC2F46D65EED3E871A994CB90EF8",
+        "friendly_name": "Hand IK",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config_HandIK.Struct_Anim_Config_HandIK'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HandIK_Left_Alpha",
+        "guid": "EF46D2F340876EE2EB254F9939BE8E89",
+        "friendly_name": "Hand IK Left Alpha",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HandIK_Right_Alpha",
+        "guid": "5E34FE05415B7D72DFE162886486F0D1",
+        "friendly_name": "Hand IK Right Alpha",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "JointTargetBoneHandL",
+        "guid": "DB01BBD54395D6A9BDB7CAAB43945E3A",
+        "friendly_name": "Joint Target Bone Hand L",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_HandIKBones.Enum_HandIKBones'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "JointTargetBoneHandR",
+        "guid": "0AA609974FB08B8EA3C4B5A3E92D9B2C",
+        "friendly_name": "Joint Target Bone Hand R",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_HandIKBones.Enum_HandIKBones'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "JointTargetLocationHand L",
+        "guid": "AE61C09B406D67E7F66D61984C8644D3",
+        "friendly_name": "Joint Target Location Hand L",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "JointTargetLocationHandR",
+        "guid": "15E2683148ADBD98860FF3B12D57F669",
+        "friendly_name": "Joint Target Location Hand R",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "BlueprintThreadSafeUpdateAnimation",
+        "GetMovementComponent",
+        "UpdateSkelControlData",
+        "UpdateHandIKVariables"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "BlueprintUpdateAnimation"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "DA_CombatStyle",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "D457DA0D427E02ED8B044E9E08187CAC",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PrimaryDataAsset'"
+  },
+  "variables": [
+    {
+      "name": "BlockHitLarge",
+      "guid": "C042D956482C385E2C091BAA071B4ED0",
+      "friendly_name": "Block Hit Large",
+      "category": "INVTEXT(\"Montage Buckets\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BlockHitSmall",
+      "guid": "BDA9F7CF45825A0B02039D914A1F547D",
+      "friendly_name": "Block Hit Small",
+      "category": "INVTEXT(\"Montage Buckets\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BlockingSpeed",
+      "guid": "028A1F11425E5EB7CF1788A358728A3C",
+      "friendly_name": "Blocking Speed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ComboVariants",
+      "guid": "FE8A25A942B7892F66F40DAC7E36D6F5",
+      "friendly_name": "Combo Variants",
+      "category": "Montage Buckets",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Dodge_Back",
+      "guid": "CA168EB04D592947C5AAA39347AE1CDB",
+      "friendly_name": "Dodge Back",
+      "category": "INVTEXT(\"Dodges\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Dodge_Fwd",
+      "guid": "885704104B77E54A15490885D4A31BC2",
+      "friendly_name": "Dodge Fwd",
+      "category": "Dodges",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Dodge_Left",
+      "guid": "A2B52C3E45DEB3737EF6618D00520678",
+      "friendly_name": "Dodge Left",
+      "category": "INVTEXT(\"Dodges\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Dodge_Right",
+      "guid": "4F87C00A4D3AB8920EE16F9230925FE3",
+      "friendly_name": "Dodge Right",
+      "category": "INVTEXT(\"Dodges\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Equip",
+      "guid": "9C74CA3E4037F672011FB1BF9AA29395",
+      "friendly_name": "Equip",
+      "category": "Equipement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitLarge",
+      "guid": "D9482AC240FD6ED8E79D819080B4380A",
+      "friendly_name": "Hit Large",
+      "category": "INVTEXT(\"Montage Buckets\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitSmall",
+      "guid": "817CCFB4482EC79E0541C486BC967EAA",
+      "friendly_name": "Hit Small",
+      "category": "INVTEXT(\"Montage Buckets\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LungeVariant",
+      "guid": "C12590D64ECCB343B76753AAF3AC634D",
+      "friendly_name": "Lunge Variant",
+      "category": "Montage Buckets",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ParryVariants",
+      "guid": "A0BC7BBF424D03A5E5F3A39D1532BABF",
+      "friendly_name": "Parry Variants",
+      "category": "INVTEXT(\"Montage Buckets\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerExecutionContext",
+      "guid": "57D3A7C94AFC313CF776DB8883F623AC",
+      "friendly_name": "Player Execution Context",
+      "category": "Contextual Animation",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/ContextualAnimation.ContextualAnimSceneAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerExecutionContextArray",
+      "guid": "2C5820F443AD7551C2CB5A87BE9E4388",
+      "friendly_name": "Player Execution Context Array",
+      "category": "Contextual Animation",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/ContextualAnimation.ContextualAnimSceneAsset'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerExecutionToDeathContext",
+      "guid": "B43672E9470E6F8E19FBD3AB934622B7",
+      "friendly_name": "Player Execution to Death Context",
+      "category": "INVTEXT(\"Contextual Animation\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/ContextualAnimation.ContextualAnimSceneAsset'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PrimaryWeapon",
+      "guid": "1F4E8C1E4CCC370746F8BB88660D39C5",
+      "friendly_name": "Primary Weapon",
+      "category": "INVTEXT(\"Equipement\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SecondaryWeapon",
+      "guid": "F8994F564A9F8FB9B24D60B1DCA3F5C0",
+      "friendly_name": "Secondary Weapon",
+      "category": "INVTEXT(\"Equipement\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StyleTag",
+      "guid": "A8A4752F4FB3BFD64B3C97A1B0FADCEC",
+      "friendly_name": "Style Tag",
+      "category": "Identity",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Unequip",
+      "guid": "5BE546274144CD4DFB6DD88527DA2290",
+      "friendly_name": "Unequip",
+      "category": "INVTEXT(\"Equipement\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "65DBC6F5419935A28AF3729F54A96F80",
+      "node_count": 0,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 0,
+    "authored_node_count": 0,
+    "authored_pin_count": 0,
+    "authored_connection_count": 0,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

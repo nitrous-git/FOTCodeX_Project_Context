@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AnimGraph_LayeredBlend_UE5",
+    "package_name": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5",
+    "package_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5",
+    "object_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5.AnimGraph_LayeredBlend_UE5",
+    "relative_package": "LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "AnimBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_BlendMask_UE5",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_OverrideType",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    ],
+    "referencers": [
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5"
+    ],
+    "non_architecture_dependency_count": 3,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5.AnimGraph_LayeredBlend_UE5_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5.AnimGraph_LayeredBlend_UE5_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class_object": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5.AnimGraph_LayeredBlend_UE5_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "BlendName",
+        "guid": "43A73D5E4585B33169C8E6BB648D8B10",
+        "friendly_name": "Blend Name",
+        "category": "Input",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BlendTime",
+        "guid": "730341E64770AB1C8638B6B25071D464",
+        "friendly_name": "Blend Time",
+        "category": "Input",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BlendType",
+        "guid": "8C53F1694F3C1C7CE9E26681CB0BF774",
+        "friendly_name": "Blend Type",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_OverrideType.Enum_OverrideType'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BlendWeight",
+        "guid": "B0AB018441E60202FCDC8CB5E06F53FA",
+        "friendly_name": "Blend Weight",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SkeletonType",
+        "guid": "DF013AC04AAF611DE64414B19F75F107",
+        "friendly_name": "Skeleton Type",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType.Enum_SkeletonType'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Weight",
+        "guid": "862DFA1B49D7D162ED5896AF1B803606",
+        "friendly_name": "Weight",
+        "category": "Input",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Weight_InterpSpeed",
+        "guid": "0FB1A7174B5BFFCFD6F9399B716CB3C2",
+        "friendly_name": "Weight Interp Speed",
+        "category": "Input",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "OnBecomRelevant",
+        "BlueprintThreadSafeUpdateAnimation"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "AnimGraph__AnimFunc_MERGED",
+        "OnBecomRelevant_MERGED",
+        "BlueprintThreadSafeUpdateAnimation_MERGED",
+        "BlueprintUpdateAnimation",
+        "ExecuteUbergraph_AnimGraph_LayeredBlend_UE5",
+        "AnimGraph__AnimFunc"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

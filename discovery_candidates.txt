@@ -1,18 +1,18 @@
 CodeX AI Context - Discovery Report
 ================================================================================
 
-Scanned:                 6505
-Excluded by path:        1841
-Excluded individually:   0
+Scanned:                 8432
+Excluded by path:        4974
+Excluded individually:   6
 Deprecated:              0
-Ignored by class:        4317
-Full graph:              247
-Structural:              100
+Ignored by class:        3046
+Full graph:              273
+Structural:              133
 Manual review:           0
-Export candidates:       347
+Export candidates:       406
 
 
-FULL GRAPH ASSETS (247)
+FULL GRAPH ASSETS (273)
 --------------------------------------------------------------------------------
 /Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController    [Blueprint]
 /Game/CodeX_Restruct/Core/GameModes/BP_CPC_GameMode    [Blueprint]
@@ -161,8 +161,10 @@ FULL GRAPH ASSETS (247)
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_ToWalk    [Blueprint]
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/Reaction/BP_PlayerAction_Executed    [Blueprint]
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/Reaction/BP_PlayerAction_NormalHitReact    [Blueprint]
+/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_Locomotion_ALC    [AnimBlueprint]
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster    [AnimBlueprint]
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/AN_ActionFinished    [Blueprint]
+/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/AN_ApplyDamage    [Blueprint]
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_ActionWindow    [Blueprint]
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase    [Blueprint]
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent    [Blueprint]
@@ -261,9 +263,33 @@ FULL GRAPH ASSETS (247)
 /Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner    [Blueprint]
 /Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager    [Blueprint]
 /Game/CodeX_Restruct/Shared/Managers/BP_SpawnPoint    [Blueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_BlendMask_UE4    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_BlendMask_UE5    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_GlobalPose    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Output    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Pose    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/AnimGraph_LayeredBlend_UE4    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5    [AnimBlueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier    [Blueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/TurnYawAnimModifier    [Blueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/BP_Version    [Blueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion    [Blueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/AN_FootPlant_Jump    [Blueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/AN_FootPlant_Left    [Blueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/AN_FootPlant_Right    [Blueprint]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/ANS_TransitionToLocomotion    [Blueprint]
+/Game/LocomotionSystem/Characters/Mannequins/Animations/ABP_Manny    [AnimBlueprint]
+/Game/LocomotionSystem/Characters/Mannequins/Animations/ABP_Quinn    [AnimBlueprint]
+/Game/LocomotionSystem/Characters/Mannequins/Rigs/ABP_Manny_PostProcess    [AnimBlueprint]
+/Game/LocomotionSystem/Characters/Mannequins/Rigs/ABP_Quinn_PostProcess    [AnimBlueprint]
 
 
-STRUCTURAL ASSETS (100)
+STRUCTURAL ASSETS (133)
 --------------------------------------------------------------------------------
 /Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossEncounterState    [UserDefinedEnum]
 /Game/CodeX_Restruct/Frameworks/BossFramework/Core/Enums/E_BossHealthBarMode    [UserDefinedEnum]
@@ -304,6 +330,7 @@ STRUCTURAL ASSETS (100)
 /Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/DT_InventoryItemData    [DataTable]
 /Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory    [UserDefinedEnum]
 /Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition    [UserDefinedStruct]
+/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/DT_Animset_ALC    [DataTable]
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Electric_Instance    [DA_Attunement_Electric_C]
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Fire_Instance    [DA_Attunement_Fire_C]
 /Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Frost_Instance    [DA_Attunement_Frost_C]
@@ -365,6 +392,38 @@ STRUCTURAL ASSETS (100)
 /Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/FEquipmentSlotUIData    [UserDefinedStruct]
 /Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome    [UserDefinedEnum]
 /Game/CodeX_Restruct/Shared/Core/Structs/FCombatPacket    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier_FootDefinition    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_CardinalDirection    [UserDefinedEnum]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose    [UserDefinedEnum]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_HandIKBones    [UserDefinedEnum]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_MovementType    [UserDefinedEnum]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_OverrideType    [UserDefinedEnum]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RootYawOffsetMode    [UserDefinedEnum]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RotationMode    [UserDefinedEnum]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType    [UserDefinedEnum]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_AimOffset    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_CardinalDirections    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config_HandIK    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_General    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Jump    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Sprint    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Starts    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_TurnInPlace    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_AimOffset    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_BaseSequence    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Cardinals    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Config    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_ExtendedPose    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sprint    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Starts    [UserDefinedStruct]
+/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset    [UserDefinedStruct]
+/Game/LocomotionSystem/Tables/DT_Animset    [DataTable]
+/Game/LocomotionSystem/Tables/DT_Animset_Female    [DataTable]
+/Game/LocomotionSystem/Tables/DT_Animset_UE4    [DataTable]
 
 
 REVIEW (0)

@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AnimGraph_Extended_BlendMask_UE5",
+    "class": "/Script/Engine.AnimBlueprint",
+    "guid": "0140A08E4C3E44C3C82E7780A6C8689A",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'"
+  },
+  "variables": [
+    {
+      "name": "BlendTime",
+      "guid": "5424D9284E5AC63A1A9B1BAC5A489011",
+      "friendly_name": "Blend Time",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BlendType",
+      "guid": "914AE5D4452290D17DB90AB95049A857",
+      "friendly_name": "Blend Type",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_OverrideType.Enum_OverrideType'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BlendWeight",
+      "guid": "BB2D5AB94AA027D8F39E30AC14AD057E",
+      "friendly_name": "Blend Weight",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "BlueprintThreadSafeUpdateAnimation",
+      "kind": "function",
+      "guid": "A241B05F4DADC41D6F73CBAE7779221E",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "EF7A909E44C43FAD332C3CBBB8AD12AA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "AnimGraph__AnimFunc_MERGED",
+      "guid": "E55F4D1E41787302F977DC87303897D1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BlueprintThreadSafeUpdateAnimation_MERGED",
+      "guid": "A241B05F4DADC41D6F73CBAE7779221E",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ExecuteUbergraph_AnimGraph_Extended_BlendMask_UE5",
+      "guid": "07B8B3254A37085651EBB9B70CB36C3A",
+      "node_count": 26,
+      "pin_count": 76,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimGraph__AnimFunc",
+      "guid": "E55F4D1E41787302F977DC87303897D1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 2,
+    "generated_graph_count": 4,
+    "authored_node_count": 3,
+    "authored_pin_count": 7,
+    "authored_connection_count": 0,
+    "generated_node_count": 31,
+    "generated_pin_count": 88
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "BlueprintThreadSafeUpdateAnimation",
+      "kind": "function",
+      "file": "graphs/BlueprintThreadSafeUpdateAnimation.json"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "FootFXAnimModifier",
+    "package_name": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier",
+    "package_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers",
+    "object_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier.FootFXAnimModifier",
+    "relative_package": "LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier_FootDefinition",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/AN_FootPlant_Left",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/AN_FootPlant_Right"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 3,
+    "non_architecture_referencer_count": 69
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/AnimationModifiers.AnimationModifier'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier.FootFXAnimModifier_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier.FootFXAnimModifier_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/AnimationModifiers.AnimationModifier'",
+    "generated_class_object": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier.FootFXAnimModifier_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "FeetDefinitions",
+        "guid": "691A530C4C70F304A7AE288D6D003EFE",
+        "friendly_name": "Feet Definitions",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier_FootDefinition.FootFXAnimModifier_FootDefinition'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FootPlantedSpeedThreshold",
+        "guid": "D14F09FF40622A3F0D7082AB3865C111",
+        "friendly_name": "Foot Planted Speed Threshold",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FootUnplantedSpeedThreshold",
+        "guid": "CFFEE2764CB036268DF3BAAC1577B735",
+        "friendly_name": "Foot Unplanted Speed Threshold",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "NotifiesToRemove",
+        "guid": "6B7F153746EFD63CF0489BB4D6EAD2B6",
+        "friendly_name": "Notifies to Remove",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SampleStep",
+        "guid": "BC4E5DC043276B48C9D39682EB366E65",
+        "friendly_name": "Sample Step",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "GetBoneComponentSpaceTransform",
+        "ApplyModifier",
+        "RevertModifier",
+        "ProcessFoot"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "OnRevert",
+        "OnApply"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

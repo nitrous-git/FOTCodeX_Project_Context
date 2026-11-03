@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "DA_Enemy_GroupMeleeProfile",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "8FE0E9FB49EFDA1ED732D0BCA077B482",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PrimaryDataAsset'"
+  },
+  "variables": [
+    {
+      "name": "AnimationStyleMode",
+      "guid": "9A6E4B4C4F7A5E5B2234DABE2F139A60",
+      "friendly_name": "Animation Style Mode",
+      "category": "Identity",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode.E_Enemy_CombatStyleMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Combo",
+      "guid": "2BF0146A447A50BEE758468DEC9758EE",
+      "friendly_name": "Combo",
+      "category": "Attacks",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Death",
+      "guid": "E25AD98A4D9052BDDC0E9AB67628FEA6",
+      "friendly_name": "Death",
+      "category": "Hit Reactions",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Dodge",
+      "guid": "1A29BA104F19D218B7FEB0B0E0D167A2",
+      "friendly_name": "Dodge",
+      "category": "Attacks",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitLarge",
+      "guid": "BA7EB4364D7B3CCD7305D2BC53F7A934",
+      "friendly_name": "Hit Large",
+      "category": "Hit Reactions",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitSmall",
+      "guid": "55716F5C405E7797BEBD19A773D2D5A9",
+      "friendly_name": "Hit Small",
+      "category": "Hit Reactions",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PrimaryWeapon",
+      "guid": "2B44DB3A4E64DE092874758A169182AC",
+      "friendly_name": "Primary Weapon",
+      "category": "Equipment",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ProfileTag",
+      "guid": "D139D9B94380D3677F5A82B0F974D772",
+      "friendly_name": "Profile Tag",
+      "category": "Identity",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RunningSpeed",
+      "guid": "1449309D4751A459E676C283F69159FE",
+      "friendly_name": "Running Speed",
+      "category": "Locomotion",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SecondaryWeapon",
+      "guid": "149FC95B40F3C4CF9A0C7FA54A23BA37",
+      "friendly_name": "Secondary Weapon",
+      "category": "Equipment",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SkeletalMeshAsset",
+      "guid": "299F8144485FF434199FDBA834A60C56",
+      "friendly_name": "Skeletal Mesh Asset",
+      "category": "Presentation",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMesh'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StrafingSpeed",
+      "guid": "9667C18F4418B23882834389AD7A259C",
+      "friendly_name": "Strafing Speed",
+      "category": "Locomotion",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "BE9BE07F49A5CF8580837695D6F79752",
+      "node_count": 0,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 0,
+    "authored_node_count": 0,
+    "authored_pin_count": 0,
+    "authored_connection_count": 0,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

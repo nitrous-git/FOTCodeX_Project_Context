@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_GameMenu",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/GameMenu",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu",
+    "relative_package": "CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/EGameMenuPage",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_Status",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenuButton"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+    ],
+    "non_architecture_dependency_count": 11,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "ActivePage",
+        "guid": "3B3413E44728A42B054EB583F47F2154",
+        "friendly_name": "Active Page",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Game/UI/GameMenu/EGameMenuPage.EGameMenuPage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "RefreshPage",
+        "OnPreviewKeyDown",
+        "RefreshGameplayPages",
+        "RequestFullScreenPage"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "OnInitialized",
+        "BndEvt__WBP_GameMenu_SystemButton_K2Node_ComponentBoundEvent_3_OnPageRequested__DelegateSignature",
+        "BndEvt__WBP_GameMenu_StatusButton_K2Node_ComponentBoundEvent_2_OnPageRequested__DelegateSignature",
+        "BndEvt__WBP_GameMenu_EquipmentButton_K2Node_ComponentBoundEvent_1_OnPageRequested__DelegateSignature",
+        "BndEvt__WBP_GameMenu_InventoryButton_K2Node_ComponentBoundEvent_0_OnPageRequested__DelegateSignature",
+        "PreConstruct"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 19
+  }
+}

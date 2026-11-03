@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_EquipmentSlot",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "CF8EB9F04E65D50F029519BD30794172",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "bAvailable",
+      "guid": "B09942CE4CA414356B47C2A11D23DF4F",
+      "friendly_name": "Available",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bHovered",
+      "guid": "7409FC574031E6AAC1C1E49B545DEF87",
+      "friendly_name": "Hovered",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPressed",
+      "guid": "E7DBE5C14B302CB4C16B04A67F6E9ED1",
+      "friendly_name": "Pressed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSelected",
+      "guid": "94C6BE8642CDC84CD8DC54A3F75B67FF",
+      "friendly_name": "Selected",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Icon",
+      "guid": "5EBE673C4ADB616A9B5481BAABAE361B",
+      "friendly_name": "Icon",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnEquipmentSlotPressed",
+      "guid": "03DEF8314394565176EEFBA809B36839",
+      "friendly_name": "On Equipment Slot Pressed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SlotLabel",
+      "guid": "6BCC70EB43148BA89D860CA447BE9193",
+      "friendly_name": "Slot Label",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SlotTag",
+      "guid": "4DD1F19B44CCF033C2AF26A9B44AD617",
+      "friendly_name": "Slot Tag",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "8A932B784E57DB0D115E429475028931",
+      "node_count": 27,
+      "pin_count": 73,
+      "connection_count": 20,
+      "exec_connection_count": 12,
+      "data_connection_count": 8
+    },
+    {
+      "name": "RefreshAppearance",
+      "kind": "function",
+      "guid": "1D88DAE74C0831F7E4318F8CD3357B55",
+      "node_count": 28,
+      "pin_count": 87,
+      "connection_count": 30,
+      "exec_connection_count": 3,
+      "data_connection_count": 27
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "guid": "100C2A6245EBAA1E45E3D29E51DB3557",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshContent",
+      "kind": "function",
+      "guid": "C081B37F4575DAD023BC3C966BA95B2B",
+      "node_count": 9,
+      "pin_count": 22,
+      "connection_count": 8,
+      "exec_connection_count": 3,
+      "data_connection_count": 5
+    },
+    {
+      "name": "ConfigureFromMetadata",
+      "kind": "function",
+      "guid": "A7FF8A50459F746562036C838B7030A7",
+      "node_count": 12,
+      "pin_count": 49,
+      "connection_count": 16,
+      "exec_connection_count": 8,
+      "data_connection_count": 8
+    },
+    {
+      "name": "OnEquipmentSlotPressed",
+      "kind": "delegate",
+      "guid": "61288C11415D911227A07E8DA6E26ABC",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "BndEvt__WBP_EquipmentSlot_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+      "guid": "17DE3DC94AFAEAACB16D5F8A260596C8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentSlot_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+      "guid": "C72998064B1A693179F2D392B4958D99",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentSlot_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "C33E1F8841A914EF5BA3278BA2797773",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentSlot_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+      "guid": "A0BC3BA649DD5E925FC2C3A72966B79F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentSlot_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "6182776140B4AA3579DD6883D4E22753",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "AA4D91DE43892CCC096E96BDC41D0735",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 6,
+    "generated_graph_count": 6,
+    "authored_node_count": 81,
+    "authored_pin_count": 244,
+    "authored_connection_count": 78,
+    "generated_node_count": 13,
+    "generated_pin_count": 34
+  },
+  "graph_files": [
+    {
+      "name": "OnEquipmentSlotPressed",
+      "kind": "delegate",
+      "file": "graphs/OnEquipmentSlotPressed.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "file": "graphs/ApplySelection.json"
+    },
+    {
+      "name": "ConfigureFromMetadata",
+      "kind": "function",
+      "file": "graphs/ConfigureFromMetadata.json"
+    },
+    {
+      "name": "RefreshAppearance",
+      "kind": "function",
+      "file": "graphs/RefreshAppearance.json"
+    },
+    {
+      "name": "RefreshContent",
+      "kind": "function",
+      "file": "graphs/RefreshContent.json"
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "DA_Enemy_RangedProfile",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "8941DB7D496633DECF56BDA0EDDBA66A",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PrimaryDataAsset'"
+  },
+  "variables": [
+    {
+      "name": "AnimationStyleMode",
+      "guid": "B28599F94C1AA1D5B073889E8B16A8D6",
+      "friendly_name": "Animation Style Mode",
+      "category": "Presentation",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Enum/E_Enemy_CombatStyleMode.E_Enemy_CombatStyleMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackCooldown",
+      "guid": "BAD2D8944520CA6B8843F1BDD33D5D69",
+      "friendly_name": "Attack Cooldown",
+      "category": "Attacks",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttackRange ",
+      "guid": "DD772BCF4033CD988B68CFA36868D283",
+      "friendly_name": "Attack Range ",
+      "category": "INVTEXT(\"Ranged Movement\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CastMontage",
+      "guid": "8E09E4E044D07D695543CDB8177DBB38",
+      "friendly_name": "Cast Montage",
+      "category": "Attacks",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Death",
+      "guid": "D74412DD4A7A8D44B8176585317C2B58",
+      "friendly_name": "Death",
+      "category": "Presentation",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitLarge",
+      "guid": "2451EF714373CDDD4F40F8A0616E8529",
+      "friendly_name": "Hit Large",
+      "category": "Presentation",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitSmall",
+      "guid": "46B13B5B4B687E87B3FA9EABB2CC0B69",
+      "friendly_name": "Hit Small",
+      "category": "Presentation",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MoveRefreshInterval",
+      "guid": "C78D4AB645F3DAB1CEB96FB6FAE6C1A7",
+      "friendly_name": "Move Refresh Interval",
+      "category": "Ranged Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MuzzleSocketName",
+      "guid": "9E3BCDD7466F6B425F7241B87D263B71",
+      "friendly_name": "Muzzle Socket Name",
+      "category": "Projectile",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PrimaryWeapon",
+      "guid": "9FA62A0D45BDBA70DF50B3B044431247",
+      "friendly_name": "Primary Weapon",
+      "category": "Presentation",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ProfileTag",
+      "guid": "BBEA3A1B40FB65B28246419963D03993",
+      "friendly_name": "Profile Tag",
+      "category": "Presentation",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ProjectileClass",
+      "guid": "6F4A0B8D43041627A9BFC0A071B43FC0",
+      "friendly_name": "Projectile Class",
+      "category": "Attacks",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile.BP_BaseProjectile_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ProjectileDamage",
+      "guid": "B00ECCF64C92832E0A175C87226EA200",
+      "friendly_name": "Projectile Damage",
+      "category": "Attacks",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ProjectileSpeed",
+      "guid": "EAC8A02A48E6BC8259E6F8A8E7CB4628",
+      "friendly_name": "Projectile Speed",
+      "category": "Attacks",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RunningSpeed",
+      "guid": "1B45D9294051DB06167B9CA83AB1B4BE",
+      "friendly_name": "Running Speed",
+      "category": "Ranged Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SkeletalMeshAsset",
+      "guid": "DCA285984F2376D8E00EE1B3BA6B8681",
+      "friendly_name": "Skeletal Mesh Asset",
+      "category": "Presentation",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMesh'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StrafeSpeed",
+      "guid": "E296C3BC445EC629CBEF3F8E5AE7B7A5",
+      "friendly_name": "Strafe Speed",
+      "category": "Ranged Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "9A65549540C9ADFC1C4DA6B283F9E3FE",
+      "node_count": 0,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 0,
+    "authored_node_count": 0,
+    "authored_pin_count": 0,
+    "authored_connection_count": 0,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

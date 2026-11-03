@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AnimGraph_Warping",
+    "package_name": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping",
+    "package_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common",
+    "object_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping.AnimGraph_Warping",
+    "relative_package": "LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "AnimBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    ],
+    "referencers": [
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5"
+    ],
+    "non_architecture_dependency_count": 4,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping.AnimGraph_Warping_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping.AnimGraph_Warping_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class_object": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping.AnimGraph_Warping_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "DeltaTimeCount",
+        "guid": "987BE40D4F9B38FFA950CA8C1B1DEBC2",
+        "friendly_name": "Delta Time Count",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LocomotionAngle",
+        "guid": "B764CF3B40014D1C5682419E19E2DB7E",
+        "friendly_name": "Locomotion Angle",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LocomotionSpeed",
+        "guid": "DE29D2B649B89CCB06AB55BE8C01B48C",
+        "friendly_name": "Locomotion Speed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OrientationWarpingAlpha",
+        "guid": "4C381F564E25F7E5009D78BFDECDA505",
+        "friendly_name": "Orientation Warping Alpha",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SkeletonType",
+        "guid": "26C887B4456B5E1BD75AB5885CDC8C43",
+        "friendly_name": "Skeleton Type",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType.Enum_SkeletonType'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SlowWrapping",
+        "guid": "C4DE323E49D0C057DA9CC4A943BC1440",
+        "friendly_name": "Slow Wrapping",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StrideWarpingAlpha",
+        "guid": "F44B08E04DA40059F5FE278EC4DBC212",
+        "friendly_name": "Stride Warping Alpha",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WarpingAlpha",
+        "guid": "E42487814DC1CD71F47C688D707308D7",
+        "friendly_name": "Warping Alpha",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "OnBecomRelevant",
+        "BlueprintThreadSafeUpdateAnimation"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AnimGraph_LegIK",
+    "package_name": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK",
+    "package_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common",
+    "object_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK.AnimGraph_LegIK",
+    "relative_package": "LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "AnimBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    ],
+    "referencers": [
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5"
+    ],
+    "non_architecture_dependency_count": 7,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK.AnimGraph_LegIK_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK.AnimGraph_LegIK_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class_object": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK.AnimGraph_LegIK_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "DisableControlRig",
+        "guid": "D78FC6024754B4C43E1802959CBECD6D",
+        "friendly_name": "Disable Control Rig",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableLegIK",
+        "guid": "B52C9ACB441EC6382CFD9F8491927B2E",
+        "friendly_name": "Disable Leg IK",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableLegIKWhileMoving",
+        "guid": "D4EB9F1A4615F71313A701ABCB5920F3",
+        "friendly_name": "Disable Leg IKWhile Moving",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HasAcceleration",
+        "guid": "DF55DE6748487365003B91B23E76B122",
+        "friendly_name": "Has Acceleration",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IKAlpha",
+        "guid": "196EC32E46A8F9C209AF47960DB3B2A0",
+        "friendly_name": "IKAlpha",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsFalling",
+        "guid": "BD75D9584D7CF54C264434BB86755179",
+        "friendly_name": "Is Falling",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Root_Z_Offset",
+        "guid": "278BF9FE40A38DE3453A7683DB7EF48D",
+        "friendly_name": "Root Z Offset",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SkeletonType",
+        "guid": "704228B944F817AA5223B28B1FC90189",
+        "friendly_name": "Skeleton Type",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType.Enum_SkeletonType'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "BlueprintThreadSafeUpdateAnimation",
+        "GetMovementComponent"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_AnimGraph_LegIK_AnimGraphNode_ModifyCurve_CEFAAA734C63698B439155864887E79D"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

@@ -1,0 +1,3336 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "ABP_Locomotion_UE4",
+    "package_name": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+    "package_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4",
+    "object_path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4.ABP_Locomotion_UE4",
+    "relative_package": "LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "AnimBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_GlobalPose",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Output",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Pose",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/AnimGraph_LayeredBlend_UE4",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_CardinalDirection",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_MovementType",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RootYawOffsetMode",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RotationMode",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_AimOffset",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_BaseSequence",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Cardinals",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Config",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_ExtendedPose",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sprint",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Starts",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_AimOffset",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_CardinalDirections",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config_HandIK",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_General",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Jump",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Sprint",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Starts",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_TurnInPlace",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset",
+      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/ANS_TransitionToLocomotion"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_Locomotion_ALC"
+    ],
+    "non_architecture_dependency_count": 10,
+    "non_architecture_referencer_count": 1
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4.ABP_Locomotion_UE4_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4.ABP_Locomotion_UE4_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class_object": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4.ABP_Locomotion_UE4_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "AdditiveLeanAngle",
+        "guid": "B5CE8C7F433B016AD1C33285A49BB63D",
+        "friendly_name": "Additive Lean Angle",
+        "category": "World Rotation",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimingOffset",
+        "guid": "56761C9544C0A81D980C0B95D3C88510",
+        "friendly_name": "Aiming Offset",
+        "category": "Aiming Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimOffset",
+        "guid": "F5F34AD8413EB2BFDB310EB272B1BD4B",
+        "friendly_name": "Aim Offset",
+        "category": "Anim Sequence",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AimOffsetBlendSpace'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimOffset_BlendWeight",
+        "guid": "306A0570455DEC31EA3BE1959A678F99",
+        "friendly_name": "Aim Offset Blend Weight",
+        "category": "Aiming Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimOffset_InterpSpeed",
+        "guid": "77005E964DD9DFD7884029A82D4F16C6",
+        "friendly_name": "Aim Offset Interp Speed",
+        "category": "Aiming Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimOffsetBlendName",
+        "guid": "5C257E054F75C234BBF10BAC11072CE7",
+        "friendly_name": "Aim Offset Blend Name",
+        "category": "Mount",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "Name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimOffsetIndex",
+        "guid": "D8F92B2C42FF96BFCC09B8B17634C269",
+        "friendly_name": "Aim Offset Index",
+        "category": "INVTEXT(\"Aiming Data\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimOffsetList",
+        "guid": "A40E41964AA64F78FEF77188E8A5ED70",
+        "friendly_name": "Aim Offset List",
+        "category": "INVTEXT(\"Aiming Data\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AimOffsetBlendSpace'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimPitch",
+        "guid": "1178CAC0487CE5E421C7B288C5FE42C7",
+        "friendly_name": "Aim Pitch",
+        "category": "Aiming Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AimYaw",
+        "guid": "7B586E694A0DDA232280CEABBA56C007",
+        "friendly_name": "Aim Yaw",
+        "category": "Aiming Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AnimsetChanged",
+        "guid": "2B9C8D2D4E08FB8E67F66AB8718807BC",
+        "friendly_name": "Animset Changed",
+        "category": "INVTEXT(\"Character State Data\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Cached_ExtendedPose",
+        "guid": "AF637C9D4EFB45C2F0DC938F0117EF8E",
+        "friendly_name": "Cached Extended Pose",
+        "category": "Extended",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose.Enum_ExtendedPose'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CacheTurnYawCurveValue",
+        "guid": "8487FE74460823B531B941A8872E51A0",
+        "friendly_name": "Cache Turn Yaw Curve Value",
+        "category": "INVTEXT(\"Turn In Place\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CardinalDirectionDeadZone",
+        "guid": "1512AA274D23AA3C2C3655B953A5F755",
+        "friendly_name": "Cardinal Direction Dead Zone",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CardinalDirectionFromAcceleration",
+        "guid": "A2C24752484B69E95CB5F28D2C078D2C",
+        "friendly_name": "Cardinal Direction from Acceleration",
+        "category": "Locomotion SM Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_CardinalDirection.Enum_CardinalDirection'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Character",
+        "guid": "F6A71F334236D0B7041653B9ED09777C",
+        "friendly_name": "Character",
+        "category": "Reference",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CharacterMovement",
+        "guid": "A1DEBF9D43B167BE1F64398DED87C7CE",
+        "friendly_name": "Character Movement",
+        "category": "Reference",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CharacterMovementComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Crouch Idle Entry",
+        "guid": "56A40EED48F6AFD0C155F7B7F9023445",
+        "friendly_name": "Crouch Idle Entry",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Crouch Idle Exit",
+        "guid": "225925B04B197F22D9DA61A02EBA24BB",
+        "friendly_name": "Crouch Idle Exit",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CrouchStateChange",
+        "guid": "A9B7F25643B87932776D01926A492FDA",
+        "friendly_name": "Crouch State Change",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CT_Cmpt_Locomotion",
+        "guid": "55A84EB0410BA37FF9213988410A14B7",
+        "friendly_name": "CT Cmpt Locomotion",
+        "category": "Reference",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion.CT_Cmpt_Locomotion_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentIdleBreakIndex",
+        "guid": "68AB15034DC995381AB53ABEDDA6D5D0",
+        "friendly_name": "Current Idle Break Index",
+        "category": "Idle Breaks",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Cycle Cardinals",
+        "guid": "1F3911C546290B83E0CAFC82CF8C5B7A",
+        "friendly_name": "Cycle Cardinals",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_CardinalDirections.Struct_Anim_CardinalDirections'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CycleOverrideSequence",
+        "guid": "DD68EFC04AAB36691857D49775BB2DC4",
+        "friendly_name": "Cycle Override Sequence",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableHandIK",
+        "guid": "9F9AB84D47291D52B188DAAB2556C1B4",
+        "friendly_name": "Disable Hand IK",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableIdleBreaks",
+        "guid": "1798DE5F428B628103B2559BA517CAFA",
+        "friendly_name": "Disable Idle Breaks",
+        "category": "Idle Breaks",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableLegIK",
+        "guid": "0EF63ABB409CBDECE9F9808462541759",
+        "friendly_name": "Disable Leg IK",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableLegIKWhileMoving",
+        "guid": "49ECA0F645F8A3FF0AC69DBDF241040B",
+        "friendly_name": "Disable Leg IKWhile Moving",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableRootYawOffset",
+        "guid": "96E38AA7461A59ACA9EA4EB8B7B046D4",
+        "friendly_name": "Disable Root Yaw Offset",
+        "category": "Turn in Place",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisplacementSinceLastUpdate",
+        "guid": "16F576E047A39016634787BA10D436A8",
+        "friendly_name": "Displacement Since Last Update",
+        "category": "Location Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisplacementSpeed",
+        "guid": "6916A9514A203661009D5F88E5263A75",
+        "friendly_name": "Displacement Speed",
+        "category": "Location Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Extended_BlendName",
+        "guid": "4A78F12C42659884F3C8BC84440991A9",
+        "friendly_name": "Extended Blend Name",
+        "category": "Extended",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "Name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Extended_BlendTime",
+        "guid": "4EB198D54CA2B8289713D6BB30131277",
+        "friendly_name": "Extended Blend Time",
+        "category": "Extended",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Extended_DisableMoveAnim",
+        "guid": "9E9023FD405E8F2B5D701193A49F3500",
+        "friendly_name": "Extended Disable Move Anim",
+        "category": "Extended",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Extended_InterpSpeed",
+        "guid": "51BE23A94361912AF7AFA9B93E35163A",
+        "friendly_name": "Extended Interp Speed",
+        "category": "Extended",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Extended_OverrideWeight",
+        "guid": "9770D8794836A6FC4EA216B8E404A883",
+        "friendly_name": "Extended Override Weight",
+        "category": "Extended",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ExtendedPose",
+        "guid": "FC368F7540E413D9E36BD8BE3209D4D4",
+        "friendly_name": "Extended Pose",
+        "category": "Extended",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose.Enum_ExtendedPose'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ExtendedPoseChanged",
+        "guid": "1729FAE9453B8A55AE7E77ACDDC16AEF",
+        "friendly_name": "Extended Pose Changed",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GameplayTag_IsADS",
+        "guid": "2293A8B8488A9BF7CE6A2B80B82438B9",
+        "friendly_name": "Gameplay Tag Is ADS",
+        "category": "Gameplay Tag Bindings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GameplayTag_IsDashing",
+        "guid": "3A9F418F45B69A789B29E8B7A473124C",
+        "friendly_name": "Gameplay Tag Is Dashing",
+        "category": "Gameplay Tag Bindings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GameplayTag_IsFiring",
+        "guid": "0F4D4E9B4D1AD79421E64DBB81FF315F",
+        "friendly_name": "Gameplay Tag Is Firing",
+        "category": "Gameplay Tag Bindings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GameplayTag_IsMelee",
+        "guid": "A65A23364B9C3BEDE519EBAAB3A1AF2C",
+        "friendly_name": "Gameplay Tag Is Melee",
+        "category": "Gameplay Tag Bindings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GameplayTag_IsReloading",
+        "guid": "48404F114F8C1F20071C2AA3738C3F05",
+        "friendly_name": "Gameplay Tag Is Reloading",
+        "category": "Gameplay Tag Bindings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GlobalExtendedPose",
+        "guid": "3B14A4CE49F0A774005384A4726D51FC",
+        "friendly_name": "Global Extended Pose",
+        "category": "Extended",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose.Enum_ExtendedPose'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GroundDistance",
+        "guid": "67EDE21A4CD41F172433C688632B4696",
+        "friendly_name": "Ground Distance",
+        "category": "INVTEXT(\"Jump\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HandIK_Struct",
+        "guid": "61D323E54155803A0285FFA975E3EE76",
+        "friendly_name": "Hand IK Struct",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config_HandIK.Struct_Anim_Config_HandIK'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HasAcceleration",
+        "guid": "C162595F41011D65814E5EBF08AFD5B8",
+        "friendly_name": "Has Acceleration",
+        "category": "Acceleration Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HasVelocity",
+        "guid": "5D7926614DF91EAFDF9C6D836DC02B9E",
+        "friendly_name": "Has Velocity",
+        "category": "World Velocity",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Idle_Breaks",
+        "guid": "D769462C42A8D1D872538E896C2DB87E",
+        "friendly_name": "Idle Breaks",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IdleAnim",
+        "guid": "FAD80FC1437C93684F7FBAAC3D4A6E02",
+        "friendly_name": "Idle Anim",
+        "category": "Anim Sequence",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IdleBreakDelayTime",
+        "guid": "18BB3DC049DBA01A8B1678980FB9217C",
+        "friendly_name": "Idle Break Delay Time",
+        "category": "Idle Breaks",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IdleOverrideSequence",
+        "guid": "D270D43E4FD3C2017A716493D39A766F",
+        "friendly_name": "Idle Override Sequence",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InWall",
+        "guid": "61F63D1A4DD8A445087DA1BA2754B0D6",
+        "friendly_name": "In Wall",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsCrouching",
+        "guid": "D1C7E6B14B1A137291873694F82FCE13",
+        "friendly_name": "Is Crouching",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsFalling",
+        "guid": "C6735C584F1E05ABF3ECE3A4074338F0",
+        "friendly_name": "Is Falling",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsFirstUpdate",
+        "guid": "1C821A8740C550D93B24DFAA931DEFCF",
+        "friendly_name": "Is First Update",
+        "category": "Check",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsJumping",
+        "guid": "99090E2C46C5C2377EEC7D95A05881C5",
+        "friendly_name": "Is Jumping",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsMounted",
+        "guid": "AEB2390E46A7E0FC75AE52935BEDD515",
+        "friendly_name": "Is Mounted",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsOnGround",
+        "guid": "0786A7BB48486183ACA09880281A9A27",
+        "friendly_name": "Is on Ground",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsRunningIntoWall",
+        "guid": "0E2932414B14EEA906DCDC912C548B8D",
+        "friendly_name": "Is Running Into Wall",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsSprint",
+        "guid": "12DA7BE646A8AF4FDC5640A268C4F2AC",
+        "friendly_name": "Is Sprint",
+        "category": "INVTEXT(\"Character State Data\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_AimOffset",
+        "guid": "63C306CB437CC34078F74AB949289631",
+        "friendly_name": "Is Valid Aim Offset",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_Animset",
+        "guid": "B201451D41903072AA5210BAB8C81C55",
+        "friendly_name": "Is Valid Animset",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_BwdStart",
+        "guid": "B247232A4FA176FDED72CFBC88C16315",
+        "friendly_name": "Is Valid Bwd Start",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_FwdStart",
+        "guid": "41888F974D47BBF0C9B133849F26A2EF",
+        "friendly_name": "Is Valid Fwd Start",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_JumpApex",
+        "guid": "5C2932AD46E0BC5C0941D8873A3238D3",
+        "friendly_name": "Is Valid Jump Apex",
+        "category": "INVTEXT(\"Anim Valid\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_JumpFallLand",
+        "guid": "8F647A074C0300F0BD2289B34964E3FF",
+        "friendly_name": "Is Valid Jump Fall Land",
+        "category": "INVTEXT(\"Anim Valid\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_JumpStartLoop",
+        "guid": "24B96B9E4A9E4AAB1BFC418FA830CA5C",
+        "friendly_name": "Is Valid Jump Start Loop",
+        "category": "INVTEXT(\"Anim Valid\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_LeftStart",
+        "guid": "69F39A974AB7261200F6FFA3619D674C",
+        "friendly_name": "Is Valid Left Start",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_PivotBwd",
+        "guid": "2AEB82D94DD3AC22ACC5D497400C3739",
+        "friendly_name": "Is Valid Pivot Bwd",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_PivotFwd",
+        "guid": "8B4E62C14BB0D04F91072A8CE32022B4",
+        "friendly_name": "Is Valid Pivot Fwd",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_PivotLeft",
+        "guid": "4C040EAA4848284F4670C3A55FA32D8B",
+        "friendly_name": "Is Valid Pivot Left",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_PivotRight",
+        "guid": "48D3E10B4F645FE6168D108377A267CB",
+        "friendly_name": "Is Valid Pivot Right",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_RightStart",
+        "guid": "3A6FE2D348D6B07ADFBA3CAF450D9394",
+        "friendly_name": "Is Valid Right Start",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_StopBwd",
+        "guid": "9F7456754BCC6F774F800898FDBB41E5",
+        "friendly_name": "Is Valid Stop Bwd",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_StopFwd",
+        "guid": "FD291C8348774A4CA9EF3494311F3A45",
+        "friendly_name": "Is Valid Stop Fwd",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_StopLeft",
+        "guid": "91F10BE24D25D3E0C481758FAB01C320",
+        "friendly_name": "Is Valid Stop Left",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsValid_StopRight",
+        "guid": "314C0B71463B3C15127B04A434509E68",
+        "friendly_name": "Is Valid Stop Right",
+        "category": "Anim Valid",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Jump_Apex",
+        "guid": "9D9DE0664FCF0DBCB53447BAF4A48E6D",
+        "friendly_name": "Jump Apex",
+        "category": "Anim Sequence",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Jump_Fall_Land",
+        "guid": "93E6503043F24C78BEE97884D8F12003",
+        "friendly_name": "Jump Fall Land",
+        "category": "Anim Sequence",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Jump_Fall_Loop",
+        "guid": "261309FE4ACF6B427B4C6E90E6408490",
+        "friendly_name": "Jump Fall Loop",
+        "category": "Anim Sequence",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Jump_Recovery_Additive",
+        "guid": "CA47981F47AEC89C21A28FB3649601D2",
+        "friendly_name": "Jump Recovery Additive",
+        "category": "Anim Sequence",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Jump_Start",
+        "guid": "5E7DCB12456E0DF834440E877959AE43",
+        "friendly_name": "Jump Start",
+        "category": "Anim Sequence",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Jump_Start_Loop",
+        "guid": "EFEE30C944009C29529ADEB91DBAB45A",
+        "friendly_name": "Jump Start Loop",
+        "category": "Anim Sequence",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "JumpDistanceCurveName",
+        "guid": "83D6BC7B4C662CE2E8E129ABFFB4596E",
+        "friendly_name": "Jump Distance Curve Name",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "Name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "JumpOverrideSequence",
+        "guid": "069EA238490144E2E4D344A56BE18738",
+        "friendly_name": "Jump Override Sequence",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "JumpRecoveryAdditiveAlpha",
+        "guid": "A0B874DC4B6A39F40B8FACB3ACD2533C",
+        "friendly_name": "Jump Recovery Additive Alpha",
+        "category": "Jump",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LandRecoveryAlpha",
+        "guid": "1F4A62FF43044433D1441AB3197CA08F",
+        "friendly_name": "Land Recovery Alpha",
+        "category": "Jump",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastDirection",
+        "guid": "BFEABF084CDB878ED8DD4BB670B82AC9",
+        "friendly_name": "Last Direction",
+        "category": "INVTEXT(\"World Velocity\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_CardinalDirection.Enum_CardinalDirection'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastLinkedLayer",
+        "guid": "BD00103548F5F21CCC0DD097477D4BF8",
+        "friendly_name": "Last Linked Layer",
+        "category": "Linked Layer Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastPivotTime",
+        "guid": "4F9EF46842546B27F469C28D20CC91BC",
+        "friendly_name": "Last Pivot Time",
+        "category": "Locomotion SM Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastVelocityDirection",
+        "guid": "6785F9CB4F68C19B1DD3F6AF5434CB7F",
+        "friendly_name": "Last Velocity Direction",
+        "category": "INVTEXT(\"World Velocity\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Leans",
+        "guid": "C42A4F8846C19DD9B51C37B5CE30F5BD",
+        "friendly_name": "Leans",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.BlendSpace1D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LocalAcceleration2D",
+        "guid": "68E05E19444BFB06328749B03FF470B0",
+        "friendly_name": "Local Acceleration 2D",
+        "category": "Acceleration Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LocalVelocity2D",
+        "guid": "77CAC8CF4D2561F864EB7F9D44F20A70",
+        "friendly_name": "Local Velocity 2D",
+        "category": "World Velocity",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LocalVelocityDirection",
+        "guid": "069546F94B287A42F981ABA95C8163DE",
+        "friendly_name": "Local Velocity Direction",
+        "category": "World Velocity",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_CardinalDirection.Enum_CardinalDirection'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LocalVelocityDirectionAngle",
+        "guid": "4E89B4884D7CB35D79EFA3AF50E2B16B",
+        "friendly_name": "Local Velocity Direction Angle",
+        "category": "World Velocity",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LocalVelocityDirectionAngleWithOffset",
+        "guid": "67378F6044162E91A42BABA5E6CB30BE",
+        "friendly_name": "Local Velocity Direction Angle with Offset",
+        "category": "World Velocity",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LocalVelocityDirectionNoOffset",
+        "guid": "02192BA84D225A45B12F668ECFA93FA2",
+        "friendly_name": "Local Velocity Direction No Offset",
+        "category": "World Velocity",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_CardinalDirection.Enum_CardinalDirection'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LocomotionDistanceCurveName",
+        "guid": "A896C6334F8ADD647AC7FEB7850EA829",
+        "friendly_name": "Locomotion Distance Curve Name",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "Name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Looking Direction",
+        "guid": "FFD92D1747780DA373B836AE7C3C6964",
+        "friendly_name": "Looking Direction",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Starts.Struct_Anim_Starts'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LS_Animset",
+        "guid": "4717F9D145951D3E0995249917550627",
+        "friendly_name": "LS Animset",
+        "category": "Locomotion System",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset.Struct_Animset'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LS_AnimsetName",
+        "guid": "982CBAE5427E9DDBF5CD0A8C33C81E36",
+        "friendly_name": "LS Animset Name",
+        "category": "Locomotion System",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "Name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LS_MovementType",
+        "guid": "A07E4B584DF90036E6C25C8FEA427148",
+        "friendly_name": "LS Movement Type",
+        "category": "Locomotion System",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_MovementType.Enum_MovementType'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LS_OverrideName",
+        "guid": "EE3BBACA45CDACAFA1C906BEF2EDEB63",
+        "friendly_name": "LS Override Name",
+        "category": "Locomotion System",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "Name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LS_RotationMode",
+        "guid": "D46DD9CC4D298EFC43BCD68D5341CB6A",
+        "friendly_name": "LS Rotation Mode",
+        "category": "Locomotion System",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RotationMode.Enum_RotationMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MaxTurnYawValue",
+        "guid": "D3C8A17F4B87F8072E247080E71889B5",
+        "friendly_name": "Max Turn Yaw Value",
+        "category": "INVTEXT(\"Turn In Place\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MountCharacter",
+        "guid": "6086B58B4B4B2CFBC153438314452CC8",
+        "friendly_name": "Mount Character",
+        "category": "Mount",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MountIsControlled",
+        "guid": "1BD5C21444A1BE6058C96A831A404884",
+        "friendly_name": "Mount Is Controlled",
+        "category": "Mount",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MovementModeChanged",
+        "guid": "68C2EF35426ADC34F04D179CCAE7F420",
+        "friendly_name": "Movement Mode Changed",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MovementStateChanged",
+        "guid": "0B0C7FC84C0CF65C490F1B999EFA6A75",
+        "friendly_name": "Movement State Changed",
+        "category": "INVTEXT(\"Character State Data\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_FacingStartsPose",
+        "guid": "EB7612044DE4153C99A9B198C6FB6D49",
+        "friendly_name": "Override Facing Starts Pose",
+        "category": "INVTEXT(\"Anim Override\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Starts.Struct_AnimOverride_Starts'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_GlobalPose",
+        "guid": "29DBC78540F947F2FA5BE6B15A88136F",
+        "friendly_name": "Override Global Pose",
+        "category": "INVTEXT(\"Anim Override\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_IdlePose",
+        "guid": "444813CD433EAF13FE9232BF26D86E22",
+        "friendly_name": "Override Idle Pose",
+        "category": "INVTEXT(\"Anim Override\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_JumpPose",
+        "guid": "F446A33448FE23C9EB2426B077128DEC",
+        "friendly_name": "Override Jump Pose",
+        "category": "INVTEXT(\"Anim Override\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_MoveCyclePose",
+        "guid": "5217305446E710DBFC66B79B6FDFE1C5",
+        "friendly_name": "Override Move Cycle Pose",
+        "category": "INVTEXT(\"Anim Override\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_MovePivotPose",
+        "guid": "05BC94394B1D31343DA66EB1E53EDB4C",
+        "friendly_name": "Override Move Pivot Pose",
+        "category": "INVTEXT(\"Anim Override\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_MoveStartPose",
+        "guid": "2838B39546142E11270408B3AD75751C",
+        "friendly_name": "Override Move Start Pose",
+        "category": "INVTEXT(\"Anim Override\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_MoveStartPose_Cached",
+        "guid": "8A6D39644C047A082924F680B697E336",
+        "friendly_name": "Override Move Start Pose Cached",
+        "category": "INVTEXT(\"Anim Override\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_MoveStopPose",
+        "guid": "404F6B8545368158A0401ABBEED6F880",
+        "friendly_name": "Override Move Stop Pose",
+        "category": "INVTEXT(\"Anim Override\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_SprintCyclePose",
+        "guid": "4C433123447E770A84B0CAB2721420A7",
+        "friendly_name": "Override Sprint Cycle Pose",
+        "category": "INVTEXT(\"Anim Override\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_SprintStartPose",
+        "guid": "8E40B930420C5E57437E35B4E79BB477",
+        "friendly_name": "Override Sprint Start Pose",
+        "category": "Anim Override",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_SprintStopPose",
+        "guid": "5B9BCCC64CF3CAA133383581C3EAB66F",
+        "friendly_name": "Override Sprint Stop Pose",
+        "category": "Anim Override",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Override_TurnPose",
+        "guid": "CF9A3F754A9EA5832AA59990428E7104",
+        "friendly_name": "Override Turn Pose",
+        "category": "Anim Override",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PitchRange",
+        "guid": "CADCE16B45DB0A455DDF849CE8C96BCB",
+        "friendly_name": "Pitch Range",
+        "category": "Aiming Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Pivot Cardinals",
+        "guid": "C392B8E3481F1AAE7049E5A0514750F1",
+        "friendly_name": "Pivot Cardinals",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_CardinalDirections.Struct_Anim_CardinalDirections'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PivotDirection2D",
+        "guid": "433A37F949A66B7D83745199F464A61B",
+        "friendly_name": "Pivot Direction 2D",
+        "category": "Acceleration Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PivotInitialDirection",
+        "guid": "4A832AF8484A6CA3D75605955361BD9E",
+        "friendly_name": "Pivot Initial Direction",
+        "category": "Locomotion SM Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_CardinalDirection.Enum_CardinalDirection'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PivotOverrideSequence",
+        "guid": "627082D54CEDE8DAC91E7090124B2586",
+        "friendly_name": "Pivot Override Sequence",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PivotStartingAcceleration",
+        "guid": "382A96684D707416B4C372A475D50703",
+        "friendly_name": "Pivot Starting Acceleration",
+        "category": "Pivots",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayRateClampCycle",
+        "guid": "1C5CB4E3488798C52229F493D1E4ED36",
+        "friendly_name": "Play Rate Clamp Cycle",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayRateClampCycle_Sprint",
+        "guid": "11F99C4A4DC18892D922188DD0850756",
+        "friendly_name": "Play Rate Clamp Cycle Sprint",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayRateClampPivots",
+        "guid": "70BA6D5B48A29AAFC575BFBB652401AA",
+        "friendly_name": "Play Rate Clamp Pivots",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayRateClampStarts",
+        "guid": "EFDDA4DC4FD5CB2910DFEF8DF3D9508C",
+        "friendly_name": "Play Rate Clamp Starts",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayRateClampStarts_ForwardFacing",
+        "guid": "2C7EA2D4423BB63FC8927D860426FC97",
+        "friendly_name": "Play Rate Clamp Starts Forward Facing",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayRateClampStarts_Sprint",
+        "guid": "BC72D04846C372C234F06B8CD55B5FDA",
+        "friendly_name": "Play Rate Clamp Starts Sprint",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayStartAnim",
+        "guid": "932699FA4D3EB718301388B5DF1C6D76",
+        "friendly_name": "Play Start Anim",
+        "category": "INVTEXT(\"Character State Data\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ReachedEnd ofTurn",
+        "guid": "766D1CF84B739D53A3D2EF9C20E58019",
+        "friendly_name": "Reached End Of Turn",
+        "category": "INVTEXT(\"Character State Data\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Root Z Offset",
+        "guid": "F1A0D1AC40932869B636199F4210369C",
+        "friendly_name": "Root Z Offset",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RootYawOffset",
+        "guid": "664E29FA40C1441BA61D02BBF09127B2",
+        "friendly_name": "Root Yaw Offset",
+        "category": "Turn In Place",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RootYawOffsetAngleClamp",
+        "guid": "1E89B7F144D6FB58D07842A606A72373",
+        "friendly_name": "Root Yaw Offset Angle Clamp",
+        "category": "Turn In Place",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RootYawOffsetAngleClampCrouched",
+        "guid": "8DF740CF4CEBF9CE4305BE99B4C4EC3A",
+        "friendly_name": "Root Yaw Offset Angle Clamp Crouched",
+        "category": "Turn In Place",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RootYawOffsetMode",
+        "guid": "854D39BA4465ED6192C81DB48F38122B",
+        "friendly_name": "Root Yaw Offset Mode",
+        "category": "Turn In Place",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RootYawOffsetMode.Enum_RootYawOffsetMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RootYawOffsetSpringState",
+        "guid": "C0864DCB4B61EF85AE8C99A6974555D0",
+        "friendly_name": "Root Yaw Offset Spring State",
+        "category": "Turn In Place",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.FloatSpringState'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RotateRootYawOffsetAngleClamp",
+        "guid": "0C94485846A6FB83CDDFCD93341EF75C",
+        "friendly_name": "Rotate Root Yaw Offset Angle Clamp",
+        "category": "INVTEXT(\"Turn In Place\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RotationModeChanged",
+        "guid": "4213FBB544CE7F753177329B357D1EE3",
+        "friendly_name": "Rotation Mode Changed",
+        "category": "INVTEXT(\"Character State Data\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SkeletonType",
+        "guid": "786E73254DAB9B086264208CE74C45BA",
+        "friendly_name": "Skeleton Type",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType.Enum_SkeletonType'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SprintChanged",
+        "guid": "FE0E3FD44744E5280FEF28813232C98E",
+        "friendly_name": "Sprint Changed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SprintCycel",
+        "guid": "1510AB5F4F72A4D664CA4C83A9E4EEAE",
+        "friendly_name": "Sprint Cycel",
+        "category": "Anim Sequence",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SprintStart",
+        "guid": "CDED394445B284350F67BFA1B01C6D3A",
+        "friendly_name": "Sprint Start",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SprintStop",
+        "guid": "0B6BA8F8435978EDE43513AD07CF990C",
+        "friendly_name": "Sprint Stop",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimSequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Start Cardinals",
+        "guid": "05B93C5544777AB0C6EE0BB62C0018DD",
+        "friendly_name": "Start Cardinals",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_CardinalDirections.Struct_Anim_CardinalDirections'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StartDirection",
+        "guid": "0CB58C0E4BD84E35A3C9AE86D3EE781C",
+        "friendly_name": "Start Direction",
+        "category": "LocomotionSM Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_CardinalDirection.Enum_CardinalDirection'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StartOverrideSequence",
+        "guid": "8F2D683B49D79336EDFFB1B599F9FF25",
+        "friendly_name": "Start Override Sequence",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StartSlowWraping",
+        "guid": "A45DD854458C5EB611653DBDB877F2C2",
+        "friendly_name": "Start Slow Wraping",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Stop Cardinals",
+        "guid": "15A6B03945F7E78B1EFA7EAF622710C0",
+        "friendly_name": "Stop Cardinals",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_CardinalDirections.Struct_Anim_CardinalDirections'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StopOverrideSequence",
+        "guid": "06CD9FFA40C83A88A5E497BDF73041B8",
+        "friendly_name": "Stop Override Sequence",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence.Struct_AnimOverride_Sequence'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StrideWarpingBlendInDurationScaled",
+        "guid": "10B9D1D04280DDF6C4D2BD905DDF5F59",
+        "friendly_name": "Stride Warping Blend in Duration Scaled",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StrideWarpingBlendInStartOffset",
+        "guid": "CF5BFDAA4B8DD9A6F5DE98949A061DC6",
+        "friendly_name": "Stride Warping Blend in Start Offset",
+        "category": "Settings",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StrideWarpingCycleAlpha",
+        "guid": "0CFA9C8E485269AA0D02D38827C52EE6",
+        "friendly_name": "Stride Warping Cycle Alpha",
+        "category": "Stride Warping",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StrideWarpingPivotAlpha",
+        "guid": "823633E943BFD887E35463972EF9FCF2",
+        "friendly_name": "Stride Warping Pivot Alpha",
+        "category": "Stride Warping",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StrideWarpingStartAlpha",
+        "guid": "4A1BC47B41DAEE2A4EE266A6D4D686E5",
+        "friendly_name": "Stride Warping Start Alpha",
+        "category": "Stride Warping",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TimeAtPivotStop",
+        "guid": "1E38FC3F4A82837DA8C0338F15059AC3",
+        "friendly_name": "Time at Pivot Stop",
+        "category": "Pivots",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TimeFalling",
+        "guid": "6B7CF9384DE96EAFB2C39FADA66E2741",
+        "friendly_name": "Time Falling",
+        "category": "Jump",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TimeSinceFiredWeapon",
+        "guid": "D57384304D2B1760183D4D9DD71C69B1",
+        "friendly_name": "Time Since Fired Weapon",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TimeToJumpApex",
+        "guid": "333E7A3E4C2D489543D3CF8735EB670F",
+        "friendly_name": "Time to Jump Apex",
+        "category": "Character State Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TimeUntilNextIdleBreak",
+        "guid": "FC3AEEAC4720043D9415F9A88B357072",
+        "friendly_name": "Time Until Next Idle Break",
+        "category": "Idle Breaks",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Turn in Place",
+        "guid": "B2DA154D4AAFA78F28AF33BE1A242664",
+        "friendly_name": "Turn In Place",
+        "category": "INVTEXT(\"Anim Sequence\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_TurnInPlace.Struct_Anim_TurnInPlace'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TurnInPlaceAnimTime",
+        "guid": "3D1D3953486DA53BBE1206ABDC81CBCA",
+        "friendly_name": "Turn in Place Anim Time",
+        "category": "Turn In Place",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TurnInPlaceB",
+        "guid": "883DCB884CBC1AA4CF52DE847EF11E47",
+        "friendly_name": "Turn in Place B",
+        "category": "Check",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TurnInPlaceRecoveryDirection",
+        "guid": "28DD14754B9DB7717C517CBD092F4621",
+        "friendly_name": "Turn in Place Recovery Direction",
+        "category": "Turn In Place",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TurnInPlaceRotationDirection",
+        "guid": "8438011044FE36C755A598A769129503",
+        "friendly_name": "Turn in Place Rotation Direction",
+        "category": "Turn In Place",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TurnYawCurveValue",
+        "guid": "82A7641A430AB6ADE857BDBF50196031",
+        "friendly_name": "Turn Yaw Curve Value",
+        "category": "Turn In Place",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UpperBodyAlpha",
+        "guid": "CC84625F4633D9710FFAD596847D20D4",
+        "friendly_name": "Upper Body Alpha",
+        "category": "Montage",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "UpperbodyDynamicAdditiveWeight",
+        "guid": "C26B78ED4CAEEBF0C5F2D9902D8E1A13",
+        "friendly_name": "Upperbody Dynamic Additive Weight",
+        "category": "Montage",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WorldLocation",
+        "guid": "C67056FA426D2A6806432DA4AAD3629C",
+        "friendly_name": "World Location",
+        "category": "Location Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WorldRotation",
+        "guid": "F90D521C456CD5B8EC1B85A5051FFC4F",
+        "friendly_name": "World Rotation",
+        "category": "WorldRotation",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WorldVelocity",
+        "guid": "EF3C35FB47E1EBA1F3C848B5FDFD6242",
+        "friendly_name": "World Velocity",
+        "category": "WorldVelocity",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "YawDeltaSinceLastUpdate",
+        "guid": "22EE5627467AC24B06BE5FB19D2D6585",
+        "friendly_name": "Yaw Delta Since Last Update",
+        "category": "World Rotation",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "YawDeltaSpeed",
+        "guid": "01B1B97F415D9962FBDC64B8AC1D7AEB",
+        "friendly_name": "Yaw Delta Speed",
+        "category": "World Rotation",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "YawRange",
+        "guid": "609494D648F848B859172A8901A9B0C2",
+        "friendly_name": "Yaw Range",
+        "category": "Aiming Data",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph",
+        "EventLocomotionGraph"
+      ],
+      "functions": [
+        "SetRootYawOffset",
+        "ProcessTurnYawCurve",
+        "UpdateRootYawOffset",
+        "UpdateIdleState",
+        "SetUpStartState",
+        "UpdateStartState",
+        "UpdateStopState",
+        "SetUpPivotState",
+        "UpdatePivotState",
+        "SelectCardinalDirectionFromAngle",
+        "GetOppositeCardinalDirection",
+        "IsMovingPerpendicularToInitialPivot",
+        "UpdateLocationData",
+        "UpdateRotationData",
+        "UpdateVelocityData",
+        "UpdateAccelerationData",
+        "UpdateCharacterStateData",
+        "UpdateJumpFallData",
+        "UpdateWallDetectionHeuristic",
+        "GetMovementStruct",
+        "GetOverride_Global",
+        "CanPlayIdleBreak",
+        "ResetIdleBreakTransitionLogic",
+        "ProcessIdleBreakTransitionLogic",
+        "ChooseIdleBreakDelayTime",
+        "SetUpIdleState_Layer",
+        "UpdateIdleState_Layer",
+        "SetupIdleTransition_Layer",
+        "UpdateIdleAnim_Layer",
+        "SetUpIdleBreakAnim_Layer",
+        "SetUpStartAnim_Layer",
+        "UpdateStartAnim_Layer",
+        "UpdateCycleAnim_Layer",
+        "GetPredictedStopDistance",
+        "ShouldDistanceMatchStop",
+        "SetUpStopAnim_Layer",
+        "UpdateStopAnim_Layer",
+        "SetUpPivotAnim_Layer",
+        "UpdatePivotAnim_Layer",
+        "SetUpFallLandAnim_Layer",
+        "UpdateFallLandAnim_Layer",
+        "SetupTurnInPlaceAnim_Layer",
+        "SelectTurnInPlaceAnimation",
+        "UpdateTurnInPlaceAnim_Layer",
+        "SetUpTurnInPlaceRotationState_Layer",
+        "SetUpTurnInPlaceRecoveryState_Layer",
+        "UpdateTurnInPlaceRecoveryAnim_Layer",
+        "BlueprintThreadSafeUpdateAnimation",
+        "Initialization",
+        "GetMovementComponent",
+        "SetAnimValid",
+        "UpdateAimingData",
+        "UpdateUpperBodyAlpha",
+        "UpdateJumpFallData_Layer",
+        "LandRecoveryStartLayer",
+        "SetAnimationDatas",
+        "IsValidStartAnim",
+        "IsValidStopAnim",
+        "IsValidPivotAnim",
+        "UpdateOverrideGlobalPose",
+        "UpdateOverrideIdlePose",
+        "UpdateOverrideJumpPose",
+        "UpdateOverrideMoveStartPose",
+        "UpdateOverrideMoveStopPose",
+        "UpdateOverrideMoveCyclePose",
+        "UpdateOverrideMovePivotPose",
+        "UpdateOverrideTurnPose",
+        "ProcessTurnYawForwardFacing",
+        "GetStartOverride",
+        "SetDefaultStarts",
+        "GetStartAnim",
+        "SetGroundDistance",
+        "UpdateBlendWeightData",
+        "InitEvents",
+        "GetAimOffsetYaw",
+        "GetAimOffsetPitch",
+        "UpdateOverrideIdleSequence",
+        "UpdateOverrideStopSequence",
+        "UpdateOverrideStartSequence",
+        "UpdateOverrideCycleSequence",
+        "UpdateOverridePivotSequence",
+        "UpdateOverrideJumpSequence"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "BlueprintInitializeAnimation",
+        "BlueprintBeginPlay",
+        "BlueprintUpdateAnimation",
+        "Event_OnResetRootYawOffset",
+        "Event_OnSetSkeletonType",
+        "Event_OnSetGlobalExtendedPose",
+        "Event_OnSetMount",
+        "Event_OnMovementModeChanged",
+        "Event_OnRootYawOffsetStatus",
+        "Event_OnSetAnimset",
+        "Event_OnAccelerationChanged",
+        "Event_OnSetOverrideName",
+        "Event_OnSetRotationMode",
+        "Event_OnSetMovementType",
+        "Event_OnSprintChanged",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_2A3F84CD487DB46B2765C487929EE336",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C51D5F1D40D14A5229B65798C25240DF",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_9E3B7BB7497C4272A9FB78B3F2A72F1F",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_8E5EAF07460C1B3ED6D911B2B2471CEC",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_58BE6CEA4694374588AFED9DD356AE21",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F96BF8024CEC318E290EF5996098D8F9",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_1D10927B4E2E5DFA5FCD398B85425D04",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_03FD123E4AF9D594D0D74ABA10990DA9_0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_54C9B6E14FB59A1079E24E8B89B59DF3",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_01D0AA6744EEB20BBDAE04B19562BC4D",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_0AEEBD0942C2748483781CA5248542CC",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_7277B1CF48511EBCCB6140AD2E1F2900_1",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_EA0049654DA430E82D58ECB188198DF7_1",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_4",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_BE414FA74879AACE9A1FB394BB5A5446_0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_01839F45423BF5FD2F86DC878DB5D0F2_0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_3",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_7277B1CF48511EBCCB6140AD2E1F2900_0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_EA0049654DA430E82D58ECB188198DF7_0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_96D6696D4143464AFCC1C19BCAFF33E8",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_E4EFDF0B4BE2DA88763AA3AC5C06D27C_0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_2",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_AE027B12479CAFA6F4FF52B2CA66135B_0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_DEA3CB7B49B578EAEDD7F08AEFCA3F57",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_01839F45423BF5FD2F86DC878DB5D0F2",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_5A73B373425CEAAFC0D0FC85FF13BE14",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_510FDE1D4088CABF1398B4AA55550B04",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_E1C801B44199A13625F5CFA99C90DD4F",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_EA0049654DA430E82D58ECB188198DF7",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_1",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_E4EFDF0B4BE2DA88763AA3AC5C06D27C",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_AE027B12479CAFA6F4FF52B2CA66135B",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_7277B1CF48511EBCCB6140AD2E1F2900",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_5C9806AF4CA09CF8F8D2D388079EB422",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_03FD123E4AF9D594D0D74ABA10990DA9",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_BE414FA74879AACE9A1FB394BB5A5446",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_8C4D60B24D27FBF0F7D4D6A55D60F028",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_LinkedAnimGraph_5427B0EE41C3F3D9AB325EBFAE6F5C2B",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_BlendListByBool_C78FF92442753FDD3DE31FAEA9B763EE",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_LinkedAnimGraph_7105637A47D6AD66AE562ABF70F9FC02",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_4198E1394F8F343D69E8D6908D341946",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F08C1B08409042895EEF08ACC14BAE4E_1",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C40F94FB43A27F310AD60CA1FDD97592_1",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F08C1B08409042895EEF08ACC14BAE4E_0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C40F94FB43A27F310AD60CA1FDD97592_0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_42DA72D54A1F22541DD6A1977DFBE0C9",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F08C1B08409042895EEF08ACC14BAE4E",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_AB4DC5864B8EA13B22F86BAD3BE0C22D",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C40F94FB43A27F310AD60CA1FDD97592",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_D408052043B2AC456FA719A5A479373C",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_B3DC8AEE442181BEDD17A396496155AA",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_1E489E554D0ED76EE3E579B651A9792F",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_2A763CD24C557C11C6648F81D8E3681C",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_RotationOffsetBlendSpace_7F5FCAC744147E82F2F40799D7D67982",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_BlendListByBool_6F4D5D314B316980760F4990CD80C8B2",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_RotationOffsetBlendSpace_534569A047BE2162E6E19185EE43A3ED",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_ApplyAdditive_E65EC30F4CC853B5BCC965859EA5E798",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_RotateRootBone_991C8A984B78787C96D44D9411C820C0"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

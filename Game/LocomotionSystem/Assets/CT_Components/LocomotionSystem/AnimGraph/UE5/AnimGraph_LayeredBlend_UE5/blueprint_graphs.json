@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AnimGraph_LayeredBlend_UE5",
+    "class": "/Script/Engine.AnimBlueprint",
+    "guid": "D154D7E84CC7F9EC37CF44A9142A5186",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'"
+  },
+  "variables": [
+    {
+      "name": "BlendName",
+      "guid": "43A73D5E4585B33169C8E6BB648D8B10",
+      "friendly_name": "Blend Name",
+      "category": "Input",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BlendTime",
+      "guid": "730341E64770AB1C8638B6B25071D464",
+      "friendly_name": "Blend Time",
+      "category": "Input",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BlendType",
+      "guid": "8C53F1694F3C1C7CE9E26681CB0BF774",
+      "friendly_name": "Blend Type",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_OverrideType.Enum_OverrideType'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BlendWeight",
+      "guid": "B0AB018441E60202FCDC8CB5E06F53FA",
+      "friendly_name": "Blend Weight",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SkeletonType",
+      "guid": "DF013AC04AAF611DE64414B19F75F107",
+      "friendly_name": "Skeleton Type",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType.Enum_SkeletonType'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Weight",
+      "guid": "862DFA1B49D7D162ED5896AF1B803606",
+      "friendly_name": "Weight",
+      "category": "Input",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Weight_InterpSpeed",
+      "guid": "0FB1A7174B5BFFCFD6F9399B716CB3C2",
+      "friendly_name": "Weight Interp Speed",
+      "category": "Input",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "OnBecomRelevant",
+      "kind": "function",
+      "guid": "E877ADF940EEE71927A5F1894538D72B",
+      "node_count": 8,
+      "pin_count": 24,
+      "connection_count": 7,
+      "exec_connection_count": 2,
+      "data_connection_count": 5
+    },
+    {
+      "name": "BlueprintThreadSafeUpdateAnimation",
+      "kind": "function",
+      "guid": "A241B05F4DADC41D6F73CBAE7779221E",
+      "node_count": 25,
+      "pin_count": 82,
+      "connection_count": 28,
+      "exec_connection_count": 6,
+      "data_connection_count": 22
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "EF7A909E44C43FAD332C3CBBB8AD12AA",
+      "node_count": 1,
+      "pin_count": 3,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "AnimGraph__AnimFunc_MERGED",
+      "guid": "549C4F974ED5586C8FDD918B38CD9706",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnBecomRelevant_MERGED",
+      "guid": "E877ADF940EEE71927A5F1894538D72B",
+      "node_count": 9,
+      "pin_count": 27,
+      "connection_count": 7,
+      "exec_connection_count": 2,
+      "data_connection_count": 5
+    },
+    {
+      "name": "BlueprintThreadSafeUpdateAnimation_MERGED",
+      "guid": "A241B05F4DADC41D6F73CBAE7779221E",
+      "node_count": 50,
+      "pin_count": 162,
+      "connection_count": 50,
+      "exec_connection_count": 12,
+      "data_connection_count": 38
+    },
+    {
+      "name": "BlueprintUpdateAnimation",
+      "guid": "B119BFB44B592E5967B72FB2CD10C5BC",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ExecuteUbergraph_AnimGraph_LayeredBlend_UE5",
+      "guid": "96EA673140549228593FE982C98985C7",
+      "node_count": 281,
+      "pin_count": 1045,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimGraph__AnimFunc",
+      "guid": "549C4F974ED5586C8FDD918B38CD9706",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 3,
+    "generated_graph_count": 6,
+    "authored_node_count": 34,
+    "authored_pin_count": 109,
+    "authored_connection_count": 35,
+    "generated_node_count": 347,
+    "generated_pin_count": 1253
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "BlueprintThreadSafeUpdateAnimation",
+      "kind": "function",
+      "file": "graphs/BlueprintThreadSafeUpdateAnimation.json"
+    },
+    {
+      "name": "OnBecomRelevant",
+      "kind": "function",
+      "file": "graphs/OnBecomRelevant.json"
+    }
+  ]
+}

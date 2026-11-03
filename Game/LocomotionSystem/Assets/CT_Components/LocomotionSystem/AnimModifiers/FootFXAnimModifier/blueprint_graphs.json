@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "FootFXAnimModifier",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "EA1430744C0B081BD4090EB2DFE4D58C",
+    "parent_class": "/Script/CoreUObject.Class'/Script/AnimationModifiers.AnimationModifier'"
+  },
+  "variables": [
+    {
+      "name": "FeetDefinitions",
+      "guid": "691A530C4C70F304A7AE288D6D003EFE",
+      "friendly_name": "Feet Definitions",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier_FootDefinition.FootFXAnimModifier_FootDefinition'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FootPlantedSpeedThreshold",
+      "guid": "D14F09FF40622A3F0D7082AB3865C111",
+      "friendly_name": "Foot Planted Speed Threshold",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FootUnplantedSpeedThreshold",
+      "guid": "CFFEE2764CB036268DF3BAAC1577B735",
+      "friendly_name": "Foot Unplanted Speed Threshold",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "NotifiesToRemove",
+      "guid": "6B7F153746EFD63CF0489BB4D6EAD2B6",
+      "friendly_name": "Notifies to Remove",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SampleStep",
+      "guid": "BC4E5DC043276B48C9D39682EB366E65",
+      "friendly_name": "Sample Step",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "A11291CF41896CC22B5E1EA52CAEA447",
+      "node_count": 4,
+      "pin_count": 14,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "GetBoneComponentSpaceTransform",
+      "kind": "function",
+      "guid": "565E2392428C722D08C3499FB032ECC7",
+      "node_count": 12,
+      "pin_count": 39,
+      "connection_count": 16,
+      "exec_connection_count": 3,
+      "data_connection_count": 13
+    },
+    {
+      "name": "ApplyModifier",
+      "kind": "function",
+      "guid": "1CEFF2F347C061C23C508DA569505EC4",
+      "node_count": 11,
+      "pin_count": 35,
+      "connection_count": 12,
+      "exec_connection_count": 5,
+      "data_connection_count": 7
+    },
+    {
+      "name": "RevertModifier",
+      "kind": "function",
+      "guid": "542B04FF4795ED46C69D2A97E93A6030",
+      "node_count": 5,
+      "pin_count": 19,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ProcessFoot",
+      "kind": "function",
+      "guid": "E36E5221475211F10175A5989C228669",
+      "node_count": 50,
+      "pin_count": 155,
+      "connection_count": 51,
+      "exec_connection_count": 16,
+      "data_connection_count": 35
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "OnRevert",
+      "guid": "ABDD02DE4D0F018FA8B578BBF83CF6CD",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnApply",
+      "guid": "E9F7729C4B1D6CE8B66B539E9017F8F4",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 2,
+    "authored_node_count": 82,
+    "authored_pin_count": 262,
+    "authored_connection_count": 88,
+    "generated_node_count": 6,
+    "generated_pin_count": 18
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplyModifier",
+      "kind": "function",
+      "file": "graphs/ApplyModifier.json"
+    },
+    {
+      "name": "GetBoneComponentSpaceTransform",
+      "kind": "function",
+      "file": "graphs/GetBoneComponentSpaceTransform.json"
+    },
+    {
+      "name": "ProcessFoot",
+      "kind": "function",
+      "file": "graphs/ProcessFoot.json"
+    },
+    {
+      "name": "RevertModifier",
+      "kind": "function",
+      "file": "graphs/RevertModifier.json"
+    }
+  ]
+}

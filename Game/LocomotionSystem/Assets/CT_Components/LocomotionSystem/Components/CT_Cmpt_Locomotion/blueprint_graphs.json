@@ -1,0 +1,1916 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "CT_Cmpt_Locomotion",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "AA249C76436B8062512FF3878B41BB32",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "ActorRotation",
+      "guid": "4C3A7A234048BE7ADDFFB69AF7E4CD01",
+      "friendly_name": "Actor Rotation",
+      "category": "Default",
+      "property_flags": 4398046576677,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AnimsetDataTable",
+      "guid": "AFFC940242677792A3B958910F0FDEFB",
+      "friendly_name": "Animset Data Table",
+      "category": "Locomotion",
+      "property_flags": 4295032869,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.DataTable'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AnimsetName",
+      "guid": "CB890BFB4CFB14EC7927519B51EA3D22",
+      "friendly_name": "Animset Name",
+      "category": "Locomotion",
+      "property_flags": 4295032869,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BaseAimRotation",
+      "guid": "B11FF42B4C8D3835D6C6EEB80499C0EC",
+      "friendly_name": "Base Aim Rotation",
+      "category": "Default",
+      "property_flags": 4398046576677,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CachedMovementMode",
+      "guid": "04926F0049C50D61ACBEB88D91E0317C",
+      "friendly_name": "Cached Movement Mode",
+      "category": "Default",
+      "property_flags": 4398046576645,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.EMovementMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Character",
+      "guid": "59CD711240E8C85CC9587EB8A41FA421",
+      "friendly_name": "Character",
+      "category": "Reference",
+      "property_flags": 4398046578693,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CharacterMovement",
+      "guid": "B5CC3B7D48E2B5BB60E9E9A634BE19DE",
+      "friendly_name": "Character Movement",
+      "category": "Reference",
+      "property_flags": 4398046576645,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CharacterMovementComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DisableRootYawOffset",
+      "guid": "9A100CC54A2BD5332C68458952A4FDF4",
+      "friendly_name": "Disable Root Yaw Offset",
+      "category": "Default",
+      "property_flags": 4402341543973,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EnableSprint",
+      "guid": "0AF70EAD4D2A32FDF1A375B410546788",
+      "friendly_name": "Enable Sprint",
+      "category": "Default",
+      "property_flags": 4398046576645,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnAccelerationChanged",
+      "guid": "F2605B424D234DE269E09DBF0DAF5972",
+      "friendly_name": "Event on Acceleration Changed",
+      "category": "Default",
+      "property_flags": 21990501056517,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnRiderStatusChanged",
+      "guid": "04402B0A4B07335EA890D0ACDC1BF706",
+      "friendly_name": "Event on Rider Status Changed",
+      "category": "Default",
+      "property_flags": 21990501056517,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnRootYawOffsetStatus",
+      "guid": "1743773E42BB66566A87E4AA5ABF18BA",
+      "friendly_name": "Event on Root Yaw Offset Status",
+      "category": "Default",
+      "property_flags": 21990501056517,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnSetAnimset",
+      "guid": "FD2D34D8492480F7EB4450A7353202D9",
+      "friendly_name": "Event on Set Animset",
+      "category": "Default",
+      "property_flags": 21990501056517,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnSetGlobalExtendedPose",
+      "guid": "C3A4F389409BA2F196F55D81DEDD32B8",
+      "friendly_name": "Event on Set Global Extended Pose",
+      "category": "Default",
+      "property_flags": 21990501056517,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnSetMount",
+      "guid": "07BB27C24D2CE8CA6510D3867B8ED5D4",
+      "friendly_name": "Event on Set Mount",
+      "category": "Default",
+      "property_flags": 21990501056517,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnSetMovementType",
+      "guid": "4D7952E646498BBC8B9BCAA1F122DC1E",
+      "friendly_name": "Event on Set Movement Type",
+      "category": "Default",
+      "property_flags": 21990501056517,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnSetOverrideName",
+      "guid": "257652914C1C9F43BAB6E3A572998AB0",
+      "friendly_name": "Event on Set Override Name",
+      "category": "Default",
+      "property_flags": 21990501056517,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnSetRotationMode",
+      "guid": "82746DB145DA3F9B9A17A9B6BC5ABE11",
+      "friendly_name": "Event on Set Rotation Mode",
+      "category": "Default",
+      "property_flags": 21990501056517,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnSetSkeletonType",
+      "guid": "4177600742B044C0667664A1EAFF0E76",
+      "friendly_name": "Event on Set Skeleton Type",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_OnSprintChanged",
+      "guid": "D5E9F87E46E8CE51C387BEA3C15964A2",
+      "friendly_name": "Event on Sprint Changed",
+      "category": "Default",
+      "property_flags": 21990501056517,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Event_ResetRootYawOffset",
+      "guid": "FA6DC7184D1F99F395A546B5065FFD94",
+      "friendly_name": "Event Reset Root Yaw Offset",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GlobalExtendedPose",
+      "guid": "A43A69C54015D70A42B445A5EA9A6EF4",
+      "friendly_name": "Global Extended Pose",
+      "category": "Default",
+      "property_flags": 4402341543973,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose.Enum_ExtendedPose'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HasAcceleration",
+      "guid": "1EB03A2D407C691A79807BA4B6BEA000",
+      "friendly_name": "Has Acceleration",
+      "category": "Default",
+      "property_flags": 4402341543973,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsRider",
+      "guid": "583D98CF482455776779AD8E00CC3E7D",
+      "friendly_name": "Is Rider",
+      "category": "Rider",
+      "property_flags": 4398046576645,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsSprinting",
+      "guid": "1C808BE2457AB15CAC947498D76F6348",
+      "friendly_name": "Is Sprinting",
+      "category": "Default",
+      "property_flags": 4402341543973,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastVelocityDirection",
+      "guid": "471AE647440389FA40513785265A01B8",
+      "friendly_name": "Last Velocity Direction",
+      "category": "Default",
+      "property_flags": 4402341543973,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MainAnimInstance",
+      "guid": "97C30C7F4EF4D0470AE69CBF9058911A",
+      "friendly_name": "Main Anim Instance",
+      "category": "Reference",
+      "property_flags": 4398046576645,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MountActor",
+      "guid": "E2F9135F4DBC4B3B332026BEDB34551A",
+      "friendly_name": "Mount Actor",
+      "category": "Rider",
+      "property_flags": 4398046578693,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MountControlRotation",
+      "guid": "50BF5F1F4A93979D9933398BC85DE7BB",
+      "friendly_name": "Mount Control Rotation",
+      "category": "Rider",
+      "property_flags": 4398046576677,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MovementType",
+      "guid": "30F59F4641F4452A3E8E559E163F1D86",
+      "friendly_name": "Movement Type",
+      "category": "Locomotion",
+      "property_flags": 4295032869,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_MovementType.Enum_MovementType'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OverrideExtendPose",
+      "guid": "B02044F44B6696031BBFBE9C9E0DF7BC",
+      "friendly_name": "Override Extend Pose",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose.Enum_ExtendedPose'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OverrideName",
+      "guid": "204E32FF4BB5A05203A914BA00CACF93",
+      "friendly_name": "Override Name",
+      "category": "Locomotion",
+      "property_flags": 4295032869,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RotationMode",
+      "guid": "9B7DA840464FA86E7748298D2C053058",
+      "friendly_name": "Rotation Mode",
+      "category": "Locomotion",
+      "property_flags": 4295032869,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RotationMode.Enum_RotationMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SkeletonType",
+      "guid": "8CE4333F448E37088ECC9DA46C9A11B9",
+      "friendly_name": "Skeleton Type",
+      "category": "Config",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType.Enum_SkeletonType'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpeedRate",
+      "guid": "99BCEB2C4DEB3E77C7E0E0AF7DD42DFC",
+      "friendly_name": "Speed Rate",
+      "category": "Default",
+      "property_flags": 4295032869,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SprintAngle",
+      "guid": "F94263E74E2CD70BA15F20B3F4C5C6F1",
+      "friendly_name": "Sprint Angle",
+      "category": "Config",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "BD8377CE4C23CBB4A382D9AE918885DD",
+      "node_count": 162,
+      "pin_count": 523,
+      "connection_count": 171,
+      "exec_connection_count": 74,
+      "data_connection_count": 97
+    },
+    {
+      "name": "GetIsAccelerating",
+      "kind": "function",
+      "guid": "6A275717413DA3C41A6E7299E5698E58",
+      "node_count": 7,
+      "pin_count": 18,
+      "connection_count": 7,
+      "exec_connection_count": 2,
+      "data_connection_count": 5
+    },
+    {
+      "name": "SetMovementType",
+      "kind": "function",
+      "guid": "5D81FC4C4B4E4D9E2C4E2CBCE8BDB861",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 7,
+      "exec_connection_count": 5,
+      "data_connection_count": 2
+    },
+    {
+      "name": "SetAnimset",
+      "kind": "function",
+      "guid": "5E375DDE45D503F26877B5B871DBE098",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 7,
+      "exec_connection_count": 5,
+      "data_connection_count": 2
+    },
+    {
+      "name": "SetSprint",
+      "kind": "function",
+      "guid": "C4CC0B2D498F81511632148DE0852750",
+      "node_count": 2,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "GetSprintSpeed",
+      "kind": "function",
+      "guid": "F91D5F8B49FD6EFB15A0BE939995C459",
+      "node_count": 2,
+      "pin_count": 3,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "SetRotationMode",
+      "kind": "function",
+      "guid": "A2F23BBF4BA9E24C14B5059385BD312B",
+      "node_count": 8,
+      "pin_count": 25,
+      "connection_count": 10,
+      "exec_connection_count": 6,
+      "data_connection_count": 4
+    },
+    {
+      "name": "SetOverrideName",
+      "kind": "function",
+      "guid": "04C82226478BBDAF6E38538B1161C2A2",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 7,
+      "exec_connection_count": 5,
+      "data_connection_count": 2
+    },
+    {
+      "name": "GetLastVelocityDirection",
+      "kind": "function",
+      "guid": "C8B959794BEB20E98A534691776FAAB3",
+      "node_count": 9,
+      "pin_count": 21,
+      "connection_count": 9,
+      "exec_connection_count": 2,
+      "data_connection_count": 7
+    },
+    {
+      "name": "GetCurrentMovementStruct",
+      "kind": "function",
+      "guid": "369EEAAC4AD5B6435F602B9C09681101",
+      "node_count": 7,
+      "pin_count": 17,
+      "connection_count": 6,
+      "exec_connection_count": 1,
+      "data_connection_count": 5
+    },
+    {
+      "name": "GetCurrentOverrideStruct",
+      "kind": "function",
+      "guid": "68A59E2D41E4252752F531A6E859F7D9",
+      "node_count": 8,
+      "pin_count": 23,
+      "connection_count": 9,
+      "exec_connection_count": 1,
+      "data_connection_count": 8
+    },
+    {
+      "name": "SetMovementConfig",
+      "kind": "function",
+      "guid": "CABA991C429D24D3F21747946DAC7740",
+      "node_count": 15,
+      "pin_count": 51,
+      "connection_count": 21,
+      "exec_connection_count": 6,
+      "data_connection_count": 15
+    },
+    {
+      "name": "GetCurrentMovementConfig",
+      "kind": "function",
+      "guid": "4ABB3AF14B0FB9B852F5FC847D2A0164",
+      "node_count": 28,
+      "pin_count": 83,
+      "connection_count": 33,
+      "exec_connection_count": 8,
+      "data_connection_count": 25
+    },
+    {
+      "name": "GetAnimset",
+      "kind": "function",
+      "guid": "D0FFE6F84C0D68F655C75B97B62000D0",
+      "node_count": 4,
+      "pin_count": 12,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "SetCharacterMaxSpeed",
+      "kind": "function",
+      "guid": "D940E66943A421A5A3F2F0BD5D06C80D",
+      "node_count": 13,
+      "pin_count": 38,
+      "connection_count": 16,
+      "exec_connection_count": 4,
+      "data_connection_count": 12
+    },
+    {
+      "name": "IsRotationMode",
+      "kind": "function",
+      "guid": "222E2C554176B1FD3ECEF49A283E4C38",
+      "node_count": 4,
+      "pin_count": 9,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "IsMovementType",
+      "kind": "function",
+      "guid": "7D9C70B04DB46E60550D17BF89045B9A",
+      "node_count": 4,
+      "pin_count": 9,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "GetRotationMode",
+      "kind": "function",
+      "guid": "AD2DF1934C2316A33844A59BE4D7DD4B",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "GetMovementType",
+      "kind": "function",
+      "guid": "FBE7549E4BC50EA7051819BD77DA51E7",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetAnimsetDataTable",
+      "kind": "function",
+      "guid": "5B643F8548DBEBC0578C86BE4922D971",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 7,
+      "exec_connection_count": 5,
+      "data_connection_count": 2
+    },
+    {
+      "name": "GetSkeletonType",
+      "kind": "function",
+      "guid": "90B05564444880E6808D509FA604E236",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetRiderStatus",
+      "kind": "function",
+      "guid": "277B59084F7C07CC922C6A83992291F4",
+      "node_count": 9,
+      "pin_count": 31,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
+    },
+    {
+      "name": "SetMount",
+      "kind": "function",
+      "guid": "AAF772D8456DF0BB7F0FFA8F760C783A",
+      "node_count": 6,
+      "pin_count": 20,
+      "connection_count": 7,
+      "exec_connection_count": 4,
+      "data_connection_count": 3
+    },
+    {
+      "name": "GetIsSprint",
+      "kind": "function",
+      "guid": "5777354B40B9A2D0307236B2F5A10614",
+      "node_count": 9,
+      "pin_count": 26,
+      "connection_count": 9,
+      "exec_connection_count": 1,
+      "data_connection_count": 8
+    },
+    {
+      "name": "SetRootYawOffsetStatus",
+      "kind": "function",
+      "guid": "C2E6A053405C2DCF3D5CA4B052AE7E68",
+      "node_count": 2,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "GetCharacter",
+      "kind": "function",
+      "guid": "CFB0A36C44FBA9AC58440EBD79C1779C",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "HasMount",
+      "kind": "function",
+      "guid": "8C2C548E4371E0C9A6A873958EC1858E",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "GetExtendedPose",
+      "kind": "function",
+      "guid": "FE9C8C374AC29359FFBA41A9AD98FE78",
+      "node_count": 8,
+      "pin_count": 18,
+      "connection_count": 7,
+      "exec_connection_count": 3,
+      "data_connection_count": 4
+    },
+    {
+      "name": "OnRep_MovementType",
+      "kind": "function",
+      "guid": "21E134A34AC5785ED0744E98DA99D449",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnRep_OverrideName",
+      "kind": "function",
+      "guid": "1271235041036DDF78C56E96F37E8C0A",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnRep_RotationMode",
+      "kind": "function",
+      "guid": "E283C51C4CB6D09F2DEA888DE9E4F13E",
+      "node_count": 3,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnRep_AnimsetName",
+      "kind": "function",
+      "guid": "366BD20F4FD36AA8ADC15F88758C13DC",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnRep_IsSprinting",
+      "kind": "function",
+      "guid": "9405B0534A852A4E4688B19102A50DD6",
+      "node_count": 3,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnRep_AnimsetDataTable",
+      "kind": "function",
+      "guid": "A66EA76C42B680C2A18583A2CE45E696",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnRep_HasAcceleration",
+      "kind": "function",
+      "guid": "9D55FFD04ADC8B27403CCF801B72EA4F",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "OnRep_LastVelocityDirection",
+      "kind": "function",
+      "guid": "E57C9E4A40AA465E0126E8BF468BF60B",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "GetCharacterMovement",
+      "kind": "function",
+      "guid": "2F2347154974C000936C62AB785D7751",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 7,
+      "exec_connection_count": 3,
+      "data_connection_count": 4
+    },
+    {
+      "name": "OnRep_DisableRootYawOffset",
+      "kind": "function",
+      "guid": "F869BB1A402314A48619208BD1AD143E",
+      "node_count": 3,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetGlobalExtendedPose",
+      "kind": "function",
+      "guid": "671CBB814755711B302191B2C9ED81BB",
+      "node_count": 5,
+      "pin_count": 15,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "OnRep_GlobalExtendedPose",
+      "kind": "function",
+      "guid": "19CF6A4A45C3C0825670DDB6D328B74F",
+      "node_count": 3,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetOverrideExtendPose",
+      "kind": "function",
+      "guid": "449E55A7488D073F1D89A18B25AEA4A7",
+      "node_count": 13,
+      "pin_count": 36,
+      "connection_count": 14,
+      "exec_connection_count": 3,
+      "data_connection_count": 11
+    },
+    {
+      "name": "SetSkeletonType",
+      "kind": "function",
+      "guid": "C8EFE3544098B582A9C27CB2E84C6DD8",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "GetAnimsetName",
+      "kind": "function",
+      "guid": "9300DD484424B6799F6B9DA25DF09EA1",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "IsAnimsetName",
+      "kind": "function",
+      "guid": "05634078451BE61E6D246BAECCA6AAAF",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "GetOverrideName",
+      "kind": "function",
+      "guid": "041B275B41C06C783D12229BD87A87F9",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "IsOverrideName",
+      "kind": "function",
+      "guid": "D1F163394D2D6FD097541E99562D9D31",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "GetGlobalExtendedPose",
+      "kind": "function",
+      "guid": "5CBBAFEB4D1A8A1FA55EEC83C532F197",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "IsGlobalExtendedPose",
+      "kind": "function",
+      "guid": "6D6642864C7D16266B2043B119E04D24",
+      "node_count": 4,
+      "pin_count": 9,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "IsExtendedPose",
+      "kind": "function",
+      "guid": "D541D0D84903B9F9EFB0F0937B5EB6C5",
+      "node_count": 4,
+      "pin_count": 9,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "SetCharacterRotation",
+      "kind": "function",
+      "guid": "4D36FB004200C498437FC694817D4A23",
+      "node_count": 2,
+      "pin_count": 8,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "SetSpeedRate",
+      "kind": "function",
+      "guid": "E952CD244C8B4E1DEE2BC7A6E81DF031",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 7,
+      "exec_connection_count": 5,
+      "data_connection_count": 2
+    },
+    {
+      "name": "OnRep_SpeedRate",
+      "kind": "function",
+      "guid": "4D6FD36C44641D328280FBAAB87BA410",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "SetCharacterMaxFlySpeed",
+      "kind": "function",
+      "guid": "C9E18F8F4A7DBD7AB7B0E993B13F7094",
+      "node_count": 4,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "SetCharacterMaxSwimSpeed",
+      "kind": "function",
+      "guid": "611737604E40D5A721237499D622B0C4",
+      "node_count": 4,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "Event_OnSetMovementType",
+      "kind": "delegate",
+      "guid": "EFE771C244FC65F26F974EBB9E7A6DBD",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnSprintChanged",
+      "kind": "delegate",
+      "guid": "A8AF5E1F4405A9F6A751FC93041676E0",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnSetRotationMode",
+      "kind": "delegate",
+      "guid": "22EF20A843DB2C7CBE2EB1AAEB161E58",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnSetOverrideName",
+      "kind": "delegate",
+      "guid": "8ED829E24B9DEAEB781561A534DBE1D4",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnAccelerationChanged",
+      "kind": "delegate",
+      "guid": "174C67894D9787A3CE828ABB66E08D30",
+      "node_count": 1,
+      "pin_count": 3,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnSetAnimset",
+      "kind": "delegate",
+      "guid": "EE8F1C614A669B5CDAF7348D55965F09",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnRiderStatusChanged",
+      "kind": "delegate",
+      "guid": "182F765248AB1D33E136F0A6A218682E",
+      "node_count": 1,
+      "pin_count": 3,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnRootYawOffsetStatus",
+      "kind": "delegate",
+      "guid": "C97C811A4E19FDA857D00288EB3B324E",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnSetMount",
+      "kind": "delegate",
+      "guid": "3D8DB19945311FB689CA9B9E5D128A3A",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnSetGlobalExtendedPose",
+      "kind": "delegate",
+      "guid": "64A44BC24B19F1C9702F309D8541A094",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnSetSkeletonType",
+      "kind": "delegate",
+      "guid": "12A4B8DB470C15E3CE5457BE683B290E",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_ResetRootYawOffset",
+      "kind": "delegate",
+      "guid": "A7501964484C15F18391818C1AB59371",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "SetMaxSwimSpeed",
+      "guid": "6572DC9A474482E2BE24238643306063",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetMaxFlySpeed_Server",
+      "guid": "A9F959EA48F8DB60002207B299579EE3",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetSpeedRate_Server",
+      "guid": "D68F11C949D44610D8B490BA3239878F",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetActorRotation_Muticast",
+      "guid": "5710C06D49C60E56B013E2928C884450",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "SetActorRotation_Server",
+      "guid": "06506FDD491256E6131366B2B1CF10E2",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "SetGlobalExtendedPose_Server",
+      "guid": "53D9307440F4DCD2E1DC8D9017FB1D7C",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetCharacterBaseAimRotation_Value",
+      "guid": "07B04E244BCFB1DE229BC78155AAC23D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetCharacterBaseAimRotation",
+      "guid": "9AE8BD6F4ECF7CB92456C883F0822A32",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "SetSprintValue_Server",
+      "guid": "CDCE75644049ED0BF0C04EB753122C31",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetAccelerationValue_Server",
+      "guid": "53AB840A4649ED3BB6D57A851B3ECBF1",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "SetAnimsetTable_Server",
+      "guid": "887CDA6244CE305A36C3AF892639CDAF",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "UpdateSprintingValue",
+      "guid": "A88F4599470D61FAFD57FE8BFCAF00CC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CheckAcceleration",
+      "guid": "4E65EE7A4172A2CBBDEE96B5DB133D41",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "SetOverrideName_Server",
+      "guid": "1CFAD79443BF5F75DEB0C8841E1EBF7A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetMountControlRotation",
+      "guid": "C8B543FC4438B1856BC535A13DA2606C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "SetMountControlRotation_Value",
+      "guid": "A0E0823E41B2DE42A2CEA89360DCA098",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetRotationRate_Multicast",
+      "guid": "49CD1D6C44420055D79FBBA3E92E75EC",
+      "node_count": 3,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "SetRotationRate_Server",
+      "guid": "2613FB794E682CF717A4F6ADC40E7E4E",
+      "node_count": 3,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "SetAnimset_Server",
+      "guid": "4FD3273F4C23C512C92FC5AA1B6989D7",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetOrientRotationToMovement_Multicast",
+      "guid": "7B81C1574DB84D05269F0FA0F0320D3D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetOrientRotationToMovement_Server",
+      "guid": "77C2E093446CCD39859266A158F9ED46",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnSetMovementType_Server",
+      "guid": "0144FF0A4D66995FA647A5BA07BF5629",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetBrakingDeceleration_Multicast",
+      "guid": "17E5BD5849A7EEA705FEA5A5153379C9",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetBrakingDeceleration_Server",
+      "guid": "CC98018D4AE4B0A02EEB4090FFC3844D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetMaxSpeed_Server",
+      "guid": "07497D884F379B29763AC0B8F2BA8B28",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetMaxAcceleration_Multicast",
+      "guid": "1EE0F91148159A8B313D159A530DF8A2",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetMaxAcceleration_Server",
+      "guid": "D8E7CD6A456DD176A02405AF58934C1A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetRotationMode_Server",
+      "guid": "4424113644EACC5F28093EBCB25B4EEC",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Event_OnAccelerationChanged_Multicast",
+      "guid": "6261BEB8486DFB07FD6637AB97C1E900",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "Event_OnAccelerationChanged_Server",
+      "guid": "84639A4C4670873EDD5D43A6C5D48D7E",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "ReceiveTick",
+      "guid": "AA24BF2C48CFF64161A4DAB1B03D9B63",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "A53B657D48E2519784CAC6823B548E5E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 66,
+    "generated_graph_count": 32,
+    "authored_node_count": 462,
+    "authored_pin_count": 1337,
+    "authored_connection_count": 470,
+    "generated_node_count": 91,
+    "generated_pin_count": 286
+  },
+  "graph_files": [
+    {
+      "name": "Event_OnAccelerationChanged",
+      "kind": "delegate",
+      "file": "graphs/Event_OnAccelerationChanged.json"
+    },
+    {
+      "name": "Event_OnRiderStatusChanged",
+      "kind": "delegate",
+      "file": "graphs/Event_OnRiderStatusChanged.json"
+    },
+    {
+      "name": "Event_OnRootYawOffsetStatus",
+      "kind": "delegate",
+      "file": "graphs/Event_OnRootYawOffsetStatus.json"
+    },
+    {
+      "name": "Event_OnSetAnimset",
+      "kind": "delegate",
+      "file": "graphs/Event_OnSetAnimset.json"
+    },
+    {
+      "name": "Event_OnSetGlobalExtendedPose",
+      "kind": "delegate",
+      "file": "graphs/Event_OnSetGlobalExtendedPose.json"
+    },
+    {
+      "name": "Event_OnSetMount",
+      "kind": "delegate",
+      "file": "graphs/Event_OnSetMount.json"
+    },
+    {
+      "name": "Event_OnSetMovementType",
+      "kind": "delegate",
+      "file": "graphs/Event_OnSetMovementType.json"
+    },
+    {
+      "name": "Event_OnSetOverrideName",
+      "kind": "delegate",
+      "file": "graphs/Event_OnSetOverrideName.json"
+    },
+    {
+      "name": "Event_OnSetRotationMode",
+      "kind": "delegate",
+      "file": "graphs/Event_OnSetRotationMode.json"
+    },
+    {
+      "name": "Event_OnSetSkeletonType",
+      "kind": "delegate",
+      "file": "graphs/Event_OnSetSkeletonType.json"
+    },
+    {
+      "name": "Event_OnSprintChanged",
+      "kind": "delegate",
+      "file": "graphs/Event_OnSprintChanged.json"
+    },
+    {
+      "name": "Event_ResetRootYawOffset",
+      "kind": "delegate",
+      "file": "graphs/Event_ResetRootYawOffset.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "GetAnimset",
+      "kind": "function",
+      "file": "graphs/GetAnimset.json"
+    },
+    {
+      "name": "GetAnimsetName",
+      "kind": "function",
+      "file": "graphs/GetAnimsetName.json"
+    },
+    {
+      "name": "GetCharacter",
+      "kind": "function",
+      "file": "graphs/GetCharacter.json"
+    },
+    {
+      "name": "GetCharacterMovement",
+      "kind": "function",
+      "file": "graphs/GetCharacterMovement.json"
+    },
+    {
+      "name": "GetCurrentMovementConfig",
+      "kind": "function",
+      "file": "graphs/GetCurrentMovementConfig.json"
+    },
+    {
+      "name": "GetCurrentMovementStruct",
+      "kind": "function",
+      "file": "graphs/GetCurrentMovementStruct.json"
+    },
+    {
+      "name": "GetCurrentOverrideStruct",
+      "kind": "function",
+      "file": "graphs/GetCurrentOverrideStruct.json"
+    },
+    {
+      "name": "GetExtendedPose",
+      "kind": "function",
+      "file": "graphs/GetExtendedPose.json"
+    },
+    {
+      "name": "GetGlobalExtendedPose",
+      "kind": "function",
+      "file": "graphs/GetGlobalExtendedPose.json"
+    },
+    {
+      "name": "GetIsAccelerating",
+      "kind": "function",
+      "file": "graphs/GetIsAccelerating.json"
+    },
+    {
+      "name": "GetIsSprint",
+      "kind": "function",
+      "file": "graphs/GetIsSprint.json"
+    },
+    {
+      "name": "GetLastVelocityDirection",
+      "kind": "function",
+      "file": "graphs/GetLastVelocityDirection.json"
+    },
+    {
+      "name": "GetMovementType",
+      "kind": "function",
+      "file": "graphs/GetMovementType.json"
+    },
+    {
+      "name": "GetOverrideName",
+      "kind": "function",
+      "file": "graphs/GetOverrideName.json"
+    },
+    {
+      "name": "GetRotationMode",
+      "kind": "function",
+      "file": "graphs/GetRotationMode.json"
+    },
+    {
+      "name": "GetSkeletonType",
+      "kind": "function",
+      "file": "graphs/GetSkeletonType.json"
+    },
+    {
+      "name": "GetSprintSpeed",
+      "kind": "function",
+      "file": "graphs/GetSprintSpeed.json"
+    },
+    {
+      "name": "HasMount",
+      "kind": "function",
+      "file": "graphs/HasMount.json"
+    },
+    {
+      "name": "IsAnimsetName",
+      "kind": "function",
+      "file": "graphs/IsAnimsetName.json"
+    },
+    {
+      "name": "IsExtendedPose",
+      "kind": "function",
+      "file": "graphs/IsExtendedPose.json"
+    },
+    {
+      "name": "IsGlobalExtendedPose",
+      "kind": "function",
+      "file": "graphs/IsGlobalExtendedPose.json"
+    },
+    {
+      "name": "IsMovementType",
+      "kind": "function",
+      "file": "graphs/IsMovementType.json"
+    },
+    {
+      "name": "IsOverrideName",
+      "kind": "function",
+      "file": "graphs/IsOverrideName.json"
+    },
+    {
+      "name": "IsRotationMode",
+      "kind": "function",
+      "file": "graphs/IsRotationMode.json"
+    },
+    {
+      "name": "OnRep_AnimsetDataTable",
+      "kind": "function",
+      "file": "graphs/OnRep_AnimsetDataTable.json"
+    },
+    {
+      "name": "OnRep_AnimsetName",
+      "kind": "function",
+      "file": "graphs/OnRep_AnimsetName.json"
+    },
+    {
+      "name": "OnRep_DisableRootYawOffset",
+      "kind": "function",
+      "file": "graphs/OnRep_DisableRootYawOffset.json"
+    },
+    {
+      "name": "OnRep_GlobalExtendedPose",
+      "kind": "function",
+      "file": "graphs/OnRep_GlobalExtendedPose.json"
+    },
+    {
+      "name": "OnRep_HasAcceleration",
+      "kind": "function",
+      "file": "graphs/OnRep_HasAcceleration.json"
+    },
+    {
+      "name": "OnRep_IsSprinting",
+      "kind": "function",
+      "file": "graphs/OnRep_IsSprinting.json"
+    },
+    {
+      "name": "OnRep_LastVelocityDirection",
+      "kind": "function",
+      "file": "graphs/OnRep_LastVelocityDirection.json"
+    },
+    {
+      "name": "OnRep_MovementType",
+      "kind": "function",
+      "file": "graphs/OnRep_MovementType.json"
+    },
+    {
+      "name": "OnRep_OverrideName",
+      "kind": "function",
+      "file": "graphs/OnRep_OverrideName.json"
+    },
+    {
+      "name": "OnRep_RotationMode",
+      "kind": "function",
+      "file": "graphs/OnRep_RotationMode.json"
+    },
+    {
+      "name": "OnRep_SpeedRate",
+      "kind": "function",
+      "file": "graphs/OnRep_SpeedRate.json"
+    },
+    {
+      "name": "SetAnimset",
+      "kind": "function",
+      "file": "graphs/SetAnimset.json"
+    },
+    {
+      "name": "SetAnimsetDataTable",
+      "kind": "function",
+      "file": "graphs/SetAnimsetDataTable.json"
+    },
+    {
+      "name": "SetCharacterMaxFlySpeed",
+      "kind": "function",
+      "file": "graphs/SetCharacterMaxFlySpeed.json"
+    },
+    {
+      "name": "SetCharacterMaxSpeed",
+      "kind": "function",
+      "file": "graphs/SetCharacterMaxSpeed.json"
+    },
+    {
+      "name": "SetCharacterMaxSwimSpeed",
+      "kind": "function",
+      "file": "graphs/SetCharacterMaxSwimSpeed.json"
+    },
+    {
+      "name": "SetCharacterRotation",
+      "kind": "function",
+      "file": "graphs/SetCharacterRotation.json"
+    },
+    {
+      "name": "SetGlobalExtendedPose",
+      "kind": "function",
+      "file": "graphs/SetGlobalExtendedPose.json"
+    },
+    {
+      "name": "SetMount",
+      "kind": "function",
+      "file": "graphs/SetMount.json"
+    },
+    {
+      "name": "SetMovementConfig",
+      "kind": "function",
+      "file": "graphs/SetMovementConfig.json"
+    },
+    {
+      "name": "SetMovementType",
+      "kind": "function",
+      "file": "graphs/SetMovementType.json"
+    },
+    {
+      "name": "SetOverrideExtendPose",
+      "kind": "function",
+      "file": "graphs/SetOverrideExtendPose.json"
+    },
+    {
+      "name": "SetOverrideName",
+      "kind": "function",
+      "file": "graphs/SetOverrideName.json"
+    },
+    {
+      "name": "SetRiderStatus",
+      "kind": "function",
+      "file": "graphs/SetRiderStatus.json"
+    },
+    {
+      "name": "SetRootYawOffsetStatus",
+      "kind": "function",
+      "file": "graphs/SetRootYawOffsetStatus.json"
+    },
+    {
+      "name": "SetRotationMode",
+      "kind": "function",
+      "file": "graphs/SetRotationMode.json"
+    },
+    {
+      "name": "SetSkeletonType",
+      "kind": "function",
+      "file": "graphs/SetSkeletonType.json"
+    },
+    {
+      "name": "SetSpeedRate",
+      "kind": "function",
+      "file": "graphs/SetSpeedRate.json"
+    },
+    {
+      "name": "SetSprint",
+      "kind": "function",
+      "file": "graphs/SetSprint.json"
+    }
+  ]
+}

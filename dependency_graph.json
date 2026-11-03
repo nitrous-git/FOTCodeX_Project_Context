@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 347,
-  "edge_count": 1068,
+  "node_count": 406,
+  "edge_count": 1209,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -2820,6 +2820,10 @@
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_Locomotion_ALC",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     },
@@ -2848,12 +2852,20 @@
       "to": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/ETraversalAirMode"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/DT_Animset_ALC",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/AN_ActionFinished",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/AN_ActionFinished",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/AN_ApplyDamage",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_ActionWindow",
@@ -2929,7 +2941,11 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster"
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_Locomotion_ALC"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/DT_Animset_ALC"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
@@ -3066,6 +3082,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "to": "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatReceiver"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent",
@@ -4274,6 +4294,550 @@
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_HandIKBones"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config_HandIK"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_BlendMask_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_OverrideType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_BlendMask_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_OverrideType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_GlobalPose",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Output",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Pose",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Pose",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_GlobalPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Output"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Pose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/AnimGraph_LayeredBlend_UE4"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_CardinalDirection"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_MovementType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RootYawOffsetMode"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RotationMode"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_AimOffset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_CardinalDirections"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config_HandIK"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_General"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Jump"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Sprint"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Starts"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_TurnInPlace"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_AimOffset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_BaseSequence"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Cardinals"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Config"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_ExtendedPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sprint"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Starts"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/ANS_TransitionToLocomotion"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/AnimGraph_LayeredBlend_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_BlendMask_UE4"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/AnimGraph_LayeredBlend_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_OverrideType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/AnimGraph_LayeredBlend_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_LegIK"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_Warping"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_GlobalPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Output"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Pose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_CardinalDirection"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_MovementType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RootYawOffsetMode"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RotationMode"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_AimOffset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_CardinalDirections"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config_HandIK"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_General"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Jump"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Sprint"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Starts"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_TurnInPlace"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_AimOffset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_BaseSequence"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Cardinals"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Config"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_ExtendedPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sprint"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Starts"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/ABP_Locomotion_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/ANS_TransitionToLocomotion"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_BlendMask_UE5"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_OverrideType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE5/AnimGraph_LayeredBlend_UE5",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier_FootDefinition"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/AN_FootPlant_Left"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimModifiers/FootFXAnimModifier",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/AN_FootPlant_Right"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_ExtendedPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_MovementType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RotationMode"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_AimOffset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_General"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Sprint"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Config"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_ExtendedPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
+      "to": "/Game/LocomotionSystem/Tables/DT_Animset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config_HandIK"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config_HandIK",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_HandIKBones"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_General",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Sprint"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_AimOffset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_CardinalDirections"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Jump"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Starts"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_TurnInPlace"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Sprint",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_AimOffset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_BaseSequence"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Cardinals"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Config"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_ExtendedPose"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sprint"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Starts"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_AimOffset",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_AimOffset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_BaseSequence",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Cardinals",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Config",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Config"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sprint",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Starts",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_AnimOverride_Sequence"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_MovementType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_General"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Anim_Movement"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/AN_FootPlant_Right",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Notifies/AN_FootPlant_Left"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Characters/Mannequins/Animations/ABP_Quinn",
+      "to": "/Game/LocomotionSystem/Characters/Mannequins/Animations/ABP_Manny"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Tables/DT_Animset",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Tables/DT_Animset_Female",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Tables/DT_Animset_UE4",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset"
     }
   ]
 }
