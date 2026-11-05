@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_Resources",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "C913CBA14C71ADBA845F33855C1D3726",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "AnimationInterval",
+      "guid": "01CD087640B039D7A17720AE63E61753",
+      "friendly_name": "Animation Interval",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AnimationTimer",
+      "guid": "6829EBEF42571BF1515F7DA07771CD95",
+      "friendly_name": "Animation Timer",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bTimerActive",
+      "guid": "4C8FA64E40FCCB7AA62DBD82CBD99544",
+      "friendly_name": "Timer Active",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastAnimationTime",
+      "guid": "EAB1EEDA4BC303FC0651A49DC2D900BE",
+      "friendly_name": "Last Animation Time",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "AdvanceAnimations",
+      "kind": "function",
+      "guid": "F8B370314D7B023143B9FEA53E77AAA7",
+      "node_count": 13,
+      "pin_count": 40,
+      "connection_count": 15,
+      "exec_connection_count": 5,
+      "data_connection_count": 10
+    },
+    {
+      "name": "EnsureAnimationTimer",
+      "kind": "function",
+      "guid": "70E1490A41E8502013761A9E327997C8",
+      "node_count": 23,
+      "pin_count": 78,
+      "connection_count": 23,
+      "exec_connection_count": 8,
+      "data_connection_count": 15
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "47099EF545CC45080D85919634EE300F",
+      "node_count": 5,
+      "pin_count": 14,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "SetResourceSnapshot",
+      "kind": "function",
+      "guid": "05FB21C244ADB49195B7E5A1F0636E62",
+      "node_count": 8,
+      "pin_count": 35,
+      "connection_count": 16,
+      "exec_connection_count": 4,
+      "data_connection_count": 12
+    },
+    {
+      "name": "StopAnimations",
+      "kind": "function",
+      "guid": "AE7AB3D74E204DDEE639948CBE4CC742",
+      "node_count": 10,
+      "pin_count": 28,
+      "connection_count": 9,
+      "exec_connection_count": 5,
+      "data_connection_count": 4
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Destruct",
+      "guid": "BB2ECEFD4F8C95C8C96B8EBF617B2743",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 1,
+    "authored_node_count": 59,
+    "authored_pin_count": 195,
+    "authored_connection_count": 64,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "AdvanceAnimations",
+      "kind": "function",
+      "file": "graphs/AdvanceAnimations.json"
+    },
+    {
+      "name": "EnsureAnimationTimer",
+      "kind": "function",
+      "file": "graphs/EnsureAnimationTimer.json"
+    },
+    {
+      "name": "SetResourceSnapshot",
+      "kind": "function",
+      "file": "graphs/SetResourceSnapshot.json"
+    },
+    {
+      "name": "StopAnimations",
+      "kind": "function",
+      "file": "graphs/StopAnimations.json"
+    }
+  ]
+}

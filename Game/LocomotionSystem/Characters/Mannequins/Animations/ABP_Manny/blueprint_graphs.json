@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "ABP_Manny",
+    "class": "/Script/Engine.AnimBlueprint",
+    "guid": "9564002142E59B2E37C7ABB1A1C973D0",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'"
+  },
+  "variables": [
+    {
+      "name": "Character",
+      "guid": "B5739616441BBA4594E3369A330E068E",
+      "friendly_name": "Character",
+      "category": "References",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GroundSpeed",
+      "guid": "40BAAC2E4E3AF4EB0C7DCAB2F763D230",
+      "friendly_name": "Ground Speed",
+      "category": "Essential Movement Data",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsFalling",
+      "guid": "AA45CEC64FFC9DE1391BCFA204617736",
+      "friendly_name": "Is Falling",
+      "category": "Essential Movement Data",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MovementComponent",
+      "guid": "482D29154F7CA42D673F10A8DAD5F9D5",
+      "friendly_name": "Movement Component",
+      "category": "References",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CharacterMovementComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ShouldMove",
+      "guid": "B228CFC74DAFBC799CB630B349069A70",
+      "friendly_name": "Should Move",
+      "category": "Essential Movement Data",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Velocity",
+      "guid": "B01CDE31409BC95BADF86D959905DAD4",
+      "friendly_name": "Velocity",
+      "category": "EssentialMovementData",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "89A2AE9A4F3674DB1F0DB58005D24920",
+      "node_count": 32,
+      "pin_count": 89,
+      "connection_count": 28,
+      "exec_connection_count": 12,
+      "data_connection_count": 16
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "BlueprintInitializeAnimation",
+      "guid": "48D710F44CD15ABC48984F830C35A012",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BlueprintUpdateAnimation",
+      "guid": "51F99A0043FBEF7E386F55981A7927CD",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Manny_AnimGraphNode_TransitionResult_305F37BB4A5AD886760B8E99A5C561E1_0",
+      "guid": "B343DD3F4ECE65C91AE5509CB4A29A5B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Manny_AnimGraphNode_TransitionResult_305F37BB4A5AD886760B8E99A5C561E1",
+      "guid": "8B43857744D2211C6BD6D1A592548867",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 4,
+    "authored_node_count": 32,
+    "authored_pin_count": 89,
+    "authored_connection_count": 28,
+    "generated_node_count": 9,
+    "generated_pin_count": 24
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "TurnYawAnimModifier",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "5C4B92F04400E85118298886FFC92157",
+    "parent_class": "/Script/CoreUObject.Class'/Script/AnimationModifiers.AnimationModifier'"
+  },
+  "variables": [
+    {
+      "name": "RootBoneName",
+      "guid": "6FED2A154EBD0335EE4D91A5C7BCF138",
+      "friendly_name": "Root Bone Name",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TurnYawCurveName",
+      "guid": "C0EA30B948CD3104058833BB90255FFF",
+      "friendly_name": "Turn Yaw Curve Name",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WeightCurveName",
+      "guid": "68A2C0F34F2866078E749B85108795A7",
+      "friendly_name": "Weight Curve Name",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "C198A44D49616B522B10F18B6AE92E52",
+      "node_count": 36,
+      "pin_count": 115,
+      "connection_count": 46,
+      "exec_connection_count": 8,
+      "data_connection_count": 38
+    },
+    {
+      "name": "PopulateCurveKeys",
+      "kind": "function",
+      "guid": "09A3595945B150F1C8CA0FB8C79304E1",
+      "node_count": 34,
+      "pin_count": 106,
+      "connection_count": 37,
+      "exec_connection_count": 7,
+      "data_connection_count": 30
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "OnRevert",
+      "guid": "56BBE9F244FC0F8067A348B30C70ADA5",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnApply",
+      "guid": "48489B734D0D6783FCE06DBB0FF004B4",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 2,
+    "generated_graph_count": 2,
+    "authored_node_count": 70,
+    "authored_pin_count": 221,
+    "authored_connection_count": 83,
+    "generated_node_count": 6,
+    "generated_pin_count": 18
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "PopulateCurveKeys",
+      "kind": "function",
+      "file": "graphs/PopulateCurveKeys.json"
+    }
+  ]
+}

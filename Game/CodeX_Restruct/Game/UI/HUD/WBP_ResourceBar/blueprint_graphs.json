@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_ResourceBar",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "087AD7E6444080D34DB2C4B4E730E02B",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "BackPercent",
+      "guid": "29C49D924347E0119B80A881BBEA9584",
+      "friendly_name": "Back Percent",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bAnimating",
+      "guid": "97737C754F57B9B26FB1518AECDCF9E0",
+      "friendly_name": "Animating",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bHealing",
+      "guid": "103C81A6497B8A96C34FDB8D0316D0E1",
+      "friendly_name": "Healing",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bInitialized",
+      "guid": "1D37C9F64F534581CB249A9563BB6AA4",
+      "friendly_name": "Initialized",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DelayRemaining",
+      "guid": "B82572B045E2A0F404FA569F7C74109B",
+      "friendly_name": "Delay Remaining",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FrontPercent",
+      "guid": "691342EF45D3A3E4A3E8298AC3F22118",
+      "friendly_name": "Front Percent",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FrontTint",
+      "guid": "5F487F1140FEFB6033787FB4A5A57387",
+      "friendly_name": "Front Tint",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.LinearColor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HealSpeed",
+      "guid": "58ABB06845BAAEF03CE98581638571E7",
+      "friendly_name": "Heal Speed",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastMaximum",
+      "guid": "FC8DD7754291538207677EA856311C96",
+      "friendly_name": "Last Maximum",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MaxWidth",
+      "guid": "CED192A84BBCA6E0C4CA18B1D7DFE75C",
+      "friendly_name": "Max Width",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MinWidth",
+      "guid": "AB0889E440CF0DE6FC731FA79C0AF8B3",
+      "friendly_name": "Min Width",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ReferenceMaximum",
+      "guid": "77C0EE8E4B1BCCE71F1B29813B3574BF",
+      "friendly_name": "Reference Maximum",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TargetPercent",
+      "guid": "108179DF42DF81B87DF1978F733E0EF5",
+      "friendly_name": "Target Percent",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TrailDelay",
+      "guid": "A86EC67347BC7517F99ADE9D318BB214",
+      "friendly_name": "Trail Delay",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TrailSpeed",
+      "guid": "005E954C4C486934FA0C8CB16FA06317",
+      "friendly_name": "Trail Speed",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WidthAtReference",
+      "guid": "71968AE4475A282E4DC652BD84A08176",
+      "friendly_name": "Width at Reference",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "0AFB75684E7FEEE444B25287C6CF1C0E",
+      "node_count": 6,
+      "pin_count": 17,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "ApplyVisuals",
+      "kind": "function",
+      "guid": "53A77BF54EC08FA49B52F999F95E4CA4",
+      "node_count": 7,
+      "pin_count": 17,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "ConfigureStyle",
+      "kind": "function",
+      "guid": "D267FF1E47E4A8486BA4D4BB9E53D023",
+      "node_count": 7,
+      "pin_count": 30,
+      "connection_count": 10,
+      "exec_connection_count": 4,
+      "data_connection_count": 6
+    },
+    {
+      "name": "ApplySnapshot",
+      "kind": "function",
+      "guid": "5FE52549421A11F1D3690EADC6917567",
+      "node_count": 88,
+      "pin_count": 296,
+      "connection_count": 101,
+      "exec_connection_count": 31,
+      "data_connection_count": 70
+    },
+    {
+      "name": "AdvanceAnimation",
+      "kind": "function",
+      "guid": "FD2D7DA345880EA4EA6923AC6E03E8AD",
+      "node_count": 56,
+      "pin_count": 180,
+      "connection_count": 61,
+      "exec_connection_count": 16,
+      "data_connection_count": 45
+    },
+    {
+      "name": "ResetPresentation",
+      "kind": "function",
+      "guid": "96D97BF54C421DE94CD412B711BDF15D",
+      "node_count": 5,
+      "pin_count": 21,
+      "connection_count": 4,
+      "exec_connection_count": 4,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "PreConstruct",
+      "guid": "AD099FB04F45BC30A4CCE3ADF237075B",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 6,
+    "generated_graph_count": 1,
+    "authored_node_count": 169,
+    "authored_pin_count": 561,
+    "authored_connection_count": 185,
+    "generated_node_count": 3,
+    "generated_pin_count": 9
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "AdvanceAnimation",
+      "kind": "function",
+      "file": "graphs/AdvanceAnimation.json"
+    },
+    {
+      "name": "ApplySnapshot",
+      "kind": "function",
+      "file": "graphs/ApplySnapshot.json"
+    },
+    {
+      "name": "ApplyVisuals",
+      "kind": "function",
+      "file": "graphs/ApplyVisuals.json"
+    },
+    {
+      "name": "ConfigureStyle",
+      "kind": "function",
+      "file": "graphs/ConfigureStyle.json"
+    },
+    {
+      "name": "ResetPresentation",
+      "kind": "function",
+      "file": "graphs/ResetPresentation.json"
+    }
+  ]
+}
