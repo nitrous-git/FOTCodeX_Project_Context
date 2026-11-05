@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 414,
-  "edge_count": 1235,
+  "node_count": 418,
+  "edge_count": 1263,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -10,6 +10,10 @@
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent"
     },
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -50,6 +54,10 @@
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_GameMenu"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Interact"
     },
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -2577,30 +2585,66 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "to": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     },
     {
-      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_ChampionFragment01",
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_DarkKnightArmor_Chest",
+      "to": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_DarkKnightArmor_Chest",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_ENPotion",
+      "to": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_ENPotion",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master"
     },
     {
-      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_FireAttunement",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master"
-    },
-    {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_HPPotion",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_StandardTunic",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master"
     },
     {
@@ -2973,6 +3017,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent"
     },
     {
@@ -3146,6 +3194,22 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
+      "to": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
+      "to": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
@@ -3518,6 +3582,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Execution"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_Interact"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat",
@@ -4265,6 +4333,26 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     },
     {
@@ -4277,6 +4365,14 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
       "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_AbilityDisplay"
     },
     {
@@ -4285,7 +4381,23 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_FirstLootNotification"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Interaction"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_InteractionError"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
       "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_LootNotification"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",

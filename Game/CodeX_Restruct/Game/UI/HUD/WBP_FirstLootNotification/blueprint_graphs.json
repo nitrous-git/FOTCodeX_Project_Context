@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_FirstLootNotification",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "3AA01E0B4A6E269870B548992A70B524",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "bPresenting",
+      "guid": "3C828F9C4BAD1D313257D9B7B1320D9B",
+      "friendly_name": "Presenting",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentIcon",
+      "guid": "CF8A030141354A42EDA8F4846685B452",
+      "friendly_name": "Current Icon",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentName",
+      "guid": "A818026D4408D227571BE08ACE29D21D",
+      "friendly_name": "Current Name",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PendingIcons",
+      "guid": "3C32289F421A51C949E44EBE148D9BDE",
+      "friendly_name": "Pending Icons",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PendingNames",
+      "guid": "3A0E3F04418DDDE0A3565499E98F299B",
+      "friendly_name": "Pending Names",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PresentationAge",
+      "guid": "4B9067454C4A9AA04481688849BBF2B9",
+      "friendly_name": "Presentation Age",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PresentationDuration",
+      "guid": "9336E233481706B3F19D49B3C766FAD8",
+      "friendly_name": "Presentation Duration",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "ClearFirstLoot",
+      "kind": "function",
+      "guid": "CBCC3E134BD2B30BD1DB23BDA903D4D5",
+      "node_count": 12,
+      "pin_count": 43,
+      "connection_count": 12,
+      "exec_connection_count": 8,
+      "data_connection_count": 4
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "EE04B46D41CA6F1DBEEC90B6E1DFD4D6",
+      "node_count": 5,
+      "pin_count": 14,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "UpdateFirstLoot",
+      "kind": "function",
+      "guid": "9E2E4BFF4E0D8709A88792A96CE77A52",
+      "node_count": 32,
+      "pin_count": 94,
+      "connection_count": 31,
+      "exec_connection_count": 4,
+      "data_connection_count": 27
+    },
+    {
+      "name": "PresentNext",
+      "kind": "function",
+      "guid": "E19B073B4EC6C30679F17497968BC140",
+      "node_count": 41,
+      "pin_count": 150,
+      "connection_count": 44,
+      "exec_connection_count": 21,
+      "data_connection_count": 23
+    },
+    {
+      "name": "ShowFirstLoot",
+      "kind": "function",
+      "guid": "9E03D738431E8E7982A5E9B911EEDD06",
+      "node_count": 9,
+      "pin_count": 31,
+      "connection_count": 10,
+      "exec_connection_count": 4,
+      "data_connection_count": 6
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Destruct",
+      "guid": "9B1C709E4DD6A2E2BF5697898F6D7EBE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 1,
+    "authored_node_count": 99,
+    "authored_pin_count": 332,
+    "authored_connection_count": 98,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ClearFirstLoot",
+      "kind": "function",
+      "file": "graphs/ClearFirstLoot.json"
+    },
+    {
+      "name": "PresentNext",
+      "kind": "function",
+      "file": "graphs/PresentNext.json"
+    },
+    {
+      "name": "ShowFirstLoot",
+      "kind": "function",
+      "file": "graphs/ShowFirstLoot.json"
+    },
+    {
+      "name": "UpdateFirstLoot",
+      "kind": "function",
+      "file": "graphs/UpdateFirstLoot.json"
+    }
+  ]
+}

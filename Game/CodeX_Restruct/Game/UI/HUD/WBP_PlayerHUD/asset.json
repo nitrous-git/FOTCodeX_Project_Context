@@ -17,18 +17,31 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_AbilityDisplay",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_CurrencyContainer",
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_FirstLootNotification",
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Interaction",
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_InteractionError",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid",
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_LootNotification",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources"
     ],
     "referencers": [
-      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent"
     ],
-    "non_architecture_dependency_count": 4,
+    "non_architecture_dependency_count": 3,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -121,12 +134,19 @@
         "DetachPlayer",
         "HandleStatsChanged",
         "RefreshResources",
-        "BindCurrencyForPlayer"
+        "BindCurrencyForPlayer",
+        "HideInteractionPrompt",
+        "TrimLootNotifications",
+        "RemoveOldestLoot",
+        "NotifyItemAcquired",
+        "ClearInteractionHUD",
+        "ClearInteractionError",
+        "ShowInteractionError",
+        "ShowInteractionPrompt"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "Construct",
         "Destruct"
       ]
     },
@@ -148,6 +168,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 8
+    "widget_count": 12
   }
 }

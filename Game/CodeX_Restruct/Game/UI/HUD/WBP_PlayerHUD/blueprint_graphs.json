@@ -81,11 +81,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "1FB4C5A6452983F44A8504AD2A67FB9F",
-      "node_count": 7,
-      "pin_count": 26,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     },
     {
       "name": "BindPlayer",
@@ -101,10 +101,10 @@
       "name": "DetachPlayer",
       "kind": "function",
       "guid": "AF5636CB41A581F50AF4D29340B0BFDB",
-      "node_count": 32,
-      "pin_count": 95,
-      "connection_count": 22,
-      "exec_connection_count": 13,
+      "node_count": 23,
+      "pin_count": 73,
+      "connection_count": 23,
+      "exec_connection_count": 14,
       "data_connection_count": 9
     },
     {
@@ -131,26 +131,97 @@
       "name": "BindCurrencyForPlayer",
       "kind": "function",
       "guid": "3502E0434C8508EB22293398D9D5CB79",
-      "node_count": 21,
-      "pin_count": 64,
+      "node_count": 10,
+      "pin_count": 31,
       "connection_count": 12,
       "exec_connection_count": 5,
       "data_connection_count": 7
+    },
+    {
+      "name": "HideInteractionPrompt",
+      "kind": "function",
+      "guid": "B7E5178E44BCE8A85F0C2F9EACF58765",
+      "node_count": 3,
+      "pin_count": 6,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "TrimLootNotifications",
+      "kind": "function",
+      "guid": "4B0A741140E12D620BAAFCB502317D31",
+      "node_count": 7,
+      "pin_count": 19,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "RemoveOldestLoot",
+      "kind": "function",
+      "guid": "0BA854714076AC479D8397A9FC60162F",
+      "node_count": 11,
+      "pin_count": 33,
+      "connection_count": 12,
+      "exec_connection_count": 4,
+      "data_connection_count": 8
+    },
+    {
+      "name": "NotifyItemAcquired",
+      "kind": "function",
+      "guid": "7B42AB734DA365ADA2D006912DD6A24B",
+      "node_count": 26,
+      "pin_count": 105,
+      "connection_count": 38,
+      "exec_connection_count": 14,
+      "data_connection_count": 24
+    },
+    {
+      "name": "ClearInteractionHUD",
+      "kind": "function",
+      "guid": "8CEB5AE34CE4527E40D1238C1E3C1797",
+      "node_count": 13,
+      "pin_count": 34,
+      "connection_count": 12,
+      "exec_connection_count": 5,
+      "data_connection_count": 7
+    },
+    {
+      "name": "ClearInteractionError",
+      "kind": "function",
+      "guid": "563AB94C4227510E887A7EA16685B776",
+      "node_count": 3,
+      "pin_count": 6,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ShowInteractionError",
+      "kind": "function",
+      "guid": "0B43B4834C2EAB92197EDE8621A258D4",
+      "node_count": 3,
+      "pin_count": 10,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ShowInteractionPrompt",
+      "kind": "function",
+      "guid": "96D97C594BEF59959B18B093399544FE",
+      "node_count": 3,
+      "pin_count": 10,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
     }
   ],
   "generated_graphs": [
     {
-      "name": "Construct",
-      "guid": "3E89C2F44E5D47933E032BA6B9D24454",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
       "name": "Destruct",
-      "guid": "CB667EDD4F3C9D53DD3F0AA075EDFB97",
+      "guid": "1D5CEF1F4C809E28073A9D888CF46591",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -159,13 +230,13 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 6,
-    "generated_graph_count": 2,
-    "authored_node_count": 111,
-    "authored_pin_count": 332,
-    "authored_connection_count": 92,
-    "generated_node_count": 4,
-    "generated_pin_count": 10
+    "authored_graph_count": 14,
+    "generated_graph_count": 1,
+    "authored_node_count": 155,
+    "authored_pin_count": 479,
+    "authored_connection_count": 171,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
   },
   "graph_files": [
     {
@@ -184,6 +255,16 @@
       "file": "graphs/BindPlayer.json"
     },
     {
+      "name": "ClearInteractionError",
+      "kind": "function",
+      "file": "graphs/ClearInteractionError.json"
+    },
+    {
+      "name": "ClearInteractionHUD",
+      "kind": "function",
+      "file": "graphs/ClearInteractionHUD.json"
+    },
+    {
       "name": "DetachPlayer",
       "kind": "function",
       "file": "graphs/DetachPlayer.json"
@@ -194,9 +275,39 @@
       "file": "graphs/HandleStatsChanged.json"
     },
     {
+      "name": "HideInteractionPrompt",
+      "kind": "function",
+      "file": "graphs/HideInteractionPrompt.json"
+    },
+    {
+      "name": "NotifyItemAcquired",
+      "kind": "function",
+      "file": "graphs/NotifyItemAcquired.json"
+    },
+    {
       "name": "RefreshResources",
       "kind": "function",
       "file": "graphs/RefreshResources.json"
+    },
+    {
+      "name": "RemoveOldestLoot",
+      "kind": "function",
+      "file": "graphs/RemoveOldestLoot.json"
+    },
+    {
+      "name": "ShowInteractionError",
+      "kind": "function",
+      "file": "graphs/ShowInteractionError.json"
+    },
+    {
+      "name": "ShowInteractionPrompt",
+      "kind": "function",
+      "file": "graphs/ShowInteractionPrompt.json"
+    },
+    {
+      "name": "TrimLootNotifications",
+      "kind": "function",
+      "file": "graphs/TrimLootNotifications.json"
     }
   ]
 }

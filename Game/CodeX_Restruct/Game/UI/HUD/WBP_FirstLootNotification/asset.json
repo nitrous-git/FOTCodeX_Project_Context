@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_FirstLootNotification",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_FirstLootNotification",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/HUD",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_FirstLootNotification.WBP_FirstLootNotification",
+    "relative_package": "CodeX_Restruct/Game/UI/HUD/WBP_FirstLootNotification"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [],
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
+    ],
+    "non_architecture_dependency_count": 7,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_FirstLootNotification.WBP_FirstLootNotification_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_FirstLootNotification.WBP_FirstLootNotification_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_FirstLootNotification.WBP_FirstLootNotification_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bPresenting",
+        "guid": "3C828F9C4BAD1D313257D9B7B1320D9B",
+        "friendly_name": "Presenting",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentIcon",
+        "guid": "CF8A030141354A42EDA8F4846685B452",
+        "friendly_name": "Current Icon",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentName",
+        "guid": "A818026D4408D227571BE08ACE29D21D",
+        "friendly_name": "Current Name",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PendingIcons",
+        "guid": "3C32289F421A51C949E44EBE148D9BDE",
+        "friendly_name": "Pending Icons",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PendingNames",
+        "guid": "3A0E3F04418DDDE0A3565499E98F299B",
+        "friendly_name": "Pending Names",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PresentationAge",
+        "guid": "4B9067454C4A9AA04481688849BBF2B9",
+        "friendly_name": "Presentation Age",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PresentationDuration",
+        "guid": "9336E233481706B3F19D49B3C766FAD8",
+        "friendly_name": "Presentation Duration",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "ClearFirstLoot",
+        "UpdateFirstLoot",
+        "PresentNext",
+        "ShowFirstLoot"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Destruct"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 13
+  }
+}

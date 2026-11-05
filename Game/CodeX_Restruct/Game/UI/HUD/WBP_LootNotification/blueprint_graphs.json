@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_LootNotification",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "52286F394D630E0FFEE43EB1A4BB5A9C",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "bPresenting",
+      "guid": "D13101D24213A6ED79A078960095F261",
+      "friendly_name": "Presenting",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PresentationAge",
+      "guid": "E3D33FB148ACC291C79E5DAB275B0AB2",
+      "friendly_name": "Presentation Age",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PresentationDuration",
+      "guid": "A7F364BD417AD873A9FBFDB8423CCA7C",
+      "friendly_name": "Presentation Duration",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "546A0B8440C5B75508FB17AB8E551AC8",
+      "node_count": 6,
+      "pin_count": 17,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "UpdateLoot",
+      "kind": "function",
+      "guid": "C64D82BA4227ECB9F253EC9D65CEDF12",
+      "node_count": 32,
+      "pin_count": 94,
+      "connection_count": 31,
+      "exec_connection_count": 4,
+      "data_connection_count": 27
+    },
+    {
+      "name": "ClearLoot",
+      "kind": "function",
+      "guid": "AB013D8B4E408B76A27E50A4A8C37C78",
+      "node_count": 9,
+      "pin_count": 36,
+      "connection_count": 8,
+      "exec_connection_count": 5,
+      "data_connection_count": 3
+    },
+    {
+      "name": "PresentLoot",
+      "kind": "function",
+      "guid": "5B1897A24EE540F4DD17FDB74B1F3DF8",
+      "node_count": 29,
+      "pin_count": 116,
+      "connection_count": 36,
+      "exec_connection_count": 13,
+      "data_connection_count": 23
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Destruct",
+      "guid": "FDCF11CE42BD5778281E3AA15CE65E94",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 4,
+    "generated_graph_count": 1,
+    "authored_node_count": 76,
+    "authored_pin_count": 263,
+    "authored_connection_count": 77,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ClearLoot",
+      "kind": "function",
+      "file": "graphs/ClearLoot.json"
+    },
+    {
+      "name": "PresentLoot",
+      "kind": "function",
+      "file": "graphs/PresentLoot.json"
+    },
+    {
+      "name": "UpdateLoot",
+      "kind": "function",
+      "file": "graphs/UpdateLoot.json"
+    }
+  ]
+}

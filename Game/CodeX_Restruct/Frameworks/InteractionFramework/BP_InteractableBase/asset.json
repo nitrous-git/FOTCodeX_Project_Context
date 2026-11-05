@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_InteractableBase",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/InteractionFramework",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase",
+    "relative_package": "CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_DarkKnightArmor_Chest",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_ENPotion",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent"
+    ],
+    "non_architecture_dependency_count": 1,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_InteractableBase",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C:DefaultSceneRoot_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "bInteractionEnabled",
+        "guid": "59221A7A40CCC0443329A0AF32C2AF57",
+        "friendly_name": "Interaction Enabled",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bInteractionInProgress",
+        "guid": "F3ED6B094A4AB6564C0581AE7C4AFD51",
+        "friendly_name": "Interaction in Progress",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DefaultPrompt",
+        "guid": "102B78DD4BC0BDA49DE864843D429075",
+        "friendly_name": "Default Prompt",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InteractionDistance",
+        "guid": "3EC34FF64B4950F36A0D8F90351DA708",
+        "friendly_name": "Interaction Distance",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "ExecuteInteraction",
+        "GetInteractionInfo",
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

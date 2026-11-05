@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_PlayerInteractionComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "15EF16214F8F40D74F7C8BA585B77458",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "BestDistance",
+      "guid": "5449746944192EE30831B794A297F76F",
+      "friendly_name": "Best Distance",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BestInteractable",
+      "guid": "3594185D451440BB73C808BFBC047C78",
+      "friendly_name": "Best Interactable",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bExecuting",
+      "guid": "D36E0B3441253664B607239718B29557",
+      "friendly_name": "Executing",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSuppressed",
+      "guid": "58208AFB44D7E4568EA1AC8FF60A25E9",
+      "friendly_name": "Suppressed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FocusedInteractable",
+      "guid": "5DC8ABEF4F15089DD829F386CB6D99AE",
+      "friendly_name": "Focused Interactable",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InteractionDistance",
+      "guid": "008410C345B824E16EA2C09E69EF7112",
+      "friendly_name": "Interaction Distance",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "NearbyInteractables",
+      "guid": "65C38D644C2FA6EB1E0FC48BA0FE51DE",
+      "friendly_name": "Nearby Interactables",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "541FDBEC4D5BFB1AD7F77AB257BBA471",
+      "friendly_name": "Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ValidInteractables",
+      "guid": "C777C1FC4BFFE0F79C4F2A85C0819414",
+      "friendly_name": "Valid Interactables",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "8F810A0A48A084CBCF370FA065B4A356",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "SetInteractionSuppressed",
+      "kind": "function",
+      "guid": "345C7FAF478C4E02B8CC859BC59892AB",
+      "node_count": 3,
+      "pin_count": 10,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "GetHUD",
+      "kind": "function",
+      "guid": "90A92F904EDAD031683E7BA85220F447",
+      "node_count": 10,
+      "pin_count": 25,
+      "connection_count": 10,
+      "exec_connection_count": 5,
+      "data_connection_count": 5
+    },
+    {
+      "name": "CanPlayerInteract",
+      "kind": "function",
+      "guid": "6BE45199444BCA4E72E02493268C5A88",
+      "node_count": 19,
+      "pin_count": 57,
+      "connection_count": 22,
+      "exec_connection_count": 7,
+      "data_connection_count": 15
+    },
+    {
+      "name": "CleanupInteraction",
+      "kind": "function",
+      "guid": "C9D70A024858BC03085FE5A07A5F4E95",
+      "node_count": 10,
+      "pin_count": 32,
+      "connection_count": 9,
+      "exec_connection_count": 6,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ClearFocusedInteractable",
+      "kind": "function",
+      "guid": "B1D2A54548C15ED7D1440E94CE1D9093",
+      "node_count": 6,
+      "pin_count": 22,
+      "connection_count": 7,
+      "exec_connection_count": 5,
+      "data_connection_count": 2
+    },
+    {
+      "name": "TryInteractWithFocusedActor",
+      "kind": "function",
+      "guid": "A90E411C4A8758EF3E8FC6866CA551AB",
+      "node_count": 20,
+      "pin_count": 70,
+      "connection_count": 24,
+      "exec_connection_count": 13,
+      "data_connection_count": 11
+    },
+    {
+      "name": "RefreshFocusedInteractable",
+      "kind": "function",
+      "guid": "199C0D1145F58C2CEEDA5EA4228B8B86",
+      "node_count": 48,
+      "pin_count": 172,
+      "connection_count": 63,
+      "exec_connection_count": 26,
+      "data_connection_count": 37
+    },
+    {
+      "name": "UnregisterInteractable",
+      "kind": "function",
+      "guid": "3025B53340FC1B81F45565BAEBA62C71",
+      "node_count": 4,
+      "pin_count": 13,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RegisterInteractable",
+      "kind": "function",
+      "guid": "35392D8C4B4C12D1BDB11EAB0AB4E0ED",
+      "node_count": 7,
+      "pin_count": 29,
+      "connection_count": 8,
+      "exec_connection_count": 4,
+      "data_connection_count": 4
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveEndPlay",
+      "guid": "FE51FA474FFC242358B5C59778850C74",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 10,
+    "generated_graph_count": 1,
+    "authored_node_count": 131,
+    "authored_pin_count": 441,
+    "authored_connection_count": 151,
+    "generated_node_count": 3,
+    "generated_pin_count": 9
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CanPlayerInteract",
+      "kind": "function",
+      "file": "graphs/CanPlayerInteract.json"
+    },
+    {
+      "name": "CleanupInteraction",
+      "kind": "function",
+      "file": "graphs/CleanupInteraction.json"
+    },
+    {
+      "name": "ClearFocusedInteractable",
+      "kind": "function",
+      "file": "graphs/ClearFocusedInteractable.json"
+    },
+    {
+      "name": "GetHUD",
+      "kind": "function",
+      "file": "graphs/GetHUD.json"
+    },
+    {
+      "name": "RefreshFocusedInteractable",
+      "kind": "function",
+      "file": "graphs/RefreshFocusedInteractable.json"
+    },
+    {
+      "name": "RegisterInteractable",
+      "kind": "function",
+      "file": "graphs/RegisterInteractable.json"
+    },
+    {
+      "name": "SetInteractionSuppressed",
+      "kind": "function",
+      "file": "graphs/SetInteractionSuppressed.json"
+    },
+    {
+      "name": "TryInteractWithFocusedActor",
+      "kind": "function",
+      "file": "graphs/TryInteractWithFocusedActor.json"
+    },
+    {
+      "name": "UnregisterInteractable",
+      "kind": "function",
+      "file": "graphs/UnregisterInteractable.json"
+    }
+  ]
+}

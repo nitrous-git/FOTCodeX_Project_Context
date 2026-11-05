@@ -4,7 +4,7 @@
     "name": "BP_ItemPickup_Master",
     "class": "/Script/Engine.Blueprint",
     "guid": "605E439744F8E5D42A1788A84C5D8130",
-    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'"
   },
   "variables": [
     {
@@ -47,11 +47,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "6EF17B854B7BE7E2ABCD69910558108E",
-      "node_count": 14,
-      "pin_count": 59,
-      "connection_count": 16,
-      "exec_connection_count": 6,
-      "data_connection_count": 10
+      "node_count": 22,
+      "pin_count": 96,
+      "connection_count": 31,
+      "exec_connection_count": 13,
+      "data_connection_count": 18
     },
     {
       "name": "UserConstructionScript",
@@ -62,30 +62,62 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "ResolveCoordinator",
+      "kind": "function",
+      "guid": "F1188A764D32D6B22988F69BEA1B5EFC",
+      "node_count": 5,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "NotifyAcquisition",
+      "kind": "function",
+      "guid": "BA4F41E94E852072C0323689602C379D",
+      "node_count": 5,
+      "pin_count": 20,
+      "connection_count": 9,
+      "exec_connection_count": 3,
+      "data_connection_count": 6
+    },
+    {
+      "name": "ResolveInventory",
+      "kind": "function",
+      "guid": "EB8F8E114FDB6A69A9966F9971FAB54D",
+      "node_count": 5,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ExecuteInteraction",
+      "kind": "function",
+      "guid": "CF52F77C44E0E12AC06A67B5A0E5789C",
+      "node_count": 56,
+      "pin_count": 192,
+      "connection_count": 75,
+      "exec_connection_count": 31,
+      "data_connection_count": 44
+    },
+    {
+      "name": "GetInteractionInfo",
+      "kind": "function",
+      "guid": "972BCB084BC92E725A59A792DA14DF4B",
+      "node_count": 95,
+      "pin_count": 386,
+      "connection_count": 117,
+      "exec_connection_count": 35,
+      "data_connection_count": 82
     }
   ],
   "generated_graphs": [
     {
-      "name": "EdGraph_0",
-      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
-      "node_count": 4,
-      "pin_count": 11,
-      "connection_count": 5,
-      "exec_connection_count": 3,
-      "data_connection_count": 2
-    },
-    {
-      "name": "ExecuteUbergraph_BP_ItemPickup_Master",
-      "guid": "71AD6846448019DFF56020B0BBE32A01",
-      "node_count": 23,
-      "pin_count": 80,
-      "connection_count": 18,
-      "exec_connection_count": 10,
-      "data_connection_count": 8
-    },
-    {
       "name": "BndEvt__BP_ItemMaster_SphereCollider_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-      "guid": "742B227C4F45299C0C74178C8F549FD3",
+      "guid": "5C5C0B374DCD1F045BBB6DB0CA53520E",
       "node_count": 3,
       "pin_count": 19,
       "connection_count": 8,
@@ -93,29 +125,54 @@
       "data_connection_count": 6
     },
     {
-      "name": "UserConstructionScript_MERGED",
-      "guid": "9A7FE0D940D01CCFEB4EBCB3BA582F57",
-      "node_count": 1,
-      "pin_count": 1,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
+      "name": "BndEvt__BP_ItemPickup_Master_SphereCollider_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature",
+      "guid": "7D1610274CA192D12E77B9A8D17103B5",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
     }
   ],
   "stats": {
-    "authored_graph_count": 2,
-    "generated_graph_count": 4,
-    "authored_node_count": 15,
-    "authored_pin_count": 60,
-    "authored_connection_count": 16,
-    "generated_node_count": 31,
-    "generated_pin_count": 111
+    "authored_graph_count": 7,
+    "generated_graph_count": 2,
+    "authored_node_count": 189,
+    "authored_pin_count": 725,
+    "authored_connection_count": 244,
+    "generated_node_count": 6,
+    "generated_pin_count": 34
   },
   "graph_files": [
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ExecuteInteraction",
+      "kind": "function",
+      "file": "graphs/ExecuteInteraction.json"
+    },
+    {
+      "name": "GetInteractionInfo",
+      "kind": "function",
+      "file": "graphs/GetInteractionInfo.json"
+    },
+    {
+      "name": "NotifyAcquisition",
+      "kind": "function",
+      "file": "graphs/NotifyAcquisition.json"
+    },
+    {
+      "name": "ResolveCoordinator",
+      "kind": "function",
+      "file": "graphs/ResolveCoordinator.json"
+    },
+    {
+      "name": "ResolveInventory",
+      "kind": "function",
+      "file": "graphs/ResolveInventory.json"
     },
     {
       "name": "UserConstructionScript",

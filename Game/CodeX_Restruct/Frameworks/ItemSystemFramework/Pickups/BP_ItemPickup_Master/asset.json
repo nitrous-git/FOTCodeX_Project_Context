@@ -17,27 +17,34 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
     ],
     "referencers": [
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_ChampionFragment01",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_DarkKnightArmor_Chest",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_ENPotion",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_FireAttunement",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_HPPotion",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_StandardTunic"
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_HPPotion"
     ],
-    "non_architecture_dependency_count": 2,
+    "non_architecture_dependency_count": 3,
     "non_architecture_referencer_count": 0
   },
   "registry": {
-    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'",
     "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master.BP_ItemPickup_Master_C'",
     "row_structure": null
   },
   "blueprint": {
     "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master.BP_ItemPickup_Master_C'",
-    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'",
     "generated_class_object": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master.BP_ItemPickup_Master_C",
     "interfaces": [],
     "components": [
@@ -45,11 +52,11 @@
         "name": "DefaultSceneRoot",
         "class": "SceneComponent",
         "parent": "BP_ItemPickup_Master",
-        "inherited": false,
+        "inherited": true,
         "native": false,
         "root_component": true,
         "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master.BP_ItemPickup_Master_C:DefaultSceneRoot_GEN_VARIABLE"
+        "template_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master.BP_ItemPickup_Master_C:ICH-DefaultSceneRoot_GEN_VARIABLE"
       },
       {
         "name": "SkeletalMesh",
@@ -123,15 +130,18 @@
         "EventGraph"
       ],
       "functions": [
-        "UserConstructionScript"
+        "UserConstructionScript",
+        "ResolveCoordinator",
+        "NotifyAcquisition",
+        "ResolveInventory",
+        "ExecuteInteraction",
+        "GetInteractionInfo"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "EdGraph_0",
-        "ExecuteUbergraph_BP_ItemPickup_Master",
         "BndEvt__BP_ItemMaster_SphereCollider_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-        "UserConstructionScript_MERGED"
+        "BndEvt__BP_ItemPickup_Master_SphereCollider_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature"
       ]
     },
     "extraction_status": {
