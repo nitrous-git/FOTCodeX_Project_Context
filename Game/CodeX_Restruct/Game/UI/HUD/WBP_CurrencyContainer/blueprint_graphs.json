@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_CurrencyContainer",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "DCBDD0994308B8F524CEF0AFE0539158",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "bHasInitialValue",
+      "guid": "D36C85FD464AEFBD534CD5B1DD0EF208",
+      "friendly_name": "Has Initial Value",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FeedbackExpiresAt",
+      "guid": "6B910D1C480C3BB09BC60C91B1B5CF3C",
+      "friendly_name": "Feedback Expires At",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FeedbackRemaining",
+      "guid": "3CF045AF49FE9AB6D8EE46AA5C5465A3",
+      "friendly_name": "Feedback Remaining",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IncomingFeedbackTimer",
+      "guid": "456131C24267BF1F745C0F9A6CFEC473",
+      "friendly_name": "Incoming Feedback Timer",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastDisplayedSouls",
+      "guid": "0AFBDA3446C0A1633B50E88F23E6DD32",
+      "friendly_name": "Last Displayed Souls",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ProgressionRef",
+      "guid": "66B63969490DA21804ECC899091C1DD9",
+      "friendly_name": "Progression Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent.AC_ProgressionComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "5379F9154C1372B663F35CB7C6C30C25",
+      "node_count": 5,
+      "pin_count": 14,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "UpdateIncomingFeedback",
+      "kind": "function",
+      "guid": "1D4B68DC44C1292EFA53EDA85EAD7824",
+      "node_count": 47,
+      "pin_count": 145,
+      "connection_count": 23,
+      "exec_connection_count": 7,
+      "data_connection_count": 16
+    },
+    {
+      "name": "HandleProgressionChanged",
+      "kind": "function",
+      "guid": "2962EB0E415ABFF46587189C727FF656",
+      "node_count": 7,
+      "pin_count": 20,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "RefreshCurrency",
+      "kind": "function",
+      "guid": "F59FE80F431D616911765BBBD30B59BF",
+      "node_count": 75,
+      "pin_count": 275,
+      "connection_count": 47,
+      "exec_connection_count": 18,
+      "data_connection_count": 29
+    },
+    {
+      "name": "DetachProgression",
+      "kind": "function",
+      "guid": "38AC7809425F1AA3AA61C39E66CF5BD2",
+      "node_count": 41,
+      "pin_count": 133,
+      "connection_count": 25,
+      "exec_connection_count": 15,
+      "data_connection_count": 10
+    },
+    {
+      "name": "BindProgression",
+      "kind": "function",
+      "guid": "E5C71A1244CEE47F820596AFAEFA3175",
+      "node_count": 9,
+      "pin_count": 26,
+      "connection_count": 10,
+      "exec_connection_count": 5,
+      "data_connection_count": 5
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Destruct",
+      "guid": "BC7998FA47541D1B9D42FA8C04496A69",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 6,
+    "generated_graph_count": 1,
+    "authored_node_count": 184,
+    "authored_pin_count": 613,
+    "authored_connection_count": 107,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "BindProgression",
+      "kind": "function",
+      "file": "graphs/BindProgression.json"
+    },
+    {
+      "name": "DetachProgression",
+      "kind": "function",
+      "file": "graphs/DetachProgression.json"
+    },
+    {
+      "name": "HandleProgressionChanged",
+      "kind": "function",
+      "file": "graphs/HandleProgressionChanged.json"
+    },
+    {
+      "name": "RefreshCurrency",
+      "kind": "function",
+      "file": "graphs/RefreshCurrency.json"
+    },
+    {
+      "name": "UpdateIncomingFeedback",
+      "kind": "function",
+      "file": "graphs/UpdateIncomingFeedback.json"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_CurrencyContainer",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_CurrencyContainer",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/HUD",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_CurrencyContainer.WBP_CurrencyContainer",
+    "relative_package": "CodeX_Restruct/Game/UI/HUD/WBP_CurrencyContainer"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
+    ],
+    "non_architecture_dependency_count": 6,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CurrencyContainer.WBP_CurrencyContainer_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CurrencyContainer.WBP_CurrencyContainer_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_CurrencyContainer.WBP_CurrencyContainer_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bHasInitialValue",
+        "guid": "D36C85FD464AEFBD534CD5B1DD0EF208",
+        "friendly_name": "Has Initial Value",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FeedbackExpiresAt",
+        "guid": "6B910D1C480C3BB09BC60C91B1B5CF3C",
+        "friendly_name": "Feedback Expires At",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FeedbackRemaining",
+        "guid": "3CF045AF49FE9AB6D8EE46AA5C5465A3",
+        "friendly_name": "Feedback Remaining",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IncomingFeedbackTimer",
+        "guid": "456131C24267BF1F745C0F9A6CFEC473",
+        "friendly_name": "Incoming Feedback Timer",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastDisplayedSouls",
+        "guid": "0AFBDA3446C0A1633B50E88F23E6DD32",
+        "friendly_name": "Last Displayed Souls",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ProgressionRef",
+        "guid": "66B63969490DA21804ECC899091C1DD9",
+        "friendly_name": "Progression Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent.AC_ProgressionComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UpdateIncomingFeedback",
+        "HandleProgressionChanged",
+        "RefreshCurrency",
+        "DetachProgression",
+        "BindProgression"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Destruct"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 16
+  }
+}
