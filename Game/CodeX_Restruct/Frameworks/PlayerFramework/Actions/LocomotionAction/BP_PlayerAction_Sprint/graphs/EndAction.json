@@ -6,11 +6,11 @@
     "guid": "210692C44E866EC71E055AAB127CFF11"
   },
   "stats": {
-    "node_count": 9,
-    "pin_count": 23,
-    "connection_count": 10,
+    "node_count": 12,
+    "pin_count": 31,
+    "connection_count": 12,
     "exec_connection_count": 3,
-    "data_connection_count": 7
+    "data_connection_count": 9
   },
   "nodes": [
     {
@@ -168,7 +168,7 @@
       "guid": "86792C5540B54365FCBA128ACE0A8064",
       "title": "Set MaxWalkSpeed",
       "position": {
-        "x": 1408,
+        "x": 1744,
         "y": 16
       },
       "comment": null,
@@ -202,12 +202,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_0",
-              "pin_id": "DE8C079B43EC2A9BD31953830876AAD3"
-            }
-          ]
+          "links": []
         },
         {
           "id": "A819395242E29507133E598758668999",
@@ -253,7 +248,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableGet_1",
+              "node": "K2Node_VariableGet_4",
               "pin_id": "711232B940A51385EF6322938753DE72"
             }
           ]
@@ -315,7 +310,7 @@
       "guid": "B492B0BF4BA25726297BBE8CD825443E",
       "title": "Get CharacterMovement",
       "position": {
-        "x": 1136,
+        "x": 1472,
         "y": 144
       },
       "comment": null,
@@ -391,7 +386,7 @@
       "guid": "A8F41C0145277489CA9D7D9DE0D24D17",
       "title": "Get OwnerPawn",
       "position": {
-        "x": 976,
+        "x": 1312,
         "y": 112
       },
       "comment": null,
@@ -432,7 +427,7 @@
               "pin_id": "E56E250C4C87EFDF7B418BBCBCC9A804"
             },
             {
-              "node": "K2Node_VariableGet_1",
+              "node": "K2Node_VariableGet_4",
               "pin_id": "13B3814E48313DF501695793FD13B0D0"
             }
           ]
@@ -462,12 +457,12 @@
       ]
     },
     {
-      "name": "K2Node_VariableGet_1",
+      "name": "K2Node_VariableGet_4",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "FCD2DF3C4FEDED7EF81DE995305336EF",
       "title": "Get LastMoveSpeed",
       "position": {
-        "x": 1136,
+        "x": 1472,
         "y": 96
       },
       "comment": null,
@@ -539,12 +534,12 @@
       ]
     },
     {
-      "name": "K2Node_VariableGet_6",
+      "name": "K2Node_VariableGet_0",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "A025A29B487E843C6BF7AF88CE09E80B",
       "title": "Get OwnerPawn",
       "position": {
-        "x": 672,
+        "x": 592,
         "y": 192
       },
       "comment": null,
@@ -684,8 +679,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableSet_22",
-              "pin_id": "F6137630496C92AEF84B22878CA41138"
+              "node": "K2Node_CallFunction_2",
+              "pin_id": "74B37824417D4013ADE43B980078E59D"
             }
           ]
         },
@@ -711,7 +706,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableGet_6",
+              "node": "K2Node_VariableGet_0",
               "pin_id": "405E22C4409F7EC07A68D1932EE01DA0"
             }
           ]
@@ -751,7 +746,7 @@
       "guid": "0F4951844B5FDE9CE7724683C072A82E",
       "title": "Get LastLocoMode",
       "position": {
-        "x": 576,
+        "x": 592,
         "y": 144
       },
       "comment": null,
@@ -815,10 +810,279 @@
           "orphaned": false,
           "links": [
             {
+              "node": "K2Node_VariableGet_0",
+              "pin_id": "405E22C4409F7EC07A68D1932EE01DA0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_6",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "B0ACE600415EB558B7D133B0391C787D",
+      "title": "Get OwnerPawn",
+      "position": {
+        "x": 944,
+        "y": 160
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "OwnerPawn",
+          "MemberGuid": "75F09F924D908F719DD9F5B644C1DA4A",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "405E22C4409F7EC07A68D1932EE01DA0",
+          "name": "OwnerPawn",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_1",
+              "pin_id": "ED5F37FB4019D53EBCD19DBF6C0309D5"
+            }
+          ]
+        },
+        {
+          "id": "C55FD92B46BB6FAD5C2FE5A063C28282",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_1",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "5AE5EFCD4CBBB98E6AF29DA69CBD9295",
+      "title": "Get CT_Cmpt_Locomotion",
+      "position": {
+        "x": 944,
+        "y": 128
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "MemberName": "CT_Cmpt_Locomotion"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "A292305B4517B127D66A60981244B9E6",
+          "name": "CT_Cmpt_Locomotion",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion.CT_Cmpt_Locomotion_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_2",
+              "pin_id": "9D0386354A7BFC19072D688C50CD75C0"
+            }
+          ]
+        },
+        {
+          "id": "ED5F37FB4019D53EBCD19DBF6C0309D5",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
               "node": "K2Node_VariableGet_6",
               "pin_id": "405E22C4409F7EC07A68D1932EE01DA0"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_2",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "6AC1387F4FC475900C71618C047E9B6C",
+      "title": "SetSprint",
+      "position": {
+        "x": 960,
+        "y": -16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion.CT_Cmpt_Locomotion_C'",
+          "MemberName": "SetSprint",
+          "MemberGuid": "C4CC0B2D498F81511632148DE0852750"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "74B37824417D4013ADE43B980078E59D",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_0",
+              "pin_id": "DE8C079B43EC2A9BD31953830876AAD3"
+            }
+          ]
+        },
+        {
+          "id": "EB68DD8D42D828690A5558B7EF25BDA6",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "9D0386354A7BFC19072D688C50CD75C0",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion.CT_Cmpt_Locomotion_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_1",
+              "pin_id": "A292305B4517B127D66A60981244B9E6"
+            }
+          ]
+        },
+        {
+          "id": "AAE9FC90432106B20D46E3A9E7114425",
+          "name": "IsSprint",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
         }
       ]
     }
@@ -832,8 +1096,8 @@
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_VariableSet_22",
-        "pin_id": "F6137630496C92AEF84B22878CA41138",
+        "node": "K2Node_CallFunction_2",
+        "pin_id": "74B37824417D4013ADE43B980078E59D",
         "pin_name": "execute"
       }
     },
@@ -866,14 +1130,40 @@
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_VariableGet_1",
-        "pin_id": "711232B940A51385EF6322938753DE72",
-        "pin_name": "LastMoveSpeed"
+        "node": "K2Node_VariableGet_0",
+        "pin_id": "405E22C4409F7EC07A68D1932EE01DA0",
+        "pin_name": "OwnerPawn"
       },
       "to": {
-        "node": "K2Node_VariableSet_22",
-        "pin_id": "1B7AC7604541332686244393E024D897",
-        "pin_name": "MaxWalkSpeed"
+        "node": "K2Node_CallFunction_0",
+        "pin_id": "53CFB0EE47416BA14F30CFBEB8D6A81F",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_0",
+        "pin_id": "405E22C4409F7EC07A68D1932EE01DA0",
+        "pin_name": "OwnerPawn"
+      },
+      "to": {
+        "node": "K2Node_VariableGet_5",
+        "pin_id": "07C1324144ACA78E0A08BE8C6B432C9C",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_1",
+        "pin_id": "A292305B4517B127D66A60981244B9E6",
+        "pin_name": "CT_Cmpt_Locomotion"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_2",
+        "pin_id": "9D0386354A7BFC19072D688C50CD75C0",
+        "pin_name": "self"
       }
     },
     {
@@ -897,8 +1187,8 @@
         "pin_name": "OwnerPawn"
       },
       "to": {
-        "node": "K2Node_VariableGet_1",
-        "pin_id": "13B3814E48313DF501695793FD13B0D0",
+        "node": "K2Node_VariableGet_2",
+        "pin_id": "E56E250C4C87EFDF7B418BBCBCC9A804",
         "pin_name": "self"
       }
     },
@@ -910,9 +1200,22 @@
         "pin_name": "OwnerPawn"
       },
       "to": {
-        "node": "K2Node_VariableGet_2",
-        "pin_id": "E56E250C4C87EFDF7B418BBCBCC9A804",
+        "node": "K2Node_VariableGet_4",
+        "pin_id": "13B3814E48313DF501695793FD13B0D0",
         "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_4",
+        "pin_id": "711232B940A51385EF6322938753DE72",
+        "pin_name": "LastMoveSpeed"
+      },
+      "to": {
+        "node": "K2Node_VariableSet_22",
+        "pin_id": "1B7AC7604541332686244393E024D897",
+        "pin_name": "MaxWalkSpeed"
       }
     },
     {
@@ -936,21 +1239,8 @@
         "pin_name": "OwnerPawn"
       },
       "to": {
-        "node": "K2Node_CallFunction_0",
-        "pin_id": "53CFB0EE47416BA14F30CFBEB8D6A81F",
-        "pin_name": "self"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
-        "node": "K2Node_VariableGet_6",
-        "pin_id": "405E22C4409F7EC07A68D1932EE01DA0",
-        "pin_name": "OwnerPawn"
-      },
-      "to": {
-        "node": "K2Node_VariableGet_5",
-        "pin_id": "07C1324144ACA78E0A08BE8C6B432C9C",
+        "node": "K2Node_VariableGet_1",
+        "pin_id": "ED5F37FB4019D53EBCD19DBF6C0309D5",
         "pin_name": "self"
       }
     }

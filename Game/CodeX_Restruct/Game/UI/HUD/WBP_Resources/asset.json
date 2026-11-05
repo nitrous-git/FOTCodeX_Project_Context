@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_Resources",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/HUD",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources",
+    "relative_package": "CodeX_Restruct/Game/UI/HUD/WBP_Resources"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
+    ],
+    "non_architecture_dependency_count": 3,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "AnimationInterval",
+        "guid": "01CD087640B039D7A17720AE63E61753",
+        "friendly_name": "Animation Interval",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AnimationTimer",
+        "guid": "6829EBEF42571BF1515F7DA07771CD95",
+        "friendly_name": "Animation Timer",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bTimerActive",
+        "guid": "4C8FA64E40FCCB7AA62DBD82CBD99544",
+        "friendly_name": "Timer Active",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastAnimationTime",
+        "guid": "EAB1EEDA4BC303FC0651A49DC2D900BE",
+        "friendly_name": "Last Animation Time",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "AdvanceAnimations",
+        "EnsureAnimationTimer",
+        "SetResourceSnapshot",
+        "StopAnimations"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Destruct"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 4
+  }
+}

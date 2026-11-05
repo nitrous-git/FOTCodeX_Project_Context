@@ -6,11 +6,11 @@
     "guid": "3CAE1F9E44D5F4C3FE57A5A55AEB9265"
   },
   "stats": {
-    "node_count": 13,
-    "pin_count": 48,
-    "connection_count": 14,
+    "node_count": 15,
+    "pin_count": 53,
+    "connection_count": 15,
     "exec_connection_count": 6,
-    "data_connection_count": 8
+    "data_connection_count": 9
   },
   "nodes": [
     {
@@ -222,8 +222,8 @@
       "guid": "3D8C2A01497E79FB2BC6E29EC0761795",
       "title": "Set MaxWalkSpeed",
       "position": {
-        "x": 1184,
-        "y": 16
+        "x": 1136,
+        "y": 272
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -256,12 +256,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableSet_1",
-              "pin_id": "0580DAB44F28F4940633E691043B6530"
-            }
-          ]
+          "links": []
         },
         {
           "id": "A819395242E29507133E598758668999",
@@ -283,12 +278,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_0",
-              "pin_id": "92F852484BC924591101C1A4AA0F16B9"
-            }
-          ]
+          "links": []
         },
         {
           "id": "1B7AC7604541332686244393E024D897",
@@ -666,8 +656,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableSet_22",
-              "pin_id": "F6137630496C92AEF84B22878CA41138"
+              "node": "K2Node_CallFunction_0",
+              "pin_id": "92F852484BC924591101C1A4AA0F16B9"
             }
           ]
         },
@@ -826,8 +816,8 @@
       "guid": "594D545E443D601A234C6FAEC86F4535",
       "title": "Get Style",
       "position": {
-        "x": 768,
-        "y": -96
+        "x": 1136,
+        "y": 416
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -898,8 +888,8 @@
       "guid": "89EF06F7414F0193A50243B57EBD9201",
       "title": "Get BlockingSpeed",
       "position": {
-        "x": 928,
-        "y": -96
+        "x": 1120,
+        "y": 384
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -975,7 +965,7 @@
       "guid": "13631EAB4B58271ED1CC06975AA22C07",
       "title": "DisableCurrentPlayingMontage",
       "position": {
-        "x": 1504,
+        "x": 1472,
         "y": -16
       },
       "comment": null,
@@ -1012,8 +1002,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableSet_22",
-              "pin_id": "A819395242E29507133E598758668999"
+              "node": "K2Node_VariableSet_1",
+              "pin_id": "0580DAB44F28F4940633E691043B6530"
             }
           ]
         },
@@ -1039,8 +1029,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_1",
-              "pin_id": "251C74704B2BAED345CD519D6375D7C8"
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "D76689184FCE814F12DDF08E24398096"
             }
           ]
         },
@@ -1074,8 +1064,8 @@
       "guid": "F57315914B1AA4D44C58ABA047D82EA5",
       "title": "Get ParryWindowDuration",
       "position": {
-        "x": 1728,
-        "y": -96
+        "x": 2144,
+        "y": 272
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1146,7 +1136,7 @@
       "guid": "F46F91934EF79594EC75308D714C96AE",
       "title": "K2_SetTimer",
       "position": {
-        "x": 1984,
+        "x": 2144,
         "y": 0
       },
       "comment": null,
@@ -1182,8 +1172,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_0",
-              "pin_id": "D309288D4BF86A5BD2AC31895D521691"
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "D1F506B6494C3FA486DE2B933A5C3B3E"
             }
           ]
         },
@@ -1420,7 +1410,7 @@
       "guid": "8BB50AE84D9B228FAADE0C99CFD7E970",
       "title": "CheckForWeaponAdjustement",
       "position": {
-        "x": 2416,
+        "x": 2928,
         "y": -16
       },
       "comment": null,
@@ -1502,6 +1492,182 @@
           "links": []
         }
       ]
+    },
+    {
+      "name": "K2Node_VariableGet_1",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "38958B754AB50AFBD1204C8BE0AE9885",
+      "title": "Get OwnerPawn",
+      "position": {
+        "x": 1840,
+        "y": 96
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "OwnerPawn",
+          "MemberGuid": "75F09F924D908F719DD9F5B644C1DA4A",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "B3A4F797414BBD5ED5A245B5298580D1",
+          "name": "OwnerPawn",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "E54070A64A7ECE98F024F79C099CA1A6"
+            }
+          ]
+        },
+        {
+          "id": "72F8961B4573A905CB15E4BD54113289",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_8",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "07178ED5468714245B1A029D1F5F707B",
+      "title": "CE_StartBlocking",
+      "position": {
+        "x": 1840,
+        "y": -16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "MemberName": "CE_StartBlocking",
+          "MemberGuid": "805852C4452C505AECBDE1B2030A7E3F"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "D76689184FCE814F12DDF08E24398096",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_0",
+              "pin_id": "D309288D4BF86A5BD2AC31895D521691"
+            }
+          ]
+        },
+        {
+          "id": "D1F506B6494C3FA486DE2B933A5C3B3E",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_1",
+              "pin_id": "251C74704B2BAED345CD519D6375D7C8"
+            }
+          ]
+        },
+        {
+          "id": "E54070A64A7ECE98F024F79C099CA1A6",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_1",
+              "pin_id": "B3A4F797414BBD5ED5A245B5298580D1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "connections": [
@@ -1510,6 +1676,19 @@
       "from": {
         "node": "K2Node_CallFunction_0",
         "pin_id": "D309288D4BF86A5BD2AC31895D521691",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "D76689184FCE814F12DDF08E24398096",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "D1F506B6494C3FA486DE2B933A5C3B3E",
         "pin_name": "then"
       },
       "to": {
@@ -1599,6 +1778,19 @@
     {
       "kind": "data",
       "from": {
+        "node": "K2Node_VariableGet_1",
+        "pin_id": "B3A4F797414BBD5ED5A245B5298580D1",
+        "pin_name": "OwnerPawn"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "E54070A64A7ECE98F024F79C099CA1A6",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
         "node": "K2Node_VariableGet_15",
         "pin_id": "6EABB762416299C6A94C90B9242D8569",
         "pin_name": "ParryWindowDuration"
@@ -1666,19 +1858,6 @@
       "from": {
         "node": "K2Node_VariableSet_1",
         "pin_id": "0580DAB44F28F4940633E691043B6530",
-        "pin_name": "then"
-      },
-      "to": {
-        "node": "K2Node_VariableSet_22",
-        "pin_id": "F6137630496C92AEF84B22878CA41138",
-        "pin_name": "execute"
-      }
-    },
-    {
-      "kind": "exec",
-      "from": {
-        "node": "K2Node_VariableSet_22",
-        "pin_id": "A819395242E29507133E598758668999",
         "pin_name": "then"
       },
       "to": {

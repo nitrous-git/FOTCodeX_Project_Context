@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_PlayerHUD",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "CD099E47401BFE88B7AC64873DA4A6A0",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "bHasInitialSnapshot",
+      "guid": "3658AFDE475845650C579C856249E9B8",
+      "friendly_name": "Has Initial Snapshot",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bStatsBound",
+      "guid": "B829CDA94B63109D93FCA0B9427E0300",
+      "friendly_name": "Stats Bound",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "DA5196E64A4CE3EA44D8EABE5939D907",
+      "friendly_name": "Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StatsRef",
+      "guid": "FCBAD0C0458D4BAA049C65A136E75DE8",
+      "friendly_name": "Stats Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "1FB4C5A6452983F44A8504AD2A67FB9F",
+      "node_count": 5,
+      "pin_count": 14,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BindPlayer",
+      "kind": "function",
+      "guid": "2BE17FF945593230646FCF84EE525323",
+      "node_count": 20,
+      "pin_count": 63,
+      "connection_count": 23,
+      "exec_connection_count": 10,
+      "data_connection_count": 13
+    },
+    {
+      "name": "DetachPlayer",
+      "kind": "function",
+      "guid": "AF5636CB41A581F50AF4D29340B0BFDB",
+      "node_count": 16,
+      "pin_count": 55,
+      "connection_count": 16,
+      "exec_connection_count": 10,
+      "data_connection_count": 6
+    },
+    {
+      "name": "HandleStatsChanged",
+      "kind": "function",
+      "guid": "EE4A1F05478329CDB048F5946660DDF3",
+      "node_count": 2,
+      "pin_count": 4,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "RefreshResources",
+      "kind": "function",
+      "guid": "C1BB8DDC4BBA51CE0548D6B753051D26",
+      "node_count": 25,
+      "pin_count": 66,
+      "connection_count": 24,
+      "exec_connection_count": 5,
+      "data_connection_count": 19
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Destruct",
+      "guid": "A56EB847420B76E3B37BAD98A33E6C83",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 1,
+    "authored_node_count": 68,
+    "authored_pin_count": 202,
+    "authored_connection_count": 65,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "BindPlayer",
+      "kind": "function",
+      "file": "graphs/BindPlayer.json"
+    },
+    {
+      "name": "DetachPlayer",
+      "kind": "function",
+      "file": "graphs/DetachPlayer.json"
+    },
+    {
+      "name": "HandleStatsChanged",
+      "kind": "function",
+      "file": "graphs/HandleStatsChanged.json"
+    },
+    {
+      "name": "RefreshResources",
+      "kind": "function",
+      "file": "graphs/RefreshResources.json"
+    }
+  ]
+}

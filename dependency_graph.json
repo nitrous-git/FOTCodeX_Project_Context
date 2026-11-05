@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 406,
-  "edge_count": 1209,
+  "node_count": 409,
+  "edge_count": 1216,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -86,6 +86,10 @@
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
     },
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -2780,6 +2784,10 @@
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ELocomotionMode"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Sprint",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_ToWalk",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase"
     },
@@ -3086,6 +3094,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RotationMode"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent",
@@ -4190,6 +4202,22 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenuButton",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/EGameMenuPage"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle",

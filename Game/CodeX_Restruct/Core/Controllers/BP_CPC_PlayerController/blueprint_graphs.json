@@ -127,6 +127,23 @@
       }
     },
     {
+      "name": "GameplayHUDRef",
+      "guid": "A5A213B6460D4A1F04AA1589DFD86F1A",
+      "friendly_name": "Gameplay HUDRef",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "InputStrength",
       "guid": "4D8C0C62414884647F92CC923E6E2B86",
       "friendly_name": "Input Strength",
@@ -285,10 +302,10 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "54B5DF38479743A61F43B19406610AD4",
-      "node_count": 129,
-      "pin_count": 443,
-      "connection_count": 121,
-      "exec_connection_count": 41,
+      "node_count": 139,
+      "pin_count": 473,
+      "connection_count": 125,
+      "exec_connection_count": 45,
       "data_connection_count": 80
     },
     {
@@ -400,57 +417,52 @@
       "connection_count": 9,
       "exec_connection_count": 4,
       "data_connection_count": 5
+    },
+    {
+      "name": "BindGameplayHUDToPawn",
+      "kind": "function",
+      "guid": "5D981A0F48BFD8EB3EB907AFA5C59833",
+      "node_count": 10,
+      "pin_count": 27,
+      "connection_count": 10,
+      "exec_connection_count": 4,
+      "data_connection_count": 6
+    },
+    {
+      "name": "RemoveGameplayHUD",
+      "kind": "function",
+      "guid": "229FFC26408BBD3B10DCE8A762B522BA",
+      "node_count": 8,
+      "pin_count": 22,
+      "connection_count": 7,
+      "exec_connection_count": 4,
+      "data_connection_count": 3
+    },
+    {
+      "name": "DetachGameplayHUD",
+      "kind": "function",
+      "guid": "F48FDC704A88DC80631F05863D903297",
+      "node_count": 5,
+      "pin_count": 12,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "EnsureGameplayHUD",
+      "kind": "function",
+      "guid": "D56AD37F4F39466CF9DED284879F3698",
+      "node_count": 12,
+      "pin_count": 38,
+      "connection_count": 14,
+      "exec_connection_count": 7,
+      "data_connection_count": 7
     }
   ],
   "generated_graphs": [
     {
-      "name": "ReceiveBeginPlay",
-      "guid": "37E690584359320ED839F386B5240685",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_0",
-      "guid": "1BBF9B944FBAF6D4616C2D95658835C1",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_1",
-      "guid": "7A92FDF0474F1C4872E585B8CA5364DD",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_2",
-      "guid": "6F4D9F0D460FC5C03AEB279FF38F62B8",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_3",
-      "guid": "B5F709D44B180B2994FA6DA6AE590D2E",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_4",
-      "guid": "18E416084792B1A77DE5F0980A2255DD",
+      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_5",
+      "guid": "5BB7333F4BF2072ACE357589FA78680E",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -459,7 +471,7 @@
     },
     {
       "name": "InpActEvt_N_K2Node_InputKeyEvent_0",
-      "guid": "6F57C38945F2B049A3C1B085C34AA77C",
+      "guid": "395ED046495D10581E966BBBBD2875CF",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -467,8 +479,8 @@
       "data_connection_count": 1
     },
     {
-      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_5",
-      "guid": "3D442E77486F92CFC934ECB220F4501F",
+      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_4",
+      "guid": "FF097AA24E5BDF64F65684A8AC0B8F0F",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -476,8 +488,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_6",
-      "guid": "BECBE65C4BD7559B4AB06FA55EE7D93E",
+      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_3",
+      "guid": "21C835D44AE7C099AD7CABA0EC55BFA0",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -485,8 +497,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_7",
-      "guid": "3B910F8843C8008E88D7E3B52113878B",
+      "name": "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_2",
+      "guid": "393B838A404B6CFEB19A2580B9E82FDA",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -494,8 +506,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_8",
-      "guid": "A596341F43CCF1A812DB61ADB27E73D3",
+      "name": "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_1",
+      "guid": "3101546E40D182B27C6ABE9206643235",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -503,8 +515,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_9",
-      "guid": "2930B7444EC744D8A290BEAED3B21C3B",
+      "name": "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_0",
+      "guid": "DF3C9AB04772A8F5A3A7F796437EADD9",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -512,26 +524,35 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_10",
-      "guid": "98A59A3241BEDE654892DDBE46642939",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
+      "name": "ReceiveBeginPlay",
+      "guid": "3F206B2A4E9F79652D053CAE68D152CE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     },
     {
-      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_11",
-      "guid": "750CC12447FB5DF895C438A6308C534C",
+      "name": "ReceivePossess",
+      "guid": "3344679F43A4981268F8F89019B77D30",
       "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
+      "pin_count": 9,
+      "connection_count": 3,
       "exec_connection_count": 2,
-      "data_connection_count": 4
+      "data_connection_count": 1
     },
     {
-      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
-      "guid": "AA0667614FA897D47E6F46963E0E7273",
+      "name": "ReceiveUnPossess",
+      "guid": "9290746345EA4F2343582CAD4288D140",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_14",
+      "guid": "45C7EB4F48580F8F898AEEB0ACA5169B",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -540,7 +561,7 @@
     },
     {
       "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_13",
-      "guid": "A1E1426147E1DA164D2565BD67CE54C3",
+      "guid": "9C3648934698D5F26EB3DCA717D9E12E",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -548,23 +569,86 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_14",
-      "guid": "46C512BB4149821C5AA6FB8B23358FFA",
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
+      "guid": "B911E6474184AB9F4985B9AFC039892F",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
       "exec_connection_count": 2,
       "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_11",
+      "guid": "629783284BF40E7D8230E3A5C40838C7",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_10",
+      "guid": "D30019A3477B20AA9702D6911B519112",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_9",
+      "guid": "564D462F4955C066E42760B54B183E18",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_8",
+      "guid": "81AC69D4484D83D15DB2B2834DCA1273",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_7",
+      "guid": "0490F5D54D19ABEB69FB41BCC908A77B",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_6",
+      "guid": "3DF5055141769DAC5CBA16AA21A7A6EB",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "ReceiveEndPlay",
+      "guid": "05A93C9345A60E5EC53B9FB08E56EA46",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
     }
   ],
   "stats": {
-    "authored_graph_count": 12,
-    "generated_graph_count": 17,
-    "authored_node_count": 320,
-    "authored_pin_count": 1002,
-    "authored_connection_count": 319,
-    "generated_node_count": 50,
-    "generated_pin_count": 239
+    "authored_graph_count": 16,
+    "generated_graph_count": 20,
+    "authored_node_count": 365,
+    "authored_pin_count": 1131,
+    "authored_connection_count": 358,
+    "generated_node_count": 59,
+    "generated_pin_count": 266
   },
   "graph_files": [
     {
@@ -573,9 +657,24 @@
       "file": "graphs/EventGraph.json"
     },
     {
+      "name": "BindGameplayHUDToPawn",
+      "kind": "function",
+      "file": "graphs/BindGameplayHUDToPawn.json"
+    },
+    {
       "name": "CloseGameMenu",
       "kind": "function",
       "file": "graphs/CloseGameMenu.json"
+    },
+    {
+      "name": "DetachGameplayHUD",
+      "kind": "function",
+      "file": "graphs/DetachGameplayHUD.json"
+    },
+    {
+      "name": "EnsureGameplayHUD",
+      "kind": "function",
+      "file": "graphs/EnsureGameplayHUD.json"
     },
     {
       "name": "HideMenuViews",
@@ -606,6 +705,11 @@
       "name": "OpenMenuPage",
       "kind": "function",
       "file": "graphs/OpenMenuPage.json"
+    },
+    {
+      "name": "RemoveGameplayHUD",
+      "kind": "function",
+      "file": "graphs/RemoveGameplayHUD.json"
     },
     {
       "name": "ResetEquipmentMenuView",

@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_PlayerHUD",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/HUD",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD",
+    "relative_package": "CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+    ],
+    "non_architecture_dependency_count": 4,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bHasInitialSnapshot",
+        "guid": "3658AFDE475845650C579C856249E9B8",
+        "friendly_name": "Has Initial Snapshot",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bStatsBound",
+        "guid": "B829CDA94B63109D93FCA0B9427E0300",
+        "friendly_name": "Stats Bound",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PlayerRef",
+        "guid": "DA5196E64A4CE3EA44D8EABE5939D907",
+        "friendly_name": "Player Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StatsRef",
+        "guid": "FCBAD0C0458D4BAA049C65A136E75DE8",
+        "friendly_name": "Stats Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent.AC_CharacterStatsComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "BindPlayer",
+        "DetachPlayer",
+        "HandleStatsChanged",
+        "RefreshResources"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Destruct"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 5
+  }
+}
