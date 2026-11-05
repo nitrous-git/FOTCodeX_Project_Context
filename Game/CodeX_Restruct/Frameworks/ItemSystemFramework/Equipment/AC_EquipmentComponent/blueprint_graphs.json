@@ -8,6 +8,23 @@
   },
   "variables": [
     {
+      "name": "ActiveRightHandSlot",
+      "guid": "5097D7344A7B664216C0438CD08A605E",
+      "friendly_name": "Active Right Hand Slot",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bEquipmentInitialized",
       "guid": "DA5D6F9F417D8C70D04DF39BB122B942",
       "friendly_name": "Equipment Initialized",
@@ -59,6 +76,23 @@
       }
     },
     {
+      "name": "OnActiveRightHandSlotChanged",
+      "guid": "48F8E2FB422F13B84A2AD2B4E56A9B04",
+      "friendly_name": "On Active Right Hand Slot Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "OnEquipmentSlotChanged",
       "guid": "82A6733741BF2EA110D575B8EA189153",
       "friendly_name": "On Equipment Slot Changed",
@@ -81,10 +115,10 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "1617B62C403537D2D19F7E80ECC6C3D4",
-      "node_count": 6,
-      "pin_count": 21,
-      "connection_count": 6,
-      "exec_connection_count": 3,
+      "node_count": 7,
+      "pin_count": 24,
+      "connection_count": 7,
+      "exec_connection_count": 4,
       "data_connection_count": 3
     },
     {
@@ -101,21 +135,21 @@
       "name": "UnequipItemFromSlot",
       "kind": "function",
       "guid": "661D9EB34707FF2078257F8134D7DB08",
-      "node_count": 14,
-      "pin_count": 42,
-      "connection_count": 16,
-      "exec_connection_count": 6,
+      "node_count": 15,
+      "pin_count": 45,
+      "connection_count": 17,
+      "exec_connection_count": 7,
       "data_connection_count": 10
     },
     {
       "name": "TryEquipItemToSlot",
       "kind": "function",
       "guid": "27D0B401451850845F8FC0B239CC62CA",
-      "node_count": 74,
-      "pin_count": 284,
-      "connection_count": 84,
-      "exec_connection_count": 36,
-      "data_connection_count": 48
+      "node_count": 77,
+      "pin_count": 297,
+      "connection_count": 91,
+      "exec_connection_count": 40,
+      "data_connection_count": 51
     },
     {
       "name": "ResolveEquippedWeaponClass",
@@ -138,6 +172,86 @@
       "data_connection_count": 4
     },
     {
+      "name": "GetActiveRightHandSlot",
+      "kind": "function",
+      "guid": "0D5816E540C6FF2C47BE6DA381A38B9E",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "GetActiveRightHandItem",
+      "kind": "function",
+      "guid": "F29A32F24D5C1DA5A88CD18FFA0DE8C0",
+      "node_count": 7,
+      "pin_count": 24,
+      "connection_count": 10,
+      "exec_connection_count": 5,
+      "data_connection_count": 5
+    },
+    {
+      "name": "IsRightHandSlot",
+      "kind": "function",
+      "guid": "2062D4F7421F9189295E2FAA52C7A970",
+      "node_count": 10,
+      "pin_count": 36,
+      "connection_count": 12,
+      "exec_connection_count": 1,
+      "data_connection_count": 11
+    },
+    {
+      "name": "IsValidRightHandAssignment",
+      "kind": "function",
+      "guid": "A2612F3746857808D548AC8EBFCE76AA",
+      "node_count": 29,
+      "pin_count": 108,
+      "connection_count": 41,
+      "exec_connection_count": 17,
+      "data_connection_count": 24
+    },
+    {
+      "name": "CanAssignRightHandItem",
+      "kind": "function",
+      "guid": "C83161004D5A2AA7A03293BE5FF14A43",
+      "node_count": 45,
+      "pin_count": 175,
+      "connection_count": 62,
+      "exec_connection_count": 18,
+      "data_connection_count": 44
+    },
+    {
+      "name": "SetActiveRightHandSlot",
+      "kind": "function",
+      "guid": "F9BD5FFF4C31F07FDA91AE93058FEDA2",
+      "node_count": 14,
+      "pin_count": 45,
+      "connection_count": 18,
+      "exec_connection_count": 9,
+      "data_connection_count": 9
+    },
+    {
+      "name": "FindNextOccupiedRightHandSlot",
+      "kind": "function",
+      "guid": "A08D94BC4A6E68F9EBDE02B249362C1F",
+      "node_count": 59,
+      "pin_count": 207,
+      "connection_count": 68,
+      "exec_connection_count": 32,
+      "data_connection_count": 36
+    },
+    {
+      "name": "ReconcileActiveRightHandSlot",
+      "kind": "function",
+      "guid": "EF4157D7406BBD6B120E46A2E4640779",
+      "node_count": 20,
+      "pin_count": 69,
+      "connection_count": 22,
+      "exec_connection_count": 9,
+      "data_connection_count": 13
+    },
+    {
       "name": "OnEquipmentSlotChanged",
       "kind": "delegate",
       "guid": "9429DD364B8AA516B539F1BA6E6744D3",
@@ -146,12 +260,22 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "OnActiveRightHandSlotChanged",
+      "kind": "delegate",
+      "guid": "F4D15BBA40974FC299BFD9B7496014AD",
+      "node_count": 1,
+      "pin_count": 3,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "B511AFD243E54D00E1F722A20DF1EFB5",
+      "guid": "D1D8C9BA4914500A5B8290A820FF7B0E",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -160,15 +284,20 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 7,
+    "authored_graph_count": 16,
     "generated_graph_count": 1,
-    "authored_node_count": 125,
-    "authored_pin_count": 454,
-    "authored_connection_count": 143,
+    "authored_node_count": 318,
+    "authored_pin_count": 1145,
+    "authored_connection_count": 387,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
   "graph_files": [
+    {
+      "name": "OnActiveRightHandSlotChanged",
+      "kind": "delegate",
+      "file": "graphs/OnActiveRightHandSlotChanged.json"
+    },
     {
       "name": "OnEquipmentSlotChanged",
       "kind": "delegate",
@@ -178,6 +307,26 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CanAssignRightHandItem",
+      "kind": "function",
+      "file": "graphs/CanAssignRightHandItem.json"
+    },
+    {
+      "name": "FindNextOccupiedRightHandSlot",
+      "kind": "function",
+      "file": "graphs/FindNextOccupiedRightHandSlot.json"
+    },
+    {
+      "name": "GetActiveRightHandItem",
+      "kind": "function",
+      "file": "graphs/GetActiveRightHandItem.json"
+    },
+    {
+      "name": "GetActiveRightHandSlot",
+      "kind": "function",
+      "file": "graphs/GetActiveRightHandSlot.json"
     },
     {
       "name": "GetEquippedItemAtSlot",
@@ -190,9 +339,29 @@
       "file": "graphs/IsItemEquipped.json"
     },
     {
+      "name": "IsRightHandSlot",
+      "kind": "function",
+      "file": "graphs/IsRightHandSlot.json"
+    },
+    {
+      "name": "IsValidRightHandAssignment",
+      "kind": "function",
+      "file": "graphs/IsValidRightHandAssignment.json"
+    },
+    {
+      "name": "ReconcileActiveRightHandSlot",
+      "kind": "function",
+      "file": "graphs/ReconcileActiveRightHandSlot.json"
+    },
+    {
       "name": "ResolveEquippedWeaponClass",
       "kind": "function",
       "file": "graphs/ResolveEquippedWeaponClass.json"
+    },
+    {
+      "name": "SetActiveRightHandSlot",
+      "kind": "function",
+      "file": "graphs/SetActiveRightHandSlot.json"
     },
     {
       "name": "TryEquipItemToSlot",

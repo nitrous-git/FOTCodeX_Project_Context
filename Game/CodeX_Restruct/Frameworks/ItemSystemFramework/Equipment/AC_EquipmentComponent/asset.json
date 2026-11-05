@@ -50,6 +50,23 @@
     "components": [],
     "variables": [
       {
+        "name": "ActiveRightHandSlot",
+        "guid": "5097D7344A7B664216C0438CD08A605E",
+        "friendly_name": "Active Right Hand Slot",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "bEquipmentInitialized",
         "guid": "DA5D6F9F417D8C70D04DF39BB122B942",
         "friendly_name": "Equipment Initialized",
@@ -101,6 +118,23 @@
         }
       },
       {
+        "name": "OnActiveRightHandSlotChanged",
+        "guid": "48F8E2FB422F13B84A2AD2B4E56A9B04",
+        "friendly_name": "On Active Right Hand Slot Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "OnEquipmentSlotChanged",
         "guid": "82A6733741BF2EA110D575B8EA189153",
         "friendly_name": "On Equipment Slot Changed",
@@ -127,11 +161,20 @@
         "UnequipItemFromSlot",
         "TryEquipItemToSlot",
         "ResolveEquippedWeaponClass",
-        "IsItemEquipped"
+        "IsItemEquipped",
+        "GetActiveRightHandSlot",
+        "GetActiveRightHandItem",
+        "IsRightHandSlot",
+        "IsValidRightHandAssignment",
+        "CanAssignRightHandItem",
+        "SetActiveRightHandSlot",
+        "FindNextOccupiedRightHandSlot",
+        "ReconcileActiveRightHandSlot"
       ],
       "macros": [],
       "delegates": [
-        "OnEquipmentSlotChanged"
+        "OnEquipmentSlotChanged",
+        "OnActiveRightHandSlotChanged"
       ],
       "generated_graphs": [
         "ReceiveBeginPlay"

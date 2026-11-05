@@ -1,17 +1,5 @@
 Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_Resources" ExportPath="/Script/UMGEditor.WidgetBlueprint'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources'"
-   Begin Object Class=/Script/Engine.EdGraph Name="Destruct" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct'"
-      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct.K2Node_CallFunction_0'"
-      End Object
-      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct.K2Node_FunctionEntry_0'"
-      End Object
-   End Object
    Begin Object Class=/Script/UMG.WidgetTree Name="WidgetTree" Archetype="/Script/UMG.WidgetTree'/Script/UMGEditor.Default__WidgetBlueprint:WidgetTree'" ExportPath="/Script/UMG.WidgetTree'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree'"
-      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="FP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.FP'"
-      End Object
-      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="Stamina" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.Stamina'"
-      End Object
-      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="HP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.HP'"
-      End Object
       Begin Object Class=/Script/UMG.VerticalBox Name="ResourceRows" ExportPath="/Script/UMG.VerticalBox'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.ResourceRows'"
          Begin Object Class=/Script/UMG.VerticalBoxSlot Name="VerticalBoxSlot_0" ExportPath="/Script/UMG.VerticalBoxSlot'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_0'"
          End Object
@@ -19,6 +7,12 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_Resources" Export
          End Object
          Begin Object Class=/Script/UMG.VerticalBoxSlot Name="VerticalBoxSlot_2" ExportPath="/Script/UMG.VerticalBoxSlot'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_2'"
          End Object
+      End Object
+      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="HP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.HP'"
+      End Object
+      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="FP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.FP'"
+      End Object
+      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="Stamina" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.Stamina'"
       End Object
    End Object
    Begin Object Class=/Script/Engine.EdGraph Name="AdvanceAnimations" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:AdvanceAnimations'"
@@ -149,53 +143,13 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_Resources" Export
       Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_3" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:StopAnimations.K2Node_CallFunction_3'"
       End Object
    End Object
-   Begin Object Name="Destruct" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct'"
-      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct.K2Node_CallFunction_0'"
-         FunctionReference=(MemberName="ExecuteUbergraph_WBP_Resources",bSelfContext=True)
-         NodePosX=300
-         NodePosY=-2000
-         bIsIntermediateNode=True
-         NodeGuid=4D11857BEFFB32A1AF0CDC9F1B9CD76E
-         CustomProperties Pin (PinId=63E2C4BB4B91FEF60883D7BF31806A46,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 0610915B4C0877A4AB137EA4FE33B971,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=3655DD3B4F25586B6FE7A6A41F48F60A,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=756B1F7241983F711CAFF2A7E71DF96D,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="self",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.SKEL_WBP_Resources_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=F78BF67644D34C1ECB7B8FA98FD75816,PinName="EntryPoint",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0",AutogeneratedDefaultValue="0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   Begin Object Class=/Script/Engine.EdGraph Name="Destruct" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct.K2Node_FunctionEntry_0'"
       End Object
-      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct.K2Node_FunctionEntry_0'"
-         CustomGeneratedFunctionName="Destruct"
-         FunctionReference=(MemberParent="/Script/CoreUObject.Class'/Script/UMG.UserWidget'",MemberName="Destruct")
-         NodePosX=-200
-         NodePosY=-2000
-         bIsIntermediateNode=True
-         NodeGuid=AD7A353B722733F3AA11F396841332BC
-         CustomProperties Pin (PinId=0610915B4C0877A4AB137EA4FE33B971,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 63E2C4BB4B91FEF60883D7BF31806A46,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct.K2Node_CallFunction_0'"
       End Object
-      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
-      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
-      Nodes(1)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_0'"
-      GraphGuid=25B0D224467C5270BAD9EAB0455E4246
    End Object
    Begin Object Name="WidgetTree" ExportPath="/Script/UMG.WidgetTree'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree'"
-      Begin Object Name="FP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.FP'"
-         WidthAtReference=170.000000
-         ReferenceMaximum=50.000000
-         FrontTint=(R=0.007460,G=0.081331,B=0.156250,A=1.000000)
-         DesignSizeMode=FillScreen
-         Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_1'"
-         DisplayLabel="FP"
-      End Object
-      Begin Object Name="Stamina" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.Stamina'"
-         WidthAtReference=230.000000
-         FrontTint=(R=0.015952,G=0.125000,B=0.010417,A=1.000000)
-         DesignSizeMode=FillScreen
-         Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_2'"
-         DisplayLabel="Stamina"
-      End Object
-      Begin Object Name="HP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.HP'"
-         DesignSizeMode=FillScreen
-         Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_0'"
-         DisplayLabel="HP"
-      End Object
       Begin Object Name="ResourceRows" ExportPath="/Script/UMG.VerticalBox'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.ResourceRows'"
          Begin Object Name="VerticalBoxSlot_0" ExportPath="/Script/UMG.VerticalBoxSlot'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_0'"
             Padding=(Bottom=4.000000)
@@ -217,14 +171,29 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_Resources" Export
          Slots(0)="/Script/UMG.VerticalBoxSlot'VerticalBoxSlot_0'"
          Slots(1)="/Script/UMG.VerticalBoxSlot'VerticalBoxSlot_1'"
          Slots(2)="/Script/UMG.VerticalBoxSlot'VerticalBoxSlot_2'"
-         bExpandedInDesigner=True
          DisplayLabel="ResourceRows"
       End Object
+      Begin Object Name="HP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.HP'"
+         DesignSizeMode=FillScreen
+         Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_0'"
+         DisplayLabel="HP"
+      End Object
+      Begin Object Name="FP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.FP'"
+         WidthAtReference=170.000000
+         ReferenceMaximum=50.000000
+         FrontTint=(R=0.007460,G=0.081331,B=0.156250,A=1.000000)
+         DesignSizeMode=FillScreen
+         Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_1'"
+         DisplayLabel="FP"
+      End Object
+      Begin Object Name="Stamina" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.Stamina'"
+         WidthAtReference=230.000000
+         FrontTint=(R=0.015952,G=0.125000,B=0.010417,A=1.000000)
+         DesignSizeMode=FillScreen
+         Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_2'"
+         DisplayLabel="Stamina"
+      End Object
       RootWidget="/Script/UMG.VerticalBox'ResourceRows'"
-      AllWidgets(0)="/Script/UMG.VerticalBox'ResourceRows'"
-      AllWidgets(1)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'HP'"
-      AllWidgets(2)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'FP'"
-      AllWidgets(3)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'Stamina'"
    End Object
    Begin Object Name="AdvanceAnimations" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:AdvanceAnimations'"
       Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:AdvanceAnimations.K2Node_FunctionEntry_0'"
@@ -835,6 +804,32 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_Resources" Export
       Nodes(8)="/Script/BlueprintGraph.K2Node_VariableGet'K2Node_VariableGet_3'"
       Nodes(9)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_3'"
       GraphGuid=AE7AB3D74E204DDEE639948CBE4CC742
+   End Object
+   Begin Object Name="Destruct" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct'"
+      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct.K2Node_FunctionEntry_0'"
+         CustomGeneratedFunctionName="Destruct"
+         FunctionReference=(MemberParent="/Script/CoreUObject.Class'/Script/UMG.UserWidget'",MemberName="Destruct")
+         NodePosX=-200
+         NodePosY=-2000
+         bIsIntermediateNode=True
+         NodeGuid=AD7A353B722733F3AA11F396841332BC
+         CustomProperties Pin (PinId=43314A9E446EC8809443C4AC0FB0A832,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 4239811641EA413B1D2169B4FC99A4F6,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:Destruct.K2Node_CallFunction_0'"
+         FunctionReference=(MemberName="ExecuteUbergraph_WBP_Resources",bSelfContext=True)
+         NodePosX=300
+         NodePosY=-2000
+         bIsIntermediateNode=True
+         NodeGuid=4D11857BEFFB32A1AF0CDC9F1B9CD76E
+         CustomProperties Pin (PinId=4239811641EA413B1D2169B4FC99A4F6,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 43314A9E446EC8809443C4AC0FB0A832,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=7CB119E442C157E0A319FC9F3FAB88CA,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=5E4E69F5404083066E4E8D847FFEF148,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="self",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.SKEL_WBP_Resources_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=00D3F08049BFA414B52B4A982DF6255C,PinName="EntryPoint",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0",AutogeneratedDefaultValue="0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
+      Nodes(1)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_0'"
+      GraphGuid=BB2ECEFD4F8C95C8C96B8EBF617B2743
    End Object
    WidgetVariableNameToGuidMap=(("ResourceRows", CA2A9C2B4362B406F56073A8994249F5),("HP", 4F601C534B1F00EBDD67A98A8A45F0C3),("FP", AB641B7D43F73D389429419737F48C02),("Stamina", 22BC38324130EB647A92508754FB7967))
    bCanCallInitializedWithoutPlayerContext=True
