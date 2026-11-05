@@ -8,8 +8,8 @@
   "stats": {
     "node_count": 7,
     "pin_count": 21,
-    "connection_count": 8,
-    "exec_connection_count": 4,
+    "connection_count": 9,
+    "exec_connection_count": 5,
     "data_connection_count": 4
   },
   "nodes": [
@@ -166,8 +166,8 @@
       "guid": "436613B4471AC0A6C13B94B4E5C27FEF",
       "title": "SetActiveRightHandSlot",
       "position": {
-        "x": 1248,
-        "y": 0
+        "x": 1136,
+        "y": -16
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -201,7 +201,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_0",
+              "pin_id": "BEDC42D3462F20FA14C73A84F6D6C308"
+            }
+          ]
         },
         {
           "id": "252DC8EC44FBEECF58F070B2B5A7D76A",
@@ -223,7 +228,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_FunctionResult_1",
+              "pin_id": "67E7A531402901C1BF65F1BF9C800273"
+            }
+          ]
         },
         {
           "id": "60D2260E4A958ABEC838CA8E0384663B",
@@ -314,8 +324,8 @@
       "guid": "543EAC1E47829AF727EE7CBBD78EF854",
       "title": "Get AC_EquipmentComponent",
       "position": {
-        "x": 1248,
-        "y": 160
+        "x": 1136,
+        "y": 144
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -385,8 +395,8 @@
       "guid": "34A15D614511CB258E65D09077CB76AC",
       "title": "Return",
       "position": {
-        "x": 1696,
-        "y": 16
+        "x": 1488,
+        "y": 0
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -420,8 +430,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_IfThenElse_0",
-              "pin_id": "BEDC42D3462F20FA14C73A84F6D6C308"
+              "node": "K2Node_CallFunction_1",
+              "pin_id": "252DC8EC44FBEECF58F070B2B5A7D76A"
             }
           ]
         },
@@ -545,8 +555,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_FunctionResult_1",
-              "pin_id": "67E7A531402901C1BF65F1BF9C800273"
+              "node": "K2Node_CallFunction_1",
+              "pin_id": "99974B834DAC99786DE5CE92A705278F"
             }
           ]
         },
@@ -747,6 +757,19 @@
       }
     },
     {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_1",
+        "pin_id": "252DC8EC44FBEECF58F070B2B5A7D76A",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_FunctionResult_1",
+        "pin_id": "67E7A531402901C1BF65F1BF9C800273",
+        "pin_name": "execute"
+      }
+    },
+    {
       "kind": "data",
       "from": {
         "node": "K2Node_FunctionEntry_0",
@@ -793,8 +816,8 @@
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_FunctionResult_1",
-        "pin_id": "67E7A531402901C1BF65F1BF9C800273",
+        "node": "K2Node_CallFunction_1",
+        "pin_id": "99974B834DAC99786DE5CE92A705278F",
         "pin_name": "execute"
       }
     },
