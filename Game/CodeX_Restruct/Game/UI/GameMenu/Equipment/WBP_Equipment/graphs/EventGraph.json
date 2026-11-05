@@ -8,8 +8,8 @@
   "stats": {
     "node_count": 47,
     "pin_count": 142,
-    "connection_count": 42,
-    "exec_connection_count": 21,
+    "connection_count": 43,
+    "exec_connection_count": 22,
     "data_connection_count": 21
   },
   "nodes": [
@@ -477,7 +477,7 @@
       "guid": "89CDDAC64DCC0D13EC999EA022387444",
       "title": "K2Node_Self",
       "position": {
-        "x": 2288,
+        "x": 3280,
         "y": 96
       },
       "comment": null,
@@ -519,9 +519,9 @@
       "name": "K2Node_VariableGet_2",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "61F3DF5A47245C4D2026D9913962D75C",
-      "title": "Get RightHandSlot",
+      "title": "Get RightHandSlot1",
       "position": {
-        "x": 336,
+        "x": 1328,
         "y": 144
       },
       "comment": null,
@@ -529,7 +529,7 @@
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "RightHandSlot",
+          "MemberName": "RightHandSlot1",
           "MemberGuid": "1489B6624468B5006AFC2DAEFC12EB51",
           "bSelfContext": true
         }
@@ -538,7 +538,7 @@
       "pins": [
         {
           "id": "E44BCCC24DE6B83C0C1D65B14D3070F7",
-          "name": "RightHandSlot",
+          "name": "RightHandSlot1",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -593,7 +593,7 @@
       "guid": "63917DFE459E52E8A99C379852FA37C4",
       "title": "ConfigureFromMetadata",
       "position": {
-        "x": 336,
+        "x": 1328,
         "y": -16
       },
       "comment": null,
@@ -628,7 +628,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_CallFunction_26",
+              "pin_id": "57F47B0F451885EEC573A99C5D35BF6B"
+            }
+          ]
         },
         {
           "id": "A1A637954C20EC596B5DC7AD92758F63",
@@ -714,7 +719,7 @@
       "guid": "35E968994B2696BE407A99AA76945352",
       "title": "Get LeftHandSlot",
       "position": {
-        "x": 640,
+        "x": 1632,
         "y": 128
       },
       "comment": null,
@@ -786,7 +791,7 @@
       "guid": "EAA3BE9C49C7219764C460BAA4BB58C7",
       "title": "ConfigureFromMetadata",
       "position": {
-        "x": 640,
+        "x": 1632,
         "y": -16
       },
       "comment": null,
@@ -912,7 +917,7 @@
       "guid": "E37C0EC144F1A179F23E6692F9AD8A2F",
       "title": "RefreshEquipment",
       "position": {
-        "x": 2288,
+        "x": 3280,
         "y": -16
       },
       "comment": null,
@@ -1302,7 +1307,7 @@
       "guid": "33EF4B2B4DF79A8B7FC6F8BD79D942AE",
       "title": "UpdateItemInfoPreview",
       "position": {
-        "x": 2560,
+        "x": 3552,
         "y": -16
       },
       "comment": null,
@@ -1423,7 +1428,7 @@
       "guid": "20CAE0A04BF303863F8A3CA3C837C5EF",
       "title": "Reroute",
       "position": {
-        "x": 2384,
+        "x": 3376,
         "y": 288
       },
       "comment": null,
@@ -1494,7 +1499,7 @@
       "guid": "10AA08D2494DDA318F929180F1AA0016",
       "title": "Reroute",
       "position": {
-        "x": 368,
+        "x": 416,
         "y": 288
       },
       "comment": null,
@@ -1565,7 +1570,7 @@
       "guid": "0426BA2E41119DAA1EBAECAEB33B01BC",
       "title": "Get HeadSlot",
       "position": {
-        "x": 992,
+        "x": 1984,
         "y": 128
       },
       "comment": null,
@@ -1637,7 +1642,7 @@
       "guid": "5F19417A4C6C37FD15BC7CB4D58E6C6F",
       "title": "ConfigureFromMetadata",
       "position": {
-        "x": 992,
+        "x": 1984,
         "y": -16
       },
       "comment": null,
@@ -1763,7 +1768,7 @@
       "guid": "8EB47D3A4948A5D8065912812C6CCCC1",
       "title": "Get ChestSlot",
       "position": {
-        "x": 1312,
+        "x": 2304,
         "y": 128
       },
       "comment": null,
@@ -1835,7 +1840,7 @@
       "guid": "E3F064A4460C3585D5683EA113ACB8DC",
       "title": "ConfigureFromMetadata",
       "position": {
-        "x": 1312,
+        "x": 2304,
         "y": -16
       },
       "comment": null,
@@ -1961,7 +1966,7 @@
       "guid": "6241ECB844F3AB9599251095505EB5EF",
       "title": "Get ArmsSlot",
       "position": {
-        "x": 1616,
+        "x": 2608,
         "y": 128
       },
       "comment": null,
@@ -2033,7 +2038,7 @@
       "guid": "426E2CBC4E7AC1C59C202FB53580A337",
       "title": "ConfigureFromMetadata",
       "position": {
-        "x": 1616,
+        "x": 2608,
         "y": -16
       },
       "comment": null,
@@ -2159,7 +2164,7 @@
       "guid": "1537BDD34F26363B5FD55D9F1E0C8BB1",
       "title": "Get LegsSlot",
       "position": {
-        "x": 1968,
+        "x": 2960,
         "y": 128
       },
       "comment": null,
@@ -2231,7 +2236,7 @@
       "guid": "E44D60CC4B676353D974B9AE1BD66F18",
       "title": "ConfigureFromMetadata",
       "position": {
-        "x": 1968,
+        "x": 2960,
         "y": -16
       },
       "comment": null,
@@ -3742,8 +3747,8 @@
       "guid": "79D5E4FD4D18031E0747FC9B28C3C725",
       "title": "UnbindCharacterStatusEvents",
       "position": {
-        "x": 280,
-        "y": 2676
+        "x": 256,
+        "y": 2448
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -4042,8 +4047,8 @@
       "guid": "3B0B809F4AA0485CA762A3A864AFF792",
       "title": "HandleEquipmentSlot",
       "position": {
-        "x": 0,
-        "y": 0
+        "x": 512,
+        "y": 2896
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -4163,8 +4168,8 @@
       "guid": "70BC43514049BF6D0489BC838C922CC2",
       "title": "HandleEquipmentSlot",
       "position": {
-        "x": 0,
-        "y": 0
+        "x": 528,
+        "y": 3184
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -4282,17 +4287,17 @@
       "name": "K2Node_VariableGet_12",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "71896D854EDAD086566B04808C63CE44",
-      "title": "Get FutureWeapon01",
+      "title": "Get RightHandSlot2",
       "position": {
-        "x": 0,
-        "y": 0
+        "x": 480,
+        "y": 128
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "FutureWeapon01",
+          "MemberName": "RightHandSlot2",
           "MemberGuid": "4221A0F64919E8FF1F642FAEBDD61885",
           "bSelfContext": true
         }
@@ -4301,7 +4306,7 @@
       "pins": [
         {
           "id": "A8DA28F54A81CECB4D71C8AF0DC5BBFB",
-          "name": "FutureWeapon01",
+          "name": "RightHandSlot2",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -4356,8 +4361,8 @@
       "guid": "5D626CEE4E912898350A8C8545A91DCB",
       "title": "ConfigureFromMetadata",
       "position": {
-        "x": 0,
-        "y": 0
+        "x": 496,
+        "y": -16
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -4480,17 +4485,17 @@
       "name": "K2Node_VariableGet_13",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "33A5845B4C97D25A381A23AE5A9012A6",
-      "title": "Get FutureWeapon02",
+      "title": "Get RightHandSlot3",
       "position": {
-        "x": 0,
-        "y": 0
+        "x": 864,
+        "y": 144
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "FutureWeapon02",
+          "MemberName": "RightHandSlot3",
           "MemberGuid": "0D770E7E486BEE4FC5E82CA10E71785E",
           "bSelfContext": true
         }
@@ -4499,7 +4504,7 @@
       "pins": [
         {
           "id": "D36A4189477F96EAD2A60F9041F706FE",
-          "name": "FutureWeapon02",
+          "name": "RightHandSlot3",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -4554,8 +4559,8 @@
       "guid": "3783016B435879EBE4387889E3A0E5AC",
       "title": "ConfigureFromMetadata",
       "position": {
-        "x": 0,
-        "y": 0
+        "x": 880,
+        "y": -16
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -4616,7 +4621,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_CallFunction_4",
+              "pin_id": "FC9B77764571DC0D173D51AE34F9360F"
+            }
+          ]
         },
         {
           "id": "0FF8E0664564CB6EF7341C92D7711CE6",
@@ -4720,6 +4730,19 @@
       "to": {
         "node": "K2Node_CallFunction_26",
         "pin_id": "A8559D5040A221333FB8BD94D3803096",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_26",
+        "pin_id": "57F47B0F451885EEC573A99C5D35BF6B",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_4",
+        "pin_id": "FC9B77764571DC0D173D51AE34F9360F",
         "pin_name": "execute"
       }
     },
@@ -5131,7 +5154,7 @@
       "from": {
         "node": "K2Node_VariableGet_12",
         "pin_id": "A8DA28F54A81CECB4D71C8AF0DC5BBFB",
-        "pin_name": "FutureWeapon01"
+        "pin_name": "RightHandSlot2"
       },
       "to": {
         "node": "K2Node_CallFunction_25",
@@ -5144,7 +5167,7 @@
       "from": {
         "node": "K2Node_VariableGet_13",
         "pin_id": "D36A4189477F96EAD2A60F9041F706FE",
-        "pin_name": "FutureWeapon02"
+        "pin_name": "RightHandSlot3"
       },
       "to": {
         "node": "K2Node_CallFunction_26",
@@ -5157,7 +5180,7 @@
       "from": {
         "node": "K2Node_VariableGet_2",
         "pin_id": "E44BCCC24DE6B83C0C1D65B14D3070F7",
-        "pin_name": "RightHandSlot"
+        "pin_name": "RightHandSlot1"
       },
       "to": {
         "node": "K2Node_CallFunction_4",

@@ -8,8 +8,8 @@
   "stats": {
     "node_count": 40,
     "pin_count": 125,
-    "connection_count": 38,
-    "exec_connection_count": 14,
+    "connection_count": 39,
+    "exec_connection_count": 15,
     "data_connection_count": 24
   },
   "nodes": [
@@ -19,8 +19,8 @@
       "guid": "85B4FC334AAB981C49A2079CFCDEE361",
       "title": "RefreshEquipment",
       "position": {
-        "x": 0,
-        "y": 0
+        "x": -320,
+        "y": 16
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -67,17 +67,17 @@
       "name": "K2Node_VariableGet_0",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "7A569C7347FBCC4F6A10E29A997D5196",
-      "title": "Get RightHandSlot",
+      "title": "Get RightHandSlot1",
       "position": {
-        "x": 280,
-        "y": 102
+        "x": 560,
+        "y": 192
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "RightHandSlot",
+          "MemberName": "RightHandSlot1",
           "MemberGuid": "1489B6624468B5006AFC2DAEFC12EB51",
           "bSelfContext": true
         }
@@ -86,7 +86,7 @@
       "pins": [
         {
           "id": "05D4507C4D86BDC5A38DD086F7F0C798",
-          "name": "RightHandSlot",
+          "name": "RightHandSlot1",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -176,7 +176,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_CallFunction_25",
+              "pin_id": "458940A1414F6966DFCE038A78F7EE32"
+            }
+          ]
         },
         {
           "id": "A00D1C7B4E953DFA4AB84BA09AF2CC9F",
@@ -3607,17 +3612,17 @@
       "name": "K2Node_VariableGet_26",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "0907A40745F06EE00330A69055BAD0F2",
-      "title": "Get FutureWeapon01",
+      "title": "Get RightHandSlot2",
       "position": {
-        "x": 0,
-        "y": 0
+        "x": -48,
+        "y": 192
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "FutureWeapon01",
+          "MemberName": "RightHandSlot2",
           "MemberGuid": "4221A0F64919E8FF1F642FAEBDD61885",
           "bSelfContext": true
         }
@@ -3626,7 +3631,7 @@
       "pins": [
         {
           "id": "B032E164407319136E148881104D6BF5",
-          "name": "FutureWeapon01",
+          "name": "RightHandSlot2",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -3681,7 +3686,7 @@
       "guid": "BB73FEB048229FE7C289EC9A6E83DA39",
       "title": "RefreshEquipmentSlot",
       "position": {
-        "x": 0,
+        "x": -48,
         "y": 0
       },
       "comment": null,
@@ -3827,17 +3832,17 @@
       "name": "K2Node_VariableGet_27",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "E12EECB940FDC789118E89B705966F8B",
-      "title": "Get FutureWeapon02",
+      "title": "Get RightHandSlot3",
       "position": {
-        "x": 0,
-        "y": 0
+        "x": 256,
+        "y": 192
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "FutureWeapon02",
+          "MemberName": "RightHandSlot3",
           "MemberGuid": "0D770E7E486BEE4FC5E82CA10E71785E",
           "bSelfContext": true
         }
@@ -3846,7 +3851,7 @@
       "pins": [
         {
           "id": "05706BFC42D3B7C1C644979D2B707DAB",
-          "name": "FutureWeapon02",
+          "name": "RightHandSlot3",
           "friendly_name": null,
           "direction": "output",
           "type": {
@@ -3901,7 +3906,7 @@
       "guid": "DDA0BE30484231F2E6323E8969F6A50C",
       "title": "RefreshEquipmentSlot",
       "position": {
-        "x": 0,
+        "x": 256,
         "y": 0
       },
       "comment": null,
@@ -3963,7 +3968,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_CallFunction_0",
+              "pin_id": "01F3F7984AB1250C9B096D83CDB5945F"
+            }
+          ]
         },
         {
           "id": "99EBE6CC47DFBE8CD5EF508C2D8961BB",
@@ -4160,6 +4170,19 @@
     {
       "kind": "exec",
       "from": {
+        "node": "K2Node_CallFunction_25",
+        "pin_id": "458940A1414F6966DFCE038A78F7EE32",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_0",
+        "pin_id": "01F3F7984AB1250C9B096D83CDB5945F",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
         "node": "K2Node_CallFunction_3",
         "pin_id": "FC8F14F2424397FB7E7AD799C4826618",
         "pin_name": "then"
@@ -4305,7 +4328,7 @@
       "from": {
         "node": "K2Node_VariableGet_0",
         "pin_id": "05D4507C4D86BDC5A38DD086F7F0C798",
-        "pin_name": "RightHandSlot"
+        "pin_name": "RightHandSlot1"
       },
       "to": {
         "node": "K2Node_CallFunction_0",
@@ -4409,7 +4432,7 @@
       "from": {
         "node": "K2Node_VariableGet_26",
         "pin_id": "B032E164407319136E148881104D6BF5",
-        "pin_name": "FutureWeapon01"
+        "pin_name": "RightHandSlot2"
       },
       "to": {
         "node": "K2Node_CallFunction_24",
@@ -4422,7 +4445,7 @@
       "from": {
         "node": "K2Node_VariableGet_27",
         "pin_id": "05706BFC42D3B7C1C644979D2B707DAB",
-        "pin_name": "FutureWeapon02"
+        "pin_name": "RightHandSlot3"
       },
       "to": {
         "node": "K2Node_CallFunction_25",
