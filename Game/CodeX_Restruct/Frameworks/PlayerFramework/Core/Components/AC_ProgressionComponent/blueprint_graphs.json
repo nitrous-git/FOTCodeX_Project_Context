@@ -25,6 +25,23 @@
       }
     },
     {
+      "name": "CommitInProgress",
+      "guid": "05F45FDD462C5A0E64A4478FDEE6DE38",
+      "friendly_name": "Commit in Progress",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "CurrentSouls",
       "guid": "09C9366B4FE4EEFF174AD492907467EE",
       "friendly_name": "Current Souls",
@@ -172,11 +189,11 @@
       "name": "GetSoulsRequiredForNextLevel",
       "kind": "function",
       "guid": "ACC78F7843B111E6CFD3B5BE46D164F7",
-      "node_count": 17,
-      "pin_count": 54,
-      "connection_count": 18,
-      "exec_connection_count": 1,
-      "data_connection_count": 17
+      "node_count": 20,
+      "pin_count": 63,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
     },
     {
       "name": "GrantSouls",
@@ -227,12 +244,42 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "TryCommitLevelUp",
+      "kind": "function",
+      "guid": "A59DDA9940FB5310B147D680E6D94390",
+      "node_count": 129,
+      "pin_count": 445,
+      "connection_count": 60,
+      "exec_connection_count": 28,
+      "data_connection_count": 32
+    },
+    {
+      "name": "GetTotalLevelUpCost",
+      "kind": "function",
+      "guid": "5C4B473E4EAD8B67FDECD5A729EFE82C",
+      "node_count": 65,
+      "pin_count": 213,
+      "connection_count": 37,
+      "exec_connection_count": 9,
+      "data_connection_count": 28
+    },
+    {
+      "name": "GetSoulsRequiredForLevel",
+      "kind": "function",
+      "guid": "FE2EB4644E8CDE6ADED433BA19247BB5",
+      "node_count": 18,
+      "pin_count": 63,
+      "connection_count": 20,
+      "exec_connection_count": 1,
+      "data_connection_count": 19
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "4AB775C348CDCA1AF3F104940682C0B8",
+      "guid": "490640F340895B50079637A5C2E2D51D",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -241,11 +288,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 10,
+    "authored_graph_count": 13,
     "generated_graph_count": 1,
-    "authored_node_count": 147,
-    "authored_pin_count": 462,
-    "authored_connection_count": 155,
+    "authored_node_count": 362,
+    "authored_pin_count": 1192,
+    "authored_connection_count": 258,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -281,9 +328,19 @@
       "file": "graphs/GetSouls.json"
     },
     {
+      "name": "GetSoulsRequiredForLevel",
+      "kind": "function",
+      "file": "graphs/GetSoulsRequiredForLevel.json"
+    },
+    {
       "name": "GetSoulsRequiredForNextLevel",
       "kind": "function",
       "file": "graphs/GetSoulsRequiredForNextLevel.json"
+    },
+    {
+      "name": "GetTotalLevelUpCost",
+      "kind": "function",
+      "file": "graphs/GetTotalLevelUpCost.json"
     },
     {
       "name": "GrantSouls",
@@ -299,6 +356,11 @@
       "name": "SpendSouls",
       "kind": "function",
       "file": "graphs/SpendSouls.json"
+    },
+    {
+      "name": "TryCommitLevelUp",
+      "kind": "function",
+      "file": "graphs/TryCommitLevelUp.json"
     }
   ]
 }

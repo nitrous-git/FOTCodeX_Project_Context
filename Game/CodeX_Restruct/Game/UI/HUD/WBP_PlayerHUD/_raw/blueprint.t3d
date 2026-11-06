@@ -386,9 +386,9 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" Export
       End Object
    End Object
    Begin Object Class=/Script/Engine.EdGraph Name="Destruct" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:Destruct'"
-      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:Destruct.K2Node_FunctionEntry_0'"
-      End Object
       Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:Destruct.K2Node_CallFunction_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:Destruct.K2Node_FunctionEntry_0'"
       End Object
    End Object
    Begin Object Name="WidgetTree" ExportPath="/Script/UMG.WidgetTree'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree'"
@@ -534,6 +534,18 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" Export
          DisplayLabel="ItemWheelGrid"
       End Object
       RootWidget="/Script/UMG.CanvasPanel'MainHUDCanvas'"
+      AllWidgets(0)="/Script/UMG.CanvasPanel'MainHUDCanvas'"
+      AllWidgets(1)="/Script/UMG.SafeZone'ScreenSafeArea'"
+      AllWidgets(2)="/Script/UMG.Overlay'HUDOverlay'"
+      AllWidgets(3)="/Script/UMG.Border'ResourcesContainer'"
+      AllWidgets(4)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources_C'Resources'"
+      AllWidgets(5)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid.WBP_ItemWheelGrid_C'ItemWheelGrid'"
+      AllWidgets(6)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_CurrencyContainer.WBP_CurrencyContainer_C'CurrencyContainer'"
+      AllWidgets(7)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_AbilityDisplay.WBP_AbilityDisplay_C'AbilityDisplay'"
+      AllWidgets(8)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_Interaction.WBP_Interaction_C'InteractionPrompt'"
+      AllWidgets(9)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_InteractionError.WBP_InteractionError_C'InteractionError'"
+      AllWidgets(10)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_FirstLootNotification.WBP_FirstLootNotification_C'FirstLootNotification'"
+      AllWidgets(11)="/Script/UMG.VerticalBox'LootNotificationsBox'"
    End Object
    Begin Object Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:EventGraph'"
       Begin Object Name="K2Node_Event_3" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:EventGraph.K2Node_Event_3'"
@@ -2171,6 +2183,17 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" Export
       GraphGuid=4B0A741140E12D620BAAFCB502317D31
    End Object
    Begin Object Name="Destruct" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:Destruct'"
+      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:Destruct.K2Node_CallFunction_0'"
+         FunctionReference=(MemberName="ExecuteUbergraph_WBP_PlayerHUD",bSelfContext=True)
+         NodePosX=300
+         NodePosY=-2000
+         bIsIntermediateNode=True
+         NodeGuid=D9E1912194EA37AC9BF034CAEED6F547
+         CustomProperties Pin (PinId=3DC2FC344E45177D79E5198D3A1DD6B8,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 27F494F94C763C167B79C4AE17B0AEB0,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=7243C6B749A54EC6DA1618BA3978DEE6,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=C8C31BCD42EAB653C4E8C29EB51D04C2,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="self",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.SKEL_WBP_PlayerHUD_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=9D1BC10C466437376BD85BAB7203E3CA,PinName="EntryPoint",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0",AutogeneratedDefaultValue="0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
       Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:Destruct.K2Node_FunctionEntry_0'"
          CustomGeneratedFunctionName="Destruct"
          FunctionReference=(MemberParent="/Script/CoreUObject.Class'/Script/UMG.UserWidget'",MemberName="Destruct")
@@ -2178,23 +2201,12 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" Export
          NodePosY=-2000
          bIsIntermediateNode=True
          NodeGuid=650292EBCBF03DA5ACA49D0A81B00860
-         CustomProperties Pin (PinId=16B31508430505BBA1E0AEA2BD7BADAA,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 5BB512204C625C04E8C017BD659436DE,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-      End Object
-      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:Destruct.K2Node_CallFunction_0'"
-         FunctionReference=(MemberName="ExecuteUbergraph_WBP_PlayerHUD",bSelfContext=True)
-         NodePosX=300
-         NodePosY=-2000
-         bIsIntermediateNode=True
-         NodeGuid=D9E1912194EA37AC9BF034CAEED6F547
-         CustomProperties Pin (PinId=5BB512204C625C04E8C017BD659436DE,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 16B31508430505BBA1E0AEA2BD7BADAA,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=F27091E248C1C7E24ADC93A87757CE02,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=76C3CE6642D29A9B8AFF24AC1BAC2388,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="self",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.SKEL_WBP_PlayerHUD_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=53BC777842286B7C0ACF2BA7AD311E30,PinName="EntryPoint",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0",AutogeneratedDefaultValue="0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=27F494F94C763C167B79C4AE17B0AEB0,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 3DC2FC344E45177D79E5198D3A1DD6B8,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
       End Object
       Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
       Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
       Nodes(1)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_0'"
-      GraphGuid=5E51663E46CB010C6CFE5D9E6F19D699
+      GraphGuid=7E2588BD4F0E653132A62B851C376180
    End Object
    WidgetVariableNameToGuidMap=(("MainHUDCanvas", 99C5D4094039453A57945D9516B39061),("ScreenSafeArea", 3469F3C241B404594EB11E84D4F0D838),("HUDOverlay", BCCB6A144063F0BBBE327A923898B25C),("ResourcesContainer", A24F4A22449CE6DBFAB5C7960F495B52),("Resources", 40F3D5DB45A983E22730878E4E612F9A),("ItemWheelGrid", B643858146B17038AD5CB7849434B74A),("CurrencyContainer", 89B188594D26FEDBB98EF49C8286ED8D),("AbilityDisplay", 66B4DD58441169D8CE794ABDCCB8B730),("InteractionPrompt", 9DA5B38248B1ADE648689C80C3FF6B5C),("InteractionError", 2000BB6C407C76B170157095F25F2740),("FirstLootNotification", E42AB6F346231EBA90E8E6BF23BE117D),("LootNotificationsBox", 46A50DDB4C8B0B0CD6E1B4AB47354E9C))
    bCanCallInitializedWithoutPlayerContext=True

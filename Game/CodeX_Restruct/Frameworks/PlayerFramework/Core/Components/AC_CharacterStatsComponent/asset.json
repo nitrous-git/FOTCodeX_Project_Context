@@ -24,6 +24,7 @@
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
       "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp"
@@ -231,6 +232,23 @@
         }
       },
       {
+        "name": "NotifyBaseAttributeCommit",
+        "guid": "563288494080AFCA04AC0EA7A0A0ECCD",
+        "friendly_name": "Notify Base Attribute Commit",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "OnStatsChanged",
         "guid": "DBBCE8814452CCA527D8CDA91522B58D",
         "friendly_name": "On Stats Changed",
@@ -285,7 +303,8 @@
         "ResolveEffectiveAttributes",
         "CalculateResourceMaximums",
         "ApplyRecalculatedStats",
-        "ClampCurrentResources"
+        "ClampCurrentResources",
+        "ValidateLeveledBaseAttributes"
       ],
       "macros": [],
       "delegates": [

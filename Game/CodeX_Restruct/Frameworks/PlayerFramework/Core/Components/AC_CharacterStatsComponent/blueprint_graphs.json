@@ -195,6 +195,23 @@
       }
     },
     {
+      "name": "NotifyBaseAttributeCommit",
+      "guid": "563288494080AFCA04AC0EA7A0A0ECCD",
+      "friendly_name": "Notify Base Attribute Commit",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "OnStatsChanged",
       "guid": "DBBCE8814452CCA527D8CDA91522B58D",
       "friendly_name": "On Stats Changed",
@@ -314,11 +331,11 @@
       "name": "RecalculateDerivedStats",
       "kind": "function",
       "guid": "3504BDD347D70E4ECA0486ABE2D30CD2",
-      "node_count": 11,
-      "pin_count": 46,
-      "connection_count": 18,
-      "exec_connection_count": 7,
-      "data_connection_count": 11
+      "node_count": 35,
+      "pin_count": 163,
+      "connection_count": 22,
+      "exec_connection_count": 9,
+      "data_connection_count": 13
     },
     {
       "name": "InitializeStats",
@@ -409,12 +426,22 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "ValidateLeveledBaseAttributes",
+      "kind": "function",
+      "guid": "ADB8C5AD469E9EA4F291F49434F8D2FB",
+      "node_count": 123,
+      "pin_count": 459,
+      "connection_count": 200,
+      "exec_connection_count": 5,
+      "data_connection_count": 195
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "9D1A1E574A09274AEFFAC8A15D609B83",
+      "guid": "57D02508424A0894E2B1889A1945F95A",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -423,11 +450,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 18,
+    "authored_graph_count": 19,
     "generated_graph_count": 1,
-    "authored_node_count": 428,
-    "authored_pin_count": 1617,
-    "authored_connection_count": 565,
+    "authored_node_count": 575,
+    "authored_pin_count": 2193,
+    "authored_connection_count": 769,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -521,6 +548,11 @@
       "name": "SetModifierForSource",
       "kind": "function",
       "file": "graphs/SetModifierForSource.json"
+    },
+    {
+      "name": "ValidateLeveledBaseAttributes",
+      "kind": "function",
+      "file": "graphs/ValidateLeveledBaseAttributes.json"
     }
   ]
 }

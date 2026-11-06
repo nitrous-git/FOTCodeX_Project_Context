@@ -17,13 +17,13 @@
   },
   "architecture": {
     "dependencies": [
-      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CharacterStatBalance",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_StatusStatBlock",
@@ -50,6 +50,57 @@
     "interfaces": [],
     "components": [],
     "variables": [
+      {
+        "name": "BaselineBaseAttributes",
+        "guid": "CF9110B14FDBD5A433F8798B99AF306F",
+        "friendly_name": "Baseline Base Attributes",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes.FPrimaryAttributes'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BaselineLevel",
+        "guid": "DDA31B104E9EBA901AED89B8C2ADF77F",
+        "friendly_name": "Baseline Level",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CommitInProgress",
+        "guid": "790D75BD4130483857BD1BB9514FE2BB",
+        "friendly_name": "Commit in Progress",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "OnLevelUpPreviewRequested",
         "guid": "DA3637374AD96B5DDF7BE098F774D975",
@@ -85,16 +136,16 @@
         }
       },
       {
-        "name": "PendingAttributeIndex",
-        "guid": "721724AE4994BE9C8F1662A3F22E1808",
-        "friendly_name": "Pending Attribute Index",
+        "name": "PendingBaseAttributes",
+        "guid": "CF8941CD41F293CDE04C6DAAB030C6A0",
+        "friendly_name": "Pending Base Attributes",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
         "type": {
-          "category": "int",
+          "category": "struct",
           "sub_category": null,
-          "sub_category_object": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes.FPrimaryAttributes'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -169,7 +220,10 @@
         "DiscardPreview",
         "RefreshPreview",
         "SelectAttribute",
-        "AdjustAttribute"
+        "AdjustAttribute",
+        "GetPendingLevelCount",
+        "ResetPending",
+        "ConfirmLevelUp"
       ],
       "macros": [],
       "delegates": [
@@ -177,25 +231,26 @@
         "OnLevelUpPreviewRequested"
       ],
       "generated_graphs": [
-        "BndEvt__WBP_LevelUp_ArcanePreview_K2Node_ComponentBoundEvent_16_OnLevelAttributeAdjusted__DelegateSignature",
-        "BndEvt__WBP_LevelUp_ArcanePreview_K2Node_ComponentBoundEvent_15_OnLevelAttributeFocused__DelegateSignature",
-        "BndEvt__WBP_LevelUp_FaithPreview_K2Node_ComponentBoundEvent_14_OnLevelAttributeAdjusted__DelegateSignature",
-        "BndEvt__WBP_LevelUp_FaithPreview_K2Node_ComponentBoundEvent_13_OnLevelAttributeFocused__DelegateSignature",
-        "BndEvt__WBP_LevelUp_IntelligencePreview_K2Node_ComponentBoundEvent_12_OnLevelAttributeAdjusted__DelegateSignature",
-        "BndEvt__WBP_LevelUp_IntelligencePreview_K2Node_ComponentBoundEvent_11_OnLevelAttributeFocused__DelegateSignature",
-        "BndEvt__WBP_LevelUp_DexterityPreview_K2Node_ComponentBoundEvent_10_OnLevelAttributeAdjusted__DelegateSignature",
-        "BndEvt__WBP_LevelUp_DexterityPreview_K2Node_ComponentBoundEvent_9_OnLevelAttributeFocused__DelegateSignature",
-        "BndEvt__WBP_LevelUp_StrengthPreview_K2Node_ComponentBoundEvent_8_OnLevelAttributeAdjusted__DelegateSignature",
-        "BndEvt__WBP_LevelUp_StrengthPreview_K2Node_ComponentBoundEvent_7_OnLevelAttributeFocused__DelegateSignature",
-        "BndEvt__WBP_LevelUp_EndurancePreview_K2Node_ComponentBoundEvent_6_OnLevelAttributeAdjusted__DelegateSignature",
-        "BndEvt__WBP_LevelUp_EndurancePreview_K2Node_ComponentBoundEvent_5_OnLevelAttributeFocused__DelegateSignature",
-        "BndEvt__WBP_LevelUp_MindPreview_K2Node_ComponentBoundEvent_4_OnLevelAttributeAdjusted__DelegateSignature",
-        "BndEvt__WBP_LevelUp_MindPreview_K2Node_ComponentBoundEvent_3_OnLevelAttributeFocused__DelegateSignature",
-        "BndEvt__WBP_LevelUp_VigorPreview_K2Node_ComponentBoundEvent_2_OnLevelAttributeAdjusted__DelegateSignature",
-        "BndEvt__WBP_LevelUp_VigorPreview_K2Node_ComponentBoundEvent_1_OnLevelAttributeFocused__DelegateSignature",
-        "BndEvt__WBP_LevelUp_CancelPreview_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+        "Construct",
         "Destruct",
-        "Construct"
+        "BndEvt__WBP_LevelUp_CancelPreview_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_LevelUp_VigorPreview_K2Node_ComponentBoundEvent_1_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_VigorPreview_K2Node_ComponentBoundEvent_2_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_MindPreview_K2Node_ComponentBoundEvent_3_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_MindPreview_K2Node_ComponentBoundEvent_4_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_EndurancePreview_K2Node_ComponentBoundEvent_5_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_EndurancePreview_K2Node_ComponentBoundEvent_6_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_StrengthPreview_K2Node_ComponentBoundEvent_7_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_StrengthPreview_K2Node_ComponentBoundEvent_8_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_DexterityPreview_K2Node_ComponentBoundEvent_9_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_DexterityPreview_K2Node_ComponentBoundEvent_10_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_IntelligencePreview_K2Node_ComponentBoundEvent_11_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_IntelligencePreview_K2Node_ComponentBoundEvent_12_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_FaithPreview_K2Node_ComponentBoundEvent_13_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_FaithPreview_K2Node_ComponentBoundEvent_14_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_ArcanePreview_K2Node_ComponentBoundEvent_15_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_ArcanePreview_K2Node_ComponentBoundEvent_16_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_ConfirmPreview_K2Node_ComponentBoundEvent_17_OnButtonClickedEvent__DelegateSignature"
       ]
     },
     "extraction_status": {

@@ -16,7 +16,11 @@
     "reason": "Logic-bearing Blueprint class"
   },
   "architecture": {
-    "dependencies": [],
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes"
+    ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
@@ -24,7 +28,7 @@
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
       "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp"
     ],
-    "non_architecture_dependency_count": 0,
+    "non_architecture_dependency_count": 1,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -48,6 +52,23 @@
         "default_value": null,
         "type": {
           "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CommitInProgress",
+        "guid": "05F45FDD462C5A0E64A4478FDEE6DE38",
+        "friendly_name": "Commit in Progress",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
           "sub_category": null,
           "sub_category_object": null,
           "container": null,
@@ -171,7 +192,10 @@
         "GrantSouls",
         "CanSpendSouls",
         "SpendSouls",
-        "DebugValidateProgression"
+        "DebugValidateProgression",
+        "TryCommitLevelUp",
+        "GetTotalLevelUpCost",
+        "GetSoulsRequiredForLevel"
       ],
       "macros": [],
       "delegates": [
