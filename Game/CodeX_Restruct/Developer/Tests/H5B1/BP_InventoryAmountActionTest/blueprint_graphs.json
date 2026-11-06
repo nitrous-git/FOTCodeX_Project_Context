@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_InventoryAmountActionTest",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "CC8F5D0049E04E2D8B1698B610392C2B",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'"
+  },
+  "variables": [
+    {
+      "name": "bFinished",
+      "guid": "7C67C66D437B31F2782756A43B6F349A",
+      "friendly_name": "Finished",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Failed",
+      "guid": "6E1254414F2D4B0D95096E939CDBD639",
+      "friendly_name": "Failed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Passed",
+      "guid": "A2751F494EAABFA8CC636388EFBFDA3C",
+      "friendly_name": "Passed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SavedPlayerTransform",
+      "guid": "2560A32541FF64B08F25AEAC9F5C4356",
+      "friendly_name": "Saved Player Transform",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Transform'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "Check",
+      "kind": "function",
+      "guid": "4C6CE9BA46E151178F57578A69F63A6A",
+      "node_count": 14,
+      "pin_count": 61,
+      "connection_count": 16,
+      "exec_connection_count": 5,
+      "data_connection_count": 11
+    },
+    {
+      "name": "RunInventoryTests",
+      "kind": "function",
+      "guid": "5E4A37C3497B84F6E8C4A0B3EC375A9D",
+      "node_count": 1085,
+      "pin_count": 5158,
+      "connection_count": 477,
+      "exec_connection_count": 130,
+      "data_connection_count": 347
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "FDBBEA6F46881FEFEB49CD8A9293A788",
+      "node_count": 153,
+      "pin_count": 627,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "FC34485C4D469609F1F65EA90BF942E6",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "SeedToolSlot",
+      "kind": "function",
+      "guid": "A0DCE31B41CAA497E610D6B82683ED46",
+      "node_count": 5,
+      "pin_count": 21,
+      "connection_count": 10,
+      "exec_connection_count": 2,
+      "data_connection_count": 8
+    },
+    {
+      "name": "GetToolQuantity",
+      "kind": "function",
+      "guid": "1F8770E14D3FD63159A658AEA404DC5C",
+      "node_count": 9,
+      "pin_count": 34,
+      "connection_count": 13,
+      "exec_connection_count": 2,
+      "data_connection_count": 11
+    },
+    {
+      "name": "FindNewPickup",
+      "kind": "function",
+      "guid": "16FA68D74E05C0A2DA2B8488F03B12E7",
+      "node_count": 8,
+      "pin_count": 29,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "A7043CC347D4C0241752D8BA6AEC369B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 7,
+    "generated_graph_count": 1,
+    "authored_node_count": 1275,
+    "authored_pin_count": 5931,
+    "authored_connection_count": 530,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "Check",
+      "kind": "function",
+      "file": "graphs/Check.json"
+    },
+    {
+      "name": "FindNewPickup",
+      "kind": "function",
+      "file": "graphs/FindNewPickup.json"
+    },
+    {
+      "name": "GetToolQuantity",
+      "kind": "function",
+      "file": "graphs/GetToolQuantity.json"
+    },
+    {
+      "name": "RunInventoryTests",
+      "kind": "function",
+      "file": "graphs/RunInventoryTests.json"
+    },
+    {
+      "name": "SeedToolSlot",
+      "kind": "function",
+      "file": "graphs/SeedToolSlot.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}

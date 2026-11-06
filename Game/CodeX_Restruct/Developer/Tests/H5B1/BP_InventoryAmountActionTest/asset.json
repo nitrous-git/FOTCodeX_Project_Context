@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_InventoryAmountActionTest",
+    "package_name": "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest",
+    "package_path": "/Game/CodeX_Restruct/Developer/Tests/H5B1",
+    "object_path": "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest.BP_InventoryAmountActionTest",
+    "relative_package": "CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_TestPickupCommitFailure",
+      "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryAction",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryActionAmount"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 4,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest.BP_InventoryAmountActionTest_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest.BP_InventoryAmountActionTest_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest.BP_InventoryAmountActionTest_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_InventoryAmountActionTest",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest.BP_InventoryAmountActionTest_C:DefaultSceneRoot_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "bFinished",
+        "guid": "7C67C66D437B31F2782756A43B6F349A",
+        "friendly_name": "Finished",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Failed",
+        "guid": "6E1254414F2D4B0D95096E939CDBD639",
+        "friendly_name": "Failed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Passed",
+        "guid": "A2751F494EAABFA8CC636388EFBFDA3C",
+        "friendly_name": "Passed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SavedPlayerTransform",
+        "guid": "2560A32541FF64B08F25AEAC9F5C4356",
+        "friendly_name": "Saved Player Transform",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Transform'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "Check",
+        "RunInventoryTests",
+        "UserConstructionScript",
+        "SeedToolSlot",
+        "GetToolQuantity",
+        "FindNewPickup"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveBeginPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

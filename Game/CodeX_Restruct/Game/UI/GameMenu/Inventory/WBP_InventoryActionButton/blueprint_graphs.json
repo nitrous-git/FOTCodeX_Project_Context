@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_InventoryActionButton",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "0BBD500F480B46D89BA6B8A1134C904D",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "bConfirmationStyle",
+      "guid": "7B2E9D1D4DE9916B02D3BC9C0F8454B8",
+      "friendly_name": "Confirmation Style",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bFooterStyle",
+      "guid": "837C8AD643C72704A8D60282F65D95A1",
+      "friendly_name": "Footer Style",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Label",
+      "guid": "D061DA694F62C39A661EC8BA629B3E3F",
+      "friendly_name": "Label",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnInventoryActionButtonPressed",
+      "guid": "E5767DA64BCD08CC52724A8571803BED",
+      "friendly_name": "On Inventory Action Button Pressed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnPressed",
+      "guid": "25EA0C0E48C614A73C1CBCAAA7B790B1",
+      "friendly_name": "On Pressed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "2C229BE846D310C9909E39937DC9A72A",
+      "node_count": 32,
+      "pin_count": 78,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
+    },
+    {
+      "name": "ConfigureAction",
+      "kind": "function",
+      "guid": "407A204F4015665E4BE307A03AF7D9BF",
+      "node_count": 12,
+      "pin_count": 39,
+      "connection_count": 17,
+      "exec_connection_count": 6,
+      "data_connection_count": 11
+    },
+    {
+      "name": "SetSelected",
+      "kind": "function",
+      "guid": "3A0164474FF0F3C43C9801AF3DE303C5",
+      "node_count": 49,
+      "pin_count": 197,
+      "connection_count": 43,
+      "exec_connection_count": 9,
+      "data_connection_count": 34
+    },
+    {
+      "name": "FocusAction",
+      "kind": "function",
+      "guid": "7A33089E400CD91C2F001CA3BE74FAD8",
+      "node_count": 3,
+      "pin_count": 6,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnPressed",
+      "kind": "delegate",
+      "guid": "4AB601064D1F3E44E6F525B7CE63F0D6",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnInventoryActionButtonPressed",
+      "kind": "delegate",
+      "guid": "4EE445EB4F0B628183AF83834D4AC530",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "PreConstruct",
+      "guid": "494A11FA4DDB03C369C668BC49198CA8",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_InventoryActionButton_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "BB9F84994F66AB6F925F9E800D75CC4B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryActionButton_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+      "guid": "9C10F4DA469B5D577EEBB4A6D1F1EDC9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryActionButton_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "84BC33714D4AEF5585F0AEB8B24AAA47",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 6,
+    "generated_graph_count": 4,
+    "authored_node_count": 98,
+    "authored_pin_count": 322,
+    "authored_connection_count": 73,
+    "generated_node_count": 9,
+    "generated_pin_count": 24
+  },
+  "graph_files": [
+    {
+      "name": "OnInventoryActionButtonPressed",
+      "kind": "delegate",
+      "file": "graphs/OnInventoryActionButtonPressed.json"
+    },
+    {
+      "name": "OnPressed",
+      "kind": "delegate",
+      "file": "graphs/OnPressed.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ConfigureAction",
+      "kind": "function",
+      "file": "graphs/ConfigureAction.json"
+    },
+    {
+      "name": "FocusAction",
+      "kind": "function",
+      "file": "graphs/FocusAction.json"
+    },
+    {
+      "name": "SetSelected",
+      "kind": "function",
+      "file": "graphs/SetSelected.json"
+    }
+  ]
+}

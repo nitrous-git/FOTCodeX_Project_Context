@@ -17,17 +17,20 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/DT_InventoryItemData",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
     ],
     "referencers": [
+      "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
@@ -35,11 +38,12 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryAction",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
     ],
-    "non_architecture_dependency_count": 1,
+    "non_architecture_dependency_count": 2,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -83,6 +87,23 @@
           "sub_category": null,
           "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
           "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bInventoryAmountActionInProgress",
+        "guid": "A68FF2894DBC6EA697B69A9FF4F36E67",
+        "friendly_name": "Inventory Amount Action in Progress",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
           "is_reference": false,
           "is_const": false,
           "is_weak_pointer": false
@@ -280,7 +301,12 @@
         "Debug_PrintSingleSlot",
         "Debug_PrintInventory",
         "Debug_GiveTestInventory",
-        "HasItem"
+        "HasItem",
+        "ValidateInventoryAmountAction",
+        "TryExecuteInventoryAmountAction",
+        "ExecuteValidatedInventoryAmountAction",
+        "FindInventoryDropTransform",
+        "TransferInventoryToPickup"
       ],
       "macros": [],
       "delegates": [

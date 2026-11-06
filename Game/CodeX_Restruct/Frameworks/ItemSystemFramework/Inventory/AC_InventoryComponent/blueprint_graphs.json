@@ -42,6 +42,23 @@
       }
     },
     {
+      "name": "bInventoryAmountActionInProgress",
+      "guid": "A68FF2894DBC6EA697B69A9FF4F36E67",
+      "friendly_name": "Inventory Amount Action in Progress",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "InventoryDataTable",
       "guid": "F3C1379B41E410DE1A6D658687B5D119",
       "friendly_name": "Inventory Data Table",
@@ -394,6 +411,56 @@
       "data_connection_count": 20
     },
     {
+      "name": "ValidateInventoryAmountAction",
+      "kind": "function",
+      "guid": "A44AE5AA459E18C77197F5BB4F64B0F1",
+      "node_count": 61,
+      "pin_count": 249,
+      "connection_count": 100,
+      "exec_connection_count": 24,
+      "data_connection_count": 76
+    },
+    {
+      "name": "TryExecuteInventoryAmountAction",
+      "kind": "function",
+      "guid": "9C784E624AE50A1D6D82D4A3B0BF3176",
+      "node_count": 10,
+      "pin_count": 45,
+      "connection_count": 20,
+      "exec_connection_count": 7,
+      "data_connection_count": 13
+    },
+    {
+      "name": "ExecuteValidatedInventoryAmountAction",
+      "kind": "function",
+      "guid": "0084CE04418D7EC28F5BFE8A552D49CC",
+      "node_count": 32,
+      "pin_count": 146,
+      "connection_count": 60,
+      "exec_connection_count": 18,
+      "data_connection_count": 42
+    },
+    {
+      "name": "FindInventoryDropTransform",
+      "kind": "function",
+      "guid": "DC20D92E457B3F989F2E2B994606FECF",
+      "node_count": 40,
+      "pin_count": 196,
+      "connection_count": 54,
+      "exec_connection_count": 14,
+      "data_connection_count": 40
+    },
+    {
+      "name": "TransferInventoryToPickup",
+      "kind": "function",
+      "guid": "4ABD84BD47B8495D7F90549AE61DDCA2",
+      "node_count": 35,
+      "pin_count": 140,
+      "connection_count": 69,
+      "exec_connection_count": 25,
+      "data_connection_count": 44
+    },
+    {
       "name": "OnInventoryChanged",
       "kind": "delegate",
       "guid": "81EE87BD47508F59243F2293DE4086A1",
@@ -417,7 +484,7 @@
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "3251488F465B57A93BDF8CAF8F7BFE4D",
+      "guid": "0C9A12C84341D060FDFCD0A7E16F5257",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -426,11 +493,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 20,
+    "authored_graph_count": 25,
     "generated_graph_count": 1,
-    "authored_node_count": 457,
-    "authored_pin_count": 1658,
-    "authored_connection_count": 501,
+    "authored_node_count": 635,
+    "authored_pin_count": 2434,
+    "authored_connection_count": 804,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -486,6 +553,16 @@
       "file": "graphs/Debug_PrintSingleSlot.json"
     },
     {
+      "name": "ExecuteValidatedInventoryAmountAction",
+      "kind": "function",
+      "file": "graphs/ExecuteValidatedInventoryAmountAction.json"
+    },
+    {
+      "name": "FindInventoryDropTransform",
+      "kind": "function",
+      "file": "graphs/FindInventoryDropTransform.json"
+    },
+    {
       "name": "GetItemDefinition",
       "kind": "function",
       "file": "graphs/GetItemDefinition.json"
@@ -521,6 +598,11 @@
       "file": "graphs/SetSlotByCategoryAndIndex.json"
     },
     {
+      "name": "TransferInventoryToPickup",
+      "kind": "function",
+      "file": "graphs/TransferInventoryToPickup.json"
+    },
+    {
       "name": "TryAddToEmptySlots",
       "kind": "function",
       "file": "graphs/TryAddToEmptySlots.json"
@@ -531,9 +613,19 @@
       "file": "graphs/TryAddToExistingStacks.json"
     },
     {
+      "name": "TryExecuteInventoryAmountAction",
+      "kind": "function",
+      "file": "graphs/TryExecuteInventoryAmountAction.json"
+    },
+    {
       "name": "UseConsumableFromSlot",
       "kind": "function",
       "file": "graphs/UseConsumableFromSlot.json"
+    },
+    {
+      "name": "ValidateInventoryAmountAction",
+      "kind": "function",
+      "file": "graphs/ValidateInventoryAmountAction.json"
     }
   ]
 }

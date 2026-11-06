@@ -16,11 +16,23 @@
     "reason": "Logic-bearing Blueprint class"
   },
   "architecture": {
-    "dependencies": [],
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryActionAmount",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryActionButton"
+    ],
     "referencers": [
+      "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory"
     ],
-    "non_architecture_dependency_count": 4,
+    "non_architecture_dependency_count": 9,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -34,16 +46,200 @@
     "generated_class_object": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryAction.WBP_InventoryAction_C",
     "interfaces": [],
     "components": [],
-    "variables": [],
+    "variables": [
+      {
+        "name": "bCanRemove",
+        "guid": "D9F443A7458F54D9E28A64A6FED2B851",
+        "friendly_name": "Can Remove",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCanSelectAmount",
+        "guid": "0BB966514FE13F5C2C2ED19DEE8836FE",
+        "friendly_name": "Can Select Amount",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCanUse",
+        "guid": "8BB836564FE25717FB9460B6BF89D642",
+        "friendly_name": "Can Use",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCompleted",
+        "guid": "A18E027C4214E4079819DCBC44228CDC",
+        "friendly_name": "Completed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bShowingAmount",
+        "guid": "FDBFF85E4430E0B77CB4189FD6017BF4",
+        "friendly_name": "Showing Amount",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InventoryRef",
+        "guid": "1FBA64A1438ABD08E38993A3ED4E73D7",
+        "friendly_name": "Inventory Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnActionClosed",
+        "guid": "D5FA2708485EDDDA45D0E394D566224A",
+        "friendly_name": "On Action Closed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SelectedAction",
+        "guid": "00E9A5414F1541BE653121B2BF4FDCA4",
+        "friendly_name": "Selected Action",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SourceSlotData",
+        "guid": "623C848F4BE32B945ADC1FB4EA237EAA",
+        "friendly_name": "Source Slot Data",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
     "graphs": {
       "event_graphs": [
         "EventGraph"
       ],
-      "functions": [],
+      "functions": [
+        "InitializeForInventoryAction",
+        "RefreshActionAvailability",
+        "SelectAction",
+        "NavigateAction",
+        "ActivateSelectedAction",
+        "OpenAmount",
+        "ExecuteAmountRequest",
+        "ReturnToMainPanel",
+        "CloseAction",
+        "UseSelectedItem",
+        "HandleActionKey",
+        "RefreshLiveActionContext"
+      ],
       "macros": [],
-      "delegates": [],
+      "delegates": [
+        "OnActionClosed"
+      ],
       "generated_graphs": [
-        "BndEvt__WBP_InventoryAction_CancelButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
+        "BndEvt__WBP_InventoryAction_CancelButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_UseButton_K2Node_ComponentBoundEvent_1_OnPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_LeaveButton_K2Node_ComponentBoundEvent_2_OnPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_DiscardButton_K2Node_ComponentBoundEvent_3_OnPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_LeaveAmountButton_K2Node_ComponentBoundEvent_4_OnPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_DiscardAmountButton_K2Node_ComponentBoundEvent_5_OnPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_CancelButton_K2Node_ComponentBoundEvent_6_OnPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_AmountActionPanel_K2Node_ComponentBoundEvent_7_OnAmountConfirmed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_AmountActionPanel_K2Node_ComponentBoundEvent_8_OnAmountCancelled__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_UseButton_K2Node_ComponentBoundEvent_9_OnInventoryActionButtonPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_LeaveButton_K2Node_ComponentBoundEvent_10_OnInventoryActionButtonPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_DiscardButton_K2Node_ComponentBoundEvent_11_OnInventoryActionButtonPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_LeaveAmountButton_K2Node_ComponentBoundEvent_12_OnInventoryActionButtonPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_DiscardAmountButton_K2Node_ComponentBoundEvent_13_OnInventoryActionButtonPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryAction_CancelButton_K2Node_ComponentBoundEvent_14_OnInventoryActionButtonPressed__DelegateSignature",
+        "PreConstruct"
       ]
     },
     "extraction_status": {
@@ -64,6 +260,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 14
+    "widget_count": 21
   }
 }

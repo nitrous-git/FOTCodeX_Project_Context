@@ -6,44 +6,528 @@
     "guid": "C2C3D4964F5C41B9CD7C1381858F88A7",
     "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
   },
-  "variables": [],
+  "variables": [
+    {
+      "name": "bCanRemove",
+      "guid": "D9F443A7458F54D9E28A64A6FED2B851",
+      "friendly_name": "Can Remove",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bCanSelectAmount",
+      "guid": "0BB966514FE13F5C2C2ED19DEE8836FE",
+      "friendly_name": "Can Select Amount",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bCanUse",
+      "guid": "8BB836564FE25717FB9460B6BF89D642",
+      "friendly_name": "Can Use",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bCompleted",
+      "guid": "A18E027C4214E4079819DCBC44228CDC",
+      "friendly_name": "Completed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bShowingAmount",
+      "guid": "FDBFF85E4430E0B77CB4189FD6017BF4",
+      "friendly_name": "Showing Amount",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InventoryRef",
+      "guid": "1FBA64A1438ABD08E38993A3ED4E73D7",
+      "friendly_name": "Inventory Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnActionClosed",
+      "guid": "D5FA2708485EDDDA45D0E394D566224A",
+      "friendly_name": "On Action Closed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SelectedAction",
+      "guid": "00E9A5414F1541BE653121B2BF4FDCA4",
+      "friendly_name": "Selected Action",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SourceSlotData",
+      "guid": "623C848F4BE32B945ADC1FB4EA237EAA",
+      "friendly_name": "Source Slot Data",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
   "graphs": [
     {
       "name": "EventGraph",
       "kind": "event",
       "guid": "2C8B397F4C08E79F3DC4D3A21C2CE4E5",
+      "node_count": 88,
+      "pin_count": 258,
+      "connection_count": 41,
+      "exec_connection_count": 21,
+      "data_connection_count": 20
+    },
+    {
+      "name": "InitializeForInventoryAction",
+      "kind": "function",
+      "guid": "372EEFF0492EC57F1AF81D9C3945ABE6",
+      "node_count": 18,
+      "pin_count": 62,
+      "connection_count": 21,
+      "exec_connection_count": 8,
+      "data_connection_count": 13
+    },
+    {
+      "name": "RefreshActionAvailability",
+      "kind": "function",
+      "guid": "8E956E0E40FED82B2D04558ED3EF87E2",
+      "node_count": 205,
+      "pin_count": 781,
+      "connection_count": 102,
+      "exec_connection_count": 33,
+      "data_connection_count": 69
+    },
+    {
+      "name": "SelectAction",
+      "kind": "function",
+      "guid": "C41693F64569368A27B7678780C690CA",
+      "node_count": 74,
+      "pin_count": 229,
+      "connection_count": 91,
+      "exec_connection_count": 24,
+      "data_connection_count": 67
+    },
+    {
+      "name": "NavigateAction",
+      "kind": "function",
+      "guid": "37D27B5A4424CBA2BC514D972AAB3205",
+      "node_count": 84,
+      "pin_count": 291,
+      "connection_count": 98,
+      "exec_connection_count": 9,
+      "data_connection_count": 89
+    },
+    {
+      "name": "ActivateSelectedAction",
+      "kind": "function",
+      "guid": "4F10CBD5481ED679AACFE080B65E9A3B",
+      "node_count": 22,
+      "pin_count": 74,
+      "connection_count": 26,
+      "exec_connection_count": 13,
+      "data_connection_count": 13
+    },
+    {
+      "name": "OpenAmount",
+      "kind": "function",
+      "guid": "6F5F858E4095E89C0A684FBC72BE6973",
+      "node_count": 14,
+      "pin_count": 41,
+      "connection_count": 14,
+      "exec_connection_count": 6,
+      "data_connection_count": 8
+    },
+    {
+      "name": "ExecuteAmountRequest",
+      "kind": "function",
+      "guid": "D71A141F490CEF3425A1D2AB25F5F8CB",
+      "node_count": 39,
+      "pin_count": 135,
+      "connection_count": 49,
+      "exec_connection_count": 23,
+      "data_connection_count": 26
+    },
+    {
+      "name": "ReturnToMainPanel",
+      "kind": "function",
+      "guid": "09ECBF544B7E9D66F6F8C8A4D71605D4",
+      "node_count": 14,
+      "pin_count": 41,
+      "connection_count": 14,
+      "exec_connection_count": 4,
+      "data_connection_count": 10
+    },
+    {
+      "name": "CloseAction",
+      "kind": "function",
+      "guid": "033228C743B6F0211E8653A358F609E7",
       "node_count": 6,
-      "pin_count": 16,
-      "connection_count": 2,
-      "exec_connection_count": 1,
-      "data_connection_count": 1
+      "pin_count": 19,
+      "connection_count": 6,
+      "exec_connection_count": 4,
+      "data_connection_count": 2
+    },
+    {
+      "name": "UseSelectedItem",
+      "kind": "function",
+      "guid": "4F2618CE424C2814C68567835644C81C",
+      "node_count": 37,
+      "pin_count": 121,
+      "connection_count": 21,
+      "exec_connection_count": 10,
+      "data_connection_count": 11
+    },
+    {
+      "name": "HandleActionKey",
+      "kind": "function",
+      "guid": "EA5AF77148D7B71B819784922053923D",
+      "node_count": 239,
+      "pin_count": 735,
+      "connection_count": 301,
+      "exec_connection_count": 86,
+      "data_connection_count": 215
+    },
+    {
+      "name": "OnActionClosed",
+      "kind": "delegate",
+      "guid": "3DDEDAE345477A526995B2A645AA3790",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "RefreshLiveActionContext",
+      "kind": "function",
+      "guid": "36CF05594B4BEA4C78172A8EA9872C9F",
+      "node_count": 17,
+      "pin_count": 49,
+      "connection_count": 18,
+      "exec_connection_count": 6,
+      "data_connection_count": 12
     }
   ],
   "generated_graphs": [
     {
       "name": "BndEvt__WBP_InventoryAction_CancelButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-      "guid": "B439239C486CEFBCAC0A4DA7737A5D1B",
+      "guid": "3FE193224C58BBA3E32F0395948586E6",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
       "exec_connection_count": 1,
       "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_UseButton_K2Node_ComponentBoundEvent_1_OnPressed__DelegateSignature",
+      "guid": "D4F207B14F7071858B56EAB6109DDEA0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_LeaveButton_K2Node_ComponentBoundEvent_2_OnPressed__DelegateSignature",
+      "guid": "8B13AA7C46CB6FB5D6018DB8F8A40806",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_DiscardButton_K2Node_ComponentBoundEvent_3_OnPressed__DelegateSignature",
+      "guid": "012741D64F5435A93B54F2BA4A519FA9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_LeaveAmountButton_K2Node_ComponentBoundEvent_4_OnPressed__DelegateSignature",
+      "guid": "F3D532284052200E1F0885B0307BB164",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_DiscardAmountButton_K2Node_ComponentBoundEvent_5_OnPressed__DelegateSignature",
+      "guid": "63946CC94F589F10845693820B667E31",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_CancelButton_K2Node_ComponentBoundEvent_6_OnPressed__DelegateSignature",
+      "guid": "48520EFA4F36DF1F7B4B75BDBC58B08E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_AmountActionPanel_K2Node_ComponentBoundEvent_7_OnAmountConfirmed__DelegateSignature",
+      "guid": "C953EAC34FCA386BDF3D0CA293DB78C2",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_AmountActionPanel_K2Node_ComponentBoundEvent_8_OnAmountCancelled__DelegateSignature",
+      "guid": "239C3253407F45FBFCE6198C95BB7077",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_UseButton_K2Node_ComponentBoundEvent_9_OnInventoryActionButtonPressed__DelegateSignature",
+      "guid": "B4531ED140D04E3228DBDA8828FF7AD3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_LeaveButton_K2Node_ComponentBoundEvent_10_OnInventoryActionButtonPressed__DelegateSignature",
+      "guid": "B48507654B6B9391B6CEEB95F770FAEB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_DiscardButton_K2Node_ComponentBoundEvent_11_OnInventoryActionButtonPressed__DelegateSignature",
+      "guid": "FD7D03214CAA576EF7EF4B965B530B81",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_LeaveAmountButton_K2Node_ComponentBoundEvent_12_OnInventoryActionButtonPressed__DelegateSignature",
+      "guid": "641EB2F74585B67EB30D7CA1CDDD2712",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_DiscardAmountButton_K2Node_ComponentBoundEvent_13_OnInventoryActionButtonPressed__DelegateSignature",
+      "guid": "C78B7AFD4F3A5245F1128DAC92D6B494",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_InventoryAction_CancelButton_K2Node_ComponentBoundEvent_14_OnInventoryActionButtonPressed__DelegateSignature",
+      "guid": "17BD77204507D5E1703D989DC635A25C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "903A992B4E6947098AD233BB694C0200",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
     }
   ],
   "stats": {
-    "authored_graph_count": 1,
-    "generated_graph_count": 1,
-    "authored_node_count": 6,
-    "authored_pin_count": 16,
-    "authored_connection_count": 2,
-    "generated_node_count": 2,
-    "generated_pin_count": 5
+    "authored_graph_count": 14,
+    "generated_graph_count": 16,
+    "authored_node_count": 858,
+    "authored_pin_count": 2837,
+    "authored_connection_count": 802,
+    "generated_node_count": 34,
+    "generated_pin_count": 90
   },
   "graph_files": [
+    {
+      "name": "OnActionClosed",
+      "kind": "delegate",
+      "file": "graphs/OnActionClosed.json"
+    },
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ActivateSelectedAction",
+      "kind": "function",
+      "file": "graphs/ActivateSelectedAction.json"
+    },
+    {
+      "name": "CloseAction",
+      "kind": "function",
+      "file": "graphs/CloseAction.json"
+    },
+    {
+      "name": "ExecuteAmountRequest",
+      "kind": "function",
+      "file": "graphs/ExecuteAmountRequest.json"
+    },
+    {
+      "name": "HandleActionKey",
+      "kind": "function",
+      "file": "graphs/HandleActionKey.json"
+    },
+    {
+      "name": "InitializeForInventoryAction",
+      "kind": "function",
+      "file": "graphs/InitializeForInventoryAction.json"
+    },
+    {
+      "name": "NavigateAction",
+      "kind": "function",
+      "file": "graphs/NavigateAction.json"
+    },
+    {
+      "name": "OpenAmount",
+      "kind": "function",
+      "file": "graphs/OpenAmount.json"
+    },
+    {
+      "name": "RefreshActionAvailability",
+      "kind": "function",
+      "file": "graphs/RefreshActionAvailability.json"
+    },
+    {
+      "name": "RefreshLiveActionContext",
+      "kind": "function",
+      "file": "graphs/RefreshLiveActionContext.json"
+    },
+    {
+      "name": "ReturnToMainPanel",
+      "kind": "function",
+      "file": "graphs/ReturnToMainPanel.json"
+    },
+    {
+      "name": "SelectAction",
+      "kind": "function",
+      "file": "graphs/SelectAction.json"
+    },
+    {
+      "name": "UseSelectedItem",
+      "kind": "function",
+      "file": "graphs/UseSelectedItem.json"
     }
   ]
 }

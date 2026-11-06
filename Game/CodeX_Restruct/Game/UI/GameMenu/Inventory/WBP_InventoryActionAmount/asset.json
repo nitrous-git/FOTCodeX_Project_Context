@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_InventoryActionAmount",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryActionAmount",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryActionAmount.WBP_InventoryActionAmount",
+    "relative_package": "CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryActionAmount"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryActionButton"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryAction"
+    ],
+    "non_architecture_dependency_count": 10,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryActionAmount.WBP_InventoryActionAmount_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryActionAmount.WBP_InventoryActionAmount_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryActionAmount.WBP_InventoryActionAmount_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "AvailableQuantity",
+        "guid": "75E35CC74D4CA5957BF24BB13A960C38",
+        "friendly_name": "Available Quantity",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bConfirmed",
+        "guid": "5B481BA74534D524D52DBDBA524D1010",
+        "friendly_name": "Confirmed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDiscard",
+        "guid": "73AD04E94B16FDE992FF099ABAF48BFE",
+        "friendly_name": "Discard",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bYesSelected",
+        "guid": "079F5EA546645B4E326E2EAE3F744158",
+        "friendly_name": "Yes Selected",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentAmount",
+        "guid": "89F8FABA4B048BD6C9F11B8107C918E1",
+        "friendly_name": "Current Amount",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnAmountCancelled",
+        "guid": "4F2F5C9A4A7B9084BA9E7EBC36C589A2",
+        "friendly_name": "On Amount Cancelled",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnAmountConfirmed",
+        "guid": "6BAF0A214DCFF7CA72A76F9942A08C7B",
+        "friendly_name": "On Amount Confirmed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SourceSlotData",
+        "guid": "F4335D094F1585855076C681E8E0824F",
+        "friendly_name": "Source Slot Data",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "InitializeForInventoryAction",
+        "SetCurrentAmount",
+        "IncreaseAmount",
+        "DecreaseAmount",
+        "ConfirmAmount",
+        "CancelAmount",
+        "NavigateConfirmation",
+        "HandleAmountKey",
+        "RefreshAvailableQuantity"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnAmountConfirmed",
+        "OnAmountCancelled"
+      ],
+      "generated_graphs": [
+        "BndEvt__WBP_InventoryActionAmount_BtnUp_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_InventoryActionAmount_BtnDown_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_InventoryActionAmount_W_GB_YES_K2Node_ComponentBoundEvent_2_OnPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryActionAmount_W_GB_NO_K2Node_ComponentBoundEvent_3_OnPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryActionAmount_W_GB_YES_K2Node_ComponentBoundEvent_4_OnInventoryActionButtonPressed__DelegateSignature",
+        "BndEvt__WBP_InventoryActionAmount_W_GB_NO_K2Node_ComponentBoundEvent_5_OnInventoryActionButtonPressed__DelegateSignature"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 21
+  }
+}

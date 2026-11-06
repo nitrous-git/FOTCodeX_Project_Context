@@ -39,6 +39,7 @@
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
     ],
     "non_architecture_dependency_count": 24,
@@ -436,6 +437,7 @@
         "EventGraph"
       ],
       "functions": [
+        "HandleActiveInventoryActionKey",
         "RefreshCategories",
         "RefreshItemSelection",
         "RefreshInventoryInfoPresentation",
@@ -452,18 +454,21 @@
         "RefreshCharacterStatsSidebar",
         "HandleCharacterStatusChanged",
         "UnbindCharacterStatusEvents",
-        "InitializeCharacterStatsSidebar"
+        "InitializeCharacterStatsSidebar",
+        "HandleInventoryActionClosed",
+        "FocusSelectedInventoryCell"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "Destruct",
-        "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
-        "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
-        "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
-        "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+        "PreConstruct",
         "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
-        "PreConstruct"
+        "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+        "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
+        "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
+        "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
+        "Destruct",
+        "BndEvt__WBP_Inventory_ActionPanel_K2Node_ComponentBoundEvent_4_OnActionClosed__DelegateSignature"
       ]
     },
     "extraction_status": {
@@ -484,6 +489,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 121
+    "widget_count": 122
   }
 }
