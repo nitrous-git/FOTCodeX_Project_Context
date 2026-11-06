@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_LevelUp",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp.WBP_LevelUp",
+    "relative_package": "CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_StatusStatBlock",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_StatusStatEntry",
+      "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUpProgressionBlock",
+      "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUpStatBlock",
+      "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUpStatEntry"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu"
+    ],
+    "non_architecture_dependency_count": 15,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp.WBP_LevelUp_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp.WBP_LevelUp_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp.WBP_LevelUp_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "OnLevelUpPreviewRequested",
+        "guid": "DA3637374AD96B5DDF7BE098F774D975",
+        "friendly_name": "On Level Up Preview Requested",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnPreviewCanceled",
+        "guid": "FE05CA7A45D7FC2C36502080B8C0F020",
+        "friendly_name": "On Preview Canceled",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PendingAttributeIndex",
+        "guid": "721724AE4994BE9C8F1662A3F22E1808",
+        "friendly_name": "Pending Attribute Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PreviewFade",
+        "guid": "4723FA544C8B255A2E1CFEA1D73E0A09",
+        "friendly_name": "Preview Fade",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SelectedAttributeIndex",
+        "guid": "A582162945B7759473574F86E708B968",
+        "friendly_name": "Selected Attribute Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "StatusPlayerRef",
+        "guid": "8A1651BF426B3C368FA2B68EC82ABD2C",
+        "friendly_name": "Status Player Ref",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "OnPreviewKeyDown",
+        "InitializeGameplay",
+        "RefreshStatus",
+        "HandleCharacterStatusChanged",
+        "UnbindStatusEvents",
+        "FormatResource",
+        "RefreshEquipmentStatus",
+        "BeginPreview",
+        "DiscardPreview",
+        "RefreshPreview",
+        "SelectAttribute",
+        "AdjustAttribute"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnPreviewCanceled",
+        "OnLevelUpPreviewRequested"
+      ],
+      "generated_graphs": [
+        "BndEvt__WBP_LevelUp_ArcanePreview_K2Node_ComponentBoundEvent_16_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_ArcanePreview_K2Node_ComponentBoundEvent_15_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_FaithPreview_K2Node_ComponentBoundEvent_14_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_FaithPreview_K2Node_ComponentBoundEvent_13_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_IntelligencePreview_K2Node_ComponentBoundEvent_12_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_IntelligencePreview_K2Node_ComponentBoundEvent_11_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_DexterityPreview_K2Node_ComponentBoundEvent_10_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_DexterityPreview_K2Node_ComponentBoundEvent_9_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_StrengthPreview_K2Node_ComponentBoundEvent_8_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_StrengthPreview_K2Node_ComponentBoundEvent_7_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_EndurancePreview_K2Node_ComponentBoundEvent_6_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_EndurancePreview_K2Node_ComponentBoundEvent_5_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_MindPreview_K2Node_ComponentBoundEvent_4_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_MindPreview_K2Node_ComponentBoundEvent_3_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_VigorPreview_K2Node_ComponentBoundEvent_2_OnLevelAttributeAdjusted__DelegateSignature",
+        "BndEvt__WBP_LevelUp_VigorPreview_K2Node_ComponentBoundEvent_1_OnLevelAttributeFocused__DelegateSignature",
+        "BndEvt__WBP_LevelUp_CancelPreview_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+        "Destruct",
+        "Construct"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "unavailable",
+    "widget_count": 0
+  }
+}

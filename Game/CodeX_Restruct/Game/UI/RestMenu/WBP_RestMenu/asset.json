@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_RestMenu",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/RestMenu",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu.WBP_RestMenu",
+    "relative_package": "CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenuButton",
+      "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestTimeEntry"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+    ],
+    "non_architecture_dependency_count": 7,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu.WBP_RestMenu_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu.WBP_RestMenu_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu.WBP_RestMenu_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bClosing",
+        "guid": "5697F658493EAD2AA98D8EB6E819C8C6",
+        "friendly_name": "Closing",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MainSelection",
+        "guid": "F0B3B6B4488DABF8132061BA2DC4A0A4",
+        "friendly_name": "Main Selection",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MenuFade",
+        "guid": "5FA9228F4F907D818E736E8DCE97532E",
+        "friendly_name": "Menu Fade",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnRestRequested",
+        "guid": "A366F60E4189DDC09FB5A3B4B88A0CBA",
+        "friendly_name": "On Rest Requested",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnTimePreviewRequested",
+        "guid": "619B6311495944CAB2926C99F211D031",
+        "friendly_name": "On Time Preview Requested",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SiteDisplayName",
+        "guid": "946CC46141FF8A3EF767EF9DC9F878EE",
+        "friendly_name": "Site Display Name",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TimeSelection",
+        "guid": "FC09EE8746A6050FF25C98AF41869CB2",
+        "friendly_name": "Time Selection",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ViewDepth",
+        "guid": "B15A92794E9731B8538FACBBA9D52FA8",
+        "friendly_name": "View Depth",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "InitializeRestMenu",
+        "RefreshSelection",
+        "SelectEntry",
+        "ActivateEntry",
+        "NavigateBack",
+        "RequestClose",
+        "ShowMain",
+        "OnPreviewKeyDown"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnRestRequested",
+        "OnTimePreviewRequested"
+      ],
+      "generated_graphs": [
+        "BndEvt__WBP_RestMenu_LevelUpView_K2Node_ComponentBoundEvent_16_OnPreviewCanceled__DelegateSignature",
+        "BndEvt__WBP_RestMenu_TimeBackEntry_K2Node_ComponentBoundEvent_15_OnRestEntryFocused__DelegateSignature",
+        "BndEvt__WBP_RestMenu_TimeBackEntry_K2Node_ComponentBoundEvent_14_OnActivated__DelegateSignature",
+        "BndEvt__WBP_RestMenu_NightEntry_K2Node_ComponentBoundEvent_13_OnRestEntryFocused__DelegateSignature",
+        "BndEvt__WBP_RestMenu_NightEntry_K2Node_ComponentBoundEvent_12_OnActivated__DelegateSignature",
+        "BndEvt__WBP_RestMenu_NoonEntry_K2Node_ComponentBoundEvent_11_OnRestEntryFocused__DelegateSignature",
+        "BndEvt__WBP_RestMenu_NoonEntry_K2Node_ComponentBoundEvent_10_OnActivated__DelegateSignature",
+        "BndEvt__WBP_RestMenu_MorningEntry_K2Node_ComponentBoundEvent_9_OnRestEntryFocused__DelegateSignature",
+        "BndEvt__WBP_RestMenu_MorningEntry_K2Node_ComponentBoundEvent_8_OnActivated__DelegateSignature",
+        "BndEvt__WBP_RestMenu_TimeInfoButton_K2Node_ComponentBoundEvent_7_OnRestEntryFocused__DelegateSignature",
+        "BndEvt__WBP_RestMenu_TimeInfoButton_K2Node_ComponentBoundEvent_6_OnActivated__DelegateSignature",
+        "BndEvt__WBP_RestMenu_LeaveButton_K2Node_ComponentBoundEvent_5_OnRestEntryFocused__DelegateSignature",
+        "BndEvt__WBP_RestMenu_LeaveButton_K2Node_ComponentBoundEvent_4_OnActivated__DelegateSignature",
+        "BndEvt__WBP_RestMenu_LevelUpButton_K2Node_ComponentBoundEvent_3_OnRestEntryFocused__DelegateSignature",
+        "BndEvt__WBP_RestMenu_LevelUpButton_K2Node_ComponentBoundEvent_2_OnActivated__DelegateSignature",
+        "BndEvt__WBP_RestMenu_RestButton_K2Node_ComponentBoundEvent_1_OnRestEntryFocused__DelegateSignature",
+        "BndEvt__WBP_RestMenu_RestButton_K2Node_ComponentBoundEvent_0_OnActivated__DelegateSignature",
+        "Tick"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 29
+  }
+}

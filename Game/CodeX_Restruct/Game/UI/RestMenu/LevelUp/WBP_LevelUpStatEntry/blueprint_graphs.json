@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_LevelUpStatEntry",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "6D06C16F414EDDA925BF19943159C749",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "BaseValue",
+      "guid": "13CF1C8B4C1878948592E8A3E38F3210",
+      "friendly_name": "Base Value",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSelected",
+      "guid": "70528C474E9487CD65F1B09F28EC21C3",
+      "friendly_name": "Selected",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GlowAlpha",
+      "guid": "94CF078F407CF555CBB397BC47F6F274",
+      "friendly_name": "Glow Alpha",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Label",
+      "guid": "D86F2F0C4C9D80BC67E10AA673033B27",
+      "friendly_name": "Label",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnLevelAttributeAdjusted",
+      "guid": "53D64BCE49359F15B3D9FF9F1DACB1C9",
+      "friendly_name": "On Level Attribute Adjusted",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnLevelAttributeFocused",
+      "guid": "462C004342E714470361E9902244BCFF",
+      "friendly_name": "On Level Attribute Focused",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ProposedValue",
+      "guid": "A74D4B5645E13982F8EEB29DC37E1EE9",
+      "friendly_name": "Proposed Value",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RowIndex",
+      "guid": "217D7D2646F200E52A15A4B97A4CCCEA",
+      "friendly_name": "Row Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "90EEF1E74B5C7A947CB0F8B06781D658",
+      "node_count": 37,
+      "pin_count": 98,
+      "connection_count": 29,
+      "exec_connection_count": 8,
+      "data_connection_count": 21
+    },
+    {
+      "name": "SetValues",
+      "kind": "function",
+      "guid": "2B466580463FD34BE152138964CC3B27",
+      "node_count": 29,
+      "pin_count": 109,
+      "connection_count": 41,
+      "exec_connection_count": 10,
+      "data_connection_count": 31
+    },
+    {
+      "name": "SetSelected",
+      "kind": "function",
+      "guid": "87523A7448A04D4E29B43C91BE2EAA51",
+      "node_count": 2,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnLevelAttributeFocused",
+      "kind": "delegate",
+      "guid": "7AF95AD04898341FE6C7389FEE90EAC6",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnLevelAttributeAdjusted",
+      "kind": "delegate",
+      "guid": "0111DDC54C234612DF349CA0A103B081",
+      "node_count": 1,
+      "pin_count": 3,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "BndEvt__WBP_LevelUpStatEntry_IncreaseButton_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature",
+      "guid": "13CA232847B5805DD67B03B7851FF068",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_LevelUpStatEntry_IncreaseButton_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature",
+      "guid": "9D04D4A74952661658312BBDCDE83000",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_LevelUpStatEntry_DecreaseButton_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature",
+      "guid": "6C002BE9482C284CB5DD33818928517A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_LevelUpStatEntry_DecreaseButton_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+      "guid": "FBB593484AE45E676A4F3EA95204F2EF",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_LevelUpStatEntry_RowButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+      "guid": "A2BE44A2450D661EBED5C18EB3F60858",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_LevelUpStatEntry_RowButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "9053EE1147395226BDC2ECA9EAC75D26",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Tick",
+      "guid": "1703DA0B47930590F43AFE81679A9159",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 7,
+    "authored_node_count": 70,
+    "authored_pin_count": 219,
+    "authored_connection_count": 72,
+    "generated_node_count": 15,
+    "generated_pin_count": 41
+  },
+  "graph_files": [
+    {
+      "name": "OnLevelAttributeAdjusted",
+      "kind": "delegate",
+      "file": "graphs/OnLevelAttributeAdjusted.json"
+    },
+    {
+      "name": "OnLevelAttributeFocused",
+      "kind": "delegate",
+      "file": "graphs/OnLevelAttributeFocused.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "SetSelected",
+      "kind": "function",
+      "file": "graphs/SetSelected.json"
+    },
+    {
+      "name": "SetValues",
+      "kind": "function",
+      "file": "graphs/SetValues.json"
+    }
+  ]
+}

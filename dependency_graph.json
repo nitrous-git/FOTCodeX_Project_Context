@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 418,
-  "edge_count": 1263,
+  "node_count": 426,
+  "edge_count": 1287,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -102,6 +102,10 @@
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "to": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu"
     },
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -2272,6 +2276,22 @@
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite",
+      "to": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite",
+      "to": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
     },
@@ -4406,6 +4426,82 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources",
       "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_StatusStatBlock"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_StatusStatEntry"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUpProgressionBlock"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUpStatBlock"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "to": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUpStatEntry"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu",
+      "to": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu",
+      "to": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu",
+      "to": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenuButton"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu",
+      "to": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestTimeEntry"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle",

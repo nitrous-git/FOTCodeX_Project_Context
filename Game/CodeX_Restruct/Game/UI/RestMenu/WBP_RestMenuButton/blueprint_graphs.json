@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_RestMenuButton",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "0003762745BB89E238E6048BB50F13EB",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "ActionIndex",
+      "guid": "01FF31A6459FE7360C587E8C7ED091CC",
+      "friendly_name": "Action Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSelected",
+      "guid": "DE1A08B94A641C80F7A2A4B70F9C23E8",
+      "friendly_name": "Selected",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GlowAlpha",
+      "guid": "C998A9914E8394B5A8E8D2A64AF546CE",
+      "friendly_name": "Glow Alpha",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Label",
+      "guid": "0F5A5E844DDBD50DFD3FD9BF70C75D01",
+      "friendly_name": "Label",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnActivated",
+      "guid": "BEFD68A8476BBEC3A1051296F4599984",
+      "friendly_name": "On Activated",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnRestEntryFocused",
+      "guid": "8241539E44FC66DB64AE73B9E72D914B",
+      "friendly_name": "On Rest Entry Focused",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "6F0C9BD94AA13C2252665A97F8FE7087",
+      "node_count": 23,
+      "pin_count": 66,
+      "connection_count": 20,
+      "exec_connection_count": 5,
+      "data_connection_count": 15
+    },
+    {
+      "name": "SetSelected",
+      "kind": "function",
+      "guid": "AEFED16648D29E25609050B3F7893987",
+      "node_count": 2,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "SetLabel",
+      "kind": "function",
+      "guid": "134FD67F44353263FD533397CC1D7173",
+      "node_count": 4,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "OnActivated",
+      "kind": "delegate",
+      "guid": "75D83C1E47EBE321E620238CCA14C3E9",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnRestEntryFocused",
+      "kind": "delegate",
+      "guid": "A3ECA6F04D1AC14B8507E9BAE0324DDE",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Tick",
+      "guid": "75060BB643CD5E26A7CF21A556D08313",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "F4AC75564D816C2F042CEA93E8EF35B3",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_RestMenuButton_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+      "guid": "20BA9EAF469DED898B3F7CA05A78C45C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_RestMenuButton_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "26B8451843EA0D7C93A162B8260FBDF6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 4,
+    "authored_node_count": 31,
+    "authored_pin_count": 90,
+    "authored_connection_count": 27,
+    "generated_node_count": 10,
+    "generated_pin_count": 30
+  },
+  "graph_files": [
+    {
+      "name": "OnActivated",
+      "kind": "delegate",
+      "file": "graphs/OnActivated.json"
+    },
+    {
+      "name": "OnRestEntryFocused",
+      "kind": "delegate",
+      "file": "graphs/OnRestEntryFocused.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "SetLabel",
+      "kind": "function",
+      "file": "graphs/SetLabel.json"
+    },
+    {
+      "name": "SetSelected",
+      "kind": "function",
+      "file": "graphs/SetSelected.json"
+    }
+  ]
+}

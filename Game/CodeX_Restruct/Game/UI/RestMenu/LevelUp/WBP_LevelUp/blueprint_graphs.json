@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_LevelUp",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "0AA8B749496FCD85B26CBA8A893CE2B7",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "OnLevelUpPreviewRequested",
+      "guid": "DA3637374AD96B5DDF7BE098F774D975",
+      "friendly_name": "On Level Up Preview Requested",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnPreviewCanceled",
+      "guid": "FE05CA7A45D7FC2C36502080B8C0F020",
+      "friendly_name": "On Preview Canceled",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PendingAttributeIndex",
+      "guid": "721724AE4994BE9C8F1662A3F22E1808",
+      "friendly_name": "Pending Attribute Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PreviewFade",
+      "guid": "4723FA544C8B255A2E1CFEA1D73E0A09",
+      "friendly_name": "Preview Fade",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SelectedAttributeIndex",
+      "guid": "A582162945B7759473574F86E708B968",
+      "friendly_name": "Selected Attribute Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StatusPlayerRef",
+      "guid": "8A1651BF426B3C368FA2B68EC82ABD2C",
+      "friendly_name": "Status Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "B77F6E2E470B352EEF2F26A7A63A0E31",
+      "node_count": 42,
+      "pin_count": 156,
+      "connection_count": 47,
+      "exec_connection_count": 20,
+      "data_connection_count": 27
+    },
+    {
+      "name": "OnPreviewKeyDown",
+      "kind": "function",
+      "guid": "D5B740D149B9E21474EB29A573B469A8",
+      "node_count": 80,
+      "pin_count": 234,
+      "connection_count": 87,
+      "exec_connection_count": 31,
+      "data_connection_count": 56
+    },
+    {
+      "name": "InitializeGameplay",
+      "kind": "function",
+      "guid": "73FFF66D4B46419B27A736844EDC784C",
+      "node_count": 8,
+      "pin_count": 24,
+      "connection_count": 10,
+      "exec_connection_count": 5,
+      "data_connection_count": 5
+    },
+    {
+      "name": "RefreshStatus",
+      "kind": "function",
+      "guid": "1DB361A54B8547FE758BCD88F680F59D",
+      "node_count": 50,
+      "pin_count": 220,
+      "connection_count": 70,
+      "exec_connection_count": 20,
+      "data_connection_count": 50
+    },
+    {
+      "name": "HandleCharacterStatusChanged",
+      "kind": "function",
+      "guid": "1B0535CA466A0CA591CBF489AACDB2D4",
+      "node_count": 4,
+      "pin_count": 12,
+      "connection_count": 3,
+      "exec_connection_count": 3,
+      "data_connection_count": 0
+    },
+    {
+      "name": "UnbindStatusEvents",
+      "kind": "function",
+      "guid": "A0F08A724C850A5106A58B988898A7D2",
+      "node_count": 7,
+      "pin_count": 16,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "FormatResource",
+      "kind": "function",
+      "guid": "F4F460FC4B48D47D3939978038835C54",
+      "node_count": 9,
+      "pin_count": 42,
+      "connection_count": 10,
+      "exec_connection_count": 1,
+      "data_connection_count": 9
+    },
+    {
+      "name": "RefreshEquipmentStatus",
+      "kind": "function",
+      "guid": "5374CE934EDBBFA5338B1FB121507284",
+      "node_count": 132,
+      "pin_count": 565,
+      "connection_count": 151,
+      "exec_connection_count": 35,
+      "data_connection_count": 116
+    },
+    {
+      "name": "BeginPreview",
+      "kind": "function",
+      "guid": "3FEDD5744996C253D0F58EB0DFD96E6D",
+      "node_count": 7,
+      "pin_count": 21,
+      "connection_count": 6,
+      "exec_connection_count": 5,
+      "data_connection_count": 1
+    },
+    {
+      "name": "DiscardPreview",
+      "kind": "function",
+      "guid": "6D8B6DFE463C9FF9E50F6E88519D6E92",
+      "node_count": 5,
+      "pin_count": 13,
+      "connection_count": 4,
+      "exec_connection_count": 3,
+      "data_connection_count": 1
+    },
+    {
+      "name": "RefreshPreview",
+      "kind": "function",
+      "guid": "0D047BF74948FC84776DA6BB171211AF",
+      "node_count": 202,
+      "pin_count": 719,
+      "connection_count": 269,
+      "exec_connection_count": 29,
+      "data_connection_count": 240
+    },
+    {
+      "name": "SelectAttribute",
+      "kind": "function",
+      "guid": "42AA0E014D23A7E299D1AEB016E15B80",
+      "node_count": 37,
+      "pin_count": 122,
+      "connection_count": 43,
+      "exec_connection_count": 7,
+      "data_connection_count": 36
+    },
+    {
+      "name": "AdjustAttribute",
+      "kind": "function",
+      "guid": "2B657EF346AF97CE7333CDB0ED64A5D7",
+      "node_count": 33,
+      "pin_count": 117,
+      "connection_count": 47,
+      "exec_connection_count": 17,
+      "data_connection_count": 30
+    },
+    {
+      "name": "OnPreviewCanceled",
+      "kind": "delegate",
+      "guid": "907C3EB54E16910E1D0412BC0AA28705",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnLevelUpPreviewRequested",
+      "kind": "delegate",
+      "guid": "35998C034CD9527662132D9B08339F12",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "BndEvt__WBP_LevelUp_ArcanePreview_K2Node_ComponentBoundEvent_16_OnLevelAttributeAdjusted__DelegateSignature",
+      "guid": "E8AA73C24F1D35CDC911EEBD10FF24D2",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_ArcanePreview_K2Node_ComponentBoundEvent_15_OnLevelAttributeFocused__DelegateSignature",
+      "guid": "BC000DEF4B6E547D2FB281AB810A27F3",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_FaithPreview_K2Node_ComponentBoundEvent_14_OnLevelAttributeAdjusted__DelegateSignature",
+      "guid": "7845F2F949FA5480AC6BF4B0273E336F",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_FaithPreview_K2Node_ComponentBoundEvent_13_OnLevelAttributeFocused__DelegateSignature",
+      "guid": "D2EAE57C4DFC6D421D6BD4A89E2FF5C8",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_IntelligencePreview_K2Node_ComponentBoundEvent_12_OnLevelAttributeAdjusted__DelegateSignature",
+      "guid": "EEFF9822410A11F655B16F9A6382E294",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_IntelligencePreview_K2Node_ComponentBoundEvent_11_OnLevelAttributeFocused__DelegateSignature",
+      "guid": "1605569947B2D746C9C7A69D7ED337CA",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_DexterityPreview_K2Node_ComponentBoundEvent_10_OnLevelAttributeAdjusted__DelegateSignature",
+      "guid": "AA41ED6C454D41E9071913B7FA753510",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_DexterityPreview_K2Node_ComponentBoundEvent_9_OnLevelAttributeFocused__DelegateSignature",
+      "guid": "49040D4145F295C31980989061FE2620",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_StrengthPreview_K2Node_ComponentBoundEvent_8_OnLevelAttributeAdjusted__DelegateSignature",
+      "guid": "CB0F77EC4C4A1F6AB4C0E8B589996FA2",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_StrengthPreview_K2Node_ComponentBoundEvent_7_OnLevelAttributeFocused__DelegateSignature",
+      "guid": "C8F4F746443C7C0237CC4C84307E3195",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_EndurancePreview_K2Node_ComponentBoundEvent_6_OnLevelAttributeAdjusted__DelegateSignature",
+      "guid": "CA8CA1334415DFFAE21F07AB69E05F88",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_EndurancePreview_K2Node_ComponentBoundEvent_5_OnLevelAttributeFocused__DelegateSignature",
+      "guid": "AD786882422807C61C14EFAAEFECDDAF",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_MindPreview_K2Node_ComponentBoundEvent_4_OnLevelAttributeAdjusted__DelegateSignature",
+      "guid": "7476B5804043879321E6A5800253F416",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_MindPreview_K2Node_ComponentBoundEvent_3_OnLevelAttributeFocused__DelegateSignature",
+      "guid": "0609CB354271049873F15FAC5635AAC7",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_VigorPreview_K2Node_ComponentBoundEvent_2_OnLevelAttributeAdjusted__DelegateSignature",
+      "guid": "F1BF79C54B0874AF8697F6958B5F6598",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_VigorPreview_K2Node_ComponentBoundEvent_1_OnLevelAttributeFocused__DelegateSignature",
+      "guid": "145533254B890F236382D5BD2D6B16A1",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_LevelUp_CancelPreview_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "4CCBC50A4CFD999BC222FE92087A7CA2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Destruct",
+      "guid": "0735FC5A4255C568FCDE7B89DDF3A5CD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Construct",
+      "guid": "F6260A124212AA84112D0A8EADB4B3C3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 15,
+    "generated_graph_count": 19,
+    "authored_node_count": 618,
+    "authored_pin_count": 2263,
+    "authored_connection_count": 753,
+    "generated_node_count": 54,
+    "generated_pin_count": 175
+  },
+  "graph_files": [
+    {
+      "name": "OnLevelUpPreviewRequested",
+      "kind": "delegate",
+      "file": "graphs/OnLevelUpPreviewRequested.json"
+    },
+    {
+      "name": "OnPreviewCanceled",
+      "kind": "delegate",
+      "file": "graphs/OnPreviewCanceled.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "AdjustAttribute",
+      "kind": "function",
+      "file": "graphs/AdjustAttribute.json"
+    },
+    {
+      "name": "BeginPreview",
+      "kind": "function",
+      "file": "graphs/BeginPreview.json"
+    },
+    {
+      "name": "DiscardPreview",
+      "kind": "function",
+      "file": "graphs/DiscardPreview.json"
+    },
+    {
+      "name": "FormatResource",
+      "kind": "function",
+      "file": "graphs/FormatResource.json"
+    },
+    {
+      "name": "HandleCharacterStatusChanged",
+      "kind": "function",
+      "file": "graphs/HandleCharacterStatusChanged.json"
+    },
+    {
+      "name": "InitializeGameplay",
+      "kind": "function",
+      "file": "graphs/InitializeGameplay.json"
+    },
+    {
+      "name": "OnPreviewKeyDown",
+      "kind": "function",
+      "file": "graphs/OnPreviewKeyDown.json"
+    },
+    {
+      "name": "RefreshEquipmentStatus",
+      "kind": "function",
+      "file": "graphs/RefreshEquipmentStatus.json"
+    },
+    {
+      "name": "RefreshPreview",
+      "kind": "function",
+      "file": "graphs/RefreshPreview.json"
+    },
+    {
+      "name": "RefreshStatus",
+      "kind": "function",
+      "file": "graphs/RefreshStatus.json"
+    },
+    {
+      "name": "SelectAttribute",
+      "kind": "function",
+      "file": "graphs/SelectAttribute.json"
+    },
+    {
+      "name": "UnbindStatusEvents",
+      "kind": "function",
+      "file": "graphs/UnbindStatusEvents.json"
+    }
+  ]
+}

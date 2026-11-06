@@ -42,17 +42,21 @@
       "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Core/GameModes/BP_CPC_GameMode",
+      "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_Status",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
+      "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
+      "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu"
     ],
     "non_architecture_dependency_count": 7,
     "non_architecture_referencer_count": 0
@@ -111,6 +115,57 @@
         "name": "bGameMenuOpen",
         "guid": "5B7103CF476279B9B1276780BBD0A16D",
         "friendly_name": "Game Menu Open",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bRestCombatContextWasActive",
+        "guid": "CA61A06B40F038D1C2EE888886776BA1",
+        "friendly_name": "Rest Combat Context Was Active",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bRestMenuOpen",
+        "guid": "1DC653184831964A9CAC7A8346176046",
+        "friendly_name": "Rest Menu Open",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bRestPreviousCursor",
+        "guid": "0A7F003D4BE8F4290A6007BE204110BC",
+        "friendly_name": "Rest Previous Cursor",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
@@ -329,6 +384,40 @@
         }
       },
       {
+        "name": "RestCombatContextPriority",
+        "guid": "D96313FC431A45A195D1B7BA078E4C20",
+        "friendly_name": "Rest Combat Context Priority",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RestMenuRef",
+        "guid": "133F81C74CAAE7FE068C8C8365220423",
+        "friendly_name": "Rest Menu Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu.WBP_RestMenu_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "RightIntent",
         "guid": "55B6D16F4254A16AA7EC55AB2A20EB8A",
         "friendly_name": "Right Intent",
@@ -401,35 +490,38 @@
         "DetachGameplayHUD",
         "RemoveGameplayHUD",
         "DebugCycleRightHandWeapon",
-        "ResolveInteractionComponent",
+        "RequestInteraction",
         "SyncInteractionState",
-        "RequestInteraction"
+        "ResolveInteractionComponent",
+        "OpenRestMenu",
+        "CloseRestMenu",
+        "FinishCloseRestMenu"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_15",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_14",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_13",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
-        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_11",
-        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_10",
-        "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_9",
-        "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_8",
-        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_7",
-        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_6",
-        "InpActEvt_N_K2Node_InputKeyEvent_1",
-        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_5",
-        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_4",
-        "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_3",
-        "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_2",
-        "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_1",
-        "InpActEvt_One_K2Node_InputKeyEvent_0",
-        "InpActEvt_IA_Interact_K2Node_EnhancedInputActionEvent_0",
-        "ReceiveBeginPlay",
-        "ReceivePossess",
+        "ReceiveEndPlay",
         "ReceiveUnPossess",
-        "ReceiveEndPlay"
+        "ReceivePossess",
+        "ReceiveBeginPlay",
+        "InpActEvt_IA_Interact_K2Node_EnhancedInputActionEvent_0",
+        "InpActEvt_One_K2Node_InputKeyEvent_0",
+        "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_1",
+        "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_2",
+        "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_3",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_4",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_5",
+        "InpActEvt_N_K2Node_InputKeyEvent_1",
+        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_6",
+        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_7",
+        "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_8",
+        "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_9",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_10",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_11",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_12",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_13",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_14",
+        "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_15"
       ]
     },
     "extraction_status": {
