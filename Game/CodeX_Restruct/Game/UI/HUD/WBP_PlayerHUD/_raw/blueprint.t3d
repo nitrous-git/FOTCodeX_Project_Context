@@ -38,13 +38,13 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" Export
       End Object
       Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_AbilityDisplay.WBP_AbilityDisplay_C Name="AbilityDisplay" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_AbilityDisplay.WBP_AbilityDisplay_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.AbilityDisplay'"
       End Object
-      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_Interaction.WBP_Interaction_C Name="InteractionPrompt" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_Interaction.WBP_Interaction_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.InteractionPrompt'"
-      End Object
       Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_InteractionError.WBP_InteractionError_C Name="InteractionError" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_InteractionError.WBP_InteractionError_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.InteractionError'"
       End Object
       Begin Object Class=/Script/UMG.VerticalBox Name="LootNotificationsBox" ExportPath="/Script/UMG.VerticalBox'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.LootNotificationsBox'"
       End Object
       Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid.WBP_ItemWheelGrid_C Name="ItemWheelGrid" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid.WBP_ItemWheelGrid_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.ItemWheelGrid'"
+      End Object
+      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_Interaction.WBP_Interaction_C Name="InteractionPrompt" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_Interaction.WBP_Interaction_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.InteractionPrompt'"
       End Object
    End Object
    Begin Object Class=/Script/Engine.EdGraph Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:EventGraph'"
@@ -513,10 +513,6 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" Export
          Slot="/Script/UMG.OverlaySlot'WBP_PlayerHUD:WidgetTree.HUDOverlay.OverlaySlot_5'"
          DisplayLabel="AbilityDisplay"
       End Object
-      Begin Object Name="InteractionPrompt" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_Interaction.WBP_Interaction_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.InteractionPrompt'"
-         Slot="/Script/UMG.OverlaySlot'WBP_PlayerHUD:WidgetTree.HUDOverlay.OverlaySlot_6'"
-         DisplayLabel="InteractionPrompt"
-      End Object
       Begin Object Name="InteractionError" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_InteractionError.WBP_InteractionError_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.InteractionError'"
          Slot="/Script/UMG.OverlaySlot'WBP_PlayerHUD:WidgetTree.HUDOverlay.OverlaySlot_7'"
          DisplayLabel="InteractionError"
@@ -532,6 +528,10 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" Export
          Slot="/Script/UMG.OverlaySlot'WBP_PlayerHUD:WidgetTree.HUDOverlay.OverlaySlot_1'"
          Visibility=HitTestInvisible
          DisplayLabel="ItemWheelGrid"
+      End Object
+      Begin Object Name="InteractionPrompt" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_Interaction.WBP_Interaction_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.InteractionPrompt'"
+         Slot="/Script/UMG.OverlaySlot'WBP_PlayerHUD:WidgetTree.HUDOverlay.OverlaySlot_6'"
+         DisplayLabel="InteractionPrompt"
       End Object
       RootWidget="/Script/UMG.CanvasPanel'MainHUDCanvas'"
       AllWidgets(0)="/Script/UMG.CanvasPanel'MainHUDCanvas'"

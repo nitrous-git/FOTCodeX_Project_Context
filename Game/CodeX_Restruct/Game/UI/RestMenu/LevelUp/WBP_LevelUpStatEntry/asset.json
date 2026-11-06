@@ -70,6 +70,23 @@
         }
       },
       {
+        "name": "DisplayOnly",
+        "guid": "FF71BA7A48BDE0A49A4C27885D38ACE6",
+        "friendly_name": "Display Only",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "GlowAlpha",
         "guid": "94CF078F407CF555CBB397BC47F6F274",
         "friendly_name": "Glow Alpha",
@@ -90,6 +107,23 @@
         "name": "Label",
         "guid": "D86F2F0C4C9D80BC67E10AA673033B27",
         "friendly_name": "Label",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Label_0",
+        "guid": "70541CA64F23EF828113A7AFFC32A0FF",
+        "friendly_name": "Label 0",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
@@ -178,7 +212,10 @@
       ],
       "functions": [
         "SetValues",
-        "SetSelected"
+        "SetSelected",
+        "ConfigurePresentation",
+        "SetComparison",
+        "SetValue"
       ],
       "macros": [],
       "delegates": [
@@ -186,6 +223,7 @@
         "OnLevelAttributeAdjusted"
       ],
       "generated_graphs": [
+        "PreConstruct",
         "Tick",
         "BndEvt__WBP_LevelUpStatEntry_RowButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
         "BndEvt__WBP_LevelUpStatEntry_RowButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
@@ -213,6 +251,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 15
+    "widget_count": 16
   }
 }

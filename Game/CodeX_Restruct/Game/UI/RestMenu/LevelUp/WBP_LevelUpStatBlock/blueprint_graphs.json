@@ -8,6 +8,40 @@
   },
   "variables": [
     {
+      "name": "BodyInsetLeft",
+      "guid": "3775173840795572E011E0BDA8F23996",
+      "friendly_name": "Body Inset Left",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "BodyTopPadding",
+      "guid": "456B223D48BF78EFFC7CB7ACCB46E1E1",
+      "friendly_name": "Body Top Padding",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "Heading",
       "guid": "0DD477D44FCC8D18B3C99F847C6ABB59",
       "friendly_name": "Heading",
@@ -47,17 +81,27 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "F0340B754A0966CBB276E7AC95CE92B6",
-      "node_count": 7,
-      "pin_count": 20,
-      "connection_count": 6,
-      "exec_connection_count": 2,
+      "node_count": 16,
+      "pin_count": 47,
+      "connection_count": 7,
+      "exec_connection_count": 3,
       "data_connection_count": 4
+    },
+    {
+      "name": "ApplyBodyInsets",
+      "kind": "function",
+      "guid": "E559C4FE4FD054567C10C3BA8C0B0C2E",
+      "node_count": 7,
+      "pin_count": 19,
+      "connection_count": 6,
+      "exec_connection_count": 1,
+      "data_connection_count": 5
     }
   ],
   "generated_graphs": [
     {
       "name": "PreConstruct",
-      "guid": "54417BA14B3B8208CB5AF293ADFE2484",
+      "guid": "1D99F6C34A1E584FDCB619A56D7013B0",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -66,11 +110,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 1,
+    "authored_graph_count": 2,
     "generated_graph_count": 1,
-    "authored_node_count": 7,
-    "authored_pin_count": 20,
-    "authored_connection_count": 6,
+    "authored_node_count": 23,
+    "authored_pin_count": 66,
+    "authored_connection_count": 13,
     "generated_node_count": 3,
     "generated_pin_count": 9
   },
@@ -79,6 +123,11 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplyBodyInsets",
+      "kind": "function",
+      "file": "graphs/ApplyBodyInsets.json"
     }
   ]
 }
