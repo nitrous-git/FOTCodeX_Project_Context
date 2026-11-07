@@ -41,6 +41,8 @@ Begin Object Class=/Script/Engine.Blueprint Name="BP_InteractableBase" ExportPat
       Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionResult Name="K2Node_FunctionResult_1" ExportPath="/Script/BlueprintGraph.K2Node_FunctionResult'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:ExecuteInteraction.K2Node_FunctionResult_1'"
       End Object
    End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfo Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:SceneThumbnailInfo_0'"
+   End Object
    Begin Object Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:EventGraph'"
       Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
       bAllowDeletion=False
@@ -150,7 +152,7 @@ Begin Object Class=/Script/Engine.Blueprint Name="BP_InteractableBase" ExportPat
          CustomProperties Pin (PinId=0BB93A9848B0F62CE2C39BB43E5E900A,PinName="A",PinType.PinCategory="real",PinType.PinSubCategory="double",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_7 C3047B1E47B061FCA6BFC08939BE1C34,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
          CustomProperties Pin (PinId=8B65575544B0236114A98399ACFB278D,PinName="B",PinType.PinCategory="real",PinType.PinSubCategory="double",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_VariableGet_2 7DAFBAE041D8F7097DA26687C8D8FAC9,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
          CustomProperties Pin (PinId=36CC04754ACAB5E9D71865BA153F78A7,PinName="ReturnValue",Direction="EGPD_Output",PinType.PinCategory="bool",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CommutativeAssociativeBinaryOperator_0 3A2EDF1E407363965A665A8849C89EB4,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-         CustomProperties Pin (PinId=0A0182674C343420FBDF509C5D6543F4,PinName="ErrorTolerance",PinType.PinCategory="",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=True,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=847F04F946726E89E83959ABD81B5826,PinName="ErrorTolerance",PinType.PinCategory="",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=True,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
       End Object
       Begin Object Name="K2Node_CommutativeAssociativeBinaryOperator_0" ExportPath="/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:GetInteractionInfo.K2Node_CommutativeAssociativeBinaryOperator_0'"
          bDefaultsToPureFunc=True
@@ -239,6 +241,8 @@ Begin Object Class=/Script/Engine.Blueprint Name="BP_InteractableBase" ExportPat
       Nodes(1)="/Script/BlueprintGraph.K2Node_FunctionResult'K2Node_FunctionResult_1'"
       GraphGuid=474C7FEF44CE4D14603F8D89F306F54C
    End Object
+   Begin Object Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:SceneThumbnailInfo_0'"
+   End Object
    ParentClass="/Script/CoreUObject.Class'/Script/Engine.Actor'"
    BlueprintSystemVersion=2
    SimpleConstructionScript="/Script/Engine.SimpleConstructionScript'BP_InteractableBase_C:SimpleConstructionScript_0'"
@@ -254,9 +258,10 @@ Begin Object Class=/Script/Engine.Blueprint Name="BP_InteractableBase" ExportPat
    CategorySorting(1)=""
    CategorySorting(2)="Event Graph"
    LastEditedDocuments(0)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:UserConstructionScript",SavedViewOffset=(X=-364.363556,Y=-276.527130),SavedZoomAmount=1.000000)
-   LastEditedDocuments(1)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:EventGraph",SavedViewOffset=(X=-348.363556,Y=-53.527130),SavedZoomAmount=1.000000)
-   LastEditedDocuments(2)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:GetInteractionInfo",SavedViewOffset=(X=1.856079,Y=-334.462891),SavedZoomAmount=0.675000)
-   LastEditedDocuments(3)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:EventGraph",SavedViewOffset=(X=-706.141296,Y=-817.351196),SavedZoomAmount=0.375000)
+   LastEditedDocuments(1)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:EventGraph",SavedViewOffset=(X=-706.141296,Y=-817.351196),SavedZoomAmount=0.375000)
+   LastEditedDocuments(2)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:GetInteractionInfo",SavedViewOffset=(X=-580.218445,Y=-1268.537598),SavedZoomAmount=0.225000)
+   LastEditedDocuments(3)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase:EventGraph",SavedZoomAmount=1.000000)
+   ThumbnailInfo="/Script/UnrealEd.SceneThumbnailInfo'SceneThumbnailInfo_0'"
    GeneratedClass="/Script/Engine.BlueprintGeneratedClass'BP_InteractableBase_C'"
    bLegacyNeedToPurgeSkelRefs=False
    BlueprintGuid=44BB35204BAED0DFBE653DAABD6E266C

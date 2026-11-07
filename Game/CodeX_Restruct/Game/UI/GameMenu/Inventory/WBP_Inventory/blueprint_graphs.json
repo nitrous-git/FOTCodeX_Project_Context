@@ -384,16 +384,6 @@
   ],
   "graphs": [
     {
-      "name": "HandleActiveInventoryActionKey",
-      "kind": "function",
-      "guid": "0158B73C4994B5DEE5524B87E0FC2922",
-      "node_count": 15,
-      "pin_count": 40,
-      "connection_count": 16,
-      "exec_connection_count": 6,
-      "data_connection_count": 10
-    },
-    {
       "name": "EventGraph",
       "kind": "event",
       "guid": "84A94BEB46A0F587E433FD981F3D5264",
@@ -417,8 +407,8 @@
       "name": "RefreshItemSelection",
       "kind": "function",
       "guid": "475C39EE4A2F258AB6C6DCA11980D7D1",
-      "node_count": 64,
-      "pin_count": 216,
+      "node_count": 34,
+      "pin_count": 118,
       "connection_count": 43,
       "exec_connection_count": 13,
       "data_connection_count": 30
@@ -577,11 +567,21 @@
       "name": "HandleInventoryActionClosed",
       "kind": "function",
       "guid": "FEB4067F4BEC391F1976D99D169BB8E3",
-      "node_count": 110,
-      "pin_count": 424,
+      "node_count": 38,
+      "pin_count": 144,
       "connection_count": 54,
       "exec_connection_count": 21,
       "data_connection_count": 33
+    },
+    {
+      "name": "HandleActiveInventoryActionKey",
+      "kind": "function",
+      "guid": "0158B73C4994B5DEE5524B87E0FC2922",
+      "node_count": 15,
+      "pin_count": 40,
+      "connection_count": 16,
+      "exec_connection_count": 6,
+      "data_connection_count": 10
     },
     {
       "name": "FocusSelectedInventoryCell",
@@ -596,35 +596,26 @@
   ],
   "generated_graphs": [
     {
-      "name": "PreConstruct",
-      "guid": "EC9BF245439025E49E0BBE8EA6C0BC00",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
+      "name": "BndEvt__WBP_Inventory_ActionPanel_K2Node_ComponentBoundEvent_4_OnActionClosed__DelegateSignature",
+      "guid": "C76ED48E430C2BFF00CB61AA383C5837",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     },
     {
-      "name": "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
-      "guid": "F016A45649E40BA90E3DFE80F768A8E8",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
+      "name": "Destruct",
+      "guid": "D7B53F6746717ECF9CBB279A3D52F8B8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     },
     {
-      "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
-      "guid": "0BEAA50341E5B728118197A11F4171E9",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
-      "guid": "3787D362418C2B28AFEC8AAC7CFF108F",
+      "name": "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
+      "guid": "4588F1B34C60F851D6E20DACC813A682",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -633,7 +624,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
-      "guid": "93C494794AE36CA2DD38479A1BE4D53C",
+      "guid": "F542241E4F5DD752CB358889F7C7EA50",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -641,8 +632,8 @@
       "data_connection_count": 1
     },
     {
-      "name": "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
-      "guid": "6F7FC47D42236AFD9B428D815F5B09F2",
+      "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
+      "guid": "7C1FBDB84A6DF022F6BEA2914118CBA3",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -650,29 +641,38 @@
       "data_connection_count": 1
     },
     {
-      "name": "Destruct",
-      "guid": "EEAA65C64D8E0983CFED24B8B7F653AF",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
+      "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+      "guid": "DBDEE5964FD762EA7D254885409B605B",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
     },
     {
-      "name": "BndEvt__WBP_Inventory_ActionPanel_K2Node_ComponentBoundEvent_4_OnActionClosed__DelegateSignature",
-      "guid": "B468ABBC4A4CB8C294558AACBC4D5058",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
+      "name": "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
+      "guid": "5AB8B70F412609D4EF539E8246367852",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "44C64D6645ED6410F0379EB071A9052E",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
     }
   ],
   "stats": {
     "authored_graph_count": 21,
     "generated_graph_count": 8,
-    "authored_node_count": 833,
-    "authored_pin_count": 2950,
+    "authored_node_count": 731,
+    "authored_pin_count": 2572,
     "authored_connection_count": 900,
     "generated_node_count": 22,
     "generated_pin_count": 64

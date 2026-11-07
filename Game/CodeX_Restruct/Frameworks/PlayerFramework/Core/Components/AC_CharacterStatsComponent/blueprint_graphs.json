@@ -25,6 +25,91 @@
       }
     },
     {
+      "name": "bGuarding",
+      "guid": "F319CB104F74A824061B81BEE15776C4",
+      "friendly_name": "Guarding",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bResourceLocked",
+      "guid": "8FF6C44B46C03C7359D4889A7142A8BA",
+      "friendly_name": "Resource Locked",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bRuntimeRegenEnabled",
+      "guid": "CEDFA48644E51AA402D9FFB9B2DD9D87",
+      "friendly_name": "Runtime Regen Enabled",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSprintExhausted",
+      "guid": "33B755FD4B7F5D1E579D3EA25B1EFB50",
+      "friendly_name": "Sprint Exhausted",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSprinting",
+      "guid": "137904A04E1A1CBACAF63494D738649E",
+      "friendly_name": "Sprinting",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bStatsInitialized",
       "guid": "908D11CA4E2F62C014E43092756CB620",
       "friendly_name": "Stats Initialized",
@@ -93,6 +178,23 @@
       }
     },
     {
+      "name": "DodgeCost",
+      "guid": "39141EA54E434FDEE0E1BCB0E161AA42",
+      "friendly_name": "Dodge Cost",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "EffectiveAttributes",
       "guid": "8789430C41F14FF758127A9051BDCC72",
       "friendly_name": "Effective Attributes",
@@ -103,6 +205,125 @@
         "category": "struct",
         "sub_category": null,
         "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes.FPrimaryAttributes'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GuardBreakRecovery",
+      "guid": "4A833BB04252988771AE38BCBDEAC6A1",
+      "friendly_name": "Guard Break Recovery",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GuardBrokenUntil",
+      "guid": "FE77D5FB4494C328C53D91B4FE304D5B",
+      "friendly_name": "Guard Broken Until",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GuardRegenMultiplier",
+      "guid": "93A873104ACD449429836D969380CE04",
+      "friendly_name": "Guard Regen Multiplier",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HeavyAttackCost",
+      "guid": "639DBDD343EA5CDCCD0979A2E522248B",
+      "friendly_name": "Heavy Attack Cost",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "JumpCost",
+      "guid": "837D15F541FAF491BB2A59B6FA543871",
+      "friendly_name": "Jump Cost",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastResourcePulseAt",
+      "guid": "EC16542B47AFCD632098AAA8531AE6AD",
+      "friendly_name": "Last Resource Pulse At",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LightAttackCost",
+      "guid": "520733304C558E3B3A8529A7D5D7067E",
+      "friendly_name": "Light Attack Cost",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
         "container": null,
         "is_reference": false,
         "is_const": false,
@@ -212,6 +433,40 @@
       }
     },
     {
+      "name": "OnHealthDepleted",
+      "guid": "4CBF9466408817257CEA5D86F53399BB",
+      "friendly_name": "On Health Depleted",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnStaminaExhausted",
+      "guid": "8DCBDF2E4DCF4B081F56539A6A760267",
+      "friendly_name": "On Stamina Exhausted",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "OnStatsChanged",
       "guid": "DBBCE8814452CCA527D8CDA91522B58D",
       "friendly_name": "On Stats Changed",
@@ -221,6 +476,142 @@
       "type": {
         "category": "mcdelegate",
         "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ParryCost",
+      "guid": "8DECF39344F57D8751CFE6A0FDE6E9B4",
+      "friendly_name": "Parry Cost",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ResourceDeltaSeconds",
+      "guid": "B5739117464F5E673F61578CEC82A62B",
+      "friendly_name": "Resource Delta Seconds",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ResourcePulseInterval",
+      "guid": "DC7DE72147B6D65C038970857330D261",
+      "friendly_name": "Resource Pulse Interval",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SprintDrainRate",
+      "guid": "790CAD5F44B76D19184EAF8ADB7BA049",
+      "friendly_name": "Sprint Drain Rate",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SprintRestartFraction",
+      "guid": "B00C1C2E4F4E357DD2D1738B183077DF",
+      "friendly_name": "Sprint Restart Fraction",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaRecoveryAt",
+      "guid": "4831AC2A4CCA8D335F7E18BCEF36BDF5",
+      "friendly_name": "Stamina Recovery At",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaRegenDelay",
+      "guid": "0690741B45F04C42F32C819098A4D566",
+      "friendly_name": "Stamina Regen Delay",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StaminaRegenRate",
+      "guid": "D5F14C3143791FB8F80E40BE325414EC",
+      "friendly_name": "Stamina Regen Rate",
+      "category": "INVTEXT(\"Runtime Resources\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
         "sub_category_object": null,
         "container": null,
         "is_reference": false,
@@ -251,10 +642,10 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "8B7ECB9F49C407F70906D6B9C23E85E5",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 3,
+      "exec_connection_count": 3,
       "data_connection_count": 0
     },
     {
@@ -371,11 +762,11 @@
       "name": "SetCurrentHP",
       "kind": "function",
       "guid": "B03F52A84150052F1A8920B45635A2E2",
-      "node_count": 9,
-      "pin_count": 29,
-      "connection_count": 10,
-      "exec_connection_count": 4,
-      "data_connection_count": 6
+      "node_count": 85,
+      "pin_count": 293,
+      "connection_count": 100,
+      "exec_connection_count": 31,
+      "data_connection_count": 69
     },
     {
       "name": "ResolveEffectiveAttributes",
@@ -428,9 +819,169 @@
       "data_connection_count": 195
     },
     {
+      "name": "ApplyHealthDamage",
+      "kind": "function",
+      "guid": "8307E15F459EA28C693180A56A3BE31E",
+      "node_count": 12,
+      "pin_count": 40,
+      "connection_count": 14,
+      "exec_connection_count": 2,
+      "data_connection_count": 12
+    },
+    {
+      "name": "HealHealth",
+      "kind": "function",
+      "guid": "20C9A56544C324CF3EB511866C4B1F2D",
+      "node_count": 14,
+      "pin_count": 46,
+      "connection_count": 16,
+      "exec_connection_count": 2,
+      "data_connection_count": 14
+    },
+    {
+      "name": "SetCurrentStamina",
+      "kind": "function",
+      "guid": "1314434243CAC2D06366108AAB0835CB",
+      "node_count": 14,
+      "pin_count": 49,
+      "connection_count": 17,
+      "exec_connection_count": 4,
+      "data_connection_count": 13
+    },
+    {
+      "name": "HasEnoughStamina",
+      "kind": "function",
+      "guid": "B18ACF5840AF69B6C87091814B00CD50",
+      "node_count": 21,
+      "pin_count": 67,
+      "connection_count": 23,
+      "exec_connection_count": 1,
+      "data_connection_count": 22
+    },
+    {
+      "name": "TryConsumeStamina",
+      "kind": "function",
+      "guid": "8EE8E7BC491CE3E12F7E2AABF1F9B28C",
+      "node_count": 15,
+      "pin_count": 48,
+      "connection_count": 19,
+      "exec_connection_count": 8,
+      "data_connection_count": 11
+    },
+    {
+      "name": "RestoreStamina",
+      "kind": "function",
+      "guid": "AE4547974DB816ECEBE12D8E6A8F6335",
+      "node_count": 10,
+      "pin_count": 33,
+      "connection_count": 12,
+      "exec_connection_count": 2,
+      "data_connection_count": 10
+    },
+    {
+      "name": "StartStaminaRegeneration",
+      "kind": "function",
+      "guid": "A1B720404C3610412C8D668D68B694B6",
+      "node_count": 11,
+      "pin_count": 44,
+      "connection_count": 11,
+      "exec_connection_count": 4,
+      "data_connection_count": 7
+    },
+    {
+      "name": "StopStaminaRegeneration",
+      "kind": "function",
+      "guid": "60D5AA1146B5EA079D30FB8FCCAE6A75",
+      "node_count": 2,
+      "pin_count": 6,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ResourcePulse",
+      "kind": "function",
+      "guid": "6AD36F4446D6C1E59E35A3B60838DAD0",
+      "node_count": 52,
+      "pin_count": 160,
+      "connection_count": 55,
+      "exec_connection_count": 15,
+      "data_connection_count": 40
+    },
+    {
+      "name": "BeginGuardBreak",
+      "kind": "function",
+      "guid": "469069DD4D3C3ABD38266D85B61778FA",
+      "node_count": 11,
+      "pin_count": 35,
+      "connection_count": 10,
+      "exec_connection_count": 4,
+      "data_connection_count": 6
+    },
+    {
+      "name": "GetActionStaminaCost",
+      "kind": "function",
+      "guid": "3AE5335047831318434EBA8D77DDAA49",
+      "node_count": 18,
+      "pin_count": 56,
+      "connection_count": 21,
+      "exec_connection_count": 9,
+      "data_connection_count": 12
+    },
+    {
+      "name": "ValidateResourceOwnerSprint",
+      "kind": "function",
+      "guid": "56CD3BDB46D076EFDBE381ACA0EE5CC5",
+      "node_count": 4,
+      "pin_count": 12,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "InitializeRuntimeResourceBalance",
+      "kind": "function",
+      "guid": "8941078140CB10A10B4998BE8F49ED2D",
+      "node_count": 38,
+      "pin_count": 112,
+      "connection_count": 37,
+      "exec_connection_count": 13,
+      "data_connection_count": 24
+    },
+    {
+      "name": "ProcessSprintResourcePulse",
+      "kind": "function",
+      "guid": "C10E7C97456FB2508FACF28901B0FEF7",
+      "node_count": 27,
+      "pin_count": 85,
+      "connection_count": 28,
+      "exec_connection_count": 10,
+      "data_connection_count": 18
+    },
+    {
       "name": "OnStatsChanged",
       "kind": "delegate",
       "guid": "CFFCF468444B18AAA515B7A5D84DB375",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnHealthDepleted",
+      "kind": "delegate",
+      "guid": "4495B8824E8424A228DAD0AA5B1E274F",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnStaminaExhausted",
+      "kind": "delegate",
+      "guid": "13FECF054771D6727EC823B6A976FE34",
       "node_count": 1,
       "pin_count": 1,
       "connection_count": 0,
@@ -441,7 +992,7 @@
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "DDC22AFC46A7D8D305D1919FE8D007B6",
+      "guid": "3FB6F4AA42F8D65A107ECB966C878D53",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -450,15 +1001,25 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 19,
+    "authored_graph_count": 35,
     "generated_graph_count": 1,
-    "authored_node_count": 555,
-    "authored_pin_count": 2092,
-    "authored_connection_count": 769,
+    "authored_node_count": 884,
+    "authored_pin_count": 3157,
+    "authored_connection_count": 1129,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
   "graph_files": [
+    {
+      "name": "OnHealthDepleted",
+      "kind": "delegate",
+      "file": "graphs/OnHealthDepleted.json"
+    },
+    {
+      "name": "OnStaminaExhausted",
+      "kind": "delegate",
+      "file": "graphs/OnStaminaExhausted.json"
+    },
     {
       "name": "OnStatsChanged",
       "kind": "delegate",
@@ -470,9 +1031,19 @@
       "file": "graphs/EventGraph.json"
     },
     {
+      "name": "ApplyHealthDamage",
+      "kind": "function",
+      "file": "graphs/ApplyHealthDamage.json"
+    },
+    {
       "name": "ApplyRecalculatedStats",
       "kind": "function",
       "file": "graphs/ApplyRecalculatedStats.json"
+    },
+    {
+      "name": "BeginGuardBreak",
+      "kind": "function",
+      "file": "graphs/BeginGuardBreak.json"
     },
     {
       "name": "CalculateDerivedValue",
@@ -505,6 +1076,11 @@
       "file": "graphs/EnsureStatBalance.json"
     },
     {
+      "name": "GetActionStaminaCost",
+      "kind": "function",
+      "file": "graphs/GetActionStaminaCost.json"
+    },
+    {
       "name": "GetEffectiveAttribute",
       "kind": "function",
       "file": "graphs/GetEffectiveAttribute.json"
@@ -515,9 +1091,29 @@
       "file": "graphs/GetPrimaryAttribute.json"
     },
     {
+      "name": "HasEnoughStamina",
+      "kind": "function",
+      "file": "graphs/HasEnoughStamina.json"
+    },
+    {
+      "name": "HealHealth",
+      "kind": "function",
+      "file": "graphs/HealHealth.json"
+    },
+    {
+      "name": "InitializeRuntimeResourceBalance",
+      "kind": "function",
+      "file": "graphs/InitializeRuntimeResourceBalance.json"
+    },
+    {
       "name": "InitializeStats",
       "kind": "function",
       "file": "graphs/InitializeStats.json"
+    },
+    {
+      "name": "ProcessSprintResourcePulse",
+      "kind": "function",
+      "file": "graphs/ProcessSprintResourcePulse.json"
     },
     {
       "name": "ReadAttribute",
@@ -540,9 +1136,24 @@
       "file": "graphs/ResolveEffectiveAttributes.json"
     },
     {
+      "name": "ResourcePulse",
+      "kind": "function",
+      "file": "graphs/ResourcePulse.json"
+    },
+    {
+      "name": "RestoreStamina",
+      "kind": "function",
+      "file": "graphs/RestoreStamina.json"
+    },
+    {
       "name": "SetCurrentHP",
       "kind": "function",
       "file": "graphs/SetCurrentHP.json"
+    },
+    {
+      "name": "SetCurrentStamina",
+      "kind": "function",
+      "file": "graphs/SetCurrentStamina.json"
     },
     {
       "name": "SetModifierForSource",
@@ -550,9 +1161,29 @@
       "file": "graphs/SetModifierForSource.json"
     },
     {
+      "name": "StartStaminaRegeneration",
+      "kind": "function",
+      "file": "graphs/StartStaminaRegeneration.json"
+    },
+    {
+      "name": "StopStaminaRegeneration",
+      "kind": "function",
+      "file": "graphs/StopStaminaRegeneration.json"
+    },
+    {
+      "name": "TryConsumeStamina",
+      "kind": "function",
+      "file": "graphs/TryConsumeStamina.json"
+    },
+    {
       "name": "ValidateLeveledBaseAttributes",
       "kind": "function",
       "file": "graphs/ValidateLeveledBaseAttributes.json"
+    },
+    {
+      "name": "ValidateResourceOwnerSprint",
+      "kind": "function",
+      "file": "graphs/ValidateResourceOwnerSprint.json"
     }
   ]
 }

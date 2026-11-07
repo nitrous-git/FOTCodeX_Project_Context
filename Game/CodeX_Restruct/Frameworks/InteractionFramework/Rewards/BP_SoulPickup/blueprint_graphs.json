@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_SoulPickup",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "05476B824FAF9D0E72D7BDB9682E8456",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'"
+  },
+  "variables": [
+    {
+      "name": "bConsumed",
+      "guid": "919CDCD14B228EA520863CA6CB84F9FB",
+      "friendly_name": "Consumed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SoulAmount",
+      "guid": "9C27E6B641937D64872ACEB350987C22",
+      "friendly_name": "Soul Amount",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "503D8DB7472EB7AEB22A199D183E3052",
+      "node_count": 12,
+      "pin_count": 39,
+      "connection_count": 14,
+      "exec_connection_count": 6,
+      "data_connection_count": 8
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "D1C48E634C5FB08DF56725B74E40E4B8",
+      "node_count": 2,
+      "pin_count": 4,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "GetInteractionInfo",
+      "kind": "function",
+      "guid": "602539C54F21F0E9E74DE2A5DCDD0C42",
+      "node_count": 118,
+      "pin_count": 411,
+      "connection_count": 50,
+      "exec_connection_count": 14,
+      "data_connection_count": 36
+    },
+    {
+      "name": "ExecuteInteraction",
+      "kind": "function",
+      "guid": "602B40EF47E482A1E1E21E971E560DBB",
+      "node_count": 20,
+      "pin_count": 80,
+      "connection_count": 25,
+      "exec_connection_count": 15,
+      "data_connection_count": 10
+    },
+    {
+      "name": "ResolveCoordinator",
+      "kind": "function",
+      "guid": "6095B0C9445B23560E2EA18F25F92DB1",
+      "node_count": 5,
+      "pin_count": 13,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ResolveProgression",
+      "kind": "function",
+      "guid": "F73E878A4039771AF049DCBEB67D4F58",
+      "node_count": 5,
+      "pin_count": 13,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "InitializeSoulReward",
+      "kind": "function",
+      "guid": "99AF301448F7C4FA2BC505A63E0D22D0",
+      "node_count": 10,
+      "pin_count": 31,
+      "connection_count": 11,
+      "exec_connection_count": 4,
+      "data_connection_count": 7
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveActorBeginOverlap",
+      "guid": "5E95DD2B428ADAE4C9C57582579C8854",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveActorEndOverlap",
+      "guid": "79D001424B9841CCB8889FB2AE375AED",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 7,
+    "generated_graph_count": 2,
+    "authored_node_count": 172,
+    "authored_pin_count": 591,
+    "authored_connection_count": 113,
+    "generated_node_count": 6,
+    "generated_pin_count": 18
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ExecuteInteraction",
+      "kind": "function",
+      "file": "graphs/ExecuteInteraction.json"
+    },
+    {
+      "name": "GetInteractionInfo",
+      "kind": "function",
+      "file": "graphs/GetInteractionInfo.json"
+    },
+    {
+      "name": "InitializeSoulReward",
+      "kind": "function",
+      "file": "graphs/InitializeSoulReward.json"
+    },
+    {
+      "name": "ResolveCoordinator",
+      "kind": "function",
+      "file": "graphs/ResolveCoordinator.json"
+    },
+    {
+      "name": "ResolveProgression",
+      "kind": "function",
+      "file": "graphs/ResolveProgression.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}
