@@ -1,0 +1,1016 @@
+{
+  "document_id": "CodeX_AshenKeep_L1A_SpatialTerrainSpecification",
+  "version": "1.0-proposed",
+  "status": "spatial design proposal; review before production heightmap",
+  "project": "FOTCodeX_SLF_583",
+  "design_basis": {
+    "visual_references": [
+      "The Ashen Spire \u2014 Vertical Slice Level Map",
+      "Ashen Keep \u2014 Level Structure Plan",
+      "The Ashen Keep \u2014 Vertical Slice Level Design Map"
+    ],
+    "audits": [
+      "Docs/AshenKeep_L0_FantasyCastleReferenceAudit.md",
+      "Docs/AshenKeep_L0_GothicCastleReferenceAudit.md"
+    ],
+    "modular_catalogs": [
+      "Docs/AshenKeep_FantasyCastleAssemblies.json",
+      "Docs/AshenKeep_GothicCastleAssemblies.json"
+    ],
+    "source_repo": "https://github.com/nitrous-git/FOTCodeX_Project_Context/tree/main/Docs"
+  },
+  "coordinate_system": {
+    "horizontal_unit": "metres (documents and JSON); multiply by 100 for UE centimetres",
+    "x_axis": "+X east, -X west",
+    "y_axis": "+Y north, -Y south",
+    "z_axis": "+Z up",
+    "north_on_layout": "+Y (top)",
+    "origin_world_m": [
+      0,
+      0,
+      0
+    ],
+    "landscape_vertex_0_world_m": [
+      -1008,
+      -1008,
+      0
+    ],
+    "landscape_world_bounds_m": {
+      "x": [
+        -1008,
+        1008
+      ],
+      "y": [
+        -1008,
+        1008
+      ]
+    },
+    "intended_landscape_actor_location_cm": [
+      -100800,
+      -100800,
+      0
+    ],
+    "note": "An actual Unreal import may invert the raster Y axis; verify 3 asymmetric landmarks (start SW, graveyard W, forest E) before construction."
+  },
+  "landscape": {
+    "size_m": [
+      2016,
+      2016
+    ],
+    "resolution_samples": [
+      2017,
+      2017
+    ],
+    "section_quads": [
+      63,
+      63
+    ],
+    "sections_per_component": [
+      2,
+      2
+    ],
+    "component_count": [
+      16,
+      16
+    ],
+    "xy_scale_ue": [
+      100,
+      100
+    ],
+    "z_scale_ue": 100,
+    "heightmap": "16-bit unsigned grayscale PNG or R16; production file will be created in L1B",
+    "terrain_height_range_expected_m": [
+      -55,
+      165
+    ],
+    "encoding_at_z_scale_100": "u16 ~= round(32768 + world_height_m * 128), with world Landscape Z origin = 0m; verify against UE import",
+    "landscape_coverage": "Core exploration + near scenic terrain; distant mountains, sky castles, roofs and vertical structures belong to Static Meshes",
+    "terrain_only": "Landscape defines slopes and foundations; stairways, bridge decks, gates, floors, cliff overhangs and boss platform are separate geometry"
+  },
+  "macro_envelopes_m": {
+    "core_exploration": {
+      "x": [
+        -725,
+        725
+      ],
+      "y": [
+        -880,
+        900
+      ],
+      "note": "Contains routes and associated terrain; not fully traversable"
+    },
+    "castle_construction_reservation": {
+      "x": [
+        -345,
+        345
+      ],
+      "y": [
+        285,
+        900
+      ],
+      "size_m": [
+        690,
+        615
+      ],
+      "note": "Terraced 3D architectural envelope, NOT a flat heightmap mask; includes great-bridge approach, structure, flanking spurs and silhouette. Must be refined by actual component placement."
+    },
+    "gothic_reference_envelope": {
+      "size_m": [
+        300,
+        340
+      ]
+    },
+    "dark_fantasy_reference_envelope": {
+      "size_m": [
+        630,
+        525
+      ]
+    },
+    "scenic_margin": "Minimum north terrain margin from Y=900 to +1008 is ~108m; near castle skyline can extend into backdrop geometry beyond Landscape if necessary."
+  },
+  "terrain_zones": [
+    {
+      "id": "Z01",
+      "name": "Starting Overlook",
+      "center_xy_m": [
+        -285,
+        -790
+      ],
+      "radii_xy_m": [
+        110,
+        84
+      ],
+      "terrain_height_m": [
+        34,
+        43
+      ],
+      "anchor_height_m": 39,
+      "purpose": "Bonfire and unobstructed castle reveal",
+      "classification": "playable hardpad"
+    },
+    {
+      "id": "Z02",
+      "name": "Open Lowland",
+      "center_xy_m": [
+        -90,
+        -480
+      ],
+      "radii_xy_m": [
+        360,
+        200
+      ],
+      "terrain_height_m": [
+        0,
+        20
+      ],
+      "anchor_height_m": 10,
+      "purpose": "Primary open exploration and route split",
+      "classification": "playable rolling"
+    },
+    {
+      "id": "Z03",
+      "name": "Graveyard",
+      "center_xy_m": [
+        -515,
+        -305
+      ],
+      "radii_xy_m": [
+        155,
+        135
+      ],
+      "terrain_height_m": [
+        28,
+        49
+      ],
+      "anchor_height_m": 39,
+      "purpose": "Optional skeleton challenge",
+      "classification": "playable terraced"
+    },
+    {
+      "id": "Z04",
+      "name": "Ruined Chapel",
+      "center_xy_m": [
+        -565,
+        -72
+      ],
+      "radii_xy_m": [
+        120,
+        113
+      ],
+      "terrain_height_m": [
+        52,
+        73
+      ],
+      "anchor_height_m": 63,
+      "purpose": "Optional landmark/loot and reconnection",
+      "classification": "playable hardpad"
+    },
+    {
+      "id": "Z05",
+      "name": "Forest Trail",
+      "center_xy_m": [
+        505,
+        -350
+      ],
+      "radii_xy_m": [
+        190,
+        240
+      ],
+      "terrain_height_m": [
+        16,
+        58
+      ],
+      "anchor_height_m": 36,
+      "purpose": "Ambush and eastern alternate climb",
+      "classification": "playable rolling"
+    },
+    {
+      "id": "Z06",
+      "name": "Cliff Overlook",
+      "center_xy_m": [
+        485,
+        108
+      ],
+      "radii_xy_m": [
+        100,
+        92
+      ],
+      "terrain_height_m": [
+        68,
+        93
+      ],
+      "anchor_height_m": 81,
+      "purpose": "View to castle and optional reconnection",
+      "classification": "playable hardpad"
+    },
+    {
+      "id": "Z07",
+      "name": "Fallen Hamlet",
+      "center_xy_m": [
+        -45,
+        -68
+      ],
+      "radii_xy_m": [
+        174,
+        132
+      ],
+      "terrain_height_m": [
+        37,
+        54
+      ],
+      "anchor_height_m": 46,
+      "purpose": "Midpoint bonfire, village combat and branch convergence",
+      "classification": "playable terraced"
+    },
+    {
+      "id": "Z08",
+      "name": "Castle Approach",
+      "center_xy_m": [
+        5,
+        165
+      ],
+      "radii_xy_m": [
+        195,
+        142
+      ],
+      "terrain_height_m": [
+        61,
+        111
+      ],
+      "anchor_height_m": 83,
+      "purpose": "Switchback ascent and gate foreshadowing",
+      "classification": "playable graded"
+    },
+    {
+      "id": "Z09",
+      "name": "Bridge Chasm",
+      "center_xy_m": [
+        12,
+        400
+      ],
+      "radii_xy_m": [
+        255,
+        67
+      ],
+      "terrain_height_m": [
+        -35,
+        65
+      ],
+      "anchor_height_m": -13,
+      "purpose": "River gorge beneath great bridge; cliff mesh dressing required",
+      "classification": "terrain cut"
+    },
+    {
+      "id": "Z10",
+      "name": "Castle Outer Walls",
+      "center_xy_m": [
+        0,
+        570
+      ],
+      "radii_xy_m": [
+        327,
+        100
+      ],
+      "terrain_height_m": [
+        105,
+        139
+      ],
+      "anchor_height_m": 117,
+      "purpose": "Gate foundations and flanking wall returns",
+      "classification": "structural terraces"
+    },
+    {
+      "id": "Z11",
+      "name": "Castle Courtyard",
+      "center_xy_m": [
+        0,
+        681
+      ],
+      "radii_xy_m": [
+        115,
+        77
+      ],
+      "terrain_height_m": [
+        124,
+        137
+      ],
+      "anchor_height_m": 130,
+      "purpose": "Main interior/exterior hub; architectural finished floor at ~132m",
+      "classification": "structural terrace"
+    },
+    {
+      "id": "Z12",
+      "name": "West Chapel/Barracks Spur",
+      "center_xy_m": [
+        -208,
+        722
+      ],
+      "radii_xy_m": [
+        127,
+        163
+      ],
+      "terrain_height_m": [
+        121,
+        156
+      ],
+      "anchor_height_m": 139,
+      "purpose": "Branch architecture and shortcut 1",
+      "classification": "structural terraces"
+    },
+    {
+      "id": "Z13",
+      "name": "East Watchtower/Barracks Spur",
+      "center_xy_m": [
+        202,
+        710
+      ],
+      "radii_xy_m": [
+        130,
+        153
+      ],
+      "terrain_height_m": [
+        122,
+        156
+      ],
+      "anchor_height_m": 139,
+      "purpose": "Alternate entry and shortcut 2",
+      "classification": "structural terraces"
+    },
+    {
+      "id": "Z14",
+      "name": "Upper Keep Foundations",
+      "center_xy_m": [
+        5,
+        847
+      ],
+      "radii_xy_m": [
+        147,
+        67
+      ],
+      "terrain_height_m": [
+        139,
+        157
+      ],
+      "anchor_height_m": 148,
+      "purpose": "Great Hall/upper boss ascent supported by masonry",
+      "classification": "structural terrace"
+    }
+  ],
+  "construction_anchors": [
+    {
+      "id": "A_START",
+      "label": "Starting bonfire",
+      "xyz_m": [
+        -285,
+        -790,
+        39
+      ],
+      "surface": "landscape"
+    },
+    {
+      "id": "A_LOWLAND",
+      "label": "Lowland hub",
+      "xyz_m": [
+        -90,
+        -480,
+        10
+      ],
+      "surface": "landscape"
+    },
+    {
+      "id": "A_GRAVE",
+      "label": "Graveyard",
+      "xyz_m": [
+        -515,
+        -305,
+        39
+      ],
+      "surface": "landscape"
+    },
+    {
+      "id": "A_CHAPEL",
+      "label": "Ruined Chapel",
+      "xyz_m": [
+        -565,
+        -72,
+        63
+      ],
+      "surface": "landscape"
+    },
+    {
+      "id": "A_FOREST",
+      "label": "Forest Trail",
+      "xyz_m": [
+        505,
+        -350,
+        36
+      ],
+      "surface": "landscape"
+    },
+    {
+      "id": "A_CLIFF",
+      "label": "Cliff Overlook",
+      "xyz_m": [
+        485,
+        108,
+        81
+      ],
+      "surface": "landscape"
+    },
+    {
+      "id": "A_HAMLET",
+      "label": "Hamlet bonfire",
+      "xyz_m": [
+        -45,
+        -68,
+        46
+      ],
+      "surface": "landscape"
+    },
+    {
+      "id": "A_APPROACH",
+      "label": "Castle approach",
+      "xyz_m": [
+        5,
+        165,
+        83
+      ],
+      "surface": "landscape"
+    },
+    {
+      "id": "A_BRIDGE_S",
+      "label": "Bridge south abutment",
+      "xyz_m": [
+        0,
+        287,
+        112
+      ],
+      "surface": "landscape supported by structural masonry"
+    },
+    {
+      "id": "A_BRIDGE_N",
+      "label": "Bridge north abutment",
+      "xyz_m": [
+        0,
+        522,
+        112
+      ],
+      "surface": "landscape supported by structural masonry"
+    },
+    {
+      "id": "A_GATE",
+      "label": "Main gate",
+      "xyz_m": [
+        0,
+        536,
+        114
+      ],
+      "surface": "architectural threshold over terrace"
+    },
+    {
+      "id": "A_BROKEN_WALL",
+      "label": "Broken wall side entry",
+      "xyz_m": [
+        274,
+        535,
+        119
+      ],
+      "surface": "architectural threshold over terrace"
+    },
+    {
+      "id": "A_COURT",
+      "label": "Courtyard",
+      "xyz_m": [
+        0,
+        679,
+        132
+      ],
+      "surface": "architectural floor over terrace"
+    },
+    {
+      "id": "A_WEST_WING",
+      "label": "Chapel/barracks",
+      "xyz_m": [
+        -195,
+        735,
+        143
+      ],
+      "surface": "architectural floor over terrace"
+    },
+    {
+      "id": "A_EAST_WING",
+      "label": "Watchtower/barracks",
+      "xyz_m": [
+        190,
+        729,
+        146
+      ],
+      "surface": "architectural floor over terrace"
+    },
+    {
+      "id": "A_HALL",
+      "label": "Great Hall",
+      "xyz_m": [
+        75,
+        804,
+        153
+      ],
+      "surface": "architectural floor, terrain foundation approx +145m"
+    },
+    {
+      "id": "A_BOSS",
+      "label": "Final boss arena",
+      "xyz_m": [
+        0,
+        874,
+        181
+      ],
+      "surface": "architectural platform, NOT heightmap at +181m"
+    }
+  ],
+  "terrain_constraints": [
+    {
+      "id": "T01",
+      "name": "Starting vista pad",
+      "bounds_xy_m": [
+        -355,
+        -215,
+        -844,
+        -746
+      ],
+      "target_z_m": 39,
+      "priority": "hard",
+      "note": "Safe bonfire and camera staging; preserve clear view toward upper keep"
+    },
+    {
+      "id": "T02",
+      "name": "Hamlet buildable core",
+      "bounds_xy_m": [
+        -175,
+        105,
+        -155,
+        10
+      ],
+      "target_z_m": 46,
+      "priority": "medium",
+      "note": "Use terraces with \u00b14m relief; individual building footprints can be leveled by meshes"
+    },
+    {
+      "id": "T03",
+      "name": "South bridge abutment",
+      "bounds_xy_m": [
+        -77,
+        77,
+        270,
+        308
+      ],
+      "target_z_m": 112,
+      "priority": "hard",
+      "note": "Small local seat only; do not fill the chasm"
+    },
+    {
+      "id": "T04",
+      "name": "North bridge/gate abutment",
+      "bounds_xy_m": [
+        -95,
+        95,
+        506,
+        554
+      ],
+      "target_z_m": 113,
+      "priority": "hard",
+      "note": "Must align with bridge deck and gate floor"
+    },
+    {
+      "id": "T05",
+      "name": "Courtyard foundation",
+      "bounds_xy_m": [
+        -106,
+        106,
+        631,
+        729
+      ],
+      "target_z_m": 129,
+      "priority": "medium",
+      "note": "Final 132m walkable court defined by modular meshes, not exact Landscape"
+    },
+    {
+      "id": "T06",
+      "name": "West architectural spur",
+      "bounds_xy_m": [
+        -315,
+        -132,
+        606,
+        832
+      ],
+      "target_z_m": 138,
+      "priority": "medium",
+      "note": "Stepped benches; preserve vertical return opportunities"
+    },
+    {
+      "id": "T07",
+      "name": "East architectural spur",
+      "bounds_xy_m": [
+        130,
+        316,
+        602,
+        817
+      ],
+      "target_z_m": 138,
+      "priority": "medium",
+      "note": "Side entry must connect to cliff path with true traversable grade"
+    },
+    {
+      "id": "T08",
+      "name": "Upper keep foundation",
+      "bounds_xy_m": [
+        -130,
+        139,
+        790,
+        897
+      ],
+      "target_z_m": 148,
+      "priority": "medium",
+      "note": "Boss floor belongs to architectural meshes at ~181m"
+    }
+  ],
+  "routes": [
+    {
+      "id": "R_MAIN",
+      "type": "main",
+      "label": "Main progression",
+      "points_xy_m": [
+        [
+          -285,
+          -790
+        ],
+        [
+          -245,
+          -680
+        ],
+        [
+          -115,
+          -510
+        ],
+        [
+          -90,
+          -300
+        ],
+        [
+          -45,
+          -68
+        ],
+        [
+          -110,
+          63
+        ],
+        [
+          78,
+          162
+        ],
+        [
+          -98,
+          218
+        ],
+        [
+          65,
+          278
+        ],
+        [
+          0,
+          287
+        ],
+        [
+          0,
+          522
+        ],
+        [
+          0,
+          536
+        ],
+        [
+          0,
+          679
+        ],
+        [
+          75,
+          804
+        ],
+        [
+          0,
+          874
+        ]
+      ],
+      "notes": "Stage 8->9 is a switchback, not a direct steep ramp; bridge 287->522 is architectural deck; last two legs are interior architecture"
+    },
+    {
+      "id": "R_WEST",
+      "type": "secondary",
+      "label": "Graveyard and chapel",
+      "points_xy_m": [
+        [
+          -115,
+          -510
+        ],
+        [
+          -435,
+          -392
+        ],
+        [
+          -515,
+          -305
+        ],
+        [
+          -565,
+          -72
+        ],
+        [
+          -315,
+          -125
+        ],
+        [
+          -45,
+          -68
+        ]
+      ],
+      "notes": "Optional left-side route, loops back to hamlet"
+    },
+    {
+      "id": "R_EAST",
+      "type": "secondary",
+      "label": "Forest and cliff path",
+      "points_xy_m": [
+        [
+          -115,
+          -510
+        ],
+        [
+          330,
+          -515
+        ],
+        [
+          505,
+          -350
+        ],
+        [
+          520,
+          -135
+        ],
+        [
+          485,
+          108
+        ],
+        [
+          424,
+          201
+        ],
+        [
+          355,
+          362
+        ],
+        [
+          274,
+          535
+        ],
+        [
+          185,
+          652
+        ]
+      ],
+      "notes": "Alternate uphill entry through broken wall; route must remain traversable through elevated cliffs"
+    },
+    {
+      "id": "R_EAST_RETURN",
+      "type": "unlockable_loop",
+      "label": "Cliff reconnect to hamlet",
+      "points_xy_m": [
+        [
+          424,
+          201
+        ],
+        [
+          257,
+          92
+        ],
+        [
+          90,
+          -25
+        ],
+        [
+          -45,
+          -68
+        ]
+      ],
+      "notes": "Optional rejoining route; design explicit one-way drop/ladder or proper trail, not arbitrary teleport"
+    },
+    {
+      "id": "R_SHORTCUT_1",
+      "type": "castle_shortcut",
+      "label": "Courtyard-west to lower gate",
+      "points_xy_m": [
+        [
+          -195,
+          735
+        ],
+        [
+          -190,
+          620
+        ],
+        [
+          -85,
+          543
+        ]
+      ],
+      "notes": "Lift / stairs / door; persistent state via CodeX interaction later"
+    },
+    {
+      "id": "R_SHORTCUT_2",
+      "type": "castle_shortcut",
+      "label": "Courtyard-east to broken wall",
+      "points_xy_m": [
+        [
+          190,
+          729
+        ],
+        [
+          235,
+          627
+        ],
+        [
+          274,
+          535
+        ]
+      ],
+      "notes": "Opens a fast route into east forest/cliff track"
+    }
+  ],
+  "hydrology": {
+    "riverbed_concept": [
+      {
+        "xy_m": [
+          620,
+          475
+        ],
+        "approx_water_z_m": 52
+      },
+      {
+        "xy_m": [
+          390,
+          425
+        ],
+        "approx_water_z_m": 24
+      },
+      {
+        "xy_m": [
+          100,
+          400
+        ],
+        "approx_water_z_m": -8
+      },
+      {
+        "xy_m": [
+          0,
+          390
+        ],
+        "approx_water_z_m": -13
+      },
+      {
+        "xy_m": [
+          -270,
+          310
+        ],
+        "approx_water_z_m": -17
+      },
+      {
+        "xy_m": [
+          -390,
+          70
+        ],
+        "approx_water_z_m": -20
+      },
+      {
+        "xy_m": [
+          -395,
+          -310
+        ],
+        "approx_water_z_m": -25
+      },
+      {
+        "xy_m": [
+          -660,
+          -620
+        ],
+        "approx_water_z_m": -39
+      }
+    ],
+    "note": "Approximate river drain westward and southward below the great bridge; enforce continuous downhill during heightmap generation; add waterfalls where grade is too steep; not a finished water simulation."
+  },
+  "sightlines": [
+    {
+      "from_anchor": "A_START",
+      "to_anchor": "A_BOSS",
+      "priority": "critical",
+      "note": "Opening reveal of upper keep silhouette, camera height from player"
+    },
+    {
+      "from_anchor": "A_LOWLAND",
+      "to_anchor": "A_GATE",
+      "priority": "high",
+      "note": "Foreshadowing gate through valleys, with partial obscuration acceptable"
+    },
+    {
+      "from_anchor": "A_CLIFF",
+      "to_anchor": "A_COURT",
+      "priority": "high",
+      "note": "Recognizable view of side wall and castle terraces"
+    },
+    {
+      "from_anchor": "A_HAMLET",
+      "to_anchor": "A_GATE",
+      "priority": "high",
+      "note": "Main ascent and landmark framed by ruins"
+    }
+  ],
+  "progression_contract": {
+    "must_preserve": [
+      "Start overlooks castle",
+      "Main route descends into valley then ascends via hamlet",
+      "Graveyard/chapel west branch reconnects",
+      "Forest/cliff eastern branch accesses broken wall",
+      "Castle has gate + alternative side entry",
+      "Interior courtyard is central hub",
+      "At least two physical unlockable reconnections",
+      "Great Hall then boss ascent at upper level"
+    ],
+    "not_yet_locked": [
+      "Exact gate unlock rule / Gate Knight behavior",
+      "Shortcut lift mechanics",
+      "Final boss geometry",
+      "Gameplay encounter layouts"
+    ],
+    "expected_checkpoints": [
+      "Starting Overlook",
+      "Fallen Hamlet"
+    ],
+    "optional_additional_checkpoint": "Inside castle after progression review"
+  },
+  "acceptance_criteria": [
+    "Terrain import lands all 3 asymmetric orientation anchors (start SW, graveyard W, forest E) correctly",
+    "Bridge anchors align at approximately +112m without filling the underlying chasm",
+    "Castle site is terraced, not a single rectangular flat mountain",
+    "All playable uphill ground routes have feasible grade or clearly designated stair/switchback geometry",
+    "Opening castle skyline visible from starting overlook with actual character camera",
+    "Major building foundations preserved while scenic slopes remain natural",
+    "Boss arena +181m is clearly flagged as modular architecture, not Landscape height",
+    "Rasters/JSON can be revised without shifting world coordinate definitions"
+  ],
+  "risk_notes": [
+    "The illustrative maps have inconsistent perspective and scales; these coordinates are a feasible authored interpretation, not survey data.",
+    "A 690x615m architectural site is not equivalent to a 690x615m flat terrace; only local foundation masks are flat.",
+    "Gothic and Dark Fantasy demos use broad architectural AABBs that include shells and supports; their footprints do not mandate the same terrain shape.",
+    "Actual gate/bridge connection widths, pivots and player collisions must be verified in UE at L2.",
+    "High tower tips can be 200m+ above the terrain, independent of Landscape sculpt height.",
+    "The 2017x2017 landscape has 256 components vs 64 at 1009x1009; profile landscape/foliage before detailed painting."
+  ],
+  "next_stage": "L1B: heightmap generation with terrain hardpads, protected road corridors, river drainage and preview iterations; keep architectural geometry in Astra L2."
+}
