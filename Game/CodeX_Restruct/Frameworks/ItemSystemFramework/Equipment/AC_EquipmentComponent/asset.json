@@ -31,6 +31,7 @@
       "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
@@ -57,6 +58,23 @@
         "name": "ActiveRightHandSlot",
         "guid": "5097D7344A7B664216C0438CD08A605E",
         "friendly_name": "Active Right Hand Slot",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ActiveToolSlot",
+        "guid": "3AF22B12433DD8514E6BD2B6B909E194",
+        "friendly_name": "Active Tool Slot",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
@@ -139,6 +157,23 @@
         }
       },
       {
+        "name": "OnActiveToolSlotChanged",
+        "guid": "B19683554B2A6DBF9065178B776388CE",
+        "friendly_name": "On Active Tool Slot Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "OnEquipmentSlotChanged",
         "guid": "82A6733741BF2EA110D575B8EA189153",
         "friendly_name": "On Equipment Slot Changed",
@@ -173,12 +208,24 @@
         "CanAssignRightHandItem",
         "SetActiveRightHandSlot",
         "FindNextOccupiedRightHandSlot",
-        "ReconcileActiveRightHandSlot"
+        "ReconcileActiveRightHandSlot",
+        "GetOwnedToolAtSlot",
+        "GetActiveToolItem",
+        "GetActiveToolSlot",
+        "GetToolSlotsInOrder",
+        "CycleActiveToolSlot",
+        "HandleToolInventoryChanged",
+        "ReconcileActiveToolSlot",
+        "FindNextOccupiedToolSlot",
+        "SetActiveToolSlot",
+        "TryEquipToolToSlot",
+        "CanEquipToolItem"
       ],
       "macros": [],
       "delegates": [
         "OnEquipmentSlotChanged",
-        "OnActiveRightHandSlotChanged"
+        "OnActiveRightHandSlotChanged",
+        "OnActiveToolSlotChanged"
       ],
       "generated_graphs": [
         "ReceiveBeginPlay"

@@ -25,6 +25,23 @@
       }
     },
     {
+      "name": "ActiveToolSlot",
+      "guid": "3AF22B12433DD8514E6BD2B6B909E194",
+      "friendly_name": "Active Tool Slot",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bEquipmentInitialized",
       "guid": "DA5D6F9F417D8C70D04DF39BB122B942",
       "friendly_name": "Equipment Initialized",
@@ -93,6 +110,23 @@
       }
     },
     {
+      "name": "OnActiveToolSlotChanged",
+      "guid": "B19683554B2A6DBF9065178B776388CE",
+      "friendly_name": "On Active Tool Slot Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "OnEquipmentSlotChanged",
       "guid": "82A6733741BF2EA110D575B8EA189153",
       "friendly_name": "On Equipment Slot Changed",
@@ -115,11 +149,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "1617B62C403537D2D19F7E80ECC6C3D4",
-      "node_count": 7,
-      "pin_count": 24,
-      "connection_count": 7,
-      "exec_connection_count": 4,
-      "data_connection_count": 3
+      "node_count": 12,
+      "pin_count": 36,
+      "connection_count": 12,
+      "exec_connection_count": 6,
+      "data_connection_count": 6
     },
     {
       "name": "GetEquippedItemAtSlot",
@@ -135,21 +169,21 @@
       "name": "UnequipItemFromSlot",
       "kind": "function",
       "guid": "661D9EB34707FF2078257F8134D7DB08",
-      "node_count": 15,
-      "pin_count": 45,
-      "connection_count": 17,
-      "exec_connection_count": 7,
-      "data_connection_count": 10
+      "node_count": 19,
+      "pin_count": 60,
+      "connection_count": 24,
+      "exec_connection_count": 11,
+      "data_connection_count": 13
     },
     {
       "name": "TryEquipItemToSlot",
       "kind": "function",
       "guid": "27D0B401451850845F8FC0B239CC62CA",
-      "node_count": 77,
-      "pin_count": 297,
-      "connection_count": 91,
-      "exec_connection_count": 40,
-      "data_connection_count": 51
+      "node_count": 82,
+      "pin_count": 317,
+      "connection_count": 101,
+      "exec_connection_count": 44,
+      "data_connection_count": 57
     },
     {
       "name": "ResolveEquippedWeaponClass",
@@ -270,12 +304,132 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "GetOwnedToolAtSlot",
+      "kind": "function",
+      "guid": "2AB9375E494264FE7F9B36841A0325E4",
+      "node_count": 10,
+      "pin_count": 38,
+      "connection_count": 18,
+      "exec_connection_count": 9,
+      "data_connection_count": 9
+    },
+    {
+      "name": "GetActiveToolItem",
+      "kind": "function",
+      "guid": "DB2436EE4EFFD0A5DEAF1FA6A4D4D3D4",
+      "node_count": 4,
+      "pin_count": 12,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "GetActiveToolSlot",
+      "kind": "function",
+      "guid": "38AB658943E0BFA8341C8C88E8E17A5F",
+      "node_count": 3,
+      "pin_count": 5,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "GetToolSlotsInOrder",
+      "kind": "function",
+      "guid": "9E124B254FAD97DB399FA2BF07C5D0A1",
+      "node_count": 8,
+      "pin_count": 24,
+      "connection_count": 7,
+      "exec_connection_count": 1,
+      "data_connection_count": 6
+    },
+    {
+      "name": "OnActiveToolSlotChanged",
+      "kind": "delegate",
+      "guid": "F48D89C14B6B5A917E74B0A4B43EE080",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CycleActiveToolSlot",
+      "kind": "function",
+      "guid": "BC21C6304A9985C22814C2BCADB95674",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "HandleToolInventoryChanged",
+      "kind": "function",
+      "guid": "FEAB2F474A95A42F77B5629BDD35B1ED",
+      "node_count": 12,
+      "pin_count": 48,
+      "connection_count": 18,
+      "exec_connection_count": 9,
+      "data_connection_count": 9
+    },
+    {
+      "name": "ReconcileActiveToolSlot",
+      "kind": "function",
+      "guid": "0854D8ED4349DE6EEDC4CC951C999191",
+      "node_count": 6,
+      "pin_count": 20,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "FindNextOccupiedToolSlot",
+      "kind": "function",
+      "guid": "3DDB1E464D68E2D346C3C5B9B1C70582",
+      "node_count": 15,
+      "pin_count": 52,
+      "connection_count": 22,
+      "exec_connection_count": 7,
+      "data_connection_count": 15
+    },
+    {
+      "name": "SetActiveToolSlot",
+      "kind": "function",
+      "guid": "45638BEF451B320452C6FA9BE2AB7586",
+      "node_count": 16,
+      "pin_count": 59,
+      "connection_count": 23,
+      "exec_connection_count": 9,
+      "data_connection_count": 14
+    },
+    {
+      "name": "TryEquipToolToSlot",
+      "kind": "function",
+      "guid": "40CC72E64F5113392C5F38B0654C4093",
+      "node_count": 21,
+      "pin_count": 88,
+      "connection_count": 41,
+      "exec_connection_count": 18,
+      "data_connection_count": 23
+    },
+    {
+      "name": "CanEquipToolItem",
+      "kind": "function",
+      "guid": "6BF99D54415B357B461EDBA7A2E222B9",
+      "node_count": 15,
+      "pin_count": 64,
+      "connection_count": 22,
+      "exec_connection_count": 9,
+      "data_connection_count": 13
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "C6577E1C485EFBA4D59F72911E94D516",
+      "guid": "881CAFF24E132B169FA4FDAF14997907",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -284,11 +438,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 16,
+    "authored_graph_count": 28,
     "generated_graph_count": 1,
-    "authored_node_count": 318,
-    "authored_pin_count": 1145,
-    "authored_connection_count": 387,
+    "authored_node_count": 446,
+    "authored_pin_count": 1612,
+    "authored_connection_count": 576,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -297,6 +451,11 @@
       "name": "OnActiveRightHandSlotChanged",
       "kind": "delegate",
       "file": "graphs/OnActiveRightHandSlotChanged.json"
+    },
+    {
+      "name": "OnActiveToolSlotChanged",
+      "kind": "delegate",
+      "file": "graphs/OnActiveToolSlotChanged.json"
     },
     {
       "name": "OnEquipmentSlotChanged",
@@ -314,9 +473,24 @@
       "file": "graphs/CanAssignRightHandItem.json"
     },
     {
+      "name": "CanEquipToolItem",
+      "kind": "function",
+      "file": "graphs/CanEquipToolItem.json"
+    },
+    {
+      "name": "CycleActiveToolSlot",
+      "kind": "function",
+      "file": "graphs/CycleActiveToolSlot.json"
+    },
+    {
       "name": "FindNextOccupiedRightHandSlot",
       "kind": "function",
       "file": "graphs/FindNextOccupiedRightHandSlot.json"
+    },
+    {
+      "name": "FindNextOccupiedToolSlot",
+      "kind": "function",
+      "file": "graphs/FindNextOccupiedToolSlot.json"
     },
     {
       "name": "GetActiveRightHandItem",
@@ -329,9 +503,34 @@
       "file": "graphs/GetActiveRightHandSlot.json"
     },
     {
+      "name": "GetActiveToolItem",
+      "kind": "function",
+      "file": "graphs/GetActiveToolItem.json"
+    },
+    {
+      "name": "GetActiveToolSlot",
+      "kind": "function",
+      "file": "graphs/GetActiveToolSlot.json"
+    },
+    {
       "name": "GetEquippedItemAtSlot",
       "kind": "function",
       "file": "graphs/GetEquippedItemAtSlot.json"
+    },
+    {
+      "name": "GetOwnedToolAtSlot",
+      "kind": "function",
+      "file": "graphs/GetOwnedToolAtSlot.json"
+    },
+    {
+      "name": "GetToolSlotsInOrder",
+      "kind": "function",
+      "file": "graphs/GetToolSlotsInOrder.json"
+    },
+    {
+      "name": "HandleToolInventoryChanged",
+      "kind": "function",
+      "file": "graphs/HandleToolInventoryChanged.json"
     },
     {
       "name": "IsItemEquipped",
@@ -354,6 +553,11 @@
       "file": "graphs/ReconcileActiveRightHandSlot.json"
     },
     {
+      "name": "ReconcileActiveToolSlot",
+      "kind": "function",
+      "file": "graphs/ReconcileActiveToolSlot.json"
+    },
+    {
       "name": "ResolveEquippedWeaponClass",
       "kind": "function",
       "file": "graphs/ResolveEquippedWeaponClass.json"
@@ -364,9 +568,19 @@
       "file": "graphs/SetActiveRightHandSlot.json"
     },
     {
+      "name": "SetActiveToolSlot",
+      "kind": "function",
+      "file": "graphs/SetActiveToolSlot.json"
+    },
+    {
       "name": "TryEquipItemToSlot",
       "kind": "function",
       "file": "graphs/TryEquipItemToSlot.json"
+    },
+    {
+      "name": "TryEquipToolToSlot",
+      "kind": "function",
+      "file": "graphs/TryEquipToolToSlot.json"
     },
     {
       "name": "UnequipItemFromSlot",
