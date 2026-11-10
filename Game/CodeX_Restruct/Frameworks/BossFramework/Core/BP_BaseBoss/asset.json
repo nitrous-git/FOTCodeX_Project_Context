@@ -46,6 +46,7 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome",
       "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatReceiver",
+      "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatTargetable",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     ],
     "referencers": [
@@ -117,7 +118,7 @@
       "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner"
     ],
     "non_architecture_dependency_count": 18,
-    "non_architecture_referencer_count": 4
+    "non_architecture_referencer_count": 5
   },
   "registry": {
     "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
@@ -2332,6 +2333,11 @@
         "OnBossIntroAborted"
       ],
       "generated_graphs": [
+        "BPI_CanBeCombatTargeted",
+        "BPI_GetCombatTargetLocation",
+        "BPI_GetTargetPriority",
+        "BPI_CanBeExecuted",
+        "BPI_GetExecutionTargetLocation",
         "TL_ManualMove__FinishedFunc",
         "TL_ManualMove__UpdateFunc",
         "TL_Dash__FinishedFunc",
@@ -2341,6 +2347,9 @@
         "OnInterrupted_9FE8B8344B996017060DA5B8F83E83F2",
         "OnBlendOut_9FE8B8344B996017060DA5B8F83E83F2",
         "OnCompleted_9FE8B8344B996017060DA5B8F83E83F2",
+        "BPI_OnExecutionStarted",
+        "BPI_OnExecutionFinished",
+        "BPI_OnExecutionCanceled",
         "CS_PlayAnim",
         "CS_FacePlayer",
         "CS_LauchCharacterUtil",

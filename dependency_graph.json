@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "node_count": 433,
-  "edge_count": 1327,
+  "edge_count": 1340,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -1493,6 +1493,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "to": "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatTargetable"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
       "to": "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     },
     {
@@ -1941,11 +1945,19 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSpear",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSpear",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_GroupMelee"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSpear",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSpear",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSpear",
@@ -1965,11 +1977,19 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSword",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSword",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_GroupMelee"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSword",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSword",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/MeleeVariant/BP_Enemy_GroupMelee_SKSword",
@@ -1989,6 +2009,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_SKMage",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_SKMage",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/BP_Enemy_Ranged"
     },
     {
@@ -1997,7 +2021,23 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_SKMage",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_SKMage",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_SKMage",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyWorldBehavior"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_SKMage",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_RangedProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_SKMage",
+      "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/Ranged/DA_Ranged_SKMage"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Archetype/RangedVariant/BP_Enemy_Ranged_Warlock",
@@ -2334,6 +2374,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/Rewards/BP_SoulPickup",
       "to": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/Rewards/BP_SoulPickup",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/Rewards/BP_SoulPickup",
@@ -3269,6 +3313,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_MovementType"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_RotationMode"
     },
     {
@@ -3398,6 +3446,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Block"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
