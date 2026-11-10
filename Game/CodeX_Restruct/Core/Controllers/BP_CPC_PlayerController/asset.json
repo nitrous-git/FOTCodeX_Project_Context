@@ -17,12 +17,16 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_GameMenu",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_AttackLight",
@@ -58,7 +62,7 @@
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu",
       "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu"
     ],
-    "non_architecture_dependency_count": 8,
+    "non_architecture_dependency_count": 10,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -105,6 +109,23 @@
           "category": "int",
           "sub_category": null,
           "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ActiveRestingSite",
+        "guid": "D33EB463465C1F6068DE7FAA09CFE0B4",
+        "friendly_name": "Active Resting Site",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite.BP_RestingSite_C'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -183,6 +204,57 @@
         "name": "bRestMenuOpen",
         "guid": "1DC653184831964A9CAC7A8346176046",
         "friendly_name": "Rest Menu Open",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bRestMovementTickEnabled",
+        "guid": "CBA6AD7349192D286BF959AEA2588BCA",
+        "friendly_name": "Rest Movement Tick Enabled",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bRestPawnPositioned",
+        "guid": "921FEE7746DB982DD78B2083C0F7482C",
+        "friendly_name": "Rest Pawn Positioned",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bRestPresentationApplied",
+        "guid": "007D69074C29D82067AFF8876E56EB4B",
+        "friendly_name": "Rest Presentation Applied",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
@@ -384,6 +456,23 @@
         }
       },
       {
+        "name": "PendingRestTime",
+        "guid": "C8C2F17847B7A8BDF747BFAB7740F2D4",
+        "friendly_name": "Pending Rest Time",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "PlayerRef",
         "guid": "F8B3D02747D847A0E0A986B4066ADE7C",
         "friendly_name": "Player Ref",
@@ -418,6 +507,23 @@
         }
       },
       {
+        "name": "RestCameraComponent",
+        "guid": "4A81D57A48AD18D46E3EAA8E95C59E16",
+        "friendly_name": "Rest Camera Component",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent.AC_CameraModeComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "RestCombatContextPriority",
         "guid": "D96313FC431A45A195D1B7BA078E4C20",
         "friendly_name": "Rest Combat Context Priority",
@@ -435,6 +541,40 @@
         }
       },
       {
+        "name": "RestFadeDuration",
+        "guid": "6EE9976D4E5F8CF5C112D7BE37F7078E",
+        "friendly_name": "Rest Fade Duration",
+        "category": "INVTEXT(\"Resting Site\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RestingPawn",
+        "guid": "8D3D3591427BB285AD8A97BB63CB24D8",
+        "friendly_name": "Resting Pawn",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "RestMenuRef",
         "guid": "133F81C74CAAE7FE068C8C8365220423",
         "friendly_name": "Rest Menu Ref",
@@ -445,6 +585,125 @@
           "category": "object",
           "sub_category": null,
           "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu.WBP_RestMenu_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RestMorningTime",
+        "guid": "0858F4D84FD48FDB1477D8A3B75035F4",
+        "friendly_name": "Rest Morning Time",
+        "category": "INVTEXT(\"Resting Site\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RestNightTime",
+        "guid": "12DC8B984085F456A936B58C04D3698B",
+        "friendly_name": "Rest Night Time",
+        "category": "INVTEXT(\"Resting Site\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RestNoonTime",
+        "guid": "3B08043D40F5B00E0F5C8B9B8C3D16D5",
+        "friendly_name": "Rest Noon Time",
+        "category": "INVTEXT(\"Resting Site\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RestPhase",
+        "guid": "60D2460D43D2F28DEF58CBB8A2391AAC",
+        "friendly_name": "Rest Phase",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RestSettleSeconds",
+        "guid": "2625F30945A231903DC07DADF7F98A4A",
+        "friendly_name": "Rest Settle Seconds",
+        "category": "INVTEXT(\"Resting Site\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RestSittingMontage",
+        "guid": "AD22FFE248AFD8067C5509AE51FBB457",
+        "friendly_name": "Rest Sitting Montage",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RestTimeSettleSeconds",
+        "guid": "4E4C95EE461B612CA83F678EC4CB86F6",
+        "friendly_name": "Rest Time Settle Seconds",
+        "category": "INVTEXT(\"Resting Site\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -479,6 +738,57 @@
           "category": "struct",
           "sub_category": null,
           "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SavedRestCameraMode",
+        "guid": "B25B2B014280E2D8C301CCBB378D2114",
+        "friendly_name": "Saved Rest Camera Mode",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode.ECameraMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SavedRestControlRotation",
+        "guid": "376BED1C4D645F05DDF0028A76506175",
+        "friendly_name": "Saved Rest Control Rotation",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SavedRestTransform",
+        "guid": "8939CD064C3F9C4F28465AB1F9822242",
+        "friendly_name": "Saved Rest Transform",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Transform'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -530,44 +840,89 @@
         "OpenRestMenu",
         "CloseRestMenu",
         "FinishCloseRestMenu",
-        "RequestCyclePotion",
-        "RequestUsePotion",
-        "CanUsePotionInput",
-        "ReloadAfterDeath",
-        "FadeForDeathReload",
-        "ShowDeathMessage",
+        "LockForDeath",
         "BeginDeathPresentation",
-        "LockForDeath"
+        "ShowDeathMessage",
+        "FadeForDeathReload",
+        "ReloadAfterDeath",
+        "CanUsePotionInput",
+        "RequestUsePotion",
+        "RequestCyclePotion",
+        "CanBeginRest",
+        "AnnounceRestingSite",
+        "BeginRestSession",
+        "LockRestInput",
+        "RequestLeaveRest",
+        "HandleRestFadeFinished",
+        "HandleRestActorDestroyed",
+        "CompleteRestEntry",
+        "CompleteRestExit",
+        "RestoreRestPawn",
+        "AbortRestForDeath",
+        "HealAtRestSite",
+        "RequestRestTime",
+        "ApplyRestTime",
+        "EnableRestMenuInput",
+        "UnbindRestSession",
+        "CancelRestForUnpossess",
+        "PrepareRestPresentation",
+        "RestoreRestPresentation",
+        "QueueRestReveal",
+        "RevealRestScreen"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_18",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_17",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_16",
-        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_15",
-        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_14",
-        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_13",
-        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_12",
-        "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_11",
-        "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_10",
-        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_9",
-        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_8",
-        "InpActEvt_N_K2Node_InputKeyEvent_2",
-        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_7",
-        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_6",
-        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_5",
-        "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_4",
-        "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_3",
-        "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_2",
-        "InpActEvt_One_K2Node_InputKeyEvent_1",
-        "InpActEvt_IA_Interact_K2Node_EnhancedInputActionEvent_1",
-        "InpActEvt_IA_UseItem_K2Node_EnhancedInputActionEvent_0",
-        "InpActEvt_T_K2Node_InputKeyEvent_0",
-        "ReceiveBeginPlay",
-        "ReceivePossess",
+        "ReceiveEndPlay",
         "ReceiveUnPossess",
-        "ReceiveEndPlay"
+        "ReceivePossess",
+        "ReceiveBeginPlay",
+        "InpActEvt_T_K2Node_InputKeyEvent_0",
+        "InpActEvt_IA_UseItem_K2Node_EnhancedInputActionEvent_0",
+        "InpActEvt_IA_Interact_K2Node_EnhancedInputActionEvent_1",
+        "InpActEvt_One_K2Node_InputKeyEvent_1",
+        "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_2",
+        "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_3",
+        "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_4",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_5",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_6",
+        "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_7",
+        "InpActEvt_N_K2Node_InputKeyEvent_2",
+        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_8",
+        "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_9",
+        "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_10",
+        "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_11",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_12",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_13",
+        "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_14",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_15",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_16",
+        "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_17",
+        "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_18",
+        "EdGraph_63",
+        "EdGraph_64",
+        "EdGraph_65",
+        "EdGraph_66",
+        "EdGraph_67",
+        "EdGraph_68",
+        "EdGraph_69",
+        "EdGraph_70",
+        "EdGraph_71",
+        "EdGraph_72",
+        "EdGraph_73",
+        "EdGraph_74",
+        "EdGraph_75",
+        "EdGraph_76",
+        "EdGraph_77",
+        "EdGraph_78",
+        "EdGraph_79",
+        "EdGraph_80",
+        "EdGraph_81",
+        "EdGraph_82",
+        "EdGraph_83",
+        "EdGraph_84",
+        "EdGraph_85",
+        "EdGraph_86"
       ]
     },
     "extraction_status": {

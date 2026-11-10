@@ -25,6 +25,23 @@
       }
     },
     {
+      "name": "bScreenFadeToBlack",
+      "guid": "CC502F3B4272722A0035A9B2291814D4",
+      "friendly_name": "Screen Fade to Black",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bStatsBound",
       "guid": "B829CDA94B63109D93FCA0B9427E0300",
       "friendly_name": "Stats Bound",
@@ -33,6 +50,23 @@
       "default_value": null,
       "type": {
         "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnScreenFadeFinished",
+      "guid": "7FC433FC490A912847552197CDD0822B",
+      "friendly_name": "On Screen Fade Finished",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
         "sub_category": null,
         "sub_category_object": null,
         "container": null,
@@ -69,6 +103,23 @@
         "category": "real",
         "sub_category": "double",
         "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ScreenFadeOverlay",
+      "guid": "EC49368F4F8FCFF730CE5C9AB81A441A",
+      "friendly_name": "Screen Fade Overlay",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
         "container": null,
         "is_reference": false,
         "is_const": false,
@@ -252,26 +303,6 @@
       "data_connection_count": 4
     },
     {
-      "name": "UpdateScreenFade",
-      "kind": "function",
-      "guid": "5764A57E47DEDE5BFA80B587DDFA52EA",
-      "node_count": 13,
-      "pin_count": 39,
-      "connection_count": 13,
-      "exec_connection_count": 3,
-      "data_connection_count": 10
-    },
-    {
-      "name": "FadeScreenToBlack",
-      "kind": "function",
-      "guid": "D08F63DD457CFAFAB5EE869A6AB33767",
-      "node_count": 11,
-      "pin_count": 43,
-      "connection_count": 11,
-      "exec_connection_count": 5,
-      "data_connection_count": 6
-    },
-    {
       "name": "ShowBigMessage",
       "kind": "function",
       "guid": "009A7CDA4223DB8341F9A8A6F880C6A9",
@@ -280,12 +311,82 @@
       "connection_count": 6,
       "exec_connection_count": 1,
       "data_connection_count": 5
+    },
+    {
+      "name": "FadeScreenToBlack",
+      "kind": "function",
+      "guid": "D08F63DD457CFAFAB5EE869A6AB33767",
+      "node_count": 2,
+      "pin_count": 7,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "UpdateScreenFade",
+      "kind": "function",
+      "guid": "5764A57E47DEDE5BFA80B587DDFA52EA",
+      "node_count": 22,
+      "pin_count": 69,
+      "connection_count": 23,
+      "exec_connection_count": 7,
+      "data_connection_count": 16
+    },
+    {
+      "name": "StartScreenFade",
+      "kind": "function",
+      "guid": "EEFAA77B47DCD78FDA697DAA08D12E23",
+      "node_count": 15,
+      "pin_count": 53,
+      "connection_count": 17,
+      "exec_connection_count": 8,
+      "data_connection_count": 9
+    },
+    {
+      "name": "SetScreenFadeOpacity",
+      "kind": "function",
+      "guid": "3B266F5447B641D7CAABA89D9923B1F9",
+      "node_count": 7,
+      "pin_count": 21,
+      "connection_count": 9,
+      "exec_connection_count": 3,
+      "data_connection_count": 6
+    },
+    {
+      "name": "ResetScreenFade",
+      "kind": "function",
+      "guid": "027EF0E5422F91B30233688EC8F32CC7",
+      "node_count": 9,
+      "pin_count": 25,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "BeginScreenFadeTimer",
+      "kind": "function",
+      "guid": "816D4C4049E4D1C16529C888846F2FBD",
+      "node_count": 16,
+      "pin_count": 55,
+      "connection_count": 17,
+      "exec_connection_count": 7,
+      "data_connection_count": 10
+    },
+    {
+      "name": "OnScreenFadeFinished",
+      "kind": "delegate",
+      "guid": "81D955CD4CC35489DC49128F3739109B",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
     }
   ],
   "generated_graphs": [
     {
       "name": "Destruct",
-      "guid": "362F855B4ADBB59B99CEF0BBDE7C4233",
+      "guid": "279848314F22296FBA074CB69046BC98",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -294,19 +395,29 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 17,
+    "authored_graph_count": 22,
     "generated_graph_count": 1,
-    "authored_node_count": 182,
-    "authored_pin_count": 575,
-    "authored_connection_count": 201,
+    "authored_node_count": 230,
+    "authored_pin_count": 724,
+    "authored_connection_count": 254,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
   "graph_files": [
     {
+      "name": "OnScreenFadeFinished",
+      "kind": "delegate",
+      "file": "graphs/OnScreenFadeFinished.json"
+    },
+    {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "BeginScreenFadeTimer",
+      "kind": "function",
+      "file": "graphs/BeginScreenFadeTimer.json"
     },
     {
       "name": "BindCurrencyForPlayer",
@@ -364,6 +475,16 @@
       "file": "graphs/RemoveOldestLoot.json"
     },
     {
+      "name": "ResetScreenFade",
+      "kind": "function",
+      "file": "graphs/ResetScreenFade.json"
+    },
+    {
+      "name": "SetScreenFadeOpacity",
+      "kind": "function",
+      "file": "graphs/SetScreenFadeOpacity.json"
+    },
+    {
       "name": "ShowBigMessage",
       "kind": "function",
       "file": "graphs/ShowBigMessage.json"
@@ -377,6 +498,11 @@
       "name": "ShowInteractionPrompt",
       "kind": "function",
       "file": "graphs/ShowInteractionPrompt.json"
+    },
+    {
+      "name": "StartScreenFade",
+      "kind": "function",
+      "file": "graphs/StartScreenFade.json"
     },
     {
       "name": "TrimLootNotifications",

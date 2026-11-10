@@ -35,7 +35,8 @@
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_InteractionError",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_LootNotification",
-      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources"
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources",
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ScreenFade"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -75,6 +76,23 @@
         }
       },
       {
+        "name": "bScreenFadeToBlack",
+        "guid": "CC502F3B4272722A0035A9B2291814D4",
+        "friendly_name": "Screen Fade to Black",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "bStatsBound",
         "guid": "B829CDA94B63109D93FCA0B9427E0300",
         "friendly_name": "Stats Bound",
@@ -83,6 +101,23 @@
         "default_value": null,
         "type": {
           "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnScreenFadeFinished",
+        "guid": "7FC433FC490A912847552197CDD0822B",
+        "friendly_name": "On Screen Fade Finished",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
           "sub_category": null,
           "sub_category_object": null,
           "container": null,
@@ -119,6 +154,23 @@
           "category": "real",
           "sub_category": "double",
           "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ScreenFadeOverlay",
+        "guid": "EC49368F4F8FCFF730CE5C9AB81A441A",
+        "friendly_name": "Screen Fade Overlay",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -178,12 +230,18 @@
         "NotifyItemAcquired",
         "RemoveOldestLoot",
         "TrimLootNotifications",
-        "UpdateScreenFade",
+        "ShowBigMessage",
         "FadeScreenToBlack",
-        "ShowBigMessage"
+        "UpdateScreenFade",
+        "StartScreenFade",
+        "SetScreenFadeOpacity",
+        "ResetScreenFade",
+        "BeginScreenFadeTimer"
       ],
       "macros": [],
-      "delegates": [],
+      "delegates": [
+        "OnScreenFadeFinished"
+      ],
       "generated_graphs": [
         "Destruct"
       ]

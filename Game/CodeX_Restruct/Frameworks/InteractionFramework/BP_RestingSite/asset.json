@@ -22,7 +22,9 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent"
     ],
-    "referencers": [],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+    ],
     "non_architecture_dependency_count": 5,
     "non_architecture_referencer_count": 2
   },
@@ -37,6 +39,16 @@
     "generated_class_object": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite.BP_RestingSite_C",
     "interfaces": [],
     "components": [
+      {
+        "name": "Arrow",
+        "class": "ArrowComponent",
+        "parent": "SittingAnchor",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite.BP_RestingSite_C:Arrow_GEN_VARIABLE"
+      },
       {
         "name": "DefaultSceneRoot",
         "class": "SceneComponent",
@@ -76,9 +88,36 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite.BP_RestingSite_C:SiteOfGraceVFX_GEN_VARIABLE"
+      },
+      {
+        "name": "SittingAnchor",
+        "class": "SceneComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite.BP_RestingSite_C:SittingAnchor_GEN_VARIABLE"
       }
     ],
     "variables": [
+      {
+        "name": "bSiteDiscovered",
+        "guid": "F18AC4E047D7CA69BC665DA93DE637DF",
+        "friendly_name": "Site Discovered",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "SiteDisplayName",
         "guid": "F9BD9E184FABE8EE6B4272B2E544A3D8",
