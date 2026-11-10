@@ -59,6 +59,40 @@
       }
     },
     {
+      "name": "EnergyPotionRecoveryFraction",
+      "guid": "3DACF61D496AC0C382D3AA8D05872B57",
+      "friendly_name": "Energy Potion Recovery Fraction",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HealthPotionRecoveryFraction",
+      "guid": "1EE4C5F94EF79C8551E8B8B861D738E1",
+      "friendly_name": "Health Potion Recovery Fraction",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "InventoryDataTable",
       "guid": "F3C1379B41E410DE1A6D658687B5D119",
       "friendly_name": "Inventory Data Table",
@@ -120,6 +154,23 @@
         "category": "object",
         "sub_category": null,
         "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SelectedPotionID",
+      "guid": "35AD72124F290EC6CBE1E187FC528583",
+      "friendly_name": "Selected Potion ID",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
         "container": null,
         "is_reference": false,
         "is_const": false,
@@ -354,11 +405,11 @@
       "name": "UseConsumableFromSlot",
       "kind": "function",
       "guid": "DE200C61400510F26DDB26AA8422A892",
-      "node_count": 36,
-      "pin_count": 141,
-      "connection_count": 42,
-      "exec_connection_count": 24,
-      "data_connection_count": 18
+      "node_count": 61,
+      "pin_count": 236,
+      "connection_count": 40,
+      "exec_connection_count": 16,
+      "data_connection_count": 24
     },
     {
       "name": "Debug_GiveStarterInventory",
@@ -394,10 +445,10 @@
       "name": "Debug_GiveTestInventory",
       "kind": "function",
       "guid": "19860B9346DD540DB379AD9DC931A361",
-      "node_count": 8,
-      "pin_count": 50,
-      "connection_count": 6,
-      "exec_connection_count": 6,
+      "node_count": 10,
+      "pin_count": 64,
+      "connection_count": 8,
+      "exec_connection_count": 8,
       "data_connection_count": 0
     },
     {
@@ -479,12 +530,52 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "GetPotionRecovery",
+      "kind": "function",
+      "guid": "BCBA294E4CD8958AF3146F8FE0C8C4DC",
+      "node_count": 38,
+      "pin_count": 113,
+      "connection_count": 48,
+      "exec_connection_count": 15,
+      "data_connection_count": 33
+    },
+    {
+      "name": "CycleSelectedPotion",
+      "kind": "function",
+      "guid": "61D92AE3454D04ABB88873AD0356FA49",
+      "node_count": 7,
+      "pin_count": 26,
+      "connection_count": 8,
+      "exec_connection_count": 6,
+      "data_connection_count": 2
+    },
+    {
+      "name": "GetSelectedPotion",
+      "kind": "function",
+      "guid": "463B313C4AA62D69A8C2ACB32F716455",
+      "node_count": 18,
+      "pin_count": 65,
+      "connection_count": 21,
+      "exec_connection_count": 11,
+      "data_connection_count": 10
+    },
+    {
+      "name": "FindPotionStack",
+      "kind": "function",
+      "guid": "673FD71F40C0D11E4EFCBCAD68E5DDA6",
+      "node_count": 22,
+      "pin_count": 74,
+      "connection_count": 28,
+      "exec_connection_count": 7,
+      "data_connection_count": 21
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "5A3EEE2D4021D5F3824489839487CBB8",
+      "guid": "43C412414B8A7DB8586BC3841D53540E",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -493,11 +584,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 25,
+    "authored_graph_count": 29,
     "generated_graph_count": 1,
-    "authored_node_count": 635,
-    "authored_pin_count": 2434,
-    "authored_connection_count": 804,
+    "authored_node_count": 747,
+    "authored_pin_count": 2821,
+    "authored_connection_count": 909,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -533,6 +624,11 @@
       "file": "graphs/ClearInventorySlot.json"
     },
     {
+      "name": "CycleSelectedPotion",
+      "kind": "function",
+      "file": "graphs/CycleSelectedPotion.json"
+    },
+    {
       "name": "Debug_GiveStarterInventory",
       "kind": "function",
       "file": "graphs/Debug_GiveStarterInventory.json"
@@ -563,9 +659,24 @@
       "file": "graphs/FindInventoryDropTransform.json"
     },
     {
+      "name": "FindPotionStack",
+      "kind": "function",
+      "file": "graphs/FindPotionStack.json"
+    },
+    {
       "name": "GetItemDefinition",
       "kind": "function",
       "file": "graphs/GetItemDefinition.json"
+    },
+    {
+      "name": "GetPotionRecovery",
+      "kind": "function",
+      "file": "graphs/GetPotionRecovery.json"
+    },
+    {
+      "name": "GetSelectedPotion",
+      "kind": "function",
+      "file": "graphs/GetSelectedPotion.json"
     },
     {
       "name": "GetSlotByCategoryAndIndex",

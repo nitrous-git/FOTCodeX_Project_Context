@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_PlayerAction_UsePotion",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion.BP_PlayerAction_UsePotion",
+    "relative_package": "CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap_Instance"
+    ],
+    "non_architecture_dependency_count": 5,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion.BP_PlayerAction_UsePotion_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion.BP_PlayerAction_UsePotion_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion.BP_PlayerAction_UsePotion_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bPotionCommitted",
+        "guid": "9E9AC9B245721EF49F5D8CBF027B1FBD",
+        "friendly_name": "Potion Committed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PotionItemID",
+        "guid": "0A235BC747FB52845F1ABBB2C2F320A5",
+        "friendly_name": "Potion Item ID",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PotionMontage",
+        "guid": "378B78A24BB420D8AC7D578B284172D3",
+        "friendly_name": "Potion Montage",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "CommitPotionFromNotify",
+        "FinishPotionIfCurrent",
+        "EndAction",
+        "StartAction"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "OnNotifyEnd_949D07294163ED8813C2D09900F30FB2",
+        "OnNotifyBegin_949D07294163ED8813C2D09900F30FB2",
+        "OnInterrupted_949D07294163ED8813C2D09900F30FB2",
+        "OnBlendOut_949D07294163ED8813C2D09900F30FB2",
+        "OnCompleted_949D07294163ED8813C2D09900F30FB2",
+        "PlaySelectedPotionMontage"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

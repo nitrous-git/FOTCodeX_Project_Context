@@ -25,6 +25,40 @@
       }
     },
     {
+      "name": "bDeathPresentationStarted",
+      "guid": "404C2C90474A7826D557EC8DDB6650D5",
+      "friendly_name": "Death Presentation Started",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDeathReloadRequested",
+      "guid": "299F8AAF48BFDDC5E34F64BD6E121255",
+      "friendly_name": "Death Reload Requested",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bGameMenuOpen",
       "guid": "5B7103CF476279B9B1276780BBD0A16D",
       "friendly_name": "Game Menu Open",
@@ -387,10 +421,10 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "54B5DF38479743A61F43B19406610AD4",
-      "node_count": 140,
-      "pin_count": 482,
-      "connection_count": 129,
-      "exec_connection_count": 49,
+      "node_count": 144,
+      "pin_count": 500,
+      "connection_count": 131,
+      "exec_connection_count": 51,
       "data_connection_count": 80
     },
     {
@@ -557,21 +591,21 @@
       "name": "RequestInteraction",
       "kind": "function",
       "guid": "02C47D85490D1CBE6D001C9248D5C1B2",
-      "node_count": 7,
-      "pin_count": 21,
-      "connection_count": 8,
-      "exec_connection_count": 4,
-      "data_connection_count": 4
+      "node_count": 10,
+      "pin_count": 30,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
     },
     {
       "name": "SyncInteractionState",
       "kind": "function",
       "guid": "7A77A6124F2CC8DC24F5689908E9FFE1",
-      "node_count": 7,
-      "pin_count": 21,
-      "connection_count": 8,
+      "node_count": 9,
+      "pin_count": 27,
+      "connection_count": 10,
       "exec_connection_count": 3,
-      "data_connection_count": 5
+      "data_connection_count": 7
     },
     {
       "name": "ResolveInteractionComponent",
@@ -612,12 +646,101 @@
       "connection_count": 22,
       "exec_connection_count": 13,
       "data_connection_count": 9
+    },
+    {
+      "name": "RequestCyclePotion",
+      "kind": "function",
+      "guid": "BD107B824F534DA96140C289797761F2",
+      "node_count": 8,
+      "pin_count": 23,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "RequestUsePotion",
+      "kind": "function",
+      "guid": "B399425041AA1EB679A6B187C3E85FDE",
+      "node_count": 8,
+      "pin_count": 25,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "CanUsePotionInput",
+      "kind": "function",
+      "guid": "76D1A8504BBFAE50730EAC9B23FB77CB",
+      "node_count": 15,
+      "pin_count": 40,
+      "connection_count": 15,
+      "exec_connection_count": 3,
+      "data_connection_count": 12
+    },
+    {
+      "name": "ReloadAfterDeath",
+      "kind": "function",
+      "guid": "66711065418E2FF4AA0B618604398F09",
+      "node_count": 8,
+      "pin_count": 31,
+      "connection_count": 7,
+      "exec_connection_count": 3,
+      "data_connection_count": 4
+    },
+    {
+      "name": "FadeForDeathReload",
+      "kind": "function",
+      "guid": "0D9FAFD24E1F5A5F96772A83C62431BD",
+      "node_count": 18,
+      "pin_count": 85,
+      "connection_count": 14,
+      "exec_connection_count": 7,
+      "data_connection_count": 7
+    },
+    {
+      "name": "ShowDeathMessage",
+      "kind": "function",
+      "guid": "3FDA8ECC49DDC6E6FC04689FB3A0525B",
+      "node_count": 6,
+      "pin_count": 20,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "BeginDeathPresentation",
+      "kind": "function",
+      "guid": "E455E52A4C51B30428FA6DA7B9F014A6",
+      "node_count": 10,
+      "pin_count": 46,
+      "connection_count": 11,
+      "exec_connection_count": 4,
+      "data_connection_count": 7
+    },
+    {
+      "name": "LockForDeath",
+      "kind": "function",
+      "guid": "F70D52CA4BC3AB1A778571B138A8F7D1",
+      "node_count": 37,
+      "pin_count": 127,
+      "connection_count": 22,
+      "exec_connection_count": 11,
+      "data_connection_count": 11
     }
   ],
   "generated_graphs": [
     {
-      "name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_17",
-      "guid": "88FA40E241DFCC11289D30A4978B9421",
+      "name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_18",
+      "guid": "DF594A08428F12F32F1CB89B96FF89C5",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_17",
+      "guid": "EEE50C3C4342AD0383FE41BA146A8FAC",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -626,7 +749,7 @@
     },
     {
       "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_16",
-      "guid": "4134E2AE431E6A8B7FD629BF2D43F694",
+      "guid": "A40D2D924EC0C6969290429712635055",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -635,7 +758,7 @@
     },
     {
       "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_15",
-      "guid": "F6E8FBDB4D03D7B1A58D1393C08A4EF5",
+      "guid": "B077671C4BE22C09AF03D68D87BC036B",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -643,8 +766,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_14",
-      "guid": "0B3970174076B805404B08A6D9D047A9",
+      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_14",
+      "guid": "B1F395574AD72F76DD9CF5B0CA130BB1",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -653,7 +776,7 @@
     },
     {
       "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_13",
-      "guid": "BAE11FB54349F8D5C20BE89215BB5D32",
+      "guid": "BF6D761441A9F52865E498994254A384",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -662,7 +785,7 @@
     },
     {
       "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_12",
-      "guid": "7DDDD6244A0B070F7F692FBEC349F8EB",
+      "guid": "DCE0D8EA470A5CAD9E1D6FA8CC862D54",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -670,8 +793,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_11",
-      "guid": "CCBA84CB49F06C2E3D2756BD0A6168F6",
+      "name": "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_11",
+      "guid": "E2F1DA7942A5085858197F9B42ABBB44",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -679,8 +802,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_10",
-      "guid": "6B5F1FBB4015256C56B77A90F3CEA626",
+      "name": "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_10",
+      "guid": "30253D36451144F2851510B507AF41B2",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -688,8 +811,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_9",
-      "guid": "723C087040DDF5EFCB65F5B10E52865A",
+      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_9",
+      "guid": "6739E0AA443C27FF586030BEF92B53F5",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -698,7 +821,7 @@
     },
     {
       "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_8",
-      "guid": "D41C2F3E4225D22D698AE998398ECAA9",
+      "guid": "8FA927A346E1F0AB6DD4158501063A7F",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -706,17 +829,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_7",
-      "guid": "C379D9004C673903B1897E99E7CC47B5",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_N_K2Node_InputKeyEvent_1",
-      "guid": "69F7B61641D32FAC11D2EB9D48838A2C",
+      "name": "InpActEvt_N_K2Node_InputKeyEvent_2",
+      "guid": "41ACDF5540950697BB7106AFC1B1AF99",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -724,8 +838,17 @@
       "data_connection_count": 1
     },
     {
+      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_7",
+      "guid": "C09676B5454E77032670ADBCC61B2898",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
       "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_6",
-      "guid": "369C3A1A4673594E79BC11A9C6E6D733",
+      "guid": "EEFD052446769EA8FA9086ADCBDA3631",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -734,7 +857,7 @@
     },
     {
       "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_5",
-      "guid": "E35B7A2A46FE4B6C094EA084D44CC2F8",
+      "guid": "A122974A452C211A9DDCB8A70C3EE436",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -742,8 +865,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_4",
-      "guid": "2AAB7FC64960628B304462B79B3522F2",
+      "name": "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_4",
+      "guid": "7B1D36D6462951F73B47529D268F621B",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -751,8 +874,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_3",
-      "guid": "3CE5034C4359E9718B0DAAA601E28868",
+      "name": "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_3",
+      "guid": "C923693E479BF8758AA2B8B714AB3556",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -760,8 +883,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_2",
-      "guid": "CEA3BE43480F1EFF4B768ABD34E964CB",
+      "name": "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_2",
+      "guid": "6128415E4A6027EABA2C6481A908EDC0",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -769,17 +892,8 @@
       "data_connection_count": 4
     },
     {
-      "name": "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_1",
-      "guid": "5FA7298843A88A721A019FB247991371",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "InpActEvt_One_K2Node_InputKeyEvent_0",
-      "guid": "9A6412074F1DF06F08F6B48E9BD6E299",
+      "name": "InpActEvt_One_K2Node_InputKeyEvent_1",
+      "guid": "808F66E44B9DA8802B437C8946D3C917",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -787,8 +901,8 @@
       "data_connection_count": 1
     },
     {
-      "name": "InpActEvt_IA_Interact_K2Node_EnhancedInputActionEvent_0",
-      "guid": "DAC15F09498F1493C96B7AAD27FF0CDB",
+      "name": "InpActEvt_IA_Interact_K2Node_EnhancedInputActionEvent_1",
+      "guid": "F6D367F347B70FC2BDB495A591C70CFB",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -796,8 +910,26 @@
       "data_connection_count": 4
     },
     {
+      "name": "InpActEvt_IA_UseItem_K2Node_EnhancedInputActionEvent_0",
+      "guid": "4AC36A4542A42EFDF1E8DAB0BFD66685",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_T_K2Node_InputKeyEvent_0",
+      "guid": "A81C9FC14D6B1C2241839B91B7F38B6C",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
       "name": "ReceiveBeginPlay",
-      "guid": "C599D49842BAC309D687288A474B7F37",
+      "guid": "B8056B904F1EAE2DE9DEC5A5B099FA8D",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -806,7 +938,7 @@
     },
     {
       "name": "ReceivePossess",
-      "guid": "59E8D0A14612C49B13D806B49678732E",
+      "guid": "6F06C1B5431F58F4887977A506FFE364",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -815,7 +947,7 @@
     },
     {
       "name": "ReceiveUnPossess",
-      "guid": "4D7110654A28D1733E4580AAAB15E554",
+      "guid": "D1677413403D5E01017822B5E39DEC96",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -824,7 +956,7 @@
     },
     {
       "name": "ReceiveEndPlay",
-      "guid": "8FEA7F9345B04F1E286FF4A2CED69737",
+      "guid": "51F2E9AB4CA3BB5B4C9DD5A233330846",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -833,13 +965,13 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 23,
-    "generated_graph_count": 24,
-    "authored_node_count": 467,
-    "authored_pin_count": 1466,
-    "authored_connection_count": 484,
-    "generated_node_count": 71,
-    "generated_pin_count": 320
+    "authored_graph_count": 31,
+    "generated_graph_count": 26,
+    "authored_node_count": 586,
+    "authored_pin_count": 1896,
+    "authored_connection_count": 584,
+    "generated_node_count": 77,
+    "generated_pin_count": 344
   },
   "graph_files": [
     {
@@ -848,9 +980,19 @@
       "file": "graphs/EventGraph.json"
     },
     {
+      "name": "BeginDeathPresentation",
+      "kind": "function",
+      "file": "graphs/BeginDeathPresentation.json"
+    },
+    {
       "name": "BindGameplayHUDToPawn",
       "kind": "function",
       "file": "graphs/BindGameplayHUDToPawn.json"
+    },
+    {
+      "name": "CanUsePotionInput",
+      "kind": "function",
+      "file": "graphs/CanUsePotionInput.json"
     },
     {
       "name": "CloseGameMenu",
@@ -878,6 +1020,11 @@
       "file": "graphs/EnsureGameplayHUD.json"
     },
     {
+      "name": "FadeForDeathReload",
+      "kind": "function",
+      "file": "graphs/FadeForDeathReload.json"
+    },
+    {
       "name": "FinishCloseRestMenu",
       "kind": "function",
       "file": "graphs/FinishCloseRestMenu.json"
@@ -896,6 +1043,11 @@
       "name": "InitializeGameMenu",
       "kind": "function",
       "file": "graphs/InitializeGameMenu.json"
+    },
+    {
+      "name": "LockForDeath",
+      "kind": "function",
+      "file": "graphs/LockForDeath.json"
     },
     {
       "name": "NavigateMenuBack",
@@ -918,14 +1070,29 @@
       "file": "graphs/OpenRestMenu.json"
     },
     {
+      "name": "ReloadAfterDeath",
+      "kind": "function",
+      "file": "graphs/ReloadAfterDeath.json"
+    },
+    {
       "name": "RemoveGameplayHUD",
       "kind": "function",
       "file": "graphs/RemoveGameplayHUD.json"
     },
     {
+      "name": "RequestCyclePotion",
+      "kind": "function",
+      "file": "graphs/RequestCyclePotion.json"
+    },
+    {
       "name": "RequestInteraction",
       "kind": "function",
       "file": "graphs/RequestInteraction.json"
+    },
+    {
+      "name": "RequestUsePotion",
+      "kind": "function",
+      "file": "graphs/RequestUsePotion.json"
     },
     {
       "name": "ResetEquipmentMenuView",
@@ -936,6 +1103,11 @@
       "name": "ResolveInteractionComponent",
       "kind": "function",
       "file": "graphs/ResolveInteractionComponent.json"
+    },
+    {
+      "name": "ShowDeathMessage",
+      "kind": "function",
+      "file": "graphs/ShowDeathMessage.json"
     },
     {
       "name": "ShowMenuNavigation",

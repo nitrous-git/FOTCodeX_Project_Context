@@ -1,11 +1,15 @@
 {
   "schema_version": 1,
-  "node_count": 433,
-  "edge_count": 1340,
+  "node_count": 435,
+  "edge_count": 1351,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
     },
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -78,6 +82,10 @@
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_ToggleLocomotion"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_UseItem"
     },
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -2529,6 +2537,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement"
     },
     {
@@ -2778,6 +2790,22 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_Pickup_HPPotion",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
@@ -3593,6 +3621,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap_Instance",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_ActionMap_Instance",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_Execution"
     },
     {
@@ -3690,6 +3722,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
@@ -3802,6 +3838,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_ToggleLocomotion"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_UseItem"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_GameMenu",
@@ -4614,6 +4654,10 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
       "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_AbilityDisplay"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_BigScreenMessage"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",

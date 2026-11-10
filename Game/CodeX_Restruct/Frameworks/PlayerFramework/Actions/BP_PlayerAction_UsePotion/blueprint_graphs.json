@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_PlayerAction_UsePotion",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "9C1E3418494ECAABCB6EC5B1916BD3FE",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'"
+  },
+  "variables": [
+    {
+      "name": "bPotionCommitted",
+      "guid": "9E9AC9B245721EF49F5D8CBF027B1FBD",
+      "friendly_name": "Potion Committed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PotionItemID",
+      "guid": "0A235BC747FB52845F1ABBB2C2F320A5",
+      "friendly_name": "Potion Item ID",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PotionMontage",
+      "guid": "378B78A24BB420D8AC7D578B284172D3",
+      "friendly_name": "Potion Montage",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "ADA4B4B64B046B73DF098F84FD44E3F8",
+      "node_count": 10,
+      "pin_count": 41,
+      "connection_count": 13,
+      "exec_connection_count": 6,
+      "data_connection_count": 7
+    },
+    {
+      "name": "CommitPotionFromNotify",
+      "kind": "function",
+      "guid": "44BF244B40A3CE52B05BA6A773C7D5E1",
+      "node_count": 29,
+      "pin_count": 98,
+      "connection_count": 38,
+      "exec_connection_count": 10,
+      "data_connection_count": 28
+    },
+    {
+      "name": "FinishPotionIfCurrent",
+      "kind": "function",
+      "guid": "9473F1C549D0314909493BAFF6F03F28",
+      "node_count": 9,
+      "pin_count": 23,
+      "connection_count": 9,
+      "exec_connection_count": 2,
+      "data_connection_count": 7
+    },
+    {
+      "name": "EndAction",
+      "kind": "function",
+      "guid": "45042D2540F0711309475CB20CCD5F30",
+      "node_count": 5,
+      "pin_count": 19,
+      "connection_count": 4,
+      "exec_connection_count": 4,
+      "data_connection_count": 0
+    },
+    {
+      "name": "StartAction",
+      "kind": "function",
+      "guid": "F5BFD6CA49CAD96153557EB946BBC9A6",
+      "node_count": 16,
+      "pin_count": 55,
+      "connection_count": 18,
+      "exec_connection_count": 10,
+      "data_connection_count": 8
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "OnNotifyEnd_949D07294163ED8813C2D09900F30FB2",
+      "guid": "D01D173941BBF49D5482E395E6231C8C",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnNotifyBegin_949D07294163ED8813C2D09900F30FB2",
+      "guid": "A3800DF04CE12212F35027A125B18C01",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnInterrupted_949D07294163ED8813C2D09900F30FB2",
+      "guid": "B7B0A35B4016B0A3F366CDAFD26049FB",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnBlendOut_949D07294163ED8813C2D09900F30FB2",
+      "guid": "2E33E9B741ADBCF5677F2BAF40109708",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnCompleted_949D07294163ED8813C2D09900F30FB2",
+      "guid": "EC0AF8AD4FA6B2C1CD73048FE5918A97",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "PlaySelectedPotionMontage",
+      "guid": "482D0B33455237B31B74189A8D3186B4",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 6,
+    "authored_node_count": 69,
+    "authored_pin_count": 236,
+    "authored_connection_count": 82,
+    "generated_node_count": 17,
+    "generated_pin_count": 50
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CommitPotionFromNotify",
+      "kind": "function",
+      "file": "graphs/CommitPotionFromNotify.json"
+    },
+    {
+      "name": "EndAction",
+      "kind": "function",
+      "file": "graphs/EndAction.json"
+    },
+    {
+      "name": "FinishPotionIfCurrent",
+      "kind": "function",
+      "file": "graphs/FinishPotionIfCurrent.json"
+    },
+    {
+      "name": "StartAction",
+      "kind": "function",
+      "file": "graphs/StartAction.json"
+    }
+  ]
+}

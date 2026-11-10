@@ -19,6 +19,8 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_ItemWheelSlot" Ex
       Begin Object Class=/Script/UMG.Overlay Name="Overlay_1" ExportPath="/Script/UMG.Overlay'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:WidgetTree.Overlay_1'"
          Begin Object Class=/Script/UMG.OverlaySlot Name="OverlaySlot_0" ExportPath="/Script/UMG.OverlaySlot'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:WidgetTree.Overlay_1.OverlaySlot_0'"
          End Object
+         Begin Object Class=/Script/UMG.OverlaySlot Name="OverlaySlot_1" ExportPath="/Script/UMG.OverlaySlot'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:WidgetTree.Overlay_1.OverlaySlot_1'"
+         End Object
       End Object
       Begin Object Class=/Script/UMG.Image Name="ItemIcon" ExportPath="/Script/UMG.Image'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:WidgetTree.ItemIcon'"
       End Object
@@ -33,6 +35,8 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_ItemWheelSlot" Ex
       Begin Object Class=/Script/UMG.Overlay Name="WheelOL" ExportPath="/Script/UMG.Overlay'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:WidgetTree.WheelOL'"
          Begin Object Class=/Script/UMG.OverlaySlot Name="OverlaySlot_0" ExportPath="/Script/UMG.OverlaySlot'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:WidgetTree.WheelOL.OverlaySlot_0'"
          End Object
+      End Object
+      Begin Object Class=/Script/UMG.TextBlock Name="QuantityText" ExportPath="/Script/UMG.TextBlock'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:WidgetTree.QuantityText'"
       End Object
    End Object
    Begin Object Class=/Script/Engine.EdGraph Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:EventGraph'"
@@ -61,6 +65,20 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_ItemWheelSlot" Ex
       Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_1" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentIcon.K2Node_VariableGet_1'"
       End Object
       Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_4" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentIcon.K2Node_CallFunction_4'"
+      End Object
+   End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="PresentQuantity" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_2" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_CallFunction_2'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_1" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_VariableGet_1'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_1" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_CallFunction_1'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_0" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_VariableGet_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_CallFunction_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_FunctionEntry_0'"
       End Object
    End Object
    Begin Object Name="WidgetTree" ExportPath="/Script/UMG.WidgetTree'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:WidgetTree'"
@@ -124,7 +142,15 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_ItemWheelSlot" Ex
             Parent="/Script/UMG.Overlay'WBP_ItemWheelSlot:WidgetTree.Overlay_1'"
             Content="/Script/UMG.ScaleBox'WBP_ItemWheelSlot:WidgetTree.IconScaler'"
          End Object
+         Begin Object Name="OverlaySlot_1" ExportPath="/Script/UMG.OverlaySlot'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:WidgetTree.Overlay_1.OverlaySlot_1'"
+            Padding=(Right=4.000000,Bottom=2.000000)
+            HorizontalAlignment=HAlign_Right
+            VerticalAlignment=VAlign_Bottom
+            Parent="/Script/UMG.Overlay'WBP_ItemWheelSlot:WidgetTree.Overlay_1'"
+            Content="/Script/UMG.TextBlock'WBP_ItemWheelSlot:WidgetTree.QuantityText'"
+         End Object
          Slots(0)="/Script/UMG.OverlaySlot'OverlaySlot_0'"
+         Slots(1)="/Script/UMG.OverlaySlot'OverlaySlot_1'"
          Slot="/Script/UMG.BorderSlot'WBP_ItemWheelSlot:WidgetTree.MainBorder.BorderSlot_0'"
          bExpandedInDesigner=True
          DisplayLabel="Overlay_1"
@@ -169,7 +195,26 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_ItemWheelSlot" Ex
          bExpandedInDesigner=True
          DisplayLabel="WheelOL"
       End Object
+      Begin Object Name="QuantityText" ExportPath="/Script/UMG.TextBlock'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:WidgetTree.QuantityText'"
+         Text=NSLOCTEXT("UMG", "TextBlockDefaultValue", "Text Block")
+         Font=(Size=15.000000)
+         ShadowColorAndOpacity=(R=0.000000,G=0.000000,B=0.000000,A=0.950000)
+         Slot="/Script/UMG.OverlaySlot'WBP_ItemWheelSlot:WidgetTree.Overlay_1.OverlaySlot_1'"
+         bIsVariable=True
+         Visibility=Collapsed
+         DisplayLabel="QuantityText"
+      End Object
       RootWidget="/Script/UMG.Overlay'WheelOL'"
+      AllWidgets(0)="/Script/UMG.Overlay'WheelOL'"
+      AllWidgets(1)="/Script/UMG.SizeBox'Size'"
+      AllWidgets(2)="/Script/UMG.Overlay'Overlay_0'"
+      AllWidgets(3)="/Script/UMG.Border'Shadow'"
+      AllWidgets(4)="/Script/UMG.Border'OutlineBorder'"
+      AllWidgets(5)="/Script/UMG.Border'MainBorder'"
+      AllWidgets(6)="/Script/UMG.Overlay'Overlay_1'"
+      AllWidgets(7)="/Script/UMG.ScaleBox'IconScaler'"
+      AllWidgets(8)="/Script/UMG.Image'ItemIcon'"
+      AllWidgets(9)="/Script/UMG.TextBlock'QuantityText'"
    End Object
    Begin Object Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:EventGraph'"
       Begin Object Name="K2Node_Event_0" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:EventGraph.K2Node_Event_0'"
@@ -312,14 +357,84 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_ItemWheelSlot" Ex
       Nodes(8)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_4'"
       GraphGuid=BF73F6864274C8360900829FB0C6944F
    End Object
-   WidgetVariableNameToGuidMap=(("WheelOL", 502C6759437CB3345C20ED9EFBECA7D9),("Size", 0A116E1C40336C4DF3792BA964253801),("Overlay_0", 3124921842447C93E097CCA46DC600AC),("Shadow", 121FDE864B3A4CFA462FEEA30F6A21A5),("OutlineBorder", 0780291B4D682FA5EF80BAAF23D99E74),("MainBorder", 351E2BD64E11573BB1C0CCA2589CB6DC),("Overlay_1", F345373C4AAE5BDB0195798006191CC7),("IconScaler", 47439DBF41E17AD1371320B451D0D29B),("ItemIcon", 933550D04280689577307D91E1AE596A))
+   Begin Object Name="PresentQuantity" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity'"
+      Begin Object Name="K2Node_CallFunction_2" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_CallFunction_2'"
+         FunctionReference=(MemberName="SetVisibility",bSelfContext=True)
+         NodePosX=1120
+         NodeGuid=511846A14AD7A9C522DA1BBA496AFA0D
+         CustomProperties Pin (PinId=EF00B72D4643D03E9B98A88DBFFB4845,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_1 501E4B814FE3141B3E548384695DA177,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=F49108BF42C21A2AB89C6FA8A4E39665,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=5BC9C9EB4534641899A9A1A159D43BCF,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/CoreUObject.Class'/Script/UMG.Widget'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_VariableGet_1 854E13004C54DB5A657EDB83545D0F00,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=B0AD72694FFC8A453312978189C09978,PinName="InVisibility",PinType.PinCategory="byte",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/CoreUObject.Enum'/Script/UMG.ESlateVisibility'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="HitTestInvisible",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_VariableGet_1" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_VariableGet_1'"
+         VariableReference=(MemberName="QuantityText",MemberGuid=48296DF44BDB5B52B7CAB1BC0117A975,bSelfContext=True)
+         NodePosX=890
+         NodePosY=260
+         NodeGuid=9F26FAB341505503B1FA7884DE7CD6E4
+         CustomProperties Pin (PinId=854E13004C54DB5A657EDB83545D0F00,PinName="QuantityText",Direction="EGPD_Output",PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/CoreUObject.Class'/Script/UMG.TextBlock'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_2 5BC9C9EB4534641899A9A1A159D43BCF,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=782D105941674A690A0B298CB140E0F7,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=True,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_CallFunction_1" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_CallFunction_1'"
+         FunctionReference=(MemberParent="/Script/CoreUObject.Class'/Script/UMG.TextBlock'",MemberName="SetText")
+         NodePosX=660
+         NodeGuid=1298B962470291F9C27778B4DC25FC85
+         CustomProperties Pin (PinId=05A1D4D940CAA636A17A5BBBA824A9FF,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 17CBD6324C097A45268C18A75F2586BD,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=501E4B814FE3141B3E548384695DA177,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_2 EF00B72D4643D03E9B98A88DBFFB4845,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=04AE7C624A6A78F1C92EE089C6D67C8E,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/CoreUObject.Class'/Script/UMG.TextBlock'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_VariableGet_0 3DB788114DF2EF00FADDC78B569D3921,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=FAE4E64F43955F1FD8559EABC361D681,PinName="InText",PinType.PinCategory="text",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 57A3267D42C7FDD541C0C39910A2C35E,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_VariableGet_0" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_VariableGet_0'"
+         VariableReference=(MemberName="QuantityText",MemberGuid=48296DF44BDB5B52B7CAB1BC0117A975,bSelfContext=True)
+         NodePosX=430
+         NodePosY=260
+         NodeGuid=F780FD8C4FE508B7EA00C2AC54BA028D
+         CustomProperties Pin (PinId=3DB788114DF2EF00FADDC78B569D3921,PinName="QuantityText",Direction="EGPD_Output",PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/CoreUObject.Class'/Script/UMG.TextBlock'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_1 04AE7C624A6A78F1C92EE089C6D67C8E,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=C2D500AA40EBAD97AD99AFBA5D3CD75C,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=True,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_CallFunction_0'"
+         bDefaultsToPureFunc=True
+         FunctionReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.KismetTextLibrary'",MemberName="Conv_IntToText")
+         NodePosX=200
+         NodePosY=260
+         AdvancedPinDisplay=Hidden
+         NodeGuid=FF2DB6EC42DE04DA3D111B9CBFF277D5
+         CustomProperties Pin (PinId=8A79B80A40FF55F6E096AFB364746A62,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/CoreUObject.Class'/Script/Engine.KismetTextLibrary'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultObject="/Script/Engine.Default__KismetTextLibrary",PersistentGuid=00000000000000000000000000000000,bHidden=True,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=F17E28D048AF024DE4D724A762DBD17C,PinName="Value",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0",AutogeneratedDefaultValue="0",LinkedTo=(K2Node_FunctionEntry_0 B410505D43E1DDDF87D41B893A6D09A5,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=E4D3487249E448E81C90BEB9FE47E3E4,PinName="bAlwaysSign",PinType.PinCategory="bool",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="false",AutogeneratedDefaultValue="false",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=EE08326644FC537E9468DEA38F1CC811,PinName="bUseGrouping",PinType.PinCategory="bool",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="false",AutogeneratedDefaultValue="true",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=0341BF51475CE3500E9152944CD36129,PinName="MinimumIntegralDigits",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="1",AutogeneratedDefaultValue="1",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=B8EBC63C42D4F05FAB9E5D9969A68E3C,PinName="MaximumIntegralDigits",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="324",AutogeneratedDefaultValue="324",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=57A3267D42C7FDD541C0C39910A2C35E,PinName="ReturnValue",Direction="EGPD_Output",PinType.PinCategory="text",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_1 FAE4E64F43955F1FD8559EABC361D681,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelSlot.WBP_ItemWheelSlot:PresentQuantity.K2Node_FunctionEntry_0'"
+         ExtraFlags=201457664
+         FunctionReference=(MemberName="PresentQuantity")
+         bIsEditable=True
+         NodeGuid=BA5AEE0D475C7E39A07823A48595625B
+         CustomProperties Pin (PinId=17CBD6324C097A45268C18A75F2586BD,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_1 05A1D4D940CAA636A17A5BBBA824A9FF,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=B410505D43E1DDDF87D41B893A6D09A5,PinName="Quantity",Direction="EGPD_Output",PinType.PinCategory="int",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 F17E28D048AF024DE4D724A762DBD17C,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties UserDefinedPin (PinName="Quantity",PinType=(PinCategory="int"),DesiredPinDirection=EGPD_Output)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
+      Nodes(1)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_0'"
+      Nodes(2)="/Script/BlueprintGraph.K2Node_VariableGet'K2Node_VariableGet_0'"
+      Nodes(3)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_1'"
+      Nodes(4)="/Script/BlueprintGraph.K2Node_VariableGet'K2Node_VariableGet_1'"
+      Nodes(5)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_2'"
+      GraphGuid=7D4CE5644C0AC5B0889D998273359FAE
+   End Object
+   WidgetVariableNameToGuidMap=(("WheelOL", 502C6759437CB3345C20ED9EFBECA7D9),("Size", 0A116E1C40336C4DF3792BA964253801),("Overlay_0", 3124921842447C93E097CCA46DC600AC),("Shadow", 121FDE864B3A4CFA462FEEA30F6A21A5),("OutlineBorder", 0780291B4D682FA5EF80BAAF23D99E74),("MainBorder", 351E2BD64E11573BB1C0CCA2589CB6DC),("Overlay_1", F345373C4AAE5BDB0195798006191CC7),("IconScaler", 47439DBF41E17AD1371320B451D0D29B),("ItemIcon", 933550D04280689577307D91E1AE596A),("QuantityText", 48296DF44BDB5B52B7CAB1BC0117A975))
    bCanCallInitializedWithoutPlayerContext=True
    WidgetTree="WidgetTree"
    ParentClass="/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
    BlueprintSystemVersion=2
    UbergraphPages(0)="/Script/Engine.EdGraph'EventGraph'"
    FunctionGraphs(0)="/Script/Engine.EdGraph'PresentIcon'"
-   GeneratedVariables(0)=(VarName="ItemIcon",VarGuid=933550D04280689577307D91E1AE596A,VarType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/UMG.Image'"),FriendlyName="ItemIcon",PropertyFlags=562952101494812,MetaDataArray=((DataKey="Category",DataValue="WBP_ItemWheelSlot")))
+   FunctionGraphs(1)="/Script/Engine.EdGraph'PresentQuantity'"
+   GeneratedVariables(0)=(VarName="QuantityText",VarGuid=48296DF44BDB5B52B7CAB1BC0117A975,VarType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/UMG.TextBlock'"),FriendlyName="QuantityText",PropertyFlags=562952101494812,MetaDataArray=((DataKey="Category",DataValue="WBP_ItemWheelSlot")))
+   GeneratedVariables(1)=(VarName="ItemIcon",VarGuid=933550D04280689577307D91E1AE596A,VarType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/UMG.Image'"),FriendlyName="ItemIcon",PropertyFlags=562952101494812,MetaDataArray=((DataKey="Category",DataValue="WBP_ItemWheelSlot")))
    CategorySorting(0)="WBP Item Wheel Slot"
    CategorySorting(1)=""
    CategorySorting(2)="Event Graph"

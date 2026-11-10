@@ -59,6 +59,40 @@
       }
     },
     {
+      "name": "ScreenFadeDuration",
+      "guid": "0AAAE62B43411F1446DCC4BEDFF05959",
+      "friendly_name": "Screen Fade Duration",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ScreenFadeStartedAt",
+      "guid": "AA19D6DD42AC5B17C8A8E6BEE472A44E",
+      "friendly_name": "Screen Fade Started At",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "StatsRef",
       "guid": "FCBAD0C0458D4BAA049C65A136E75DE8",
       "friendly_name": "Stats Ref",
@@ -216,12 +250,42 @@
       "connection_count": 6,
       "exec_connection_count": 2,
       "data_connection_count": 4
+    },
+    {
+      "name": "UpdateScreenFade",
+      "kind": "function",
+      "guid": "5764A57E47DEDE5BFA80B587DDFA52EA",
+      "node_count": 13,
+      "pin_count": 39,
+      "connection_count": 13,
+      "exec_connection_count": 3,
+      "data_connection_count": 10
+    },
+    {
+      "name": "FadeScreenToBlack",
+      "kind": "function",
+      "guid": "D08F63DD457CFAFAB5EE869A6AB33767",
+      "node_count": 11,
+      "pin_count": 43,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
+    },
+    {
+      "name": "ShowBigMessage",
+      "kind": "function",
+      "guid": "009A7CDA4223DB8341F9A8A6F880C6A9",
+      "node_count": 3,
+      "pin_count": 14,
+      "connection_count": 6,
+      "exec_connection_count": 1,
+      "data_connection_count": 5
     }
   ],
   "generated_graphs": [
     {
       "name": "Destruct",
-      "guid": "126401F04B94D9D80483FFA0D2A78B85",
+      "guid": "362F855B4ADBB59B99CEF0BBDE7C4233",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -230,11 +294,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 14,
+    "authored_graph_count": 17,
     "generated_graph_count": 1,
-    "authored_node_count": 155,
-    "authored_pin_count": 479,
-    "authored_connection_count": 171,
+    "authored_node_count": 182,
+    "authored_pin_count": 575,
+    "authored_connection_count": 201,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -270,6 +334,11 @@
       "file": "graphs/DetachPlayer.json"
     },
     {
+      "name": "FadeScreenToBlack",
+      "kind": "function",
+      "file": "graphs/FadeScreenToBlack.json"
+    },
+    {
       "name": "HandleStatsChanged",
       "kind": "function",
       "file": "graphs/HandleStatsChanged.json"
@@ -295,6 +364,11 @@
       "file": "graphs/RemoveOldestLoot.json"
     },
     {
+      "name": "ShowBigMessage",
+      "kind": "function",
+      "file": "graphs/ShowBigMessage.json"
+    },
+    {
       "name": "ShowInteractionError",
       "kind": "function",
       "file": "graphs/ShowInteractionError.json"
@@ -308,6 +382,11 @@
       "name": "TrimLootNotifications",
       "kind": "function",
       "file": "graphs/TrimLootNotifications.json"
+    },
+    {
+      "name": "UpdateScreenFade",
+      "kind": "function",
+      "file": "graphs/UpdateScreenFade.json"
     }
   ]
 }

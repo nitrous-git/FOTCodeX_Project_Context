@@ -26,14 +26,17 @@
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
     ],
     "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
@@ -110,6 +113,40 @@
         }
       },
       {
+        "name": "EnergyPotionRecoveryFraction",
+        "guid": "3DACF61D496AC0C382D3AA8D05872B57",
+        "friendly_name": "Energy Potion Recovery Fraction",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HealthPotionRecoveryFraction",
+        "guid": "1EE4C5F94EF79C8551E8B8B861D738E1",
+        "friendly_name": "Health Potion Recovery Fraction",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "InventoryDataTable",
         "guid": "F3C1379B41E410DE1A6D658687B5D119",
         "friendly_name": "Inventory Data Table",
@@ -171,6 +208,23 @@
           "category": "object",
           "sub_category": null,
           "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SelectedPotionID",
+        "guid": "35AD72124F290EC6CBE1E187FC528583",
+        "friendly_name": "Selected Potion ID",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -306,7 +360,11 @@
         "TryExecuteInventoryAmountAction",
         "ExecuteValidatedInventoryAmountAction",
         "FindInventoryDropTransform",
-        "TransferInventoryToPickup"
+        "TransferInventoryToPickup",
+        "GetPotionRecovery",
+        "CycleSelectedPotion",
+        "GetSelectedPotion",
+        "FindPotionStack"
       ],
       "macros": [],
       "delegates": [
