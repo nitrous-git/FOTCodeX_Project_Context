@@ -53,6 +53,7 @@
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Core/GameModes/BP_CPC_GameMode",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate",
       "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
@@ -198,6 +199,23 @@
         "name": "bDeathReloadRequested",
         "guid": "299F8AAF48BFDDC5E34F64BD6E121255",
         "friendly_name": "Death Reload Requested",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bFogTraversalInputLocked",
+        "guid": "BAA8E1B249FD660CE7AF72AFD32B0108",
+        "friendly_name": "Fog Traversal Input Locked",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
@@ -914,6 +932,8 @@
         "RestoreRestPresentation",
         "QueueRestReveal",
         "RevealRestScreen",
+        "ReleaseFogTraversalInput",
+        "TryLockFogTraversalInput",
         "InterruptCinematicForUnpossess",
         "InterruptCinematicForDeath",
         "InterruptCinematicForEndPlay",

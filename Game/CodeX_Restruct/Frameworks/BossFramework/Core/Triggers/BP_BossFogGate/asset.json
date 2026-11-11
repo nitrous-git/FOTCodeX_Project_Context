@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_BossFogGate",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate",
+    "relative_package": "CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_FogTraversal",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 6,
+    "non_architecture_referencer_count": 1
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_InteractableBase.BP_InteractableBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_BossFogGate",
+        "inherited": true,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:ICH-DefaultSceneRoot_GEN_VARIABLE"
+      },
+      {
+        "name": "EntryAnchor",
+        "class": "SceneComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:EntryAnchor_GEN_VARIABLE"
+      },
+      {
+        "name": "ExitAnchor",
+        "class": "SceneComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:ExitAnchor_GEN_VARIABLE"
+      },
+      {
+        "name": "ExitBlocker",
+        "class": "BoxComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:ExitBlocker_GEN_VARIABLE"
+      },
+      {
+        "name": "FogVFX",
+        "class": "NiagaraComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:FogVFX_GEN_VARIABLE"
+      },
+      {
+        "name": "InteractionVolume",
+        "class": "BoxComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:InteractionVolume_GEN_VARIABLE"
+      },
+      {
+        "name": "TraversalDirection",
+        "class": "ArrowComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:TraversalDirection_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "AlignmentTolerance",
+        "guid": "21BF1A7E484278E9DB9E4886E8E642AE",
+        "friendly_name": "Alignment Tolerance",
+        "category": "INVTEXT(\"Fog Traversal\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bKeepFogVisibleAfterTraversal",
+        "guid": "3C556B9C4A56C13C05EEB1982269E978",
+        "friendly_name": "Keep Fog Visible After Traversal",
+        "category": "INVTEXT(\"Fog Traversal\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bTraversalCompleted",
+        "guid": "3F92F81E43928EEACFF0ACA736A0E8DC",
+        "friendly_name": "Traversal Completed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EntranceControlRotation",
+        "guid": "361EFF1A4795DD5CFAB738A2F78FCF49",
+        "friendly_name": "Entrance Control Rotation",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "EntranceTransform",
+        "guid": "A00463FC4E17A1105E14D69294DC529D",
+        "friendly_name": "Entrance Transform",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Transform'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnFogTraversalCompleted",
+        "guid": "B79116054C79117C7242AAA137A31C61",
+        "friendly_name": "On Fog Traversal Completed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RegisteredInteractions",
+        "guid": "7096CFC14A551D7B84809AB5CD7B8240",
+        "friendly_name": "Registered Interactions",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent.AC_PlayerInteractionComponent_C'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TraversalAction",
+        "guid": "CCFBA54E4D7C694CA31FFB8B84B2D1BD",
+        "friendly_name": "Traversal Action",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_FogTraversal.BP_PlayerAction_FogTraversal_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TraversalMontage",
+        "guid": "6506526B42CCB694984AF6BCC68F9887",
+        "friendly_name": "Traversal Montage",
+        "category": "INVTEXT(\"Fog Traversal\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TraversingController",
+        "guid": "338427394D59974298D03A8E0D75859F",
+        "friendly_name": "Traversing Controller",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TraversingPlayer",
+        "guid": "A9004A2645716BDB589D3F9D78995A20",
+        "friendly_name": "Traversing Player",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UnlockAndClearTraversal",
+        "ReleaseTraversalAction",
+        "UnbindTraversalEvents",
+        "BindTraversalEvents",
+        "WasCrossingSuccessful",
+        "FinishTraversal",
+        "ConfigureFogCollision",
+        "HandlePlayerDestroyed",
+        "HandlePossessionChanged",
+        "UserConstructionScript",
+        "HandleTraversalResult",
+        "RestoreEntrance",
+        "BeginTraversal",
+        "AlignToEntrance",
+        "GetDoorClearance",
+        "GetAnchorCapsuleLocation",
+        "ClearRegistrations",
+        "RegisterInitialPlayers",
+        "FindPlayerInteraction",
+        "UnregisterOverlapPlayer",
+        "RegisterOverlapPlayer",
+        "ExecuteInteraction"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnFogTraversalCompleted"
+      ],
+      "generated_graphs": [
+        "ReceiveBeginPlay",
+        "ReceiveEndPlay",
+        "BndEvt__BP_BossFogGate_InteractionVolume_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+        "BndEvt__BP_BossFogGate_InteractionVolume_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

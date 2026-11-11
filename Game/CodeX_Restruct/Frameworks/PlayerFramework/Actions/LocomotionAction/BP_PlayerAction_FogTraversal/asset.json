@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_PlayerAction_FogTraversal",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_FogTraversal",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_FogTraversal.BP_PlayerAction_FogTraversal",
+    "relative_package": "CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_FogTraversal"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate"
+    ],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_FogTraversal.BP_PlayerAction_FogTraversal_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_FogTraversal.BP_PlayerAction_FogTraversal_C'",
+    "parent_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase.BP_PlayerActionBase_C'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_FogTraversal.BP_PlayerAction_FogTraversal_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bResultReported",
+        "guid": "F1FFEAC84B7E332F33C6208F393B8CB3",
+        "friendly_name": "Result Reported",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Montage",
+        "guid": "1ED2AFD7438C813F5B208C852C25CC96",
+        "friendly_name": "Montage",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnTraversalResult",
+        "guid": "2ABF023C483FF44B5CBC8E98FA9CEB4D",
+        "friendly_name": "On Traversal Result",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "ReportTraversalResult",
+        "IsTraversalMontagePlaying",
+        "PlayTraversal"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnTraversalResult"
+      ],
+      "generated_graphs": [
+        "OnNotifyEnd_7153F8624F8D92ABF674BEB2AE7666E5",
+        "OnNotifyBegin_7153F8624F8D92ABF674BEB2AE7666E5",
+        "OnInterrupted_7153F8624F8D92ABF674BEB2AE7666E5",
+        "OnBlendOut_7153F8624F8D92ABF674BEB2AE7666E5",
+        "OnCompleted_7153F8624F8D92ABF674BEB2AE7666E5",
+        "CE_PlayTraversalMontage",
+        "EndAction"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}
