@@ -42,6 +42,40 @@
       }
     },
     {
+      "name": "bCinematicControllerReady",
+      "guid": "9660F7CA45E37F6660FCD7A06F2AA693",
+      "friendly_name": "Cinematic Controller Ready",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bCinematicDeathLock",
+      "guid": "B95E719643F06534971CAE8FBF645993",
+      "friendly_name": "Cinematic Death Lock",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bDeathPresentationStarted",
       "guid": "404C2C90474A7826D557EC8DDB6650D5",
       "friendly_name": "Death Presentation Started",
@@ -727,11 +761,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "54B5DF38479743A61F43B19406610AD4",
-      "node_count": 145,
-      "pin_count": 503,
-      "connection_count": 132,
-      "exec_connection_count": 52,
-      "data_connection_count": 80
+      "node_count": 155,
+      "pin_count": 537,
+      "connection_count": 143,
+      "exec_connection_count": 61,
+      "data_connection_count": 82
     },
     {
       "name": "UserConstructionScript",
@@ -757,31 +791,31 @@
       "name": "ToggleGameMenu",
       "kind": "function",
       "guid": "D20204B6447BE7099A218FB39BD5EDA9",
-      "node_count": 16,
-      "pin_count": 48,
-      "connection_count": 15,
-      "exec_connection_count": 7,
-      "data_connection_count": 8
+      "node_count": 18,
+      "pin_count": 56,
+      "connection_count": 18,
+      "exec_connection_count": 9,
+      "data_connection_count": 9
     },
     {
       "name": "OpenGameMenu",
       "kind": "function",
       "guid": "28F786D04899B7E173B151A8B7A3E828",
-      "node_count": 18,
-      "pin_count": 56,
-      "connection_count": 17,
-      "exec_connection_count": 10,
-      "data_connection_count": 7
+      "node_count": 20,
+      "pin_count": 64,
+      "connection_count": 20,
+      "exec_connection_count": 12,
+      "data_connection_count": 8
     },
     {
       "name": "CloseGameMenu",
       "kind": "function",
       "guid": "E9426E4B48196740140182BF96A6B969",
-      "node_count": 13,
-      "pin_count": 42,
-      "connection_count": 13,
-      "exec_connection_count": 9,
-      "data_connection_count": 4
+      "node_count": 15,
+      "pin_count": 50,
+      "connection_count": 17,
+      "exec_connection_count": 12,
+      "data_connection_count": 5
     },
     {
       "name": "InitializeFullScreenPages",
@@ -897,21 +931,21 @@
       "name": "RequestInteraction",
       "kind": "function",
       "guid": "02C47D85490D1CBE6D001C9248D5C1B2",
-      "node_count": 13,
-      "pin_count": 40,
-      "connection_count": 14,
-      "exec_connection_count": 6,
-      "data_connection_count": 8
+      "node_count": 15,
+      "pin_count": 48,
+      "connection_count": 17,
+      "exec_connection_count": 8,
+      "data_connection_count": 9
     },
     {
       "name": "SyncInteractionState",
       "kind": "function",
       "guid": "7A77A6124F2CC8DC24F5689908E9FFE1",
-      "node_count": 13,
-      "pin_count": 40,
-      "connection_count": 14,
-      "exec_connection_count": 3,
-      "data_connection_count": 11
+      "node_count": 31,
+      "pin_count": 99,
+      "connection_count": 21,
+      "exec_connection_count": 5,
+      "data_connection_count": 16
     },
     {
       "name": "ResolveInteractionComponent",
@@ -957,10 +991,10 @@
       "name": "LockForDeath",
       "kind": "function",
       "guid": "F70D52CA4BC3AB1A778571B138A8F7D1",
-      "node_count": 15,
-      "pin_count": 51,
-      "connection_count": 22,
-      "exec_connection_count": 11,
+      "node_count": 16,
+      "pin_count": 54,
+      "connection_count": 23,
+      "exec_connection_count": 12,
       "data_connection_count": 11
     },
     {
@@ -1007,11 +1041,11 @@
       "name": "CanUsePotionInput",
       "kind": "function",
       "guid": "76D1A8504BBFAE50730EAC9B23FB77CB",
-      "node_count": 15,
-      "pin_count": 40,
-      "connection_count": 15,
-      "exec_connection_count": 3,
-      "data_connection_count": 12
+      "node_count": 18,
+      "pin_count": 50,
+      "connection_count": 19,
+      "exec_connection_count": 6,
+      "data_connection_count": 13
     },
     {
       "name": "RequestUsePotion",
@@ -1037,11 +1071,11 @@
       "name": "CanBeginRest",
       "kind": "function",
       "guid": "6A5E6D9A47835B76D07D94B308209639",
-      "node_count": 23,
-      "pin_count": 66,
-      "connection_count": 25,
-      "exec_connection_count": 3,
-      "data_connection_count": 22
+      "node_count": 26,
+      "pin_count": 76,
+      "connection_count": 29,
+      "exec_connection_count": 6,
+      "data_connection_count": 23
     },
     {
       "name": "AnnounceRestingSite",
@@ -1242,12 +1276,112 @@
       "connection_count": 16,
       "exec_connection_count": 4,
       "data_connection_count": 12
+    },
+    {
+      "name": "InterruptCinematicForUnpossess",
+      "kind": "function",
+      "guid": "33754B3D43725D36F750A69C293F6610",
+      "node_count": 7,
+      "pin_count": 18,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InterruptCinematicForDeath",
+      "kind": "function",
+      "guid": "5187D08A4FBE841997D2F89D98FD0181",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "InterruptCinematicForEndPlay",
+      "kind": "function",
+      "guid": "45F5C52D4A8B63630DF916910A2D16C6",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "HandleCinematicSkip",
+      "kind": "function",
+      "guid": "A434E1B74E1540108AB1318DD6474D97",
+      "node_count": 3,
+      "pin_count": 6,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "HandleCinematicInputLockChanged",
+      "kind": "function",
+      "guid": "D2901C4B4006804789DA2A8C9201A034",
+      "node_count": 2,
+      "pin_count": 4,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "UpdateCinematicAvailability",
+      "kind": "function",
+      "guid": "0FDBB6094DFB07969996E5A16D02B03C",
+      "node_count": 17,
+      "pin_count": 49,
+      "connection_count": 16,
+      "exec_connection_count": 1,
+      "data_connection_count": 15
+    },
+    {
+      "name": "InitializeCinematicPresentation",
+      "kind": "function",
+      "guid": "093726DE4CA315D56EF5E58624890B54",
+      "node_count": 9,
+      "pin_count": 24,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "IsCinematicInputLocked",
+      "kind": "function",
+      "guid": "FD15392E4375F531CF621D960B6D798A",
+      "node_count": 4,
+      "pin_count": 9,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "IsCinematicActive",
+      "kind": "function",
+      "guid": "58129FB343E3A082AF7E119B7331261B",
+      "node_count": 4,
+      "pin_count": 9,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshCinematicPresentation",
+      "kind": "function",
+      "guid": "C86AA1ED463005141EF4F484ECB2A673",
+      "node_count": 7,
+      "pin_count": 18,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
     }
   ],
   "generated_graphs": [
     {
       "name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_18",
-      "guid": "D666E215489AD3F5F7CA19BE4325CE60",
+      "guid": "319BC1A9484AFC77428A13B8A31B1660",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1256,7 +1390,7 @@
     },
     {
       "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_17",
-      "guid": "15BB557D45113D52E58F479A106E3191",
+      "guid": "867D3F0C49C6973F79F080A05461EB05",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1265,7 +1399,7 @@
     },
     {
       "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_16",
-      "guid": "3FA6EDA7444B51CB7B1B4BAF80BEBB45",
+      "guid": "CBE90CF54DC7734CA02CC1856AA81E81",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1274,7 +1408,7 @@
     },
     {
       "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_15",
-      "guid": "F05ADFDD4A8C577B8FDB5C94C9216C38",
+      "guid": "5BF1421B47F2665BB4CBEEAD1B66A66E",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1283,7 +1417,7 @@
     },
     {
       "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_14",
-      "guid": "39F9E3EF4A5FC068A5B867946318A4B5",
+      "guid": "94E7C5E54E1AEA3C81095298EBECC8AA",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1292,7 +1426,7 @@
     },
     {
       "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_13",
-      "guid": "218163934D00F9B686E814A9F312EE78",
+      "guid": "08C7B07B4EB3EC47F8710CBD8691167C",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1301,7 +1435,7 @@
     },
     {
       "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_12",
-      "guid": "C85C76E649097D805CB8BB9AAB97AE97",
+      "guid": "D1BDF94E49BA87FEC5A1A3ACE0359386",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1310,7 +1444,7 @@
     },
     {
       "name": "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_11",
-      "guid": "73B2B4594DC76EAB9AD8FCB53F4A70A4",
+      "guid": "D8C20E2F48A161C750A6FD8A36E725DD",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1319,7 +1453,7 @@
     },
     {
       "name": "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_10",
-      "guid": "1FB49FDD4CA1D066BA2D5BA133AE4992",
+      "guid": "123D5B4249F43275B9AE9F828A91CB96",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1328,7 +1462,7 @@
     },
     {
       "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_9",
-      "guid": "2EE2BE3142112FBDB8E15FA10D85EC61",
+      "guid": "233EAE774D0D7FBC376B5EA21C287B99",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1337,7 +1471,7 @@
     },
     {
       "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_8",
-      "guid": "51F8CD99464C727CF45D44917C230689",
+      "guid": "C3A154A44BE746FF7E4C33BB48BE5424",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1346,7 +1480,7 @@
     },
     {
       "name": "InpActEvt_N_K2Node_InputKeyEvent_2",
-      "guid": "FB1FB84543151BB39A41E6BE1C8C2056",
+      "guid": "6EFE65BD43E56B814B5124950C74282B",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1355,7 +1489,7 @@
     },
     {
       "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_7",
-      "guid": "9FA1980D4C87FCC2D6288C96015BE421",
+      "guid": "0F70D82A481A52B0B8997FA6943110AB",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1364,7 +1498,7 @@
     },
     {
       "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_6",
-      "guid": "E11CF5114B4688A3AC88FB8158E3EF96",
+      "guid": "1E3386A24D7B730C3782C7B25DB4B5B1",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1373,7 +1507,7 @@
     },
     {
       "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_5",
-      "guid": "716810A8491B5E6DDD84A2B465C67798",
+      "guid": "69A6AB944A4B397237F338A03559A446",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1382,7 +1516,7 @@
     },
     {
       "name": "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_4",
-      "guid": "1B95AAC4479BE4229813348BD4E1D9A0",
+      "guid": "CB3903D34C9A996685870AAD3767C999",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1391,7 +1525,7 @@
     },
     {
       "name": "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_3",
-      "guid": "F058100B4B3427E671A4C894FBADFDAF",
+      "guid": "2FC6689A45059A17E1D41EBD9D842946",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1400,7 +1534,7 @@
     },
     {
       "name": "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_2",
-      "guid": "998FC0494A1F28CA34BA238E9D0C2111",
+      "guid": "A4B809C3461C36B079D92DBBB16784D4",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1409,7 +1543,7 @@
     },
     {
       "name": "InpActEvt_One_K2Node_InputKeyEvent_1",
-      "guid": "C2667BBF4ADF92BEF6D8C88E8869FDD3",
+      "guid": "1C019F05451C442E182518841093B777",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1418,7 +1552,7 @@
     },
     {
       "name": "InpActEvt_IA_Interact_K2Node_EnhancedInputActionEvent_1",
-      "guid": "822B37E0420B841A47C74EA3C2886805",
+      "guid": "2F91A6064F8A814F0AB840926BD61B6D",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1427,7 +1561,7 @@
     },
     {
       "name": "InpActEvt_IA_UseItem_K2Node_EnhancedInputActionEvent_0",
-      "guid": "3F369B8D4FD1F6B4316C36A75C6D52A4",
+      "guid": "89009827413549DC829ABD8C460E59C9",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1436,7 +1570,7 @@
     },
     {
       "name": "InpActEvt_T_K2Node_InputKeyEvent_0",
-      "guid": "DF992D924E42FC4AD49AC68A268CDADB",
+      "guid": "CCD671CC4AA00C5E0128B0A366B64393",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1445,7 +1579,7 @@
     },
     {
       "name": "ReceiveBeginPlay",
-      "guid": "BF55C3714375480407CED28C3C09E913",
+      "guid": "638D2FD4457FD9FF902A1BADE7506E2D",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1454,7 +1588,7 @@
     },
     {
       "name": "ReceivePossess",
-      "guid": "F22F62B34BFF430595B94582EDC9F4A6",
+      "guid": "57863A894EC8030D7FC19B883D7CD237",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1463,7 +1597,7 @@
     },
     {
       "name": "ReceiveUnPossess",
-      "guid": "F1064E9C480F2737F7E5C3987E835AA1",
+      "guid": "25A06EDF4D21B6667F2866BE28A97224",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1472,7 +1606,7 @@
     },
     {
       "name": "ReceiveEndPlay",
-      "guid": "7783EC2A47FB0184BC93A09F08652B01",
+      "guid": "F18A431449F28E437ACF3C9E34952147",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1481,11 +1615,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 52,
+    "authored_graph_count": 62,
     "generated_graph_count": 26,
-    "authored_node_count": 1000,
-    "authored_pin_count": 3197,
-    "authored_connection_count": 1071,
+    "authored_node_count": 1108,
+    "authored_pin_count": 3518,
+    "authored_connection_count": 1169,
     "generated_node_count": 77,
     "generated_pin_count": 344
   },
@@ -1591,6 +1725,16 @@
       "file": "graphs/FinishCloseRestMenu.json"
     },
     {
+      "name": "HandleCinematicInputLockChanged",
+      "kind": "function",
+      "file": "graphs/HandleCinematicInputLockChanged.json"
+    },
+    {
+      "name": "HandleCinematicSkip",
+      "kind": "function",
+      "file": "graphs/HandleCinematicSkip.json"
+    },
+    {
       "name": "HandleRestActorDestroyed",
       "kind": "function",
       "file": "graphs/HandleRestActorDestroyed.json"
@@ -1611,6 +1755,11 @@
       "file": "graphs/HideMenuViews.json"
     },
     {
+      "name": "InitializeCinematicPresentation",
+      "kind": "function",
+      "file": "graphs/InitializeCinematicPresentation.json"
+    },
+    {
       "name": "InitializeFullScreenPages",
       "kind": "function",
       "file": "graphs/InitializeFullScreenPages.json"
@@ -1619,6 +1768,31 @@
       "name": "InitializeGameMenu",
       "kind": "function",
       "file": "graphs/InitializeGameMenu.json"
+    },
+    {
+      "name": "InterruptCinematicForDeath",
+      "kind": "function",
+      "file": "graphs/InterruptCinematicForDeath.json"
+    },
+    {
+      "name": "InterruptCinematicForEndPlay",
+      "kind": "function",
+      "file": "graphs/InterruptCinematicForEndPlay.json"
+    },
+    {
+      "name": "InterruptCinematicForUnpossess",
+      "kind": "function",
+      "file": "graphs/InterruptCinematicForUnpossess.json"
+    },
+    {
+      "name": "IsCinematicActive",
+      "kind": "function",
+      "file": "graphs/IsCinematicActive.json"
+    },
+    {
+      "name": "IsCinematicInputLocked",
+      "kind": "function",
+      "file": "graphs/IsCinematicInputLocked.json"
     },
     {
       "name": "LockForDeath",
@@ -1659,6 +1833,11 @@
       "name": "QueueRestReveal",
       "kind": "function",
       "file": "graphs/QueueRestReveal.json"
+    },
+    {
+      "name": "RefreshCinematicPresentation",
+      "kind": "function",
+      "file": "graphs/RefreshCinematicPresentation.json"
     },
     {
       "name": "ReloadAfterDeath",
@@ -1744,6 +1923,11 @@
       "name": "UnbindRestSession",
       "kind": "function",
       "file": "graphs/UnbindRestSession.json"
+    },
+    {
+      "name": "UpdateCinematicAvailability",
+      "kind": "function",
+      "file": "graphs/UpdateCinematicAvailability.json"
     },
     {
       "name": "UserConstructionScript",

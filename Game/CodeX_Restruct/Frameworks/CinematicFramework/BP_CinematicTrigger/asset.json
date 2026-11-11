@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_CinematicTrigger",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/BP_CinematicTrigger",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/CinematicFramework",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/BP_CinematicTrigger.BP_CinematicTrigger",
+    "relative_package": "CodeX_Restruct/Frameworks/CinematicFramework/BP_CinematicTrigger"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.TriggerBox'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/CinematicFramework/BP_CinematicTrigger.BP_CinematicTrigger_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/CinematicFramework/BP_CinematicTrigger.BP_CinematicTrigger_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.TriggerBox'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/BP_CinematicTrigger.BP_CinematicTrigger_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "CollisionComponent",
+        "class": "BoxComponent",
+        "parent": "BP_CinematicTrigger",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/BP_CinematicTrigger.Default__BP_CinematicTrigger_C:CollisionComp"
+      },
+      {
+        "name": "SpriteComponent",
+        "class": "BillboardComponent",
+        "parent": "CollisionComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/BP_CinematicTrigger.Default__BP_CinematicTrigger_C:Sprite"
+      }
+    ],
+    "variables": [
+      {
+        "name": "bAllowSkipping",
+        "guid": "6F2504524E4C5E00F37041BF1A55046B",
+        "friendly_name": "Allow Skipping",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bHasPlayed",
+        "guid": "0E2DB6964489E136BCA1CEB18C8D75E8",
+        "friendly_name": "Has Played",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bHideGameplayHUD",
+        "guid": "3356BB604A5F4CD8391696885836677B",
+        "friendly_name": "Hide Gameplay HUD",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bLockGameplayInput",
+        "guid": "DFCE9A534EBAF6AAB484F2B01CD479D9",
+        "friendly_name": "Lock Gameplay Input",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPlayOnce",
+        "guid": "9EB0202A4C9FD095BE9DC7B01C10ED1C",
+        "friendly_name": "Play Once",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FadeInDuration",
+        "guid": "A67DAB804A9F11B6C1BF02B71C3DE179",
+        "friendly_name": "Fade in Duration",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FadeOutDuration",
+        "guid": "1E11659F48D9714775A24D909617D61D",
+        "friendly_name": "Fade Out Duration",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RequiredPlayerTag",
+        "guid": "A90451D04C4F3B29ACD97893A40CC8BF",
+        "friendly_name": "Required Player Tag",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SequenceActor",
+        "guid": "AFD4C0B44513EBBDCDBA47ABABF35403",
+        "friendly_name": "Sequence Actor",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 2053,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/LevelSequence.LevelSequenceActor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SubtitleText",
+        "guid": "48F9235848C4C6A7DB335694D2D34F25",
+        "friendly_name": "Subtitle Text",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TitleText",
+        "guid": "81CB395E442E0C8AB7D459970AB7E75A",
+        "friendly_name": "Title Text",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TriggerMode",
+        "guid": "6550EA3047B08E8CAF148BB9B3F817C9",
+        "friendly_name": "Trigger Mode",
+        "category": "INVTEXT(\"Cinematic\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "CheckInitialOverlap",
+        "UserConstructionScript",
+        "HandlePlayerOverlap",
+        "PlayManually",
+        "TryPlayCinematic",
+        "RetryLevelStart",
+        "ResolveCinematicController"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "ReceiveBeginPlay",
+        "ReceiveActorBeginOverlap"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

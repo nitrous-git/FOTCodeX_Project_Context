@@ -8,6 +8,23 @@
   },
   "variables": [
     {
+      "name": "bCinematicHUDHidden",
+      "guid": "98B0148C4B4EACE98F9323839CD2269C",
+      "friendly_name": "Cinematic HUDHidden",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bHasInitialSnapshot",
       "guid": "3658AFDE475845650C579C856249E9B8",
       "friendly_name": "Has Initial Snapshot",
@@ -52,6 +69,23 @@
         "category": "bool",
         "sub_category": null,
         "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GameplayHUDVisibilityBeforeCinematic",
+      "guid": "C83FCC50456E4DD29A8672B5C5FDA7BB",
+      "friendly_name": "Gameplay HUDVisibility Before Cinematic",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Enum'/Script/UMG.ESlateVisibility'",
         "container": null,
         "is_reference": false,
         "is_const": false,
@@ -381,12 +415,52 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "SetCinematicGameplayHidden",
+      "kind": "function",
+      "guid": "CE0F0E294E2EF14173B8E6B8C8B16D44",
+      "node_count": 16,
+      "pin_count": 54,
+      "connection_count": 17,
+      "exec_connection_count": 8,
+      "data_connection_count": 9
+    },
+    {
+      "name": "IsScreenFadeRunning",
+      "kind": "function",
+      "guid": "8AB7927B422557A141FD68A27A777FD7",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "HideCinematicOverlay",
+      "kind": "function",
+      "guid": "6F56B6B04696ABACEB52E9B3769EDFDC",
+      "node_count": 5,
+      "pin_count": 13,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ShowCinematicOverlay",
+      "kind": "function",
+      "guid": "07BFDD534015E07265823FA32F40B96F",
+      "node_count": 7,
+      "pin_count": 28,
+      "connection_count": 13,
+      "exec_connection_count": 3,
+      "data_connection_count": 10
     }
   ],
   "generated_graphs": [
     {
       "name": "Destruct",
-      "guid": "F64FEFE4404A3E2F9B2DA687F664A549",
+      "guid": "81DC29C343E5934CAE6A74A4FDE3EF77",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -395,11 +469,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 22,
+    "authored_graph_count": 26,
     "generated_graph_count": 1,
-    "authored_node_count": 231,
-    "authored_pin_count": 726,
-    "authored_connection_count": 255,
+    "authored_node_count": 263,
+    "authored_pin_count": 829,
+    "authored_connection_count": 290,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -455,9 +529,19 @@
       "file": "graphs/HandleStatsChanged.json"
     },
     {
+      "name": "HideCinematicOverlay",
+      "kind": "function",
+      "file": "graphs/HideCinematicOverlay.json"
+    },
+    {
       "name": "HideInteractionPrompt",
       "kind": "function",
       "file": "graphs/HideInteractionPrompt.json"
+    },
+    {
+      "name": "IsScreenFadeRunning",
+      "kind": "function",
+      "file": "graphs/IsScreenFadeRunning.json"
     },
     {
       "name": "NotifyItemAcquired",
@@ -480,6 +564,11 @@
       "file": "graphs/ResetScreenFade.json"
     },
     {
+      "name": "SetCinematicGameplayHidden",
+      "kind": "function",
+      "file": "graphs/SetCinematicGameplayHidden.json"
+    },
+    {
       "name": "SetScreenFadeOpacity",
       "kind": "function",
       "file": "graphs/SetScreenFadeOpacity.json"
@@ -488,6 +577,11 @@
       "name": "ShowBigMessage",
       "kind": "function",
       "file": "graphs/ShowBigMessage.json"
+    },
+    {
+      "name": "ShowCinematicOverlay",
+      "kind": "function",
+      "file": "graphs/ShowCinematicOverlay.json"
     },
     {
       "name": "ShowInteractionError",

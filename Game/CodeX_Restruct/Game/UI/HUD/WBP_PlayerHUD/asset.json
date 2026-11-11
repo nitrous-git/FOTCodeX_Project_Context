@@ -36,10 +36,12 @@
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_LootNotification",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources",
-      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ScreenFade"
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ScreenFade",
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_SkipCinematic"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Pickups/BP_ItemPickup_Master",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent"
     ],
@@ -58,6 +60,23 @@
     "interfaces": [],
     "components": [],
     "variables": [
+      {
+        "name": "bCinematicHUDHidden",
+        "guid": "98B0148C4B4EACE98F9323839CD2269C",
+        "friendly_name": "Cinematic HUDHidden",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "bHasInitialSnapshot",
         "guid": "3658AFDE475845650C579C856249E9B8",
@@ -103,6 +122,23 @@
           "category": "bool",
           "sub_category": null,
           "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GameplayHUDVisibilityBeforeCinematic",
+        "guid": "C83FCC50456E4DD29A8672B5C5FDA7BB",
+        "friendly_name": "Gameplay HUDVisibility Before Cinematic",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Enum'/Script/UMG.ESlateVisibility'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -236,7 +272,11 @@
         "StartScreenFade",
         "SetScreenFadeOpacity",
         "ResetScreenFade",
-        "BeginScreenFadeTimer"
+        "BeginScreenFadeTimer",
+        "SetCinematicGameplayHidden",
+        "IsScreenFadeRunning",
+        "HideCinematicOverlay",
+        "ShowCinematicOverlay"
       ],
       "macros": [],
       "delegates": [
@@ -264,6 +304,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 14
+    "widget_count": 15
   }
 }

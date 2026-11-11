@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "AC_CinematicController",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/CinematicFramework",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController.AC_CinematicController",
+    "relative_package": "CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_GameMenu",
+      "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "/Game/CodeX_Restruct/Frameworks/CinematicFramework/BP_CinematicTrigger"
+    ],
+    "non_architecture_dependency_count": 4,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController.AC_CinematicController_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController.AC_CinematicController_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController.AC_CinematicController_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "bAllowSkipping",
+        "guid": "DD93D7684AE8A5B44DF831B2691E3234",
+        "friendly_name": "Allow Skipping",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCombatContextWasActive",
+        "guid": "31ED77C3405BD0562D8DE58CBB1D7622",
+        "friendly_name": "Combat Context Was Active",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bHideHUD",
+        "guid": "4224DD1545AE2CACB488648027A13109",
+        "friendly_name": "Hide HUD",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bInputLocked",
+        "guid": "3BF1D93D46969B436CC23CB7E567C526",
+        "friendly_name": "Input Locked",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bMenuContextWasActive",
+        "guid": "4CAA783447B8B5D97F3FDAAFD4133770",
+        "friendly_name": "Menu Context Was Active",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPlaybackBlocked",
+        "guid": "843FDC114B6D701E06DAA7B60ABDDDA5",
+        "friendly_name": "Playback Blocked",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ClosingCamera",
+        "guid": "7E7DBB8047DB00C6540CAA96D5315916",
+        "friendly_name": "Closing Camera",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraActor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CombatContextPriority",
+        "guid": "7F833CE444F336721C3322B310C167F0",
+        "friendly_name": "Combat Context Priority",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Controller",
+        "guid": "74E9FFA141CBAB721DA6689A6AB7D92C",
+        "friendly_name": "Controller",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.PlayerController'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FadeInSeconds",
+        "guid": "0E9D376E409A533F958686858A2B41E4",
+        "friendly_name": "Fade in Seconds",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FadeOutSeconds",
+        "guid": "53214EFD44D462BAEADB1CBB10B9BE0B",
+        "friendly_name": "Fade Out Seconds",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "MenuContextPriority",
+        "guid": "6C54817A49EF5721EF4BC0B141F74950",
+        "friendly_name": "Menu Context Priority",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnCinematicAborted",
+        "guid": "19B8A2FE40D51616D5C4D38C541FF348",
+        "friendly_name": "On Cinematic Aborted",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnCinematicCompleted",
+        "guid": "7D99375144591263E8FEF5A2AFA2F755",
+        "friendly_name": "On Cinematic Completed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnCinematicInputLockChanged",
+        "guid": "ADD298DA46639E0A176526A7652E9374",
+        "friendly_name": "On Cinematic Input Lock Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnCinematicSkipped",
+        "guid": "0B89F5A04631AE88046ED7B08F2B8CAA",
+        "friendly_name": "On Cinematic Skipped",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Outcome",
+        "guid": "8548EE1548EAAFA9FF42848A33D8075C",
+        "friendly_name": "Outcome",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Phase",
+        "guid": "585A30424BB34EAE22AC9E88504B3736",
+        "friendly_name": "Phase",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PresentationHUD",
+        "guid": "030794514767BC519F042B970158205C",
+        "friendly_name": "Presentation HUD",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PreviousViewTarget",
+        "guid": "DC82D9AD43A71C9A4DA6B8992A54B243",
+        "friendly_name": "Previous View Target",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Requester",
+        "guid": "68E8BB924A756515AA485E893A57DFEB",
+        "friendly_name": "Requester",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SequenceActor",
+        "guid": "039B34794928004521854582684490FF",
+        "friendly_name": "Sequence Actor",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/LevelSequence.LevelSequenceActor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SequencePlayer",
+        "guid": "E42DDEA74AA1691D6413F4A716325645",
+        "friendly_name": "Sequence Player",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/LevelSequence.LevelSequencePlayer'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SessionPawn",
+        "guid": "65C605164A2805CE536B67A29ADA3CD0",
+        "friendly_name": "Session Pawn",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Pawn'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SubtitleText",
+        "guid": "96EAC5234FB732DA92B72EB7F3D47470",
+        "friendly_name": "Subtitle Text",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TitleText",
+        "guid": "7309A49A4E999E9311B1578B2A47BE84",
+        "friendly_name": "Title Text",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "FinishSession",
+        "ReturnToGameplay",
+        "StopSequenceAtBlack",
+        "RestoreViewTarget",
+        "HoldClosingCamera",
+        "StartClosingFade",
+        "BeginCinematicFinish",
+        "BeginSequence",
+        "HandleSequenceDestroyed",
+        "CheckSequenceStopped",
+        "HandleSequenceStopped",
+        "HandleSequenceFinished",
+        "HandleFadeFinished",
+        "UnbindFadeEvent",
+        "UnbindSequenceEvents",
+        "BindSessionEvents",
+        "ReleaseCinematicInput",
+        "AcquireCinematicInput",
+        "InterruptCinematic",
+        "StopCinematic",
+        "RequestSkipCinematic",
+        "PlayCinematic",
+        "CanPlayCinematic",
+        "HasCinematicInputLock",
+        "IsCinematicPlaying",
+        "IsPresentationReady",
+        "SetPlaybackBlocked",
+        "InitializePresentation",
+        "IsCinematicOwnedBy"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnCinematicInputLockChanged",
+        "OnCinematicAborted",
+        "OnCinematicSkipped",
+        "OnCinematicCompleted"
+      ],
+      "generated_graphs": [
+        "ReceiveEndPlay"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

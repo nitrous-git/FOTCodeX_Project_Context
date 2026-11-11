@@ -1,0 +1,987 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_CinematicController",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "5774395740B2B9A96E811E9BBF5C0729",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "bAllowSkipping",
+      "guid": "DD93D7684AE8A5B44DF831B2691E3234",
+      "friendly_name": "Allow Skipping",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bCombatContextWasActive",
+      "guid": "31ED77C3405BD0562D8DE58CBB1D7622",
+      "friendly_name": "Combat Context Was Active",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bHideHUD",
+      "guid": "4224DD1545AE2CACB488648027A13109",
+      "friendly_name": "Hide HUD",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bInputLocked",
+      "guid": "3BF1D93D46969B436CC23CB7E567C526",
+      "friendly_name": "Input Locked",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bMenuContextWasActive",
+      "guid": "4CAA783447B8B5D97F3FDAAFD4133770",
+      "friendly_name": "Menu Context Was Active",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPlaybackBlocked",
+      "guid": "843FDC114B6D701E06DAA7B60ABDDDA5",
+      "friendly_name": "Playback Blocked",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ClosingCamera",
+      "guid": "7E7DBB8047DB00C6540CAA96D5315916",
+      "friendly_name": "Closing Camera",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraActor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CombatContextPriority",
+      "guid": "7F833CE444F336721C3322B310C167F0",
+      "friendly_name": "Combat Context Priority",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Controller",
+      "guid": "74E9FFA141CBAB721DA6689A6AB7D92C",
+      "friendly_name": "Controller",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.PlayerController'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FadeInSeconds",
+      "guid": "0E9D376E409A533F958686858A2B41E4",
+      "friendly_name": "Fade in Seconds",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FadeOutSeconds",
+      "guid": "53214EFD44D462BAEADB1CBB10B9BE0B",
+      "friendly_name": "Fade Out Seconds",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MenuContextPriority",
+      "guid": "6C54817A49EF5721EF4BC0B141F74950",
+      "friendly_name": "Menu Context Priority",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnCinematicAborted",
+      "guid": "19B8A2FE40D51616D5C4D38C541FF348",
+      "friendly_name": "On Cinematic Aborted",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnCinematicCompleted",
+      "guid": "7D99375144591263E8FEF5A2AFA2F755",
+      "friendly_name": "On Cinematic Completed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnCinematicInputLockChanged",
+      "guid": "ADD298DA46639E0A176526A7652E9374",
+      "friendly_name": "On Cinematic Input Lock Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnCinematicSkipped",
+      "guid": "0B89F5A04631AE88046ED7B08F2B8CAA",
+      "friendly_name": "On Cinematic Skipped",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Outcome",
+      "guid": "8548EE1548EAAFA9FF42848A33D8075C",
+      "friendly_name": "Outcome",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Phase",
+      "guid": "585A30424BB34EAE22AC9E88504B3736",
+      "friendly_name": "Phase",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PresentationHUD",
+      "guid": "030794514767BC519F042B970158205C",
+      "friendly_name": "Presentation HUD",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PreviousViewTarget",
+      "guid": "DC82D9AD43A71C9A4DA6B8992A54B243",
+      "friendly_name": "Previous View Target",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Requester",
+      "guid": "68E8BB924A756515AA485E893A57DFEB",
+      "friendly_name": "Requester",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SequenceActor",
+      "guid": "039B34794928004521854582684490FF",
+      "friendly_name": "Sequence Actor",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/LevelSequence.LevelSequenceActor'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SequencePlayer",
+      "guid": "E42DDEA74AA1691D6413F4A716325645",
+      "friendly_name": "Sequence Player",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/LevelSequence.LevelSequencePlayer'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SessionPawn",
+      "guid": "65C605164A2805CE536B67A29ADA3CD0",
+      "friendly_name": "Session Pawn",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Pawn'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SubtitleText",
+      "guid": "96EAC5234FB732DA92B72EB7F3D47470",
+      "friendly_name": "Subtitle Text",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TitleText",
+      "guid": "7309A49A4E999E9311B1578B2A47BE84",
+      "friendly_name": "Title Text",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "FinishSession",
+      "kind": "function",
+      "guid": "F72534C246FFC35B15BBCA9D43E74C60",
+      "node_count": 94,
+      "pin_count": 321,
+      "connection_count": 51,
+      "exec_connection_count": 28,
+      "data_connection_count": 23
+    },
+    {
+      "name": "ReturnToGameplay",
+      "kind": "function",
+      "guid": "5BA5DB214A8EBA28B9BD9181F091A82A",
+      "node_count": 33,
+      "pin_count": 103,
+      "connection_count": 18,
+      "exec_connection_count": 11,
+      "data_connection_count": 7
+    },
+    {
+      "name": "StopSequenceAtBlack",
+      "kind": "function",
+      "guid": "351CAE83435EDBF3C05D2E85A9A0E848",
+      "node_count": 37,
+      "pin_count": 103,
+      "connection_count": 18,
+      "exec_connection_count": 6,
+      "data_connection_count": 12
+    },
+    {
+      "name": "RestoreViewTarget",
+      "kind": "function",
+      "guid": "103DCB1A49636F3CA7B72FA4BA348792",
+      "node_count": 28,
+      "pin_count": 84,
+      "connection_count": 20,
+      "exec_connection_count": 5,
+      "data_connection_count": 15
+    },
+    {
+      "name": "HoldClosingCamera",
+      "kind": "function",
+      "guid": "57F1D17C439C631958DD35B95E842F41",
+      "node_count": 25,
+      "pin_count": 84,
+      "connection_count": 31,
+      "exec_connection_count": 7,
+      "data_connection_count": 24
+    },
+    {
+      "name": "StartClosingFade",
+      "kind": "function",
+      "guid": "E925DF034BD32323FF6B71B2011C8852",
+      "node_count": 9,
+      "pin_count": 29,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BeginCinematicFinish",
+      "kind": "function",
+      "guid": "0CD6FF4B40B491FD5C064CBC47A836FC",
+      "node_count": 98,
+      "pin_count": 320,
+      "connection_count": 107,
+      "exec_connection_count": 35,
+      "data_connection_count": 72
+    },
+    {
+      "name": "BeginSequence",
+      "kind": "function",
+      "guid": "D755F144401442C652F24D801895F460",
+      "node_count": 39,
+      "pin_count": 119,
+      "connection_count": 19,
+      "exec_connection_count": 7,
+      "data_connection_count": 12
+    },
+    {
+      "name": "HandleSequenceDestroyed",
+      "kind": "function",
+      "guid": "DB43523942E26D423DBF3199C82A35F2",
+      "node_count": 21,
+      "pin_count": 68,
+      "connection_count": 11,
+      "exec_connection_count": 4,
+      "data_connection_count": 7
+    },
+    {
+      "name": "CheckSequenceStopped",
+      "kind": "function",
+      "guid": "DB9A51AD47DEBA80B4BF37861D20665E",
+      "node_count": 19,
+      "pin_count": 61,
+      "connection_count": 9,
+      "exec_connection_count": 2,
+      "data_connection_count": 7
+    },
+    {
+      "name": "HandleSequenceStopped",
+      "kind": "function",
+      "guid": "309E3155499E229D6F79E08E8E0D620B",
+      "node_count": 23,
+      "pin_count": 73,
+      "connection_count": 11,
+      "exec_connection_count": 3,
+      "data_connection_count": 8
+    },
+    {
+      "name": "HandleSequenceFinished",
+      "kind": "function",
+      "guid": "54C256A144A38B050714B8B0CBFDD34C",
+      "node_count": 35,
+      "pin_count": 107,
+      "connection_count": 19,
+      "exec_connection_count": 7,
+      "data_connection_count": 12
+    },
+    {
+      "name": "HandleFadeFinished",
+      "kind": "function",
+      "guid": "E0ABAC374E75D980B0A0669749CB63A4",
+      "node_count": 61,
+      "pin_count": 199,
+      "connection_count": 30,
+      "exec_connection_count": 12,
+      "data_connection_count": 18
+    },
+    {
+      "name": "UnbindFadeEvent",
+      "kind": "function",
+      "guid": "8E9933124021246C0694E0BB5BA3CB9C",
+      "node_count": 15,
+      "pin_count": 37,
+      "connection_count": 7,
+      "exec_connection_count": 2,
+      "data_connection_count": 5
+    },
+    {
+      "name": "UnbindSequenceEvents",
+      "kind": "function",
+      "guid": "2654B1374CC51C62A185C784E65D4D78",
+      "node_count": 35,
+      "pin_count": 97,
+      "connection_count": 21,
+      "exec_connection_count": 7,
+      "data_connection_count": 14
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "8AE3E2514300D5C48494A19D58BE4926",
+      "node_count": 4,
+      "pin_count": 12,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BindSessionEvents",
+      "kind": "function",
+      "guid": "188DA5CD46E6457FCC86258F5E14AEAC",
+      "node_count": 27,
+      "pin_count": 67,
+      "connection_count": 16,
+      "exec_connection_count": 4,
+      "data_connection_count": 12
+    },
+    {
+      "name": "ReleaseCinematicInput",
+      "kind": "function",
+      "guid": "0BDF72C345E1B3718992D7978DFDBF99",
+      "node_count": 38,
+      "pin_count": 123,
+      "connection_count": 35,
+      "exec_connection_count": 18,
+      "data_connection_count": 17
+    },
+    {
+      "name": "AcquireCinematicInput",
+      "kind": "function",
+      "guid": "2D309D454A25B66AE0E1CA8C15C0728C",
+      "node_count": 39,
+      "pin_count": 129,
+      "connection_count": 41,
+      "exec_connection_count": 20,
+      "data_connection_count": 21
+    },
+    {
+      "name": "InterruptCinematic",
+      "kind": "function",
+      "guid": "2D0CA4B64617DD61C0F6A58AB1BEBA4F",
+      "node_count": 37,
+      "pin_count": 122,
+      "connection_count": 20,
+      "exec_connection_count": 9,
+      "data_connection_count": 11
+    },
+    {
+      "name": "StopCinematic",
+      "kind": "function",
+      "guid": "386344CC47C0817E640138845580586F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "RequestSkipCinematic",
+      "kind": "function",
+      "guid": "437349194573BF5D115C71BA93968326",
+      "node_count": 50,
+      "pin_count": 153,
+      "connection_count": 11,
+      "exec_connection_count": 2,
+      "data_connection_count": 9
+    },
+    {
+      "name": "PlayCinematic",
+      "kind": "function",
+      "guid": "F6EFCA8F4C15873CCDBB4CAE31D8FB6E",
+      "node_count": 97,
+      "pin_count": 342,
+      "connection_count": 67,
+      "exec_connection_count": 31,
+      "data_connection_count": 36
+    },
+    {
+      "name": "CanPlayCinematic",
+      "kind": "function",
+      "guid": "5BE6135B49B9F46850AB6DA97DCA0981",
+      "node_count": 46,
+      "pin_count": 136,
+      "connection_count": 17,
+      "exec_connection_count": 7,
+      "data_connection_count": 10
+    },
+    {
+      "name": "HasCinematicInputLock",
+      "kind": "function",
+      "guid": "03793DBE4A5B64C3034ECC8DED7063FB",
+      "node_count": 5,
+      "pin_count": 9,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "IsCinematicPlaying",
+      "kind": "function",
+      "guid": "1368718145F4FD6606E801B0FF2A9D83",
+      "node_count": 9,
+      "pin_count": 23,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "IsPresentationReady",
+      "kind": "function",
+      "guid": "DF5A763C472A3BCD49B06BBF602289BE",
+      "node_count": 35,
+      "pin_count": 91,
+      "connection_count": 17,
+      "exec_connection_count": 3,
+      "data_connection_count": 14
+    },
+    {
+      "name": "SetPlaybackBlocked",
+      "kind": "function",
+      "guid": "5CCF4B5F4313DA4E4CF546BFCB0FD652",
+      "node_count": 3,
+      "pin_count": 12,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "InitializePresentation",
+      "kind": "function",
+      "guid": "18747F924E8B994F98713DB682C9E33A",
+      "node_count": 11,
+      "pin_count": 40,
+      "connection_count": 7,
+      "exec_connection_count": 3,
+      "data_connection_count": 4
+    },
+    {
+      "name": "OnCinematicInputLockChanged",
+      "kind": "delegate",
+      "guid": "3DE4F46E4D28E06CC5263DBDB3BDF624",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnCinematicAborted",
+      "kind": "delegate",
+      "guid": "F82062284BE488B8016A33858374CB1F",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnCinematicSkipped",
+      "kind": "delegate",
+      "guid": "5E14F2844AAD99BE17FE93AB86DF9E60",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnCinematicCompleted",
+      "kind": "delegate",
+      "guid": "1DCE5D224B80BE6ED226F8B8E88FED72",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "IsCinematicOwnedBy",
+      "kind": "function",
+      "guid": "DC1FFE594D540FFDC0ADE3B3631499FF",
+      "node_count": 8,
+      "pin_count": 23,
+      "connection_count": 8,
+      "exec_connection_count": 1,
+      "data_connection_count": 7
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveEndPlay",
+      "guid": "1B22268C45D39D1DBEACD4ABE9379972",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 34,
+    "generated_graph_count": 1,
+    "authored_node_count": 987,
+    "authored_pin_count": 3099,
+    "authored_connection_count": 626,
+    "generated_node_count": 3,
+    "generated_pin_count": 9
+  },
+  "graph_files": [
+    {
+      "name": "OnCinematicAborted",
+      "kind": "delegate",
+      "file": "graphs/OnCinematicAborted.json"
+    },
+    {
+      "name": "OnCinematicCompleted",
+      "kind": "delegate",
+      "file": "graphs/OnCinematicCompleted.json"
+    },
+    {
+      "name": "OnCinematicInputLockChanged",
+      "kind": "delegate",
+      "file": "graphs/OnCinematicInputLockChanged.json"
+    },
+    {
+      "name": "OnCinematicSkipped",
+      "kind": "delegate",
+      "file": "graphs/OnCinematicSkipped.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "AcquireCinematicInput",
+      "kind": "function",
+      "file": "graphs/AcquireCinematicInput.json"
+    },
+    {
+      "name": "BeginCinematicFinish",
+      "kind": "function",
+      "file": "graphs/BeginCinematicFinish.json"
+    },
+    {
+      "name": "BeginSequence",
+      "kind": "function",
+      "file": "graphs/BeginSequence.json"
+    },
+    {
+      "name": "BindSessionEvents",
+      "kind": "function",
+      "file": "graphs/BindSessionEvents.json"
+    },
+    {
+      "name": "CanPlayCinematic",
+      "kind": "function",
+      "file": "graphs/CanPlayCinematic.json"
+    },
+    {
+      "name": "CheckSequenceStopped",
+      "kind": "function",
+      "file": "graphs/CheckSequenceStopped.json"
+    },
+    {
+      "name": "FinishSession",
+      "kind": "function",
+      "file": "graphs/FinishSession.json"
+    },
+    {
+      "name": "HandleFadeFinished",
+      "kind": "function",
+      "file": "graphs/HandleFadeFinished.json"
+    },
+    {
+      "name": "HandleSequenceDestroyed",
+      "kind": "function",
+      "file": "graphs/HandleSequenceDestroyed.json"
+    },
+    {
+      "name": "HandleSequenceFinished",
+      "kind": "function",
+      "file": "graphs/HandleSequenceFinished.json"
+    },
+    {
+      "name": "HandleSequenceStopped",
+      "kind": "function",
+      "file": "graphs/HandleSequenceStopped.json"
+    },
+    {
+      "name": "HasCinematicInputLock",
+      "kind": "function",
+      "file": "graphs/HasCinematicInputLock.json"
+    },
+    {
+      "name": "HoldClosingCamera",
+      "kind": "function",
+      "file": "graphs/HoldClosingCamera.json"
+    },
+    {
+      "name": "InitializePresentation",
+      "kind": "function",
+      "file": "graphs/InitializePresentation.json"
+    },
+    {
+      "name": "InterruptCinematic",
+      "kind": "function",
+      "file": "graphs/InterruptCinematic.json"
+    },
+    {
+      "name": "IsCinematicOwnedBy",
+      "kind": "function",
+      "file": "graphs/IsCinematicOwnedBy.json"
+    },
+    {
+      "name": "IsCinematicPlaying",
+      "kind": "function",
+      "file": "graphs/IsCinematicPlaying.json"
+    },
+    {
+      "name": "IsPresentationReady",
+      "kind": "function",
+      "file": "graphs/IsPresentationReady.json"
+    },
+    {
+      "name": "PlayCinematic",
+      "kind": "function",
+      "file": "graphs/PlayCinematic.json"
+    },
+    {
+      "name": "ReleaseCinematicInput",
+      "kind": "function",
+      "file": "graphs/ReleaseCinematicInput.json"
+    },
+    {
+      "name": "RequestSkipCinematic",
+      "kind": "function",
+      "file": "graphs/RequestSkipCinematic.json"
+    },
+    {
+      "name": "RestoreViewTarget",
+      "kind": "function",
+      "file": "graphs/RestoreViewTarget.json"
+    },
+    {
+      "name": "ReturnToGameplay",
+      "kind": "function",
+      "file": "graphs/ReturnToGameplay.json"
+    },
+    {
+      "name": "SetPlaybackBlocked",
+      "kind": "function",
+      "file": "graphs/SetPlaybackBlocked.json"
+    },
+    {
+      "name": "StartClosingFade",
+      "kind": "function",
+      "file": "graphs/StartClosingFade.json"
+    },
+    {
+      "name": "StopCinematic",
+      "kind": "function",
+      "file": "graphs/StopCinematic.json"
+    },
+    {
+      "name": "StopSequenceAtBlack",
+      "kind": "function",
+      "file": "graphs/StopSequenceAtBlack.json"
+    },
+    {
+      "name": "UnbindFadeEvent",
+      "kind": "function",
+      "file": "graphs/UnbindFadeEvent.json"
+    },
+    {
+      "name": "UnbindSequenceEvents",
+      "kind": "function",
+      "file": "graphs/UnbindSequenceEvents.json"
+    }
+  ]
+}

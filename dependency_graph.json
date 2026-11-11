@@ -1,8 +1,12 @@
 {
   "schema_version": 1,
-  "node_count": 437,
-  "edge_count": 1370,
+  "node_count": 440,
+  "edge_count": 1377,
   "edges": [
+    {
+      "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "to": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController"
+    },
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "to": "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite"
@@ -1513,6 +1517,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "to": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyAwareness"
     },
     {
@@ -1870,6 +1878,22 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/VFX/ParticleSystem/EvadeGhost/BP_GhostEvade",
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_GameMenu"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/BP_CinematicTrigger",
+      "to": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy",
@@ -4762,6 +4786,10 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
       "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ScreenFade"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD",
+      "to": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_SkipCinematic"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources",

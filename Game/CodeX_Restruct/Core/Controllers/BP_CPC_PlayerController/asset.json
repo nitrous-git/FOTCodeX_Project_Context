@@ -17,6 +17,7 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController",
       "/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
@@ -87,6 +88,16 @@
         "template_path": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C:BP_PlayerTargetingComponent_GEN_VARIABLE"
       },
       {
+        "name": "CinematicController",
+        "class": "AC_CinematicController_C",
+        "parent": "BP_CPC_PlayerController",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C:CinematicController_GEN_VARIABLE"
+      },
+      {
         "name": "TransformComponent",
         "class": "SceneComponent",
         "parent": "BP_CPC_PlayerController",
@@ -126,6 +137,40 @@
           "category": "object",
           "sub_category": null,
           "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite.BP_RestingSite_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCinematicControllerReady",
+        "guid": "9660F7CA45E37F6660FCD7A06F2AA693",
+        "friendly_name": "Cinematic Controller Ready",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCinematicDeathLock",
+        "guid": "B95E719643F06534971CAE8FBF645993",
+        "friendly_name": "Cinematic Death Lock",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -868,7 +913,17 @@
         "PrepareRestPresentation",
         "RestoreRestPresentation",
         "QueueRestReveal",
-        "RevealRestScreen"
+        "RevealRestScreen",
+        "InterruptCinematicForUnpossess",
+        "InterruptCinematicForDeath",
+        "InterruptCinematicForEndPlay",
+        "HandleCinematicSkip",
+        "HandleCinematicInputLockChanged",
+        "UpdateCinematicAvailability",
+        "InitializeCinematicPresentation",
+        "IsCinematicInputLocked",
+        "IsCinematicActive",
+        "RefreshCinematicPresentation"
       ],
       "macros": [],
       "delegates": [],
