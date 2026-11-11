@@ -7,12 +7,16 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_BossOverheadUI" E
       Begin Object Class=/Script/UMG.Overlay Name="Overlay_96" ExportPath="/Script/UMG.Overlay'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.Overlay_96'"
          Begin Object Class=/Script/UMG.OverlaySlot Name="OverlaySlot_0" ExportPath="/Script/UMG.OverlaySlot'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.Overlay_96.OverlaySlot_0'"
          End Object
+         Begin Object Class=/Script/UMG.OverlaySlot Name="OverlaySlot_1" ExportPath="/Script/UMG.OverlaySlot'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.Overlay_96.OverlaySlot_1'"
+         End Object
       End Object
       Begin Object Class=/Script/UMG.ProgressBar Name="PB_Health" ExportPath="/Script/UMG.ProgressBar'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.PB_Health'"
       End Object
       Begin Object Class=/Script/UMG.SizeBox Name="SizeBox_62" ExportPath="/Script/UMG.SizeBox'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.SizeBox_62'"
          Begin Object Class=/Script/UMG.SizeBoxSlot Name="SizeBoxSlot_0" ExportPath="/Script/UMG.SizeBoxSlot'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.SizeBox_62.SizeBoxSlot_0'"
          End Object
+      End Object
+      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C Name="CombatHealthBar" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.CombatHealthBar'"
       End Object
    End Object
    Begin Object Class=/Script/Engine.EdGraph Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:EventGraph'"
@@ -47,6 +51,22 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_BossOverheadUI" E
       Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_1" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:GetHealthPercent.K2Node_CallFunction_1'"
       End Object
    End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="ResetCombatHealth" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ResetCombatHealth'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ResetCombatHealth.K2Node_CallFunction_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_0" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ResetCombatHealth.K2Node_VariableGet_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ResetCombatHealth.K2Node_FunctionEntry_0'"
+      End Object
+   End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="ApplyCombatHealth" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ApplyCombatHealth'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ApplyCombatHealth.K2Node_CallFunction_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_0" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ApplyCombatHealth.K2Node_VariableGet_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ApplyCombatHealth.K2Node_FunctionEntry_0'"
+      End Object
+   End Object
    Begin Object Name="WidgetTree" ExportPath="/Script/UMG.WidgetTree'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree'"
       Begin Object Name="Border_65" ExportPath="/Script/UMG.Border'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.Border_65'"
          Begin Object Name="BorderSlot_0" ExportPath="/Script/UMG.BorderSlot'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.Border_65.BorderSlot_0'"
@@ -58,6 +78,7 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_BossOverheadUI" E
          Slots(0)="/Script/UMG.BorderSlot'BorderSlot_0'"
          Slot="/Script/UMG.OverlaySlot'WBP_BossOverheadUI:WidgetTree.Overlay_96.OverlaySlot_0'"
          bExpandedInDesigner=True
+         Visibility=Collapsed
       End Object
       Begin Object Name="Overlay_96" ExportPath="/Script/UMG.Overlay'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.Overlay_96'"
          Begin Object Name="OverlaySlot_0" ExportPath="/Script/UMG.OverlaySlot'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.Overlay_96.OverlaySlot_0'"
@@ -66,9 +87,17 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_BossOverheadUI" E
             Parent="/Script/UMG.Overlay'WBP_BossOverheadUI:WidgetTree.Overlay_96'"
             Content="/Script/UMG.Border'WBP_BossOverheadUI:WidgetTree.Border_65'"
          End Object
+         Begin Object Name="OverlaySlot_1" ExportPath="/Script/UMG.OverlaySlot'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.Overlay_96.OverlaySlot_1'"
+            HorizontalAlignment=HAlign_Fill
+            VerticalAlignment=VAlign_Fill
+            Parent="/Script/UMG.Overlay'WBP_BossOverheadUI:WidgetTree.Overlay_96'"
+            Content="/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'WBP_BossOverheadUI:WidgetTree.CombatHealthBar'"
+         End Object
          Slots(0)="/Script/UMG.OverlaySlot'OverlaySlot_0'"
+         Slots(1)="/Script/UMG.OverlaySlot'OverlaySlot_1'"
          Slot="/Script/UMG.SizeBoxSlot'WBP_BossOverheadUI:WidgetTree.SizeBox_62.SizeBoxSlot_0'"
          bExpandedInDesigner=True
+         Visibility=HitTestInvisible
       End Object
       Begin Object Name="PB_Health" ExportPath="/Script/UMG.ProgressBar'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.PB_Health'"
          WidgetStyle=(BackgroundImage=(TintColor=(SpecifiedColor=(R=0.062500,G=0.062500,B=0.062500,A=1.000000))))
@@ -84,14 +113,24 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_BossOverheadUI" E
             Parent="/Script/UMG.SizeBox'WBP_BossOverheadUI:WidgetTree.SizeBox_62'"
             Content="/Script/UMG.Overlay'WBP_BossOverheadUI:WidgetTree.Overlay_96'"
          End Object
-         WidthOverride=240.000000
+         WidthOverride=150.000000
          HeightOverride=32.000000
          bOverride_WidthOverride=True
-         bOverride_HeightOverride=True
          Slots(0)="/Script/UMG.SizeBoxSlot'SizeBoxSlot_0'"
          bExpandedInDesigner=True
+         Visibility=HitTestInvisible
+      End Object
+      Begin Object Name="CombatHealthBar" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.CombatHealthBar'"
+         DesignSizeMode=FillScreen
+         Slot="/Script/UMG.OverlaySlot'WBP_BossOverheadUI:WidgetTree.Overlay_96.OverlaySlot_1'"
+         DisplayLabel="CombatHealthBar"
       End Object
       RootWidget="/Script/UMG.SizeBox'SizeBox_62'"
+      AllWidgets(0)="/Script/UMG.SizeBox'SizeBox_62'"
+      AllWidgets(1)="/Script/UMG.Overlay'Overlay_96'"
+      AllWidgets(2)="/Script/UMG.Border'Border_65'"
+      AllWidgets(3)="/Script/UMG.ProgressBar'PB_Health'"
+      AllWidgets(4)="/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'CombatHealthBar'"
    End Object
    Begin Object Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:EventGraph'"
       Begin Object Name="K2Node_Event_0" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:EventGraph.K2Node_Event_0'"
@@ -257,21 +296,91 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_BossOverheadUI" E
       Nodes(10)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_1'"
       GraphGuid=6BCF6E0A4F70BFB3769741AE11A6D7A5
    End Object
+   Begin Object Name="ResetCombatHealth" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ResetCombatHealth'"
+      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ResetCombatHealth.K2Node_CallFunction_0'"
+         FunctionReference=(MemberParent="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'",MemberName="ResetHealthPresentation",MemberGuid=16FD66FA43EF762A48FA98AAA39AC439)
+         NodePosX=560
+         NodeGuid=D64F6B3541477D932D63A199DC04A0D1
+         CustomProperties Pin (PinId=9B2A6D6B4D82B26EA1C9E6B4538F4BAD,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 A3A5233A4A5F3589666A87B7D6F8DB98,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=23A709FA471A89655B67CF94CF7CFEDC,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=90795B8F4382B66C2E113F99DD2246F6,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_VariableGet_0 2B5819E140FA2B420F16D9BDFFA74BEE,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_VariableGet_0" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ResetCombatHealth.K2Node_VariableGet_0'"
+         VariableReference=(MemberName="CombatHealthBar",MemberGuid=D438FD4D459C71019350CB9EFCC78EF3,bSelfContext=True)
+         NodePosX=280
+         NodeGuid=6F3D80DA4B7C6899D1E7FD98DEC434A9
+         CustomProperties Pin (PinId=2B5819E140FA2B420F16D9BDFFA74BEE,PinName="CombatHealthBar",Direction="EGPD_Output",PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 90795B8F4382B66C2E113F99DD2246F6,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=69F43C834AB549525ABBD78ABD58A37D,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=True,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ResetCombatHealth.K2Node_FunctionEntry_0'"
+         ExtraFlags=201457664
+         FunctionReference=(MemberName="ResetCombatHealth")
+         bIsEditable=True
+         NodeGuid=20E251AD47B21A4FE8406DAC6A2197CC
+         CustomProperties Pin (PinId=A3A5233A4A5F3589666A87B7D6F8DB98,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 9B2A6D6B4D82B26EA1C9E6B4538F4BAD,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
+      Nodes(1)="/Script/BlueprintGraph.K2Node_VariableGet'K2Node_VariableGet_0'"
+      Nodes(2)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_0'"
+      GraphGuid=7F8CB8E4448097565356F5B73CFB0A80
+   End Object
+   Begin Object Name="ApplyCombatHealth" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ApplyCombatHealth'"
+      Begin Object Name="K2Node_CallFunction_0" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ApplyCombatHealth.K2Node_CallFunction_0'"
+         FunctionReference=(MemberParent="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'",MemberName="ApplyHealthSnapshot",MemberGuid=8056A92F4919E17F95E91492D3658559)
+         NodePosX=560
+         NodeGuid=08E9C4C94DDA5E634E4878B49E8A0430
+         CustomProperties Pin (PinId=57621FEB442AFCF1F564BD87D02211C9,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 761E5F9F4DBA7C666521B78C93C04CB1,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=B06BD08F4DD8CE223B2F9D9672F6C1CF,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=7A22C93846CB6779D61551BE65C7EEA1,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_VariableGet_0 8E5200F744035264C6393D9311ED1409,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=81E7499442083782120633B35E0D7031,PinName="Current",PinType.PinCategory="real",PinType.PinSubCategory="double",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0.0",AutogeneratedDefaultValue="0.0",LinkedTo=(K2Node_FunctionEntry_0 BEE4561140FA8D99700999B3BD8E65CC,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=3E347C9C4AFB25C1BB9BB391B4795A92,PinName="Maximum",PinType.PinCategory="real",PinType.PinSubCategory="double",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0.0",AutogeneratedDefaultValue="0.0",LinkedTo=(K2Node_FunctionEntry_0 5EBF5B914F62D5903A9926A205B50B88,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_VariableGet_0" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ApplyCombatHealth.K2Node_VariableGet_0'"
+         VariableReference=(MemberName="CombatHealthBar",MemberGuid=D438FD4D459C71019350CB9EFCC78EF3,bSelfContext=True)
+         NodePosX=280
+         NodeGuid=D11024F741E03847BD23E2940DD090A9
+         CustomProperties Pin (PinId=8E5200F744035264C6393D9311ED1409,PinName="CombatHealthBar",Direction="EGPD_Output",PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 7A22C93846CB6779D61551BE65C7EEA1,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=283DE3FD4876F5D519DC8EB6C378D136,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node", "Target", "Target"),PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI_C'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=True,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ApplyCombatHealth.K2Node_FunctionEntry_0'"
+         ExtraFlags=201457664
+         FunctionReference=(MemberName="ApplyCombatHealth")
+         bIsEditable=True
+         NodeGuid=73271232416B30DC5AE3AD8443189923
+         CustomProperties Pin (PinId=761E5F9F4DBA7C666521B78C93C04CB1,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 57621FEB442AFCF1F564BD87D02211C9,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=BEE4561140FA8D99700999B3BD8E65CC,PinName="Current",Direction="EGPD_Output",PinType.PinCategory="real",PinType.PinSubCategory="double",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 81E7499442083782120633B35E0D7031,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=5EBF5B914F62D5903A9926A205B50B88,PinName="Maximum",Direction="EGPD_Output",PinType.PinCategory="real",PinType.PinSubCategory="double",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_CallFunction_0 3E347C9C4AFB25C1BB9BB391B4795A92,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties UserDefinedPin (PinName="Current",PinType=(PinCategory="real",PinSubCategory="double"),DesiredPinDirection=EGPD_Output)
+         CustomProperties UserDefinedPin (PinName="Maximum",PinType=(PinCategory="real",PinSubCategory="double"),DesiredPinDirection=EGPD_Output)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
+      Nodes(1)="/Script/BlueprintGraph.K2Node_VariableGet'K2Node_VariableGet_0'"
+      Nodes(2)="/Script/BlueprintGraph.K2Node_CallFunction'K2Node_CallFunction_0'"
+      GraphGuid=FC1A12F14E014B839418BC99C40B560E
+   End Object
    Bindings(0)=(ObjectName="PB_Health",PropertyName="Percent",FunctionName="Get_PB_Health_Percent",SourcePath=(Segments=((Struct="/Script/UMG.WidgetBlueprintGeneratedClass'WBP_BossOverheadUI_C'",MemberName="Get_PB_Health_Percent",MemberGuid=6BCF6E0A4F70BFB3769741AE11A6D7A5,IsProperty=False))),MemberGuid=6BCF6E0A4F70BFB3769741AE11A6D7A5,Kind=Function)
-   WidgetVariableNameToGuidMap=(("PB_Health", D473890842E5E5E57053D79A8F7EBACE),("Border_65", 15D1A4E740039CCDA89256A40A89BCEC),("Overlay_96", F6C4C78E49DD214B26C3489A6A0AD0FF),("SizeBox_62", ABE0E8224004741EEE1A72A75489CAF1))
+   WidgetVariableNameToGuidMap=(("PB_Health", D473890842E5E5E57053D79A8F7EBACE),("Border_65", 15D1A4E740039CCDA89256A40A89BCEC),("Overlay_96", F6C4C78E49DD214B26C3489A6A0AD0FF),("SizeBox_62", ABE0E8224004741EEE1A72A75489CAF1),("CombatHealthBar", D438FD4D459C71019350CB9EFCC78EF3))
    PropertyBindings=1
    WidgetTree="WidgetTree"
    ParentClass="/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
    BlueprintSystemVersion=2
    UbergraphPages(0)="/Script/Engine.EdGraph'EventGraph'"
    FunctionGraphs(0)="/Script/Engine.EdGraph'GetHealthPercent'"
+   FunctionGraphs(1)="/Script/Engine.EdGraph'ApplyCombatHealth'"
+   FunctionGraphs(2)="/Script/Engine.EdGraph'ResetCombatHealth'"
    NewVariables(0)=(VarName="BossRef",VarGuid=4FB0431749F46A0E256842A880BA5A23,VarType=(PinCategory="object",PinSubCategoryObject="/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss.BP_BaseBoss_C'"),FriendlyName="Boss Ref",Category=NSLOCTEXT("KismetSchema", "Default", "Default"),PropertyFlags=2053,MetaDataArray=((DataKey="ExposeOnSpawn",DataValue="true")))
    GeneratedVariables(0)=(VarName="PB_Health",VarGuid=D473890842E5E5E57053D79A8F7EBACE,VarType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/UMG.ProgressBar'"),FriendlyName="PB_Health",PropertyFlags=562952101429256)
+   GeneratedVariables(1)=(VarName="CombatHealthBar",VarGuid=D438FD4D459C71019350CB9EFCC78EF3,VarType=(PinCategory="object",PinSubCategoryObject="/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'"),FriendlyName="CombatHealthBar",PropertyFlags=562952101494812,MetaDataArray=((DataKey="Category",DataValue="WBP_BossOverheadUI")))
    CategorySorting(0)="Event Graph"
    CategorySorting(1)="Default"
    CategorySorting(2)=""
+   CategorySorting(3)="WBP Boss Overhead UI"
    LastEditedDocuments(0)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:GetHealthPercent",SavedViewOffset=(X=469.634674,Y=-495.420044),SavedZoomAmount=0.675000)
    LastEditedDocuments(1)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:EventGraph",SavedViewOffset=(X=-301.343231,Y=-166.625000),SavedZoomAmount=1.000000)
+   LastEditedDocuments(2)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ApplyCombatHealth",SavedViewOffset=(X=-365.505554,Y=-248.405212),SavedZoomAmount=1.000000)
+   LastEditedDocuments(3)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:ResetCombatHealth",SavedViewOffset=(X=-365.505554,Y=-278.405212),SavedZoomAmount=1.000000)
    GeneratedClass="/Script/UMG.WidgetBlueprintGeneratedClass'WBP_BossOverheadUI_C'"
    bLegacyNeedToPurgeSkelRefs=False
    BlueprintGuid=EB1B59324A4285DC9C68A3880C15948B

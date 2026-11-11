@@ -8,11 +8,11 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_Resources" Export
          Begin Object Class=/Script/UMG.VerticalBoxSlot Name="VerticalBoxSlot_2" ExportPath="/Script/UMG.VerticalBoxSlot'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_2'"
          End Object
       End Object
-      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="HP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.HP'"
+      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="Stamina" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.Stamina'"
       End Object
       Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="FP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.FP'"
       End Object
-      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="Stamina" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.Stamina'"
+      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C Name="HP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.HP'"
       End Object
    End Object
    Begin Object Class=/Script/Engine.EdGraph Name="AdvanceAnimations" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:AdvanceAnimations'"
@@ -173,10 +173,12 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_Resources" Export
          Slots(2)="/Script/UMG.VerticalBoxSlot'VerticalBoxSlot_2'"
          DisplayLabel="ResourceRows"
       End Object
-      Begin Object Name="HP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.HP'"
+      Begin Object Name="Stamina" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.Stamina'"
+         WidthAtReference=230.000000
+         FrontTint=(R=0.015952,G=0.125000,B=0.010417,A=1.000000)
          DesignSizeMode=FillScreen
-         Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_0'"
-         DisplayLabel="HP"
+         Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_2'"
+         DisplayLabel="Stamina"
       End Object
       Begin Object Name="FP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.FP'"
          WidthAtReference=170.000000
@@ -186,12 +188,10 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_Resources" Export
          Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_1'"
          DisplayLabel="FP"
       End Object
-      Begin Object Name="Stamina" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.Stamina'"
-         WidthAtReference=230.000000
-         FrontTint=(R=0.015952,G=0.125000,B=0.010417,A=1.000000)
+      Begin Object Name="HP" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ResourceBar.WBP_ResourceBar_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_Resources.WBP_Resources:WidgetTree.HP'"
          DesignSizeMode=FillScreen
-         Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_2'"
-         DisplayLabel="Stamina"
+         Slot="/Script/UMG.VerticalBoxSlot'WBP_Resources:WidgetTree.ResourceRows.VerticalBoxSlot_0'"
+         DisplayLabel="HP"
       End Object
       RootWidget="/Script/UMG.VerticalBox'ResourceRows'"
    End Object

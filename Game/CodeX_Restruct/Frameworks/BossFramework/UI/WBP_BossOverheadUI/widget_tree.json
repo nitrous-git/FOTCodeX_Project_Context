@@ -12,7 +12,7 @@
       "class": "SizeBox",
       "path": "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.SizeBox_62",
       "properties": {
-        "visibility": "<SlateVisibility.SELF_HIT_TEST_INVISIBLE: 4>",
+        "visibility": "<SlateVisibility.HIT_TEST_INVISIBLE: 3>",
         "is_enabled": true,
         "render_opacity": 1.0,
         "render_transform": {
@@ -52,7 +52,7 @@
         "min_desired_height": 0.0,
         "max_desired_width": 0.0,
         "max_desired_height": 0.0,
-        "width_override": 240.0,
+        "width_override": 150.0,
         "height_override": 32.0
       },
       "slot": null,
@@ -62,7 +62,7 @@
           "class": "Overlay",
           "path": "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.Overlay_96",
           "properties": {
-            "visibility": "<SlateVisibility.SELF_HIT_TEST_INVISIBLE: 4>",
+            "visibility": "<SlateVisibility.HIT_TEST_INVISIBLE: 3>",
             "is_enabled": true,
             "render_opacity": 1.0,
             "render_transform": {
@@ -120,7 +120,7 @@
               "class": "Border",
               "path": "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.Border_65",
               "properties": {
-                "visibility": "<SlateVisibility.VISIBLE: 0>",
+                "visibility": "<SlateVisibility.COLLAPSED: 1>",
                 "is_enabled": true,
                 "render_opacity": 1.0,
                 "render_transform": {
@@ -299,12 +299,87 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "name": "CombatHealthBar",
+              "class": "WBP_CombatHealthBar_C",
+              "path": "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI.WBP_BossOverheadUI:WidgetTree.CombatHealthBar",
+              "properties": {
+                "visibility": "<SlateVisibility.HIT_TEST_INVISIBLE: 3>",
+                "is_enabled": true,
+                "render_opacity": 1.0,
+                "render_transform": {
+                  "struct": "WidgetTransform",
+                  "translation": {
+                    "struct": "Vector2D",
+                    "x": 0.0,
+                    "y": 0.0,
+                    "text": "(X=0.000000,Y=0.000000)"
+                  },
+                  "scale": {
+                    "struct": "Vector2D",
+                    "x": 1.0,
+                    "y": 1.0,
+                    "text": "(X=1.000000,Y=1.000000)"
+                  },
+                  "shear": {
+                    "struct": "Vector2D",
+                    "x": 0.0,
+                    "y": 0.0,
+                    "text": "(X=0.000000,Y=0.000000)"
+                  },
+                  "angle": 0.0,
+                  "text": "(Translation=(X=0.000000,Y=0.000000),Scale=(X=1.000000,Y=1.000000),Shear=(X=0.000000,Y=0.000000),Angle=0.000000)"
+                },
+                "render_transform_pivot": {
+                  "struct": "Vector2D",
+                  "x": 0.5,
+                  "y": 0.5,
+                  "text": "(X=0.500000,Y=0.500000)"
+                },
+                "clipping": "<WidgetClipping.INHERIT: 0>",
+                "tool_tip_text": "",
+                "cursor": "<MouseCursor.DEFAULT: 1>",
+                "flow_direction_preference": "<FlowDirectionPreference.INHERIT: 0>",
+                "color_and_opacity": {
+                  "struct": "LinearColor",
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0,
+                  "text": "(R=1.000000,G=1.000000,B=1.000000,A=1.000000)"
+                },
+                "padding": {
+                  "struct": "Margin",
+                  "left": 0.0,
+                  "top": 0.0,
+                  "right": 0.0,
+                  "bottom": 0.0,
+                  "text": "(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000)"
+                }
+              },
+              "slot": {
+                "class": "OverlaySlot",
+                "properties": {
+                  "padding": {
+                    "struct": "Margin",
+                    "left": 0.0,
+                    "top": 0.0,
+                    "right": 0.0,
+                    "bottom": 0.0,
+                    "text": "(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000)"
+                  },
+                  "horizontal_alignment": "<HorizontalAlignment.H_ALIGN_FILL: 0>",
+                  "vertical_alignment": "<VerticalAlignment.V_ALIGN_FILL: 0>"
+                }
+              },
+              "children": []
             }
           ]
         }
       ]
     },
-    "widget_count": 4
+    "widget_count": 5
   },
   "animations": {
     "status": "unavailable",

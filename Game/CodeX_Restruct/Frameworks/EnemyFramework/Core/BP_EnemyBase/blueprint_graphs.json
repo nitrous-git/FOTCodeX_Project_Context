@@ -875,6 +875,40 @@
       }
     },
     {
+      "name": "EnemyHealthWidget",
+      "guid": "819CA18D48F1D5C9D1F80FB6182F1B6C",
+      "friendly_name": "Enemy Health Widget",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EnemyHealthWidgetComponent",
+      "guid": "8E50482743CA814F5450E5B0796E99DC",
+      "friendly_name": "Enemy Health Widget Component",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.WidgetComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "ExecutionHealthPercentThreshold",
       "guid": "225353184F6E533D88816BBDE9C20658",
       "friendly_name": "Execution Health Percent Threshold",
@@ -897,6 +931,40 @@
       "friendly_name": "Guard Stamina Multiplier",
       "category": "INVTEXT(\"Runtime Combat\")",
       "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HealthBarHeightOffset",
+      "guid": "5F806E82482FAB9B3C36CB878A86488B",
+      "friendly_name": "Health Bar Height Offset",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HealthBeforeHitForUI",
+      "guid": "EFB2DD934EF36275245571B154351AB8",
+      "friendly_name": "Health Before Hit for UI",
+      "category": "Default",
+      "property_flags": 65541,
       "default_value": null,
       "type": {
         "category": "real",
@@ -1543,11 +1611,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "E4E7A79547574B8CC4F755B75ADADCE8",
-      "node_count": 501,
-      "pin_count": 1650,
-      "connection_count": 490,
-      "exec_connection_count": 237,
-      "data_connection_count": 253
+      "node_count": 508,
+      "pin_count": 1674,
+      "connection_count": 499,
+      "exec_connection_count": 244,
+      "data_connection_count": 255
     },
     {
       "name": "UserConstructionScript",
@@ -1788,6 +1856,46 @@
       "connection_count": 5,
       "exec_connection_count": 3,
       "data_connection_count": 2
+    },
+    {
+      "name": "UpdateEnemyHealthAfterHit",
+      "kind": "function",
+      "guid": "2E66BC7E4A5003B1037A1381DAEF1D0B",
+      "node_count": 30,
+      "pin_count": 91,
+      "connection_count": 32,
+      "exec_connection_count": 11,
+      "data_connection_count": 21
+    },
+    {
+      "name": "SyncEnemyHealthPresentation",
+      "kind": "function",
+      "guid": "9AF5FA154C1AC7DB1BE4A680CB8C8130",
+      "node_count": 10,
+      "pin_count": 26,
+      "connection_count": 9,
+      "exec_connection_count": 3,
+      "data_connection_count": 6
+    },
+    {
+      "name": "HideEnemyHealthPresentation",
+      "kind": "function",
+      "guid": "748E721048754D68E65431A83E2233B3",
+      "node_count": 9,
+      "pin_count": 25,
+      "connection_count": 8,
+      "exec_connection_count": 4,
+      "data_connection_count": 4
+    },
+    {
+      "name": "CreateEnemyHealthPresentation",
+      "kind": "function",
+      "guid": "CC0EE79D49BE8396B22D73AE8627C7CE",
+      "node_count": 26,
+      "pin_count": 102,
+      "connection_count": 38,
+      "exec_connection_count": 15,
+      "data_connection_count": 23
     }
   ],
   "generated_graphs": [
@@ -1864,566 +1972,8 @@
       "data_connection_count": 6
     },
     {
-      "name": "CE_StartDeadState",
-      "guid": "AF44C8BB4946374CED4D759A2BAF020C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_UpdateDeadState",
-      "guid": "6A7C0B8E4B2C9A0A2639A3A1B3C5267C",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CE_StopDeadState",
-      "guid": "DD199F8C41D607CAEA88E181E967375A",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_PrepareDeathDissolveMaterials",
-      "guid": "15ADA60A44748ECF38DFDA81DBEE7EDF",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_StartDeathDissolve",
-      "guid": "FF5FB03D48392D9006ABB794FD079A1F",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_StartDissolveTimer",
-      "guid": "FFA2B971491D7DCCA723A889FC692938",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CE_StartAwakeningState",
-      "guid": "342CB70F4B612410105EFD90C9029171",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_StopAwakeningState",
-      "guid": "BD5D38E043448ACA19EBF586C9BE62F3",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_UpdateAwakeningState",
-      "guid": "5EF7278249FD425BA33E509DEC2DA865",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CE_PrepareSpawnDissolveMaterials",
-      "guid": "B72D033840C891C72950EBA151DADD7B",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_FinishAwakeningState",
-      "guid": "F9F9D70C41404D09279CE4988EC3D452",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_StartDamageState",
-      "guid": "4CB00BC44D112ABAE33380B87248853F",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_UpdateDamageState",
-      "guid": "97FBF05E44137FA82DA129B676D53BD3",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CE_StopDamageState",
-      "guid": "89737FB14E47727984661EBA94B43A49",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_FinishDamageState",
-      "guid": "0A969EA14D8B413F0E03139F0097A91D",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_StartRetreatState",
-      "guid": "D79B1A7A44DD9415EB66DF9E4C7F44F2",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_UpdateRetreatState",
-      "guid": "749C2F6040030BA49F10CA9266A79C49",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CE_StopRetreatState",
-      "guid": "C809CD1341A48C27D12C6593F7370DD1",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Combat_InitializeProfileFromStyle",
-      "guid": "A5866AD441D583052555E8B3C637D56A",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Combat_Interrupt",
-      "guid": "E2E814214AEB59D85DB81ABE103893D8",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Combat_OnAttackFinished",
-      "guid": "DAF4526341FAB6239BAC869B20A88345",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Combat_UpdateObserver",
-      "guid": "81781E8A4A0143F2EF2DA29A14A1F76B",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Combat_UpdateAttacker",
-      "guid": "130584184D37D6705EDCB5A2D0766971",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Combat_EndObserver",
-      "guid": "48B26D0F4820C6E9CBF380BCAA1EE121",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Combat_EndAttacker",
-      "guid": "189D38C0407187555A8A7B960E743D4F",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Combat_BeginObserver",
-      "guid": "3118D7974612706BF373BAB98ED46B17",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Combat_BeginAttacker",
-      "guid": "F01154A24E86F7813AED25ADE740EE8C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_FinishWakeUp",
-      "guid": "682CCFEA44F68444B9D76EB66847B37C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_StartWakeUp",
-      "guid": "AA78447C459927B3158F6CBC4770D2A9",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_RequestCombatDisengage",
-      "guid": "2E455CE0478E5608CECDC2A2A65A4D77",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_OnWorldReturnCompleted",
-      "guid": "FAAE72C8471327438B3BFAA482550298",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_OnDisengageRequested",
-      "guid": "9334B4B44A0ED5B31A927F8927533DFA",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_CompleteCombatEntry",
-      "guid": "62B7FD374E55C7B4255748B0CB902A6D",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_OnTargetDetected",
-      "guid": "546E7FCE42F948F63EDD8FADC270D0FA",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__BP_EnemyBase_AwarenessSphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature",
-      "guid": "B0AFC126483D1A196425328A870C86A1",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "BndEvt__BP_EnemyBase_AwarenessSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-      "guid": "4024989D42333E8B2FDD728164A26293",
-      "node_count": 3,
-      "pin_count": 19,
-      "connection_count": 8,
-      "exec_connection_count": 2,
-      "data_connection_count": 6
-    },
-    {
-      "name": "CE_RequestCombatActivation",
-      "guid": "E1867EFD4D685D26CC1ED6A54F47B733",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_ResolveExecutionEnding",
-      "guid": "149416CF46E7F9A66312CB826F78F24A",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_UpdateExecutionDamage",
-      "guid": "F25908EE425514AD7F4809B3E9A32C2D",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_StopExecutionState",
-      "guid": "77A6B6E840FD8DE78291A8972F6688F0",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_UpdateExecutionState",
-      "guid": "AF3B20FE4F34FF174AC12490BE67A149",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CE_StartExecutionState",
-      "guid": "F419762C4A3498E7687593815BBC65FE",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "BPI_OnExecutionCanceled",
-      "guid": "11B6FBB543BE44D78A3C9B86665ED794",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BPI_OnExecutionFinished",
-      "guid": "73154B1E44F01A481E726B923E1789A1",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BPI_OnExecutionStarted",
-      "guid": "80B17F1D4D8005F4ABAF69BF17400449",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CE_RefreshDamageState",
-      "guid": "7AEC34594B7F572D1BF4D1B4634ED5EB",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_UpdateHitReactType",
-      "guid": "E390C95741AF98B08AF2358AEBA48250",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ReceiveEndPlay",
-      "guid": "9376A7B44A0E7B54CBFCE48037D9D2A1",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CS_BuildContext",
-      "guid": "D9394BFB4A375F68FF81CEB9B32420D7",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_RandomDodger",
-      "guid": "CC83FC0B4C5F78458EAC3B82E29A227E",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_DoDamage",
-      "guid": "F0F1F0BE4B0A30903CBDC2A1D1366940",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CS_FacePlayer",
-      "guid": "A2AEF9E04340A31BEC6872A123E0566B",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ReceiveTick",
-      "guid": "65F20AE84D818C9D5474FBB5C21FF612",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "ReceiveBeginPlay",
-      "guid": "3646607B4631BF5FDC74A8812AAA1C11",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "CE_BloodDecals",
-      "guid": "4541E4D643F59F62D8B98B9FADCE533A",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ReceiveAnyDamage",
-      "guid": "35C1725F47C772FFCCE5B5BE168E4F38",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "OnCompleted_410EAF9347BD42F85791BAA473F054A5",
-      "guid": "4375BE8A455DA02BDEA77083DAF89C72",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnBlendOut_410EAF9347BD42F85791BAA473F054A5",
-      "guid": "D523635F498A9650E6C4BF9303D0EB80",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnInterrupted_410EAF9347BD42F85791BAA473F054A5",
-      "guid": "2F8D9E4446EDE8B2AA9E77993C7C810B",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnNotifyBegin_410EAF9347BD42F85791BAA473F054A5",
-      "guid": "54C378584C6F6E4DDA2F54B3E6814E04",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnNotifyEnd_410EAF9347BD42F85791BAA473F054A5",
-      "guid": "B9B1038940D4C6E0CA02F8BA0361A4FB",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Timeline_DeathDissolve__UpdateFunc",
-      "guid": "B67C104844E76D8005B810A5CF87EE82",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Timeline_DeathDissolve__FinishedFunc",
-      "guid": "E25A205445FD999FF7F441A537E3694E",
+      "name": "Timeline_SpawnDissolve__FinishedFunc",
+      "guid": "0206213F407DADE930D387BD1467B87F",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2432,7 +1982,7 @@
     },
     {
       "name": "Timeline_SpawnDissolve__UpdateFunc",
-      "guid": "25D2549B4B4B5DE07B58E7882FDE258B",
+      "guid": "FC04F2E64765C377D8C2E7AD2382A4DD",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2440,8 +1990,566 @@
       "data_connection_count": 0
     },
     {
-      "name": "Timeline_SpawnDissolve__FinishedFunc",
-      "guid": "7BBE0A0444892054A88BE8A8F5290E0F",
+      "name": "Timeline_DeathDissolve__FinishedFunc",
+      "guid": "00DD8E8744063155A61D22826B426F45",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Timeline_DeathDissolve__UpdateFunc",
+      "guid": "33FAAD7F427545B1B43092952E572518",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnNotifyEnd_410EAF9347BD42F85791BAA473F054A5",
+      "guid": "FDADB30346656D180808FEA6AF2C5597",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnNotifyBegin_410EAF9347BD42F85791BAA473F054A5",
+      "guid": "2D1B42394BC55A55E45C8096794ADCAC",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnInterrupted_410EAF9347BD42F85791BAA473F054A5",
+      "guid": "E224787F4A311ADD7751879D93DE4861",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnBlendOut_410EAF9347BD42F85791BAA473F054A5",
+      "guid": "6B70593A4630C47CC0FE0F86EB2A0A51",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnCompleted_410EAF9347BD42F85791BAA473F054A5",
+      "guid": "B4667E5E400837E15901A09B8D9C948A",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveAnyDamage",
+      "guid": "370BF0C94A5C7F85FE917B8008074DB6",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "CE_BloodDecals",
+      "guid": "183F598C403B6E61B133699E786EC118",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "49D626D64209335C2C809C969CA2860E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveTick",
+      "guid": "9EF89F0F4743082C88FE8A814CD82788",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CS_FacePlayer",
+      "guid": "B8791442460E0E4067E62E92A8F8774F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_DoDamage",
+      "guid": "66A3282F4FF7BE7B7BB3E292B5AC53B4",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_RandomDodger",
+      "guid": "5188277241B6D62310F778BB400DDEA6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CS_BuildContext",
+      "guid": "D39F5B344E301D9E4D62C2AFF86F4D14",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveEndPlay",
+      "guid": "E6F0DF704B7A8083EC80C5B9005573B7",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_UpdateHitReactType",
+      "guid": "806B4B214ED50030C67A89AA2518F9D4",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_RefreshDamageState",
+      "guid": "D728FA5D439FB33FEC853C9AB8F79289",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BPI_OnExecutionStarted",
+      "guid": "3FC1295D413BAC1297FF818303CE9DAB",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BPI_OnExecutionFinished",
+      "guid": "03C6E5CA46CBCC06A1BE97B947A65886",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BPI_OnExecutionCanceled",
+      "guid": "25925FE549998A1DA8D0B09C2E2F20C5",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartExecutionState",
+      "guid": "F88F3A1F4B6B0044305991B89C815163",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateExecutionState",
+      "guid": "11814400493619CB374497B85EEEE23F",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StopExecutionState",
+      "guid": "74171ABA44F1522DF9BE10951E8559F3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateExecutionDamage",
+      "guid": "787792C242917190E89F3EB2986EF09C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_ResolveExecutionEnding",
+      "guid": "BD8F5D6B4FEF5AB85DFE759A9A443F60",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_RequestCombatActivation",
+      "guid": "B1DAE98D4FF5E9D113560E97B9F9D26E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__BP_EnemyBase_AwarenessSphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+      "guid": "022507724414D08B02BBDDBC3FFFB984",
+      "node_count": 3,
+      "pin_count": 19,
+      "connection_count": 8,
+      "exec_connection_count": 2,
+      "data_connection_count": 6
+    },
+    {
+      "name": "BndEvt__BP_EnemyBase_AwarenessSphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature",
+      "guid": "9EAC63B542E616399F1996BCDBCE76B4",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "CE_OnTargetDetected",
+      "guid": "1AA41D4948964E0CB6233C841AF6F347",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_CompleteCombatEntry",
+      "guid": "D80621A2406609369B4A61873B9B0757",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_OnDisengageRequested",
+      "guid": "E1D29F854E2B1CE756002380B1446D57",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_OnWorldReturnCompleted",
+      "guid": "9DD8EA4F476232AD6B6544B583B8C7C6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_RequestCombatDisengage",
+      "guid": "844E4FD0427D9466C545C4B546FE37FD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartWakeUp",
+      "guid": "465709B34B3CEE86052692B0C05A2E71",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_FinishWakeUp",
+      "guid": "76B799FF4724EDFA899FB78E9B080351",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_BeginAttacker",
+      "guid": "04337EE347C85A7B50D39B81FB6FB3EA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_BeginObserver",
+      "guid": "0C866B214E975CC6C016BB836C5E9288",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_EndAttacker",
+      "guid": "DD9943FC425AE9979349E38AB2B6B256",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_EndObserver",
+      "guid": "E2873A3945AF3DFE110DBEB12CA0AEBB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_UpdateAttacker",
+      "guid": "426B7A5A407E8D92E0C536B261743D6F",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Combat_UpdateObserver",
+      "guid": "6C92FA7B49F9C5BD23E57EB80E467AC1",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Combat_OnAttackFinished",
+      "guid": "CE693BEF463792140303A38EBC2EC079",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_Interrupt",
+      "guid": "893508A643081471C0E1079EE3E7F488",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Combat_InitializeProfileFromStyle",
+      "guid": "80956376493B6503097CC486A65A0E7E",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StopRetreatState",
+      "guid": "A183A9B64D11E6BC416529AF4418B9FE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateRetreatState",
+      "guid": "219E66584C6B3385EF491F956D49AD37",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartRetreatState",
+      "guid": "86E8C33A454356898697CCA9567E8F9D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_FinishDamageState",
+      "guid": "6283F2AC405146823ADBCB83D08E6EFB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StopDamageState",
+      "guid": "9D6EF991492F2E2034949EBAE2597560",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateDamageState",
+      "guid": "D12BBA47482BB0363F1A8DB5D69F0C73",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartDamageState",
+      "guid": "0CBC28D440CBCF9B49692D932A3F2A45",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_FinishAwakeningState",
+      "guid": "9B2332D6458D086EE4ED21803D66E46E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_PrepareSpawnDissolveMaterials",
+      "guid": "453E0AFE458BB9B58B52CA93D76155B8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateAwakeningState",
+      "guid": "72EECC9C4BC0D91739C2469D0B9607B1",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StopAwakeningState",
+      "guid": "450851824CD852620BC8188163F07090",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartAwakeningState",
+      "guid": "A0FC792C420F1D9EEE1C5481427F7DCC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StartDissolveTimer",
+      "guid": "909C57EA49C190545C28998E4E1A7F07",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartDeathDissolve",
+      "guid": "C9A8158241ADE7E9A837C5BF90F2C4E4",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_PrepareDeathDissolveMaterials",
+      "guid": "B426FBA440E0251A4D1A5D9637749736",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_StopDeadState",
+      "guid": "681C4F1241AB673D019E3BA0A618BAE1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_UpdateDeadState",
+      "guid": "985976D84B068FC01AB7E7894F3441B3",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "CE_StartDeadState",
+      "guid": "589E3C854DE592A6899E7699313DB4FB",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2450,11 +2558,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 25,
+    "authored_graph_count": 29,
     "generated_graph_count": 73,
-    "authored_node_count": 856,
-    "authored_pin_count": 2742,
-    "authored_connection_count": 872,
+    "authored_node_count": 938,
+    "authored_pin_count": 3010,
+    "authored_connection_count": 968,
     "generated_node_count": 190,
     "generated_pin_count": 520
   },
@@ -2493,6 +2601,16 @@
       "name": "ComputeStrafeDirection",
       "kind": "function",
       "file": "graphs/ComputeStrafeDirection.json"
+    },
+    {
+      "name": "CreateEnemyHealthPresentation",
+      "kind": "function",
+      "file": "graphs/CreateEnemyHealthPresentation.json"
+    },
+    {
+      "name": "HideEnemyHealthPresentation",
+      "kind": "function",
+      "file": "graphs/HideEnemyHealthPresentation.json"
     },
     {
       "name": "InitCombatStyle",
@@ -2545,6 +2663,11 @@
       "file": "graphs/SpawnSoulReward.json"
     },
     {
+      "name": "SyncEnemyHealthPresentation",
+      "kind": "function",
+      "file": "graphs/SyncEnemyHealthPresentation.json"
+    },
+    {
       "name": "TryClaimAttackHit",
       "kind": "function",
       "file": "graphs/TryClaimAttackHit.json"
@@ -2563,6 +2686,11 @@
       "name": "UpdateDistanceToPlayer",
       "kind": "function",
       "file": "graphs/UpdateDistanceToPlayer.json"
+    },
+    {
+      "name": "UpdateEnemyHealthAfterHit",
+      "kind": "function",
+      "file": "graphs/UpdateEnemyHealthAfterHit.json"
     },
     {
       "name": "UpdateExecutionDebugVisual",

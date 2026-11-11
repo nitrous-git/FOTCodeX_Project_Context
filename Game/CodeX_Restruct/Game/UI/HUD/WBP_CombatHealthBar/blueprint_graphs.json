@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_CombatHealthBar",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "6F65AC504405708E83268591B07F7F13",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "BackPercent",
+      "guid": "5309EF944D6FBC380EF0E5AAA93BFF42",
+      "friendly_name": "Back Percent",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPresentationInitialized",
+      "guid": "AF91A606403B39444439A795808C13FF",
+      "friendly_name": "Presentation Initialized",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DamageWindow",
+      "guid": "40893A5A43E4E849ECA1E4A7CA24E45C",
+      "friendly_name": "Damage Window",
+      "category": "INVTEXT(\"Health Presentation\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FrontPercent",
+      "guid": "6B180E07408727F639FD72A280A3DC67",
+      "friendly_name": "Front Percent",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastCurrent",
+      "guid": "289D7CE44650D9999A25AB963D0360A0",
+      "friendly_name": "Last Current",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastMaximum",
+      "guid": "A3B28DE5422C86DB75C30E9731C50D56",
+      "friendly_name": "Last Maximum",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RecentDamage",
+      "guid": "12612B3F459A85B99EC412BB718918D1",
+      "friendly_name": "Recent Damage",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TrailDelay",
+      "guid": "8B13371B45F620F137850783816F20ED",
+      "friendly_name": "Trail Delay",
+      "category": "INVTEXT(\"Health Presentation\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TrailSpeed",
+      "guid": "6BAA952943D10A6664C7A1835744FA68",
+      "friendly_name": "Trail Speed",
+      "category": "INVTEXT(\"Health Presentation\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "ApplyHealthSnapshot",
+      "kind": "function",
+      "guid": "8056A92F4919E17F95E91492D3658559",
+      "node_count": 61,
+      "pin_count": 224,
+      "connection_count": 84,
+      "exec_connection_count": 23,
+      "data_connection_count": 61
+    },
+    {
+      "name": "RecordRecentDamage",
+      "kind": "function",
+      "guid": "0F728A654A0CEA5A43F44C80857CB856",
+      "node_count": 18,
+      "pin_count": 66,
+      "connection_count": 19,
+      "exec_connection_count": 6,
+      "data_connection_count": 13
+    },
+    {
+      "name": "StartHealthTrail",
+      "kind": "function",
+      "guid": "8200926B4297C15025829F8D26540803",
+      "node_count": 3,
+      "pin_count": 13,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "AdvanceHealthTrail",
+      "kind": "function",
+      "guid": "0CB2F988453467B9762636BD3A94464B",
+      "node_count": 17,
+      "pin_count": 55,
+      "connection_count": 20,
+      "exec_connection_count": 6,
+      "data_connection_count": 14
+    },
+    {
+      "name": "ResetHealthPresentation",
+      "kind": "function",
+      "guid": "16FD66FA43EF762A48FA98AAA39AC439",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 5,
+      "exec_connection_count": 4,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ClearRecentDamage",
+      "kind": "function",
+      "guid": "ECA7177B44C18EFFF9B9FC964CC70CC4",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "StopHealthTrail",
+      "kind": "function",
+      "guid": "1A6028D04A5070EF5DF970BDAC7F8932",
+      "node_count": 4,
+      "pin_count": 12,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "ConfigureBossHealthHeader",
+      "kind": "function",
+      "guid": "FD43E7BD43C7F634875A70BED92899A2",
+      "node_count": 9,
+      "pin_count": 26,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "DAD021FB49B9E520D77DDCA3B5AB5997",
+      "node_count": 5,
+      "pin_count": 14,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Destruct",
+      "guid": "AAB5A9EB463456893890E491AE8CC938",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 9,
+    "generated_graph_count": 1,
+    "authored_node_count": 129,
+    "authored_pin_count": 446,
+    "authored_connection_count": 149,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "AdvanceHealthTrail",
+      "kind": "function",
+      "file": "graphs/AdvanceHealthTrail.json"
+    },
+    {
+      "name": "ApplyHealthSnapshot",
+      "kind": "function",
+      "file": "graphs/ApplyHealthSnapshot.json"
+    },
+    {
+      "name": "ClearRecentDamage",
+      "kind": "function",
+      "file": "graphs/ClearRecentDamage.json"
+    },
+    {
+      "name": "ConfigureBossHealthHeader",
+      "kind": "function",
+      "file": "graphs/ConfigureBossHealthHeader.json"
+    },
+    {
+      "name": "RecordRecentDamage",
+      "kind": "function",
+      "file": "graphs/RecordRecentDamage.json"
+    },
+    {
+      "name": "ResetHealthPresentation",
+      "kind": "function",
+      "file": "graphs/ResetHealthPresentation.json"
+    },
+    {
+      "name": "StartHealthTrail",
+      "kind": "function",
+      "file": "graphs/StartHealthTrail.json"
+    },
+    {
+      "name": "StopHealthTrail",
+      "kind": "function",
+      "file": "graphs/StopHealthTrail.json"
+    }
+  ]
+}

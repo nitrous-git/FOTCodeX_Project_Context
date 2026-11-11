@@ -8,6 +8,23 @@
   },
   "variables": [
     {
+      "name": "ActionPlacementAttempts",
+      "guid": "33F850754F27080B54F6368EA2CB5562",
+      "friendly_name": "Action Placement Attempts",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bHasInventorySelection",
       "guid": "CE9AFC0E4B4AE2E863233F9F456B24CE",
       "friendly_name": "Has Inventory Selection",
@@ -331,6 +348,23 @@
       }
     },
     {
+      "name": "SelectedInventoryCell",
+      "guid": "29FF53A64BB0BDC75705F7A7A19E1A65",
+      "friendly_name": "Selected Inventory Cell",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventorySlot.WBP_InventorySlot_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "SelectedInventoryItemID",
       "guid": "402F4EDD43CF9EA755F45A89BC85113B",
       "friendly_name": "Selected Inventory Item ID",
@@ -407,11 +441,11 @@
       "name": "RefreshItemSelection",
       "kind": "function",
       "guid": "475C39EE4A2F258AB6C6DCA11980D7D1",
-      "node_count": 34,
-      "pin_count": 118,
-      "connection_count": 43,
-      "exec_connection_count": 13,
-      "data_connection_count": 30
+      "node_count": 36,
+      "pin_count": 128,
+      "connection_count": 46,
+      "exec_connection_count": 15,
+      "data_connection_count": 31
     },
     {
       "name": "RefreshInventoryInfoPresentation",
@@ -457,20 +491,20 @@
       "name": "SelectInventoryEntry",
       "kind": "function",
       "guid": "FD6EE02F4356D496E9F9B698649CAC08",
-      "node_count": 85,
-      "pin_count": 326,
-      "connection_count": 122,
-      "exec_connection_count": 26,
-      "data_connection_count": 96
+      "node_count": 82,
+      "pin_count": 312,
+      "connection_count": 111,
+      "exec_connection_count": 23,
+      "data_connection_count": 88
     },
     {
       "name": "SelectInventoryCategory",
       "kind": "function",
       "guid": "045031BC436C12DEDF6C5787EBE2366E",
-      "node_count": 12,
-      "pin_count": 47,
-      "connection_count": 16,
-      "exec_connection_count": 6,
+      "node_count": 13,
+      "pin_count": 50,
+      "connection_count": 17,
+      "exec_connection_count": 7,
       "data_connection_count": 10
     },
     {
@@ -519,9 +553,9 @@
       "guid": "220DA4CC4DB758C2DB6904BFEFA1DE8C",
       "node_count": 56,
       "pin_count": 161,
-      "connection_count": 66,
+      "connection_count": 65,
       "exec_connection_count": 24,
-      "data_connection_count": 42
+      "data_connection_count": 41
     },
     {
       "name": "RefreshCharacterStatsSidebar",
@@ -577,11 +611,11 @@
       "name": "HandleActiveInventoryActionKey",
       "kind": "function",
       "guid": "0158B73C4994B5DEE5524B87E0FC2922",
-      "node_count": 15,
-      "pin_count": 40,
-      "connection_count": 16,
-      "exec_connection_count": 6,
-      "data_connection_count": 10
+      "node_count": 16,
+      "pin_count": 45,
+      "connection_count": 19,
+      "exec_connection_count": 7,
+      "data_connection_count": 12
     },
     {
       "name": "FocusSelectedInventoryCell",
@@ -592,57 +626,72 @@
       "connection_count": 25,
       "exec_connection_count": 6,
       "data_connection_count": 19
+    },
+    {
+      "name": "CloseInventoryAction",
+      "kind": "function",
+      "guid": "F6D87BF1412C37B3934B148247AC417E",
+      "node_count": 7,
+      "pin_count": 18,
+      "connection_count": 7,
+      "exec_connection_count": 3,
+      "data_connection_count": 4
+    },
+    {
+      "name": "PositionInventoryAction",
+      "kind": "function",
+      "guid": "561472AC4FCE238237AB43B66D21EBF4",
+      "node_count": 36,
+      "pin_count": 120,
+      "connection_count": 48,
+      "exec_connection_count": 2,
+      "data_connection_count": 46
+    },
+    {
+      "name": "OpenSelectedInventoryAction",
+      "kind": "function",
+      "guid": "AD23C73543551A95022BD39D70533412",
+      "node_count": 42,
+      "pin_count": 152,
+      "connection_count": 53,
+      "exec_connection_count": 15,
+      "data_connection_count": 38
+    },
+    {
+      "name": "RequestSelectedInventoryAction",
+      "kind": "function",
+      "guid": "F33DB9DE4829DF9B895742833E646046",
+      "node_count": 17,
+      "pin_count": 61,
+      "connection_count": 18,
+      "exec_connection_count": 8,
+      "data_connection_count": 10
+    },
+    {
+      "name": "HandleInventoryContextShortcut",
+      "kind": "function",
+      "guid": "EBE57B7446044822B3E66F9651E65BC5",
+      "node_count": 17,
+      "pin_count": 51,
+      "connection_count": 19,
+      "exec_connection_count": 6,
+      "data_connection_count": 13
+    },
+    {
+      "name": "IsSelectedInventoryCellInView",
+      "kind": "function",
+      "guid": "1C7BE86E4848978A9B3C74AAEB3CC8E7",
+      "node_count": 36,
+      "pin_count": 121,
+      "connection_count": 44,
+      "exec_connection_count": 1,
+      "data_connection_count": 43
     }
   ],
   "generated_graphs": [
     {
-      "name": "BndEvt__WBP_Inventory_ActionPanel_K2Node_ComponentBoundEvent_4_OnActionClosed__DelegateSignature",
-      "guid": "8197A5C2411529F34843A080093980BE",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Destruct",
-      "guid": "45C15196419851B86FAC4F8F0668A34E",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
-      "guid": "1E91A9924BFD48FA65FFECA704AD8479",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
-      "guid": "9FE51C8341996F3671DA6E9B85A8B667",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
-      "guid": "B9E7F22A43FF835CDF0721B993AE36C3",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
-      "guid": "3524967540CC6B96172A73AF2F634DE2",
+      "name": "PreConstruct",
+      "guid": "2A31065D4FE1FD93C324BCB5E8AE09A3",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -651,7 +700,7 @@
     },
     {
       "name": "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
-      "guid": "CFC08EA241E3D49A0E300E8AAD8B6ABC",
+      "guid": "E79B01B44C45FE277B1956863BC8B119",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -659,21 +708,66 @@
       "data_connection_count": 1
     },
     {
-      "name": "PreConstruct",
-      "guid": "4A355818426FD1848BFCC7884124F805",
+      "name": "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+      "guid": "C50DC1094BA655AD53861EA8E7886E1C",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
       "exec_connection_count": 2,
       "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
+      "guid": "C89199674EF2776BFDD468ACFD1604B6",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
+      "guid": "7DCDF98B45FEEDBB3983C89BB92A19AC",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
+      "guid": "2D9C16CE4D349727EBC528974FB82B83",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Destruct",
+      "guid": "C3D01B50412F4B9C4E8873AD0765BE26",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_Inventory_ActionPanel_K2Node_ComponentBoundEvent_4_OnActionClosed__DelegateSignature",
+      "guid": "E8EF6DAB40004DF340B6C9A73FE6A5B1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     }
   ],
   "stats": {
-    "authored_graph_count": 21,
+    "authored_graph_count": 27,
     "generated_graph_count": 8,
-    "authored_node_count": 731,
-    "authored_pin_count": 2572,
-    "authored_connection_count": 900,
+    "authored_node_count": 887,
+    "authored_pin_count": 3099,
+    "authored_connection_count": 1084,
     "generated_node_count": 22,
     "generated_pin_count": 64
   },
@@ -682,6 +776,11 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CloseInventoryAction",
+      "kind": "function",
+      "file": "graphs/CloseInventoryAction.json"
     },
     {
       "name": "FocusSelectedInventoryCell",
@@ -704,6 +803,11 @@
       "file": "graphs/HandleInventoryActionClosed.json"
     },
     {
+      "name": "HandleInventoryContextShortcut",
+      "kind": "function",
+      "file": "graphs/HandleInventoryContextShortcut.json"
+    },
+    {
       "name": "InitializeCharacterStatsSidebar",
       "kind": "function",
       "file": "graphs/InitializeCharacterStatsSidebar.json"
@@ -714,9 +818,24 @@
       "file": "graphs/InitializeGameplay.json"
     },
     {
+      "name": "IsSelectedInventoryCellInView",
+      "kind": "function",
+      "file": "graphs/IsSelectedInventoryCellInView.json"
+    },
+    {
       "name": "OnPreviewKeyDown",
       "kind": "function",
       "file": "graphs/OnPreviewKeyDown.json"
+    },
+    {
+      "name": "OpenSelectedInventoryAction",
+      "kind": "function",
+      "file": "graphs/OpenSelectedInventoryAction.json"
+    },
+    {
+      "name": "PositionInventoryAction",
+      "kind": "function",
+      "file": "graphs/PositionInventoryAction.json"
     },
     {
       "name": "RebuildInventoryGrid",
@@ -752,6 +871,11 @@
       "name": "RefreshSelectedItemInfo",
       "kind": "function",
       "file": "graphs/RefreshSelectedItemInfo.json"
+    },
+    {
+      "name": "RequestSelectedInventoryAction",
+      "kind": "function",
+      "file": "graphs/RequestSelectedInventoryAction.json"
     },
     {
       "name": "SelectInventoryCategory",

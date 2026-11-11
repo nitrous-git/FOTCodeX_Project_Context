@@ -42,7 +42,7 @@
       "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
     ],
-    "non_architecture_dependency_count": 24,
+    "non_architecture_dependency_count": 25,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -57,6 +57,23 @@
     "interfaces": [],
     "components": [],
     "variables": [
+      {
+        "name": "ActionPlacementAttempts",
+        "guid": "33F850754F27080B54F6368EA2CB5562",
+        "friendly_name": "Action Placement Attempts",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "bHasInventorySelection",
         "guid": "CE9AFC0E4B4AE2E863233F9F456B24CE",
@@ -381,6 +398,23 @@
         }
       },
       {
+        "name": "SelectedInventoryCell",
+        "guid": "29FF53A64BB0BDC75705F7A7A19E1A65",
+        "friendly_name": "Selected Inventory Cell",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventorySlot.WBP_InventorySlot_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "SelectedInventoryItemID",
         "guid": "402F4EDD43CF9EA755F45A89BC85113B",
         "friendly_name": "Selected Inventory Item ID",
@@ -456,19 +490,25 @@
         "InitializeCharacterStatsSidebar",
         "HandleInventoryActionClosed",
         "HandleActiveInventoryActionKey",
-        "FocusSelectedInventoryCell"
+        "FocusSelectedInventoryCell",
+        "CloseInventoryAction",
+        "PositionInventoryAction",
+        "OpenSelectedInventoryAction",
+        "RequestSelectedInventoryAction",
+        "HandleInventoryContextShortcut",
+        "IsSelectedInventoryCellInView"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "BndEvt__WBP_Inventory_ActionPanel_K2Node_ComponentBoundEvent_4_OnActionClosed__DelegateSignature",
-        "Destruct",
-        "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
-        "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
-        "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
-        "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+        "PreConstruct",
         "BndEvt__WBP_Inventory_AllTab_K2Node_ComponentBoundEvent_0_OnCategoryRequested__DelegateSignature",
-        "PreConstruct"
+        "BndEvt__WBP_Inventory_WeaponsTab_K2Node_ComponentBoundEvent_1_OnCategoryRequested__DelegateSignature",
+        "BndEvt__WBP_Inventory_ConsumablesTab_K2Node_ComponentBoundEvent_2_OnCategoryRequested__DelegateSignature",
+        "BndEvt__WBP_Inventory_EquipmentTab_K2Node_ComponentBoundEvent_3_OnCategoryRequested__DelegateSignature",
+        "BndEvt__WBP_Inventory_TalismanTab_K2Node_ComponentBoundEvent_29_OnCategoryRequested__DelegateSignature",
+        "Destruct",
+        "BndEvt__WBP_Inventory_ActionPanel_K2Node_ComponentBoundEvent_4_OnActionClosed__DelegateSignature"
       ]
     },
     "extraction_status": {

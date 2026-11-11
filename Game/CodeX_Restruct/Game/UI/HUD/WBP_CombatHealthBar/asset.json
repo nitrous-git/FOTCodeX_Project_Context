@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_CombatHealthBar",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/HUD",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar",
+    "relative_package": "CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [],
+    "referencers": [
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossOverheadUI",
+      "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI",
+      "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase"
+    ],
+    "non_architecture_dependency_count": 6,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar.WBP_CombatHealthBar_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "BackPercent",
+        "guid": "5309EF944D6FBC380EF0E5AAA93BFF42",
+        "friendly_name": "Back Percent",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bPresentationInitialized",
+        "guid": "AF91A606403B39444439A795808C13FF",
+        "friendly_name": "Presentation Initialized",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DamageWindow",
+        "guid": "40893A5A43E4E849ECA1E4A7CA24E45C",
+        "friendly_name": "Damage Window",
+        "category": "INVTEXT(\"Health Presentation\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FrontPercent",
+        "guid": "6B180E07408727F639FD72A280A3DC67",
+        "friendly_name": "Front Percent",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastCurrent",
+        "guid": "289D7CE44650D9999A25AB963D0360A0",
+        "friendly_name": "Last Current",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "LastMaximum",
+        "guid": "A3B28DE5422C86DB75C30E9731C50D56",
+        "friendly_name": "Last Maximum",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RecentDamage",
+        "guid": "12612B3F459A85B99EC412BB718918D1",
+        "friendly_name": "Recent Damage",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TrailDelay",
+        "guid": "8B13371B45F620F137850783816F20ED",
+        "friendly_name": "Trail Delay",
+        "category": "INVTEXT(\"Health Presentation\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TrailSpeed",
+        "guid": "6BAA952943D10A6664C7A1835744FA68",
+        "friendly_name": "Trail Speed",
+        "category": "INVTEXT(\"Health Presentation\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "ApplyHealthSnapshot",
+        "RecordRecentDamage",
+        "StartHealthTrail",
+        "AdvanceHealthTrail",
+        "ResetHealthPresentation",
+        "ClearRecentDamage",
+        "StopHealthTrail",
+        "ConfigureBossHealthHeader"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "Destruct"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 14
+  }
+}

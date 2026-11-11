@@ -6,10 +6,10 @@
     "guid": "0D9FAFD24E1F5A5F96772A83C62431BD"
   },
   "stats": {
-    "node_count": 11,
-    "pin_count": 44,
-    "connection_count": 14,
-    "exec_connection_count": 7,
+    "node_count": 13,
+    "pin_count": 48,
+    "connection_count": 16,
+    "exec_connection_count": 9,
     "data_connection_count": 7
   },
   "nodes": [
@@ -69,8 +69,8 @@
       "guid": "B9C59F2B4F8579ED7A92B2A2C9551EAB",
       "title": "K2Node_Self",
       "position": {
-        "x": 200,
-        "y": 260
+        "x": 2720,
+        "y": 800
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -113,8 +113,8 @@
       "guid": "48B8977E4028115B9A359783094B798A",
       "title": "Get GameplayHUDRef",
       "position": {
-        "x": 430,
-        "y": 260
+        "x": 448,
+        "y": 160
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -189,8 +189,8 @@
       "guid": "977DCD3C47C0CFAA796EC0B42D8AB762",
       "title": "IsValid",
       "position": {
-        "x": 660,
-        "y": 260
+        "x": 608,
+        "y": 64
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -399,8 +399,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_IfThenElse_2",
-              "pin_id": "20B7E39D4D6D03BC298ABAA8378A6201"
+              "node": "K2Node_Knot_0",
+              "pin_id": "AADFBFF14ABE86B18B747EA2253B41F5"
             }
           ]
         }
@@ -412,8 +412,8 @@
       "guid": "30F69DF74909B46BE4CC10AD789FE0E0",
       "title": "FadeScreenToBlack",
       "position": {
-        "x": 1120,
-        "y": 0
+        "x": 1312,
+        "y": -16
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -538,8 +538,8 @@
       "guid": "405AE75E49E63DD151E3408652E8D909",
       "title": "Get PlayerCameraManager",
       "position": {
-        "x": 1350,
-        "y": 260
+        "x": 1200,
+        "y": 528
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -613,8 +613,8 @@
       "guid": "3401184945C45A92D2EC8BB1FB16EE4E",
       "title": "Branch",
       "position": {
-        "x": 1580,
-        "y": 0
+        "x": 1664,
+        "y": 352
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -648,8 +648,8 @@
               "pin_id": "134E5B3D43593B7DDE78BBA07B7E20FF"
             },
             {
-              "node": "K2Node_IfThenElse_1",
-              "pin_id": "07E330FC41286C986A97718360CA81C3"
+              "node": "K2Node_Knot_0",
+              "pin_id": "F8CD8C864F7D3FFA98D036A1BDBE23B7"
             }
           ]
         },
@@ -729,8 +729,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_8",
-              "pin_id": "4928C02448B8DBFDEB2BC3BA3BB55F13"
+              "node": "K2Node_Knot_1",
+              "pin_id": "0A4A31C549ACA04EE6513CA8EDC15117"
             }
           ]
         }
@@ -742,8 +742,8 @@
       "guid": "225E7AFE468B8B0445966AB023A2665D",
       "title": "IsValid",
       "position": {
-        "x": 1810,
-        "y": 260
+        "x": 1408,
+        "y": 432
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -840,8 +840,8 @@
       "guid": "B3D7455440B4A8FCA6981AB1D56F33DD",
       "title": "StartCameraFade",
       "position": {
-        "x": 2040,
-        "y": 0
+        "x": 2192,
+        "y": 336
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1075,8 +1075,8 @@
       "guid": "503592084CD6276E24122598BAC5E77D",
       "title": "K2_SetTimer",
       "position": {
-        "x": 2270,
-        "y": 0
+        "x": 2864,
+        "y": 720
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1115,8 +1115,8 @@
               "pin_id": "16E0F0E44594F629CAD28BB68DE2E4EA"
             },
             {
-              "node": "K2Node_IfThenElse_2",
-              "pin_id": "DEAF3E45472BE35CDEB46685159D6A67"
+              "node": "K2Node_Knot_1",
+              "pin_id": "92089BBD4D1097757D2C15A130F68227"
             }
           ]
         },
@@ -1346,6 +1346,148 @@
           "links": []
         }
       ]
+    },
+    {
+      "name": "K2Node_Knot_1",
+      "class": "/Script/BlueprintGraph.K2Node_Knot",
+      "guid": "A856E30F496AB5C1E94A9696743BEBA1",
+      "title": "Reroute",
+      "position": {
+        "x": 2080,
+        "y": 752
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {},
+      "properties": {},
+      "pins": [
+        {
+          "id": "0A4A31C549ACA04EE6513CA8EDC15117",
+          "name": "InputPin",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_2",
+              "pin_id": "DEAF3E45472BE35CDEB46685159D6A67"
+            }
+          ]
+        },
+        {
+          "id": "92089BBD4D1097757D2C15A130F68227",
+          "name": "OutputPin",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "4928C02448B8DBFDEB2BC3BA3BB55F13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_Knot_0",
+      "class": "/Script/BlueprintGraph.K2Node_Knot",
+      "guid": "3182FBA94C90C37C8D6E3B9AFD6A3D11",
+      "title": "Reroute",
+      "position": {
+        "x": 1200,
+        "y": 384
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {},
+      "properties": {},
+      "pins": [
+        {
+          "id": "AADFBFF14ABE86B18B747EA2253B41F5",
+          "name": "InputPin",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "07E330FC41286C986A97718360CA81C3"
+            }
+          ]
+        },
+        {
+          "id": "F8CD8C864F7D3FFA98D036A1BDBE23B7",
+          "name": "OutputPin",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_2",
+              "pin_id": "20B7E39D4D6D03BC298ABAA8378A6201"
+            }
+          ]
+        }
+      ]
     }
   ],
   "connections": [
@@ -1422,9 +1564,9 @@
         "pin_name": "else"
       },
       "to": {
-        "node": "K2Node_IfThenElse_2",
-        "pin_id": "20B7E39D4D6D03BC298ABAA8378A6201",
-        "pin_name": "execute"
+        "node": "K2Node_Knot_0",
+        "pin_id": "AADFBFF14ABE86B18B747EA2253B41F5",
+        "pin_name": "InputPin"
       }
     },
     {
@@ -1448,9 +1590,9 @@
         "pin_name": "else"
       },
       "to": {
-        "node": "K2Node_CallFunction_8",
-        "pin_id": "4928C02448B8DBFDEB2BC3BA3BB55F13",
-        "pin_name": "execute"
+        "node": "K2Node_Knot_1",
+        "pin_id": "0A4A31C549ACA04EE6513CA8EDC15117",
+        "pin_name": "InputPin"
       }
     },
     {
@@ -1463,6 +1605,32 @@
       "to": {
         "node": "K2Node_CallFunction_7",
         "pin_id": "50D8F6FB47811AE8847BDFADC9EFC51E",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_Knot_0",
+        "pin_id": "F8CD8C864F7D3FFA98D036A1BDBE23B7",
+        "pin_name": "OutputPin"
+      },
+      "to": {
+        "node": "K2Node_IfThenElse_2",
+        "pin_id": "20B7E39D4D6D03BC298ABAA8378A6201",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_Knot_1",
+        "pin_id": "92089BBD4D1097757D2C15A130F68227",
+        "pin_name": "OutputPin"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "4928C02448B8DBFDEB2BC3BA3BB55F13",
         "pin_name": "execute"
       }
     },
