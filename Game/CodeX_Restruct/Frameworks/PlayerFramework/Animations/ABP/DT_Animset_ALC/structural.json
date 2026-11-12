@@ -14,7 +14,7 @@
       "class": "UserDefinedStruct",
       "path": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Structures/Struct_Animset.Struct_Animset"
     },
-    "row_count": 7,
+    "row_count": 9,
     "row_names": [
       "Unarmed",
       "Sparrow",
@@ -22,7 +22,9 @@
       "SNS",
       "SNS_Guard",
       "Twinblades",
-      "Twinblades_Guard"
+      "Twinblades_Guard",
+      "Katana",
+      "Katana_Guard"
     ],
     "column_names": [
       "General_51_907CE3C64F3695E76CBE6398BF903712",
@@ -7996,12 +7998,12 @@
                   }
                 },
                 "GlobalPose": {
-                  "Sequence": "None",
+                  "Sequence": "/Script/Engine.AnimSequence'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/CombatStyle/Twinblades/Defense/Twinblades_DefenseRTG_Loop.Twinblades_DefenseRTG_Loop'",
                   "StartPostion": 0,
-                  "OverrideWeight": 0,
+                  "OverrideWeight": 1,
                   "InterpSpeed": 10,
                   "BlendTime": 0.25,
-                  "BlendName": "UpperBodyMask"
+                  "BlendName": "RightArmMask"
                 },
                 "IdlePose": {
                   "Sequence": "None",
@@ -8021,17 +8023,17 @@
                 },
                 "MovePose": {
                   "Start": {
-                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/TwinBladesBundle/TwinbladesAnimsetBase/InPlace/Twinblades_Idle.Twinblades_Idle'",
+                    "Sequence": "None",
                     "StartPostion": 0,
-                    "OverrideWeight": 1,
+                    "OverrideWeight": 0,
                     "InterpSpeed": 10,
                     "BlendTime": 0.25,
                     "BlendName": "UpperBodyMask"
                   },
                   "Stop": {
-                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/TwinBladesBundle/TwinbladesAnimsetBase/InPlace/Twinblades_Idle.Twinblades_Idle'",
+                    "Sequence": "None",
                     "StartPostion": 0,
-                    "OverrideWeight": 1,
+                    "OverrideWeight": 0,
                     "InterpSpeed": 10,
                     "BlendTime": 0.25,
                     "BlendName": "UpperBodyMask"
@@ -8108,6 +8110,1374 @@
                     "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/TwinBladesBundle/TwinbladesAnimsetBase/InPlace/Twinblades_Idle.Twinblades_Idle'",
                     "StartPostion": 0,
                     "OverrideWeight": 1,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Stop": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Cycle": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  }
+                },
+                "ExtendedPose": {
+                  "DisableMoveAnim": false,
+                  "ExtendedPoseName": "None",
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "None"
+                },
+                "AimOffset": {
+                  "Enable": false,
+                  "AimOffset": {
+                    "AimOffset": "None",
+                    "YawRange": {
+                      "X": -180,
+                      "Y": 180
+                    },
+                    "PitchRange": {
+                      "X": -90,
+                      "Y": 90
+                    },
+                    "Offset": {
+                      "X": 0,
+                      "Y": 0
+                    },
+                    "InterpSpeed": 0,
+                    "BlendName": "None",
+                    "BlendWeight": 0
+                  }
+                },
+                "Config": {
+                  "Enable": false,
+                  "Config": {
+                    "PlayRateClampStarts": {
+                      "X": 0.6,
+                      "Y": 5
+                    },
+                    "PlayRateClampPivots": {
+                      "X": 0.6,
+                      "Y": 5
+                    },
+                    "PlayRateClampCycle": {
+                      "X": 0.8,
+                      "Y": 1.2
+                    },
+                    "HandIK": {
+                      "DisableLHandIK": true,
+                      "EffectorLocation_HandL": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                      },
+                      "JointTargetLocation_HandL": {
+                        "X": 0,
+                        "Y": -50,
+                        "Z": 0
+                      },
+                      "JointTargetBone_HandL": "LowerArm",
+                      "DisableRHandIK": true,
+                      "EffectorLocation_HandR": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                      },
+                      "JointTargetLocation_HandR": {
+                        "X": 0,
+                        "Y": 50,
+                        "Z": 0
+                      },
+                      "JointTargetBone_HandR": "LowerArm",
+                      "HandFKWeight": 1
+                    },
+                    "DisableLegIK": false,
+                    "DisableLegIKWhileMoving": false,
+                    "Root_Z_Offset": 0,
+                    "MaxWalkSpeed": 500,
+                    "MaxAcceleration": 1024,
+                    "BrakingDecelerationWalking": 1024,
+                    "MaxFlySpeed": 500,
+                    "MaxSwimSpeed": 500,
+                    "JumpRecoveryAdditiveAlpha": 0.65,
+                    "RotationRate": {
+                      "Pitch": 0,
+                      "Yaw": 360,
+                      "Roll": 0
+                    },
+                    "RotateRootYawOffsetAngleClamp": {
+                      "X": -120,
+                      "Y": 100
+                    },
+                    "DisableIdleBreaks": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "Name": "Katana",
+        "General": {
+          "Crouch_Idle_Entry": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Crouch_Entry.MM_Unarmed_Crouch_Entry'",
+          "Crouch_Idle_Exit": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Crouch_Exit.MM_Unarmed_Crouch_Exit'",
+          "Leans": "/Script/Engine.BlendSpace1D'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Rifle/BS_MM_Rifle_Jog_Leans.BS_MM_Rifle_Jog_Leans'",
+          "Sprint": {
+            "Cycle": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_F_Sprint_Root.GhostSamurai_APose_Strafe_Run_F_Sprint_Root'",
+            "Start": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_F_Start_Root.GhostSamurai_APose_Strafe_Run_F_Start_Root'",
+            "Stop": "None",
+            "Config": {
+              "PlayRateClampStarts": {
+                "X": 0.6,
+                "Y": 1.2
+              },
+              "PlayRateClampPivots": {
+                "X": 0.6,
+                "Y": 1.2
+              },
+              "PlayRateClampCycle": {
+                "X": 0.6,
+                "Y": 1.2
+              },
+              "HandIK": {
+                "DisableLHandIK": true,
+                "EffectorLocation_HandL": {
+                  "X": 0,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "JointTargetLocation_HandL": {
+                  "X": 0,
+                  "Y": -50,
+                  "Z": 0
+                },
+                "JointTargetBone_HandL": "LowerArm",
+                "DisableRHandIK": true,
+                "EffectorLocation_HandR": {
+                  "X": 0,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "JointTargetLocation_HandR": {
+                  "X": 0,
+                  "Y": 50,
+                  "Z": 0
+                },
+                "JointTargetBone_HandR": "LowerArm",
+                "HandFKWeight": 1
+              },
+              "DisableLegIK": false,
+              "DisableLegIKWhileMoving": false,
+              "Root_Z_Offset": 0,
+              "MaxWalkSpeed": 700,
+              "MaxAcceleration": 1024,
+              "BrakingDecelerationWalking": 1024,
+              "MaxFlySpeed": 500,
+              "MaxSwimSpeed": 500,
+              "JumpRecoveryAdditiveAlpha": 0.65,
+              "RotationRate": {
+                "Pitch": 0,
+                "Yaw": 360,
+                "Roll": 0
+              },
+              "RotateRootYawOffsetAngleClamp": {
+                "X": -120,
+                "Y": 100
+              },
+              "DisableIdleBreaks": false
+            }
+          }
+        },
+        "Movement": {
+          "Jog": {
+            "Idle": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Idle/SSH_Idle_Seq.SSH_Idle_Seq'",
+            "Idle_Breaks": [],
+            "AimOffset": {
+              "AimOffset": "/Script/Engine.AimOffsetBlendSpace'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Greystone/AO/AO_Greystone_Idle.AO_Greystone_Idle'",
+              "YawRange": {
+                "X": -180,
+                "Y": 180
+              },
+              "PitchRange": {
+                "X": -90,
+                "Y": 90
+              },
+              "Offset": {
+                "X": 0,
+                "Y": 0
+              },
+              "InterpSpeed": 0,
+              "BlendName": "None",
+              "BlendWeight": 0
+            },
+            "TurnInPlace": {
+              "Left_90": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_TurnL90_Root.GhostSamurai_APose_TurnL90_Root'",
+              "Right_90": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_TurnR90_Root.GhostSamurai_APose_TurnR90_Root'",
+              "PlayRate": 1.5
+            },
+            "Start_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_F_Start_Root.GhostSamurai_APose_Strafe_Run_F_Start_Root'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Idle_to_Jog/SSH_Idle_to_Jog_B_Seq.SSH_Idle_to_Jog_B_Seq'",
+              "Left": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Idle_to_Jog/SSH_Idle_to_Jog_BL_Seq.SSH_Idle_to_Jog_BL_Seq'",
+              "Right": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Idle_to_Jog/SSH_Idle_to_Jog_BR_Seq.SSH_Idle_to_Jog_BR_Seq'"
+            },
+            "Stop_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_F_End_Root.GhostSamurai_APose_Strafe_Run_F_End_Root'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Brake/SSH_Brake_B_Seq.SSH_Brake_B_Seq'",
+              "Left": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Brake/SSH_Brake_BL_Seq.SSH_Brake_BL_Seq'",
+              "Right": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Brake/SSH_Brake_BR_Seq.SSH_Brake_BR_Seq'"
+            },
+            "Pivot_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Fwd_Pivot.MM_Unarmed_Jog_Fwd_Pivot'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Bwd_Pivot.MM_Unarmed_Jog_Bwd_Pivot'",
+              "Left": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Left_Pivot.MM_Unarmed_Jog_Left_Pivot'",
+              "Right": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Pivot_Right.MM_Unarmed_Jog_Pivot_Right'"
+            },
+            "Cycle_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_F_Loop_Root.GhostSamurai_APose_Strafe_Run_F_Loop_Root'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_B_Root.GhostSamurai_APose_Strafe_Run_B_Root'",
+              "Left": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_BL_Root.GhostSamurai_APose_Strafe_Run_BL_Root'",
+              "Right": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_BR_Root.GhostSamurai_APose_Strafe_Run_BR_Root'"
+            },
+            "Start_ForwardFacing": {
+              "Start_Forward": "None",
+              "Start_Forward_L90": "None",
+              "Start_Forward_R90": "None",
+              "Start_Forward_L180": "None",
+              "Start_Forward_R180": "None"
+            },
+            "Jump": {
+              "Jump_Start": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Start.MM_Unarmed_Jump_Start'",
+              "Jump_StartLoop": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Start_Loop.MM_Unarmed_Jump_Start_Loop'",
+              "Jump_Apex": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Apex.MM_Unarmed_Jump_Apex'",
+              "Jump_FallLoop": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Fall_Loop.MM_Unarmed_Jump_Fall_Loop'",
+              "Jump_FallLand": "None",
+              "Jump_RecoveryAdditive": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Jump_End_Root.GhostSamurai_APose_Jump_End_Root'"
+            },
+            "Config": {
+              "PlayRateClampStarts": {
+                "X": 0.6,
+                "Y": 1.2
+              },
+              "PlayRateClampPivots": {
+                "X": 0.6,
+                "Y": 5
+              },
+              "PlayRateClampCycle": {
+                "X": 0.8,
+                "Y": 1.2
+              },
+              "HandIK": {
+                "DisableLHandIK": true,
+                "EffectorLocation_HandL": {
+                  "X": 0,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "JointTargetLocation_HandL": {
+                  "X": 0,
+                  "Y": -50,
+                  "Z": 0
+                },
+                "JointTargetBone_HandL": "LowerArm",
+                "DisableRHandIK": true,
+                "EffectorLocation_HandR": {
+                  "X": 0,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "JointTargetLocation_HandR": {
+                  "X": 0,
+                  "Y": 50,
+                  "Z": 0
+                },
+                "JointTargetBone_HandR": "LowerArm",
+                "HandFKWeight": 1
+              },
+              "DisableLegIK": false,
+              "DisableLegIKWhileMoving": false,
+              "Root_Z_Offset": 0,
+              "MaxWalkSpeed": 400,
+              "MaxAcceleration": 1024,
+              "BrakingDecelerationWalking": 1024,
+              "MaxFlySpeed": 500,
+              "MaxSwimSpeed": 500,
+              "JumpRecoveryAdditiveAlpha": 0.65,
+              "RotationRate": {
+                "Pitch": 0,
+                "Yaw": 360,
+                "Roll": 0
+              },
+              "RotateRootYawOffsetAngleClamp": {
+                "X": -120,
+                "Y": 100
+              },
+              "DisableIdleBreaks": false
+            },
+            "Override": {
+              "Default": {
+                "Sequence": {
+                  "Idle": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Start": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Stop": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Cycle": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Pivot": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Jump": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  }
+                },
+                "GlobalPose": {
+                  "Sequence": "None",
+                  "StartPostion": 0,
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "IdlePose": {
+                  "Sequence": "None",
+                  "StartPostion": 0,
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "JumpPose": {
+                  "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Jump_Start_Root.GhostSamurai_APose_Jump_Start_Root'",
+                  "StartPostion": 0.35,
+                  "OverrideWeight": 1,
+                  "InterpSpeed": 0,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "MovePose": {
+                  "Start": {
+                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Battle/Execution/Enemy_Idle2.Enemy_Idle2'",
+                    "StartPostion": 0,
+                    "OverrideWeight": 1,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Stop": {
+                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Battle/Execution/Enemy_Idle2.Enemy_Idle2'",
+                    "StartPostion": 0,
+                    "OverrideWeight": 1,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Cycle": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Pivot": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  }
+                },
+                "StartsPose": {
+                  "Forward": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_L90": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_R90": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_L180": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_R180": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  }
+                },
+                "TurnPose": {
+                  "Sequence": "None",
+                  "StartPostion": 0,
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "SprintPose": {
+                  "Start": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Stop": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Cycle": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  }
+                },
+                "ExtendedPose": {
+                  "DisableMoveAnim": false,
+                  "ExtendedPoseName": "None",
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "None"
+                },
+                "AimOffset": {
+                  "Enable": false,
+                  "AimOffset": {
+                    "AimOffset": "None",
+                    "YawRange": {
+                      "X": -180,
+                      "Y": 180
+                    },
+                    "PitchRange": {
+                      "X": -90,
+                      "Y": 90
+                    },
+                    "Offset": {
+                      "X": 0,
+                      "Y": 0
+                    },
+                    "InterpSpeed": 0,
+                    "BlendName": "None",
+                    "BlendWeight": 0
+                  }
+                },
+                "Config": {
+                  "Enable": false,
+                  "Config": {
+                    "PlayRateClampStarts": {
+                      "X": 0.6,
+                      "Y": 5
+                    },
+                    "PlayRateClampPivots": {
+                      "X": 0.6,
+                      "Y": 5
+                    },
+                    "PlayRateClampCycle": {
+                      "X": 0.8,
+                      "Y": 1.2
+                    },
+                    "HandIK": {
+                      "DisableLHandIK": true,
+                      "EffectorLocation_HandL": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                      },
+                      "JointTargetLocation_HandL": {
+                        "X": 0,
+                        "Y": -50,
+                        "Z": 0
+                      },
+                      "JointTargetBone_HandL": "LowerArm",
+                      "DisableRHandIK": true,
+                      "EffectorLocation_HandR": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                      },
+                      "JointTargetLocation_HandR": {
+                        "X": 0,
+                        "Y": 50,
+                        "Z": 0
+                      },
+                      "JointTargetBone_HandR": "LowerArm",
+                      "HandFKWeight": 1
+                    },
+                    "DisableLegIK": false,
+                    "DisableLegIKWhileMoving": false,
+                    "Root_Z_Offset": 0,
+                    "MaxWalkSpeed": 500,
+                    "MaxAcceleration": 1024,
+                    "BrakingDecelerationWalking": 1024,
+                    "MaxFlySpeed": 500,
+                    "MaxSwimSpeed": 500,
+                    "JumpRecoveryAdditiveAlpha": 0.65,
+                    "RotationRate": {
+                      "Pitch": 0,
+                      "Yaw": 360,
+                      "Roll": 0
+                    },
+                    "RotateRootYawOffsetAngleClamp": {
+                      "X": -120,
+                      "Y": 100
+                    },
+                    "DisableIdleBreaks": false
+                  }
+                }
+              }
+            }
+          },
+          "Walk": {
+            "Idle": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Battle/Execution/Enemy_Idle2.Enemy_Idle2'",
+            "Idle_Breaks": [],
+            "AimOffset": {
+              "AimOffset": "/Script/Engine.AimOffsetBlendSpace'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Greystone/AO/AO_Greystone_Idle.AO_Greystone_Idle'",
+              "YawRange": {
+                "X": -180,
+                "Y": 180
+              },
+              "PitchRange": {
+                "X": -90,
+                "Y": 90
+              },
+              "Offset": {
+                "X": 0,
+                "Y": 0
+              },
+              "InterpSpeed": 0,
+              "BlendName": "None",
+              "BlendWeight": 0
+            },
+            "TurnInPlace": {
+              "Left_90": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_TurnL90_Root.GhostSamurai_APose_TurnL90_Root'",
+              "Right_90": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_TurnR90_Root.GhostSamurai_APose_TurnR90_Root'",
+              "PlayRate": 1.5
+            },
+            "Start_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_F_Start_Root.GhostSamurai_APose_Strafe_Walk_F_Start_Root'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_B_Start_Root.GhostSamurai_APose_Strafe_Walk_B_Start_Root'",
+              "Left": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_L_Start_Root.GhostSamurai_APose_Strafe_Walk_L_Start_Root'",
+              "Right": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_R_Start_Root.GhostSamurai_APose_Strafe_Walk_R_Start_Root'"
+            },
+            "Stop_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_F_End_Root.GhostSamurai_APose_Strafe_Walk_F_End_Root'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_B_End_Root.GhostSamurai_APose_Strafe_Walk_B_End_Root'",
+              "Left": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_L_End_Root.GhostSamurai_APose_Strafe_Walk_L_End_Root'",
+              "Right": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_R_End_Root.GhostSamurai_APose_Strafe_Walk_R_End_Root'"
+            },
+            "Pivot_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Fwd_Pivot.MM_Unarmed_Jog_Fwd_Pivot'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Bwd_Pivot.MM_Unarmed_Jog_Bwd_Pivot'",
+              "Left": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Left_Pivot.MM_Unarmed_Jog_Left_Pivot'",
+              "Right": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Pivot_Right.MM_Unarmed_Jog_Pivot_Right'"
+            },
+            "Cycle_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_F_Loop_Root.GhostSamurai_APose_Strafe_Walk_F_Loop_Root'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_B_Root.GhostSamurai_APose_Strafe_Walk_B_Root'",
+              "Left": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_L_Root.GhostSamurai_APose_Strafe_Walk_L_Root'",
+              "Right": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_R_Root.GhostSamurai_APose_Strafe_Walk_R_Root'"
+            },
+            "Start_ForwardFacing": {
+              "Start_Forward": "None",
+              "Start_Forward_L90": "None",
+              "Start_Forward_R90": "None",
+              "Start_Forward_L180": "None",
+              "Start_Forward_R180": "None"
+            },
+            "Jump": {
+              "Jump_Start": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Start.MM_Unarmed_Jump_Start'",
+              "Jump_StartLoop": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Start_Loop.MM_Unarmed_Jump_Start_Loop'",
+              "Jump_Apex": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Apex.MM_Unarmed_Jump_Apex'",
+              "Jump_FallLoop": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Fall_Loop.MM_Unarmed_Jump_Fall_Loop'",
+              "Jump_FallLand": "None",
+              "Jump_RecoveryAdditive": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Jump_End_Root.GhostSamurai_APose_Jump_End_Root'"
+            },
+            "Config": {
+              "PlayRateClampStarts": {
+                "X": 0.6,
+                "Y": 1.2
+              },
+              "PlayRateClampPivots": {
+                "X": 0.6,
+                "Y": 5
+              },
+              "PlayRateClampCycle": {
+                "X": 0.8,
+                "Y": 1.2
+              },
+              "HandIK": {
+                "DisableLHandIK": true,
+                "EffectorLocation_HandL": {
+                  "X": 0,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "JointTargetLocation_HandL": {
+                  "X": 0,
+                  "Y": -50,
+                  "Z": 0
+                },
+                "JointTargetBone_HandL": "LowerArm",
+                "DisableRHandIK": true,
+                "EffectorLocation_HandR": {
+                  "X": 0,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "JointTargetLocation_HandR": {
+                  "X": 0,
+                  "Y": 50,
+                  "Z": 0
+                },
+                "JointTargetBone_HandR": "LowerArm",
+                "HandFKWeight": 1
+              },
+              "DisableLegIK": false,
+              "DisableLegIKWhileMoving": false,
+              "Root_Z_Offset": 0,
+              "MaxWalkSpeed": 155,
+              "MaxAcceleration": 1024,
+              "BrakingDecelerationWalking": 1024,
+              "MaxFlySpeed": 500,
+              "MaxSwimSpeed": 500,
+              "JumpRecoveryAdditiveAlpha": 0.65,
+              "RotationRate": {
+                "Pitch": 0,
+                "Yaw": 360,
+                "Roll": 0
+              },
+              "RotateRootYawOffsetAngleClamp": {
+                "X": -120,
+                "Y": 100
+              },
+              "DisableIdleBreaks": false
+            },
+            "Override": {
+              "Default": {
+                "Sequence": {
+                  "Idle": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Start": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Stop": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Cycle": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Pivot": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Jump": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  }
+                },
+                "GlobalPose": {
+                  "Sequence": "None",
+                  "StartPostion": 0,
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "IdlePose": {
+                  "Sequence": "None",
+                  "StartPostion": 0,
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "JumpPose": {
+                  "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Jump_Start_Root.GhostSamurai_APose_Jump_Start_Root'",
+                  "StartPostion": 0.35,
+                  "OverrideWeight": 1,
+                  "InterpSpeed": 0,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "MovePose": {
+                  "Start": {
+                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Idle/SSH_Idle_Seq.SSH_Idle_Seq'",
+                    "StartPostion": 0,
+                    "OverrideWeight": 1,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Stop": {
+                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Idle/SSH_Idle_Seq.SSH_Idle_Seq'",
+                    "StartPostion": 0,
+                    "OverrideWeight": 1,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Cycle": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Pivot": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  }
+                },
+                "StartsPose": {
+                  "Forward": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_L90": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_R90": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_L180": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_R180": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  }
+                },
+                "TurnPose": {
+                  "Sequence": "None",
+                  "StartPostion": 0,
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "SprintPose": {
+                  "Start": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Stop": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Cycle": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  }
+                },
+                "ExtendedPose": {
+                  "DisableMoveAnim": false,
+                  "ExtendedPoseName": "None",
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "None"
+                },
+                "AimOffset": {
+                  "Enable": false,
+                  "AimOffset": {
+                    "AimOffset": "None",
+                    "YawRange": {
+                      "X": -180,
+                      "Y": 180
+                    },
+                    "PitchRange": {
+                      "X": -90,
+                      "Y": 90
+                    },
+                    "Offset": {
+                      "X": 0,
+                      "Y": 0
+                    },
+                    "InterpSpeed": 0,
+                    "BlendName": "None",
+                    "BlendWeight": 0
+                  }
+                },
+                "Config": {
+                  "Enable": false,
+                  "Config": {
+                    "PlayRateClampStarts": {
+                      "X": 0.6,
+                      "Y": 5
+                    },
+                    "PlayRateClampPivots": {
+                      "X": 0.6,
+                      "Y": 5
+                    },
+                    "PlayRateClampCycle": {
+                      "X": 0.8,
+                      "Y": 1.2
+                    },
+                    "HandIK": {
+                      "DisableLHandIK": true,
+                      "EffectorLocation_HandL": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                      },
+                      "JointTargetLocation_HandL": {
+                        "X": 0,
+                        "Y": -50,
+                        "Z": 0
+                      },
+                      "JointTargetBone_HandL": "LowerArm",
+                      "DisableRHandIK": true,
+                      "EffectorLocation_HandR": {
+                        "X": 0,
+                        "Y": 0,
+                        "Z": 0
+                      },
+                      "JointTargetLocation_HandR": {
+                        "X": 0,
+                        "Y": 50,
+                        "Z": 0
+                      },
+                      "JointTargetBone_HandR": "LowerArm",
+                      "HandFKWeight": 1
+                    },
+                    "DisableLegIK": false,
+                    "DisableLegIKWhileMoving": false,
+                    "Root_Z_Offset": 0,
+                    "MaxWalkSpeed": 500,
+                    "MaxAcceleration": 1024,
+                    "BrakingDecelerationWalking": 1024,
+                    "MaxFlySpeed": 500,
+                    "MaxSwimSpeed": 500,
+                    "JumpRecoveryAdditiveAlpha": 0.65,
+                    "RotationRate": {
+                      "Pitch": 0,
+                      "Yaw": 360,
+                      "Roll": 0
+                    },
+                    "RotateRootYawOffsetAngleClamp": {
+                      "X": -120,
+                      "Y": 100
+                    },
+                    "DisableIdleBreaks": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "Name": "Katana_Guard",
+        "General": {
+          "Crouch_Idle_Entry": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Crouch_Entry.MM_Unarmed_Crouch_Entry'",
+          "Crouch_Idle_Exit": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Crouch_Exit.MM_Unarmed_Crouch_Exit'",
+          "Leans": "/Script/Engine.BlendSpace1D'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Rifle/BS_MM_Rifle_Jog_Leans.BS_MM_Rifle_Jog_Leans'",
+          "Sprint": {
+            "Cycle": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_F_Sprint_Root.GhostSamurai_APose_Strafe_Run_F_Sprint_Root'",
+            "Start": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_F_Start_Root.GhostSamurai_APose_Strafe_Run_F_Start_Root'",
+            "Stop": "None",
+            "Config": {
+              "PlayRateClampStarts": {
+                "X": 0.6,
+                "Y": 1.2
+              },
+              "PlayRateClampPivots": {
+                "X": 0.6,
+                "Y": 1.2
+              },
+              "PlayRateClampCycle": {
+                "X": 0.6,
+                "Y": 1.2
+              },
+              "HandIK": {
+                "DisableLHandIK": true,
+                "EffectorLocation_HandL": {
+                  "X": 0,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "JointTargetLocation_HandL": {
+                  "X": 0,
+                  "Y": -50,
+                  "Z": 0
+                },
+                "JointTargetBone_HandL": "LowerArm",
+                "DisableRHandIK": true,
+                "EffectorLocation_HandR": {
+                  "X": 0,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "JointTargetLocation_HandR": {
+                  "X": 0,
+                  "Y": 50,
+                  "Z": 0
+                },
+                "JointTargetBone_HandR": "LowerArm",
+                "HandFKWeight": 1
+              },
+              "DisableLegIK": false,
+              "DisableLegIKWhileMoving": false,
+              "Root_Z_Offset": 0,
+              "MaxWalkSpeed": 700,
+              "MaxAcceleration": 1024,
+              "BrakingDecelerationWalking": 1024,
+              "MaxFlySpeed": 500,
+              "MaxSwimSpeed": 500,
+              "JumpRecoveryAdditiveAlpha": 0.65,
+              "RotationRate": {
+                "Pitch": 0,
+                "Yaw": 360,
+                "Roll": 0
+              },
+              "RotateRootYawOffsetAngleClamp": {
+                "X": -120,
+                "Y": 100
+              },
+              "DisableIdleBreaks": false
+            }
+          }
+        },
+        "Movement": {
+          "Walk": {
+            "Idle": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Defense/GhostSamurai_DefenseL_Loop_Root.GhostSamurai_DefenseL_Loop_Root'",
+            "Idle_Breaks": [],
+            "AimOffset": {
+              "AimOffset": "/Script/Engine.AimOffsetBlendSpace'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Greystone/AO/AO_Greystone_Idle.AO_Greystone_Idle'",
+              "YawRange": {
+                "X": -180,
+                "Y": 180
+              },
+              "PitchRange": {
+                "X": -90,
+                "Y": 90
+              },
+              "Offset": {
+                "X": 0,
+                "Y": 0
+              },
+              "InterpSpeed": 0,
+              "BlendName": "None",
+              "BlendWeight": 0
+            },
+            "TurnInPlace": {
+              "Left_90": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_TurnL90_Root.GhostSamurai_APose_TurnL90_Root'",
+              "Right_90": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_TurnR90_Root.GhostSamurai_APose_TurnR90_Root'",
+              "PlayRate": 1.5
+            },
+            "Start_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_F_Start_Root.GhostSamurai_APose_Strafe_Walk_F_Start_Root'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_B_Start_Root.GhostSamurai_APose_Strafe_Walk_B_Start_Root'",
+              "Left": "None",
+              "Right": "None"
+            },
+            "Stop_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_F_End_Root.GhostSamurai_APose_Strafe_Walk_F_End_Root'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_B_End_Root.GhostSamurai_APose_Strafe_Walk_B_End_Root'",
+              "Left": "None",
+              "Right": "None"
+            },
+            "Pivot_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Fwd_Pivot.MM_Unarmed_Jog_Fwd_Pivot'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Bwd_Pivot.MM_Unarmed_Jog_Bwd_Pivot'",
+              "Left": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Left_Pivot.MM_Unarmed_Jog_Left_Pivot'",
+              "Right": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Pivot_Right.MM_Unarmed_Jog_Pivot_Right'"
+            },
+            "Cycle_Cardinals": {
+              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Defense/GhostSamurai_DefenseL_Walk_F_Root.GhostSamurai_DefenseL_Walk_F_Root'",
+              "Backward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Defense/GhostSamurai_DefenseL_Walk_B_Root.GhostSamurai_DefenseL_Walk_B_Root'",
+              "Left": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Defense/GhostSamurai_DefenseL_Walk_BL_Root.GhostSamurai_DefenseL_Walk_BL_Root'",
+              "Right": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Defense/GhostSamurai_DefenseL_Walk_BR_Root.GhostSamurai_DefenseL_Walk_BR_Root'"
+            },
+            "Start_ForwardFacing": {
+              "Start_Forward": "None",
+              "Start_Forward_L90": "None",
+              "Start_Forward_R90": "None",
+              "Start_Forward_L180": "None",
+              "Start_Forward_R180": "None"
+            },
+            "Jump": {
+              "Jump_Start": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Start.MM_Unarmed_Jump_Start'",
+              "Jump_StartLoop": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Start_Loop.MM_Unarmed_Jump_Start_Loop'",
+              "Jump_Apex": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Apex.MM_Unarmed_Jump_Apex'",
+              "Jump_FallLoop": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jump_Fall_Loop.MM_Unarmed_Jump_Fall_Loop'",
+              "Jump_FallLand": "None",
+              "Jump_RecoveryAdditive": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Jump_End_Root.GhostSamurai_APose_Jump_End_Root'"
+            },
+            "Config": {
+              "PlayRateClampStarts": {
+                "X": 0.6,
+                "Y": 1.2
+              },
+              "PlayRateClampPivots": {
+                "X": 0.6,
+                "Y": 5
+              },
+              "PlayRateClampCycle": {
+                "X": 0.8,
+                "Y": 1.2
+              },
+              "HandIK": {
+                "DisableLHandIK": true,
+                "EffectorLocation_HandL": {
+                  "X": 0,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "JointTargetLocation_HandL": {
+                  "X": 0,
+                  "Y": -50,
+                  "Z": 0
+                },
+                "JointTargetBone_HandL": "LowerArm",
+                "DisableRHandIK": true,
+                "EffectorLocation_HandR": {
+                  "X": 0,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "JointTargetLocation_HandR": {
+                  "X": 0,
+                  "Y": 50,
+                  "Z": 0
+                },
+                "JointTargetBone_HandR": "LowerArm",
+                "HandFKWeight": 1
+              },
+              "DisableLegIK": false,
+              "DisableLegIKWhileMoving": false,
+              "Root_Z_Offset": 0,
+              "MaxWalkSpeed": 155,
+              "MaxAcceleration": 1024,
+              "BrakingDecelerationWalking": 1024,
+              "MaxFlySpeed": 500,
+              "MaxSwimSpeed": 500,
+              "JumpRecoveryAdditiveAlpha": 0.65,
+              "RotationRate": {
+                "Pitch": 0,
+                "Yaw": 360,
+                "Roll": 0
+              },
+              "RotateRootYawOffsetAngleClamp": {
+                "X": -120,
+                "Y": 100
+              },
+              "DisableIdleBreaks": false
+            },
+            "Override": {
+              "Default": {
+                "Sequence": {
+                  "Idle": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Start": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Stop": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Cycle": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Pivot": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  },
+                  "Jump": {
+                    "Sequence": "None",
+                    "StartPostion": -1,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 0,
+                    "BlendTime": 0,
+                    "BlendName": "SeqUpperBodyMask"
+                  }
+                },
+                "GlobalPose": {
+                  "Sequence": "None",
+                  "StartPostion": 0,
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "IdlePose": {
+                  "Sequence": "None",
+                  "StartPostion": 0,
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "JumpPose": {
+                  "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Jump_Start_Root.GhostSamurai_APose_Jump_Start_Root'",
+                  "StartPostion": 0.35,
+                  "OverrideWeight": 1,
+                  "InterpSpeed": 0,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "MovePose": {
+                  "Start": {
+                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Defense/GhostSamurai_DefenseL_Loop_Root.GhostSamurai_DefenseL_Loop_Root'",
+                    "StartPostion": 0,
+                    "OverrideWeight": 1,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Stop": {
+                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Defense/GhostSamurai_DefenseL_Loop_Root.GhostSamurai_DefenseL_Loop_Root'",
+                    "StartPostion": 0,
+                    "OverrideWeight": 1,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Cycle": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Pivot": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  }
+                },
+                "StartsPose": {
+                  "Forward": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_L90": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_R90": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_L180": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  },
+                  "Forward_R180": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
+                    "InterpSpeed": 10,
+                    "BlendTime": 0.25,
+                    "BlendName": "UpperBodyMask"
+                  }
+                },
+                "TurnPose": {
+                  "Sequence": "None",
+                  "StartPostion": 0,
+                  "OverrideWeight": 0,
+                  "InterpSpeed": 10,
+                  "BlendTime": 0.25,
+                  "BlendName": "UpperBodyMask"
+                },
+                "SprintPose": {
+                  "Start": {
+                    "Sequence": "None",
+                    "StartPostion": 0,
+                    "OverrideWeight": 0,
                     "InterpSpeed": 10,
                     "BlendTime": 0.25,
                     "BlendName": "UpperBodyMask"

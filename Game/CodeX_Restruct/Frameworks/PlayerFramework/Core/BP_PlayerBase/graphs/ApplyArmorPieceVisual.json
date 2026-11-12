@@ -6,11 +6,11 @@
     "guid": "E64305DB41CA9CB001DCED800A3F81AE"
   },
   "stats": {
-    "node_count": 19,
-    "pin_count": 50,
-    "connection_count": 20,
-    "exec_connection_count": 10,
-    "data_connection_count": 10
+    "node_count": 42,
+    "pin_count": 131,
+    "connection_count": 49,
+    "exec_connection_count": 19,
+    "data_connection_count": 30
   },
   "nodes": [
     {
@@ -19,7 +19,7 @@
       "guid": "9104B0564017F6A13F32C48E0BFE541B",
       "title": "ApplyArmorPieceVisual",
       "position": {
-        "x": 0,
+        "x": -512,
         "y": 0
       },
       "comment": null,
@@ -113,7 +113,7 @@
       "guid": "FB614DE54CE1329838413CAA0D17A9C2",
       "title": "GetArmorComponentForSlot",
       "position": {
-        "x": 272,
+        "x": -240,
         "y": -16
       },
       "comment": null,
@@ -226,7 +226,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableGet_0",
+              "node": "K2Node_VariableGet_24",
               "pin_id": "6221476349011402A9DFD0ABE18021CD"
             }
           ]
@@ -266,7 +266,7 @@
       "guid": "0B00959A49085FEFF5B1E58AA6BB7D0F",
       "title": "Macro /Script/Engine.EdGraph'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros:IsValid'",
       "position": {
-        "x": 768,
+        "x": 256,
         "y": 0
       },
       "comment": null,
@@ -357,8 +357,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_MacroInstance_0",
-              "pin_id": "C2A31E59466145BD3E893C8EE37C0C85"
+              "node": "K2Node_CallFunction_18",
+              "pin_id": "4C069B8B472AB25DBFB2248C0DA4EEE0"
             }
           ]
         },
@@ -392,12 +392,12 @@
       ]
     },
     {
-      "name": "K2Node_VariableGet_0",
+      "name": "K2Node_VariableGet_24",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "EA7946DB4DBF23F8E2034893D8BFC019",
       "title": "Get ArmorSlotTag",
       "position": {
-        "x": 272,
+        "x": -240,
         "y": 128
       },
       "comment": null,
@@ -446,7 +446,7 @@
       "guid": "8845C845414394692535109718AB715F",
       "title": "Return",
       "position": {
-        "x": 1056,
+        "x": 544,
         "y": 96
       },
       "comment": null,
@@ -531,8 +531,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_MacroInstance_1",
-              "pin_id": "F3D43E064122AE9DE6B80EAB32736D99"
+              "node": "K2Node_CallFunction_18",
+              "pin_id": "DFF6104C486081640FF5B9BE300485A0"
             }
           ]
         },
@@ -585,7 +585,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_6",
+              "node": "K2Node_CallFunction_21",
               "pin_id": "7A4B81E2424E09299CB27DB975E4D9C8"
             }
           ]
@@ -674,7 +674,7 @@
       "guid": "5DFDCB8645F84F7B4CE87BBEAEF12050",
       "title": "Set ArmorMesh",
       "position": {
-        "x": 576,
+        "x": 64,
         "y": 16
       },
       "comment": null,
@@ -891,7 +891,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_6",
+              "node": "K2Node_CallFunction_21",
               "pin_id": "924A7997487F953DF31A79B2D6A1855D"
             }
           ]
@@ -916,7 +916,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "3A9A984B4165CFB80306869E29FBE5B6"
+            }
+          ]
         },
         {
           "id": "5027E98649C6DD322381E5B01543E6A3",
@@ -998,7 +1003,7 @@
       "title": "Reroute",
       "position": {
         "x": 1552,
-        "y": 304
+        "y": 480
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1055,7 +1060,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_5",
+              "node": "K2Node_CallFunction_16",
               "pin_id": "7A4B81E2424E09299CB27DB975E4D9C8"
             }
           ]
@@ -1063,13 +1068,13 @@
       ]
     },
     {
-      "name": "K2Node_CallFunction_1",
+      "name": "K2Node_CallFunction_17",
       "class": "/Script/BlueprintGraph.K2Node_CallFunction",
       "guid": "943AB3534DADA70B5AD5B9A4797B0DDE",
       "title": "SetVisibility",
       "position": {
         "x": 2464,
-        "y": 256
+        "y": 432
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1104,7 +1109,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_5",
+              "node": "K2Node_CallFunction_16",
               "pin_id": "924A7997487F953DF31A79B2D6A1855D"
             }
           ]
@@ -1153,7 +1158,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableGet_6",
+              "node": "K2Node_VariableGet_23",
               "pin_id": "464E7F764169D94E84F14980C59513F4"
             }
           ]
@@ -1205,13 +1210,13 @@
       ]
     },
     {
-      "name": "K2Node_VariableGet_6",
+      "name": "K2Node_VariableGet_23",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "3ABC3AA74742060294601FB07771C415",
       "title": "Get ArmorMesh",
       "position": {
         "x": 2288,
-        "y": 352
+        "y": 528
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1247,7 +1252,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_1",
+              "node": "K2Node_CallFunction_17",
               "pin_id": "5027E98649C6DD322381E5B01543E6A3"
             }
           ]
@@ -1297,7 +1302,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_6",
+              "node": "K2Node_CallFunction_21",
               "pin_id": "87CF54B444CD73BF7944A1BE080F4E0C"
             }
           ]
@@ -1305,7 +1310,7 @@
       ]
     },
     {
-      "name": "K2Node_CallFunction_6",
+      "name": "K2Node_CallFunction_21",
       "class": "/Script/BlueprintGraph.K2Node_CallFunction",
       "guid": "773B1115414F4CD54AAD618EDB10B694",
       "title": "SetSkeletalMeshAsset",
@@ -1427,7 +1432,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableGet_4",
+              "node": "K2Node_VariableGet_13",
               "pin_id": "0347273A4870200930C507965652E052"
             }
           ]
@@ -1435,7 +1440,7 @@
       ]
     },
     {
-      "name": "K2Node_VariableGet_1",
+      "name": "K2Node_VariableGet_2",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "CB1C389343952A68EED038A36837A754",
       "title": "Get ArmorDefinition",
@@ -1476,7 +1481,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableGet_4",
+              "node": "K2Node_VariableGet_13",
               "pin_id": "AD4F777D46284A7EFAD231AA01B6E6CF"
             }
           ]
@@ -1484,7 +1489,7 @@
       ]
     },
     {
-      "name": "K2Node_VariableGet_4",
+      "name": "K2Node_VariableGet_13",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
       "guid": "7E8A2B20409595CBFCAC8389B5ABD04A",
       "title": "Get ArmorMesh",
@@ -1526,7 +1531,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_6",
+              "node": "K2Node_CallFunction_21",
               "pin_id": "8A6BC993475F2E90C5729BACFA117CEE"
             }
           ]
@@ -1553,7 +1558,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableGet_1",
+              "node": "K2Node_VariableGet_2",
               "pin_id": "180A216549D65BE4DF23E88DF60E6A68"
             }
           ]
@@ -1561,13 +1566,13 @@
       ]
     },
     {
-      "name": "K2Node_CallFunction_5",
+      "name": "K2Node_CallFunction_16",
       "class": "/Script/BlueprintGraph.K2Node_CallFunction",
       "guid": "DA9B02F947A978AAC92DCFB4F7144767",
       "title": "SetSkeletalMeshAsset",
       "position": {
         "x": 2000,
-        "y": 256
+        "y": 432
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1629,7 +1634,7 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_1",
+              "node": "K2Node_CallFunction_17",
               "pin_id": "6D1D99B74C057E15A9043BAB6CCCCDE0"
             }
           ]
@@ -1692,7 +1697,7 @@
       "title": "Get ArmorMesh",
       "position": {
         "x": 1840,
-        "y": 352
+        "y": 528
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1728,8 +1733,2572 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_5",
+              "node": "K2Node_CallFunction_16",
               "pin_id": "87CF54B444CD73BF7944A1BE080F4E0C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_20",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "1859570F412E06F8685CB7B1E47A23DA",
+      "title": "Get ArmorDefinition",
+      "position": {
+        "x": 2736,
+        "y": 112
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberScope": "ApplyArmorPieceVisual",
+          "MemberName": "ArmorDefinition"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "180A216549D65BE4DF23E88DF60E6A68",
+          "name": "ArmorDefinition",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition.DA_ArmorDefinition_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_21",
+              "pin_id": "9BAEB1A34565ED123B84829E58605F47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_21",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "E75357ED4F6B4C0438113594C7EB6347",
+      "title": "Get AdditionalMeshes",
+      "position": {
+        "x": 2912,
+        "y": 112
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition.DA_ArmorDefinition_C'",
+          "MemberName": "AdditionalMeshes",
+          "MemberGuid": "42660D0244A7DBD527A39B948DB1EE79"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "767E12E44937AADC57C582808827D81C",
+          "name": "AdditionalMeshes",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMesh'",
+            "container": "Array",
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallArrayFunction_2",
+              "pin_id": "96D419374D95C0CBDDF3BC9C03FC5027"
+            }
+          ]
+        },
+        {
+          "id": "9BAEB1A34565ED123B84829E58605F47",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition.DA_ArmorDefinition_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_20",
+              "pin_id": "180A216549D65BE4DF23E88DF60E6A68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallArrayFunction_2",
+      "class": "/Script/BlueprintGraph.K2Node_CallArrayFunction",
+      "guid": "617044514C264C96D15B92B05DA291CE",
+      "title": "K2Node_CallArrayFunction",
+      "position": {
+        "x": 3200,
+        "y": 96
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetArrayLibrary'",
+          "MemberName": "Array_IsNotEmpty"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "5AA2BD6A405A96913D2B54AE98543DEE",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetArrayLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetArrayLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "96D419374D95C0CBDDF3BC9C03FC5027",
+          "name": "TargetArray",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMesh'",
+            "container": "Array",
+            "is_reference": true,
+            "is_const": true,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_21",
+              "pin_id": "767E12E44937AADC57C582808827D81C"
+            }
+          ]
+        },
+        {
+          "id": "D49ADB5F4B23F16CA4CA4FA1025EE7F0",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "F628CBF545793141F384C1BD66C19314"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_IfThenElse_1",
+      "class": "/Script/BlueprintGraph.K2Node_IfThenElse",
+      "guid": "CE31A6704500AF7521420D9CC82FFA7D",
+      "title": "Branch",
+      "position": {
+        "x": 3472,
+        "y": 0
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {},
+      "properties": {},
+      "pins": [
+        {
+          "id": "3A9A984B4165CFB80306869E29FBE5B6",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_3",
+              "pin_id": "9A37D0BC43F8EC56EACDBEA1E73CEB81"
+            }
+          ]
+        },
+        {
+          "id": "F628CBF545793141F384C1BD66C19314",
+          "name": "Condition",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "true",
+          "autogenerated_default_value": "true",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallArrayFunction_2",
+              "pin_id": "D49ADB5F4B23F16CA4CA4FA1025EE7F0"
+            }
+          ]
+        },
+        {
+          "id": "F471704A4659C99E39929C8DAE450FA5",
+          "name": "then",
+          "friendly_name": "true",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_4",
+              "pin_id": "62483A1B41B973009A75E09144C9902A"
+            }
+          ]
+        },
+        {
+          "id": "2DD5FD8C4FCF2A29EA59609D5F5B63D9",
+          "name": "else",
+          "friendly_name": "false",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_17",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "94C1339E437A6D6E13050AB8BD593EE7",
+      "title": "Get ArmorDefinition",
+      "position": {
+        "x": 3600,
+        "y": 160
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberScope": "ApplyArmorPieceVisual",
+          "MemberName": "ArmorDefinition"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "180A216549D65BE4DF23E88DF60E6A68",
+          "name": "ArmorDefinition",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition.DA_ArmorDefinition_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_18",
+              "pin_id": "9BAEB1A34565ED123B84829E58605F47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_18",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "270E4E6648F016DB4BFC55B84AD6FE62",
+      "title": "Get AdditionalMeshes",
+      "position": {
+        "x": 3776,
+        "y": 160
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition.DA_ArmorDefinition_C'",
+          "MemberName": "AdditionalMeshes",
+          "MemberGuid": "42660D0244A7DBD527A39B948DB1EE79"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "767E12E44937AADC57C582808827D81C",
+          "name": "AdditionalMeshes",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMesh'",
+            "container": "Array",
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_4",
+              "pin_id": "C4FE315F44AAE48F9A1F74A9F60AC6CA"
+            }
+          ]
+        },
+        {
+          "id": "9BAEB1A34565ED123B84829E58605F47",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition.DA_ArmorDefinition_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_17",
+              "pin_id": "180A216549D65BE4DF23E88DF60E6A68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_MacroInstance_4",
+      "class": "/Script/BlueprintGraph.K2Node_MacroInstance",
+      "guid": "B71B19D24E8DEFC528E8C19DBB32E3EF",
+      "title": "Macro /Script/Engine.EdGraph'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros:ForEachLoop'",
+      "position": {
+        "x": 4080,
+        "y": 0
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "macro": {
+          "MacroGraph": "/Script/Engine.EdGraph'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros:ForEachLoop'",
+          "GraphBlueprint": "/Script/Engine.Blueprint'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros'",
+          "GraphGuid": "99DBFD5540A796041F72A5A9DA655026"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "62483A1B41B973009A75E09144C9902A",
+          "name": "Exec",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "F471704A4659C99E39929C8DAE450FA5"
+            }
+          ]
+        },
+        {
+          "id": "C4FE315F44AAE48F9A1F74A9F60AC6CA",
+          "name": "Array",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMesh'",
+            "container": "Array",
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_18",
+              "pin_id": "767E12E44937AADC57C582808827D81C"
+            }
+          ]
+        },
+        {
+          "id": "9E10EA2E4C5784B1496F6DAE2869B2C6",
+          "name": "LoopBody",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_5",
+              "pin_id": "700CFA564A2B06382B58D9A5C5CC0C5F"
+            }
+          ]
+        },
+        {
+          "id": "EE3A21DC44513138E84E2EB5C295716B",
+          "name": "Array Element",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMesh'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_5",
+              "pin_id": "FFE2D4574D15615AE37C3CB1E19AE6D5"
+            },
+            {
+              "node": "K2Node_CallFunction_13",
+              "pin_id": "48B1D68E4543F96EC790789ACF4EFA26"
+            }
+          ]
+        },
+        {
+          "id": "5BDD2010448B6FF9B751AEA3E5187644",
+          "name": "Array Index",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "int",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "F227E3FE4F95AB9E7B2520B126F77EA9",
+          "name": "Completed",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_25",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "2CDE6DB645B8277FE9FEB9AF44265E18",
+      "title": "Get Mesh",
+      "position": {
+        "x": 6144,
+        "y": 176
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "Mesh",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "E335634046F5791FD9B854BFE89D2CAF",
+          "name": "Mesh",
+          "friendly_name": "Mesh",
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMeshComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": true
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_12",
+              "pin_id": "F4C384F54834A0E2CB840DAF9F08A48E"
+            }
+          ]
+        },
+        {
+          "id": "170465DB43D525BF28F5C5A9E36BF7D6",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_12",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "63D788374D775C966D650DAC9C4D6257",
+      "title": "SetLeaderPoseComponent",
+      "position": {
+        "x": 6352,
+        "y": -16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.SkinnedMeshComponent'",
+          "MemberName": "SetLeaderPoseComponent"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "F1C4186A4D1175B45FBCB2B932A5854E",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_13",
+              "pin_id": "3B7AB79B43C382B6228A30AFBDD8F070"
+            }
+          ]
+        },
+        {
+          "id": "E98392FF4FA58AB6C75842B8BA0C92AE",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "3C27CD6D428FC4BCCA535ABA68F206E3",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkinnedMeshComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_AddComponentByClass_2",
+              "pin_id": "DB09D1D04B3491298A25A6B4802FE3E5"
+            }
+          ]
+        },
+        {
+          "id": "F4C384F54834A0E2CB840DAF9F08A48E",
+          "name": "NewLeaderBoneComponent",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkinnedMeshComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_25",
+              "pin_id": "E335634046F5791FD9B854BFE89D2CAF"
+            }
+          ]
+        },
+        {
+          "id": "14481281413B45EB0225A6BA826CFAFE",
+          "name": "bForceUpdate",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "FD6ED85346199E6DE9F717BF4911A954",
+          "name": "bInFollowerShouldTickPose",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_MacroInstance_5",
+      "class": "/Script/BlueprintGraph.K2Node_MacroInstance",
+      "guid": "21BDAA56495B9F3978AD4AA4EBD32F7A",
+      "title": "Macro /Script/Engine.EdGraph'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros:IsValid'",
+      "position": {
+        "x": 4304,
+        "y": 0
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "macro": {
+          "MacroGraph": "/Script/Engine.EdGraph'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros:IsValid'",
+          "GraphBlueprint": "/Script/Engine.Blueprint'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros'",
+          "GraphGuid": "64422BCD430703FF5CAEA8B79A32AA65"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "700CFA564A2B06382B58D9A5C5CC0C5F",
+          "name": "exec",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_4",
+              "pin_id": "9E10EA2E4C5784B1496F6DAE2869B2C6"
+            }
+          ]
+        },
+        {
+          "id": "FFE2D4574D15615AE37C3CB1E19AE6D5",
+          "name": "InputObject",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/CoreUObject.Object'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_4",
+              "pin_id": "EE3A21DC44513138E84E2EB5C295716B"
+            }
+          ]
+        },
+        {
+          "id": "03BE77AF4B927F49E44958B111A1A5F9",
+          "name": "Is Valid",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_AddComponentByClass_2",
+              "pin_id": "4CFC6BDE4E895C04B65CF0BA6848201C"
+            }
+          ]
+        },
+        {
+          "id": "9D3927E641D35F460A0A4996CA87820B",
+          "name": "Is Not Valid",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_AddComponentByClass_2",
+      "class": "/Script/BlueprintGraph.K2Node_AddComponentByClass",
+      "guid": "EFA57B704B3BFBC0A26818BB4D17BDB3",
+      "title": "K2Node_AddComponentByClass",
+      "position": {
+        "x": 4592,
+        "y": 0
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {},
+      "properties": {},
+      "pins": [
+        {
+          "id": "4CFC6BDE4E895C04B65CF0BA6848201C",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_5",
+              "pin_id": "03BE77AF4B927F49E44958B111A1A5F9"
+            }
+          ]
+        },
+        {
+          "id": "C45A53234042C539C7F517A6F2AEF5AD",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "901141A84EE3A76DBEA59BAB3DBEFEC3",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallArrayFunction_3",
+              "pin_id": "407D9B1A410BE04E89F65DA170167D2E"
+            }
+          ]
+        },
+        {
+          "id": "BEBF01E641F39C5FEE77B6A7AF2A2FE4",
+          "name": "Class",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "class",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.SkeletalMeshComponent",
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "DB09D1D04B3491298A25A6B4802FE3E5",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMeshComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_13",
+              "pin_id": "DE43FB844F1055F755C0DBB0126CCC15"
+            },
+            {
+              "node": "K2Node_CallFunction_12",
+              "pin_id": "3C27CD6D428FC4BCCA535ABA68F206E3"
+            },
+            {
+              "node": "K2Node_CallFunction_20",
+              "pin_id": "A7328E8043B1B505A8B46291569384EE"
+            },
+            {
+              "node": "K2Node_VariableGet_26",
+              "pin_id": "1DFB0D4646DD1C7FA14B77BF988BA64E"
+            }
+          ]
+        },
+        {
+          "id": "AB85291B4F3BE1D5B2F1BF96AB6CC25B",
+          "name": "bManualAttachment",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "true",
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "45DF25144A72CC01FEEA17B57931BC82",
+          "name": "RelativeTransform",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "struct",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Transform'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_13",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "CB66D89046B359CE83AE8B833B89F5BC",
+      "title": "SetSkeletalMeshAsset",
+      "position": {
+        "x": 5952,
+        "y": -16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMeshComponent'",
+          "MemberName": "SetSkeletalMeshAsset"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "1B4D14E6413571B980B768AD72C1C137",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_20",
+              "pin_id": "78AC9FB74163A63780792EB270E2A296"
+            }
+          ]
+        },
+        {
+          "id": "3B7AB79B43C382B6228A30AFBDD8F070",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_12",
+              "pin_id": "F1C4186A4D1175B45FBCB2B932A5854E"
+            }
+          ]
+        },
+        {
+          "id": "DE43FB844F1055F755C0DBB0126CCC15",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMeshComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_AddComponentByClass_2",
+              "pin_id": "DB09D1D04B3491298A25A6B4802FE3E5"
+            }
+          ]
+        },
+        {
+          "id": "48B1D68E4543F96EC790789ACF4EFA26",
+          "name": "NewMesh",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMesh'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_4",
+              "pin_id": "EE3A21DC44513138E84E2EB5C295716B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_18",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "9BE25AD54E33EFACA249BDB10429AFDE",
+      "title": "ClearAdditionalArmorMeshes",
+      "position": {
+        "x": 800,
+        "y": -16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberName": "ClearAdditionalArmorMeshes",
+          "MemberGuid": "CA6FB952449850336C883FA01CB85E03",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "4C069B8B472AB25DBFB2248C0DA4EEE0",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_1",
+              "pin_id": "F3D43E064122AE9DE6B80EAB32736D99"
+            }
+          ]
+        },
+        {
+          "id": "DFF6104C486081640FF5B9BE300485A0",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_0",
+              "pin_id": "C2A31E59466145BD3E893C8EE37C0C85"
+            }
+          ]
+        },
+        {
+          "id": "3A4E21C34325047112A658852FBC6E22",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "self",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "CB26466C49019D520209A0A1CC4254B3",
+          "name": "ArmorSlotTag",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "struct",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_0",
+              "pin_id": "6221476349011402A9DFD0ABE18021CD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_0",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "C3CDDC6F4BD7620C1B5D09883B2E9214",
+      "title": "Get ArmorSlotTag",
+      "position": {
+        "x": 800,
+        "y": 128
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberScope": "ApplyArmorPieceVisual",
+          "MemberName": "ArmorSlotTag"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "6221476349011402A9DFD0ABE18021CD",
+          "name": "ArmorSlotTag",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "struct",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_18",
+              "pin_id": "CB26466C49019D520209A0A1CC4254B3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_20",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "2768FB17486BF12816B999876F377B15",
+      "title": "K2_AttachToComponent",
+      "position": {
+        "x": 5520,
+        "y": -16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.SceneComponent'",
+          "MemberName": "K2_AttachToComponent"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "165981F34D043105E748CF91138CF8C9",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallArrayFunction_3",
+              "pin_id": "9EC958CD4E2889731C59B7B26E862C83"
+            }
+          ]
+        },
+        {
+          "id": "78AC9FB74163A63780792EB270E2A296",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_13",
+              "pin_id": "1B4D14E6413571B980B768AD72C1C137"
+            }
+          ]
+        },
+        {
+          "id": "A7328E8043B1B505A8B46291569384EE",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SceneComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_AddComponentByClass_2",
+              "pin_id": "DB09D1D04B3491298A25A6B4802FE3E5"
+            }
+          ]
+        },
+        {
+          "id": "334287884D3B652C7C698A9611F80E3C",
+          "name": "Parent",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SceneComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_19",
+              "pin_id": "E335634046F5791FD9B854BFE89D2CAF"
+            }
+          ]
+        },
+        {
+          "id": "C909ED83423DBCE9086894AC11ED721E",
+          "name": "SocketName",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "name",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "None",
+          "autogenerated_default_value": "None",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "9FF3A1C4472F542D61E4A7AFAD6BBEB9",
+          "name": "LocationRule",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "byte",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.EAttachmentRule'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "SnapToTarget",
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "1DE79DB34C35E4B40DCE40AB1F2BE9E1",
+          "name": "RotationRule",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "byte",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.EAttachmentRule'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "SnapToTarget",
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "D387F5DD45BC34A252B290BF89913D7D",
+          "name": "ScaleRule",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "byte",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Enum'/Script/Engine.EAttachmentRule'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "SnapToTarget",
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "E47F5D094AABBC3B0BC882BAEE83BAE0",
+          "name": "bWeldSimulatedBodies",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "TRUE",
+          "autogenerated_default_value": "TRUE",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "37EFBCCF461000EDFAF3E1BF1B4DB0E8",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_19",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "B089ADC542F1613745468BAFB3C52B7B",
+      "title": "Get Mesh",
+      "position": {
+        "x": 5248,
+        "y": 192
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "Mesh",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "E335634046F5791FD9B854BFE89D2CAF",
+          "name": "Mesh",
+          "friendly_name": "Mesh",
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMeshComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": true
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_20",
+              "pin_id": "334287884D3B652C7C698A9611F80E3C"
+            }
+          ]
+        },
+        {
+          "id": "170465DB43D525BF28F5C5A9E36BF7D6",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_26",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "51FB97314D860A12FDEDDE968292F1F7",
+      "title": "Get ComponentTags",
+      "position": {
+        "x": 4944,
+        "y": 144
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+          "MemberName": "ComponentTags"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "147260C04D092C978F6C00A9180427F0",
+          "name": "ComponentTags",
+          "friendly_name": "Component Tags",
+          "direction": "output",
+          "type": {
+            "category": "name",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": "Array",
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallArrayFunction_3",
+              "pin_id": "3245DF4B46417C706E2FE09A9CD7CF17"
+            }
+          ]
+        },
+        {
+          "id": "1DFB0D4646DD1C7FA14B77BF988BA64E",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_AddComponentByClass_2",
+              "pin_id": "DB09D1D04B3491298A25A6B4802FE3E5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallArrayFunction_3",
+      "class": "/Script/BlueprintGraph.K2Node_CallArrayFunction",
+      "guid": "FB6C0AB948492C321C2F809C809D70F9",
+      "title": "K2Node_CallArrayFunction",
+      "position": {
+        "x": 5200,
+        "y": 16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetArrayLibrary'",
+          "MemberName": "Array_AddUnique"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "407D9B1A410BE04E89F65DA170167D2E",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_AddComponentByClass_2",
+              "pin_id": "901141A84EE3A76DBEA59BAB3DBEFEC3"
+            }
+          ]
+        },
+        {
+          "id": "9EC958CD4E2889731C59B7B26E862C83",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_20",
+              "pin_id": "165981F34D043105E748CF91138CF8C9"
+            }
+          ]
+        },
+        {
+          "id": "917936CB42639D4B1B96FFBEB6F5C7AA",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetArrayLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetArrayLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "3245DF4B46417C706E2FE09A9CD7CF17",
+          "name": "TargetArray",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "name",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": "Array",
+            "is_reference": true,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_26",
+              "pin_id": "147260C04D092C978F6C00A9180427F0"
+            }
+          ]
+        },
+        {
+          "id": "9016D42E4C6971E9813B718AE3F49E64",
+          "name": "NewItem",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "name",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": true,
+            "is_const": true,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "A8495151424D85ABB4FD038AA7CB2F23"
+            }
+          ]
+        },
+        {
+          "id": "4B02D2074897B63229E4F786077BFFAB",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "int",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "0",
+          "autogenerated_default_value": "0",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_6",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "828838C04B06A18F381E1DB2CFC4ACB5",
+      "title": "GetTagName",
+      "position": {
+        "x": 4928,
+        "y": 389
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/GameplayTags.BlueprintGameplayTagLibrary'",
+          "MemberName": "GetTagName"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "0123BEB94FC39E713C1A6984D6998709",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/GameplayTags.BlueprintGameplayTagLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/GameplayTags.Default__BlueprintGameplayTagLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "9A85A9E84F977D4C0EEA19B61DA1AD27",
+          "name": "GameplayTag",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "struct",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+            "container": null,
+            "is_reference": true,
+            "is_const": true,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_27",
+              "pin_id": "F030943C409EC56CD695EEAA97A757EE"
+            }
+          ]
+        },
+        {
+          "id": "2A2FF81E4A556845E51661A904E66CFB",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "name",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "None",
+          "autogenerated_default_value": "None",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "EF95591342A0CA153F1DD895284078ED"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_7",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "6A9B133342B4709834F886B988AFA1A6",
+      "title": "Conv_NameToString",
+      "position": {
+        "x": 5040,
+        "y": 357
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetStringLibrary'",
+          "MemberName": "Conv_NameToString"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "4F7DE7114B1C25AAB3E6E8876E74A4DA",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetStringLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetStringLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "EF95591342A0CA153F1DD895284078ED",
+          "name": "InName",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "name",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "None",
+          "autogenerated_default_value": "None",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "2A2FF81E4A556845E51661A904E66CFB"
+            }
+          ]
+        },
+        {
+          "id": "3D1CC2CE426A41B843E912A9DBFBE4B8",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "string",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CommutativeAssociativeBinaryOperator_0",
+              "pin_id": "5FA283904E8A114FE8BA06A0CD15DBBF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CommutativeAssociativeBinaryOperator_0",
+      "class": "/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator",
+      "guid": "FA8BCF9E417660B591060FB5EBE617D4",
+      "title": "K2Node_CommutativeAssociativeBinaryOperator",
+      "position": {
+        "x": 4912,
+        "y": 261
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetStringLibrary'",
+          "MemberName": "Concat_StrStr"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "C7A48F8C4559FEC1E2B437AC51DE59B5",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetStringLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetStringLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "CD14AAED4FEC706E8CE39BBE3919279B",
+          "name": "A",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "string",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "ExtraArmor_",
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "5FA283904E8A114FE8BA06A0CD15DBBF",
+          "name": "B",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "string",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "3D1CC2CE426A41B843E912A9DBFBE4B8"
+            }
+          ]
+        },
+        {
+          "id": "D976D4C549560F1738E7F6B75816B34C",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "string",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "F1D68D21480609C588FD4B827F03C887"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_8",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "24BF75694BA25BE703CFFE8B9F023227",
+      "title": "Conv_StringToName",
+      "position": {
+        "x": 5040,
+        "y": 224
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetStringLibrary'",
+          "MemberName": "Conv_StringToName"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "3F0DB5A3484EE049BDC61881AD262302",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetStringLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetStringLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "F1D68D21480609C588FD4B827F03C887",
+          "name": "InString",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "string",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CommutativeAssociativeBinaryOperator_0",
+              "pin_id": "D976D4C549560F1738E7F6B75816B34C"
+            }
+          ]
+        },
+        {
+          "id": "A8495151424D85ABB4FD038AA7CB2F23",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "name",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "None",
+          "autogenerated_default_value": "None",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallArrayFunction_3",
+              "pin_id": "9016D42E4C6971E9813B718AE3F49E64"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_27",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "14D197874D7205CAE033878AB0D8A6E0",
+      "title": "Get ArmorSlotTag",
+      "position": {
+        "x": 5056,
+        "y": 453
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberScope": "ApplyArmorPieceVisual",
+          "MemberName": "ArmorSlotTag"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "F030943C409EC56CD695EEAA97A757EE",
+          "name": "ArmorSlotTag",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "struct",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "9A85A9E84F977D4C0EEA19B61DA1AD27"
             }
           ]
         }
@@ -1737,6 +4306,97 @@
     }
   ],
   "connections": [
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_AddComponentByClass_2",
+        "pin_id": "DB09D1D04B3491298A25A6B4802FE3E5",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_12",
+        "pin_id": "3C27CD6D428FC4BCCA535ABA68F206E3",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_AddComponentByClass_2",
+        "pin_id": "DB09D1D04B3491298A25A6B4802FE3E5",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_13",
+        "pin_id": "DE43FB844F1055F755C0DBB0126CCC15",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_AddComponentByClass_2",
+        "pin_id": "DB09D1D04B3491298A25A6B4802FE3E5",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_20",
+        "pin_id": "A7328E8043B1B505A8B46291569384EE",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_AddComponentByClass_2",
+        "pin_id": "DB09D1D04B3491298A25A6B4802FE3E5",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_VariableGet_26",
+        "pin_id": "1DFB0D4646DD1C7FA14B77BF988BA64E",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_AddComponentByClass_2",
+        "pin_id": "901141A84EE3A76DBEA59BAB3DBEFEC3",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallArrayFunction_3",
+        "pin_id": "407D9B1A410BE04E89F65DA170167D2E",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallArrayFunction_2",
+        "pin_id": "D49ADB5F4B23F16CA4CA4FA1025EE7F0",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "F628CBF545793141F384C1BD66C19314",
+        "pin_name": "Condition"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallArrayFunction_3",
+        "pin_id": "9EC958CD4E2889731C59B7B26E862C83",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_20",
+        "pin_id": "165981F34D043105E748CF91138CF8C9",
+        "pin_name": "execute"
+      }
+    },
     {
       "kind": "data",
       "from": {
@@ -1766,12 +4426,25 @@
     {
       "kind": "exec",
       "from": {
-        "node": "K2Node_CallFunction_5",
+        "node": "K2Node_CallFunction_13",
+        "pin_id": "3B7AB79B43C382B6228A30AFBDD8F070",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_12",
+        "pin_id": "F1C4186A4D1175B45FBCB2B932A5854E",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_16",
         "pin_id": "924A7997487F953DF31A79B2D6A1855D",
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_CallFunction_1",
+        "node": "K2Node_CallFunction_17",
         "pin_id": "6D1D99B74C057E15A9043BAB6CCCCDE0",
         "pin_name": "execute"
       }
@@ -1779,7 +4452,33 @@
     {
       "kind": "exec",
       "from": {
-        "node": "K2Node_CallFunction_6",
+        "node": "K2Node_CallFunction_18",
+        "pin_id": "DFF6104C486081640FF5B9BE300485A0",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_MacroInstance_0",
+        "pin_id": "C2A31E59466145BD3E893C8EE37C0C85",
+        "pin_name": "exec"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_20",
+        "pin_id": "78AC9FB74163A63780792EB270E2A296",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_13",
+        "pin_id": "1B4D14E6413571B980B768AD72C1C137",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_21",
         "pin_id": "924A7997487F953DF31A79B2D6A1855D",
         "pin_name": "then"
       },
@@ -1787,6 +4486,71 @@
         "node": "K2Node_CallFunction_3",
         "pin_id": "6D1D99B74C057E15A9043BAB6CCCCDE0",
         "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_3",
+        "pin_id": "9A37D0BC43F8EC56EACDBEA1E73CEB81",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "3A9A984B4165CFB80306869E29FBE5B6",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallFunction_6",
+        "pin_id": "2A2FF81E4A556845E51661A904E66CFB",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "EF95591342A0CA153F1DD895284078ED",
+        "pin_name": "InName"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "3D1CC2CE426A41B843E912A9DBFBE4B8",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CommutativeAssociativeBinaryOperator_0",
+        "pin_id": "5FA283904E8A114FE8BA06A0CD15DBBF",
+        "pin_name": "B"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "A8495151424D85ABB4FD038AA7CB2F23",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallArrayFunction_3",
+        "pin_id": "9016D42E4C6971E9813B718AE3F49E64",
+        "pin_name": "NewItem"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CommutativeAssociativeBinaryOperator_0",
+        "pin_id": "D976D4C549560F1738E7F6B75816B34C",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "F1D68D21480609C588FD4B827F03C887",
+        "pin_name": "InString"
       }
     },
     {
@@ -1805,12 +4569,25 @@
     {
       "kind": "exec",
       "from": {
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "F471704A4659C99E39929C8DAE450FA5",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_MacroInstance_4",
+        "pin_id": "62483A1B41B973009A75E09144C9902A",
+        "pin_name": "Exec"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
         "node": "K2Node_Knot_0",
         "pin_id": "4408A07943C38163B34254AC86DF2B09",
         "pin_name": "OutputPin"
       },
       "to": {
-        "node": "K2Node_CallFunction_5",
+        "node": "K2Node_CallFunction_16",
         "pin_id": "7A4B81E2424E09299CB27DB975E4D9C8",
         "pin_name": "execute"
       }
@@ -1836,7 +4613,7 @@
         "pin_name": "Is Valid"
       },
       "to": {
-        "node": "K2Node_CallFunction_6",
+        "node": "K2Node_CallFunction_21",
         "pin_id": "7A4B81E2424E09299CB27DB975E4D9C8",
         "pin_name": "execute"
       }
@@ -1862,15 +4639,197 @@
         "pin_name": "Is Valid"
       },
       "to": {
-        "node": "K2Node_MacroInstance_0",
-        "pin_id": "C2A31E59466145BD3E893C8EE37C0C85",
+        "node": "K2Node_CallFunction_18",
+        "pin_id": "4C069B8B472AB25DBFB2248C0DA4EEE0",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_MacroInstance_4",
+        "pin_id": "EE3A21DC44513138E84E2EB5C295716B",
+        "pin_name": "Array Element"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_13",
+        "pin_id": "48B1D68E4543F96EC790789ACF4EFA26",
+        "pin_name": "NewMesh"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_MacroInstance_4",
+        "pin_id": "EE3A21DC44513138E84E2EB5C295716B",
+        "pin_name": "Array Element"
+      },
+      "to": {
+        "node": "K2Node_MacroInstance_5",
+        "pin_id": "FFE2D4574D15615AE37C3CB1E19AE6D5",
+        "pin_name": "InputObject"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_MacroInstance_4",
+        "pin_id": "9E10EA2E4C5784B1496F6DAE2869B2C6",
+        "pin_name": "LoopBody"
+      },
+      "to": {
+        "node": "K2Node_MacroInstance_5",
+        "pin_id": "700CFA564A2B06382B58D9A5C5CC0C5F",
         "pin_name": "exec"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_MacroInstance_5",
+        "pin_id": "03BE77AF4B927F49E44958B111A1A5F9",
+        "pin_name": "Is Valid"
+      },
+      "to": {
+        "node": "K2Node_AddComponentByClass_2",
+        "pin_id": "4CFC6BDE4E895C04B65CF0BA6848201C",
+        "pin_name": "execute"
       }
     },
     {
       "kind": "data",
       "from": {
         "node": "K2Node_VariableGet_0",
+        "pin_id": "6221476349011402A9DFD0ABE18021CD",
+        "pin_name": "ArmorSlotTag"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_18",
+        "pin_id": "CB26466C49019D520209A0A1CC4254B3",
+        "pin_name": "ArmorSlotTag"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_12",
+        "pin_id": "464E7F764169D94E84F14980C59513F4",
+        "pin_name": "ArmorMesh"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_21",
+        "pin_id": "87CF54B444CD73BF7944A1BE080F4E0C",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_13",
+        "pin_id": "0347273A4870200930C507965652E052",
+        "pin_name": "ArmorMesh"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_21",
+        "pin_id": "8A6BC993475F2E90C5729BACFA117CEE",
+        "pin_name": "NewMesh"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_17",
+        "pin_id": "180A216549D65BE4DF23E88DF60E6A68",
+        "pin_name": "ArmorDefinition"
+      },
+      "to": {
+        "node": "K2Node_VariableGet_18",
+        "pin_id": "9BAEB1A34565ED123B84829E58605F47",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_18",
+        "pin_id": "767E12E44937AADC57C582808827D81C",
+        "pin_name": "AdditionalMeshes"
+      },
+      "to": {
+        "node": "K2Node_MacroInstance_4",
+        "pin_id": "C4FE315F44AAE48F9A1F74A9F60AC6CA",
+        "pin_name": "Array"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_19",
+        "pin_id": "E335634046F5791FD9B854BFE89D2CAF",
+        "pin_name": "Mesh"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_20",
+        "pin_id": "334287884D3B652C7C698A9611F80E3C",
+        "pin_name": "Parent"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_2",
+        "pin_id": "180A216549D65BE4DF23E88DF60E6A68",
+        "pin_name": "ArmorDefinition"
+      },
+      "to": {
+        "node": "K2Node_VariableGet_13",
+        "pin_id": "AD4F777D46284A7EFAD231AA01B6E6CF",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_20",
+        "pin_id": "180A216549D65BE4DF23E88DF60E6A68",
+        "pin_name": "ArmorDefinition"
+      },
+      "to": {
+        "node": "K2Node_VariableGet_21",
+        "pin_id": "9BAEB1A34565ED123B84829E58605F47",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_21",
+        "pin_id": "767E12E44937AADC57C582808827D81C",
+        "pin_name": "AdditionalMeshes"
+      },
+      "to": {
+        "node": "K2Node_CallArrayFunction_2",
+        "pin_id": "96D419374D95C0CBDDF3BC9C03FC5027",
+        "pin_name": "TargetArray"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_23",
+        "pin_id": "464E7F764169D94E84F14980C59513F4",
+        "pin_name": "ArmorMesh"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_17",
+        "pin_id": "5027E98649C6DD322381E5B01543E6A3",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_24",
         "pin_id": "6221476349011402A9DFD0ABE18021CD",
         "pin_name": "ArmorSlotTag"
       },
@@ -1883,27 +4842,40 @@
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_VariableGet_1",
-        "pin_id": "180A216549D65BE4DF23E88DF60E6A68",
-        "pin_name": "ArmorDefinition"
+        "node": "K2Node_VariableGet_25",
+        "pin_id": "E335634046F5791FD9B854BFE89D2CAF",
+        "pin_name": "Mesh"
       },
       "to": {
-        "node": "K2Node_VariableGet_4",
-        "pin_id": "AD4F777D46284A7EFAD231AA01B6E6CF",
-        "pin_name": "self"
+        "node": "K2Node_CallFunction_12",
+        "pin_id": "F4C384F54834A0E2CB840DAF9F08A48E",
+        "pin_name": "NewLeaderBoneComponent"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_VariableGet_12",
-        "pin_id": "464E7F764169D94E84F14980C59513F4",
-        "pin_name": "ArmorMesh"
+        "node": "K2Node_VariableGet_26",
+        "pin_id": "147260C04D092C978F6C00A9180427F0",
+        "pin_name": "ComponentTags"
+      },
+      "to": {
+        "node": "K2Node_CallArrayFunction_3",
+        "pin_id": "3245DF4B46417C706E2FE09A9CD7CF17",
+        "pin_name": "TargetArray"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_27",
+        "pin_id": "F030943C409EC56CD695EEAA97A757EE",
+        "pin_name": "ArmorSlotTag"
       },
       "to": {
         "node": "K2Node_CallFunction_6",
-        "pin_id": "87CF54B444CD73BF7944A1BE080F4E0C",
-        "pin_name": "self"
+        "pin_id": "9A85A9E84F977D4C0EEA19B61DA1AD27",
+        "pin_name": "GameplayTag"
       }
     },
     {
@@ -1922,38 +4894,12 @@
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_VariableGet_4",
-        "pin_id": "0347273A4870200930C507965652E052",
-        "pin_name": "ArmorMesh"
-      },
-      "to": {
-        "node": "K2Node_CallFunction_6",
-        "pin_id": "8A6BC993475F2E90C5729BACFA117CEE",
-        "pin_name": "NewMesh"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
-        "node": "K2Node_VariableGet_6",
-        "pin_id": "464E7F764169D94E84F14980C59513F4",
-        "pin_name": "ArmorMesh"
-      },
-      "to": {
-        "node": "K2Node_CallFunction_1",
-        "pin_id": "5027E98649C6DD322381E5B01543E6A3",
-        "pin_name": "self"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
         "node": "K2Node_VariableGet_8",
         "pin_id": "464E7F764169D94E84F14980C59513F4",
         "pin_name": "ArmorMesh"
       },
       "to": {
-        "node": "K2Node_CallFunction_5",
+        "node": "K2Node_CallFunction_16",
         "pin_id": "87CF54B444CD73BF7944A1BE080F4E0C",
         "pin_name": "self"
       }

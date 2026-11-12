@@ -214,24 +214,14 @@
   ],
   "graphs": [
     {
-      "name": "CheckInitialOverlap",
-      "kind": "function",
-      "guid": "FE62D034443E01085E307E87D972CC3C",
-      "node_count": 23,
-      "pin_count": 75,
-      "connection_count": 28,
-      "exec_connection_count": 9,
-      "data_connection_count": 19
-    },
-    {
       "name": "EventGraph",
       "kind": "event",
       "guid": "7246A1D4483732C6169CFDA0A8573EB9",
-      "node_count": 6,
-      "pin_count": 19,
-      "connection_count": 5,
+      "node_count": 5,
+      "pin_count": 15,
+      "connection_count": 4,
       "exec_connection_count": 3,
-      "data_connection_count": 2
+      "data_connection_count": 1
     },
     {
       "name": "UserConstructionScript",
@@ -244,14 +234,14 @@
       "data_connection_count": 0
     },
     {
-      "name": "HandlePlayerOverlap",
+      "name": "TryPlayCinematic",
       "kind": "function",
-      "guid": "54B6ABB64D2E74E1AEDD1D94C07814AD",
-      "node_count": 21,
-      "pin_count": 69,
-      "connection_count": 24,
-      "exec_connection_count": 5,
-      "data_connection_count": 19
+      "guid": "2406A13945A79E3C54BD2FBA8F2F304D",
+      "node_count": 27,
+      "pin_count": 81,
+      "connection_count": 31,
+      "exec_connection_count": 10,
+      "data_connection_count": 21
     },
     {
       "name": "PlayManually",
@@ -264,14 +254,24 @@
       "data_connection_count": 4
     },
     {
-      "name": "TryPlayCinematic",
+      "name": "HandlePlayerOverlap",
       "kind": "function",
-      "guid": "2406A13945A79E3C54BD2FBA8F2F304D",
-      "node_count": 27,
-      "pin_count": 81,
-      "connection_count": 31,
-      "exec_connection_count": 10,
-      "data_connection_count": 21
+      "guid": "54B6ABB64D2E74E1AEDD1D94C07814AD",
+      "node_count": 21,
+      "pin_count": 69,
+      "connection_count": 24,
+      "exec_connection_count": 5,
+      "data_connection_count": 19
+    },
+    {
+      "name": "ResolveCinematicController",
+      "kind": "function",
+      "guid": "DF889EAC4AA65E91847647A161145962",
+      "node_count": 9,
+      "pin_count": 27,
+      "connection_count": 10,
+      "exec_connection_count": 5,
+      "data_connection_count": 5
     },
     {
       "name": "RetryLevelStart",
@@ -284,20 +284,38 @@
       "data_connection_count": 11
     },
     {
-      "name": "ResolveCinematicController",
+      "name": "CheckInitialOverlap",
       "kind": "function",
-      "guid": "DF889EAC4AA65E91847647A161145962",
-      "node_count": 9,
-      "pin_count": 27,
-      "connection_count": 10,
-      "exec_connection_count": 5,
-      "data_connection_count": 5
+      "guid": "FE62D034443E01085E307E87D972CC3C",
+      "node_count": 23,
+      "pin_count": 75,
+      "connection_count": 28,
+      "exec_connection_count": 9,
+      "data_connection_count": 19
     }
   ],
   "generated_graphs": [
     {
+      "name": "ExecuteUbergraph_BP_CinematicTrigger",
+      "guid": "D41F631F4F7E357C53A44E8F4D02C6B0",
+      "node_count": 6,
+      "pin_count": 17,
+      "connection_count": 4,
+      "exec_connection_count": 3,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveActorBeginOverlap",
+      "guid": "F11BEA8B409D631EF8A7D2BEDD5D2BAD",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
       "name": "ReceiveBeginPlay",
-      "guid": "976BDA314EB95F27BEC8AD9456D968E0",
+      "guid": "6B1580EF4B4C89493A5674AC89AED124",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -305,23 +323,77 @@
       "data_connection_count": 0
     },
     {
-      "name": "ReceiveActorBeginOverlap",
-      "guid": "F52673024D3A4BBF6E169CBC3809A5D5",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
+      "name": "UserConstructionScript_MERGED",
+      "guid": "53C01ABE4442AA7F414421A8744922EB",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TryPlayCinematic_MERGED",
+      "guid": "2406A13945A79E3C54BD2FBA8F2F304D",
+      "node_count": 27,
+      "pin_count": 80,
+      "connection_count": 31,
+      "exec_connection_count": 10,
+      "data_connection_count": 21
+    },
+    {
+      "name": "PlayManually_MERGED",
+      "guid": "52A013D949B61B5DC0811FBFE407616B",
+      "node_count": 10,
+      "pin_count": 29,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "HandlePlayerOverlap_MERGED",
+      "guid": "54B6ABB64D2E74E1AEDD1D94C07814AD",
+      "node_count": 26,
+      "pin_count": 87,
+      "connection_count": 26,
+      "exec_connection_count": 5,
+      "data_connection_count": 21
+    },
+    {
+      "name": "ResolveCinematicController_MERGED",
+      "guid": "DF889EAC4AA65E91847647A161145962",
+      "node_count": 9,
+      "pin_count": 27,
+      "connection_count": 10,
+      "exec_connection_count": 5,
+      "data_connection_count": 5
+    },
+    {
+      "name": "RetryLevelStart_MERGED",
+      "guid": "966C1F394547009EC8AF09B762F9F767",
+      "node_count": 18,
+      "pin_count": 60,
+      "connection_count": 20,
+      "exec_connection_count": 8,
+      "data_connection_count": 12
+    },
+    {
+      "name": "CheckInitialOverlap_MERGED",
+      "guid": "FE62D034443E01085E307E87D972CC3C",
+      "node_count": 25,
+      "pin_count": 82,
+      "connection_count": 29,
+      "exec_connection_count": 9,
+      "data_connection_count": 20
     }
   ],
   "stats": {
     "authored_graph_count": 8,
-    "generated_graph_count": 2,
-    "authored_node_count": 111,
-    "authored_pin_count": 347,
-    "authored_connection_count": 125,
-    "generated_node_count": 5,
-    "generated_pin_count": 14
+    "generated_graph_count": 10,
+    "authored_node_count": 110,
+    "authored_pin_count": 343,
+    "authored_connection_count": 124,
+    "generated_node_count": 127,
+    "generated_pin_count": 397
   },
   "graph_files": [
     {

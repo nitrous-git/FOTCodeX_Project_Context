@@ -17,13 +17,20 @@
   },
   "architecture": {
     "dependencies": [
-      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/System/SG_SystemPreferences"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
     ],
-    "non_architecture_dependency_count": 4,
+    "non_architecture_dependency_count": 24,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -37,17 +44,288 @@
     "generated_class_object": "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System.WBP_System_C",
     "interfaces": [],
     "components": [],
-    "variables": [],
+    "variables": [
+      {
+        "name": "ActiveCategory",
+        "guid": "3A60523B482A4D9A05591FA7F6A1D33F",
+        "friendly_name": "Active Category",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "AudioSelection",
+        "guid": "9498AB5841E5097282FBA484D58C8EF6",
+        "friendly_name": "Audio Selection",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CameraSelection",
+        "guid": "BA886D88463142ED73718A9619EFF1C2",
+        "friendly_name": "Camera Selection",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ExitPreviewActor",
+        "guid": "2E19F872480B9EB59A3460A02D8C8E4D",
+        "friendly_name": "Exit Preview Actor",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "GraphicsSelection",
+        "guid": "4D8B9E174477304C91A6EF9156091FB9",
+        "friendly_name": "Graphics Selection",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ModalKind",
+        "guid": "D8AF367D46922901BC3C659D04EE9BFE",
+        "friendly_name": "Modal Kind",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Preferences",
+        "guid": "925C715A460767E6BCF2CFBFFCB2BDBB",
+        "friendly_name": "Preferences",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/System/SG_SystemPreferences.SG_SystemPreferences_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "RefreshingControls",
+        "guid": "A3CB1B5449CDF36412847D9ABF1FE6DC",
+        "friendly_name": "Refreshing Controls",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SelectedSetting",
+        "guid": "641591804ECCC090192D5F8B436A6B4E",
+        "friendly_name": "Selected Setting",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
     "graphs": {
       "event_graphs": [
         "EventGraph"
       ],
       "functions": [
-        "OnPreviewKeyDown"
+        "OnPreviewKeyDown",
+        "OpenSystemSettings",
+        "RefreshGraphics",
+        "RefreshPreferences",
+        "SelectSystemCategory",
+        "SelectSystemSetting",
+        "MoveSettingFocus",
+        "AdjustSystemSetting",
+        "UpdateSystemSlider",
+        "FlushSystemPreferences",
+        "ShowSystemConfirmation",
+        "ResolveSystemConfirmation",
+        "RevertDisplayPreview",
+        "RefreshExitCharacter",
+        "CanPreviewDisplay",
+        "ReleaseExitPreview",
+        "DeactivateSystemSettings",
+        "ShowExitPreview",
+        "UpdateExitPreview"
       ],
       "macros": [],
       "delegates": [],
-      "generated_graphs": []
+      "generated_graphs": [
+        "BndEvt__WBP_System_ConfirmNo_K2Node_ComponentBoundEvent_97_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ConfirmYes_K2Node_ComponentBoundEvent_96_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_QuitWithoutSaving_K2Node_ComponentBoundEvent_95_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_QuitWithoutSaving_K2Node_ComponentBoundEvent_94_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_EffectsFocus_K2Node_ComponentBoundEvent_93_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_EffectsSlider_K2Node_ComponentBoundEvent_92_OnMouseCaptureBeginEvent__DelegateSignature",
+        "BndEvt__WBP_System_EffectsSlider_K2Node_ComponentBoundEvent_91_OnFloatValueChangedEvent__DelegateSignature",
+        "BndEvt__WBP_System_MusicFocus_K2Node_ComponentBoundEvent_90_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_MusicSlider_K2Node_ComponentBoundEvent_89_OnMouseCaptureBeginEvent__DelegateSignature",
+        "BndEvt__WBP_System_MusicSlider_K2Node_ComponentBoundEvent_88_OnFloatValueChangedEvent__DelegateSignature",
+        "BndEvt__WBP_System_MasterFocus_K2Node_ComponentBoundEvent_87_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_MasterSlider_K2Node_ComponentBoundEvent_86_OnMouseCaptureBeginEvent__DelegateSignature",
+        "BndEvt__WBP_System_MasterSlider_K2Node_ComponentBoundEvent_85_OnFloatValueChangedEvent__DelegateSignature",
+        "BndEvt__WBP_System_CameraSpeedFocus_K2Node_ComponentBoundEvent_84_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_CameraSpeedSlider_K2Node_ComponentBoundEvent_83_OnMouseCaptureBeginEvent__DelegateSignature",
+        "BndEvt__WBP_System_CameraSpeedSlider_K2Node_ComponentBoundEvent_82_OnFloatValueChangedEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertYPlus_K2Node_ComponentBoundEvent_81_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertYPlus_K2Node_ComponentBoundEvent_80_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertYMinus_K2Node_ComponentBoundEvent_79_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertYMinus_K2Node_ComponentBoundEvent_78_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertYFocus_K2Node_ComponentBoundEvent_77_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertYFocus_K2Node_ComponentBoundEvent_76_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertXPlus_K2Node_ComponentBoundEvent_75_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertXPlus_K2Node_ComponentBoundEvent_74_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertXMinus_K2Node_ComponentBoundEvent_73_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertXMinus_K2Node_ComponentBoundEvent_72_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertXFocus_K2Node_ComponentBoundEvent_71_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_InvertXFocus_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_FoliagePlus_K2Node_ComponentBoundEvent_69_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_FoliagePlus_K2Node_ComponentBoundEvent_68_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_FoliageMinus_K2Node_ComponentBoundEvent_67_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_FoliageMinus_K2Node_ComponentBoundEvent_66_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_FoliageFocus_K2Node_ComponentBoundEvent_65_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_FoliageFocus_K2Node_ComponentBoundEvent_64_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ViewDistancePlus_K2Node_ComponentBoundEvent_63_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ViewDistancePlus_K2Node_ComponentBoundEvent_62_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ViewDistanceMinus_K2Node_ComponentBoundEvent_61_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ViewDistanceMinus_K2Node_ComponentBoundEvent_60_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ViewDistanceFocus_K2Node_ComponentBoundEvent_59_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ViewDistanceFocus_K2Node_ComponentBoundEvent_58_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_GlobalIlluminationPlus_K2Node_ComponentBoundEvent_57_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_GlobalIlluminationPlus_K2Node_ComponentBoundEvent_56_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_GlobalIlluminationMinus_K2Node_ComponentBoundEvent_55_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_GlobalIlluminationMinus_K2Node_ComponentBoundEvent_54_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_GlobalIlluminationFocus_K2Node_ComponentBoundEvent_53_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_GlobalIlluminationFocus_K2Node_ComponentBoundEvent_52_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadingPlus_K2Node_ComponentBoundEvent_51_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadingPlus_K2Node_ComponentBoundEvent_50_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadingMinus_K2Node_ComponentBoundEvent_49_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadingMinus_K2Node_ComponentBoundEvent_48_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadingFocus_K2Node_ComponentBoundEvent_47_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadingFocus_K2Node_ComponentBoundEvent_46_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ReflectionPlus_K2Node_ComponentBoundEvent_45_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ReflectionPlus_K2Node_ComponentBoundEvent_44_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ReflectionMinus_K2Node_ComponentBoundEvent_43_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ReflectionMinus_K2Node_ComponentBoundEvent_42_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ReflectionFocus_K2Node_ComponentBoundEvent_41_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ReflectionFocus_K2Node_ComponentBoundEvent_40_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadowPlus_K2Node_ComponentBoundEvent_39_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadowPlus_K2Node_ComponentBoundEvent_38_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadowMinus_K2Node_ComponentBoundEvent_37_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadowMinus_K2Node_ComponentBoundEvent_36_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadowFocus_K2Node_ComponentBoundEvent_35_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ShadowFocus_K2Node_ComponentBoundEvent_34_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_PostProcessingPlus_K2Node_ComponentBoundEvent_33_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_PostProcessingPlus_K2Node_ComponentBoundEvent_32_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_PostProcessingMinus_K2Node_ComponentBoundEvent_31_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_PostProcessingMinus_K2Node_ComponentBoundEvent_30_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_PostProcessingFocus_K2Node_ComponentBoundEvent_29_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_PostProcessingFocus_K2Node_ComponentBoundEvent_28_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_AntiAliasingPlus_K2Node_ComponentBoundEvent_27_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_AntiAliasingPlus_K2Node_ComponentBoundEvent_26_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_AntiAliasingMinus_K2Node_ComponentBoundEvent_25_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_AntiAliasingMinus_K2Node_ComponentBoundEvent_24_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_AntiAliasingFocus_K2Node_ComponentBoundEvent_23_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_AntiAliasingFocus_K2Node_ComponentBoundEvent_22_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_TexturePlus_K2Node_ComponentBoundEvent_21_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_TexturePlus_K2Node_ComponentBoundEvent_20_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_TextureMinus_K2Node_ComponentBoundEvent_19_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_TextureMinus_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_TextureFocus_K2Node_ComponentBoundEvent_17_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_TextureFocus_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ResolutionPlus_K2Node_ComponentBoundEvent_15_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ResolutionPlus_K2Node_ComponentBoundEvent_14_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ResolutionMinus_K2Node_ComponentBoundEvent_13_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ResolutionMinus_K2Node_ComponentBoundEvent_12_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ResolutionFocus_K2Node_ComponentBoundEvent_11_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ResolutionFocus_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ScreenModePlus_K2Node_ComponentBoundEvent_9_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ScreenModePlus_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ScreenModeMinus_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ScreenModeMinus_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ScreenModeFocus_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_System_ScreenModeFocus_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_ExitTab_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_AudioTab_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_CameraTab_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_System_GraphicsTab_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
+      ]
     },
     "extraction_status": {
       "parent_class": "complete",
@@ -66,7 +344,7 @@
   },
   "widget_designer": {
     "file": "widget_tree.json",
-    "status": "unavailable",
-    "widget_count": 0
+    "status": "available",
+    "widget_count": 285
   }
 }

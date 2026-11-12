@@ -6,38 +6,1255 @@
     "guid": "6F70A8DE4DF8A78DEF7A9682ADC4D0CF",
     "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
   },
-  "variables": [],
+  "variables": [
+    {
+      "name": "ActiveCategory",
+      "guid": "3A60523B482A4D9A05591FA7F6A1D33F",
+      "friendly_name": "Active Category",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AudioSelection",
+      "guid": "9498AB5841E5097282FBA484D58C8EF6",
+      "friendly_name": "Audio Selection",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CameraSelection",
+      "guid": "BA886D88463142ED73718A9619EFF1C2",
+      "friendly_name": "Camera Selection",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ExitPreviewActor",
+      "guid": "2E19F872480B9EB59A3460A02D8C8E4D",
+      "friendly_name": "Exit Preview Actor",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GraphicsSelection",
+      "guid": "4D8B9E174477304C91A6EF9156091FB9",
+      "friendly_name": "Graphics Selection",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ModalKind",
+      "guid": "D8AF367D46922901BC3C659D04EE9BFE",
+      "friendly_name": "Modal Kind",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Preferences",
+      "guid": "925C715A460767E6BCF2CFBFFCB2BDBB",
+      "friendly_name": "Preferences",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/System/SG_SystemPreferences.SG_SystemPreferences_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RefreshingControls",
+      "guid": "A3CB1B5449CDF36412847D9ABF1FE6DC",
+      "friendly_name": "Refreshing Controls",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SelectedSetting",
+      "guid": "641591804ECCC090192D5F8B436A6B4E",
+      "friendly_name": "Selected Setting",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
   "graphs": [
     {
       "name": "EventGraph",
       "kind": "event",
       "guid": "86AD922541F4F1254AB506A7230F243C",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
+      "node_count": 294,
+      "pin_count": 781,
+      "connection_count": 200,
+      "exec_connection_count": 98,
+      "data_connection_count": 102
     },
     {
       "name": "OnPreviewKeyDown",
       "kind": "function",
       "guid": "CE2CDFCA49F02DBC4302C19F0235D8EE",
-      "node_count": 26,
-      "pin_count": 75,
-      "connection_count": 30,
-      "exec_connection_count": 11,
-      "data_connection_count": 19
+      "node_count": 197,
+      "pin_count": 633,
+      "connection_count": 243,
+      "exec_connection_count": 54,
+      "data_connection_count": 189
+    },
+    {
+      "name": "OpenSystemSettings",
+      "kind": "function",
+      "guid": "5616A7DF4F9F3F0BAF538AAE05ED6EF8",
+      "node_count": 9,
+      "pin_count": 26,
+      "connection_count": 11,
+      "exec_connection_count": 4,
+      "data_connection_count": 7
+    },
+    {
+      "name": "RefreshGraphics",
+      "kind": "function",
+      "guid": "EC2AB1844A2890A0A243F590A6FD58E1",
+      "node_count": 230,
+      "pin_count": 761,
+      "connection_count": 277,
+      "exec_connection_count": 12,
+      "data_connection_count": 265
+    },
+    {
+      "name": "RefreshPreferences",
+      "kind": "function",
+      "guid": "354E59F74AA07EE10599A7BF50AC60DB",
+      "node_count": 56,
+      "pin_count": 180,
+      "connection_count": 64,
+      "exec_connection_count": 12,
+      "data_connection_count": 52
+    },
+    {
+      "name": "SelectSystemCategory",
+      "kind": "function",
+      "guid": "63C938974F39275B4588E4871ACE128A",
+      "node_count": 82,
+      "pin_count": 272,
+      "connection_count": 101,
+      "exec_connection_count": 34,
+      "data_connection_count": 67
+    },
+    {
+      "name": "SelectSystemSetting",
+      "kind": "function",
+      "guid": "979D025141211034C9E82AB78523B3FD",
+      "node_count": 232,
+      "pin_count": 802,
+      "connection_count": 286,
+      "exec_connection_count": 125,
+      "data_connection_count": 161
+    },
+    {
+      "name": "MoveSettingFocus",
+      "kind": "function",
+      "guid": "0436556244D3D50135B2CAA636A17989",
+      "node_count": 23,
+      "pin_count": 82,
+      "connection_count": 28,
+      "exec_connection_count": 7,
+      "data_connection_count": 21
+    },
+    {
+      "name": "AdjustSystemSetting",
+      "kind": "function",
+      "guid": "3520EFA54721BE4A6D03CBA9AFC534AB",
+      "node_count": 310,
+      "pin_count": 1059,
+      "connection_count": 455,
+      "exec_connection_count": 132,
+      "data_connection_count": 323
+    },
+    {
+      "name": "UpdateSystemSlider",
+      "kind": "function",
+      "guid": "26F8F91445FBB8D3B8506183390AD3BB",
+      "node_count": 61,
+      "pin_count": 250,
+      "connection_count": 85,
+      "exec_connection_count": 24,
+      "data_connection_count": 61
+    },
+    {
+      "name": "FlushSystemPreferences",
+      "kind": "function",
+      "guid": "6710123B4967FE478D98D99FA4976D06",
+      "node_count": 11,
+      "pin_count": 35,
+      "connection_count": 13,
+      "exec_connection_count": 5,
+      "data_connection_count": 8
+    },
+    {
+      "name": "ShowSystemConfirmation",
+      "kind": "function",
+      "guid": "3B6BE32F4748348EAAD033BBC05CE480",
+      "node_count": 21,
+      "pin_count": 73,
+      "connection_count": 23,
+      "exec_connection_count": 7,
+      "data_connection_count": 16
+    },
+    {
+      "name": "ResolveSystemConfirmation",
+      "kind": "function",
+      "guid": "2A5F143F4846C990D22F90A84C8F839F",
+      "node_count": 30,
+      "pin_count": 104,
+      "connection_count": 41,
+      "exec_connection_count": 18,
+      "data_connection_count": 23
+    },
+    {
+      "name": "RevertDisplayPreview",
+      "kind": "function",
+      "guid": "CCF3E83047AEF5645D2E3FB121CCDC40",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "RefreshExitCharacter",
+      "kind": "function",
+      "guid": "C45E9E6043AFB2416EA546A70A837F1A",
+      "node_count": 35,
+      "pin_count": 122,
+      "connection_count": 39,
+      "exec_connection_count": 10,
+      "data_connection_count": 29
+    },
+    {
+      "name": "CanPreviewDisplay",
+      "kind": "function",
+      "guid": "6B0A92B84943628352EE02A1ADC29B03",
+      "node_count": 5,
+      "pin_count": 17,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ReleaseExitPreview",
+      "kind": "function",
+      "guid": "E3BB06894AAF41C4E978DB92DE3881B9",
+      "node_count": 6,
+      "pin_count": 17,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "DeactivateSystemSettings",
+      "kind": "function",
+      "guid": "1E5C382A434BCC9CE85ADABD8C821D57",
+      "node_count": 8,
+      "pin_count": 22,
+      "connection_count": 8,
+      "exec_connection_count": 4,
+      "data_connection_count": 4
+    },
+    {
+      "name": "ShowExitPreview",
+      "kind": "function",
+      "guid": "BDAF2DA34A0B9F5499718D9F51E07A0A",
+      "node_count": 17,
+      "pin_count": 66,
+      "connection_count": 22,
+      "exec_connection_count": 9,
+      "data_connection_count": 13
+    },
+    {
+      "name": "UpdateExitPreview",
+      "kind": "function",
+      "guid": "278EAE104262A6FFB0B96CABE4EA2350",
+      "node_count": 7,
+      "pin_count": 20,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
     }
   ],
-  "generated_graphs": [],
+  "generated_graphs": [
+    {
+      "name": "BndEvt__WBP_System_ConfirmNo_K2Node_ComponentBoundEvent_97_OnButtonClickedEvent__DelegateSignature",
+      "guid": "4C08F90A4207FE5AFA6ABD89D8DFFF16",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ConfirmYes_K2Node_ComponentBoundEvent_96_OnButtonClickedEvent__DelegateSignature",
+      "guid": "D5FC55074FB5E2F7C4D0709CE551A85A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_QuitWithoutSaving_K2Node_ComponentBoundEvent_95_OnButtonHoverEvent__DelegateSignature",
+      "guid": "80C453614A2F7784D3312FBFA0F50A01",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_QuitWithoutSaving_K2Node_ComponentBoundEvent_94_OnButtonClickedEvent__DelegateSignature",
+      "guid": "5F3ED44644FB8E975A25FF98D4E336C8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_EffectsFocus_K2Node_ComponentBoundEvent_93_OnButtonHoverEvent__DelegateSignature",
+      "guid": "C8B140774E0C8553EAE31C99F55C6099",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_EffectsSlider_K2Node_ComponentBoundEvent_92_OnMouseCaptureBeginEvent__DelegateSignature",
+      "guid": "C99D0F2A4606226CD39B7881A9E8E737",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_EffectsSlider_K2Node_ComponentBoundEvent_91_OnFloatValueChangedEvent__DelegateSignature",
+      "guid": "0828549B4F8EFD5A5394A3A7532FED85",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_System_MusicFocus_K2Node_ComponentBoundEvent_90_OnButtonHoverEvent__DelegateSignature",
+      "guid": "216DCF714E5101F1A49DE0AD39BFCA47",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_MusicSlider_K2Node_ComponentBoundEvent_89_OnMouseCaptureBeginEvent__DelegateSignature",
+      "guid": "34BB9EB647ED1C29C5A6938B911278E4",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_MusicSlider_K2Node_ComponentBoundEvent_88_OnFloatValueChangedEvent__DelegateSignature",
+      "guid": "F48D948B44AA920A70C4259EE4915C7F",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_System_MasterFocus_K2Node_ComponentBoundEvent_87_OnButtonHoverEvent__DelegateSignature",
+      "guid": "1BA5D3D441BB5DEB3CD3639F842F5707",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_MasterSlider_K2Node_ComponentBoundEvent_86_OnMouseCaptureBeginEvent__DelegateSignature",
+      "guid": "064AABBB46861978964463AE24220700",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_MasterSlider_K2Node_ComponentBoundEvent_85_OnFloatValueChangedEvent__DelegateSignature",
+      "guid": "77369C0D409421627EFEBAA491C9F594",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_System_CameraSpeedFocus_K2Node_ComponentBoundEvent_84_OnButtonHoverEvent__DelegateSignature",
+      "guid": "1F1E12474768A048E4EAB88EA8BE66C9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_CameraSpeedSlider_K2Node_ComponentBoundEvent_83_OnMouseCaptureBeginEvent__DelegateSignature",
+      "guid": "0926C8F441EA4EC9B0A95A9BC01370A7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_CameraSpeedSlider_K2Node_ComponentBoundEvent_82_OnFloatValueChangedEvent__DelegateSignature",
+      "guid": "1C2833E44E7E93087731E18AB4EC1CD4",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertYPlus_K2Node_ComponentBoundEvent_81_OnButtonHoverEvent__DelegateSignature",
+      "guid": "AA854AC74F8BFA0705F90A90DE524176",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertYPlus_K2Node_ComponentBoundEvent_80_OnButtonClickedEvent__DelegateSignature",
+      "guid": "D899FF4D4F6C90CD7452FAAB796E2445",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertYMinus_K2Node_ComponentBoundEvent_79_OnButtonHoverEvent__DelegateSignature",
+      "guid": "DF77BAF94B5D03EA66D808886A0C5C68",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertYMinus_K2Node_ComponentBoundEvent_78_OnButtonClickedEvent__DelegateSignature",
+      "guid": "C30A5F8246251A3E0C28ADB8CEDFD8FE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertYFocus_K2Node_ComponentBoundEvent_77_OnButtonHoverEvent__DelegateSignature",
+      "guid": "5623434540477D68E58180A66B93AA6E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertYFocus_K2Node_ComponentBoundEvent_76_OnButtonClickedEvent__DelegateSignature",
+      "guid": "0BFE7E364283E7E2A0A85DAF26504FF2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertXPlus_K2Node_ComponentBoundEvent_75_OnButtonHoverEvent__DelegateSignature",
+      "guid": "CE270C664AC4AF50BF1E02BBDA17CDFA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertXPlus_K2Node_ComponentBoundEvent_74_OnButtonClickedEvent__DelegateSignature",
+      "guid": "AD7FD8FF441AC09FF79AD883306EC33D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertXMinus_K2Node_ComponentBoundEvent_73_OnButtonHoverEvent__DelegateSignature",
+      "guid": "B6C60B6E4DF2C56BF4C34B94966903D3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertXMinus_K2Node_ComponentBoundEvent_72_OnButtonClickedEvent__DelegateSignature",
+      "guid": "967B64EE43D452EF75853FA0BE100CC1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertXFocus_K2Node_ComponentBoundEvent_71_OnButtonHoverEvent__DelegateSignature",
+      "guid": "BD73B8794D2E8C36AA8FD2B49E0365E6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_InvertXFocus_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature",
+      "guid": "57408C43463105F08CCBDEBC2C37FCE7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_FoliagePlus_K2Node_ComponentBoundEvent_69_OnButtonHoverEvent__DelegateSignature",
+      "guid": "63A4980D4D812A0C882E008CA1378666",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_FoliagePlus_K2Node_ComponentBoundEvent_68_OnButtonClickedEvent__DelegateSignature",
+      "guid": "32F96C754F8918682240D38E678BD47C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_FoliageMinus_K2Node_ComponentBoundEvent_67_OnButtonHoverEvent__DelegateSignature",
+      "guid": "5F68E27B465C14753A6774AE27AEFC64",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_FoliageMinus_K2Node_ComponentBoundEvent_66_OnButtonClickedEvent__DelegateSignature",
+      "guid": "34DA82CD4B01CE853B62648D10DF9F6C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_FoliageFocus_K2Node_ComponentBoundEvent_65_OnButtonHoverEvent__DelegateSignature",
+      "guid": "DBF5FA034FBA8DE0140910B12D9F855D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_FoliageFocus_K2Node_ComponentBoundEvent_64_OnButtonClickedEvent__DelegateSignature",
+      "guid": "CF0FAC3541492AB9A80FB19001F93003",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ViewDistancePlus_K2Node_ComponentBoundEvent_63_OnButtonHoverEvent__DelegateSignature",
+      "guid": "05B92D484542CC2F8D8CE381F7C064AC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ViewDistancePlus_K2Node_ComponentBoundEvent_62_OnButtonClickedEvent__DelegateSignature",
+      "guid": "408E6D9D4E9307D35B44958D4E29B6FD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ViewDistanceMinus_K2Node_ComponentBoundEvent_61_OnButtonHoverEvent__DelegateSignature",
+      "guid": "B056557546BAE3F5FDD0CF83088E6BC9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ViewDistanceMinus_K2Node_ComponentBoundEvent_60_OnButtonClickedEvent__DelegateSignature",
+      "guid": "19437A3B4EF52E544BD560A160235BF7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ViewDistanceFocus_K2Node_ComponentBoundEvent_59_OnButtonHoverEvent__DelegateSignature",
+      "guid": "A0CE8CF44DBB55AF73A6DCA1E19B95FC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ViewDistanceFocus_K2Node_ComponentBoundEvent_58_OnButtonClickedEvent__DelegateSignature",
+      "guid": "E2EB2AC546FBEC646C848DBA117D21E4",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_GlobalIlluminationPlus_K2Node_ComponentBoundEvent_57_OnButtonHoverEvent__DelegateSignature",
+      "guid": "F2D09C5C4D73B51FFA63869C7B81B345",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_GlobalIlluminationPlus_K2Node_ComponentBoundEvent_56_OnButtonClickedEvent__DelegateSignature",
+      "guid": "49DCEEC1436E4E6DC49ECC873660CE8A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_GlobalIlluminationMinus_K2Node_ComponentBoundEvent_55_OnButtonHoverEvent__DelegateSignature",
+      "guid": "7511567C4D42244C305A5AA936808BE9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_GlobalIlluminationMinus_K2Node_ComponentBoundEvent_54_OnButtonClickedEvent__DelegateSignature",
+      "guid": "BF126492467543F13BFAB7A6C9FACD25",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_GlobalIlluminationFocus_K2Node_ComponentBoundEvent_53_OnButtonHoverEvent__DelegateSignature",
+      "guid": "1A0857B44EED8459944ED28754FF375E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_GlobalIlluminationFocus_K2Node_ComponentBoundEvent_52_OnButtonClickedEvent__DelegateSignature",
+      "guid": "6AB47A2B4505075762C1D0A932D5304F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadingPlus_K2Node_ComponentBoundEvent_51_OnButtonHoverEvent__DelegateSignature",
+      "guid": "AA4CE65A4940664E1ED27CA5B15B7A1C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadingPlus_K2Node_ComponentBoundEvent_50_OnButtonClickedEvent__DelegateSignature",
+      "guid": "272D3B034FF11B7BE1B9EB844929DE6A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadingMinus_K2Node_ComponentBoundEvent_49_OnButtonHoverEvent__DelegateSignature",
+      "guid": "5E444725439019B05ED9D0A3856B0C08",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadingMinus_K2Node_ComponentBoundEvent_48_OnButtonClickedEvent__DelegateSignature",
+      "guid": "45A1F8B0433A612118396FA6DAD4AA38",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadingFocus_K2Node_ComponentBoundEvent_47_OnButtonHoverEvent__DelegateSignature",
+      "guid": "9113CF4C47B6FE695981E7889BE92C6A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadingFocus_K2Node_ComponentBoundEvent_46_OnButtonClickedEvent__DelegateSignature",
+      "guid": "BD6E2F6A40B310F42C4433A5B5DF238B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ReflectionPlus_K2Node_ComponentBoundEvent_45_OnButtonHoverEvent__DelegateSignature",
+      "guid": "3721F6FA4E89728BB2E9828D89473275",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ReflectionPlus_K2Node_ComponentBoundEvent_44_OnButtonClickedEvent__DelegateSignature",
+      "guid": "D079D3A14F7A99A06E9F1BB2DC776869",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ReflectionMinus_K2Node_ComponentBoundEvent_43_OnButtonHoverEvent__DelegateSignature",
+      "guid": "13ECE7AF46A17CD8DF9D4F9BE17208E0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ReflectionMinus_K2Node_ComponentBoundEvent_42_OnButtonClickedEvent__DelegateSignature",
+      "guid": "E25EA95F47334414DBF137B2AFCD618B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ReflectionFocus_K2Node_ComponentBoundEvent_41_OnButtonHoverEvent__DelegateSignature",
+      "guid": "C457561A4A4B3B4A392A42BFA3D29714",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ReflectionFocus_K2Node_ComponentBoundEvent_40_OnButtonClickedEvent__DelegateSignature",
+      "guid": "13DE158342AEA31CC0230FA92F691017",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadowPlus_K2Node_ComponentBoundEvent_39_OnButtonHoverEvent__DelegateSignature",
+      "guid": "9EC2ECE24AA2ADCA5488FDA5E9B85D9A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadowPlus_K2Node_ComponentBoundEvent_38_OnButtonClickedEvent__DelegateSignature",
+      "guid": "C9916EB841B9EADFE02B5FAB2A552C13",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadowMinus_K2Node_ComponentBoundEvent_37_OnButtonHoverEvent__DelegateSignature",
+      "guid": "D786E0E94B98E1724025B1B1F9ABE8DF",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadowMinus_K2Node_ComponentBoundEvent_36_OnButtonClickedEvent__DelegateSignature",
+      "guid": "8B9801E84B84DCA402CB6B8B8DA5FF52",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadowFocus_K2Node_ComponentBoundEvent_35_OnButtonHoverEvent__DelegateSignature",
+      "guid": "7A5B403A417E1B5A1E3482B244560B10",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ShadowFocus_K2Node_ComponentBoundEvent_34_OnButtonClickedEvent__DelegateSignature",
+      "guid": "A8D8A419470BF300409BBAB9D5D1059A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_PostProcessingPlus_K2Node_ComponentBoundEvent_33_OnButtonHoverEvent__DelegateSignature",
+      "guid": "F183A1654136B7B2EFAB10845AE66448",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_PostProcessingPlus_K2Node_ComponentBoundEvent_32_OnButtonClickedEvent__DelegateSignature",
+      "guid": "03D1AB7B41CA1C5D9C0A69BA3955D9BA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_PostProcessingMinus_K2Node_ComponentBoundEvent_31_OnButtonHoverEvent__DelegateSignature",
+      "guid": "389F525A419433064ADB299F82C7248E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_PostProcessingMinus_K2Node_ComponentBoundEvent_30_OnButtonClickedEvent__DelegateSignature",
+      "guid": "1C34FBF848F15FE681F7D8BF6C090531",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_PostProcessingFocus_K2Node_ComponentBoundEvent_29_OnButtonHoverEvent__DelegateSignature",
+      "guid": "B6010C694CD174D83BB31490A5D47804",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_PostProcessingFocus_K2Node_ComponentBoundEvent_28_OnButtonClickedEvent__DelegateSignature",
+      "guid": "E1F27FEF4ABF8F7987900B8AF0C1B011",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_AntiAliasingPlus_K2Node_ComponentBoundEvent_27_OnButtonHoverEvent__DelegateSignature",
+      "guid": "E9A6D7424AE27BD3693D04B8AAC846C0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_AntiAliasingPlus_K2Node_ComponentBoundEvent_26_OnButtonClickedEvent__DelegateSignature",
+      "guid": "86E05D3042345D113CF396A7D99F11CD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_AntiAliasingMinus_K2Node_ComponentBoundEvent_25_OnButtonHoverEvent__DelegateSignature",
+      "guid": "E86FF3854BC78F1DBF4425A75E8C457A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_AntiAliasingMinus_K2Node_ComponentBoundEvent_24_OnButtonClickedEvent__DelegateSignature",
+      "guid": "C29C6CA44EFA0B0BEE8DFFA1185A3A34",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_AntiAliasingFocus_K2Node_ComponentBoundEvent_23_OnButtonHoverEvent__DelegateSignature",
+      "guid": "2A0084B4474C4545B7C71A875F620FDE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_AntiAliasingFocus_K2Node_ComponentBoundEvent_22_OnButtonClickedEvent__DelegateSignature",
+      "guid": "D48096D34145A4E994827E955ED16FFE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_TexturePlus_K2Node_ComponentBoundEvent_21_OnButtonHoverEvent__DelegateSignature",
+      "guid": "D5156F72411F285F715E66BFD4D9413F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_TexturePlus_K2Node_ComponentBoundEvent_20_OnButtonClickedEvent__DelegateSignature",
+      "guid": "0D95CEE34164546A0D328D84A44EBFEF",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_TextureMinus_K2Node_ComponentBoundEvent_19_OnButtonHoverEvent__DelegateSignature",
+      "guid": "E315000A41C51F4557961D8F3D6BB32F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_TextureMinus_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature",
+      "guid": "F3F04305496269B2AF4959AD07015CDE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_TextureFocus_K2Node_ComponentBoundEvent_17_OnButtonHoverEvent__DelegateSignature",
+      "guid": "C7E4027143E6B6FBD9AF2D9FB4BC68E1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_TextureFocus_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature",
+      "guid": "092803AE42380508633ED296C7C67E8E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ResolutionPlus_K2Node_ComponentBoundEvent_15_OnButtonHoverEvent__DelegateSignature",
+      "guid": "DDF439D1471477D8339CCA928C47B455",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ResolutionPlus_K2Node_ComponentBoundEvent_14_OnButtonClickedEvent__DelegateSignature",
+      "guid": "15B175354113A541C0D96D9BF0DDF7ED",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ResolutionMinus_K2Node_ComponentBoundEvent_13_OnButtonHoverEvent__DelegateSignature",
+      "guid": "40A5EDD3445938D817045F84D9887938",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ResolutionMinus_K2Node_ComponentBoundEvent_12_OnButtonClickedEvent__DelegateSignature",
+      "guid": "64BC745143FBFE4839DC4FAF70C4BFC3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ResolutionFocus_K2Node_ComponentBoundEvent_11_OnButtonHoverEvent__DelegateSignature",
+      "guid": "3EE6944B4098FC068694F4858C7EF23B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ResolutionFocus_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature",
+      "guid": "B5D72CFC4121ABA1A38A10AF2239DF2E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ScreenModePlus_K2Node_ComponentBoundEvent_9_OnButtonHoverEvent__DelegateSignature",
+      "guid": "1109A942477FF0211EADBD9ACF9825FB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ScreenModePlus_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature",
+      "guid": "BE0FF7474E8CD14D001BB7B964EF46B6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ScreenModeMinus_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature",
+      "guid": "DE2A0D8A46CF120F48022888CAF82E5A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ScreenModeMinus_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature",
+      "guid": "77B919C440B62EED479DD7982ACCD7B6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ScreenModeFocus_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature",
+      "guid": "5CD0EA1A492F64FD501B3CA96D635888",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ScreenModeFocus_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature",
+      "guid": "4BA5982A477275C1B943A2904DAD512F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_ExitTab_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature",
+      "guid": "457963DC4D8C35BF77DAE1845BC015A2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_AudioTab_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+      "guid": "577312B24F3B7E20504BB3B2B2009358",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_CameraTab_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+      "guid": "97EA3C9D4EF7F5DAF126749F0DFB0804",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_System_GraphicsTab_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "BB9F1C8A499D055D6B9647A3906BCCC8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
   "stats": {
-    "authored_graph_count": 2,
-    "generated_graph_count": 0,
-    "authored_node_count": 29,
-    "authored_pin_count": 84,
-    "authored_connection_count": 30,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 20,
+    "generated_graph_count": 98,
+    "authored_node_count": 1640,
+    "authored_pin_count": 5340,
+    "authored_connection_count": 1917,
+    "generated_node_count": 200,
+    "generated_pin_count": 506
   },
   "graph_files": [
     {
@@ -46,9 +1263,99 @@
       "file": "graphs/EventGraph.json"
     },
     {
+      "name": "AdjustSystemSetting",
+      "kind": "function",
+      "file": "graphs/AdjustSystemSetting.json"
+    },
+    {
+      "name": "CanPreviewDisplay",
+      "kind": "function",
+      "file": "graphs/CanPreviewDisplay.json"
+    },
+    {
+      "name": "DeactivateSystemSettings",
+      "kind": "function",
+      "file": "graphs/DeactivateSystemSettings.json"
+    },
+    {
+      "name": "FlushSystemPreferences",
+      "kind": "function",
+      "file": "graphs/FlushSystemPreferences.json"
+    },
+    {
+      "name": "MoveSettingFocus",
+      "kind": "function",
+      "file": "graphs/MoveSettingFocus.json"
+    },
+    {
       "name": "OnPreviewKeyDown",
       "kind": "function",
       "file": "graphs/OnPreviewKeyDown.json"
+    },
+    {
+      "name": "OpenSystemSettings",
+      "kind": "function",
+      "file": "graphs/OpenSystemSettings.json"
+    },
+    {
+      "name": "RefreshExitCharacter",
+      "kind": "function",
+      "file": "graphs/RefreshExitCharacter.json"
+    },
+    {
+      "name": "RefreshGraphics",
+      "kind": "function",
+      "file": "graphs/RefreshGraphics.json"
+    },
+    {
+      "name": "RefreshPreferences",
+      "kind": "function",
+      "file": "graphs/RefreshPreferences.json"
+    },
+    {
+      "name": "ReleaseExitPreview",
+      "kind": "function",
+      "file": "graphs/ReleaseExitPreview.json"
+    },
+    {
+      "name": "ResolveSystemConfirmation",
+      "kind": "function",
+      "file": "graphs/ResolveSystemConfirmation.json"
+    },
+    {
+      "name": "RevertDisplayPreview",
+      "kind": "function",
+      "file": "graphs/RevertDisplayPreview.json"
+    },
+    {
+      "name": "SelectSystemCategory",
+      "kind": "function",
+      "file": "graphs/SelectSystemCategory.json"
+    },
+    {
+      "name": "SelectSystemSetting",
+      "kind": "function",
+      "file": "graphs/SelectSystemSetting.json"
+    },
+    {
+      "name": "ShowExitPreview",
+      "kind": "function",
+      "file": "graphs/ShowExitPreview.json"
+    },
+    {
+      "name": "ShowSystemConfirmation",
+      "kind": "function",
+      "file": "graphs/ShowSystemConfirmation.json"
+    },
+    {
+      "name": "UpdateExitPreview",
+      "kind": "function",
+      "file": "graphs/UpdateExitPreview.json"
+    },
+    {
+      "name": "UpdateSystemSlider",
+      "kind": "function",
+      "file": "graphs/UpdateSystemSlider.json"
     }
   ]
 }

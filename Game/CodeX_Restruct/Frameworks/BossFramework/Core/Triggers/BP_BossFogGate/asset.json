@@ -22,8 +22,10 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_FogTraversal",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent"
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode"
     ],
     "referencers": [],
     "non_architecture_dependency_count": 6,
@@ -41,6 +43,16 @@
     "interfaces": [],
     "components": [
       {
+        "name": "Blocker",
+        "class": "BoxComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:Blocker_GEN_VARIABLE"
+      },
+      {
         "name": "DefaultSceneRoot",
         "class": "SceneComponent",
         "parent": "BP_BossFogGate",
@@ -49,36 +61,6 @@
         "root_component": true,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:ICH-DefaultSceneRoot_GEN_VARIABLE"
-      },
-      {
-        "name": "EntryAnchor",
-        "class": "SceneComponent",
-        "parent": "DefaultSceneRoot",
-        "inherited": false,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:EntryAnchor_GEN_VARIABLE"
-      },
-      {
-        "name": "ExitAnchor",
-        "class": "SceneComponent",
-        "parent": "DefaultSceneRoot",
-        "inherited": false,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:ExitAnchor_GEN_VARIABLE"
-      },
-      {
-        "name": "ExitBlocker",
-        "class": "BoxComponent",
-        "parent": "DefaultSceneRoot",
-        "inherited": false,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/Triggers/BP_BossFogGate.BP_BossFogGate_C:ExitBlocker_GEN_VARIABLE"
       },
       {
         "name": "FogVFX",
@@ -113,15 +95,15 @@
     ],
     "variables": [
       {
-        "name": "AlignmentTolerance",
-        "guid": "21BF1A7E484278E9DB9E4886E8E642AE",
-        "friendly_name": "Alignment Tolerance",
+        "name": "bAlignYawToGate",
+        "guid": "E5DDA8DF44413E1594A74FA5C6C6A6A3",
+        "friendly_name": "Align Yaw to Gate",
         "category": "INVTEXT(\"Fog Traversal\")",
         "property_flags": 5,
         "default_value": null,
         "type": {
-          "category": "real",
-          "sub_category": "double",
+          "category": "bool",
+          "sub_category": null,
           "sub_category_object": null,
           "container": null,
           "is_reference": false,
@@ -157,40 +139,6 @@
           "category": "bool",
           "sub_category": null,
           "sub_category_object": null,
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
-        "name": "EntranceControlRotation",
-        "guid": "361EFF1A4795DD5CFAB738A2F78FCF49",
-        "friendly_name": "Entrance Control Rotation",
-        "category": "Default",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "struct",
-          "sub_category": null,
-          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
-        "name": "EntranceTransform",
-        "guid": "A00463FC4E17A1105E14D69294DC529D",
-        "friendly_name": "Entrance Transform",
-        "category": "Default",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "struct",
-          "sub_category": null,
-          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Transform'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -305,38 +253,58 @@
         "EventGraph"
       ],
       "functions": [
-        "UnlockAndClearTraversal",
-        "ReleaseTraversalAction",
-        "UnbindTraversalEvents",
-        "BindTraversalEvents",
-        "WasCrossingSuccessful",
-        "FinishTraversal",
-        "ConfigureFogCollision",
-        "HandlePlayerDestroyed",
-        "HandlePossessionChanged",
         "UserConstructionScript",
-        "HandleTraversalResult",
-        "RestoreEntrance",
-        "BeginTraversal",
-        "AlignToEntrance",
-        "GetDoorClearance",
-        "GetAnchorCapsuleLocation",
-        "ClearRegistrations",
-        "RegisterInitialPlayers",
-        "FindPlayerInteraction",
-        "UnregisterOverlapPlayer",
+        "ExecuteInteraction",
         "RegisterOverlapPlayer",
-        "ExecuteInteraction"
+        "UnregisterOverlapPlayer",
+        "RegisterInitialPlayers",
+        "ClearRegistrations",
+        "GetDoorClearance",
+        "BeginTraversal",
+        "HandleTraversalResult",
+        "HandlePossessionChanged",
+        "HandlePlayerDestroyed",
+        "FinishTraversal",
+        "WasCrossingSuccessful",
+        "BindTraversalEvents",
+        "UnbindTraversalEvents",
+        "ReleaseTraversalAction",
+        "UnlockAndClearTraversal",
+        "FindPlayerInteraction",
+        "ConfigureFogCollision"
       ],
       "macros": [],
       "delegates": [
         "OnFogTraversalCompleted"
       ],
       "generated_graphs": [
-        "ReceiveBeginPlay",
-        "ReceiveEndPlay",
+        "EdGraph_0",
+        "EdGraph_1",
+        "ExecuteUbergraph_BP_BossFogGate",
+        "BndEvt__BP_BossFogGate_InteractionVolume_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature",
         "BndEvt__BP_BossFogGate_InteractionVolume_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-        "BndEvt__BP_BossFogGate_InteractionVolume_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature"
+        "ReceiveEndPlay",
+        "ReceiveBeginPlay",
+        "UserConstructionScript_MERGED",
+        "ExecuteInteraction_MERGED",
+        "RegisterOverlapPlayer_MERGED",
+        "UnregisterOverlapPlayer_MERGED",
+        "RegisterInitialPlayers_MERGED",
+        "ClearRegistrations_MERGED",
+        "GetDoorClearance_MERGED",
+        "BeginTraversal_MERGED",
+        "HandleTraversalResult_MERGED",
+        "HandlePossessionChanged_MERGED",
+        "HandlePlayerDestroyed_MERGED",
+        "FinishTraversal_MERGED",
+        "WasCrossingSuccessful_MERGED",
+        "BindTraversalEvents_MERGED",
+        "UnbindTraversalEvents_MERGED",
+        "ReleaseTraversalAction_MERGED",
+        "UnlockAndClearTraversal_MERGED",
+        "FindPlayerInteraction_MERGED",
+        "ConfigureFogCollision_MERGED",
+        "OnFogTraversalCompleted_MERGED"
       ]
     },
     "extraction_status": {

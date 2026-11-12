@@ -8,15 +8,15 @@
   },
   "variables": [
     {
-      "name": "AlignmentTolerance",
-      "guid": "21BF1A7E484278E9DB9E4886E8E642AE",
-      "friendly_name": "Alignment Tolerance",
+      "name": "bAlignYawToGate",
+      "guid": "E5DDA8DF44413E1594A74FA5C6C6A6A3",
+      "friendly_name": "Align Yaw to Gate",
       "category": "INVTEXT(\"Fog Traversal\")",
       "property_flags": 5,
       "default_value": null,
       "type": {
-        "category": "real",
-        "sub_category": "double",
+        "category": "bool",
+        "sub_category": null,
         "sub_category_object": null,
         "container": null,
         "is_reference": false,
@@ -52,40 +52,6 @@
         "category": "bool",
         "sub_category": null,
         "sub_category_object": null,
-        "container": null,
-        "is_reference": false,
-        "is_const": false,
-        "is_weak_pointer": false
-      }
-    },
-    {
-      "name": "EntranceControlRotation",
-      "guid": "361EFF1A4795DD5CFAB738A2F78FCF49",
-      "friendly_name": "Entrance Control Rotation",
-      "category": "Default",
-      "property_flags": 65541,
-      "default_value": null,
-      "type": {
-        "category": "struct",
-        "sub_category": null,
-        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
-        "container": null,
-        "is_reference": false,
-        "is_const": false,
-        "is_weak_pointer": false
-      }
-    },
-    {
-      "name": "EntranceTransform",
-      "guid": "A00463FC4E17A1105E14D69294DC529D",
-      "friendly_name": "Entrance Transform",
-      "category": "Default",
-      "property_flags": 65541,
-      "default_value": null,
-      "type": {
-        "category": "struct",
-        "sub_category": null,
-        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Transform'",
         "container": null,
         "is_reference": false,
         "is_const": false,
@@ -197,111 +163,11 @@
   ],
   "graphs": [
     {
-      "name": "OnFogTraversalCompleted",
-      "kind": "delegate",
-      "guid": "19671E834DE65DE75AB542BBE23F87F5",
-      "node_count": 1,
-      "pin_count": 2,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
-    },
-    {
-      "name": "UnlockAndClearTraversal",
-      "kind": "function",
-      "guid": "74F9BA404AF1BC0C0CDA4A91D77D5B71",
-      "node_count": 16,
-      "pin_count": 50,
-      "connection_count": 17,
-      "exec_connection_count": 9,
-      "data_connection_count": 8
-    },
-    {
-      "name": "ReleaseTraversalAction",
-      "kind": "function",
-      "guid": "D7C9C4E64560EB2FB9C3E9BC7E7D031F",
-      "node_count": 19,
-      "pin_count": 53,
-      "connection_count": 20,
-      "exec_connection_count": 4,
-      "data_connection_count": 16
-    },
-    {
-      "name": "UnbindTraversalEvents",
-      "kind": "function",
-      "guid": "8E0605E240518F00284DBB8C4F032009",
-      "node_count": 20,
-      "pin_count": 53,
-      "connection_count": 23,
-      "exec_connection_count": 8,
-      "data_connection_count": 15
-    },
-    {
-      "name": "BindTraversalEvents",
-      "kind": "function",
-      "guid": "DE28672A4C3AA4E9A569AFB2E6CFECB1",
-      "node_count": 11,
-      "pin_count": 26,
-      "connection_count": 12,
-      "exec_connection_count": 3,
-      "data_connection_count": 9
-    },
-    {
-      "name": "WasCrossingSuccessful",
-      "kind": "function",
-      "guid": "1E17C57748E55379DE7923B6C8560AA4",
-      "node_count": 23,
-      "pin_count": 73,
-      "connection_count": 32,
-      "exec_connection_count": 7,
-      "data_connection_count": 25
-    },
-    {
-      "name": "FinishTraversal",
-      "kind": "function",
-      "guid": "790E8481427D233DBFD7118A7833F867",
-      "node_count": 26,
-      "pin_count": 98,
-      "connection_count": 31,
-      "exec_connection_count": 21,
-      "data_connection_count": 10
-    },
-    {
-      "name": "ConfigureFogCollision",
-      "kind": "function",
-      "guid": "A73947AF4FB2141DCDDFA48A71591869",
-      "node_count": 13,
-      "pin_count": 49,
-      "connection_count": 20,
-      "exec_connection_count": 10,
-      "data_connection_count": 10
-    },
-    {
-      "name": "HandlePlayerDestroyed",
-      "kind": "function",
-      "guid": "A21E6C2349E5B38A05A523A341526546",
-      "node_count": 5,
-      "pin_count": 17,
-      "connection_count": 5,
-      "exec_connection_count": 2,
-      "data_connection_count": 3
-    },
-    {
-      "name": "HandlePossessionChanged",
-      "kind": "function",
-      "guid": "E04B321148A0D5B4215D309E731DA3F5",
-      "node_count": 9,
-      "pin_count": 31,
-      "connection_count": 10,
-      "exec_connection_count": 2,
-      "data_connection_count": 8
-    },
-    {
       "name": "EventGraph",
       "kind": "event",
       "guid": "5B6177594E742DEE3C3396B7F547C0F9",
-      "node_count": 12,
-      "pin_count": 47,
+      "node_count": 10,
+      "pin_count": 40,
       "connection_count": 8,
       "exec_connection_count": 6,
       "data_connection_count": 2
@@ -317,104 +183,14 @@
       "data_connection_count": 0
     },
     {
-      "name": "HandleTraversalResult",
+      "name": "ExecuteInteraction",
       "kind": "function",
-      "guid": "889000B74019539558ACC3869FB18A28",
-      "node_count": 2,
-      "pin_count": 7,
-      "connection_count": 2,
-      "exec_connection_count": 1,
-      "data_connection_count": 1
-    },
-    {
-      "name": "RestoreEntrance",
-      "kind": "function",
-      "guid": "0487676A47D81FD033B4DCA655AF8804",
-      "node_count": 50,
-      "pin_count": 160,
-      "connection_count": 53,
-      "exec_connection_count": 10,
-      "data_connection_count": 43
-    },
-    {
-      "name": "BeginTraversal",
-      "kind": "function",
-      "guid": "972AED6D474102691564FB9D7C039824",
-      "node_count": 141,
-      "pin_count": 486,
-      "connection_count": 193,
-      "exec_connection_count": 75,
-      "data_connection_count": 118
-    },
-    {
-      "name": "AlignToEntrance",
-      "kind": "function",
-      "guid": "A498F8F347F51B9612199E87FF40AB5F",
-      "node_count": 37,
-      "pin_count": 129,
-      "connection_count": 50,
-      "exec_connection_count": 11,
-      "data_connection_count": 39
-    },
-    {
-      "name": "GetDoorClearance",
-      "kind": "function",
-      "guid": "664CEBB74172D400F704669BE3825C24",
-      "node_count": 22,
-      "pin_count": 62,
-      "connection_count": 26,
-      "exec_connection_count": 1,
-      "data_connection_count": 25
-    },
-    {
-      "name": "GetAnchorCapsuleLocation",
-      "kind": "function",
-      "guid": "7A39705D40652D9FABABC0872AC07B62",
-      "node_count": 9,
-      "pin_count": 25,
-      "connection_count": 10,
-      "exec_connection_count": 1,
-      "data_connection_count": 9
-    },
-    {
-      "name": "ClearRegistrations",
-      "kind": "function",
-      "guid": "E1A33945486C4EFDE307968149D569C9",
-      "node_count": 9,
-      "pin_count": 27,
-      "connection_count": 10,
-      "exec_connection_count": 4,
-      "data_connection_count": 6
-    },
-    {
-      "name": "RegisterInitialPlayers",
-      "kind": "function",
-      "guid": "59B21B2F4D27995F246E568646DA1EB6",
-      "node_count": 5,
-      "pin_count": 16,
-      "connection_count": 5,
-      "exec_connection_count": 2,
-      "data_connection_count": 3
-    },
-    {
-      "name": "FindPlayerInteraction",
-      "kind": "function",
-      "guid": "909C41184080158EDFBEF08A5D3B8C3E",
-      "node_count": 7,
-      "pin_count": 23,
-      "connection_count": 9,
-      "exec_connection_count": 5,
-      "data_connection_count": 4
-    },
-    {
-      "name": "UnregisterOverlapPlayer",
-      "kind": "function",
-      "guid": "F47E88834B13F3802710B69D171CFC64",
-      "node_count": 12,
-      "pin_count": 39,
-      "connection_count": 16,
-      "exec_connection_count": 5,
-      "data_connection_count": 11
+      "guid": "610C18434F210EC834E2DDAB84133AF8",
+      "node_count": 36,
+      "pin_count": 117,
+      "connection_count": 44,
+      "exec_connection_count": 16,
+      "data_connection_count": 28
     },
     {
       "name": "RegisterOverlapPlayer",
@@ -427,38 +203,216 @@
       "data_connection_count": 11
     },
     {
-      "name": "ExecuteInteraction",
+      "name": "UnregisterOverlapPlayer",
       "kind": "function",
-      "guid": "610C18434F210EC834E2DDAB84133AF8",
-      "node_count": 73,
-      "pin_count": 241,
-      "connection_count": 44,
-      "exec_connection_count": 16,
-      "data_connection_count": 28
+      "guid": "F47E88834B13F3802710B69D171CFC64",
+      "node_count": 12,
+      "pin_count": 39,
+      "connection_count": 16,
+      "exec_connection_count": 5,
+      "data_connection_count": 11
+    },
+    {
+      "name": "RegisterInitialPlayers",
+      "kind": "function",
+      "guid": "59B21B2F4D27995F246E568646DA1EB6",
+      "node_count": 5,
+      "pin_count": 16,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ClearRegistrations",
+      "kind": "function",
+      "guid": "E1A33945486C4EFDE307968149D569C9",
+      "node_count": 9,
+      "pin_count": 27,
+      "connection_count": 10,
+      "exec_connection_count": 4,
+      "data_connection_count": 6
+    },
+    {
+      "name": "GetDoorClearance",
+      "kind": "function",
+      "guid": "664CEBB74172D400F704669BE3825C24",
+      "node_count": 29,
+      "pin_count": 86,
+      "connection_count": 38,
+      "exec_connection_count": 3,
+      "data_connection_count": 35
+    },
+    {
+      "name": "BeginTraversal",
+      "kind": "function",
+      "guid": "972AED6D474102691564FB9D7C039824",
+      "node_count": 72,
+      "pin_count": 238,
+      "connection_count": 94,
+      "exec_connection_count": 35,
+      "data_connection_count": 59
+    },
+    {
+      "name": "HandleTraversalResult",
+      "kind": "function",
+      "guid": "889000B74019539558ACC3869FB18A28",
+      "node_count": 2,
+      "pin_count": 6,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "HandlePossessionChanged",
+      "kind": "function",
+      "guid": "E04B321148A0D5B4215D309E731DA3F5",
+      "node_count": 9,
+      "pin_count": 30,
+      "connection_count": 10,
+      "exec_connection_count": 2,
+      "data_connection_count": 8
+    },
+    {
+      "name": "HandlePlayerDestroyed",
+      "kind": "function",
+      "guid": "A21E6C2349E5B38A05A523A341526546",
+      "node_count": 5,
+      "pin_count": 16,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "FinishTraversal",
+      "kind": "function",
+      "guid": "790E8481427D233DBFD7118A7833F867",
+      "node_count": 26,
+      "pin_count": 98,
+      "connection_count": 32,
+      "exec_connection_count": 20,
+      "data_connection_count": 12
+    },
+    {
+      "name": "WasCrossingSuccessful",
+      "kind": "function",
+      "guid": "1E17C57748E55379DE7923B6C8560AA4",
+      "node_count": 21,
+      "pin_count": 62,
+      "connection_count": 28,
+      "exec_connection_count": 8,
+      "data_connection_count": 20
+    },
+    {
+      "name": "BindTraversalEvents",
+      "kind": "function",
+      "guid": "DE28672A4C3AA4E9A569AFB2E6CFECB1",
+      "node_count": 11,
+      "pin_count": 26,
+      "connection_count": 12,
+      "exec_connection_count": 3,
+      "data_connection_count": 9
+    },
+    {
+      "name": "UnbindTraversalEvents",
+      "kind": "function",
+      "guid": "8E0605E240518F00284DBB8C4F032009",
+      "node_count": 20,
+      "pin_count": 53,
+      "connection_count": 23,
+      "exec_connection_count": 8,
+      "data_connection_count": 15
+    },
+    {
+      "name": "ReleaseTraversalAction",
+      "kind": "function",
+      "guid": "D7C9C4E64560EB2FB9C3E9BC7E7D031F",
+      "node_count": 19,
+      "pin_count": 53,
+      "connection_count": 20,
+      "exec_connection_count": 4,
+      "data_connection_count": 16
+    },
+    {
+      "name": "UnlockAndClearTraversal",
+      "kind": "function",
+      "guid": "74F9BA404AF1BC0C0CDA4A91D77D5B71",
+      "node_count": 16,
+      "pin_count": 50,
+      "connection_count": 17,
+      "exec_connection_count": 9,
+      "data_connection_count": 8
+    },
+    {
+      "name": "FindPlayerInteraction",
+      "kind": "function",
+      "guid": "909C41184080158EDFBEF08A5D3B8C3E",
+      "node_count": 7,
+      "pin_count": 23,
+      "connection_count": 9,
+      "exec_connection_count": 5,
+      "data_connection_count": 4
+    },
+    {
+      "name": "ConfigureFogCollision",
+      "kind": "function",
+      "guid": "A73947AF4FB2141DCDDFA48A71591869",
+      "node_count": 13,
+      "pin_count": 49,
+      "connection_count": 20,
+      "exec_connection_count": 10,
+      "data_connection_count": 10
+    },
+    {
+      "name": "OnFogTraversalCompleted",
+      "kind": "delegate",
+      "guid": "19671E834DE65DE75AB542BBE23F87F5",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
     }
   ],
   "generated_graphs": [
     {
-      "name": "ReceiveBeginPlay",
-      "guid": "51C24D9F4BA788B8C0F044ADED9F1495",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
+      "name": "EdGraph_0",
+      "guid": "99DBFD5540A796041F72A5A9DA655026",
+      "node_count": 20,
+      "pin_count": 45,
+      "connection_count": 24,
+      "exec_connection_count": 9,
+      "data_connection_count": 15
     },
     {
-      "name": "ReceiveEndPlay",
-      "guid": "2FB731014280E8D2ECE321A0F835BC7A",
+      "name": "EdGraph_1",
+      "guid": "99DBFD5540A796041F72A5A9DA655026",
+      "node_count": 20,
+      "pin_count": 45,
+      "connection_count": 24,
+      "exec_connection_count": 9,
+      "data_connection_count": 15
+    },
+    {
+      "name": "ExecuteUbergraph_BP_BossFogGate",
+      "guid": "EE41A17B4F20F86D071FCE8B4E53B112",
+      "node_count": 11,
+      "pin_count": 42,
+      "connection_count": 8,
+      "exec_connection_count": 6,
+      "data_connection_count": 2
+    },
+    {
+      "name": "BndEvt__BP_BossFogGate_InteractionVolume_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature",
+      "guid": "213DEEFE4885D313C87FE695E675D27D",
       "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
       "exec_connection_count": 2,
-      "data_connection_count": 1
+      "data_connection_count": 4
     },
     {
       "name": "BndEvt__BP_BossFogGate_InteractionVolume_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-      "guid": "F8A680DF47B6D91594F35F8FE6B07B21",
+      "guid": "03E2B62D479A9861333A73AD39CD9A66",
       "node_count": 3,
       "pin_count": 19,
       "connection_count": 8,
@@ -466,23 +420,212 @@
       "data_connection_count": 6
     },
     {
-      "name": "BndEvt__BP_BossFogGate_InteractionVolume_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature",
-      "guid": "DB952E774B6228D16153288F98DBCB39",
+      "name": "ReceiveEndPlay",
+      "guid": "0FEFD7B04FAC7AC0168B40B9447010F6",
       "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
+      "pin_count": 9,
+      "connection_count": 3,
       "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "29038C544B8743606B8CCB93883307A2",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "UserConstructionScript_MERGED",
+      "guid": "9D54CEAE42D2DB8EF565F7BA5EB94451",
+      "node_count": 2,
+      "pin_count": 4,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ExecuteInteraction_MERGED",
+      "guid": "610C18434F210EC834E2DDAB84133AF8",
+      "node_count": 37,
+      "pin_count": 121,
+      "connection_count": 44,
+      "exec_connection_count": 16,
+      "data_connection_count": 28
+    },
+    {
+      "name": "RegisterOverlapPlayer_MERGED",
+      "guid": "945FDDF7491F98A4C3E5278853173832",
+      "node_count": 13,
+      "pin_count": 42,
+      "connection_count": 16,
+      "exec_connection_count": 5,
+      "data_connection_count": 11
+    },
+    {
+      "name": "UnregisterOverlapPlayer_MERGED",
+      "guid": "F47E88834B13F3802710B69D171CFC64",
+      "node_count": 12,
+      "pin_count": 39,
+      "connection_count": 16,
+      "exec_connection_count": 5,
+      "data_connection_count": 11
+    },
+    {
+      "name": "RegisterInitialPlayers_MERGED",
+      "guid": "59B21B2F4D27995F246E568646DA1EB6",
+      "node_count": 30,
+      "pin_count": 73,
+      "connection_count": 27,
+      "exec_connection_count": 12,
+      "data_connection_count": 15
+    },
+    {
+      "name": "ClearRegistrations_MERGED",
+      "guid": "E1A33945486C4EFDE307968149D569C9",
+      "node_count": 34,
+      "pin_count": 84,
+      "connection_count": 32,
+      "exec_connection_count": 14,
+      "data_connection_count": 18
+    },
+    {
+      "name": "GetDoorClearance_MERGED",
+      "guid": "664CEBB74172D400F704669BE3825C24",
+      "node_count": 37,
+      "pin_count": 118,
+      "connection_count": 38,
+      "exec_connection_count": 3,
+      "data_connection_count": 35
+    },
+    {
+      "name": "BeginTraversal_MERGED",
+      "guid": "972AED6D474102691564FB9D7C039824",
+      "node_count": 72,
+      "pin_count": 234,
+      "connection_count": 94,
+      "exec_connection_count": 35,
+      "data_connection_count": 59
+    },
+    {
+      "name": "HandleTraversalResult_MERGED",
+      "guid": "889000B74019539558ACC3869FB18A28",
+      "node_count": 2,
+      "pin_count": 6,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "HandlePossessionChanged_MERGED",
+      "guid": "E04B321148A0D5B4215D309E731DA3F5",
+      "node_count": 11,
+      "pin_count": 38,
+      "connection_count": 10,
+      "exec_connection_count": 2,
+      "data_connection_count": 8
+    },
+    {
+      "name": "HandlePlayerDestroyed_MERGED",
+      "guid": "A21E6C2349E5B38A05A523A341526546",
+      "node_count": 6,
+      "pin_count": 20,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "FinishTraversal_MERGED",
+      "guid": "790E8481427D233DBFD7118A7833F867",
+      "node_count": 26,
+      "pin_count": 95,
+      "connection_count": 32,
+      "exec_connection_count": 20,
+      "data_connection_count": 12
+    },
+    {
+      "name": "WasCrossingSuccessful_MERGED",
+      "guid": "1E17C57748E55379DE7923B6C8560AA4",
+      "node_count": 23,
+      "pin_count": 70,
+      "connection_count": 28,
+      "exec_connection_count": 8,
+      "data_connection_count": 20
+    },
+    {
+      "name": "BindTraversalEvents_MERGED",
+      "guid": "DE28672A4C3AA4E9A569AFB2E6CFECB1",
+      "node_count": 11,
+      "pin_count": 26,
+      "connection_count": 12,
+      "exec_connection_count": 3,
+      "data_connection_count": 9
+    },
+    {
+      "name": "UnbindTraversalEvents_MERGED",
+      "guid": "8E0605E240518F00284DBB8C4F032009",
+      "node_count": 20,
+      "pin_count": 53,
+      "connection_count": 23,
+      "exec_connection_count": 8,
+      "data_connection_count": 15
+    },
+    {
+      "name": "ReleaseTraversalAction_MERGED",
+      "guid": "D7C9C4E64560EB2FB9C3E9BC7E7D031F",
+      "node_count": 20,
+      "pin_count": 57,
+      "connection_count": 20,
+      "exec_connection_count": 4,
+      "data_connection_count": 16
+    },
+    {
+      "name": "UnlockAndClearTraversal_MERGED",
+      "guid": "74F9BA404AF1BC0C0CDA4A91D77D5B71",
+      "node_count": 16,
+      "pin_count": 46,
+      "connection_count": 17,
+      "exec_connection_count": 9,
+      "data_connection_count": 8
+    },
+    {
+      "name": "FindPlayerInteraction_MERGED",
+      "guid": "909C41184080158EDFBEF08A5D3B8C3E",
+      "node_count": 7,
+      "pin_count": 23,
+      "connection_count": 9,
+      "exec_connection_count": 5,
       "data_connection_count": 4
+    },
+    {
+      "name": "ConfigureFogCollision_MERGED",
+      "guid": "A73947AF4FB2141DCDDFA48A71591869",
+      "node_count": 15,
+      "pin_count": 55,
+      "connection_count": 20,
+      "exec_connection_count": 10,
+      "data_connection_count": 10
+    },
+    {
+      "name": "OnFogTraversalCompleted_MERGED",
+      "guid": "19671E834DE65DE75AB542BBE23F87F5",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
     }
   ],
   "stats": {
-    "authored_graph_count": 24,
-    "generated_graph_count": 4,
-    "authored_node_count": 537,
-    "authored_pin_count": 1760,
-    "authored_connection_count": 613,
-    "generated_node_count": 11,
-    "generated_pin_count": 48
+    "authored_graph_count": 21,
+    "generated_graph_count": 27,
+    "authored_node_count": 338,
+    "authored_pin_count": 1077,
+    "authored_connection_count": 410,
+    "generated_node_count": 457,
+    "generated_pin_count": 1386
   },
   "graph_files": [
     {
@@ -494,11 +637,6 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
-    },
-    {
-      "name": "AlignToEntrance",
-      "kind": "function",
-      "file": "graphs/AlignToEntrance.json"
     },
     {
       "name": "BeginTraversal",
@@ -536,11 +674,6 @@
       "file": "graphs/FinishTraversal.json"
     },
     {
-      "name": "GetAnchorCapsuleLocation",
-      "kind": "function",
-      "file": "graphs/GetAnchorCapsuleLocation.json"
-    },
-    {
       "name": "GetDoorClearance",
       "kind": "function",
       "file": "graphs/GetDoorClearance.json"
@@ -574,11 +707,6 @@
       "name": "ReleaseTraversalAction",
       "kind": "function",
       "file": "graphs/ReleaseTraversalAction.json"
-    },
-    {
-      "name": "RestoreEntrance",
-      "kind": "function",
-      "file": "graphs/RestoreEntrance.json"
     },
     {
       "name": "UnbindTraversalEvents",
