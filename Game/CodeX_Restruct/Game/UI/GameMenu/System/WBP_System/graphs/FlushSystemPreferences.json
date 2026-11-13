@@ -6,11 +6,11 @@
     "guid": "6710123B4967FE478D98D99FA4976D06"
   },
   "stats": {
-    "node_count": 11,
-    "pin_count": 35,
-    "connection_count": 13,
-    "exec_connection_count": 5,
-    "data_connection_count": 8
+    "node_count": 22,
+    "pin_count": 72,
+    "connection_count": 25,
+    "exec_connection_count": 10,
+    "data_connection_count": 15
   },
   "nodes": [
     {
@@ -56,17 +56,17 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_0",
-              "pin_id": "8B5EA8EF490EA9D4544BC7BF41CDAD63"
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "C7301A6A4C7FA95811762E95DE237956"
             }
           ]
         }
       ]
     },
     {
-      "name": "K2Node_Self_0",
+      "name": "K2Node_Self_1",
       "class": "/Script/BlueprintGraph.K2Node_Self",
-      "guid": "5B671F844E23DA3EA41E56A857F07453",
+      "guid": "7CD95E644091C81270E8C5AD242C3611",
       "title": "K2Node_Self",
       "position": {
         "x": 0,
@@ -79,7 +79,7 @@
       "properties": {},
       "pins": [
         {
-          "id": "277E48B74FE28F5BD89616A2865DD9D9",
+          "id": "2D947F7F48031D2C1A381FA04132F7C5",
           "name": "self",
           "friendly_name": null,
           "direction": "output",
@@ -100,21 +100,21 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_0",
-              "pin_id": "109D8E0743AB49B8A03C5B872B6F4165"
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "980C3D5B43B248F32F8A95921A4F1703"
             },
             {
-              "node": "K2Node_CallFunction_1",
-              "pin_id": "75B8F1304C1BB326FBC07EAF97FFEA72"
+              "node": "K2Node_CallFunction_11",
+              "pin_id": "CA3FB09F4FA585FFF34087BF6C7BE44D"
             }
           ]
         }
       ]
     },
     {
-      "name": "K2Node_CallFunction_0",
+      "name": "K2Node_CallFunction_6",
       "class": "/Script/BlueprintGraph.K2Node_CallFunction",
-      "guid": "9CED668B4A7DDE4B6FE54EB8E506C010",
+      "guid": "62AA494D4627767CF7722CAE9BCF609E",
       "title": "K2_ClearTimer",
       "position": {
         "x": 280,
@@ -132,7 +132,7 @@
       "properties": {},
       "pins": [
         {
-          "id": "8B5EA8EF490EA9D4544BC7BF41CDAD63",
+          "id": "C7301A6A4C7FA95811762E95DE237956",
           "name": "execute",
           "friendly_name": null,
           "direction": "input",
@@ -159,7 +159,7 @@
           ]
         },
         {
-          "id": "579140F44B18D8549596D9816148875C",
+          "id": "01EED7EB4D0454451688B5A0A7312907",
           "name": "then",
           "friendly_name": null,
           "direction": "output",
@@ -180,13 +180,13 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_DynamicCast_0",
-              "pin_id": "CB754DD144602FCACE02909A138A6D59"
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "31566C3B4596F91EDB2E928EAD6891F2"
             }
           ]
         },
         {
-          "id": "9BFD5E5C47B0149C75FD0692B91D0C85",
+          "id": "0B5C4320486855D7236CCD8582D4A71E",
           "name": "self",
           "friendly_name": "Target",
           "direction": "input",
@@ -208,7 +208,7 @@
           "links": []
         },
         {
-          "id": "109D8E0743AB49B8A03C5B872B6F4165",
+          "id": "980C3D5B43B248F32F8A95921A4F1703",
           "name": "Object",
           "friendly_name": null,
           "direction": "input",
@@ -229,13 +229,13 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_Self_0",
-              "pin_id": "277E48B74FE28F5BD89616A2865DD9D9"
+              "node": "K2Node_Self_1",
+              "pin_id": "2D947F7F48031D2C1A381FA04132F7C5"
             }
           ]
         },
         {
-          "id": "5B89B1264745FA73F28E9CAB79694950",
+          "id": "842AF1B3489F47A4EE68048B7072F084",
           "name": "FunctionName",
           "friendly_name": null,
           "direction": "input",
@@ -259,10 +259,10 @@
       ]
     },
     {
-      "name": "K2Node_CallFunction_1",
-      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
-      "guid": "35F95DB3419F3F00062464B073312066",
-      "title": "GetOwningPlayer",
+      "name": "K2Node_VariableGet_1",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "927DEA1A4A0066FEF6650693382AAC5D",
+      "title": "Get TitleContext",
       "position": {
         "x": 560,
         "y": 0
@@ -271,639 +271,43 @@
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
-        "function": {
-          "MemberName": "GetOwningPlayer",
-          "bSelfContext": true
-        }
-      },
-      "properties": {},
-      "pins": [
-        {
-          "id": "75B8F1304C1BB326FBC07EAF97FFEA72",
-          "name": "self",
-          "friendly_name": "Target",
-          "direction": "input",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.Widget'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_Self_0",
-              "pin_id": "277E48B74FE28F5BD89616A2865DD9D9"
-            }
-          ]
-        },
-        {
-          "id": "C88CDC214296C518BCC0E6B3E78DCE95",
-          "name": "ReturnValue",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.PlayerController'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_DynamicCast_0",
-              "pin_id": "5E72259F470C8348B6516EA43BCF5A9C"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "K2Node_DynamicCast_0",
-      "class": "/Script/BlueprintGraph.K2Node_DynamicCast",
-      "guid": "32AAED354FB245C3A35A2C95C67E6323",
-      "title": "Cast To /Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
-      "position": {
-        "x": 840,
-        "y": 0
-      },
-      "comment": null,
-      "enabled_state": "Enabled",
-      "is_intermediate": false,
-      "references": {},
-      "properties": {
-        "TargetType": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'"
-      },
-      "pins": [
-        {
-          "id": "CB754DD144602FCACE02909A138A6D59",
-          "name": "execute",
-          "friendly_name": null,
-          "direction": "input",
-          "type": {
-            "category": "exec",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_0",
-              "pin_id": "579140F44B18D8549596D9816148875C"
-            }
-          ]
-        },
-        {
-          "id": "2D8C2F494CE1C1797B425AA489CE89D8",
-          "name": "then",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "exec",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_2",
-              "pin_id": "5BEDBBB649536D8C0303538DF7098F01"
-            }
-          ]
-        },
-        {
-          "id": "64CD2DDB40A2A3A2755641A7EA9E38A9",
-          "name": "CastFailed",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "exec",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": []
-        },
-        {
-          "id": "5E72259F470C8348B6516EA43BCF5A9C",
-          "name": "Object",
-          "friendly_name": null,
-          "direction": "input",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.Class'/Script/CoreUObject.Object'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_1",
-              "pin_id": "C88CDC214296C518BCC0E6B3E78DCE95"
-            }
-          ]
-        },
-        {
-          "id": "FE0C646745A484DDF782BAB8602EF1C6",
-          "name": "AsBP CPC Player Controller",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_2",
-              "pin_id": "AADCE2574843D82FFF9FBC941D44FDB5"
-            }
-          ]
-        },
-        {
-          "id": "6110919540E0BB01C5E8FCA3FD9E25E0",
-          "name": "bSuccess",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "bool",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": true,
-          "orphaned": false,
-          "links": []
-        }
-      ]
-    },
-    {
-      "name": "K2Node_CallFunction_2",
-      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
-      "guid": "936D42BB488F0FF7723DF8A120AE0810",
-      "title": "SaveSystemPreferences",
-      "position": {
-        "x": 1120,
-        "y": 0
-      },
-      "comment": null,
-      "enabled_state": "Enabled",
-      "is_intermediate": false,
-      "references": {
-        "function": {
-          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
-          "MemberName": "SaveSystemPreferences",
-          "MemberGuid": "2867C77B49881A858341829011E26A7B"
-        }
-      },
-      "properties": {},
-      "pins": [
-        {
-          "id": "5BEDBBB649536D8C0303538DF7098F01",
-          "name": "execute",
-          "friendly_name": null,
-          "direction": "input",
-          "type": {
-            "category": "exec",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_DynamicCast_0",
-              "pin_id": "2D8C2F494CE1C1797B425AA489CE89D8"
-            }
-          ]
-        },
-        {
-          "id": "C73890F740A79B952A2B5D9D7EFCA4DA",
-          "name": "then",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "exec",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_IfThenElse_0",
-              "pin_id": "FBA416FC4CED86866DB240984AA5E306"
-            }
-          ]
-        },
-        {
-          "id": "AADCE2574843D82FFF9FBC941D44FDB5",
-          "name": "self",
-          "friendly_name": "Target",
-          "direction": "input",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_DynamicCast_0",
-              "pin_id": "FE0C646745A484DDF782BAB8602EF1C6"
-            }
-          ]
-        },
-        {
-          "id": "EAF75DAF429090636EC485AD6BFD1129",
-          "name": "Saved",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "bool",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": "false",
-          "autogenerated_default_value": "false",
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_3",
-              "pin_id": "8EACED714C307BEB79FCC28AD278C055"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "K2Node_CallFunction_3",
-      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
-      "guid": "E9615C7B446DEF40DAE3C884D8FD4474",
-      "title": "Not_PreBool",
-      "position": {
-        "x": 1400,
-        "y": 0
-      },
-      "comment": null,
-      "enabled_state": "Enabled",
-      "is_intermediate": false,
-      "references": {
-        "function": {
-          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetMathLibrary'",
-          "MemberName": "Not_PreBool"
-        }
-      },
-      "properties": {},
-      "pins": [
-        {
-          "id": "FE5865174628AD053FD5BE8285ADB90D",
-          "name": "self",
-          "friendly_name": "Target",
-          "direction": "input",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetMathLibrary'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": "/Script/Engine.Default__KismetMathLibrary",
-          "hidden": true,
-          "orphaned": false,
-          "links": []
-        },
-        {
-          "id": "8EACED714C307BEB79FCC28AD278C055",
-          "name": "A",
-          "friendly_name": null,
-          "direction": "input",
-          "type": {
-            "category": "bool",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": "false",
-          "autogenerated_default_value": "false",
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_2",
-              "pin_id": "EAF75DAF429090636EC485AD6BFD1129"
-            }
-          ]
-        },
-        {
-          "id": "D0DFFB98488897CE9821279B23D80B0F",
-          "name": "ReturnValue",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "bool",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": "false",
-          "autogenerated_default_value": "false",
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_IfThenElse_0",
-              "pin_id": "39C15E094457F700FE58B0BC5977EE44"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "K2Node_IfThenElse_0",
-      "class": "/Script/BlueprintGraph.K2Node_IfThenElse",
-      "guid": "915EA0594F2A53487408C781A2847FBC",
-      "title": "Branch",
-      "position": {
-        "x": 1680,
-        "y": 0
-      },
-      "comment": null,
-      "enabled_state": "Enabled",
-      "is_intermediate": false,
-      "references": {},
-      "properties": {},
-      "pins": [
-        {
-          "id": "FBA416FC4CED86866DB240984AA5E306",
-          "name": "execute",
-          "friendly_name": null,
-          "direction": "input",
-          "type": {
-            "category": "exec",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_2",
-              "pin_id": "C73890F740A79B952A2B5D9D7EFCA4DA"
-            }
-          ]
-        },
-        {
-          "id": "39C15E094457F700FE58B0BC5977EE44",
-          "name": "Condition",
-          "friendly_name": null,
-          "direction": "input",
-          "type": {
-            "category": "bool",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": "true",
-          "autogenerated_default_value": "true",
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_3",
-              "pin_id": "D0DFFB98488897CE9821279B23D80B0F"
-            }
-          ]
-        },
-        {
-          "id": "C2BDDE5743BC9178F0ECF8A7564AF537",
-          "name": "then",
-          "friendly_name": "true",
-          "direction": "output",
-          "type": {
-            "category": "exec",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_5",
-              "pin_id": "DF9F5EC747E9A76A48141F9D3377D399"
-            }
-          ]
-        },
-        {
-          "id": "3D0A09F9435F58A060DE82B98AA88968",
-          "name": "else",
-          "friendly_name": "false",
-          "direction": "output",
-          "type": {
-            "category": "exec",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": []
-        }
-      ]
-    },
-    {
-      "name": "K2Node_VariableGet_0",
-      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
-      "guid": "B414D1C74E71F112E19DFC97A2BE5EF1",
-      "title": "Get ContextHelp",
-      "position": {
-        "x": 1960,
-        "y": 0
-      },
-      "comment": null,
-      "enabled_state": "Enabled",
-      "is_intermediate": false,
-      "references": {
         "variable": {
-          "MemberName": "ContextHelp",
-          "MemberGuid": "937591F34F65C50136824A897B0FE753",
+          "MemberName": "TitleContext",
+          "MemberGuid": "88025DA34FE4A37B54343F8AF965200D",
           "bSelfContext": true
         }
       },
       "properties": {},
       "pins": [
         {
-          "id": "AF1C8883405127B926646AA7284DE7F8",
-          "name": "ContextHelp",
+          "id": "C25F75D44FB941416E29679284636840",
+          "name": "TitleContext",
           "friendly_name": null,
           "direction": "output",
           "type": {
-            "category": "object",
+            "category": "bool",
             "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.TextBlock'",
+            "sub_category_object": null,
             "container": null,
             "is_reference": false,
             "is_const": false,
             "is_weak_pointer": false,
             "is_uobject_wrapper": false
           },
-          "default_value": null,
-          "autogenerated_default_value": null,
+          "default_value": "false",
+          "autogenerated_default_value": "false",
           "default_object": null,
           "hidden": false,
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_5",
-              "pin_id": "5947FCD440B88E1AFD90F5931F6883CB"
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "EDD3E0ED4872648089DC78A42844DC8E"
             }
           ]
         },
         {
-          "id": "E6D5CCAC4B1251C6395B9BB53FB10F18",
+          "id": "A3B9266B4AC31111D716DEB4D2CDDEDD",
           "name": "self",
           "friendly_name": "Target",
           "direction": "input",
@@ -927,13 +331,894 @@
       ]
     },
     {
-      "name": "K2Node_CallFunction_4",
+      "name": "K2Node_IfThenElse_1",
+      "class": "/Script/BlueprintGraph.K2Node_IfThenElse",
+      "guid": "1C3DD6A542FC399CAA28CBA5086A8F0E",
+      "title": "Branch",
+      "position": {
+        "x": 840,
+        "y": 0
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {},
+      "properties": {},
+      "pins": [
+        {
+          "id": "31566C3B4596F91EDB2E928EAD6891F2",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "01EED7EB4D0454451688B5A0A7312907"
+            }
+          ]
+        },
+        {
+          "id": "EDD3E0ED4872648089DC78A42844DC8E",
+          "name": "Condition",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "true",
+          "autogenerated_default_value": "true",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_1",
+              "pin_id": "C25F75D44FB941416E29679284636840"
+            }
+          ]
+        },
+        {
+          "id": "2214C2F942C8DEDA92C72DA96A419B87",
+          "name": "then",
+          "friendly_name": "true",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_0",
+              "pin_id": "666AB5F84E47BE0BA386C49762CF602A"
+            }
+          ]
+        },
+        {
+          "id": "A8EB7B1E4BCD39E7937FDC8D7127EC65",
+          "name": "else",
+          "friendly_name": "false",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_DynamicCast_1",
+              "pin_id": "D13D1F074458F4E6BA0B9DBF467C5905"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_2",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "655030804D2F19445CEB27B11E03D411",
+      "title": "Get Preferences",
+      "position": {
+        "x": 1120,
+        "y": 0
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "Preferences",
+          "MemberGuid": "925C715A460767E6BCF2CFBFFCB2BDBB",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "8A4BCCEA4C93FC5E7D4CAE92D1329DD7",
+          "name": "Preferences",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/System/SG_SystemPreferences.SG_SystemPreferences_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_0",
+              "pin_id": "8E80942B4678DF40A9D6F7A8E27F3F94"
+            }
+          ]
+        },
+        {
+          "id": "0F0CF835429ACF3E155C3489F521DFE2",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System.WBP_System_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_MacroInstance_0",
+      "class": "/Script/BlueprintGraph.K2Node_MacroInstance",
+      "guid": "C4BA342147FF023CA95789A484E408E5",
+      "title": "Macro /Script/Engine.EdGraph'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros:IsValid'",
+      "position": {
+        "x": 1400,
+        "y": 0
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "macro": {
+          "MacroGraph": "/Script/Engine.EdGraph'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros:IsValid'",
+          "GraphBlueprint": "/Script/Engine.Blueprint'/Engine/EditorBlueprintResources/StandardMacros.StandardMacros'",
+          "GraphGuid": "64422BCD430703FF5CAEA8B79A32AA65"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "666AB5F84E47BE0BA386C49762CF602A",
+          "name": "exec",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "2214C2F942C8DEDA92C72DA96A419B87"
+            }
+          ]
+        },
+        {
+          "id": "8E80942B4678DF40A9D6F7A8E27F3F94",
+          "name": "InputObject",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/CoreUObject.Object'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_2",
+              "pin_id": "8A4BCCEA4C93FC5E7D4CAE92D1329DD7"
+            }
+          ]
+        },
+        {
+          "id": "DEAA2CED46C367D67B2DB3B40D72DB8C",
+          "name": "Is Valid",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "5FD24AE942593D58246BAFA9943C483D"
+            }
+          ]
+        },
+        {
+          "id": "84238E954ED7FDC6AB75609700FF2D33",
+          "name": "Is Not Valid",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_3",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "66785FC547F3BBCF56C2369F715134F2",
+      "title": "Get Preferences",
+      "position": {
+        "x": 1680,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "Preferences",
+          "MemberGuid": "925C715A460767E6BCF2CFBFFCB2BDBB",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "F0C6C5844D9C8E62A0F755B35C1C1C58",
+          "name": "Preferences",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/System/SG_SystemPreferences.SG_SystemPreferences_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "6221D0DD4018672C44DCCAB72DF3F4A1"
+            }
+          ]
+        },
+        {
+          "id": "DFE685BD4448322C718CCAAEB33EDDF9",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System.WBP_System_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_7",
       "class": "/Script/BlueprintGraph.K2Node_CallFunction",
-      "guid": "A37369B94633C01B2F423B8BFBAF8013",
-      "title": "Conv_StringToText",
+      "guid": "A58AB096487FEBEA198E6DAB5C853FC7",
+      "title": "SaveGameToSlot",
+      "position": {
+        "x": 1960,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.GameplayStatics'",
+          "MemberName": "SaveGameToSlot"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "5FD24AE942593D58246BAFA9943C483D",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_0",
+              "pin_id": "DEAA2CED46C367D67B2DB3B40D72DB8C"
+            }
+          ]
+        },
+        {
+          "id": "4B3E76C14F1517906EE81991940BAB4C",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_2",
+              "pin_id": "E711367B4D9C200634EB36BCCBFFBFB0"
+            }
+          ]
+        },
+        {
+          "id": "0CB46F004D7A6E429ADD66AD2C2D31B6",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.GameplayStatics'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__GameplayStatics",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "6221D0DD4018672C44DCCAB72DF3F4A1",
+          "name": "SaveGameObject",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SaveGame'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_3",
+              "pin_id": "F0C6C5844D9C8E62A0F755B35C1C1C58"
+            }
+          ]
+        },
+        {
+          "id": "2C6B77BF408F3E98EE28778BEC1B452B",
+          "name": "SlotName",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "string",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "CodeXSystemPreferences",
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "D16F7DF44254CADCDCC614A9DE6BAD46",
+          "name": "UserIndex",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "int",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": true,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "0",
+          "autogenerated_default_value": "0",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "1A3A95C14BFCD310A87D4ABAE051158F",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "4B443D804B59DBCB6BD6DB9ED9665608"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_8",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "EBE9BA3248E3007A89628B9C155348D6",
+      "title": "Not_PreBool",
       "position": {
         "x": 2240,
-        "y": 0
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetMathLibrary'",
+          "MemberName": "Not_PreBool"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "5845452942E14AFFCADE9CA3EB3EE6EF",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetMathLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetMathLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "4B443D804B59DBCB6BD6DB9ED9665608",
+          "name": "A",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "1A3A95C14BFCD310A87D4ABAE051158F"
+            }
+          ]
+        },
+        {
+          "id": "61831D7C43830AD232E20DA0693959B5",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_2",
+              "pin_id": "6F15C62D4596CBDAF5FAA1AE92C27FE9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_IfThenElse_2",
+      "class": "/Script/BlueprintGraph.K2Node_IfThenElse",
+      "guid": "9E6EC8114A37CA19E4909E9DC4AC634D",
+      "title": "Branch",
+      "position": {
+        "x": 2520,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {},
+      "properties": {},
+      "pins": [
+        {
+          "id": "E711367B4D9C200634EB36BCCBFFBFB0",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "4B3E76C14F1517906EE81991940BAB4C"
+            }
+          ]
+        },
+        {
+          "id": "6F15C62D4596CBDAF5FAA1AE92C27FE9",
+          "name": "Condition",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "true",
+          "autogenerated_default_value": "true",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "61831D7C43830AD232E20DA0693959B5"
+            }
+          ]
+        },
+        {
+          "id": "30F2CF8546020F63B7CD7DB2133E36B2",
+          "name": "then",
+          "friendly_name": "true",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_10",
+              "pin_id": "9E5D61C746DA2F53BBB0518CA45417B0"
+            }
+          ]
+        },
+        {
+          "id": "E0CD6DB74A974B2D64B1A0BA547795F4",
+          "name": "else",
+          "friendly_name": "false",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_4",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "2E4B7B734438013E264D4D85D2A0EB91",
+      "title": "Get ContextHelp",
+      "position": {
+        "x": 2800,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "ContextHelp",
+          "MemberGuid": "937591F34F65C50136824A897B0FE753",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "48AF9548475A7A35627C2E84282CBAE3",
+          "name": "ContextHelp",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.TextBlock'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_10",
+              "pin_id": "B0CC3D9649D4CF174B88EB873378E141"
+            }
+          ]
+        },
+        {
+          "id": "0C046B864CC0BD322906049641473D41",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System.WBP_System_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_9",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "F177496A48CFA47E0C44538CC321CAEE",
+      "title": "Conv_StringToText",
+      "position": {
+        "x": 3080,
+        "y": 200
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -947,7 +1232,7 @@
       "properties": {},
       "pins": [
         {
-          "id": "7B5572AD448A4F863E608FBCAB0E4BAB",
+          "id": "B24691204EEEC1FCC92C758CB56293B0",
           "name": "self",
           "friendly_name": "Target",
           "direction": "input",
@@ -969,7 +1254,7 @@
           "links": []
         },
         {
-          "id": "DB1AE65A45A086E619529C8BDCEB32EB",
+          "id": "572EDE354531E5E677BCB3B7FA23428B",
           "name": "InString",
           "friendly_name": null,
           "direction": "input",
@@ -991,7 +1276,7 @@
           "links": []
         },
         {
-          "id": "103BDF3F413AD57B160A96B57BF120AC",
+          "id": "135C863547561E406E231A9712E0EDCD",
           "name": "ReturnValue",
           "friendly_name": null,
           "direction": "output",
@@ -1012,21 +1297,21 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_5",
-              "pin_id": "606C7C3A41579688594EDAAD0C59466C"
+              "node": "K2Node_CallFunction_10",
+              "pin_id": "C51B1A914E7EA030C43EBE9003AA7242"
             }
           ]
         }
       ]
     },
     {
-      "name": "K2Node_CallFunction_5",
+      "name": "K2Node_CallFunction_10",
       "class": "/Script/BlueprintGraph.K2Node_CallFunction",
-      "guid": "7D85AA9141D3C2A68E34818DF628EF8F",
+      "guid": "AF5E6DF44675DDD7C4EFF5B1DD8FB139",
       "title": "SetText",
       "position": {
-        "x": 2520,
-        "y": 0
+        "x": 3360,
+        "y": 200
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -1040,7 +1325,7 @@
       "properties": {},
       "pins": [
         {
-          "id": "DF9F5EC747E9A76A48141F9D3377D399",
+          "id": "9E5D61C746DA2F53BBB0518CA45417B0",
           "name": "execute",
           "friendly_name": null,
           "direction": "input",
@@ -1061,13 +1346,13 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_IfThenElse_0",
-              "pin_id": "C2BDDE5743BC9178F0ECF8A7564AF537"
+              "node": "K2Node_IfThenElse_2",
+              "pin_id": "30F2CF8546020F63B7CD7DB2133E36B2"
             }
           ]
         },
         {
-          "id": "D82EA650433FDCCA0493BF9EC8739FC5",
+          "id": "55226283474EB8F9BF034BB64B8294EF",
           "name": "then",
           "friendly_name": null,
           "direction": "output",
@@ -1089,7 +1374,7 @@
           "links": []
         },
         {
-          "id": "5947FCD440B88E1AFD90F5931F6883CB",
+          "id": "B0CC3D9649D4CF174B88EB873378E141",
           "name": "self",
           "friendly_name": "Target",
           "direction": "input",
@@ -1110,13 +1395,13 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableGet_0",
-              "pin_id": "AF1C8883405127B926646AA7284DE7F8"
+              "node": "K2Node_VariableGet_4",
+              "pin_id": "48AF9548475A7A35627C2E84282CBAE3"
             }
           ]
         },
         {
-          "id": "606C7C3A41579688594EDAAD0C59466C",
+          "id": "C51B1A914E7EA030C43EBE9003AA7242",
           "name": "InText",
           "friendly_name": null,
           "direction": "input",
@@ -1137,8 +1422,894 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_4",
-              "pin_id": "103BDF3F413AD57B160A96B57BF120AC"
+              "node": "K2Node_CallFunction_9",
+              "pin_id": "135C863547561E406E231A9712E0EDCD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_11",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "73EEA2FF49F9E6F1D0842EA9DA7E703B",
+      "title": "GetOwningPlayer",
+      "position": {
+        "x": 1120,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberName": "GetOwningPlayer",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "CA3FB09F4FA585FFF34087BF6C7BE44D",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.Widget'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_Self_1",
+              "pin_id": "2D947F7F48031D2C1A381FA04132F7C5"
+            }
+          ]
+        },
+        {
+          "id": "C70D257E4A68C49A1B212885282B4602",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.PlayerController'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_DynamicCast_1",
+              "pin_id": "A27412314ABC2293BFBEF7BD75648D42"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_DynamicCast_1",
+      "class": "/Script/BlueprintGraph.K2Node_DynamicCast",
+      "guid": "1D8B051A4156A3B1EE413DA0A6B99190",
+      "title": "Cast To /Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
+      "position": {
+        "x": 1400,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {},
+      "properties": {
+        "TargetType": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'"
+      },
+      "pins": [
+        {
+          "id": "D13D1F074458F4E6BA0B9DBF467C5905",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "A8EB7B1E4BCD39E7937FDC8D7127EC65"
+            }
+          ]
+        },
+        {
+          "id": "5B7E2E244BC6AE7A5A5ABCB6DBA56D3E",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_12",
+              "pin_id": "4A3C133D4ABC84EE68DB5787DB2149C7"
+            }
+          ]
+        },
+        {
+          "id": "8AA47D44406FDA207DD2368B2678EA76",
+          "name": "CastFailed",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "A27412314ABC2293BFBEF7BD75648D42",
+          "name": "Object",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/CoreUObject.Object'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_11",
+              "pin_id": "C70D257E4A68C49A1B212885282B4602"
+            }
+          ]
+        },
+        {
+          "id": "8445B58344DEF48D20BEE2B6F93F2604",
+          "name": "AsBP CPC Player Controller",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_12",
+              "pin_id": "B7139B3946A1CBAE340F818C371EFA4A"
+            }
+          ]
+        },
+        {
+          "id": "1C499AA54B4C0C4E41DFEC90610A51ED",
+          "name": "bSuccess",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_12",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "FF8C34724281A5B755DA0FA53E5C1543",
+      "title": "SaveSystemPreferences",
+      "position": {
+        "x": 1680,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
+          "MemberName": "SaveSystemPreferences",
+          "MemberGuid": "2867C77B49881A858341829011E26A7B"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "4A3C133D4ABC84EE68DB5787DB2149C7",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_DynamicCast_1",
+              "pin_id": "5B7E2E244BC6AE7A5A5ABCB6DBA56D3E"
+            }
+          ]
+        },
+        {
+          "id": "0DFCF5DE4367DEAD636C76BC040C2918",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_3",
+              "pin_id": "9D7CEBDC4364392AE5657B8A020B7F85"
+            }
+          ]
+        },
+        {
+          "id": "B7139B3946A1CBAE340F818C371EFA4A",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController.BP_CPC_PlayerController_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_DynamicCast_1",
+              "pin_id": "8445B58344DEF48D20BEE2B6F93F2604"
+            }
+          ]
+        },
+        {
+          "id": "FAE6B6E14335B544ED58C0B7FEC549DC",
+          "name": "Saved",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_13",
+              "pin_id": "8337EA5F4A81216E29CAA3A2DB163902"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_13",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "ECB4F5A048FE82B2907A4A87A4C040BA",
+      "title": "Not_PreBool",
+      "position": {
+        "x": 1960,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetMathLibrary'",
+          "MemberName": "Not_PreBool"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "1EDD0CE44A610687662D798E8F56CCB6",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetMathLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetMathLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "8337EA5F4A81216E29CAA3A2DB163902",
+          "name": "A",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_12",
+              "pin_id": "FAE6B6E14335B544ED58C0B7FEC549DC"
+            }
+          ]
+        },
+        {
+          "id": "59A0ED8643C7F282629862922CB487D3",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_3",
+              "pin_id": "B14D8F794ADFCAC266C24CBCA0A21A0B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_IfThenElse_3",
+      "class": "/Script/BlueprintGraph.K2Node_IfThenElse",
+      "guid": "5706CE4546EB8FAC6E83A0A3DDB6E8B7",
+      "title": "Branch",
+      "position": {
+        "x": 2240,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {},
+      "properties": {},
+      "pins": [
+        {
+          "id": "9D7CEBDC4364392AE5657B8A020B7F85",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_12",
+              "pin_id": "0DFCF5DE4367DEAD636C76BC040C2918"
+            }
+          ]
+        },
+        {
+          "id": "B14D8F794ADFCAC266C24CBCA0A21A0B",
+          "name": "Condition",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "true",
+          "autogenerated_default_value": "true",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_13",
+              "pin_id": "59A0ED8643C7F282629862922CB487D3"
+            }
+          ]
+        },
+        {
+          "id": "498FC1894BC7918E04315BACC69E4DC8",
+          "name": "then",
+          "friendly_name": "true",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_15",
+              "pin_id": "DACDA76E4619BC5E520223B677672B55"
+            }
+          ]
+        },
+        {
+          "id": "292C2B00477F5F4D75408D80DE66EC42",
+          "name": "else",
+          "friendly_name": "false",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_5",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "80A847BD45C91B9CA1854182437F9AC5",
+      "title": "Get ContextHelp",
+      "position": {
+        "x": 2520,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "ContextHelp",
+          "MemberGuid": "937591F34F65C50136824A897B0FE753",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "778627724EDC9EA9A88021AED9AA6692",
+          "name": "ContextHelp",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.TextBlock'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_15",
+              "pin_id": "FEB9F8A641DC02C4872E92832FC1DED1"
+            }
+          ]
+        },
+        {
+          "id": "3472107D4C17654E2BE2D0A3B8430F5F",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System.WBP_System_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_14",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "5AB616CD46D85770F88B759F23BA30D5",
+      "title": "Conv_StringToText",
+      "position": {
+        "x": 2800,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetTextLibrary'",
+          "MemberName": "Conv_StringToText"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "BCE21E9B4470F3ABC25F6587DFF33B31",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetTextLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetTextLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "C9C18BED4920EBF654E511A258D222A9",
+          "name": "InString",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "string",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "Unable to save settings. Changes apply for this session.",
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "4BA0057A41CEC337669F9E93FC9BFF38",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "text",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_15",
+              "pin_id": "2E99F5A047178F998595559C32D56710"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_15",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "6435DEA648A6DF7DD17EDD900706CE59",
+      "title": "SetText",
+      "position": {
+        "x": 3080,
+        "y": 200
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/UMG.TextBlock'",
+          "MemberName": "SetText"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "DACDA76E4619BC5E520223B677672B55",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_3",
+              "pin_id": "498FC1894BC7918E04315BACC69E4DC8"
+            }
+          ]
+        },
+        {
+          "id": "0C9475D743AFC9EAB1B79EAC37ACB920",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "FEB9F8A641DC02C4872E92832FC1DED1",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.TextBlock'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_5",
+              "pin_id": "778627724EDC9EA9A88021AED9AA6692"
+            }
+          ]
+        },
+        {
+          "id": "2E99F5A047178F998595559C32D56710",
+          "name": "InText",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "text",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_14",
+              "pin_id": "4BA0057A41CEC337669F9E93FC9BFF38"
             }
           ]
         }
@@ -1147,106 +2318,158 @@
   ],
   "connections": [
     {
-      "kind": "exec",
-      "from": {
-        "node": "K2Node_CallFunction_0",
-        "pin_id": "579140F44B18D8549596D9816148875C",
-        "pin_name": "then"
-      },
-      "to": {
-        "node": "K2Node_DynamicCast_0",
-        "pin_id": "CB754DD144602FCACE02909A138A6D59",
-        "pin_name": "execute"
-      }
-    },
-    {
       "kind": "data",
       "from": {
-        "node": "K2Node_CallFunction_1",
-        "pin_id": "C88CDC214296C518BCC0E6B3E78DCE95",
+        "node": "K2Node_CallFunction_11",
+        "pin_id": "C70D257E4A68C49A1B212885282B4602",
         "pin_name": "ReturnValue"
       },
       "to": {
-        "node": "K2Node_DynamicCast_0",
-        "pin_id": "5E72259F470C8348B6516EA43BCF5A9C",
+        "node": "K2Node_DynamicCast_1",
+        "pin_id": "A27412314ABC2293BFBEF7BD75648D42",
         "pin_name": "Object"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_CallFunction_2",
-        "pin_id": "EAF75DAF429090636EC485AD6BFD1129",
+        "node": "K2Node_CallFunction_12",
+        "pin_id": "FAE6B6E14335B544ED58C0B7FEC549DC",
         "pin_name": "Saved"
       },
       "to": {
-        "node": "K2Node_CallFunction_3",
-        "pin_id": "8EACED714C307BEB79FCC28AD278C055",
+        "node": "K2Node_CallFunction_13",
+        "pin_id": "8337EA5F4A81216E29CAA3A2DB163902",
         "pin_name": "A"
       }
     },
     {
       "kind": "exec",
       "from": {
-        "node": "K2Node_CallFunction_2",
-        "pin_id": "C73890F740A79B952A2B5D9D7EFCA4DA",
+        "node": "K2Node_CallFunction_12",
+        "pin_id": "0DFCF5DE4367DEAD636C76BC040C2918",
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_IfThenElse_0",
-        "pin_id": "FBA416FC4CED86866DB240984AA5E306",
+        "node": "K2Node_IfThenElse_3",
+        "pin_id": "9D7CEBDC4364392AE5657B8A020B7F85",
         "pin_name": "execute"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_CallFunction_3",
-        "pin_id": "D0DFFB98488897CE9821279B23D80B0F",
+        "node": "K2Node_CallFunction_13",
+        "pin_id": "59A0ED8643C7F282629862922CB487D3",
         "pin_name": "ReturnValue"
       },
       "to": {
-        "node": "K2Node_IfThenElse_0",
-        "pin_id": "39C15E094457F700FE58B0BC5977EE44",
+        "node": "K2Node_IfThenElse_3",
+        "pin_id": "B14D8F794ADFCAC266C24CBCA0A21A0B",
         "pin_name": "Condition"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_CallFunction_4",
-        "pin_id": "103BDF3F413AD57B160A96B57BF120AC",
+        "node": "K2Node_CallFunction_14",
+        "pin_id": "4BA0057A41CEC337669F9E93FC9BFF38",
         "pin_name": "ReturnValue"
       },
       "to": {
-        "node": "K2Node_CallFunction_5",
-        "pin_id": "606C7C3A41579688594EDAAD0C59466C",
+        "node": "K2Node_CallFunction_15",
+        "pin_id": "2E99F5A047178F998595559C32D56710",
+        "pin_name": "InText"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_6",
+        "pin_id": "01EED7EB4D0454451688B5A0A7312907",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "31566C3B4596F91EDB2E928EAD6891F2",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "1A3A95C14BFCD310A87D4ABAE051158F",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "4B443D804B59DBCB6BD6DB9ED9665608",
+        "pin_name": "A"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "4B3E76C14F1517906EE81991940BAB4C",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_IfThenElse_2",
+        "pin_id": "E711367B4D9C200634EB36BCCBFFBFB0",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "61831D7C43830AD232E20DA0693959B5",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_IfThenElse_2",
+        "pin_id": "6F15C62D4596CBDAF5FAA1AE92C27FE9",
+        "pin_name": "Condition"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallFunction_9",
+        "pin_id": "135C863547561E406E231A9712E0EDCD",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_10",
+        "pin_id": "C51B1A914E7EA030C43EBE9003AA7242",
         "pin_name": "InText"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_DynamicCast_0",
-        "pin_id": "FE0C646745A484DDF782BAB8602EF1C6",
+        "node": "K2Node_DynamicCast_1",
+        "pin_id": "8445B58344DEF48D20BEE2B6F93F2604",
         "pin_name": "AsBP CPC Player Controller"
       },
       "to": {
-        "node": "K2Node_CallFunction_2",
-        "pin_id": "AADCE2574843D82FFF9FBC941D44FDB5",
+        "node": "K2Node_CallFunction_12",
+        "pin_id": "B7139B3946A1CBAE340F818C371EFA4A",
         "pin_name": "self"
       }
     },
     {
       "kind": "exec",
       "from": {
-        "node": "K2Node_DynamicCast_0",
-        "pin_id": "2D8C2F494CE1C1797B425AA489CE89D8",
+        "node": "K2Node_DynamicCast_1",
+        "pin_id": "5B7E2E244BC6AE7A5A5ABCB6DBA56D3E",
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_CallFunction_2",
-        "pin_id": "5BEDBBB649536D8C0303538DF7098F01",
+        "node": "K2Node_CallFunction_12",
+        "pin_id": "4A3C133D4ABC84EE68DB5787DB2149C7",
         "pin_name": "execute"
       }
     },
@@ -1258,60 +2481,164 @@
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_CallFunction_0",
-        "pin_id": "8B5EA8EF490EA9D4544BC7BF41CDAD63",
+        "node": "K2Node_CallFunction_6",
+        "pin_id": "C7301A6A4C7FA95811762E95DE237956",
         "pin_name": "execute"
       }
     },
     {
       "kind": "exec",
       "from": {
-        "node": "K2Node_IfThenElse_0",
-        "pin_id": "C2BDDE5743BC9178F0ECF8A7564AF537",
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "A8EB7B1E4BCD39E7937FDC8D7127EC65",
+        "pin_name": "else"
+      },
+      "to": {
+        "node": "K2Node_DynamicCast_1",
+        "pin_id": "D13D1F074458F4E6BA0B9DBF467C5905",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "2214C2F942C8DEDA92C72DA96A419B87",
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_CallFunction_5",
-        "pin_id": "DF9F5EC747E9A76A48141F9D3377D399",
+        "node": "K2Node_MacroInstance_0",
+        "pin_id": "666AB5F84E47BE0BA386C49762CF602A",
+        "pin_name": "exec"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_IfThenElse_2",
+        "pin_id": "30F2CF8546020F63B7CD7DB2133E36B2",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_10",
+        "pin_id": "9E5D61C746DA2F53BBB0518CA45417B0",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_IfThenElse_3",
+        "pin_id": "498FC1894BC7918E04315BACC69E4DC8",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_15",
+        "pin_id": "DACDA76E4619BC5E520223B677672B55",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_MacroInstance_0",
+        "pin_id": "DEAA2CED46C367D67B2DB3B40D72DB8C",
+        "pin_name": "Is Valid"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "5FD24AE942593D58246BAFA9943C483D",
         "pin_name": "execute"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_Self_0",
-        "pin_id": "277E48B74FE28F5BD89616A2865DD9D9",
+        "node": "K2Node_Self_1",
+        "pin_id": "2D947F7F48031D2C1A381FA04132F7C5",
         "pin_name": "self"
       },
       "to": {
-        "node": "K2Node_CallFunction_0",
-        "pin_id": "109D8E0743AB49B8A03C5B872B6F4165",
+        "node": "K2Node_CallFunction_11",
+        "pin_id": "CA3FB09F4FA585FFF34087BF6C7BE44D",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_Self_1",
+        "pin_id": "2D947F7F48031D2C1A381FA04132F7C5",
+        "pin_name": "self"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_6",
+        "pin_id": "980C3D5B43B248F32F8A95921A4F1703",
         "pin_name": "Object"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_Self_0",
-        "pin_id": "277E48B74FE28F5BD89616A2865DD9D9",
-        "pin_name": "self"
+        "node": "K2Node_VariableGet_1",
+        "pin_id": "C25F75D44FB941416E29679284636840",
+        "pin_name": "TitleContext"
       },
       "to": {
-        "node": "K2Node_CallFunction_1",
-        "pin_id": "75B8F1304C1BB326FBC07EAF97FFEA72",
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "EDD3E0ED4872648089DC78A42844DC8E",
+        "pin_name": "Condition"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_2",
+        "pin_id": "8A4BCCEA4C93FC5E7D4CAE92D1329DD7",
+        "pin_name": "Preferences"
+      },
+      "to": {
+        "node": "K2Node_MacroInstance_0",
+        "pin_id": "8E80942B4678DF40A9D6F7A8E27F3F94",
+        "pin_name": "InputObject"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_3",
+        "pin_id": "F0C6C5844D9C8E62A0F755B35C1C1C58",
+        "pin_name": "Preferences"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "6221D0DD4018672C44DCCAB72DF3F4A1",
+        "pin_name": "SaveGameObject"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_4",
+        "pin_id": "48AF9548475A7A35627C2E84282CBAE3",
+        "pin_name": "ContextHelp"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_10",
+        "pin_id": "B0CC3D9649D4CF174B88EB873378E141",
         "pin_name": "self"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_VariableGet_0",
-        "pin_id": "AF1C8883405127B926646AA7284DE7F8",
+        "node": "K2Node_VariableGet_5",
+        "pin_id": "778627724EDC9EA9A88021AED9AA6692",
         "pin_name": "ContextHelp"
       },
       "to": {
-        "node": "K2Node_CallFunction_5",
-        "pin_id": "5947FCD440B88E1AFD90F5931F6883CB",
+        "node": "K2Node_CallFunction_15",
+        "pin_id": "FEB9F8A641DC02C4872E92832FC1DED1",
         "pin_name": "self"
       }
     }

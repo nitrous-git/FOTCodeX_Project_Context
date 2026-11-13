@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "WBP_MainMenu",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/MainMenu/WBP_MainMenu",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/MainMenu",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/MainMenu/WBP_MainMenu.WBP_MainMenu",
+    "relative_package": "CodeX_Restruct/Game/UI/MainMenu/WBP_MainMenu"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/UMGEditor",
+      "name": "WidgetBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System",
+      "/Game/CodeX_Restruct/Game/UI/MainMenu/WBP_SaveGameEntry",
+      "/Game/CodeX_Restruct/Game/UI/MainMenu/WBP_StartingClassCard"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/MainMenu/BP_MainMenuPlayerController"
+    ],
+    "non_architecture_dependency_count": 15,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/MainMenu/WBP_MainMenu.WBP_MainMenu_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/MainMenu/WBP_MainMenu.WBP_MainMenu_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/MainMenu/WBP_MainMenu.WBP_MainMenu_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "CurrentScreen",
+        "guid": "EB7B463E480E2FBD5F66B3807416FF66",
+        "friendly_name": "Current Screen",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnLoadProfileRequested",
+        "guid": "C8D5F30F42D81DF7BD85D89E6CE3EBA2",
+        "friendly_name": "On Load Profile Requested",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "QuitOpen",
+        "guid": "EB8EBC5347440D477AADE2AF17C5F5A7",
+        "friendly_name": "Quit Open",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ResumeSlot",
+        "guid": "D5B650824ECE0F373F2A17BE21F2FCB4",
+        "friendly_name": "Resume Slot",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "string",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SelectedProfileIndex",
+        "guid": "D98D9DF84AF572A60AF402A7CADD069C",
+        "friendly_name": "Selected Profile Index",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "SelectedSlot",
+        "guid": "2EA1D7274628F44174E64FAF4C6296EB",
+        "friendly_name": "Selected Slot",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "string",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TitleSelection",
+        "guid": "5EF362864D6DF0208A5360955739CD7F",
+        "friendly_name": "Title Selection",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TitleText",
+        "guid": "DDA82689493F65731A210A85E878488B",
+        "friendly_name": "Title Text",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "text",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TravelInProgress",
+        "guid": "C74D00B745FD5D0FD5369E9C40CC9998",
+        "friendly_name": "Travel in Progress",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "MoveSaveProfile",
+        "SelectSaveProfile",
+        "ClearSaveProfiles",
+        "AddSaveProfile",
+        "PlayScreenFade",
+        "OnPreviewKeyDown",
+        "FocusLoadScreen",
+        "LeaveSettings",
+        "ActivateTitleAction",
+        "SetResumeSlot",
+        "RequestLoadProfile",
+        "StartNewJourney",
+        "ExitApplication",
+        "CancelQuit",
+        "OpenQuit",
+        "InitializeFrontEnd",
+        "OpenScreen",
+        "FocusTitleAction"
+      ],
+      "macros": [],
+      "delegates": [
+        "OnLoadProfileRequested"
+      ],
+      "generated_graphs": [
+        "OnLoadProfileRequested_MERGED",
+        "MoveSaveProfile_MERGED",
+        "SelectSaveProfile_MERGED",
+        "ClearSaveProfiles_MERGED",
+        "AddSaveProfile_MERGED",
+        "PlayScreenFade_MERGED",
+        "OnPreviewKeyDown_MERGED",
+        "FocusLoadScreen_MERGED",
+        "LeaveSettings_MERGED",
+        "ActivateTitleAction_MERGED",
+        "SetResumeSlot_MERGED",
+        "RequestLoadProfile_MERGED",
+        "StartNewJourney_MERGED",
+        "ExitApplication_MERGED",
+        "CancelQuit_MERGED",
+        "OpenQuit_MERGED",
+        "InitializeFrontEnd_MERGED",
+        "OpenScreen_MERGED",
+        "FocusTitleAction_MERGED",
+        "BndEvt__WBP_MainMenu_ContinueButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_ContinueButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_LoadButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_LoadButton_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_NewButton_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_NewButton_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_SettingsButton_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_SettingsButton_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_QuitButton_K2Node_ComponentBoundEvent_8_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_QuitButton_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_NewBack_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_LoadBack_K2Node_ComponentBoundEvent_11_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_NewConfirm_K2Node_ComponentBoundEvent_12_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_LoadConfirm_K2Node_ComponentBoundEvent_13_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_SettingsBack_K2Node_ComponentBoundEvent_14_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_QuitYes_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature",
+        "BndEvt__WBP_MainMenu_QuitNo_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature",
+        "ExecuteUbergraph_WBP_MainMenu",
+        "EdGraph_2",
+        "EdGraph_1",
+        "EdGraph_0"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  },
+  "widget_designer": {
+    "file": "widget_tree.json",
+    "status": "available",
+    "widget_count": 85
+  }
+}

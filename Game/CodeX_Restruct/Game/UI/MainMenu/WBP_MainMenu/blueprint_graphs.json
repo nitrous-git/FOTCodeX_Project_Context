@@ -1,0 +1,839 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_MainMenu",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "802A02B148C3AEBD86D24BB18DF2438C",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "CurrentScreen",
+      "guid": "EB7B463E480E2FBD5F66B3807416FF66",
+      "friendly_name": "Current Screen",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnLoadProfileRequested",
+      "guid": "C8D5F30F42D81DF7BD85D89E6CE3EBA2",
+      "friendly_name": "On Load Profile Requested",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "QuitOpen",
+      "guid": "EB8EBC5347440D477AADE2AF17C5F5A7",
+      "friendly_name": "Quit Open",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ResumeSlot",
+      "guid": "D5B650824ECE0F373F2A17BE21F2FCB4",
+      "friendly_name": "Resume Slot",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "string",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SelectedProfileIndex",
+      "guid": "D98D9DF84AF572A60AF402A7CADD069C",
+      "friendly_name": "Selected Profile Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SelectedSlot",
+      "guid": "2EA1D7274628F44174E64FAF4C6296EB",
+      "friendly_name": "Selected Slot",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "string",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TitleSelection",
+      "guid": "5EF362864D6DF0208A5360955739CD7F",
+      "friendly_name": "Title Selection",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TitleText",
+      "guid": "DDA82689493F65731A210A85E878488B",
+      "friendly_name": "Title Text",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TravelInProgress",
+      "guid": "C74D00B745FD5D0FD5369E9C40CC9998",
+      "friendly_name": "Travel in Progress",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "OnLoadProfileRequested",
+      "kind": "delegate",
+      "guid": "CF8817BD473DF553A532C9B6D043E07F",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "MoveSaveProfile",
+      "kind": "function",
+      "guid": "54BCD8FC4E0D39886AE09595EADB56D5",
+      "node_count": 23,
+      "pin_count": 72,
+      "connection_count": 29,
+      "exec_connection_count": 4,
+      "data_connection_count": 25
+    },
+    {
+      "name": "SelectSaveProfile",
+      "kind": "function",
+      "guid": "2A02157945A81DE9BFAACBA534F69CA2",
+      "node_count": 26,
+      "pin_count": 92,
+      "connection_count": 36,
+      "exec_connection_count": 11,
+      "data_connection_count": 25
+    },
+    {
+      "name": "ClearSaveProfiles",
+      "kind": "function",
+      "guid": "E967D9BE489B38C1080939A70767AF37",
+      "node_count": 11,
+      "pin_count": 33,
+      "connection_count": 10,
+      "exec_connection_count": 6,
+      "data_connection_count": 4
+    },
+    {
+      "name": "AddSaveProfile",
+      "kind": "function",
+      "guid": "72A6E323407C86D2AE5EF19EDE91AD3D",
+      "node_count": 17,
+      "pin_count": 65,
+      "connection_count": 29,
+      "exec_connection_count": 8,
+      "data_connection_count": 21
+    },
+    {
+      "name": "PlayScreenFade",
+      "kind": "function",
+      "guid": "095F147746BAC3C97D3E7E8CE0D62D3A",
+      "node_count": 6,
+      "pin_count": 19,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "OnPreviewKeyDown",
+      "kind": "function",
+      "guid": "9D1B19AB4FCE7F1AB5BC31B0EE24D18A",
+      "node_count": 329,
+      "pin_count": 1061,
+      "connection_count": 397,
+      "exec_connection_count": 64,
+      "data_connection_count": 333
+    },
+    {
+      "name": "FocusLoadScreen",
+      "kind": "function",
+      "guid": "E9649CC34DEDFE8E3436E2B49C031838",
+      "node_count": 10,
+      "pin_count": 26,
+      "connection_count": 10,
+      "exec_connection_count": 3,
+      "data_connection_count": 7
+    },
+    {
+      "name": "LeaveSettings",
+      "kind": "function",
+      "guid": "E365A63A46E8A0260F95BFBC7E025017",
+      "node_count": 5,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "ActivateTitleAction",
+      "kind": "function",
+      "guid": "9B4014F542E59EB683B3B085E806377B",
+      "node_count": 10,
+      "pin_count": 34,
+      "connection_count": 12,
+      "exec_connection_count": 6,
+      "data_connection_count": 6
+    },
+    {
+      "name": "SetResumeSlot",
+      "kind": "function",
+      "guid": "0B6945E4424F738FFF6A21BF744307DB",
+      "node_count": 5,
+      "pin_count": 17,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "RequestLoadProfile",
+      "kind": "function",
+      "guid": "2D48AB924FD9CEA8F6650EB036917320",
+      "node_count": 5,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "StartNewJourney",
+      "kind": "function",
+      "guid": "B359C1954A7AEA0D01DB14B7E9C5CC6A",
+      "node_count": 16,
+      "pin_count": 54,
+      "connection_count": 18,
+      "exec_connection_count": 7,
+      "data_connection_count": 11
+    },
+    {
+      "name": "ExitApplication",
+      "kind": "function",
+      "guid": "FCADE67848EC9F68E006F29AB77A4E16",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "CancelQuit",
+      "kind": "function",
+      "guid": "9816BA884349EE40B4712881B6B6DFE1",
+      "node_count": 8,
+      "pin_count": 23,
+      "connection_count": 7,
+      "exec_connection_count": 4,
+      "data_connection_count": 3
+    },
+    {
+      "name": "OpenQuit",
+      "kind": "function",
+      "guid": "6633DECB4E5E9244B5DFFDBB490FF5D7",
+      "node_count": 10,
+      "pin_count": 27,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "InitializeFrontEnd",
+      "kind": "function",
+      "guid": "AF4D197C4B02321FEB82FBA8E43BC010",
+      "node_count": 6,
+      "pin_count": 14,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "OpenScreen",
+      "kind": "function",
+      "guid": "6CD6FFCB43343D91DFAFAA9492057E52",
+      "node_count": 17,
+      "pin_count": 53,
+      "connection_count": 19,
+      "exec_connection_count": 11,
+      "data_connection_count": 8
+    },
+    {
+      "name": "FocusTitleAction",
+      "kind": "function",
+      "guid": "39F955B346B153C81FCF379B27A74D73",
+      "node_count": 32,
+      "pin_count": 100,
+      "connection_count": 39,
+      "exec_connection_count": 8,
+      "data_connection_count": 31
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "1C6478FC40124B36F9159AAA654D7516",
+      "node_count": 51,
+      "pin_count": 137,
+      "connection_count": 31,
+      "exec_connection_count": 22,
+      "data_connection_count": 9
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "OnLoadProfileRequested_MERGED",
+      "guid": "CF8817BD473DF553A532C9B6D043E07F",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "MoveSaveProfile_MERGED",
+      "guid": "54BCD8FC4E0D39886AE09595EADB56D5",
+      "node_count": 40,
+      "pin_count": 119,
+      "connection_count": 38,
+      "exec_connection_count": 8,
+      "data_connection_count": 30
+    },
+    {
+      "name": "SelectSaveProfile_MERGED",
+      "guid": "2A02157945A81DE9BFAACBA534F69CA2",
+      "node_count": 49,
+      "pin_count": 155,
+      "connection_count": 55,
+      "exec_connection_count": 23,
+      "data_connection_count": 32
+    },
+    {
+      "name": "ClearSaveProfiles_MERGED",
+      "guid": "E967D9BE489B38C1080939A70767AF37",
+      "node_count": 11,
+      "pin_count": 31,
+      "connection_count": 10,
+      "exec_connection_count": 6,
+      "data_connection_count": 4
+    },
+    {
+      "name": "AddSaveProfile_MERGED",
+      "guid": "72A6E323407C86D2AE5EF19EDE91AD3D",
+      "node_count": 18,
+      "pin_count": 72,
+      "connection_count": 29,
+      "exec_connection_count": 8,
+      "data_connection_count": 21
+    },
+    {
+      "name": "PlayScreenFade_MERGED",
+      "guid": "095F147746BAC3C97D3E7E8CE0D62D3A",
+      "node_count": 6,
+      "pin_count": 19,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "OnPreviewKeyDown_MERGED",
+      "guid": "9D1B19AB4FCE7F1AB5BC31B0EE24D18A",
+      "node_count": 357,
+      "pin_count": 1145,
+      "connection_count": 411,
+      "exec_connection_count": 64,
+      "data_connection_count": 347
+    },
+    {
+      "name": "FocusLoadScreen_MERGED",
+      "guid": "E9649CC34DEDFE8E3436E2B49C031838",
+      "node_count": 10,
+      "pin_count": 26,
+      "connection_count": 10,
+      "exec_connection_count": 3,
+      "data_connection_count": 7
+    },
+    {
+      "name": "LeaveSettings_MERGED",
+      "guid": "E365A63A46E8A0260F95BFBC7E025017",
+      "node_count": 5,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "ActivateTitleAction_MERGED",
+      "guid": "9B4014F542E59EB683B3B085E806377B",
+      "node_count": 10,
+      "pin_count": 34,
+      "connection_count": 12,
+      "exec_connection_count": 6,
+      "data_connection_count": 6
+    },
+    {
+      "name": "SetResumeSlot_MERGED",
+      "guid": "0B6945E4424F738FFF6A21BF744307DB",
+      "node_count": 5,
+      "pin_count": 16,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "RequestLoadProfile_MERGED",
+      "guid": "2D48AB924FD9CEA8F6650EB036917320",
+      "node_count": 5,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "StartNewJourney_MERGED",
+      "guid": "B359C1954A7AEA0D01DB14B7E9C5CC6A",
+      "node_count": 16,
+      "pin_count": 52,
+      "connection_count": 18,
+      "exec_connection_count": 7,
+      "data_connection_count": 11
+    },
+    {
+      "name": "ExitApplication_MERGED",
+      "guid": "FCADE67848EC9F68E006F29AB77A4E16",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "CancelQuit_MERGED",
+      "guid": "9816BA884349EE40B4712881B6B6DFE1",
+      "node_count": 8,
+      "pin_count": 22,
+      "connection_count": 7,
+      "exec_connection_count": 4,
+      "data_connection_count": 3
+    },
+    {
+      "name": "OpenQuit_MERGED",
+      "guid": "6633DECB4E5E9244B5DFFDBB490FF5D7",
+      "node_count": 10,
+      "pin_count": 26,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "InitializeFrontEnd_MERGED",
+      "guid": "AF4D197C4B02321FEB82FBA8E43BC010",
+      "node_count": 6,
+      "pin_count": 14,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "OpenScreen_MERGED",
+      "guid": "6CD6FFCB43343D91DFAFAA9492057E52",
+      "node_count": 17,
+      "pin_count": 52,
+      "connection_count": 19,
+      "exec_connection_count": 11,
+      "data_connection_count": 8
+    },
+    {
+      "name": "FocusTitleAction_MERGED",
+      "guid": "39F955B346B153C81FCF379B27A74D73",
+      "node_count": 36,
+      "pin_count": 111,
+      "connection_count": 41,
+      "exec_connection_count": 8,
+      "data_connection_count": 33
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_ContinueButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature",
+      "guid": "5F1B688E436409F3428E96AA707D9D17",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_ContinueButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+      "guid": "269001474339777BF350AE8E516416D9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_LoadButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "699ACDDA44B27C7ACC1C54976053640E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_LoadButton_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature",
+      "guid": "C3AE060245A48FE75372B385790A409F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_NewButton_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature",
+      "guid": "B4F4132549CF5A608E830DBA78B70EA1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_NewButton_K2Node_ComponentBoundEvent_5_OnButtonClickedEvent__DelegateSignature",
+      "guid": "6AB46F95417FAC6CC23C9C92145B1282",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_SettingsButton_K2Node_ComponentBoundEvent_6_OnButtonHoverEvent__DelegateSignature",
+      "guid": "A148469D4F41764F4525D98989A1D217",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_SettingsButton_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature",
+      "guid": "C78D160B42C8CF671E2C53B3EAA7D479",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_QuitButton_K2Node_ComponentBoundEvent_8_OnButtonHoverEvent__DelegateSignature",
+      "guid": "5E7F767A4BF3CD767C969F8DAA6D86C7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_QuitButton_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature",
+      "guid": "63516CC449D6901D2CB6BAA0BAC6AC93",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_NewBack_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature",
+      "guid": "C340F004439D3799F34A20831F6E578D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_LoadBack_K2Node_ComponentBoundEvent_11_OnButtonClickedEvent__DelegateSignature",
+      "guid": "8A360C0B4CA91C870AF5ABB502AAE797",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_NewConfirm_K2Node_ComponentBoundEvent_12_OnButtonClickedEvent__DelegateSignature",
+      "guid": "89A15C1842DC7F3E98ACB0BCA676427C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_LoadConfirm_K2Node_ComponentBoundEvent_13_OnButtonClickedEvent__DelegateSignature",
+      "guid": "51BD4F00436B3AB5550D2197018B9922",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_SettingsBack_K2Node_ComponentBoundEvent_14_OnButtonClickedEvent__DelegateSignature",
+      "guid": "8087117745D96D551AD302BBD777408D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_QuitYes_K2Node_ComponentBoundEvent_15_OnButtonClickedEvent__DelegateSignature",
+      "guid": "46B514044F93D9F2D36018936FE019AF",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_MainMenu_QuitNo_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature",
+      "guid": "C6A976204A550F9C86AFD5AF42121C26",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ExecuteUbergraph_WBP_MainMenu",
+      "guid": "D539DD58416D5030CE7693A4D22D92AC",
+      "node_count": 49,
+      "pin_count": 125,
+      "connection_count": 31,
+      "exec_connection_count": 22,
+      "data_connection_count": 9
+    },
+    {
+      "name": "EdGraph_2",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "EdGraph_1",
+      "guid": "55C904AF4B45FE1761FB55A8DB9FB801",
+      "node_count": 9,
+      "pin_count": 30,
+      "connection_count": 16,
+      "exec_connection_count": 7,
+      "data_connection_count": 9
+    },
+    {
+      "name": "EdGraph_0",
+      "guid": "64422BCD430703FF5CAEA8B79A32AA65",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 20,
+    "generated_graph_count": 40,
+    "authored_node_count": 592,
+    "authored_pin_count": 1866,
+    "authored_connection_count": 676,
+    "generated_node_count": 714,
+    "generated_pin_count": 2195
+  },
+  "graph_files": [
+    {
+      "name": "OnLoadProfileRequested",
+      "kind": "delegate",
+      "file": "graphs/OnLoadProfileRequested.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ActivateTitleAction",
+      "kind": "function",
+      "file": "graphs/ActivateTitleAction.json"
+    },
+    {
+      "name": "AddSaveProfile",
+      "kind": "function",
+      "file": "graphs/AddSaveProfile.json"
+    },
+    {
+      "name": "CancelQuit",
+      "kind": "function",
+      "file": "graphs/CancelQuit.json"
+    },
+    {
+      "name": "ClearSaveProfiles",
+      "kind": "function",
+      "file": "graphs/ClearSaveProfiles.json"
+    },
+    {
+      "name": "ExitApplication",
+      "kind": "function",
+      "file": "graphs/ExitApplication.json"
+    },
+    {
+      "name": "FocusLoadScreen",
+      "kind": "function",
+      "file": "graphs/FocusLoadScreen.json"
+    },
+    {
+      "name": "FocusTitleAction",
+      "kind": "function",
+      "file": "graphs/FocusTitleAction.json"
+    },
+    {
+      "name": "InitializeFrontEnd",
+      "kind": "function",
+      "file": "graphs/InitializeFrontEnd.json"
+    },
+    {
+      "name": "LeaveSettings",
+      "kind": "function",
+      "file": "graphs/LeaveSettings.json"
+    },
+    {
+      "name": "MoveSaveProfile",
+      "kind": "function",
+      "file": "graphs/MoveSaveProfile.json"
+    },
+    {
+      "name": "OnPreviewKeyDown",
+      "kind": "function",
+      "file": "graphs/OnPreviewKeyDown.json"
+    },
+    {
+      "name": "OpenQuit",
+      "kind": "function",
+      "file": "graphs/OpenQuit.json"
+    },
+    {
+      "name": "OpenScreen",
+      "kind": "function",
+      "file": "graphs/OpenScreen.json"
+    },
+    {
+      "name": "PlayScreenFade",
+      "kind": "function",
+      "file": "graphs/PlayScreenFade.json"
+    },
+    {
+      "name": "RequestLoadProfile",
+      "kind": "function",
+      "file": "graphs/RequestLoadProfile.json"
+    },
+    {
+      "name": "SelectSaveProfile",
+      "kind": "function",
+      "file": "graphs/SelectSaveProfile.json"
+    },
+    {
+      "name": "SetResumeSlot",
+      "kind": "function",
+      "file": "graphs/SetResumeSlot.json"
+    },
+    {
+      "name": "StartNewJourney",
+      "kind": "function",
+      "file": "graphs/StartNewJourney.json"
+    }
+  ]
+}

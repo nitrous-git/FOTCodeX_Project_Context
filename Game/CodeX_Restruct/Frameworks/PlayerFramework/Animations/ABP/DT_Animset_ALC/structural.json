@@ -8325,7 +8325,7 @@
             "TurnInPlace": {
               "Left_90": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_TurnL90_Root.GhostSamurai_APose_TurnL90_Root'",
               "Right_90": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_TurnR90_Root.GhostSamurai_APose_TurnR90_Root'",
-              "PlayRate": 1.5
+              "PlayRate": 1.6
             },
             "Start_Cardinals": {
               "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_F_Start_Root.GhostSamurai_APose_Strafe_Run_F_Start_Root'",
@@ -8334,7 +8334,7 @@
               "Right": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Idle_to_Jog/SSH_Idle_to_Jog_BR_Seq.SSH_Idle_to_Jog_BR_Seq'"
             },
             "Stop_Cardinals": {
-              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Run_F_End_Root.GhostSamurai_APose_Strafe_Run_F_End_Root'",
+              "Forward": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Brake/SSH_Brake_F_Seq.SSH_Brake_F_Seq'",
               "Backward": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Brake/SSH_Brake_B_Seq.SSH_Brake_B_Seq'",
               "Left": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Brake/SSH_Brake_BL_Seq.SSH_Brake_BL_Seq'",
               "Right": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Brake/SSH_Brake_BR_Seq.SSH_Brake_BR_Seq'"
@@ -8409,7 +8409,7 @@
               "DisableLegIK": false,
               "DisableLegIKWhileMoving": false,
               "Root_Z_Offset": 0,
-              "MaxWalkSpeed": 400,
+              "MaxWalkSpeed": 450,
               "MaxAcceleration": 1024,
               "BrakingDecelerationWalking": 1024,
               "MaxFlySpeed": 500,
@@ -8424,7 +8424,7 @@
                 "X": -120,
                 "Y": 100
               },
-              "DisableIdleBreaks": false
+              "DisableIdleBreaks": true
             },
             "Override": {
               "Default": {
@@ -8487,9 +8487,9 @@
                   "BlendName": "UpperBodyMask"
                 },
                 "IdlePose": {
-                  "Sequence": "None",
+                  "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Battle/Execution/Enemy_Idle2.Enemy_Idle2'",
                   "StartPostion": 0,
-                  "OverrideWeight": 0,
+                  "OverrideWeight": 1,
                   "InterpSpeed": 10,
                   "BlendTime": 0.25,
                   "BlendName": "UpperBodyMask"
@@ -8708,7 +8708,7 @@
             }
           },
           "Walk": {
-            "Idle": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Battle/Execution/Enemy_Idle2.Enemy_Idle2'",
+            "Idle": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Idle/SSH_Idle_Seq.SSH_Idle_Seq'",
             "Idle_Breaks": [],
             "AimOffset": {
               "AimOffset": "/Script/Engine.AimOffsetBlendSpace'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Greystone/AO/AO_Greystone_Idle.AO_Greystone_Idle'",
@@ -8746,10 +8746,10 @@
               "Right": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_R_End_Root.GhostSamurai_APose_Strafe_Walk_R_End_Root'"
             },
             "Pivot_Cardinals": {
-              "Forward": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Fwd_Pivot.MM_Unarmed_Jog_Fwd_Pivot'",
-              "Backward": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Bwd_Pivot.MM_Unarmed_Jog_Bwd_Pivot'",
-              "Left": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Left_Pivot.MM_Unarmed_Jog_Left_Pivot'",
-              "Right": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Pivot_Right.MM_Unarmed_Jog_Pivot_Right'"
+              "Forward": "None",
+              "Backward": "None",
+              "Left": "None",
+              "Right": "None"
             },
             "Cycle_Cardinals": {
               "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Movement/Normal/GhostSamurai_APose_Strafe_Walk_F_Loop_Root.GhostSamurai_APose_Strafe_Walk_F_Loop_Root'",
@@ -8815,7 +8815,7 @@
               "DisableLegIK": false,
               "DisableLegIKWhileMoving": false,
               "Root_Z_Offset": 0,
-              "MaxWalkSpeed": 155,
+              "MaxWalkSpeed": 160,
               "MaxAcceleration": 1024,
               "BrakingDecelerationWalking": 1024,
               "MaxFlySpeed": 500,
@@ -8830,7 +8830,7 @@
                 "X": -120,
                 "Y": 100
               },
-              "DisableIdleBreaks": false
+              "DisableIdleBreaks": true
             },
             "Override": {
               "Default": {
@@ -8893,9 +8893,9 @@
                   "BlendName": "UpperBodyMask"
                 },
                 "IdlePose": {
-                  "Sequence": "None",
+                  "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Battle/Execution/Enemy_Idle2.Enemy_Idle2'",
                   "StartPostion": 0,
-                  "OverrideWeight": 0,
+                  "OverrideWeight": 1,
                   "InterpSpeed": 10,
                   "BlendTime": 0.25,
                   "BlendName": "UpperBodyMask"
@@ -8910,17 +8910,17 @@
                 },
                 "MovePose": {
                   "Start": {
-                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Idle/SSH_Idle_Seq.SSH_Idle_Seq'",
+                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Battle/Execution/Enemy_Idle2.Enemy_Idle2'",
                     "StartPostion": 0,
-                    "OverrideWeight": 1,
+                    "OverrideWeight": 0,
                     "InterpSpeed": 10,
                     "BlendTime": 0.25,
                     "BlendName": "UpperBodyMask"
                   },
                   "Stop": {
-                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/EssentialSwordShieldAnimationPack/Animation/Sequence/SSH/Idle/SSH_Idle_Seq.SSH_Idle_Seq'",
+                    "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Battle/Execution/Enemy_Idle2.Enemy_Idle2'",
                     "StartPostion": 0,
-                    "OverrideWeight": 1,
+                    "OverrideWeight": 0,
                     "InterpSpeed": 10,
                     "BlendTime": 0.25,
                     "BlendName": "UpperBodyMask"
@@ -9092,7 +9092,7 @@
                     "DisableLegIK": false,
                     "DisableLegIKWhileMoving": false,
                     "Root_Z_Offset": 0,
-                    "MaxWalkSpeed": 500,
+                    "MaxWalkSpeed": 160,
                     "MaxAcceleration": 1024,
                     "BrakingDecelerationWalking": 1024,
                     "MaxFlySpeed": 500,
@@ -9188,7 +9188,7 @@
           }
         },
         "Movement": {
-          "Walk": {
+          "Jog": {
             "Idle": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Defense/GhostSamurai_DefenseL_Loop_Root.GhostSamurai_DefenseL_Loop_Root'",
             "Idle_Breaks": [],
             "AimOffset": {
@@ -9227,10 +9227,10 @@
               "Right": "None"
             },
             "Pivot_Cardinals": {
-              "Forward": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Fwd_Pivot.MM_Unarmed_Jog_Fwd_Pivot'",
-              "Backward": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Bwd_Pivot.MM_Unarmed_Jog_Bwd_Pivot'",
-              "Left": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Left_Pivot.MM_Unarmed_Jog_Left_Pivot'",
-              "Right": "/Script/Engine.AnimSequence'/Game/LocomotionSystem/Characters/Mannequin_UE4/Animations/Lyra/Locomotion/Unarmed/MM_Unarmed_Jog_Pivot_Right.MM_Unarmed_Jog_Pivot_Right'"
+              "Forward": "None",
+              "Backward": "None",
+              "Left": "None",
+              "Right": "None"
             },
             "Cycle_Cardinals": {
               "Forward": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Defense/GhostSamurai_DefenseL_Walk_F_Root.GhostSamurai_DefenseL_Walk_F_Root'",
@@ -9311,7 +9311,7 @@
                 "X": -120,
                 "Y": 100
               },
-              "DisableIdleBreaks": false
+              "DisableIdleBreaks": true
             },
             "Override": {
               "Default": {
@@ -9466,9 +9466,9 @@
                   }
                 },
                 "TurnPose": {
-                  "Sequence": "None",
+                  "Sequence": "/Script/Engine.AnimSequence'/Game/Animations/RetargetGhostSamurai/Defense/GhostSamurai_DefenseL_Loop_Root.GhostSamurai_DefenseL_Loop_Root'",
                   "StartPostion": 0,
-                  "OverrideWeight": 0,
+                  "OverrideWeight": 1,
                   "InterpSpeed": 10,
                   "BlendTime": 0.25,
                   "BlendName": "UpperBodyMask"

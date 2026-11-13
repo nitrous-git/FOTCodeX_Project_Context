@@ -159,6 +159,40 @@
         "is_const": false,
         "is_weak_pointer": false
       }
+    },
+    {
+      "name": "TitleAudioReady",
+      "guid": "7AD48F374C810D2024DF95B22B71A7FA",
+      "friendly_name": "Title Audio Ready",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TitleContext",
+      "guid": "88025DA34FE4A37B54343F8AF965200D",
+      "friendly_name": "Title Context",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
     }
   ],
   "graphs": [
@@ -266,11 +300,11 @@
       "name": "FlushSystemPreferences",
       "kind": "function",
       "guid": "6710123B4967FE478D98D99FA4976D06",
-      "node_count": 11,
-      "pin_count": 35,
-      "connection_count": 13,
-      "exec_connection_count": 5,
-      "data_connection_count": 8
+      "node_count": 22,
+      "pin_count": 72,
+      "connection_count": 25,
+      "exec_connection_count": 10,
+      "data_connection_count": 15
     },
     {
       "name": "ShowSystemConfirmation",
@@ -361,12 +395,42 @@
       "connection_count": 6,
       "exec_connection_count": 3,
       "data_connection_count": 3
+    },
+    {
+      "name": "OpenTitleSettings",
+      "kind": "function",
+      "guid": "8F9D266749AE20589C2387B074E6D993",
+      "node_count": 19,
+      "pin_count": 73,
+      "connection_count": 24,
+      "exec_connection_count": 15,
+      "data_connection_count": 9
+    },
+    {
+      "name": "ApplyActivePreferencesAudio",
+      "kind": "function",
+      "guid": "720327FC4892311802FA0C92FA5232BE",
+      "node_count": 32,
+      "pin_count": 114,
+      "connection_count": 33,
+      "exec_connection_count": 11,
+      "data_connection_count": 22
+    },
+    {
+      "name": "CloseTitleSettings",
+      "kind": "function",
+      "guid": "A446C631467E5CE010B4388FAD76FF9F",
+      "node_count": 10,
+      "pin_count": 32,
+      "connection_count": 10,
+      "exec_connection_count": 7,
+      "data_connection_count": 3
     }
   ],
   "generated_graphs": [
     {
       "name": "BndEvt__WBP_System_ConfirmNo_K2Node_ComponentBoundEvent_97_OnButtonClickedEvent__DelegateSignature",
-      "guid": "4C08F90A4207FE5AFA6ABD89D8DFFF16",
+      "guid": "A8DF87284CE8E55445340DB34030FD4E",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -375,7 +439,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ConfirmYes_K2Node_ComponentBoundEvent_96_OnButtonClickedEvent__DelegateSignature",
-      "guid": "D5FC55074FB5E2F7C4D0709CE551A85A",
+      "guid": "2739ECC942BD0424007B5AB237DAE1FD",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -384,7 +448,7 @@
     },
     {
       "name": "BndEvt__WBP_System_QuitWithoutSaving_K2Node_ComponentBoundEvent_95_OnButtonHoverEvent__DelegateSignature",
-      "guid": "80C453614A2F7784D3312FBFA0F50A01",
+      "guid": "D661B69048FD85BC7C4E14833EBE6BE1",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -393,7 +457,7 @@
     },
     {
       "name": "BndEvt__WBP_System_QuitWithoutSaving_K2Node_ComponentBoundEvent_94_OnButtonClickedEvent__DelegateSignature",
-      "guid": "5F3ED44644FB8E975A25FF98D4E336C8",
+      "guid": "4883A0CA4CB8ECFFBFC6518AB9EB13CB",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -402,7 +466,7 @@
     },
     {
       "name": "BndEvt__WBP_System_EffectsFocus_K2Node_ComponentBoundEvent_93_OnButtonHoverEvent__DelegateSignature",
-      "guid": "C8B140774E0C8553EAE31C99F55C6099",
+      "guid": "A4EBF5F24207D8270D87B4A0EDBD9EDF",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -411,7 +475,7 @@
     },
     {
       "name": "BndEvt__WBP_System_EffectsSlider_K2Node_ComponentBoundEvent_92_OnMouseCaptureBeginEvent__DelegateSignature",
-      "guid": "C99D0F2A4606226CD39B7881A9E8E737",
+      "guid": "D195601144EEED3BE4CD61A363D49770",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -420,7 +484,7 @@
     },
     {
       "name": "BndEvt__WBP_System_EffectsSlider_K2Node_ComponentBoundEvent_91_OnFloatValueChangedEvent__DelegateSignature",
-      "guid": "0828549B4F8EFD5A5394A3A7532FED85",
+      "guid": "BD00E77346545F7DA65C4F874D76494B",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -429,7 +493,7 @@
     },
     {
       "name": "BndEvt__WBP_System_MusicFocus_K2Node_ComponentBoundEvent_90_OnButtonHoverEvent__DelegateSignature",
-      "guid": "216DCF714E5101F1A49DE0AD39BFCA47",
+      "guid": "07E93A3C49809312838EDAB5B9A77911",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -438,7 +502,7 @@
     },
     {
       "name": "BndEvt__WBP_System_MusicSlider_K2Node_ComponentBoundEvent_89_OnMouseCaptureBeginEvent__DelegateSignature",
-      "guid": "34BB9EB647ED1C29C5A6938B911278E4",
+      "guid": "8D65991F4FE73CDFD7BBCDB160C0DCFF",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -447,7 +511,7 @@
     },
     {
       "name": "BndEvt__WBP_System_MusicSlider_K2Node_ComponentBoundEvent_88_OnFloatValueChangedEvent__DelegateSignature",
-      "guid": "F48D948B44AA920A70C4259EE4915C7F",
+      "guid": "CAF54480452066669A4B81B172463A4E",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -456,7 +520,7 @@
     },
     {
       "name": "BndEvt__WBP_System_MasterFocus_K2Node_ComponentBoundEvent_87_OnButtonHoverEvent__DelegateSignature",
-      "guid": "1BA5D3D441BB5DEB3CD3639F842F5707",
+      "guid": "0656036F46CD3C01E03E3DAD01E3190F",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -465,7 +529,7 @@
     },
     {
       "name": "BndEvt__WBP_System_MasterSlider_K2Node_ComponentBoundEvent_86_OnMouseCaptureBeginEvent__DelegateSignature",
-      "guid": "064AABBB46861978964463AE24220700",
+      "guid": "282870A148D024788DBC168C8A52D5DC",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -474,7 +538,7 @@
     },
     {
       "name": "BndEvt__WBP_System_MasterSlider_K2Node_ComponentBoundEvent_85_OnFloatValueChangedEvent__DelegateSignature",
-      "guid": "77369C0D409421627EFEBAA491C9F594",
+      "guid": "CE9FE2474C2912F8E9107B83837EF68B",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -483,7 +547,7 @@
     },
     {
       "name": "BndEvt__WBP_System_CameraSpeedFocus_K2Node_ComponentBoundEvent_84_OnButtonHoverEvent__DelegateSignature",
-      "guid": "1F1E12474768A048E4EAB88EA8BE66C9",
+      "guid": "1F4C23A94EF046B6C479E692CBEC1F63",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -492,7 +556,7 @@
     },
     {
       "name": "BndEvt__WBP_System_CameraSpeedSlider_K2Node_ComponentBoundEvent_83_OnMouseCaptureBeginEvent__DelegateSignature",
-      "guid": "0926C8F441EA4EC9B0A95A9BC01370A7",
+      "guid": "9512AE114B1D550BFD8CE9A1E29B295E",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -501,7 +565,7 @@
     },
     {
       "name": "BndEvt__WBP_System_CameraSpeedSlider_K2Node_ComponentBoundEvent_82_OnFloatValueChangedEvent__DelegateSignature",
-      "guid": "1C2833E44E7E93087731E18AB4EC1CD4",
+      "guid": "3970F11D455B798FE8078EBC8B9DCC30",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -510,7 +574,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertYPlus_K2Node_ComponentBoundEvent_81_OnButtonHoverEvent__DelegateSignature",
-      "guid": "AA854AC74F8BFA0705F90A90DE524176",
+      "guid": "0A4EE667440EE4565A56398D7BC68159",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -519,7 +583,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertYPlus_K2Node_ComponentBoundEvent_80_OnButtonClickedEvent__DelegateSignature",
-      "guid": "D899FF4D4F6C90CD7452FAAB796E2445",
+      "guid": "23A0B0064682C50BC8954ABE0B021FE0",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -528,7 +592,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertYMinus_K2Node_ComponentBoundEvent_79_OnButtonHoverEvent__DelegateSignature",
-      "guid": "DF77BAF94B5D03EA66D808886A0C5C68",
+      "guid": "7991530F476738F5BA1E568A496D4BCA",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -537,7 +601,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertYMinus_K2Node_ComponentBoundEvent_78_OnButtonClickedEvent__DelegateSignature",
-      "guid": "C30A5F8246251A3E0C28ADB8CEDFD8FE",
+      "guid": "C2D3E7C14AB62232DBCBCBB09FF2591A",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -546,7 +610,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertYFocus_K2Node_ComponentBoundEvent_77_OnButtonHoverEvent__DelegateSignature",
-      "guid": "5623434540477D68E58180A66B93AA6E",
+      "guid": "A9BC69754ACD6C3652A7D38C61B652DE",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -555,7 +619,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertYFocus_K2Node_ComponentBoundEvent_76_OnButtonClickedEvent__DelegateSignature",
-      "guid": "0BFE7E364283E7E2A0A85DAF26504FF2",
+      "guid": "BEC825EA4D4FE95D3EE4378A7858EEE5",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -564,7 +628,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertXPlus_K2Node_ComponentBoundEvent_75_OnButtonHoverEvent__DelegateSignature",
-      "guid": "CE270C664AC4AF50BF1E02BBDA17CDFA",
+      "guid": "420FD2304957BF8AA9924E86411F3B44",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -573,7 +637,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertXPlus_K2Node_ComponentBoundEvent_74_OnButtonClickedEvent__DelegateSignature",
-      "guid": "AD7FD8FF441AC09FF79AD883306EC33D",
+      "guid": "B66697494C0ECB5E166DDEA48B7D95C1",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -582,7 +646,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertXMinus_K2Node_ComponentBoundEvent_73_OnButtonHoverEvent__DelegateSignature",
-      "guid": "B6C60B6E4DF2C56BF4C34B94966903D3",
+      "guid": "BB68BE5D469BAC8BD87BAC94041F021F",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -591,7 +655,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertXMinus_K2Node_ComponentBoundEvent_72_OnButtonClickedEvent__DelegateSignature",
-      "guid": "967B64EE43D452EF75853FA0BE100CC1",
+      "guid": "A4BCCBEE4627B8C82AFD3EB8D1E37145",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -600,7 +664,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertXFocus_K2Node_ComponentBoundEvent_71_OnButtonHoverEvent__DelegateSignature",
-      "guid": "BD73B8794D2E8C36AA8FD2B49E0365E6",
+      "guid": "38BF9FA046A66E77E5E708A125DA23B4",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -609,7 +673,7 @@
     },
     {
       "name": "BndEvt__WBP_System_InvertXFocus_K2Node_ComponentBoundEvent_70_OnButtonClickedEvent__DelegateSignature",
-      "guid": "57408C43463105F08CCBDEBC2C37FCE7",
+      "guid": "CB36A0784D0736692391B2A70B2E1795",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -618,7 +682,7 @@
     },
     {
       "name": "BndEvt__WBP_System_FoliagePlus_K2Node_ComponentBoundEvent_69_OnButtonHoverEvent__DelegateSignature",
-      "guid": "63A4980D4D812A0C882E008CA1378666",
+      "guid": "EB74110F4320AFEAF6AA6AB2BB0591C4",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -627,7 +691,7 @@
     },
     {
       "name": "BndEvt__WBP_System_FoliagePlus_K2Node_ComponentBoundEvent_68_OnButtonClickedEvent__DelegateSignature",
-      "guid": "32F96C754F8918682240D38E678BD47C",
+      "guid": "8436F7844B56BA993A6AB3BFE0C1C149",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -636,7 +700,7 @@
     },
     {
       "name": "BndEvt__WBP_System_FoliageMinus_K2Node_ComponentBoundEvent_67_OnButtonHoverEvent__DelegateSignature",
-      "guid": "5F68E27B465C14753A6774AE27AEFC64",
+      "guid": "3B199EDB4AAD8D49071AE5898D96DEBF",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -645,7 +709,7 @@
     },
     {
       "name": "BndEvt__WBP_System_FoliageMinus_K2Node_ComponentBoundEvent_66_OnButtonClickedEvent__DelegateSignature",
-      "guid": "34DA82CD4B01CE853B62648D10DF9F6C",
+      "guid": "F836FDD84905A22E87F0968863FDDD02",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -654,7 +718,7 @@
     },
     {
       "name": "BndEvt__WBP_System_FoliageFocus_K2Node_ComponentBoundEvent_65_OnButtonHoverEvent__DelegateSignature",
-      "guid": "DBF5FA034FBA8DE0140910B12D9F855D",
+      "guid": "516B8C2F4B900482F061258649342EC2",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -663,7 +727,7 @@
     },
     {
       "name": "BndEvt__WBP_System_FoliageFocus_K2Node_ComponentBoundEvent_64_OnButtonClickedEvent__DelegateSignature",
-      "guid": "CF0FAC3541492AB9A80FB19001F93003",
+      "guid": "7A990DA7488C1223D7BF96AFC39BC1F8",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -672,7 +736,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ViewDistancePlus_K2Node_ComponentBoundEvent_63_OnButtonHoverEvent__DelegateSignature",
-      "guid": "05B92D484542CC2F8D8CE381F7C064AC",
+      "guid": "54F4AB0A4AB0235E03CB41AA1E102419",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -681,7 +745,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ViewDistancePlus_K2Node_ComponentBoundEvent_62_OnButtonClickedEvent__DelegateSignature",
-      "guid": "408E6D9D4E9307D35B44958D4E29B6FD",
+      "guid": "73D39A594C38D3AA45B0B0AFC8488D68",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -690,7 +754,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ViewDistanceMinus_K2Node_ComponentBoundEvent_61_OnButtonHoverEvent__DelegateSignature",
-      "guid": "B056557546BAE3F5FDD0CF83088E6BC9",
+      "guid": "FAFCE3F54AECB4826E604598FCC6E163",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -699,7 +763,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ViewDistanceMinus_K2Node_ComponentBoundEvent_60_OnButtonClickedEvent__DelegateSignature",
-      "guid": "19437A3B4EF52E544BD560A160235BF7",
+      "guid": "5385286044ADE638A7D55A98D97BD7C2",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -708,7 +772,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ViewDistanceFocus_K2Node_ComponentBoundEvent_59_OnButtonHoverEvent__DelegateSignature",
-      "guid": "A0CE8CF44DBB55AF73A6DCA1E19B95FC",
+      "guid": "6962D01948ACC1191F32109845D57B5C",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -717,7 +781,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ViewDistanceFocus_K2Node_ComponentBoundEvent_58_OnButtonClickedEvent__DelegateSignature",
-      "guid": "E2EB2AC546FBEC646C848DBA117D21E4",
+      "guid": "37F6D0B6433597EC2CF76186487E2865",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -726,7 +790,7 @@
     },
     {
       "name": "BndEvt__WBP_System_GlobalIlluminationPlus_K2Node_ComponentBoundEvent_57_OnButtonHoverEvent__DelegateSignature",
-      "guid": "F2D09C5C4D73B51FFA63869C7B81B345",
+      "guid": "8C9281BA42B0C6F6DC821F96C976A0C9",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -735,7 +799,7 @@
     },
     {
       "name": "BndEvt__WBP_System_GlobalIlluminationPlus_K2Node_ComponentBoundEvent_56_OnButtonClickedEvent__DelegateSignature",
-      "guid": "49DCEEC1436E4E6DC49ECC873660CE8A",
+      "guid": "0E73EA864FC85F5855FD20AC2F90C8D9",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -744,7 +808,7 @@
     },
     {
       "name": "BndEvt__WBP_System_GlobalIlluminationMinus_K2Node_ComponentBoundEvent_55_OnButtonHoverEvent__DelegateSignature",
-      "guid": "7511567C4D42244C305A5AA936808BE9",
+      "guid": "ED0723C94B1ADF67D7C0AAB3B2C4E455",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -753,7 +817,7 @@
     },
     {
       "name": "BndEvt__WBP_System_GlobalIlluminationMinus_K2Node_ComponentBoundEvent_54_OnButtonClickedEvent__DelegateSignature",
-      "guid": "BF126492467543F13BFAB7A6C9FACD25",
+      "guid": "2455DC8D4297B931541225A08027147A",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -762,7 +826,7 @@
     },
     {
       "name": "BndEvt__WBP_System_GlobalIlluminationFocus_K2Node_ComponentBoundEvent_53_OnButtonHoverEvent__DelegateSignature",
-      "guid": "1A0857B44EED8459944ED28754FF375E",
+      "guid": "4C9DA7B7498D35660FA680803F5660CA",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -771,7 +835,7 @@
     },
     {
       "name": "BndEvt__WBP_System_GlobalIlluminationFocus_K2Node_ComponentBoundEvent_52_OnButtonClickedEvent__DelegateSignature",
-      "guid": "6AB47A2B4505075762C1D0A932D5304F",
+      "guid": "BA699D9E460128970C68ED9E1F5DECEF",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -780,7 +844,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadingPlus_K2Node_ComponentBoundEvent_51_OnButtonHoverEvent__DelegateSignature",
-      "guid": "AA4CE65A4940664E1ED27CA5B15B7A1C",
+      "guid": "6881831D45852FE94DBBD69293E67198",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -789,7 +853,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadingPlus_K2Node_ComponentBoundEvent_50_OnButtonClickedEvent__DelegateSignature",
-      "guid": "272D3B034FF11B7BE1B9EB844929DE6A",
+      "guid": "56B51C774B7B967E0814259680FF620A",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -798,7 +862,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadingMinus_K2Node_ComponentBoundEvent_49_OnButtonHoverEvent__DelegateSignature",
-      "guid": "5E444725439019B05ED9D0A3856B0C08",
+      "guid": "4986E60B47F7EBA4FB1C1EAA316E50A7",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -807,7 +871,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadingMinus_K2Node_ComponentBoundEvent_48_OnButtonClickedEvent__DelegateSignature",
-      "guid": "45A1F8B0433A612118396FA6DAD4AA38",
+      "guid": "FFD387E34BC2B8962DAAE0BF5B5F5211",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -816,7 +880,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadingFocus_K2Node_ComponentBoundEvent_47_OnButtonHoverEvent__DelegateSignature",
-      "guid": "9113CF4C47B6FE695981E7889BE92C6A",
+      "guid": "40D93AAF410349EDCF4EF5B940C6FDAD",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -825,7 +889,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadingFocus_K2Node_ComponentBoundEvent_46_OnButtonClickedEvent__DelegateSignature",
-      "guid": "BD6E2F6A40B310F42C4433A5B5DF238B",
+      "guid": "149885454D4A633FC8C6FAA3A2E1D5A1",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -834,7 +898,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ReflectionPlus_K2Node_ComponentBoundEvent_45_OnButtonHoverEvent__DelegateSignature",
-      "guid": "3721F6FA4E89728BB2E9828D89473275",
+      "guid": "73D45DC94795FAAA12D4E38BAC4A5E11",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -843,7 +907,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ReflectionPlus_K2Node_ComponentBoundEvent_44_OnButtonClickedEvent__DelegateSignature",
-      "guid": "D079D3A14F7A99A06E9F1BB2DC776869",
+      "guid": "71D7EE1742C87658C3A037BA8952AF9F",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -852,7 +916,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ReflectionMinus_K2Node_ComponentBoundEvent_43_OnButtonHoverEvent__DelegateSignature",
-      "guid": "13ECE7AF46A17CD8DF9D4F9BE17208E0",
+      "guid": "EB7675514058883F28FA60AA0923DB25",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -861,7 +925,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ReflectionMinus_K2Node_ComponentBoundEvent_42_OnButtonClickedEvent__DelegateSignature",
-      "guid": "E25EA95F47334414DBF137B2AFCD618B",
+      "guid": "3C726EFB4992402EFB8AA9B366C6F4EE",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -870,7 +934,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ReflectionFocus_K2Node_ComponentBoundEvent_41_OnButtonHoverEvent__DelegateSignature",
-      "guid": "C457561A4A4B3B4A392A42BFA3D29714",
+      "guid": "1DA13E71421D1D19B7ACE897D8F477FC",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -879,7 +943,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ReflectionFocus_K2Node_ComponentBoundEvent_40_OnButtonClickedEvent__DelegateSignature",
-      "guid": "13DE158342AEA31CC0230FA92F691017",
+      "guid": "3A4373AC4A582AB243DA6C812ECD098F",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -888,7 +952,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadowPlus_K2Node_ComponentBoundEvent_39_OnButtonHoverEvent__DelegateSignature",
-      "guid": "9EC2ECE24AA2ADCA5488FDA5E9B85D9A",
+      "guid": "4E4A62364B495DEA32A781A4AE4C6C25",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -897,7 +961,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadowPlus_K2Node_ComponentBoundEvent_38_OnButtonClickedEvent__DelegateSignature",
-      "guid": "C9916EB841B9EADFE02B5FAB2A552C13",
+      "guid": "2D49505446A205282F02CC87CCDA2828",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -906,7 +970,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadowMinus_K2Node_ComponentBoundEvent_37_OnButtonHoverEvent__DelegateSignature",
-      "guid": "D786E0E94B98E1724025B1B1F9ABE8DF",
+      "guid": "4F3500934F414EEF3452198A6D0E6984",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -915,7 +979,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadowMinus_K2Node_ComponentBoundEvent_36_OnButtonClickedEvent__DelegateSignature",
-      "guid": "8B9801E84B84DCA402CB6B8B8DA5FF52",
+      "guid": "5922C8BF4BB84A7A9F2C3591F6EB1023",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -924,7 +988,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadowFocus_K2Node_ComponentBoundEvent_35_OnButtonHoverEvent__DelegateSignature",
-      "guid": "7A5B403A417E1B5A1E3482B244560B10",
+      "guid": "ED78E04B45D2D980C93ED9A4F61676B5",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -933,7 +997,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ShadowFocus_K2Node_ComponentBoundEvent_34_OnButtonClickedEvent__DelegateSignature",
-      "guid": "A8D8A419470BF300409BBAB9D5D1059A",
+      "guid": "6352438047FBF81F77BBD8A7D5DCFB74",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -942,7 +1006,7 @@
     },
     {
       "name": "BndEvt__WBP_System_PostProcessingPlus_K2Node_ComponentBoundEvent_33_OnButtonHoverEvent__DelegateSignature",
-      "guid": "F183A1654136B7B2EFAB10845AE66448",
+      "guid": "0DC43AFB45663FA7BBC694A8A8A6D9C2",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -951,7 +1015,7 @@
     },
     {
       "name": "BndEvt__WBP_System_PostProcessingPlus_K2Node_ComponentBoundEvent_32_OnButtonClickedEvent__DelegateSignature",
-      "guid": "03D1AB7B41CA1C5D9C0A69BA3955D9BA",
+      "guid": "F578E39947B43E0DBB19D7A91A5B0968",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -960,7 +1024,7 @@
     },
     {
       "name": "BndEvt__WBP_System_PostProcessingMinus_K2Node_ComponentBoundEvent_31_OnButtonHoverEvent__DelegateSignature",
-      "guid": "389F525A419433064ADB299F82C7248E",
+      "guid": "03F4B6FD4F4395222BB905B1C0BB7736",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -969,7 +1033,7 @@
     },
     {
       "name": "BndEvt__WBP_System_PostProcessingMinus_K2Node_ComponentBoundEvent_30_OnButtonClickedEvent__DelegateSignature",
-      "guid": "1C34FBF848F15FE681F7D8BF6C090531",
+      "guid": "3020D21D4CA049BF4D8460B72CCD063B",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -978,7 +1042,7 @@
     },
     {
       "name": "BndEvt__WBP_System_PostProcessingFocus_K2Node_ComponentBoundEvent_29_OnButtonHoverEvent__DelegateSignature",
-      "guid": "B6010C694CD174D83BB31490A5D47804",
+      "guid": "87B1EB054CB64D52505699AE9A7474A9",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -987,7 +1051,7 @@
     },
     {
       "name": "BndEvt__WBP_System_PostProcessingFocus_K2Node_ComponentBoundEvent_28_OnButtonClickedEvent__DelegateSignature",
-      "guid": "E1F27FEF4ABF8F7987900B8AF0C1B011",
+      "guid": "0F21E68E415D9B5C5267EF854983DD06",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -996,7 +1060,7 @@
     },
     {
       "name": "BndEvt__WBP_System_AntiAliasingPlus_K2Node_ComponentBoundEvent_27_OnButtonHoverEvent__DelegateSignature",
-      "guid": "E9A6D7424AE27BD3693D04B8AAC846C0",
+      "guid": "790613364986C2D759734897ED2A3AE4",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1005,7 +1069,7 @@
     },
     {
       "name": "BndEvt__WBP_System_AntiAliasingPlus_K2Node_ComponentBoundEvent_26_OnButtonClickedEvent__DelegateSignature",
-      "guid": "86E05D3042345D113CF396A7D99F11CD",
+      "guid": "9426E0EB4E6E87D0EB588BBF53FE9C9B",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1014,7 +1078,7 @@
     },
     {
       "name": "BndEvt__WBP_System_AntiAliasingMinus_K2Node_ComponentBoundEvent_25_OnButtonHoverEvent__DelegateSignature",
-      "guid": "E86FF3854BC78F1DBF4425A75E8C457A",
+      "guid": "459CEEC1456A861256C539AD871ACDA0",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1023,7 +1087,7 @@
     },
     {
       "name": "BndEvt__WBP_System_AntiAliasingMinus_K2Node_ComponentBoundEvent_24_OnButtonClickedEvent__DelegateSignature",
-      "guid": "C29C6CA44EFA0B0BEE8DFFA1185A3A34",
+      "guid": "5E7D56784F9D16EF98EF849DE60D0D03",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1032,7 +1096,7 @@
     },
     {
       "name": "BndEvt__WBP_System_AntiAliasingFocus_K2Node_ComponentBoundEvent_23_OnButtonHoverEvent__DelegateSignature",
-      "guid": "2A0084B4474C4545B7C71A875F620FDE",
+      "guid": "95E54ED74B1D0C18368A49B0A7E27339",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1041,7 +1105,7 @@
     },
     {
       "name": "BndEvt__WBP_System_AntiAliasingFocus_K2Node_ComponentBoundEvent_22_OnButtonClickedEvent__DelegateSignature",
-      "guid": "D48096D34145A4E994827E955ED16FFE",
+      "guid": "5BB253984C964E3AA901ED954F87E1C7",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1050,7 +1114,7 @@
     },
     {
       "name": "BndEvt__WBP_System_TexturePlus_K2Node_ComponentBoundEvent_21_OnButtonHoverEvent__DelegateSignature",
-      "guid": "D5156F72411F285F715E66BFD4D9413F",
+      "guid": "9DD21E454DA22E81735F088F1C67ECFB",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1059,7 +1123,7 @@
     },
     {
       "name": "BndEvt__WBP_System_TexturePlus_K2Node_ComponentBoundEvent_20_OnButtonClickedEvent__DelegateSignature",
-      "guid": "0D95CEE34164546A0D328D84A44EBFEF",
+      "guid": "D669FBEA4B7B2077D85044AF55FDAAAA",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1068,7 +1132,7 @@
     },
     {
       "name": "BndEvt__WBP_System_TextureMinus_K2Node_ComponentBoundEvent_19_OnButtonHoverEvent__DelegateSignature",
-      "guid": "E315000A41C51F4557961D8F3D6BB32F",
+      "guid": "F48EE7184DE098430BF2DC8B014F7811",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1077,7 +1141,7 @@
     },
     {
       "name": "BndEvt__WBP_System_TextureMinus_K2Node_ComponentBoundEvent_18_OnButtonClickedEvent__DelegateSignature",
-      "guid": "F3F04305496269B2AF4959AD07015CDE",
+      "guid": "834BDA354BD696BED40FFC87AA0AE737",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1086,7 +1150,7 @@
     },
     {
       "name": "BndEvt__WBP_System_TextureFocus_K2Node_ComponentBoundEvent_17_OnButtonHoverEvent__DelegateSignature",
-      "guid": "C7E4027143E6B6FBD9AF2D9FB4BC68E1",
+      "guid": "8CA4162847595DB2B55F5DAD5972A886",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1095,7 +1159,7 @@
     },
     {
       "name": "BndEvt__WBP_System_TextureFocus_K2Node_ComponentBoundEvent_16_OnButtonClickedEvent__DelegateSignature",
-      "guid": "092803AE42380508633ED296C7C67E8E",
+      "guid": "EA6CA4AD473662C5A4E0FD8C2CDB6AEE",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1104,7 +1168,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ResolutionPlus_K2Node_ComponentBoundEvent_15_OnButtonHoverEvent__DelegateSignature",
-      "guid": "DDF439D1471477D8339CCA928C47B455",
+      "guid": "005C18844ADD8DE605179AB16576BCC0",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1113,7 +1177,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ResolutionPlus_K2Node_ComponentBoundEvent_14_OnButtonClickedEvent__DelegateSignature",
-      "guid": "15B175354113A541C0D96D9BF0DDF7ED",
+      "guid": "0DA6DD57431925FADF7851A3E4ADB4C7",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1122,7 +1186,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ResolutionMinus_K2Node_ComponentBoundEvent_13_OnButtonHoverEvent__DelegateSignature",
-      "guid": "40A5EDD3445938D817045F84D9887938",
+      "guid": "D126D8254F43ACEAD88891AD7E1D5799",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1131,7 +1195,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ResolutionMinus_K2Node_ComponentBoundEvent_12_OnButtonClickedEvent__DelegateSignature",
-      "guid": "64BC745143FBFE4839DC4FAF70C4BFC3",
+      "guid": "FB5CB4364C1AB33C6D0419850408CA58",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1140,7 +1204,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ResolutionFocus_K2Node_ComponentBoundEvent_11_OnButtonHoverEvent__DelegateSignature",
-      "guid": "3EE6944B4098FC068694F4858C7EF23B",
+      "guid": "D8A399E140D1C5E6DDBA3AA5667FAF79",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1149,7 +1213,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ResolutionFocus_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature",
-      "guid": "B5D72CFC4121ABA1A38A10AF2239DF2E",
+      "guid": "BECC970E48FC67261CC995B690721573",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1158,7 +1222,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ScreenModePlus_K2Node_ComponentBoundEvent_9_OnButtonHoverEvent__DelegateSignature",
-      "guid": "1109A942477FF0211EADBD9ACF9825FB",
+      "guid": "D07A32F1417DD954EE51FBBADD9EA6F2",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1167,7 +1231,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ScreenModePlus_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature",
-      "guid": "BE0FF7474E8CD14D001BB7B964EF46B6",
+      "guid": "53D321C4459205F8E5392B8BF2A1353C",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1176,7 +1240,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ScreenModeMinus_K2Node_ComponentBoundEvent_7_OnButtonHoverEvent__DelegateSignature",
-      "guid": "DE2A0D8A46CF120F48022888CAF82E5A",
+      "guid": "4D56896F436B812C8A3473A42BBA56DB",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1185,7 +1249,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ScreenModeMinus_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature",
-      "guid": "77B919C440B62EED479DD7982ACCD7B6",
+      "guid": "A0B4BB5147EDC2B0D671559D14A8D9C8",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1194,7 +1258,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ScreenModeFocus_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature",
-      "guid": "5CD0EA1A492F64FD501B3CA96D635888",
+      "guid": "DEDBD4834E93C80C1EB6EC8DEE63EF65",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1203,7 +1267,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ScreenModeFocus_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature",
-      "guid": "4BA5982A477275C1B943A2904DAD512F",
+      "guid": "120D31E2465FE4CCCA0D93A04C7B6746",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1212,7 +1276,7 @@
     },
     {
       "name": "BndEvt__WBP_System_ExitTab_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature",
-      "guid": "457963DC4D8C35BF77DAE1845BC015A2",
+      "guid": "0ED004674806FE077E1EC7A642B3C68D",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1221,7 +1285,7 @@
     },
     {
       "name": "BndEvt__WBP_System_AudioTab_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
-      "guid": "577312B24F3B7E20504BB3B2B2009358",
+      "guid": "4B6FB9E343C30936BA24D8B747B956D4",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1230,7 +1294,7 @@
     },
     {
       "name": "BndEvt__WBP_System_CameraTab_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
-      "guid": "97EA3C9D4EF7F5DAF126749F0DFB0804",
+      "guid": "53D3B24C4F9706ABD5E362AC69D5E1DD",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1239,7 +1303,7 @@
     },
     {
       "name": "BndEvt__WBP_System_GraphicsTab_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-      "guid": "BB9F1C8A499D055D6B9647A3906BCCC8",
+      "guid": "3065D5044FEF054A0FDD7882B054F6DD",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1248,11 +1312,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 20,
+    "authored_graph_count": 23,
     "generated_graph_count": 98,
-    "authored_node_count": 1640,
-    "authored_pin_count": 5340,
-    "authored_connection_count": 1917,
+    "authored_node_count": 1712,
+    "authored_pin_count": 5596,
+    "authored_connection_count": 1996,
     "generated_node_count": 200,
     "generated_pin_count": 506
   },
@@ -1268,9 +1332,19 @@
       "file": "graphs/AdjustSystemSetting.json"
     },
     {
+      "name": "ApplyActivePreferencesAudio",
+      "kind": "function",
+      "file": "graphs/ApplyActivePreferencesAudio.json"
+    },
+    {
       "name": "CanPreviewDisplay",
       "kind": "function",
       "file": "graphs/CanPreviewDisplay.json"
+    },
+    {
+      "name": "CloseTitleSettings",
+      "kind": "function",
+      "file": "graphs/CloseTitleSettings.json"
     },
     {
       "name": "DeactivateSystemSettings",
@@ -1296,6 +1370,11 @@
       "name": "OpenSystemSettings",
       "kind": "function",
       "file": "graphs/OpenSystemSettings.json"
+    },
+    {
+      "name": "OpenTitleSettings",
+      "kind": "function",
+      "file": "graphs/OpenTitleSettings.json"
     },
     {
       "name": "RefreshExitCharacter",
