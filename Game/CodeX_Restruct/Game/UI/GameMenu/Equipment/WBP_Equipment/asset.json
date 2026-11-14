@@ -306,6 +306,23 @@
         }
       },
       {
+        "name": "SelectedSlotWidget",
+        "guid": "0E9E5DBA4D28C6F48951AF884B62BFBD",
+        "friendly_name": "Selected Slot Widget",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot.WBP_EquipmentSlot_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "StatusPlayerRef",
         "guid": "33B1F9E348F4E4DA3781658D8F89E9D6",
         "friendly_name": "Status Player Ref",
@@ -356,28 +373,31 @@
         "RefreshPresentedItemStats",
         "RefreshWeaponPresentation",
         "RefreshAttackComparison",
-        "RefreshToolPresentation"
+        "RefreshToolPresentation",
+        "SetEquipmentView",
+        "HandleActiveWeaponChanged",
+        "RestoreSelectedSlotFocus",
+        "RefreshPickerUnequip",
+        "RefreshActiveWeaponMarkers"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "BndEvt__WBP_Equipment_ToolSlot05_K2Node_ComponentBoundEvent_14_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_ToolSlot04_K2Node_ComponentBoundEvent_13_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_ToolSlot03_K2Node_ComponentBoundEvent_12_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_ToolSlot02_K2Node_ComponentBoundEvent_11_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_ToolSlot01_K2Node_ComponentBoundEvent_10_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_FutureWeapon02_K2Node_ComponentBoundEvent_9_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_FutureWeapon01_K2Node_ComponentBoundEvent_8_OnEquipmentSlotPressed__DelegateSignature",
-        "Destruct",
-        "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_7_OnUnequipRequested__DelegateSignature",
-        "BndEvt__WBP_Equipment_LegsSlot_K2Node_ComponentBoundEvent_6_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_ArmsSlot_K2Node_ComponentBoundEvent_5_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_ChestSlot_K2Node_ComponentBoundEvent_4_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_HeadSlot_K2Node_ComponentBoundEvent_3_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_LeftHandSlot_K2Node_ComponentBoundEvent_2_OnEquipmentSlotPressed__DelegateSignature",
-        "BndEvt__WBP_Equipment_RightHandSlot_K2Node_ComponentBoundEvent_1_OnEquipmentSlotPressed__DelegateSignature",
+        "PreConstruct",
         "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_0_OnSelectionCancelled__DelegateSignature",
-        "PreConstruct"
+        "BndEvt__WBP_Equipment_RightHandSlot_K2Node_ComponentBoundEvent_1_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_HeadSlot_K2Node_ComponentBoundEvent_3_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_ChestSlot_K2Node_ComponentBoundEvent_4_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_ArmsSlot_K2Node_ComponentBoundEvent_5_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_LegsSlot_K2Node_ComponentBoundEvent_6_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_7_OnUnequipRequested__DelegateSignature",
+        "Destruct",
+        "BndEvt__WBP_Equipment_FutureWeapon01_K2Node_ComponentBoundEvent_8_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_ToolSlot01_K2Node_ComponentBoundEvent_10_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_ToolSlot02_K2Node_ComponentBoundEvent_11_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_ToolSlot03_K2Node_ComponentBoundEvent_12_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_ToolSlot04_K2Node_ComponentBoundEvent_13_OnEquipmentSlotPressed__DelegateSignature",
+        "BndEvt__WBP_Equipment_ToolSlot05_K2Node_ComponentBoundEvent_14_OnEquipmentSlotPressed__DelegateSignature"
       ]
     },
     "extraction_status": {
