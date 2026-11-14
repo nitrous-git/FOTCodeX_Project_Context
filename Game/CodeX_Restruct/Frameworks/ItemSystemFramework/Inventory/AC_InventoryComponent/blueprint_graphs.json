@@ -42,6 +42,40 @@
       }
     },
     {
+      "name": "AttunementSlotCount",
+      "guid": "26C6318B40368084D2340281F4AB3A11",
+      "friendly_name": "Attunement Slot Count",
+      "category": "INVTEXT(\"Slot Counts\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AttunementSlots",
+      "guid": "DEED74364194E58302173184AA019931",
+      "friendly_name": "Attunement Slots",
+      "category": "INVTEXT(\"Runtime Arrays\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bInventoryAmountActionInProgress",
       "guid": "A68FF2894DBC6EA697B69A9FF4F36E67",
       "friendly_name": "Inventory Amount Action in Progress",
@@ -70,6 +104,40 @@
         "sub_category": "double",
         "sub_category_object": null,
         "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FragmentSlotCount",
+      "guid": "3BF86F494E29BBA5A74F51996889E9A7",
+      "friendly_name": "Fragment Slot Count",
+      "category": "INVTEXT(\"Slot Counts\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FragmentSlots",
+      "guid": "138CEF984733DB5FF8C6D894746CC4A6",
+      "friendly_name": "Fragment Slots",
+      "category": "INVTEXT(\"Runtime Arrays\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
         "is_reference": false,
         "is_const": false,
         "is_weak_pointer": false
@@ -110,6 +178,40 @@
       }
     },
     {
+      "name": "MedicineSlotCount",
+      "guid": "07D19A6F462A0CD67E26EDAE3DE764CD",
+      "friendly_name": "Medicine Slot Count",
+      "category": "INVTEXT(\"Slot Counts\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MedicineSlots",
+      "guid": "99C983AD4E2321C801072D9C350B52AE",
+      "friendly_name": "Medicine Slots",
+      "category": "INVTEXT(\"Runtime Arrays\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "OnFocusedItemChanged",
       "guid": "3B52A0414903F93930AF35B9F1BEA505",
       "friendly_name": "On Focused Item Changed",
@@ -138,6 +240,40 @@
         "sub_category": null,
         "sub_category_object": null,
         "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OutfitSlotCount",
+      "guid": "60F6EB62474DE6ECF1B373AF23CCE37A",
+      "friendly_name": "Outfit Slot Count",
+      "category": "INVTEXT(\"Slot Counts\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OutfitSlots",
+      "guid": "111374C04F4B1147FE0424AADA6876E4",
+      "friendly_name": "Outfit Slots",
+      "category": "INVTEXT(\"Runtime Arrays\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
+        "container": "Array",
         "is_reference": false,
         "is_const": false,
         "is_weak_pointer": false
@@ -315,31 +451,31 @@
       "name": "SetSlotByCategoryAndIndex",
       "kind": "function",
       "guid": "E2F91C40417920CE94E373905319FC5D",
-      "node_count": 18,
-      "pin_count": 58,
-      "connection_count": 18,
-      "exec_connection_count": 5,
-      "data_connection_count": 13
+      "node_count": 42,
+      "pin_count": 160,
+      "connection_count": 66,
+      "exec_connection_count": 17,
+      "data_connection_count": 49
     },
     {
       "name": "GetSlotByCategoryAndIndex",
       "kind": "function",
       "guid": "4D0DE6C84C4F247D2968CB97E5C6327C",
-      "node_count": 38,
-      "pin_count": 105,
-      "connection_count": 38,
-      "exec_connection_count": 13,
-      "data_connection_count": 25
+      "node_count": 63,
+      "pin_count": 187,
+      "connection_count": 76,
+      "exec_connection_count": 27,
+      "data_connection_count": 49
     },
     {
       "name": "GetSlotCountByCategory",
       "kind": "function",
       "guid": "7205EC464D58C90097E9858A75A42255",
-      "node_count": 14,
-      "pin_count": 40,
-      "connection_count": 14,
-      "exec_connection_count": 5,
-      "data_connection_count": 9
+      "node_count": 27,
+      "pin_count": 73,
+      "connection_count": 28,
+      "exec_connection_count": 11,
+      "data_connection_count": 17
     },
     {
       "name": "AddItem",
@@ -385,11 +521,11 @@
       "name": "InitInventory",
       "kind": "function",
       "guid": "BF6BF6CE475F36075B8B4A9DA939442F",
-      "node_count": 22,
-      "pin_count": 80,
-      "connection_count": 25,
-      "exec_connection_count": 13,
-      "data_connection_count": 12
+      "node_count": 38,
+      "pin_count": 148,
+      "connection_count": 45,
+      "exec_connection_count": 21,
+      "data_connection_count": 24
     },
     {
       "name": "ClearInventorySlot",
@@ -435,11 +571,11 @@
       "name": "Debug_PrintInventory",
       "kind": "function",
       "guid": "0A3ECECE437F3F1E3A7273B53A4BB2D4",
-      "node_count": 18,
-      "pin_count": 99,
-      "connection_count": 21,
-      "exec_connection_count": 13,
-      "data_connection_count": 8
+      "node_count": 34,
+      "pin_count": 187,
+      "connection_count": 41,
+      "exec_connection_count": 25,
+      "data_connection_count": 16
     },
     {
       "name": "Debug_GiveTestInventory",
@@ -575,7 +711,7 @@
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "79E7EE434F85AE2780A80DA9138539A8",
+      "guid": "B58C8375489CE48B047CE2A607629782",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -586,9 +722,9 @@
   "stats": {
     "authored_graph_count": 29,
     "generated_graph_count": 1,
-    "authored_node_count": 715,
-    "authored_pin_count": 2698,
-    "authored_connection_count": 910,
+    "authored_node_count": 809,
+    "authored_pin_count": 3071,
+    "authored_connection_count": 1050,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
