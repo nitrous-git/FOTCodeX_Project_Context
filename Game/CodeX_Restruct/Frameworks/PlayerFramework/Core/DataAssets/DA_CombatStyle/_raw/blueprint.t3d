@@ -1,10 +1,14 @@
 Begin Object Class=/Script/Engine.Blueprint Name="DA_CombatStyle" ExportPath="/Script/Engine.Blueprint'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle.DA_CombatStyle'"
    Begin Object Class=/Script/Engine.EdGraph Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle.DA_CombatStyle:EventGraph'"
    End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfo Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle.DA_CombatStyle:SceneThumbnailInfo_0'"
+   End Object
    Begin Object Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle.DA_CombatStyle:EventGraph'"
       Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
       bAllowDeletion=False
       GraphGuid=65DBC6F5419935A28AF3729F54A96F80
+   End Object
+   Begin Object Name="SceneThumbnailInfo_0" ExportPath="/Script/UnrealEd.SceneThumbnailInfo'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle.DA_CombatStyle:SceneThumbnailInfo_0'"
    End Object
    ParentClass="/Script/CoreUObject.Class'/Script/Engine.PrimaryDataAsset'"
    BlueprintSystemVersion=2
@@ -24,23 +28,23 @@ Begin Object Class=/Script/Engine.Blueprint Name="DA_CombatStyle" ExportPath="/S
    NewVariables(12)=(VarName="BlockingSpeed",VarGuid=028A1F11425E5EB7CF1788A358728A3C,VarType=(PinCategory="real",PinSubCategory="double"),FriendlyName="Blocking Speed",Category=NSLOCTEXT("KismetSchema", "Default", "Default"),PropertyFlags=65541)
    NewVariables(13)=(VarName="Equip",VarGuid=9C74CA3E4037F672011FB1BF9AA29395,VarType=(PinCategory="struct",PinSubCategoryObject="/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'"),FriendlyName="Equip",Category=NSLOCTEXT("", "096FB6FC446FA420C5F09F8C5EAC6B55", "Equipement"),PropertyFlags=65541)
    NewVariables(14)=(VarName="Unequip",VarGuid=5BE546274144CD4DFB6DD88527DA2290,VarType=(PinCategory="struct",PinSubCategoryObject="/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'"),FriendlyName="Unequip",Category=INVTEXT("Equipement"),PropertyFlags=65541)
-   NewVariables(15)=(VarName="PrimaryWeapon",VarGuid=1F4E8C1E4CCC370746F8BB88660D39C5,VarType=(PinCategory="class",PinSubCategoryObject="/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'"),FriendlyName="Primary Weapon",Category=INVTEXT("Equipement"),PropertyFlags=65541)
-   NewVariables(16)=(VarName="SecondaryWeapon",VarGuid=F8994F564A9F8FB9B24D60B1DCA3F5C0,VarType=(PinCategory="class",PinSubCategoryObject="/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'"),FriendlyName="Secondary Weapon",Category=INVTEXT("Equipement"),PropertyFlags=65541)
-   NewVariables(17)=(VarName="PlayerExecutionContext",VarGuid=57D3A7C94AFC313CF776DB8883F623AC,VarType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/ContextualAnimation.ContextualAnimSceneAsset'"),FriendlyName="Player Execution Context",Category=NSLOCTEXT("", "AD0A9ED04A295B9BCDE0E6BF08BB4FA1", "Contextual Animation"),PropertyFlags=65541)
-   NewVariables(18)=(VarName="PlayerExecutionToDeathContext",VarGuid=B43672E9470E6F8E19FBD3AB934622B7,VarType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/ContextualAnimation.ContextualAnimSceneAsset'"),FriendlyName="Player Execution to Death Context",Category=INVTEXT("Contextual Animation"),PropertyFlags=65541)
-   NewVariables(19)=(VarName="PlayerExecutionContextArray",VarGuid=2C5820F443AD7551C2CB5A87BE9E4388,VarType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/ContextualAnimation.ContextualAnimSceneAsset'",ContainerType=Array),FriendlyName="Player Execution Context Array",Category=NSLOCTEXT("", "AD0A9ED04A295B9BCDE0E6BF08BB4FA1", "Contextual Animation"),PropertyFlags=65541)
-   NewVariables(20)=(VarName="Death",VarGuid=2B9FBECB44B3D02112B324AC907713CB,VarType=(PinCategory="struct",PinSubCategoryObject="/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'"),FriendlyName="Death",Category=INVTEXT("Montage Buckets"),PropertyFlags=65541)
-   NewVariables(21)=(VarName="Defense_Start",VarGuid=CCEBFDB3499989E7CC222693D46CD5CD,VarType=(PinCategory="struct",PinSubCategoryObject="/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'"),FriendlyName="Defense Start",Category=INVTEXT("Montage Buckets"),PropertyFlags=65541)
-   NewVariables(22)=(VarName="Defense_Stop",VarGuid=1DCA8B6C4B2B9E26AD9CADB32DCEF5D0,VarType=(PinCategory="struct",PinSubCategoryObject="/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'"),FriendlyName="Defense Stop",Category=INVTEXT("Montage Buckets"),PropertyFlags=65541)
-   NewVariables(23)=(VarName="BaseAnimsetName",VarGuid=3E24D42740D2666115E4DD9261E9B556,VarType=(PinCategory="name"),FriendlyName="Base Animset Name",Category=INVTEXT("Defense|Locomotion"),PropertyFlags=5)
-   NewVariables(24)=(VarName="GuardAnimsetName",VarGuid=9373C2C34C45C7377020CD93E51CAE37,VarType=(PinCategory="name"),FriendlyName="Guard Animset Name",Category=INVTEXT("Defense|Locomotion"),PropertyFlags=5)
+   NewVariables(15)=(VarName="PlayerExecutionContext",VarGuid=57D3A7C94AFC313CF776DB8883F623AC,VarType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/ContextualAnimation.ContextualAnimSceneAsset'"),FriendlyName="Player Execution Context",Category=NSLOCTEXT("", "AD0A9ED04A295B9BCDE0E6BF08BB4FA1", "Contextual Animation"),PropertyFlags=65541)
+   NewVariables(16)=(VarName="PlayerExecutionToDeathContext",VarGuid=B43672E9470E6F8E19FBD3AB934622B7,VarType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/ContextualAnimation.ContextualAnimSceneAsset'"),FriendlyName="Player Execution to Death Context",Category=INVTEXT("Contextual Animation"),PropertyFlags=65541)
+   NewVariables(17)=(VarName="PlayerExecutionContextArray",VarGuid=2C5820F443AD7551C2CB5A87BE9E4388,VarType=(PinCategory="object",PinSubCategoryObject="/Script/CoreUObject.Class'/Script/ContextualAnimation.ContextualAnimSceneAsset'",ContainerType=Array),FriendlyName="Player Execution Context Array",Category=NSLOCTEXT("", "AD0A9ED04A295B9BCDE0E6BF08BB4FA1", "Contextual Animation"),PropertyFlags=65541)
+   NewVariables(18)=(VarName="Death",VarGuid=2B9FBECB44B3D02112B324AC907713CB,VarType=(PinCategory="struct",PinSubCategoryObject="/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'"),FriendlyName="Death",Category=INVTEXT("Montage Buckets"),PropertyFlags=65541)
+   NewVariables(19)=(VarName="Defense_Start",VarGuid=CCEBFDB3499989E7CC222693D46CD5CD,VarType=(PinCategory="struct",PinSubCategoryObject="/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'"),FriendlyName="Defense Start",Category=INVTEXT("Montage Buckets"),PropertyFlags=65541)
+   NewVariables(20)=(VarName="Defense_Stop",VarGuid=1DCA8B6C4B2B9E26AD9CADB32DCEF5D0,VarType=(PinCategory="struct",PinSubCategoryObject="/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant.FAnimVariant'"),FriendlyName="Defense Stop",Category=INVTEXT("Montage Buckets"),PropertyFlags=65541)
+   NewVariables(21)=(VarName="BaseAnimsetName",VarGuid=3E24D42740D2666115E4DD9261E9B556,VarType=(PinCategory="name"),FriendlyName="Base Animset Name",Category=INVTEXT("Defense|Locomotion"),PropertyFlags=5)
+   NewVariables(22)=(VarName="GuardAnimsetName",VarGuid=9373C2C34C45C7377020CD93E51CAE37,VarType=(PinCategory="name"),FriendlyName="Guard Animset Name",Category=INVTEXT("Defense|Locomotion"),PropertyFlags=5)
    CategorySorting(0)="Default"
    CategorySorting(1)="Identity"
    CategorySorting(2)="Montage Buckets"
    CategorySorting(3)="Dodges"
    CategorySorting(4)="Equipement"
    CategorySorting(5)="Contextual Animation"
+   CategorySorting(6)="Defense"
    LastEditedDocuments(0)=(EditedObjectPath="/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle.DA_CombatStyle:EventGraph",SavedViewOffset=(X=-87.000000,Y=-59.000000),SavedZoomAmount=1.000000)
+   ThumbnailInfo="/Script/UnrealEd.SceneThumbnailInfo'SceneThumbnailInfo_0'"
    GeneratedClass="/Script/Engine.BlueprintGeneratedClass'DA_CombatStyle_C'"
    bLegacyNeedToPurgeSkelRefs=False
    BlueprintGuid=D457DA0D427E02ED8B044E9E08187CAC

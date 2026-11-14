@@ -1,33 +1,48 @@
-# CodeX — Codex project instructions
+# Fragment of the CodeX — Agent Operating Guide
 
-**UE 5.8.3 · Blueprint-first · Updated October 19, 2026**
+**Project:** Fragment of the CodeX (CodeX / FOTCodeX)  
+**Status:** Approved continuation target; architecture migration **not yet implemented**.  
+**Engine:** latest context export identifies Unreal Engine 5.8.4; verify the live editor version before work.  
+**Implementation:** Blueprint-first with Unreal Editor/MCP.
 
-This repository contains architecture notes and exported Blueprint snapshots for the **live Unreal Editor** project. The live assets accessed through Unreal MCP are authoritative; exported JSON/T3D may lag local changes and must never be edited as a substitute for `.uasset` operations.
+## Read this first
 
-## Operating mode and permissions
+This repository is the **CodeX** project context/export, not a source for any other game. The live Unreal assets are the only write authority. JSON, T3D and Markdown in this repository are read-only context and design specifications; editing exported text does not edit `.uasset` files.
 
-- For an explicit development request, perform routine in-scope live Unreal work: inspect, create, edit, compile, save and run targeted checks. Do **not** seek approval for every node, widget, compile or save.
-- Planning/audit requests are read-only unless the user authorizes implementation. Ask before broad destructive actions or modifications outside the task.
-- **UI work:** read **`Docs/CodeXContext/UIDevelopment.md` once per working session**, then inspect only the target live widgets and directly used assets. Reuse findings across follow-up tasks. **Do not automatically reread** `InventoryAndUI.md`, `GameMenuFoundationSpec.md`, old SLF audits, `CurrentState.md` or every Blueprint export. Open a deeper document only when a specific unanswered dependency or gameplay contract requires it.
-- **Non-UI work:** use `Docs/CodeXContext/README.md` to select the relevant subsystem guide; inspect dependencies proportionally to the risk.
-- Existing functionality is valuable: preserve CodeX Player CombatStyle/Attunement/ABP, Enemy AI, Boss Framework, traversal, and permanent gameplay HUD unless the task specifically targets them.
-- Be resource-conscious: make a short focused plan, act on the smallest useful asset set, avoid repeated global searches/full graph dumps, and provide concise completion reports.
+1. Read `Docs/CodeXContext/README.md` for status and selective document routing.
+2. For equipment/inventory work, read `03_EQUIPMENT_AND_ITEMS.md` and the applicable rows in `06_MIGRATION_PLAN.md`.
+3. For combat/animation/stat integration, read `04_COMBAT_AND_PROGRESSION.md`.
+4. For GameMenu/UMG work, read `05_UI_UX_SPECIFICATION.md`.
+5. For risk, regressions, and validation, use `07_VALIDATION_MATRIX.md`.
+6. Audit the few relevant **live** assets before changing them. Do not repeatedly load every document or dump entire graphs.
 
-## Current Item / Game Menu architecture
+## Non-negotiable target
 
-- One `/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/` contains Inventory, Equipment, Items and Pickups. Do not reintroduce `InventorySystemFramework/InventorySystemRefactor`.
-- `AC_InventoryComponent` owns **collected items and quantities**; `AC_EquipmentComponent` owns **equipped slot assignments** and equip/unequip operations. Widgets own neither storage collection.
-- `/Game/CodeX_Restruct/Game/UI/GameMenu/` has CodeX-native `WBP_GameMenu`, `WBP_GameMenuButton` and sibling pages `WBP_Inventory`, `WBP_Equipment`, `WBP_Status`, `WBP_System`. Exactly **four** top-level pages—no Crafting.
-- Inventory is the item browser. Equipment is the loadout editor with a separate internal compatible-item selection view. `SelectedEquipmentSlot` is UI state in `WBP_Equipment`.
-- The B0 widget shells, enum, typed dispatchers and UI slot metadata already exist. **Reuse; do not recreate or clone legacy Inventory UI.**
-- Source SLF widgets under `/Game/SoulslikeFramework/` are **references only**. Only CodeX-owned UI visual assets from `/Game/CodeX_Restruct/External/AssetContent/UI/SLF/` may be used in reconstructed CodeX widgets; do not copy SLF navigation/controller/gameplay Blueprint dependencies.
+- CodeX is a curated **combat-first action-adventure Soulslike**, not a full attribute-allocation RPG.
+- Single *Outfit*; two *Weapon* assignments (Primary/Secondary) with one active-weapon cycle; one passive *Talisman*; one global *Attunement* (Fire/Light/Bleed); two *Medicine* assignments (HP/EN).
+- No left/right-hand equipment slots in the **player-facing** model; physical hand sockets remain a valid implementation detail.
+- A single equipment component owns assignments, Inventory owns items and quantities, Player/CombatStyle owns animation/weapon presentation, and widgets own only presentation/selection state.
+- Combat styles, weapon-family animation sets, Shadow Strike, combat, enemy/boss systems and existing controller/HUD behaviors should be preserved unless explicitly in scope.
+- Main GameMenu tabs: **Character, Equipment, Inventory, Artifacts, System**. No Status tab and no manual attribute Level Up page.
+- Resting: Skill Tree (later), Travel (later), Leave. Remove the old time-of-day and attribute-leveling UI from the CodeX flow.
+- UI art direction: restrained, dark charcoal gradient; subtle warm-metal selection; thin rules and large preview areas. Avoid complex cinematic 3D background scenery or new special shaders as prerequisites.
 
-## Tools and validation
+## How to work
 
-- Use actual Unreal MCP/editor asset APIs; do not move/rename `.uasset` using filesystem operations. Inspect tool capabilities before relying on an unsupported editor action.
-- Compile/save changed Blueprints and perform focused visual/interaction checks when supported. Do not claim PIE, screenshot verification or clean packages without evidence.
-- Report only: assets changed, functionality/design implemented, compile/save status, notable blockers. Avoid long routine audits and documentation rewrites unless requested.
+- **Plan or audit request:** read-only. This documentation drop is **not** permission to implement the migration.
+- **Implementation request:** modify live Unreal via MCP in small, compile-safe increments. Reuse existing assets/dispatchers and adjust existing references, not parallel duplicate systems.
+- Confirm actual tool capabilities. Use Unreal asset APIs for renaming/deleting/migrating `.uasset`; never use filesystem operations for it.
+- For requested implementation: compile/save edited Blueprints, run targeted structural checks. **Do not run PIE verification**; the user performs manual PIE and reports results for iteration.
+- Report changed assets, compile/save state, structural checks, failures and remaining migration obligations. Do not claim unperformed tests.
+- Never silently classify a proposed design as currently implemented. The export is a snapshot, not proof of current runtime behavior.
 
-## Further reading on demand
+## Important current-state caveats
 
-`UIDevelopment.md` = compact UI guide; `InventoryAndUI.md` = deeper domain contracts; `DevelopmentRules.md` = broader permissions; `PlayerCombat.md`, `EnemyFramework.md`, `BossFramework.md` = subsystem-specific details. The historical B0 and B1.1 audit documents are **optional references, not mandatory startup reading**.
+The November 13 export still has `ActiveRightHandSlot`, five Tool slots, four armor pieces, a four-page `EGameMenuPage`, and ItemTable `Talisman_*` entries pointing to Attunement data. These are **migration sources**, not a target to perpetuate. Read `02_EXPORT_AUDIT.md` for evidence.
+
+### Source of truth
+
+1. Current live Unreal Editor asset and its actual properties/graphs.
+2. Latest user-approved CodeX specification in these documents and current conversation.
+3. November 13, 2026 export metadata and Blueprint graphs.
+4. Historical documents, only when a particular legacy implementation needs examination.
