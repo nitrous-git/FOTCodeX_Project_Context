@@ -42,6 +42,23 @@
       }
     },
     {
+      "name": "ActiveWeaponSlot",
+      "guid": "4C602F0A4D5332F8388B038DB31EF519",
+      "friendly_name": "Active Weapon Slot",
+      "category": "INVTEXT(\"Equipment|Weapons\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bEquipmentInitialized",
       "guid": "DA5D6F9F417D8C70D04DF39BB122B942",
       "friendly_name": "Equipment Initialized",
@@ -127,6 +144,23 @@
       }
     },
     {
+      "name": "OnActiveWeaponChanged",
+      "guid": "14D092894514A09ECDE3C2BC9CEF57FB",
+      "friendly_name": "On Active Weapon Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "OnEquipmentSlotChanged",
       "guid": "82A6733741BF2EA110D575B8EA189153",
       "friendly_name": "On Equipment Slot Changed",
@@ -169,21 +203,21 @@
       "name": "UnequipItemFromSlot",
       "kind": "function",
       "guid": "661D9EB34707FF2078257F8134D7DB08",
-      "node_count": 19,
-      "pin_count": 60,
-      "connection_count": 24,
-      "exec_connection_count": 11,
-      "data_connection_count": 13
+      "node_count": 22,
+      "pin_count": 73,
+      "connection_count": 30,
+      "exec_connection_count": 14,
+      "data_connection_count": 16
     },
     {
       "name": "TryEquipItemToSlot",
       "kind": "function",
       "guid": "27D0B401451850845F8FC0B239CC62CA",
-      "node_count": 82,
-      "pin_count": 317,
-      "connection_count": 100,
-      "exec_connection_count": 43,
-      "data_connection_count": 57
+      "node_count": 86,
+      "pin_count": 334,
+      "connection_count": 109,
+      "exec_connection_count": 47,
+      "data_connection_count": 62
     },
     {
       "name": "ResolveEquippedWeaponClass",
@@ -379,10 +413,10 @@
       "name": "HandleToolInventoryChanged",
       "kind": "function",
       "guid": "FEAB2F474A95A42F77B5629BDD35B1ED",
-      "node_count": 12,
-      "pin_count": 48,
-      "connection_count": 18,
-      "exec_connection_count": 9,
+      "node_count": 13,
+      "pin_count": 51,
+      "connection_count": 19,
+      "exec_connection_count": 10,
       "data_connection_count": 9
     },
     {
@@ -424,12 +458,172 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "OnActiveWeaponChanged",
+      "kind": "delegate",
+      "guid": "0C6A017349362FA24AFDCD96DC37DFE0",
+      "node_count": 1,
+      "pin_count": 5,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "IsWeaponSlot",
+      "kind": "function",
+      "guid": "4DEFA18A486EBD7B5082CCB0A42AC5E7",
+      "node_count": 7,
+      "pin_count": 24,
+      "connection_count": 8,
+      "exec_connection_count": 1,
+      "data_connection_count": 7
+    },
+    {
+      "name": "GetOtherWeaponSlot",
+      "kind": "function",
+      "guid": "F79888854107BC7379F3EEAF49AC16C2",
+      "node_count": 13,
+      "pin_count": 41,
+      "connection_count": 14,
+      "exec_connection_count": 5,
+      "data_connection_count": 9
+    },
+    {
+      "name": "CanEquipWeaponInSlot",
+      "kind": "function",
+      "guid": "9191AD6B42E3A7326972E9A7D3E52DD0",
+      "node_count": 43,
+      "pin_count": 151,
+      "connection_count": 56,
+      "exec_connection_count": 13,
+      "data_connection_count": 43
+    },
+    {
+      "name": "GetValidWeaponAtSlot",
+      "kind": "function",
+      "guid": "2600CEEE4F5AD2AC09A0A48A0EA80905",
+      "node_count": 13,
+      "pin_count": 49,
+      "connection_count": 20,
+      "exec_connection_count": 10,
+      "data_connection_count": 10
+    },
+    {
+      "name": "ResolveActiveWeapon",
+      "kind": "function",
+      "guid": "BBFC8F9A4BCE69903F56889A78E7E495",
+      "node_count": 17,
+      "pin_count": 64,
+      "connection_count": 23,
+      "exec_connection_count": 10,
+      "data_connection_count": 13
+    },
+    {
+      "name": "CommitActiveWeapon",
+      "kind": "function",
+      "guid": "EFF5798749448C670FA8E09EAE33EC4B",
+      "node_count": 16,
+      "pin_count": 55,
+      "connection_count": 23,
+      "exec_connection_count": 7,
+      "data_connection_count": 16
+    },
+    {
+      "name": "ReconcileActiveWeapon",
+      "kind": "function",
+      "guid": "F1DAB57C4E204746D9403E98FD7FA440",
+      "node_count": 3,
+      "pin_count": 14,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "TryEquipCanonicalWeapon",
+      "kind": "function",
+      "guid": "9AE9646D431172CA4B66D8A39D6AB803",
+      "node_count": 27,
+      "pin_count": 105,
+      "connection_count": 46,
+      "exec_connection_count": 18,
+      "data_connection_count": 28
+    },
+    {
+      "name": "UnequipCanonicalWeapon",
+      "kind": "function",
+      "guid": "83243F194C96E0E52F383F92DC81CFE5",
+      "node_count": 10,
+      "pin_count": 42,
+      "connection_count": 16,
+      "exec_connection_count": 7,
+      "data_connection_count": 9
+    },
+    {
+      "name": "PruneInvalidWeaponAssignment",
+      "kind": "function",
+      "guid": "1DDF29C74834AFFDEFDE16865DA7ADD9",
+      "node_count": 7,
+      "pin_count": 29,
+      "connection_count": 12,
+      "exec_connection_count": 5,
+      "data_connection_count": 7
+    },
+    {
+      "name": "HandleWeaponInventoryChanged",
+      "kind": "function",
+      "guid": "34F60C8D4D14A7CA0FC35CA187B2BC71",
+      "node_count": 8,
+      "pin_count": 27,
+      "connection_count": 8,
+      "exec_connection_count": 4,
+      "data_connection_count": 4
+    },
+    {
+      "name": "GetActiveWeaponSlot",
+      "kind": "function",
+      "guid": "D79776534A429509368CB59338230CAB",
+      "node_count": 3,
+      "pin_count": 10,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "GetActiveWeaponItem",
+      "kind": "function",
+      "guid": "9D71BA1B402F1959AEAD278312FC7D0F",
+      "node_count": 3,
+      "pin_count": 10,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "TrySetActiveWeaponSlot",
+      "kind": "function",
+      "guid": "F1A9AB634764A614057E2CA277DE5592",
+      "node_count": 9,
+      "pin_count": 33,
+      "connection_count": 12,
+      "exec_connection_count": 6,
+      "data_connection_count": 6
+    },
+    {
+      "name": "CycleActiveWeapon",
+      "kind": "function",
+      "guid": "F92230094D9CF37AFE6B8C8B21FF803B",
+      "node_count": 12,
+      "pin_count": 50,
+      "connection_count": 22,
+      "exec_connection_count": 11,
+      "data_connection_count": 11
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "27C562194DBE280ECED38EB656633EFD",
+      "guid": "559D5A83441D4AF4164C85B0FA8EF390",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -438,11 +632,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 28,
+    "authored_graph_count": 44,
     "generated_graph_count": 1,
-    "authored_node_count": 444,
-    "authored_pin_count": 1606,
-    "authored_connection_count": 575,
+    "authored_node_count": 644,
+    "authored_pin_count": 2348,
+    "authored_connection_count": 863,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -456,6 +650,11 @@
       "name": "OnActiveToolSlotChanged",
       "kind": "delegate",
       "file": "graphs/OnActiveToolSlotChanged.json"
+    },
+    {
+      "name": "OnActiveWeaponChanged",
+      "kind": "delegate",
+      "file": "graphs/OnActiveWeaponChanged.json"
     },
     {
       "name": "OnEquipmentSlotChanged",
@@ -478,9 +677,24 @@
       "file": "graphs/CanEquipToolItem.json"
     },
     {
+      "name": "CanEquipWeaponInSlot",
+      "kind": "function",
+      "file": "graphs/CanEquipWeaponInSlot.json"
+    },
+    {
+      "name": "CommitActiveWeapon",
+      "kind": "function",
+      "file": "graphs/CommitActiveWeapon.json"
+    },
+    {
       "name": "CycleActiveToolSlot",
       "kind": "function",
       "file": "graphs/CycleActiveToolSlot.json"
+    },
+    {
+      "name": "CycleActiveWeapon",
+      "kind": "function",
+      "file": "graphs/CycleActiveWeapon.json"
     },
     {
       "name": "FindNextOccupiedRightHandSlot",
@@ -513,9 +727,24 @@
       "file": "graphs/GetActiveToolSlot.json"
     },
     {
+      "name": "GetActiveWeaponItem",
+      "kind": "function",
+      "file": "graphs/GetActiveWeaponItem.json"
+    },
+    {
+      "name": "GetActiveWeaponSlot",
+      "kind": "function",
+      "file": "graphs/GetActiveWeaponSlot.json"
+    },
+    {
       "name": "GetEquippedItemAtSlot",
       "kind": "function",
       "file": "graphs/GetEquippedItemAtSlot.json"
+    },
+    {
+      "name": "GetOtherWeaponSlot",
+      "kind": "function",
+      "file": "graphs/GetOtherWeaponSlot.json"
     },
     {
       "name": "GetOwnedToolAtSlot",
@@ -528,9 +757,19 @@
       "file": "graphs/GetToolSlotsInOrder.json"
     },
     {
+      "name": "GetValidWeaponAtSlot",
+      "kind": "function",
+      "file": "graphs/GetValidWeaponAtSlot.json"
+    },
+    {
       "name": "HandleToolInventoryChanged",
       "kind": "function",
       "file": "graphs/HandleToolInventoryChanged.json"
+    },
+    {
+      "name": "HandleWeaponInventoryChanged",
+      "kind": "function",
+      "file": "graphs/HandleWeaponInventoryChanged.json"
     },
     {
       "name": "IsItemEquipped",
@@ -548,6 +787,16 @@
       "file": "graphs/IsValidRightHandAssignment.json"
     },
     {
+      "name": "IsWeaponSlot",
+      "kind": "function",
+      "file": "graphs/IsWeaponSlot.json"
+    },
+    {
+      "name": "PruneInvalidWeaponAssignment",
+      "kind": "function",
+      "file": "graphs/PruneInvalidWeaponAssignment.json"
+    },
+    {
       "name": "ReconcileActiveRightHandSlot",
       "kind": "function",
       "file": "graphs/ReconcileActiveRightHandSlot.json"
@@ -556,6 +805,16 @@
       "name": "ReconcileActiveToolSlot",
       "kind": "function",
       "file": "graphs/ReconcileActiveToolSlot.json"
+    },
+    {
+      "name": "ReconcileActiveWeapon",
+      "kind": "function",
+      "file": "graphs/ReconcileActiveWeapon.json"
+    },
+    {
+      "name": "ResolveActiveWeapon",
+      "kind": "function",
+      "file": "graphs/ResolveActiveWeapon.json"
     },
     {
       "name": "ResolveEquippedWeaponClass",
@@ -573,6 +832,11 @@
       "file": "graphs/SetActiveToolSlot.json"
     },
     {
+      "name": "TryEquipCanonicalWeapon",
+      "kind": "function",
+      "file": "graphs/TryEquipCanonicalWeapon.json"
+    },
+    {
       "name": "TryEquipItemToSlot",
       "kind": "function",
       "file": "graphs/TryEquipItemToSlot.json"
@@ -581,6 +845,16 @@
       "name": "TryEquipToolToSlot",
       "kind": "function",
       "file": "graphs/TryEquipToolToSlot.json"
+    },
+    {
+      "name": "TrySetActiveWeaponSlot",
+      "kind": "function",
+      "file": "graphs/TrySetActiveWeaponSlot.json"
+    },
+    {
+      "name": "UnequipCanonicalWeapon",
+      "kind": "function",
+      "file": "graphs/UnequipCanonicalWeapon.json"
     },
     {
       "name": "UnequipItemFromSlot",

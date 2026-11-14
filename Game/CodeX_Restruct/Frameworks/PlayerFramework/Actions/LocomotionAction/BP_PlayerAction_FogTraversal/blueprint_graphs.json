@@ -61,34 +61,14 @@
   ],
   "graphs": [
     {
-      "name": "OnTraversalResult",
-      "kind": "delegate",
-      "guid": "2012BC1B49D420D6150F6F8FD6199C9A",
-      "node_count": 1,
-      "pin_count": 2,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ReportTraversalResult",
-      "kind": "function",
-      "guid": "0EF9D9154FDDF72181C59DAA32559B0D",
-      "node_count": 9,
-      "pin_count": 27,
-      "connection_count": 9,
-      "exec_connection_count": 3,
-      "data_connection_count": 6
-    },
-    {
-      "name": "IsTraversalMontagePlaying",
-      "kind": "function",
-      "guid": "E5F166D1479E19887A8259A7BFE1A8D7",
-      "node_count": 17,
-      "pin_count": 43,
-      "connection_count": 17,
-      "exec_connection_count": 5,
-      "data_connection_count": 12
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "3A65CB6E4A5072D04F2D20A130ABC5F5",
+      "node_count": 44,
+      "pin_count": 145,
+      "connection_count": 49,
+      "exec_connection_count": 21,
+      "data_connection_count": 28
     },
     {
       "name": "PlayTraversal",
@@ -101,43 +81,108 @@
       "data_connection_count": 4
     },
     {
-      "name": "EventGraph",
-      "kind": "event",
-      "guid": "3A65CB6E4A5072D04F2D20A130ABC5F5",
-      "node_count": 44,
-      "pin_count": 145,
-      "connection_count": 49,
-      "exec_connection_count": 21,
-      "data_connection_count": 28
-    }
-  ],
-  "generated_graphs": [
-    {
-      "name": "OnTraversalResult_MERGED",
-      "guid": "2012BC1B49D420D6150F6F8FD6199C9A",
-      "node_count": 1,
-      "pin_count": 2,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ReportTraversalResult_MERGED",
-      "guid": "0EF9D9154FDDF72181C59DAA32559B0D",
-      "node_count": 9,
-      "pin_count": 26,
-      "connection_count": 9,
-      "exec_connection_count": 3,
-      "data_connection_count": 6
-    },
-    {
-      "name": "IsTraversalMontagePlaying_MERGED",
+      "name": "IsTraversalMontagePlaying",
+      "kind": "function",
       "guid": "E5F166D1479E19887A8259A7BFE1A8D7",
       "node_count": 17,
       "pin_count": 43,
       "connection_count": 17,
       "exec_connection_count": 5,
       "data_connection_count": 12
+    },
+    {
+      "name": "ReportTraversalResult",
+      "kind": "function",
+      "guid": "0EF9D9154FDDF72181C59DAA32559B0D",
+      "node_count": 9,
+      "pin_count": 27,
+      "connection_count": 9,
+      "exec_connection_count": 3,
+      "data_connection_count": 6
+    },
+    {
+      "name": "OnTraversalResult",
+      "kind": "delegate",
+      "guid": "2012BC1B49D420D6150F6F8FD6199C9A",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ExecuteUbergraph_BP_PlayerAction_FogTraversal",
+      "guid": "2625DCC74A68B1CE5F4BCB8950FAABE2",
+      "node_count": 75,
+      "pin_count": 236,
+      "connection_count": 88,
+      "exec_connection_count": 33,
+      "data_connection_count": 55
+    },
+    {
+      "name": "EndAction",
+      "guid": "96ED81EC470AB70D9F68DABAF874C3B1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CE_PlayTraversalMontage",
+      "guid": "F45FFBBB471F0BEEF594218179BAC5EE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnCompleted_7153F8624F8D92ABF674BEB2AE7666E5",
+      "guid": "12F247CF4F97AA7E1B929CAD26246D91",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnBlendOut_7153F8624F8D92ABF674BEB2AE7666E5",
+      "guid": "6B7930A44D9CF3C0204127B6BEFB8443",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnInterrupted_7153F8624F8D92ABF674BEB2AE7666E5",
+      "guid": "52DAD5B2430C0F85C6A9A9897055DB31",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnNotifyBegin_7153F8624F8D92ABF674BEB2AE7666E5",
+      "guid": "F8A67DCF445CAFD824A497BBB8FD017D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnNotifyEnd_7153F8624F8D92ABF674BEB2AE7666E5",
+      "guid": "F84B173849BD5BFBE696E2A09A91D36F",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
     },
     {
       "name": "PlayTraversal_MERGED",
@@ -149,76 +194,31 @@
       "data_connection_count": 4
     },
     {
-      "name": "OnNotifyEnd_7153F8624F8D92ABF674BEB2AE7666E5",
-      "guid": "6DD263864A3E780AC846FBBE683B6DE2",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
+      "name": "IsTraversalMontagePlaying_MERGED",
+      "guid": "E5F166D1479E19887A8259A7BFE1A8D7",
+      "node_count": 17,
+      "pin_count": 43,
+      "connection_count": 17,
+      "exec_connection_count": 5,
+      "data_connection_count": 12
     },
     {
-      "name": "OnNotifyBegin_7153F8624F8D92ABF674BEB2AE7666E5",
-      "guid": "E787368244F6C39DD4909A96AF2C365F",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
+      "name": "ReportTraversalResult_MERGED",
+      "guid": "0EF9D9154FDDF72181C59DAA32559B0D",
+      "node_count": 9,
+      "pin_count": 26,
+      "connection_count": 9,
+      "exec_connection_count": 3,
+      "data_connection_count": 6
     },
     {
-      "name": "OnInterrupted_7153F8624F8D92ABF674BEB2AE7666E5",
-      "guid": "FDE3375E41F245B8DCBA52BADA00EB62",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnBlendOut_7153F8624F8D92ABF674BEB2AE7666E5",
-      "guid": "9FAF11BB4AF267CEBCB4BC9A955823DC",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnCompleted_7153F8624F8D92ABF674BEB2AE7666E5",
-      "guid": "7F3D81034D8DADAE3E92069ADE089317",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "CE_PlayTraversalMontage",
-      "guid": "9F9CAE51412EEFCBB1B4FBB339C9C34A",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
+      "name": "OnTraversalResult_MERGED",
+      "guid": "2012BC1B49D420D6150F6F8FD6199C9A",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
       "data_connection_count": 0
-    },
-    {
-      "name": "EndAction",
-      "guid": "247C151648DE3E78C34BE3897DF7CACF",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "ExecuteUbergraph_BP_PlayerAction_FogTraversal",
-      "guid": "4B7BD2A44606C2C7343184BEB140AB3B",
-      "node_count": 75,
-      "pin_count": 236,
-      "connection_count": 88,
-      "exec_connection_count": 33,
-      "data_connection_count": 55
     }
   ],
   "stats": {

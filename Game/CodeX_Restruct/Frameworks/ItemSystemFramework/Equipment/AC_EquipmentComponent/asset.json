@@ -89,6 +89,23 @@
         }
       },
       {
+        "name": "ActiveWeaponSlot",
+        "guid": "4C602F0A4D5332F8388B038DB31EF519",
+        "friendly_name": "Active Weapon Slot",
+        "category": "INVTEXT(\"Equipment|Weapons\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "bEquipmentInitialized",
         "guid": "DA5D6F9F417D8C70D04DF39BB122B942",
         "friendly_name": "Equipment Initialized",
@@ -174,6 +191,23 @@
         }
       },
       {
+        "name": "OnActiveWeaponChanged",
+        "guid": "14D092894514A09ECDE3C2BC9CEF57FB",
+        "friendly_name": "On Active Weapon Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "OnEquipmentSlotChanged",
         "guid": "82A6733741BF2EA110D575B8EA189153",
         "friendly_name": "On Equipment Slot Changed",
@@ -219,13 +253,29 @@
         "FindNextOccupiedToolSlot",
         "ReconcileActiveToolSlot",
         "HandleToolInventoryChanged",
-        "CycleActiveToolSlot"
+        "CycleActiveToolSlot",
+        "IsWeaponSlot",
+        "GetOtherWeaponSlot",
+        "CanEquipWeaponInSlot",
+        "GetValidWeaponAtSlot",
+        "ResolveActiveWeapon",
+        "CommitActiveWeapon",
+        "ReconcileActiveWeapon",
+        "TryEquipCanonicalWeapon",
+        "UnequipCanonicalWeapon",
+        "PruneInvalidWeaponAssignment",
+        "HandleWeaponInventoryChanged",
+        "GetActiveWeaponSlot",
+        "GetActiveWeaponItem",
+        "TrySetActiveWeaponSlot",
+        "CycleActiveWeapon"
       ],
       "macros": [],
       "delegates": [
         "OnEquipmentSlotChanged",
         "OnActiveRightHandSlotChanged",
-        "OnActiveToolSlotChanged"
+        "OnActiveToolSlotChanged",
+        "OnActiveWeaponChanged"
       ],
       "generated_graphs": [
         "ReceiveBeginPlay"
