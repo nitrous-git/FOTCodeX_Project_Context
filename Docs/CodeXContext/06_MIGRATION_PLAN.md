@@ -57,7 +57,7 @@ At migration completion, CodeX runs from its existing UE project with:
 - Reclassify champion fragment records from Tool into Fragment collection semantics. Preserve stable ItemIDs if feasible.
 - Restrict Medicine HP/EN to their typed recovery items. Five legacy tool slots become two canonical slots.
 - Convert `DT_EquipmentSlots_UI` to target schema: six visible Equipment rows, plus Outfit represented on Character. Slot `GridRow/GridColumn` values and icon assignments should reflect the new layout.
-- Validate real `WeaponFamilyTag` and CombatStyle mappings; resolve the Twinblades export discrepancy after live inspection.
+- Validate real `WeaponFamilyTag` and CombatStyle mappings; verify the newly exported Katana and `Weapon.Family.Twinblade` tags against the live style resolver; do not use the obsolete November 13 Sword family observation.
 - When a truly new item category is needed, migrate **enum referencers and DataTable rows carefully**; ordinal-based UE enum defaults should not be blindly overwritten.
 
 **Checkpoint:** DataTables load, definitions query correctly, no user-visible category contains the wrong semantic item, no missing tag resolution. Verify integrity of world pickup references and starting inventory.

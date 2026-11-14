@@ -1,7 +1,7 @@
 # CodeX continuation — documentation index
 
 **Document revision:** 2026-11-14  
-**Basis:** `nitrous-git/FOTCodeX_Project_Context` branch `main` at `1581bbee8ad9f0fcb73090b32f53fa99300ac52a`; export generated `2026-11-13T06:32:12Z`.  
+**Basis:** `nitrous-git/FOTCodeX_Project_Context` branch `main` at `8950d6d294292fc95d4af302d5cca8387309126d`; export generated `2026-11-14T07:31:28Z`.  
 **Implementation status:** new model **not migrated yet**. Existing export details are observations; new interfaces/tags are targets, not declarations of existing assets.
 
 ## What to read
@@ -23,7 +23,7 @@ This is a **design and migration specification**, not an MCP task prompt. Implem
 
 ## How to interpret assertions
 
-- **OBSERVED** means an asset, variable, function, row or dependency was seen in the referenced November 13 export.
+- **OBSERVED** means an asset, variable, function, row or dependency was seen in the referenced November 14 export.
 - **TARGET** means the intended CodeX architecture, not yet necessarily in the project.
 - **VERIFY LIVE** identifies runtime behavior, values, tags, unsaved modifications or referencers requiring Unreal Editor validation before edits.
 - **DEFERRED** means intentionally excluded from the first model conversion.

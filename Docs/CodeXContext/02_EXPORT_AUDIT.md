@@ -1,8 +1,8 @@
 # 02 — Current export audit (before conversion)
 
 **Evidence status: OBSERVED in GitHub Blueprint/context export, not independently PIE-tested.**  
-**Audit source:** [`nitrous-git/FOTCodeX_Project_Context`](https://github.com/nitrous-git/FOTCodeX_Project_Context), `main`, commit `1581bbee8ad9f0fcb73090b32f53fa99300ac52a`.  
-**Export date:** `2026-11-13T06:32:12.090642Z`; **exporter:** `0.5.0`, schema `1`; **UE:** `5.8.4-58902052+++UE5+Release-5.8`.
+**Audit source:** [`nitrous-git/FOTCodeX_Project_Context`](https://github.com/nitrous-git/FOTCodeX_Project_Context), `main`, commit `8950d6d294292fc95d4af302d5cca8387309126d`.  
+**Export date:** `2026-11-14T07:31:28.750062Z`; **exporter:** `0.5.0`, schema `1`; **UE:** `5.8.4-58902052+++UE5+Release-5.8`.
 
 ## 1. Snapshot reliability
 
@@ -10,22 +10,22 @@
 
 | Measure | Reported value |
 |---|---:|
-| Assets scanned | 8,548 |
+| Assets scanned | 8,515 |
 | Excluded by path | 4,974 |
 | Ignored by class | 3,076 |
-| Export candidates | 490 |
-| Full graph exports | 337 |
-| Structural exports | 153 |
+| Export candidates | 457 |
+| Full graph exports | 322 |
+| Structural exports | 135 |
 | Metadata errors / warnings | 0 / 0 |
 | Graph export errors | 0 |
 | Graph parser warning assets | 27 |
-| Authored graphs | 1,797 |
-| Graph nodes | 38,112 |
-| Dependency-graph edges | 1,470 |
+| Authored graphs | 1,768 |
+| Graph nodes | 37,995 |
+| Dependency-graph edges | 1,417 |
 
 The warning set includes pin-count parsing discrepancies in player/enemy AnimBPs and other high-node-count assets. This is **not** a compile failure or verified runtime issue. Exclusion filters omit certain paths and many non-Blueprint assets. For a live migration, check the editor asset graph and exact Gameplay Tags; export metadata is navigational evidence, never an edit target.
 
-The old `Docs/CodeXContext` text documents (dated around October 19) are **stale**: several still describe an empty Menu foundation, two hand slots, or work not yet done. The asset export below is more current.
+Pre-continuation architecture notes dated October are superseded by the November 14 continuation documentation. This audit section references the current November 14 export; live assets remain authoritative.
 
 ## 2. Existing system ownership / asset locations
 
@@ -124,12 +124,12 @@ Tool, Armor, Talisman, CombatStyle, Attunement, Fragment, Weapon
 
 `FInventoryItemDefinition` exposes 14 fields including `ItemID`, `ItemCategory`, `ItemName`, `ItemDescription`, `ItemIcon`, stack/use/equip flags, `CombatStyleData`, `ArmorData`, `AttunementData`, `WeaponData`, `WorldPickupClass`.
 
-`DT_InventoryItemData` contains **37 rows** by current category:
+`DT_InventoryItemData` contains **19 rows** by current category (the November 13 export previously listed 37; the reduction has already occurred in the newest snapshot):
 
 | Category | Rows | Important issue |
 |---|---:|---|
-| `Armor` | 23 | Currently individual Head/Chest/Arms/Legs content |
-| `Weapon` | 4 | KnightSword, IronSword, KnightShield, Twinblades |
+| `Armor` | 4 | Four retained individual Head/Chest/Arms/Legs test entries |
+| `Weapon` | 5 | KnightSword, IronSword, KnightShield, Twinblades, **Katana** |
 | `Talisman` | 5 | **Actually point to `DA_Attunement` definitions**: Neutral/Fire/Frost/Poison/Electric |
 | `Tool` | 5 | Three Champion fragments **plus** HP and EN potions |
 | `Attunement`, `Fragment`, `CombatStyle` | 0 in this table | Enum exists, but listed instance rows do not yet use these categories |
@@ -154,7 +154,7 @@ The new model needs six visible Equipment rows (two weapons, Talisman, Attunemen
 
 1. **GameMenu enum is 4-page:** exported `EGameMenuPage` = Inventory, Equipment, Status, System. Target is five pages: Character, Equipment, Inventory, Artifacts, System.
 2. **Menu composition is not a shell:** `WBP_GameMenu` has page logic `RefreshPage`, `RequestFullScreenPage`, and controller routing. Reuse; modify safely.
-3. **Twinblades family tag:** exported `DA_Weapon_Twinblades` has `WeaponFamilyTag=Weapon.Family.Sword`, despite existing Twinblades CombatStyle assets. This is a candidate for data correction after checking the live asset and expected combat-resolution mapping; **do not treat the enum name alone as proof it is malfunctioning in PIE**.
+3. **Twinblades family tag:** exported `DA_Weapon_Twinblades` now has `WeaponFamilyTag=Weapon.Family.Twinblade` (**singular**), while `DA_Weapon_Katana` uses `Weapon.Family.Katana`. Check the registered Gameplay Tags and the mapping to `DA_CombatStyle_Twinblades` before renaming; a singular/plural label mismatch is not itself proof of a runtime failure.
 4. **Legacy Talisman semantics:** `Talisman_Fire` references `DA_Attunement_Fire`, etc. Do not rename the label and call it a passive buff.
 5. **Legacy shield identity:** `Weapon_KnightShield` is a Weapon item and separate hand-slot content; CodeX wants Sword+Shield to be one resolved weapon kit where needed, not separately assignable shield-only equipment.
 6. **Legacy armor composition:** `DA_ArmorDefinition` already supports `AdditionalMeshes`; reuse this insight for curated whole-Outfit visuals instead of automatically destroying usable mesh code.

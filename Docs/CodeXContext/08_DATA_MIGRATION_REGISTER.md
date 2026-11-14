@@ -1,6 +1,6 @@
 # 08 — Data migration register: observed source → intended target
 
-**Status:** Planning register based on November 13 export. These are not completed migrations. For each row, a later implementation must verify the live asset, apply the appropriate UE editor operation, update referencers, compile and report.
+**Status:** Planning register based on November 14 export. These are not completed migrations. For each row, a later implementation must verify the live asset, apply the appropriate UE editor operation, update referencers, compile and report.
 
 ## 1. Slot schema
 
@@ -85,14 +85,15 @@ Do not infer that all Tool items are medicines. The current category design illu
 |---|---|
 | `Weapon_KnightSword` | Candidate SwordShield kit (must resolve shield/supporting animation coherently). |
 | `Weapon_IronSword` | Another existing sword item; assign a supported kit/family or hide until supported. |
+| `Weapon_Katana` | **Present in November 14 export**; self-contained Katana kit with `Weapon.Family.Katana`. |
 | `Weapon_KnightShield` | No direct Primary/Secondary assignment. Can be retained as internal support/visual content or converted/remapped if save/story requires. |
-| `Weapon_Twinblades` | Self-contained Twinblades kit. Live-check `WeaponFamilyTag`, exported value says Sword. |
+| `Weapon_Twinblades` | Self-contained Twinblades kit. Current export uses `Weapon.Family.Twinblade` (singular); verify actual tag registration and style mapping before any rename. |
 
-Current `DA_WeaponDefinition` includes `AllowedEquipSlots`, `WeaponFamilyTag`, `WeaponActorClass`, `AttributeRequirements`, `ScalingRules`, base attack and load weight. Keep it and adapt the allowed slots to Primary/Secondary for valid offensive kits. Avoid making shield-only `bOffensiveWeapon=true` by mistake. Do not pretend `Katana` item rows exist in the export; Katana CombatStyle assets exist but a corresponding inventory definition may need to be authored later.
+Current `DA_WeaponDefinition` includes `AllowedEquipSlots`, `WeaponFamilyTag`, `WeaponActorClass`, `AttributeRequirements`, `ScalingRules`, base attack and load weight. Keep it and adapt the allowed slots to Primary/Secondary for valid offensive kits. Avoid making shield-only `bOffensiveWeapon=true` by mistake. `Weapon_Katana` now exists in the export and references `DA_Weapon_Katana` / `BP_Katana`. Validate its combat-style mapping in the live editor.
 
 ### Armor/outfits
 
-The export has **23 Armor rows**, corresponding to individual Head, Chest, Arms and Legs items. Do not transfer all 23 rows directly into 23 CodeX outfits. Author/assemble a **small selected set** of complete ensembles (initial creative goal: 4–5). Preserve usable body meshes, `AdditionalMeshes` and material references. Legacy piece items should be inactive in the new CodeX equipment UI after a verified mapping; whether to keep them as asset library or remove them is decided by referencer audit, not by this spec.
+The latest export has **4 Armor rows** representing individual Head, Chest, Arms and Legs items (down from 23 in the prior snapshot). Do not transfer those four rows directly into four CodeX outfits. Author/assemble a **small selected set** of complete ensembles (initial creative goal: 4–5). Preserve usable body meshes, `AdditionalMeshes` and material references. Legacy piece items should be inactive in the new CodeX equipment UI after a verified mapping; whether to keep them as asset library or remove them is decided by referencer audit, not by this spec.
 
 ## 4. Definition class and enum proposals
 

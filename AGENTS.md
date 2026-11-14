@@ -38,11 +38,11 @@ This repository is the **CodeX** project context/export, not a source for any ot
 
 ## Important current-state caveats
 
-The November 13 export still has `ActiveRightHandSlot`, five Tool slots, four armor pieces, a four-page `EGameMenuPage`, and ItemTable `Talisman_*` entries pointing to Attunement data. These are **migration sources**, not a target to perpetuate. Read `02_EXPORT_AUDIT.md` for evidence.
+The November 14 export still has `ActiveRightHandSlot`, five Tool slots, four armor pieces, a four-page `EGameMenuPage`, and ItemTable `Talisman_*` entries pointing to Attunement data. These are **migration sources**, not a target to perpetuate. Read `02_EXPORT_AUDIT.md` for evidence; the November 14 table now has 19 rows and includes Katana.
 
 ### Source of truth
 
 1. Current live Unreal Editor asset and its actual properties/graphs.
 2. Latest user-approved CodeX specification in these documents and current conversation.
-3. November 13, 2026 export metadata and Blueprint graphs.
+3. November 14, 2026 export metadata and Blueprint graphs.
 4. Historical documents, only when a particular legacy implementation needs examination.

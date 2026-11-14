@@ -43,7 +43,7 @@ Equipped Weapon ItemID
 
 ### Supported weapon families
 
-CodeX's first supported families are intended to include `SwordShield`, `Katana` and `Twinblades` as complete play styles, with a safe Unarmed fallback. The precise Gameplay Tags should be validated against the project's registered tags and style assets. If the existing `Weapon.Family.Sword` denotes SwordShield, keep the tag and document the meaning rather than renaming it for aesthetics. `Weapon.Family.Twinblades` should not be accidentally resolved to Sword by incorrect data; the export has a discrepancy to inspect (`DA_Weapon_Twinblades.WeaponFamilyTag=Weapon.Family.Sword`).
+CodeX's first supported families are intended to include `SwordShield`, `Katana` and `Twinblades` as complete play styles, with a safe Unarmed fallback. The precise Gameplay Tags should be validated against the project's registered tags and style assets. If the existing `Weapon.Family.Sword` denotes SwordShield, keep the tag and document the meaning rather than renaming it for aesthetics. The November 14 export uses `Weapon.Family.Twinblade` (**singular**) in `DA_Weapon_Twinblades`, and `Weapon.Family.Katana` for Katana. Confirm those exact registered tags and `DA_CombatStyle` mapping in the live editor; do not rename automatically for pluralization.
 
 **No unsupported combinations:** no shield-only kit; no Katana+shield; no Twinblades+shield; pure one-handed Sword without its required guard set is not enabled until the requisite normal/guard locomotion exists. These are intentional content rules, not UI error states.
 
