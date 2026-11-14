@@ -66,6 +66,7 @@
       "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent",
       "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent",
       "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent",
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield",
       "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase",
       "/Game/CodeX_Restruct/Shared/Animation/CameraAnimations/BP_CameraAnimationPlayer",
       "/Game/CodeX_Restruct/Shared/CameraShake/BP_CameraShake",
@@ -553,6 +554,23 @@
         }
       },
       {
+        "name": "AppliedCanonicalWeaponItemID",
+        "guid": "48AF03654F95190574431EA14BFD267C",
+        "friendly_name": "Applied Canonical Weapon Item ID",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "AttackClampTarget",
         "guid": "B283A1F44E1918B2351DD3898C175C09",
         "friendly_name": "Attack Clamp Target",
@@ -642,6 +660,40 @@
         "guid": "6080E8C04EDCB42AA8A27D970F9F9AFE",
         "friendly_name": "Can be Interrupted",
         "category": "INVTEXT(\"ShadowStrike\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCanonicalWeaponKitApplied",
+        "guid": "B22DB5C1451557CA3DEFF79A81684FF1",
+        "friendly_name": "Canonical Weapon Kit Applied",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bCanonicalWeaponRefreshPending",
+        "guid": "C864B6AE44F750C3E6AA5CBA7FE0EAF9",
+        "friendly_name": "Canonical Weapon Refresh Pending",
+        "category": "Default",
         "property_flags": 65541,
         "default_value": null,
         "type": {
@@ -1561,6 +1613,8 @@
         "EventGraph"
       ],
       "functions": [
+        "AttachCanonicalPrimaryWeapon",
+        "UpdateCombatStyleAnimationMode",
         "UserConstructionScript",
         "In Short Range",
         "GetCombatStyle",
@@ -1610,7 +1664,12 @@
         "StopDefenseTransitionMontages",
         "CE_EndBlocking",
         "CancelBlockForEquipmentChange",
-        "RefreshCombatStyleFromActiveWeapon"
+        "RefreshCombatStyleFromActiveWeapon",
+        "CommitCanonicalWeaponActors",
+        "ReconcilePendingWeaponKit",
+        "ApplyUnarmedWeaponKit",
+        "InstallCanonicalWeaponKit",
+        "ApplyCanonicalWeaponDefinition"
       ],
       "macros": [],
       "delegates": [
@@ -1635,13 +1694,17 @@
         "OnCompleted_FB59ECBE4D9265F301655DACE7DE41A2",
         "InpActEvt_Two_K2Node_InputDebugKeyEvent_0",
         "InpActEvt_V_K2Node_InputKeyEvent_0",
+        "CS_ResetBlock",
+        "ReceiveAnyDamage",
         "CS_SetAllReferences",
+        "CS_LauchCharacterUtil",
         "SetAttackClampActive",
         "CS_TickAttackClamp",
-        "ReceiveAnyDamage",
-        "CS_ResetBlock",
         "ReceiveTick",
-        "CS_PlayAnim",
+        "CS_DoDamage",
+        "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_1_ComponentOnTargetLockedOnOff__DelegateSignature",
+        "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_0_ComponentOnTargetLockedOnOff__DelegateSignature",
+        "ReceiveBeginPlay",
         "CS_SlowGlobalTimeDilation",
         "CS_ResetGlobalTimeDilation",
         "ApplyResolvedHit",
@@ -1652,15 +1715,11 @@
         "CS_SetExecuted",
         "CS_PlayExecutedCamera",
         "CS_ToggleLocomotion",
-        "CS_DoDamage",
-        "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_1_ComponentOnTargetLockedOnOff__DelegateSignature",
-        "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_0_ComponentOnTargetLockedOnOff__DelegateSignature",
+        "CS_PlayAnim",
         "CS_PlayExecutionCamera",
         "CS_HitTImer",
         "CS_ResetHitCounter",
-        "ReceiveBeginPlay",
         "CS_PlayCameraShake",
-        "CS_LauchCharacterUtil",
         "OnLanded",
         "BndEvt__ThirdPersonCharacter_BP_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
         "BndEvt__BP_ThirdPersonCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_29_ComponentHitSignature__DelegateSignature",
@@ -1676,7 +1735,8 @@
         "CE_TransitionPose",
         "CE_Equip",
         "CE_Unequip",
-        "CE_StartBlocking"
+        "CE_StartBlocking",
+        "BndEvt__BP_PlayerBase_AC_EquipmentComponent_K2Node_ComponentBoundEvent_6_OnActiveWeaponChanged__DelegateSignature"
       ]
     },
     "extraction_status": {
