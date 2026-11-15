@@ -18,10 +18,7 @@
   "architecture": {
     "dependencies": [
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/EWeaponScalingGrade",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FWeaponScalingRule",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/DA_OutfitDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/ECodeXPassiveType",
@@ -30,8 +27,7 @@
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes"
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
@@ -155,23 +151,6 @@
         }
       },
       {
-        "name": "ScalingNormalization",
-        "guid": "774F1D2B4A36B1393030199B0A461583",
-        "friendly_name": "Scaling Normalization",
-        "category": "Default",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "real",
-          "sub_category": "double",
-          "sub_category_object": null,
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
         "name": "StatsRef",
         "guid": "E16C0E6B41F22E882426B1BE4006EED6",
         "friendly_name": "Stats Ref",
@@ -194,23 +173,16 @@
         "EventGraph"
       ],
       "functions": [
-        "EvaluateRequirements",
-        "ApplyScalingRule",
-        "CalculateWeaponRating",
-        "ResolveEquippedDefinitions",
         "BuildEquipmentSnapshot",
         "EquipmentSnapshotsEqual",
         "RecalculateEquipmentStats",
         "HandleEquipmentSlotChanged",
-        "HandleCharacterStatsChanged",
         "SetEquipmentSubscription",
-        "SetStatsSubscription",
         "ShutdownEquipmentStats",
         "InitializeEquipmentStats",
-        "GetScalingCoefficient",
-        "IsUniqueScalingRule",
         "HandleActiveWeaponChanged",
-        "ReconcileOutfitResourcePassive"
+        "ReconcileOutfitResourcePassive",
+        "ResolveActiveWeaponAttack"
       ],
       "macros": [],
       "delegates": [
