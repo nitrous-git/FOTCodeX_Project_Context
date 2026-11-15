@@ -24,7 +24,6 @@
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FWeaponScalingRule",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/DA_OutfitDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
@@ -36,7 +35,6 @@
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment"
     ],
     "non_architecture_dependency_count": 2,
@@ -196,19 +194,14 @@
         "EventGraph"
       ],
       "functions": [
-        "CombineNegation",
-        "AddResistances",
         "EvaluateRequirements",
         "ApplyScalingRule",
         "CalculateWeaponRating",
         "ResolveEquippedDefinitions",
-        "ApplyArmorSource",
-        "AccumulateArmor",
         "GetWeaponWeight",
         "BuildEquipmentSnapshot",
         "EquipmentSnapshotsEqual",
         "RecalculateEquipmentStats",
-        "UpdateArmorModifier",
         "HandleEquipmentSlotChanged",
         "HandleCharacterStatsChanged",
         "SetEquipmentSubscription",
@@ -219,8 +212,7 @@
         "IsUniqueScalingRule",
         "GetAssignedRightHandWeight",
         "HandleActiveRightHandSlotChanged",
-        "HandleActiveWeaponChanged",
-        "RefreshLegacyArmorModifiers"
+        "HandleActiveWeaponChanged"
       ],
       "macros": [],
       "delegates": [

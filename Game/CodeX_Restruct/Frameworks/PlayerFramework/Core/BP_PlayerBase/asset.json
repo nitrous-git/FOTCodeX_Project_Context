@@ -29,7 +29,6 @@
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/DA_OutfitDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
@@ -417,46 +416,6 @@
         "root_component": false,
         "scene_component": false,
         "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:PlayerInteractionComponent_GEN_VARIABLE"
-      },
-      {
-        "name": "SK_Armor_Arms",
-        "class": "SkeletalMeshComponent",
-        "parent": "Mesh",
-        "inherited": false,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Armor_Arms_GEN_VARIABLE"
-      },
-      {
-        "name": "SK_Armor_Chest",
-        "class": "SkeletalMeshComponent",
-        "parent": "Mesh",
-        "inherited": false,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Armor_Chest_GEN_VARIABLE"
-      },
-      {
-        "name": "SK_Armor_Head",
-        "class": "SkeletalMeshComponent",
-        "parent": "Mesh",
-        "inherited": false,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Armor_Head_GEN_VARIABLE"
-      },
-      {
-        "name": "SK_Armor_Legs",
-        "class": "SkeletalMeshComponent",
-        "parent": "Mesh",
-        "inherited": false,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:SK_Armor_Legs_GEN_VARIABLE"
       },
       {
         "name": "SK_BaseBody",
@@ -1422,6 +1381,23 @@
         }
       },
       {
+        "name": "OutfitFollowerComponents",
+        "guid": "707D334644CF5E756BCE33A3113CE5FC",
+        "friendly_name": "Outfit Follower Components",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMeshComponent'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "ParryAnimArray",
         "guid": "D1AC329847C6980A324A6DBCAB34C32F",
         "friendly_name": "Parry Anim Array",
@@ -1628,11 +1604,6 @@
         "SetBossRef",
         "InitPlayerUI",
         "RefreshEquippedWeapons",
-        "InitializeArmorFollowers",
-        "GetArmorComponentForSlot",
-        "ApplyArmorPieceVisual",
-        "RefreshArmorSlotFromEquipment",
-        "RefreshAllArmorVisuals",
         "GetCharacterStatusSnapshot",
         "DebugPrintCharacterStatusSnapshot",
         "InitializeEquipmentStatResolver",
@@ -1658,7 +1629,6 @@
         "StartDeathSequence",
         "CanStartPotion",
         "IsCinematicInputLocked",
-        "ClearAdditionalArmorMeshes",
         "RefreshCombatStyleLocomotion",
         "StopDefenseTransitionMontages",
         "CE_EndBlocking",
@@ -1700,6 +1670,7 @@
         "ReceiveAnyDamage",
         "CS_SetAllReferences",
         "CS_LauchCharacterUtil",
+        "CS_PlayAnim",
         "SetAttackClampActive",
         "CS_TickAttackClamp",
         "ReceiveTick",
@@ -1717,7 +1688,6 @@
         "CS_SetExecuted",
         "CS_PlayExecutedCamera",
         "CS_ToggleLocomotion",
-        "CS_PlayAnim",
         "CS_PlayExecutionCamera",
         "CS_HitTImer",
         "CS_ResetHitCounter",

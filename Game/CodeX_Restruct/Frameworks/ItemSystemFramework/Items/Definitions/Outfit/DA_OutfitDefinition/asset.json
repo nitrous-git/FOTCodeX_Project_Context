@@ -17,9 +17,10 @@
   },
   "architecture": {
     "dependencies": [
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition"
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/ECodeXPassiveType"
     ],
     "referencers": [
+      "/Game/CodeX_Restruct/Developer/Tests/H5B1/BP_InventoryAmountActionTest",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
@@ -34,7 +35,7 @@
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD"
     ],
-    "non_architecture_dependency_count": 0,
+    "non_architecture_dependency_count": 1,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -50,16 +51,16 @@
     "components": [],
     "variables": [
       {
-        "name": "ArmsDefinition",
-        "guid": "AA9E6A1449B985EC9D04F7B717418F92",
-        "friendly_name": "Arms Definition",
-        "category": "INVTEXT(\"Outfit Parts\")",
+        "name": "DefensePercent",
+        "guid": "37FDEEA84BF122072DB2EDBF2F2E4323",
+        "friendly_name": "Defense Percent",
+        "category": "Default",
         "property_flags": 5,
         "default_value": null,
         "type": {
-          "category": "object",
-          "sub_category": null,
-          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition.DA_ArmorDefinition_C'",
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -67,16 +68,33 @@
         }
       },
       {
-        "name": "ChestDefinition",
-        "guid": "3DA936AB4E27A1FAE18039A954567EF6",
-        "friendly_name": "Chest Definition",
-        "category": "INVTEXT(\"Outfit Parts\")",
+        "name": "OutfitMeshes",
+        "guid": "D2903E314DFEB2372D73AD85CF58C1AD",
+        "friendly_name": "Outfit Meshes",
+        "category": "Default",
         "property_flags": 5,
         "default_value": null,
         "type": {
           "category": "object",
           "sub_category": null,
-          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition.DA_ArmorDefinition_C'",
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMesh'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PassiveBonusPercent",
+        "guid": "8BE69B594DA25D5DAF2B049CD2CA6302",
+        "friendly_name": "Passive Bonus Percent",
+        "category": "Default",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -84,33 +102,16 @@
         }
       },
       {
-        "name": "HeadDefinition",
-        "guid": "2E22072E478783AB59F0EDB4096F58E3",
-        "friendly_name": "Head Definition",
-        "category": "INVTEXT(\"Outfit Parts\")",
+        "name": "PassiveBonusType",
+        "guid": "EB9AA3584C8445C94E8077A6988E48B0",
+        "friendly_name": "Passive Bonus Type",
+        "category": "Default",
         "property_flags": 5,
         "default_value": null,
         "type": {
-          "category": "object",
+          "category": "byte",
           "sub_category": null,
-          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition.DA_ArmorDefinition_C'",
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
-        "name": "LegsDefinition",
-        "guid": "4DAE51F94DD47E72EE8B06B3EA003C68",
-        "friendly_name": "Legs Definition",
-        "category": "INVTEXT(\"Outfit Parts\")",
-        "property_flags": 5,
-        "default_value": null,
-        "type": {
-          "category": "object",
-          "sub_category": null,
-          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Armor/DA_ArmorDefinition.DA_ArmorDefinition_C'",
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/ECodeXPassiveType.ECodeXPassiveType'",
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -122,7 +123,9 @@
       "event_graphs": [
         "EventGraph"
       ],
-      "functions": [],
+      "functions": [
+        "IsUsableOutfitMesh"
+      ],
       "macros": [],
       "delegates": [],
       "generated_graphs": []

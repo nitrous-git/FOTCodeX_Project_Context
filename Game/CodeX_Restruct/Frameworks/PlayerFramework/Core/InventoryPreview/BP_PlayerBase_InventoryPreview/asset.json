@@ -18,29 +18,17 @@
   "architecture": {
     "dependencies": [
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
-      "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent",
-      "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent",
-      "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent",
-      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase",
-      "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion"
+      "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/CharacterPreview/WBP_CharacterPreviewPanel",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System"
     ],
-    "non_architecture_dependency_count": 6,
+    "non_architecture_dependency_count": 4,
     "non_architecture_referencer_count": 1
   },
   "registry": {
@@ -335,46 +323,6 @@
         "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SceneCapture2D_Inventory_GEN_VARIABLE"
       },
       {
-        "name": "SK_Armor_Arms",
-        "class": "SkeletalMeshComponent",
-        "parent": "Mesh",
-        "inherited": true,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Armor_Arms_GEN_VARIABLE"
-      },
-      {
-        "name": "SK_Armor_Chest",
-        "class": "SkeletalMeshComponent",
-        "parent": "Mesh",
-        "inherited": true,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Armor_Chest_GEN_VARIABLE"
-      },
-      {
-        "name": "SK_Armor_Head",
-        "class": "SkeletalMeshComponent",
-        "parent": "Mesh",
-        "inherited": true,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Armor_Head_GEN_VARIABLE"
-      },
-      {
-        "name": "SK_Armor_Legs",
-        "class": "SkeletalMeshComponent",
-        "parent": "Mesh",
-        "inherited": true,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C:SK_Armor_Legs_GEN_VARIABLE"
-      },
-      {
         "name": "SK_BaseBody",
         "class": "SkeletalMeshComponent",
         "parent": "Mesh",
@@ -497,7 +445,8 @@
         "InitInventoryPreview",
         "SyncPreviewFromEquipment",
         "RotatePreview",
-        "CapturePreview"
+        "CapturePreview",
+        "HandleSourceOutfitChanged"
       ],
       "macros": [],
       "delegates": [],

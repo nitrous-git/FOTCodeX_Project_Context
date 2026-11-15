@@ -8,40 +8,6 @@
   },
   "variables": [
     {
-      "name": "ArmorSlotCount",
-      "guid": "114D79D54E3EC4DD65F9A5A9E0D9C03F",
-      "friendly_name": "Armor Slot Count",
-      "category": "INVTEXT(\"Slot counts\")",
-      "property_flags": 65541,
-      "default_value": null,
-      "type": {
-        "category": "int",
-        "sub_category": null,
-        "sub_category_object": null,
-        "container": null,
-        "is_reference": false,
-        "is_const": false,
-        "is_weak_pointer": false
-      }
-    },
-    {
-      "name": "ArmorSlots",
-      "guid": "9B6D10F34698CCE3290B3D955BB49ECE",
-      "friendly_name": "Armor Slots",
-      "category": "INVTEXT(\"Runtime arrays\")",
-      "property_flags": 65541,
-      "default_value": null,
-      "type": {
-        "category": "struct",
-        "sub_category": null,
-        "sub_category_object": "/Script/CoreUObject.UserDefinedStruct'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData.FInventorySlotData'",
-        "container": "Array",
-        "is_reference": false,
-        "is_const": false,
-        "is_weak_pointer": false
-      }
-    },
-    {
       "name": "AttunementSlotCount",
       "guid": "26C6318B40368084D2340281F4AB3A11",
       "friendly_name": "Attunement Slot Count",
@@ -451,38 +417,38 @@
       "name": "SetSlotByCategoryAndIndex",
       "kind": "function",
       "guid": "E2F91C40417920CE94E373905319FC5D",
-      "node_count": 42,
-      "pin_count": 160,
-      "connection_count": 66,
-      "exec_connection_count": 17,
-      "data_connection_count": 49
+      "node_count": 36,
+      "pin_count": 141,
+      "connection_count": 58,
+      "exec_connection_count": 15,
+      "data_connection_count": 43
     },
     {
       "name": "GetSlotByCategoryAndIndex",
       "kind": "function",
       "guid": "4D0DE6C84C4F247D2968CB97E5C6327C",
-      "node_count": 63,
-      "pin_count": 187,
-      "connection_count": 76,
-      "exec_connection_count": 27,
-      "data_connection_count": 49
+      "node_count": 54,
+      "pin_count": 164,
+      "connection_count": 68,
+      "exec_connection_count": 25,
+      "data_connection_count": 43
     },
     {
       "name": "GetSlotCountByCategory",
       "kind": "function",
       "guid": "7205EC464D58C90097E9858A75A42255",
-      "node_count": 27,
-      "pin_count": 73,
-      "connection_count": 28,
+      "node_count": 24,
+      "pin_count": 66,
+      "connection_count": 26,
       "exec_connection_count": 11,
-      "data_connection_count": 17
+      "data_connection_count": 15
     },
     {
       "name": "AddItem",
       "kind": "function",
       "guid": "D13532624C5CC2DD77D0208BCAD5B22F",
       "node_count": 47,
-      "pin_count": 158,
+      "pin_count": 156,
       "connection_count": 52,
       "exec_connection_count": 23,
       "data_connection_count": 29
@@ -492,7 +458,7 @@
       "kind": "function",
       "guid": "B7F5D4664A6EFC1FE03D5A8994756331",
       "node_count": 61,
-      "pin_count": 202,
+      "pin_count": 200,
       "connection_count": 70,
       "exec_connection_count": 19,
       "data_connection_count": 51
@@ -502,7 +468,7 @@
       "kind": "function",
       "guid": "CE8460E249D5AFFDD4D34FBB470A834E",
       "node_count": 46,
-      "pin_count": 144,
+      "pin_count": 143,
       "connection_count": 54,
       "exec_connection_count": 19,
       "data_connection_count": 35
@@ -521,11 +487,11 @@
       "name": "InitInventory",
       "kind": "function",
       "guid": "BF6BF6CE475F36075B8B4A9DA939442F",
-      "node_count": 38,
-      "pin_count": 148,
-      "connection_count": 45,
-      "exec_connection_count": 21,
-      "data_connection_count": 24
+      "node_count": 33,
+      "pin_count": 129,
+      "connection_count": 39,
+      "exec_connection_count": 18,
+      "data_connection_count": 21
     },
     {
       "name": "ClearInventorySlot",
@@ -551,10 +517,10 @@
       "name": "Debug_GiveStarterInventory",
       "kind": "function",
       "guid": "0F8DA23A44327CF34F16D0B6E0D7FE7B",
-      "node_count": 17,
-      "pin_count": 113,
-      "connection_count": 15,
-      "exec_connection_count": 15,
+      "node_count": 13,
+      "pin_count": 85,
+      "connection_count": 11,
+      "exec_connection_count": 11,
       "data_connection_count": 0
     },
     {
@@ -562,7 +528,7 @@
       "kind": "function",
       "guid": "8E7E5C5542444C9993E571AAB88E8525",
       "node_count": 30,
-      "pin_count": 135,
+      "pin_count": 134,
       "connection_count": 35,
       "exec_connection_count": 7,
       "data_connection_count": 28
@@ -571,20 +537,20 @@
       "name": "Debug_PrintInventory",
       "kind": "function",
       "guid": "0A3ECECE437F3F1E3A7273B53A4BB2D4",
-      "node_count": 34,
-      "pin_count": 187,
-      "connection_count": 41,
-      "exec_connection_count": 25,
-      "data_connection_count": 16
+      "node_count": 30,
+      "pin_count": 165,
+      "connection_count": 36,
+      "exec_connection_count": 22,
+      "data_connection_count": 14
     },
     {
       "name": "Debug_GiveTestInventory",
       "kind": "function",
       "guid": "19860B9346DD540DB379AD9DC931A361",
-      "node_count": 15,
-      "pin_count": 94,
-      "connection_count": 13,
-      "exec_connection_count": 12,
+      "node_count": 10,
+      "pin_count": 59,
+      "connection_count": 9,
+      "exec_connection_count": 8,
       "data_connection_count": 1
     },
     {
@@ -592,7 +558,7 @@
       "kind": "function",
       "guid": "F265994F4939D981DCA6B49F127B8EC4",
       "node_count": 27,
-      "pin_count": 103,
+      "pin_count": 102,
       "connection_count": 34,
       "exec_connection_count": 14,
       "data_connection_count": 20
@@ -602,7 +568,7 @@
       "kind": "function",
       "guid": "A44AE5AA459E18C77197F5BB4F64B0F1",
       "node_count": 61,
-      "pin_count": 250,
+      "pin_count": 249,
       "connection_count": 100,
       "exec_connection_count": 24,
       "data_connection_count": 76
@@ -622,7 +588,7 @@
       "kind": "function",
       "guid": "0084CE04418D7EC28F5BFE8A552D49CC",
       "node_count": 32,
-      "pin_count": 147,
+      "pin_count": 146,
       "connection_count": 60,
       "exec_connection_count": 18,
       "data_connection_count": 42
@@ -711,7 +677,7 @@
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "79D04DDF43D854BBE9A328B7628E2B34",
+      "guid": "660D559F4DB35086502E709FD4FA1ACB",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -722,9 +688,9 @@
   "stats": {
     "authored_graph_count": 29,
     "generated_graph_count": 1,
-    "authored_node_count": 812,
-    "authored_pin_count": 3096,
-    "authored_connection_count": 1054,
+    "authored_node_count": 776,
+    "authored_pin_count": 2934,
+    "authored_connection_count": 1017,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },

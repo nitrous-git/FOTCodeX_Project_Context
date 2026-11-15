@@ -909,6 +909,23 @@
       }
     },
     {
+      "name": "OutfitFollowerComponents",
+      "guid": "707D334644CF5E756BCE33A3113CE5FC",
+      "friendly_name": "Outfit Follower Components",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMeshComponent'",
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "ParryAnimArray",
       "guid": "D1AC329847C6980A324A6DBCAB34C32F",
       "friendly_name": "Parry Anim Array",
@@ -1101,21 +1118,21 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "2EF27BC649C3A6A2A3026DA2E43B989D",
-      "node_count": 535,
-      "pin_count": 1853,
-      "connection_count": 510,
-      "exec_connection_count": 189,
-      "data_connection_count": 321
+      "node_count": 529,
+      "pin_count": 1825,
+      "connection_count": 495,
+      "exec_connection_count": 184,
+      "data_connection_count": 311
     },
     {
       "name": "UserConstructionScript",
       "kind": "function",
       "guid": "A80AC35042A06CC526F25488343E0399",
-      "node_count": 2,
-      "pin_count": 4,
-      "connection_count": 1,
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 3,
       "exec_connection_count": 1,
-      "data_connection_count": 0
+      "data_connection_count": 2
     },
     {
       "name": "In Short Range",
@@ -1245,56 +1262,6 @@
       "pin_count": 9,
       "connection_count": 2,
       "exec_connection_count": 2,
-      "data_connection_count": 0
-    },
-    {
-      "name": "InitializeArmorFollowers",
-      "kind": "function",
-      "guid": "1B605B3B4FDE83AC2867E89785EA058A",
-      "node_count": 14,
-      "pin_count": 46,
-      "connection_count": 15,
-      "exec_connection_count": 4,
-      "data_connection_count": 11
-    },
-    {
-      "name": "GetArmorComponentForSlot",
-      "kind": "function",
-      "guid": "D122675644288F6D8BE926834B637105",
-      "node_count": 22,
-      "pin_count": 60,
-      "connection_count": 21,
-      "exec_connection_count": 9,
-      "data_connection_count": 12
-    },
-    {
-      "name": "ApplyArmorPieceVisual",
-      "kind": "function",
-      "guid": "E64305DB41CA9CB001DCED800A3F81AE",
-      "node_count": 42,
-      "pin_count": 131,
-      "connection_count": 49,
-      "exec_connection_count": 19,
-      "data_connection_count": 30
-    },
-    {
-      "name": "RefreshArmorSlotFromEquipment",
-      "kind": "function",
-      "guid": "84FA69F34A85682CCDE2058E8D409381",
-      "node_count": 31,
-      "pin_count": 112,
-      "connection_count": 45,
-      "exec_connection_count": 18,
-      "data_connection_count": 27
-    },
-    {
-      "name": "RefreshAllArmorVisuals",
-      "kind": "function",
-      "guid": "3671EDD24A98430D033AC8AE05C96D77",
-      "node_count": 6,
-      "pin_count": 22,
-      "connection_count": 5,
-      "exec_connection_count": 5,
       "data_connection_count": 0
     },
     {
@@ -1548,16 +1515,6 @@
       "data_connection_count": 4
     },
     {
-      "name": "ClearAdditionalArmorMeshes",
-      "kind": "function",
-      "guid": "CA6FB952449850336C883FA01CB85E03",
-      "node_count": 8,
-      "pin_count": 29,
-      "connection_count": 9,
-      "exec_connection_count": 2,
-      "data_connection_count": 7
-    },
-    {
       "name": "RefreshCombatStyleLocomotion",
       "kind": "function",
       "guid": "346911EE4F9EBBBA71E11FBCC6966ABD",
@@ -1602,7 +1559,7 @@
       "kind": "function",
       "guid": "8F1A5A5B4D1B6635904BD88CAD7ADFC4",
       "node_count": 24,
-      "pin_count": 99,
+      "pin_count": 98,
       "connection_count": 32,
       "exec_connection_count": 15,
       "data_connection_count": 17
@@ -1681,11 +1638,11 @@
       "name": "RefreshOutfitVisuals",
       "kind": "function",
       "guid": "6FE325B54508B22FA3C6EE9C7AF7AE5D",
-      "node_count": 30,
-      "pin_count": 106,
-      "connection_count": 38,
-      "exec_connection_count": 15,
-      "data_connection_count": 23
+      "node_count": 34,
+      "pin_count": 141,
+      "connection_count": 57,
+      "exec_connection_count": 21,
+      "data_connection_count": 36
     },
     {
       "name": "OnCharacterStatusChanged",
@@ -1719,7 +1676,7 @@
     },
     {
       "name": "InpActEvt_Gamepad_RightShoulder_K2Node_InputKeyEvent_3",
-      "guid": "0D27E8254C87B5EDC74BA58B8848BC78",
+      "guid": "4B8A0CF348F7260AFB99DF979839C2B0",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1728,7 +1685,7 @@
     },
     {
       "name": "InpActEvt_Zero_K2Node_InputDebugKeyEvent_1",
-      "guid": "60B10BF2475026BB987F8D89D6C72EA8",
+      "guid": "BA53DD85448799CCEAD572B36323457B",
       "node_count": 3,
       "pin_count": 11,
       "connection_count": 4,
@@ -1737,7 +1694,7 @@
     },
     {
       "name": "InpActEvt_F_K2Node_InputKeyEvent_2",
-      "guid": "3AF43D844C5089D05469A3AFDB029274",
+      "guid": "07045A02451CA17610D5B7AB0DA82DEB",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1746,7 +1703,7 @@
     },
     {
       "name": "InpActEvt_MiddleMouseButton_K2Node_InputKeyEvent_1",
-      "guid": "ADA2DFD34BFC5D1F21B3D2A2A97F1BBD",
+      "guid": "9F90928A4DB5E2AB6065BCB0A45DC9E9",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1755,7 +1712,7 @@
     },
     {
       "name": "OnNotifyEnd_7F763E98412AA6A2650DF28E7A76937A",
-      "guid": "5CBA91A744C2FF45929D3999E28B5D7C",
+      "guid": "69E7261B43D5486CD32A029BF47F8FAB",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1764,7 +1721,7 @@
     },
     {
       "name": "OnNotifyBegin_7F763E98412AA6A2650DF28E7A76937A",
-      "guid": "F2937EF24AB81ABACCCC778DDDB830C3",
+      "guid": "75144A50468F80D17549FAAB339D23CD",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1773,7 +1730,7 @@
     },
     {
       "name": "OnInterrupted_7F763E98412AA6A2650DF28E7A76937A",
-      "guid": "C2919CA24C1784D0CF7B0A85D5F472F7",
+      "guid": "45CB10E24DA62ABB97134F840A1DCCA7",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1782,7 +1739,7 @@
     },
     {
       "name": "OnBlendOut_7F763E98412AA6A2650DF28E7A76937A",
-      "guid": "9D0D0D4146D4994FDEE323A0A1DAEFC3",
+      "guid": "D79AABD5442E739F4817A9A7FB04BBB5",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1791,7 +1748,7 @@
     },
     {
       "name": "OnCompleted_7F763E98412AA6A2650DF28E7A76937A",
-      "guid": "8D95D43D4D2F06F136035A8F5D6226F9",
+      "guid": "AAAD4F7B469AC2BA8735ABBB5EE3100E",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1800,7 +1757,7 @@
     },
     {
       "name": "OnNotifyEnd_FB59ECBE4D9265F301655DACE7DE41A2",
-      "guid": "E1CA2F334193F42CF4E024A380EF631C",
+      "guid": "992EF5674751C15C716A7E8517735575",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1809,7 +1766,7 @@
     },
     {
       "name": "OnNotifyBegin_FB59ECBE4D9265F301655DACE7DE41A2",
-      "guid": "FCC347CB4892EEE2F343FE9F57F3E14E",
+      "guid": "973DA95643D6FA49207CEF8D56247944",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1818,7 +1775,7 @@
     },
     {
       "name": "OnInterrupted_FB59ECBE4D9265F301655DACE7DE41A2",
-      "guid": "C9853E6B42432DF28D6E59BCABDCA09E",
+      "guid": "8C5DA1114CDBE16B92FF56BBCB8383DC",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1827,7 +1784,7 @@
     },
     {
       "name": "OnBlendOut_FB59ECBE4D9265F301655DACE7DE41A2",
-      "guid": "F48E5B9B4762BF4EBE8096AD3EE8FCF1",
+      "guid": "32FE01E94204C9EEC0B65FAC9C951EA8",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1836,7 +1793,7 @@
     },
     {
       "name": "OnCompleted_FB59ECBE4D9265F301655DACE7DE41A2",
-      "guid": "A0380C764519F51A3664A49494BD6A8D",
+      "guid": "D29ABF3F49927B152DA5D796275C4D9E",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1845,7 +1802,7 @@
     },
     {
       "name": "InpActEvt_Two_K2Node_InputDebugKeyEvent_0",
-      "guid": "94969D664FA5A656F6F62384FAF4F28A",
+      "guid": "3419B006431D891845BAFFAEDD61EC3F",
       "node_count": 3,
       "pin_count": 11,
       "connection_count": 4,
@@ -1854,7 +1811,7 @@
     },
     {
       "name": "InpActEvt_V_K2Node_InputKeyEvent_0",
-      "guid": "4DB7B8B64C97E466851C3B9E79E33358",
+      "guid": "2414E0204BF82B3196534399F8F29ED2",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1863,7 +1820,7 @@
     },
     {
       "name": "CS_ResetBlock",
-      "guid": "42EF23894E961893D7979B94529B1E82",
+      "guid": "41CC8A48453B0AEF21B1928B3FEAD859",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1872,7 +1829,7 @@
     },
     {
       "name": "ReceiveAnyDamage",
-      "guid": "C89A5C6E48E59E30FBA003B4A3C87790",
+      "guid": "5052CC4B4692CD314879C189F36D301F",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -1881,7 +1838,7 @@
     },
     {
       "name": "CS_SetAllReferences",
-      "guid": "596026F442F2C60FDF1CFCBE51600348",
+      "guid": "86159D454EA755EAFFBD48B6DFF417D0",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1890,7 +1847,7 @@
     },
     {
       "name": "CS_LauchCharacterUtil",
-      "guid": "B7CD7AC242509F916370BEB33E4899DE",
+      "guid": "C6D8D8344D1B2CDB488AD3839EA90F54",
       "node_count": 3,
       "pin_count": 13,
       "connection_count": 5,
@@ -1898,8 +1855,17 @@
       "data_connection_count": 3
     },
     {
+      "name": "CS_PlayAnim",
+      "guid": "CD78E0A1482D1CFCF19CB7AD77E7E8EA",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
       "name": "SetAttackClampActive",
-      "guid": "2F922F5D467BB3735823A6AC08857BE1",
+      "guid": "391BA08746F572D4298EFC8EE8B462DF",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1908,7 +1874,7 @@
     },
     {
       "name": "CS_TickAttackClamp",
-      "guid": "740093A74863848042110D93D9225574",
+      "guid": "CD663BF448AF7CE84A5B69A3827E6C0D",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1917,7 +1883,7 @@
     },
     {
       "name": "ReceiveTick",
-      "guid": "64CC7E0441EE82694A9C6DA47C72EDB2",
+      "guid": "696F21254E1690943C0F5ABD76FFE1E2",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1926,7 +1892,7 @@
     },
     {
       "name": "CS_DoDamage",
-      "guid": "521E1FF7455085377D2156800ECD7308",
+      "guid": "945D8CE04CE6580A8F485C838EE76D4D",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1935,7 +1901,7 @@
     },
     {
       "name": "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_1_ComponentOnTargetLockedOnOff__DelegateSignature",
-      "guid": "1F495E6349AD6440B4A383AC80F72ED5",
+      "guid": "944D8B2A4FB336CE690B358006D51175",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1944,7 +1910,7 @@
     },
     {
       "name": "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_0_ComponentOnTargetLockedOnOff__DelegateSignature",
-      "guid": "100483984457B6EB54BF7893CB7B4112",
+      "guid": "B455D6F749EEDD27851315B904EB0E6A",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1953,7 +1919,7 @@
     },
     {
       "name": "ReceiveBeginPlay",
-      "guid": "4A4CC6904ECBDF03F05427800EABEC07",
+      "guid": "202EBDE1486515C295331693F73BFD29",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1962,7 +1928,7 @@
     },
     {
       "name": "CS_SlowGlobalTimeDilation",
-      "guid": "0379B47A4E223A70AB15F582656B0A73",
+      "guid": "B0BFA48E4F56FEA8304F06BFA3CA185B",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1971,7 +1937,7 @@
     },
     {
       "name": "CS_ResetGlobalTimeDilation",
-      "guid": "0B034C4543AA565E592FB28300E7F573",
+      "guid": "4F806FF24B35A4880AB325BFA96CD051",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1980,7 +1946,7 @@
     },
     {
       "name": "ApplyResolvedHit",
-      "guid": "0326130C4D5B4C7A85EFCEB0B3BA6EF2",
+      "guid": "DDD74F7B4C562D86F28F81941846D255",
       "node_count": 3,
       "pin_count": 17,
       "connection_count": 7,
@@ -1989,7 +1955,7 @@
     },
     {
       "name": "CS_FaceTarget",
-      "guid": "651E2A894E225E59B56B5081945B1E70",
+      "guid": "56679ED4436D457E258F229179F17105",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1998,7 +1964,7 @@
     },
     {
       "name": "CS_SetOrientationAndFace",
-      "guid": "31F0B8B1400E9346778754A249EA17D0",
+      "guid": "36259C214828FE87B57D91A27A085C34",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2007,7 +1973,7 @@
     },
     {
       "name": "CS_CreateDebugWidget",
-      "guid": "6430BD5E43347CA4D98FBCBF57922D13",
+      "guid": "6DEB87F04A8D487CC791F5BF2259C4BF",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2016,7 +1982,7 @@
     },
     {
       "name": "CS_ReceiveBossDebugText",
-      "guid": "2EE932524A8431AC2377D6ABDA6313FA",
+      "guid": "9C59DC8F4250825D168E0DA25FAE6804",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -2025,7 +1991,7 @@
     },
     {
       "name": "CS_SetExecuted",
-      "guid": "AA6C9CB84E337398A83B129FE7A50BA2",
+      "guid": "B81A623242DF0182BEB9BE9166684C93",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2034,7 +2000,7 @@
     },
     {
       "name": "CS_PlayExecutedCamera",
-      "guid": "46B1EEA94EFE2C6A32B3EF995D8A3FE1",
+      "guid": "45D1E22D4F30C7627B81B1B4331D097F",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2043,7 +2009,7 @@
     },
     {
       "name": "CS_ToggleLocomotion",
-      "guid": "5AD4D1B2403127584EAE578853DC3879",
+      "guid": "54CCFA624FDD1C589D05E9B647584948",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2051,17 +2017,8 @@
       "data_connection_count": 0
     },
     {
-      "name": "CS_PlayAnim",
-      "guid": "A40ADE4A43E719713F28899810D49143",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
       "name": "CS_PlayExecutionCamera",
-      "guid": "F10BD717420921608163929217DF5AC8",
+      "guid": "A76373654B86905BD6A9D3B73716DA15",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2070,7 +2027,7 @@
     },
     {
       "name": "CS_HitTImer",
-      "guid": "8C4EDCE54FB613D1538ECE9DDDF6A1F7",
+      "guid": "02906EB247A20F01FBFEAE8EAF5CC519",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2079,7 +2036,7 @@
     },
     {
       "name": "CS_ResetHitCounter",
-      "guid": "44BBE6C3443303205C3220BC00871F96",
+      "guid": "3195E04C4C9EAAE46F0753B60C1D86F7",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2088,7 +2045,7 @@
     },
     {
       "name": "CS_PlayCameraShake",
-      "guid": "5B717563454E6208CE455485D581ED88",
+      "guid": "91C874584ABF20C1E75FE0A2A5BE10E6",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -2097,7 +2054,7 @@
     },
     {
       "name": "OnLanded",
-      "guid": "1199FFEE4E0E0F4E815D578A71E3B702",
+      "guid": "DDECBD714A162F8EF1951094CB5360C4",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -2106,7 +2063,7 @@
     },
     {
       "name": "BndEvt__ThirdPersonCharacter_BP_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
-      "guid": "3168E05245B3DBA6A0A56C9111BB084D",
+      "guid": "7F2B899443F9B46E7311D88F3F1F8808",
       "node_count": 3,
       "pin_count": 19,
       "connection_count": 8,
@@ -2115,7 +2072,7 @@
     },
     {
       "name": "BndEvt__BP_ThirdPersonCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_29_ComponentHitSignature__DelegateSignature",
-      "guid": "F26C08CC4BB300002C029390D4042D2A",
+      "guid": "B0F7316642C15D9287792C9336366FCF",
       "node_count": 3,
       "pin_count": 17,
       "connection_count": 7,
@@ -2124,7 +2081,7 @@
     },
     {
       "name": "CE_ForceBackToCommon",
-      "guid": "A4D6F4C2451E4039872155B35D8E346F",
+      "guid": "31BCE9984E679DE61B15C68EE5CF8011",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2133,7 +2090,7 @@
     },
     {
       "name": "CE_EquipKatana",
-      "guid": "D1B61ED14FD5BB08C46DA6BF0755C084",
+      "guid": "45EC8CFB4EA19B028DFEAC9AD17EC61B",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -2142,7 +2099,7 @@
     },
     {
       "name": "CE_EquipSNS",
-      "guid": "AD2D5877478C0251C7A8779CA55240B3",
+      "guid": "5ED2ABB24B6B4D2B08914EBFD02958AF",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -2151,7 +2108,7 @@
     },
     {
       "name": "CE_EquipCommon",
-      "guid": "D16269A14EACF4E1A39625A7557419B9",
+      "guid": "8FF8C42C4A4AF789562FE8943BB98BC3",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2160,7 +2117,7 @@
     },
     {
       "name": "CE_EquipTwinblades",
-      "guid": "89F1F4754135F26B92EAFFA821921AF0",
+      "guid": "099547354A7CA87D848836B1C32FEA18",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -2169,7 +2126,7 @@
     },
     {
       "name": "BndEvt__BP_PlayerBase_AC_EquipmentComponent_K2Node_ComponentBoundEvent_2_OnEquipmentSlotChanged__DelegateSignature",
-      "guid": "CF3B648C4065B8E334DD5491F615F543",
+      "guid": "51A8DE054CE94B0CD456DFB5669B0AED",
       "node_count": 3,
       "pin_count": 13,
       "connection_count": 5,
@@ -2178,7 +2135,7 @@
     },
     {
       "name": "CE_DebugEquipStarterInventory",
-      "guid": "25BEB5BE4494DDEA28A77CA08C11784A",
+      "guid": "60FAFD394747E786D82077AC42DA46A4",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2187,7 +2144,7 @@
     },
     {
       "name": "BndEvt__BP_PlayerBase_AC_CharacterStatsComponent_K2Node_ComponentBoundEvent_3_OnStatsChanged__DelegateSignature",
-      "guid": "4CABFC0746993ACD436FC88B920420E1",
+      "guid": "3DFCA16D41D44A90AB03E5A135E3C33D",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2196,7 +2153,7 @@
     },
     {
       "name": "BndEvt__BP_PlayerBase_AC_ProgressionComponent_K2Node_ComponentBoundEvent_5_OnProgressionChanged__DelegateSignature",
-      "guid": "D9ECC4EB4305509FB01C4080825AAD42",
+      "guid": "BA05870142EC5BEFE412AA98CADCCBAC",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2205,7 +2162,7 @@
     },
     {
       "name": "CE_TransitionPose",
-      "guid": "2A8A0E064EF3097F5E1751A40A120FCE",
+      "guid": "2096316F413B6F0FC68D9AB1162E6920",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -2214,7 +2171,7 @@
     },
     {
       "name": "CE_Equip",
-      "guid": "96AB77634B3260AD85DA798998481204",
+      "guid": "C045E8EB4ED0F33C747DC1B769F76C61",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2223,7 +2180,7 @@
     },
     {
       "name": "CE_Unequip",
-      "guid": "2865B81B4A8D4E9488177786D0219248",
+      "guid": "01BF1C20405A4DF348367F84BBEE0C98",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2232,7 +2189,7 @@
     },
     {
       "name": "CE_StartBlocking",
-      "guid": "B2EA99A9493D91657ADFE98EFE480EDD",
+      "guid": "470A3B794F073588802FDB8B21D481C8",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -2241,7 +2198,7 @@
     },
     {
       "name": "BndEvt__BP_PlayerBase_AC_EquipmentComponent_K2Node_ComponentBoundEvent_6_OnActiveWeaponChanged__DelegateSignature",
-      "guid": "65383A2F4686F0F8085CD882C538F987",
+      "guid": "E4388CC34AFA495DFA51919275C9A3E0",
       "node_count": 3,
       "pin_count": 15,
       "connection_count": 6,
@@ -2250,11 +2207,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 60,
+    "authored_graph_count": 54,
     "generated_graph_count": 61,
-    "authored_node_count": 1345,
-    "authored_pin_count": 4631,
-    "authored_connection_count": 1465,
+    "authored_node_count": 1222,
+    "authored_pin_count": 4244,
+    "authored_connection_count": 1327,
     "generated_node_count": 177,
     "generated_pin_count": 550
   },
@@ -2268,11 +2225,6 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
-    },
-    {
-      "name": "ApplyArmorPieceVisual",
-      "kind": "function",
-      "file": "graphs/ApplyArmorPieceVisual.json"
     },
     {
       "name": "ApplyCanonicalWeaponDefinition",
@@ -2330,11 +2282,6 @@
       "file": "graphs/CE_EndBlocking.json"
     },
     {
-      "name": "ClearAdditionalArmorMeshes",
-      "kind": "function",
-      "file": "graphs/ClearAdditionalArmorMeshes.json"
-    },
-    {
       "name": "CommitCanonicalWeaponActors",
       "kind": "function",
       "file": "graphs/CommitCanonicalWeaponActors.json"
@@ -2353,11 +2300,6 @@
       "name": "ForceJogging",
       "kind": "function",
       "file": "graphs/ForceJogging.json"
-    },
-    {
-      "name": "GetArmorComponentForSlot",
-      "kind": "function",
-      "file": "graphs/GetArmorComponentForSlot.json"
     },
     {
       "name": "GetCharacterStatusSnapshot",
@@ -2405,11 +2347,6 @@
       "file": "graphs/In Short Range.json"
     },
     {
-      "name": "InitializeArmorFollowers",
-      "kind": "function",
-      "file": "graphs/InitializeArmorFollowers.json"
-    },
-    {
       "name": "InitializeEquipmentStatResolver",
       "kind": "function",
       "file": "graphs/InitializeEquipmentStatResolver.json"
@@ -2448,16 +2385,6 @@
       "name": "ReconcilePendingWeaponKit",
       "kind": "function",
       "file": "graphs/ReconcilePendingWeaponKit.json"
-    },
-    {
-      "name": "RefreshAllArmorVisuals",
-      "kind": "function",
-      "file": "graphs/RefreshAllArmorVisuals.json"
-    },
-    {
-      "name": "RefreshArmorSlotFromEquipment",
-      "kind": "function",
-      "file": "graphs/RefreshArmorSlotFromEquipment.json"
     },
     {
       "name": "RefreshCombatStyleFromActiveWeapon",
