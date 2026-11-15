@@ -8,8 +8,8 @@
   "stats": {
     "node_count": 26,
     "pin_count": 90,
-    "connection_count": 39,
-    "exec_connection_count": 19,
+    "connection_count": 38,
+    "exec_connection_count": 18,
     "data_connection_count": 20
   },
   "nodes": [
@@ -1186,10 +1186,6 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_4",
-              "pin_id": "E8166E6540882A662B56008C44BEB06C"
-            },
-            {
               "node": "K2Node_CallFunction_7",
               "pin_id": "9DA5457544AB14A6490646AD221CC4EF"
             },
@@ -1200,6 +1196,10 @@
             {
               "node": "K2Node_IfThenElse_5",
               "pin_id": "49A3810441EC24BB17DD4E9583616AEE"
+            },
+            {
+              "node": "K2Node_IfThenElse_2",
+              "pin_id": "3C1C83B54196507CD984928A9EFC8D63"
             }
           ]
         },
@@ -1465,12 +1465,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_IfThenElse_2",
-              "pin_id": "3C1C83B54196507CD984928A9EFC8D63"
-            }
-          ]
+          "links": []
         },
         {
           "id": "E8166E6540882A662B56008C44BEB06C",
@@ -1492,12 +1487,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallDelegate_1",
-              "pin_id": "EFB2735C474B6FA22971C496D40D7903"
-            }
-          ]
+          "links": []
         },
         {
           "id": "8A423C604BA740F33329EE8C944DD0B5",
@@ -1527,7 +1517,7 @@
       "name": "K2Node_CallFunction_6",
       "class": "/Script/BlueprintGraph.K2Node_CallFunction",
       "guid": "3F27A3BD4CAE721DD496D4971877B892",
-      "title": "GetToolSlotsInOrder",
+      "title": "GetMedicineSlotsInOrder",
       "position": {
         "x": 1240,
         "y": -360
@@ -1537,7 +1527,7 @@
       "is_intermediate": false,
       "references": {
         "function": {
-          "MemberName": "GetToolSlotsInOrder",
+          "MemberName": "GetMedicineSlotsInOrder",
           "MemberGuid": "9E124B254FAD97DB399FA2BF07C5D0A1",
           "bSelfContext": true
         }
@@ -1892,8 +1882,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_4",
-              "pin_id": "5E369F11458E921A0BF2A788546184B1"
+              "node": "K2Node_CallDelegate_1",
+              "pin_id": "EFB2735C474B6FA22971C496D40D7903"
             }
           ]
         }
@@ -1903,7 +1893,7 @@
       "name": "K2Node_CallFunction_7",
       "class": "/Script/BlueprintGraph.K2Node_CallFunction",
       "guid": "20E58F974B9CCA1D533473B63FF3046B",
-      "title": "ReconcileActiveToolSlot",
+      "title": "ReconcileActiveMedicineSlot",
       "position": {
         "x": 1940,
         "y": -360
@@ -1913,7 +1903,7 @@
       "is_intermediate": false,
       "references": {
         "function": {
-          "MemberName": "ReconcileActiveToolSlot",
+          "MemberName": "ReconcileActiveMedicineSlot",
           "MemberGuid": "0854D8ED4349DE6EEDC4CC951C999191",
           "bSelfContext": true
         }
@@ -3027,19 +3017,6 @@
       }
     },
     {
-      "kind": "exec",
-      "from": {
-        "node": "K2Node_CallFunction_4",
-        "pin_id": "E8166E6540882A662B56008C44BEB06C",
-        "pin_name": "then"
-      },
-      "to": {
-        "node": "K2Node_CallDelegate_1",
-        "pin_id": "EFB2735C474B6FA22971C496D40D7903",
-        "pin_name": "execute"
-      }
-    },
-    {
       "kind": "data",
       "from": {
         "node": "K2Node_CallFunction_5",
@@ -3216,8 +3193,8 @@
         "pin_name": "else"
       },
       "to": {
-        "node": "K2Node_CallFunction_4",
-        "pin_id": "5E369F11458E921A0BF2A788546184B1",
+        "node": "K2Node_CallDelegate_1",
+        "pin_id": "EFB2735C474B6FA22971C496D40D7903",
         "pin_name": "execute"
       }
     },

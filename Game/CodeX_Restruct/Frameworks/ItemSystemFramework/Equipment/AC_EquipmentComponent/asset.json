@@ -76,23 +76,6 @@
         }
       },
       {
-        "name": "ActiveToolSlot",
-        "guid": "3AF22B12433DD8514E6BD2B6B909E194",
-        "friendly_name": "Active Tool Slot",
-        "category": "Default",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "struct",
-          "sub_category": null,
-          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
         "name": "ActiveWeaponSlot",
         "guid": "4C602F0A4D5332F8388B038DB31EF519",
         "friendly_name": "Active Weapon Slot",
@@ -161,9 +144,9 @@
         }
       },
       {
-        "name": "OnActiveRightHandSlotChanged",
-        "guid": "48F8E2FB422F13B84A2AD2B4E56A9B04",
-        "friendly_name": "On Active Right Hand Slot Changed",
+        "name": "OnActiveMedicineSlotChanged",
+        "guid": "1AEB4E6D4EAF13B265FA3E8221B071E2",
+        "friendly_name": "On Active Medicine Slot Changed",
         "category": "Default",
         "property_flags": 17592454545413,
         "default_value": null,
@@ -178,9 +161,9 @@
         }
       },
       {
-        "name": "OnActiveToolSlotChanged",
-        "guid": "B19683554B2A6DBF9065178B776388CE",
-        "friendly_name": "On Active Tool Slot Changed",
+        "name": "OnActiveRightHandSlotChanged",
+        "guid": "48F8E2FB422F13B84A2AD2B4E56A9B04",
+        "friendly_name": "On Active Right Hand Slot Changed",
         "category": "Default",
         "property_flags": 17592454545413,
         "default_value": null,
@@ -227,6 +210,23 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "SelectedMedicineSlot",
+        "guid": "E43CE32A40715C315EF416ADB16CBB8A",
+        "friendly_name": "Selected Medicine Slot",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
@@ -247,17 +247,17 @@
         "SetActiveRightHandSlot",
         "FindNextOccupiedRightHandSlot",
         "ReconcileActiveRightHandSlot",
-        "GetToolSlotsInOrder",
-        "GetActiveToolSlot",
-        "GetActiveToolItem",
-        "GetOwnedToolAtSlot",
-        "CanEquipToolItem",
-        "TryEquipToolToSlot",
-        "SetActiveToolSlot",
-        "FindNextOccupiedToolSlot",
-        "ReconcileActiveToolSlot",
-        "HandleToolInventoryChanged",
-        "CycleActiveToolSlot",
+        "GetMedicineSlotsInOrder",
+        "GetActiveMedicineSlot",
+        "GetActiveMedicineItem",
+        "GetOwnedMedicineAtSlot",
+        "CanAssignMedicineToSlot",
+        "TryEquipMedicineToSlot",
+        "SetActiveMedicineSlot",
+        "FindNextOccupiedMedicineSlot",
+        "ReconcileActiveMedicineSlot",
+        "HandleMedicineInventoryChanged",
+        "CycleActiveMedicineSlot",
         "IsWeaponSlot",
         "GetOtherWeaponSlot",
         "CanEquipWeaponInSlot",
@@ -289,8 +289,8 @@
       "delegates": [
         "OnEquipmentSlotChanged",
         "OnActiveRightHandSlotChanged",
-        "OnActiveToolSlotChanged",
-        "OnActiveWeaponChanged"
+        "OnActiveWeaponChanged",
+        "OnActiveMedicineSlotChanged"
       ],
       "generated_graphs": [
         "ReceiveBeginPlay"

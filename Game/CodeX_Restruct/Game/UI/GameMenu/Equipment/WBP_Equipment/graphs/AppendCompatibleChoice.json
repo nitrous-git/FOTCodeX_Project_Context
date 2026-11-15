@@ -6,8 +6,8 @@
     "guid": "3877FD8D4325ACF93EB0C29A07AB9D2E"
   },
   "stats": {
-    "node_count": 42,
-    "pin_count": 173,
+    "node_count": 43,
+    "pin_count": 179,
     "connection_count": 70,
     "exec_connection_count": 18,
     "data_connection_count": 52
@@ -211,6 +211,10 @@
             {
               "node": "K2Node_CallFunction_1",
               "pin_id": "06FB7BBA440444E9FCE2E0817C51B62D"
+            },
+            {
+              "node": "K2Node_CallFunction_15",
+              "pin_id": "994DF84642B992F5C476A08BDDC548D3"
             }
           ]
         },
@@ -3128,12 +3132,12 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallArrayFunction_2",
-              "pin_id": "04D1CCCD47F8C5AAB58DBCB3CD473BEB"
-            },
-            {
               "node": "K2Node_CallFunction_0",
               "pin_id": "5F86085A4B6F87899B0C10837B1EE869"
+            },
+            {
+              "node": "K2Node_CallFunction_15",
+              "pin_id": "C2D0E09B47D4767377850EBCBB00E39B"
             }
           ]
         },
@@ -3333,10 +3337,6 @@
               "pin_id": "01A0D423462D562E5F1BB1820989EF6D"
             },
             {
-              "node": "K2Node_CallFunction_17",
-              "pin_id": "9D3A59594E74F5C6EA2F86BC19C66593"
-            },
-            {
               "node": "K2Node_CallFunction_19",
               "pin_id": "E3D43B64455ED4F7F2BE08B640EE25FD"
             },
@@ -3351,6 +3351,10 @@
             {
               "node": "K2Node_CallFunction_0",
               "pin_id": "F7B2263C4ADD27BBA09644BCC0C2C4A4"
+            },
+            {
+              "node": "K2Node_CallFunction_15",
+              "pin_id": "732037144BCF4489BA828689F332F38E"
             }
           ]
         },
@@ -3475,8 +3479,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_17",
-              "pin_id": "041009814D73E321C4E1BB87CDFCD16B"
+              "node": "K2Node_CallFunction_15",
+              "pin_id": "7DDCEF784AA728D7E20199AE2DA96A36"
             }
           ]
         },
@@ -3508,7 +3512,7 @@
       "name": "K2Node_CallFunction_17",
       "class": "/Script/BlueprintGraph.K2Node_CallFunction",
       "guid": "EC2C39A6450CD9D53E3F11B406E1390C",
-      "title": "GetToolSlotsInOrder",
+      "title": "GetMedicineSlotsInOrder",
       "position": {
         "x": 7850,
         "y": 1390
@@ -3519,7 +3523,7 @@
       "references": {
         "function": {
           "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent.AC_EquipmentComponent_C'",
-          "MemberName": "GetToolSlotsInOrder",
+          "MemberName": "GetMedicineSlotsInOrder",
           "MemberGuid": "9E124B254FAD97DB399FA2BF07C5D0A1"
         }
       },
@@ -3545,12 +3549,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_MacroInstance_3",
-              "pin_id": "6FCAD1F74B866E91E48B54B67A39F620"
-            }
-          ]
+          "links": []
         },
         {
           "id": "524F81F349F6A76B2A47219D5919FAB8",
@@ -3572,12 +3571,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_IfThenElse_1",
-              "pin_id": "4B2A454E4B8A55A8A6AE659DF68E2443"
-            }
-          ]
+          "links": []
         },
         {
           "id": "9D3A59594E74F5C6EA2F86BC19C66593",
@@ -3599,12 +3593,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableGet_11",
-              "pin_id": "0305A4E2417EDC1DAD52109C5B4C0CEF"
-            }
-          ]
+          "links": []
         },
         {
           "id": "DA53E9FD44DD4A606092FDA4A2CE51FB",
@@ -3626,12 +3615,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallArrayFunction_2",
-              "pin_id": "37DBF52247852C25256941AC8EA8D27D"
-            }
-          ]
+          "links": []
         }
       ]
     },
@@ -3683,9 +3667,9 @@
           "friendly_name": null,
           "direction": "input",
           "type": {
-            "category": "struct",
+            "category": "wildcard",
             "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+            "sub_category_object": null,
             "container": "Array",
             "is_reference": true,
             "is_const": true,
@@ -3697,12 +3681,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_17",
-              "pin_id": "DA53E9FD44DD4A606092FDA4A2CE51FB"
-            }
-          ]
+          "links": []
         },
         {
           "id": "04D1CCCD47F8C5AAB58DBCB3CD473BEB",
@@ -3710,9 +3689,9 @@
           "friendly_name": null,
           "direction": "input",
           "type": {
-            "category": "struct",
+            "category": "wildcard",
             "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+            "sub_category_object": null,
             "container": null,
             "is_reference": true,
             "is_const": true,
@@ -3724,12 +3703,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableGet_7",
-              "pin_id": "B5ED4EAD40C40444D8276AA922912CF2"
-            }
-          ]
+          "links": []
         },
         {
           "id": "048B16CE4228B555C2E4BBB2DE3E293D",
@@ -3751,12 +3725,7 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_IfThenElse_1",
-              "pin_id": "E2012A83405C83A4F8DFD2ABBDAE982B"
-            }
-          ]
+          "links": []
         }
       ]
     },
@@ -3797,8 +3766,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_17",
-              "pin_id": "524F81F349F6A76B2A47219D5919FAB8"
+              "node": "K2Node_CallFunction_15",
+              "pin_id": "7F2AF7E84B7C79E146BB35947B45F530"
             }
           ]
         },
@@ -3824,8 +3793,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallArrayFunction_2",
-              "pin_id": "048B16CE4228B555C2E4BBB2DE3E293D"
+              "node": "K2Node_CallFunction_15",
+              "pin_id": "F229A82A417936019DA4AF8495EEB3CE"
             }
           ]
         },
@@ -4139,7 +4108,7 @@
             "is_weak_pointer": false,
             "is_uobject_wrapper": false
           },
-          "default_value": "NewEnumerator0",
+          "default_value": "NewEnumerator10",
           "autogenerated_default_value": null,
           "default_object": null,
           "hidden": false,
@@ -5368,6 +5337,191 @@
           ]
         }
       ]
+    },
+    {
+      "name": "K2Node_CallFunction_15",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "BC1A0F7F4947A25D6526029B2F8CB1AF",
+      "title": "CanAssignMedicineToSlot",
+      "position": {
+        "x": 7850,
+        "y": 1390
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent.AC_EquipmentComponent_C'",
+          "MemberName": "CanAssignMedicineToSlot",
+          "MemberGuid": "6BF99D54415B357B461EDBA7A2E222B9"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "7DDCEF784AA728D7E20199AE2DA96A36",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_3",
+              "pin_id": "6FCAD1F74B866E91E48B54B67A39F620"
+            }
+          ]
+        },
+        {
+          "id": "7F2AF7E84B7C79E146BB35947B45F530",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "4B2A454E4B8A55A8A6AE659DF68E2443"
+            }
+          ]
+        },
+        {
+          "id": "732037144BCF4489BA828689F332F38E",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent.AC_EquipmentComponent_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_11",
+              "pin_id": "0305A4E2417EDC1DAD52109C5B4C0CEF"
+            }
+          ]
+        },
+        {
+          "id": "994DF84642B992F5C476A08BDDC548D3",
+          "name": "ItemID",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "name",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "None",
+          "autogenerated_default_value": "None",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_BreakStruct_2",
+              "pin_id": "71855C77472DEC08DFA3D28D6BD90222"
+            }
+          ]
+        },
+        {
+          "id": "C2D0E09B47D4767377850EBCBB00E39B",
+          "name": "Slot",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "struct",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_7",
+              "pin_id": "B5ED4EAD40C40444D8276AA922912CF2"
+            }
+          ]
+        },
+        {
+          "id": "F229A82A417936019DA4AF8495EEB3CE",
+          "name": "Eligible",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "E2012A83405C83A4F8DFD2ABBDAE982B"
+            }
+          ]
+        }
+      ]
     }
   ],
   "connections": [
@@ -5433,6 +5587,19 @@
       "to": {
         "node": "K2Node_CallFunction_13",
         "pin_id": "8B216BA74CED857F7B87E7BA84A3A66D",
+        "pin_name": "ItemID"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_BreakStruct_2",
+        "pin_id": "71855C77472DEC08DFA3D28D6BD90222",
+        "pin_name": "ItemID_17_907E2896423DE873529768B11E953833"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_15",
+        "pin_id": "994DF84642B992F5C476A08BDDC548D3",
         "pin_name": "ItemID"
       }
     },
@@ -5634,19 +5801,6 @@
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_CallArrayFunction_2",
-        "pin_id": "048B16CE4228B555C2E4BBB2DE3E293D",
-        "pin_name": "ReturnValue"
-      },
-      "to": {
-        "node": "K2Node_IfThenElse_1",
-        "pin_id": "E2012A83405C83A4F8DFD2ABBDAE982B",
-        "pin_name": "Condition"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
         "node": "K2Node_CallFunction_0",
         "pin_id": "76ADB56C4BD6F4926D64DBA369F7CEE0",
         "pin_name": "Allowed"
@@ -5725,21 +5879,21 @@
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_CallFunction_17",
-        "pin_id": "DA53E9FD44DD4A606092FDA4A2CE51FB",
-        "pin_name": "Slots"
+        "node": "K2Node_CallFunction_15",
+        "pin_id": "F229A82A417936019DA4AF8495EEB3CE",
+        "pin_name": "Eligible"
       },
       "to": {
-        "node": "K2Node_CallArrayFunction_2",
-        "pin_id": "37DBF52247852C25256941AC8EA8D27D",
-        "pin_name": "TargetArray"
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "E2012A83405C83A4F8DFD2ABBDAE982B",
+        "pin_name": "Condition"
       }
     },
     {
       "kind": "exec",
       "from": {
-        "node": "K2Node_CallFunction_17",
-        "pin_id": "524F81F349F6A76B2A47219D5919FAB8",
+        "node": "K2Node_CallFunction_15",
+        "pin_id": "7F2AF7E84B7C79E146BB35947B45F530",
         "pin_name": "then"
       },
       "to": {
@@ -6107,8 +6261,8 @@
         "pin_name": "Is Valid"
       },
       "to": {
-        "node": "K2Node_CallFunction_17",
-        "pin_id": "041009814D73E321C4E1BB87CDFCD16B",
+        "node": "K2Node_CallFunction_15",
+        "pin_id": "7DDCEF784AA728D7E20199AE2DA96A36",
         "pin_name": "execute"
       }
     },
@@ -6159,8 +6313,8 @@
         "pin_name": "EquipmentRef"
       },
       "to": {
-        "node": "K2Node_CallFunction_17",
-        "pin_id": "9D3A59594E74F5C6EA2F86BC19C66593",
+        "node": "K2Node_CallFunction_15",
+        "pin_id": "732037144BCF4489BA828689F332F38E",
         "pin_name": "self"
       }
     },
@@ -6263,9 +6417,9 @@
         "pin_name": "SelectedEquipmentSlot"
       },
       "to": {
-        "node": "K2Node_CallArrayFunction_2",
-        "pin_id": "04D1CCCD47F8C5AAB58DBCB3CD473BEB",
-        "pin_name": "ItemToFind"
+        "node": "K2Node_CallFunction_0",
+        "pin_id": "5F86085A4B6F87899B0C10837B1EE869",
+        "pin_name": "EquipmentSlot"
       }
     },
     {
@@ -6276,9 +6430,9 @@
         "pin_name": "SelectedEquipmentSlot"
       },
       "to": {
-        "node": "K2Node_CallFunction_0",
-        "pin_id": "5F86085A4B6F87899B0C10837B1EE869",
-        "pin_name": "EquipmentSlot"
+        "node": "K2Node_CallFunction_15",
+        "pin_id": "C2D0E09B47D4767377850EBCBB00E39B",
+        "pin_name": "Slot"
       }
     }
   ]

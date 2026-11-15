@@ -25,23 +25,6 @@
       }
     },
     {
-      "name": "ActiveToolSlot",
-      "guid": "3AF22B12433DD8514E6BD2B6B909E194",
-      "friendly_name": "Active Tool Slot",
-      "category": "Default",
-      "property_flags": 65541,
-      "default_value": null,
-      "type": {
-        "category": "struct",
-        "sub_category": null,
-        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
-        "container": null,
-        "is_reference": false,
-        "is_const": false,
-        "is_weak_pointer": false
-      }
-    },
-    {
       "name": "ActiveWeaponSlot",
       "guid": "4C602F0A4D5332F8388B038DB31EF519",
       "friendly_name": "Active Weapon Slot",
@@ -110,9 +93,9 @@
       }
     },
     {
-      "name": "OnActiveRightHandSlotChanged",
-      "guid": "48F8E2FB422F13B84A2AD2B4E56A9B04",
-      "friendly_name": "On Active Right Hand Slot Changed",
+      "name": "OnActiveMedicineSlotChanged",
+      "guid": "1AEB4E6D4EAF13B265FA3E8221B071E2",
+      "friendly_name": "On Active Medicine Slot Changed",
       "category": "Default",
       "property_flags": 17592454545413,
       "default_value": null,
@@ -127,9 +110,9 @@
       }
     },
     {
-      "name": "OnActiveToolSlotChanged",
-      "guid": "B19683554B2A6DBF9065178B776388CE",
-      "friendly_name": "On Active Tool Slot Changed",
+      "name": "OnActiveRightHandSlotChanged",
+      "guid": "48F8E2FB422F13B84A2AD2B4E56A9B04",
+      "friendly_name": "On Active Right Hand Slot Changed",
       "category": "Default",
       "property_flags": 17592454545413,
       "default_value": null,
@@ -176,6 +159,23 @@
         "is_const": false,
         "is_weak_pointer": false
       }
+    },
+    {
+      "name": "SelectedMedicineSlot",
+      "guid": "E43CE32A40715C315EF416ADB16CBB8A",
+      "friendly_name": "Selected Medicine Slot",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/GameplayTags.GameplayTag'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
     }
   ],
   "graphs": [
@@ -205,8 +205,8 @@
       "guid": "661D9EB34707FF2078257F8134D7DB08",
       "node_count": 26,
       "pin_count": 90,
-      "connection_count": 39,
-      "exec_connection_count": 19,
+      "connection_count": 38,
+      "exec_connection_count": 18,
       "data_connection_count": 20
     },
     {
@@ -215,9 +215,9 @@
       "guid": "27D0B401451850845F8FC0B239CC62CA",
       "node_count": 86,
       "pin_count": 343,
-      "connection_count": 120,
-      "exec_connection_count": 55,
-      "data_connection_count": 65
+      "connection_count": 58,
+      "exec_connection_count": 25,
+      "data_connection_count": 33
     },
     {
       "name": "ResolveEquippedWeaponClass",
@@ -320,37 +320,37 @@
       "data_connection_count": 13
     },
     {
-      "name": "GetToolSlotsInOrder",
+      "name": "GetMedicineSlotsInOrder",
       "kind": "function",
       "guid": "9E124B254FAD97DB399FA2BF07C5D0A1",
       "node_count": 8,
-      "pin_count": 24,
-      "connection_count": 7,
+      "pin_count": 21,
+      "connection_count": 4,
       "exec_connection_count": 1,
-      "data_connection_count": 6
+      "data_connection_count": 3
     },
     {
-      "name": "GetActiveToolSlot",
+      "name": "GetActiveMedicineSlot",
       "kind": "function",
       "guid": "38AB658943E0BFA8341C8C88E8E17A5F",
-      "node_count": 3,
-      "pin_count": 5,
+      "node_count": 4,
+      "pin_count": 7,
       "connection_count": 2,
       "exec_connection_count": 1,
       "data_connection_count": 1
     },
     {
-      "name": "GetActiveToolItem",
+      "name": "GetActiveMedicineItem",
       "kind": "function",
       "guid": "DB2436EE4EFFD0A5DEAF1FA6A4D4D3D4",
-      "node_count": 4,
-      "pin_count": 12,
+      "node_count": 5,
+      "pin_count": 14,
       "connection_count": 5,
       "exec_connection_count": 2,
       "data_connection_count": 3
     },
     {
-      "name": "GetOwnedToolAtSlot",
+      "name": "GetOwnedMedicineAtSlot",
       "kind": "function",
       "guid": "2AB9375E494264FE7F9B36841A0325E4",
       "node_count": 10,
@@ -360,67 +360,67 @@
       "data_connection_count": 9
     },
     {
-      "name": "CanEquipToolItem",
+      "name": "CanAssignMedicineToSlot",
       "kind": "function",
       "guid": "6BF99D54415B357B461EDBA7A2E222B9",
-      "node_count": 13,
-      "pin_count": 59,
-      "connection_count": 22,
+      "node_count": 21,
+      "pin_count": 94,
+      "connection_count": 34,
       "exec_connection_count": 9,
-      "data_connection_count": 13
+      "data_connection_count": 25
     },
     {
-      "name": "TryEquipToolToSlot",
+      "name": "TryEquipMedicineToSlot",
       "kind": "function",
       "guid": "40CC72E64F5113392C5F38B0654C4093",
-      "node_count": 21,
-      "pin_count": 88,
-      "connection_count": 41,
+      "node_count": 22,
+      "pin_count": 94,
+      "connection_count": 42,
       "exec_connection_count": 18,
-      "data_connection_count": 23
+      "data_connection_count": 24
     },
     {
-      "name": "SetActiveToolSlot",
+      "name": "SetActiveMedicineSlot",
       "kind": "function",
       "guid": "45638BEF451B320452C6FA9BE2AB7586",
-      "node_count": 16,
-      "pin_count": 59,
+      "node_count": 19,
+      "pin_count": 69,
       "connection_count": 23,
       "exec_connection_count": 9,
       "data_connection_count": 14
     },
     {
-      "name": "FindNextOccupiedToolSlot",
+      "name": "FindNextOccupiedMedicineSlot",
       "kind": "function",
       "guid": "3DDB1E464D68E2D346C3C5B9B1C70582",
-      "node_count": 15,
-      "pin_count": 52,
+      "node_count": 16,
+      "pin_count": 54,
       "connection_count": 22,
       "exec_connection_count": 7,
       "data_connection_count": 15
     },
     {
-      "name": "ReconcileActiveToolSlot",
+      "name": "ReconcileActiveMedicineSlot",
       "kind": "function",
       "guid": "0854D8ED4349DE6EEDC4CC951C999191",
-      "node_count": 6,
-      "pin_count": 20,
+      "node_count": 7,
+      "pin_count": 22,
       "connection_count": 6,
       "exec_connection_count": 3,
       "data_connection_count": 3
     },
     {
-      "name": "HandleToolInventoryChanged",
+      "name": "HandleMedicineInventoryChanged",
       "kind": "function",
       "guid": "FEAB2F474A95A42F77B5629BDD35B1ED",
-      "node_count": 13,
-      "pin_count": 51,
-      "connection_count": 19,
+      "node_count": 14,
+      "pin_count": 57,
+      "connection_count": 18,
       "exec_connection_count": 10,
-      "data_connection_count": 9
+      "data_connection_count": 8
     },
     {
-      "name": "CycleActiveToolSlot",
+      "name": "CycleActiveMedicineSlot",
       "kind": "function",
       "guid": "BC21C6304A9985C22814C2BCADB95674",
       "node_count": 3,
@@ -710,16 +710,6 @@
       "data_connection_count": 0
     },
     {
-      "name": "OnActiveToolSlotChanged",
-      "kind": "delegate",
-      "guid": "F48D89C14B6B5A917E74B0A4B43EE080",
-      "node_count": 1,
-      "pin_count": 1,
-      "connection_count": 0,
-      "exec_connection_count": 0,
-      "data_connection_count": 0
-    },
-    {
       "name": "OnActiveWeaponChanged",
       "kind": "delegate",
       "guid": "0C6A017349362FA24AFDCD96DC37DFE0",
@@ -728,12 +718,22 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "OnActiveMedicineSlotChanged",
+      "kind": "delegate",
+      "guid": "A34E827B48123C6DE48C1E856AFDEC9F",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "901064174BDB9CE412B703963578F655",
+      "guid": "EA3C14FE42A945B2DE71E9A68EDE063E",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -744,22 +744,22 @@
   "stats": {
     "authored_graph_count": 55,
     "generated_graph_count": 1,
-    "authored_node_count": 789,
-    "authored_pin_count": 2902,
-    "authored_connection_count": 1097,
+    "authored_node_count": 806,
+    "authored_pin_count": 2964,
+    "authored_connection_count": 1043,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
   "graph_files": [
     {
+      "name": "OnActiveMedicineSlotChanged",
+      "kind": "delegate",
+      "file": "graphs/OnActiveMedicineSlotChanged.json"
+    },
+    {
       "name": "OnActiveRightHandSlotChanged",
       "kind": "delegate",
       "file": "graphs/OnActiveRightHandSlotChanged.json"
-    },
-    {
-      "name": "OnActiveToolSlotChanged",
-      "kind": "delegate",
-      "file": "graphs/OnActiveToolSlotChanged.json"
     },
     {
       "name": "OnActiveWeaponChanged",
@@ -782,6 +782,11 @@
       "file": "graphs/CanAssignAccessoryToSlot.json"
     },
     {
+      "name": "CanAssignMedicineToSlot",
+      "kind": "function",
+      "file": "graphs/CanAssignMedicineToSlot.json"
+    },
+    {
       "name": "CanAssignRightHandItem",
       "kind": "function",
       "file": "graphs/CanAssignRightHandItem.json"
@@ -790,11 +795,6 @@
       "name": "CanAssignWeaponToSlot",
       "kind": "function",
       "file": "graphs/CanAssignWeaponToSlot.json"
-    },
-    {
-      "name": "CanEquipToolItem",
-      "kind": "function",
-      "file": "graphs/CanEquipToolItem.json"
     },
     {
       "name": "CanEquipWeaponInSlot",
@@ -807,9 +807,9 @@
       "file": "graphs/CommitActiveWeapon.json"
     },
     {
-      "name": "CycleActiveToolSlot",
+      "name": "CycleActiveMedicineSlot",
       "kind": "function",
-      "file": "graphs/CycleActiveToolSlot.json"
+      "file": "graphs/CycleActiveMedicineSlot.json"
     },
     {
       "name": "CycleActiveWeapon",
@@ -817,14 +817,24 @@
       "file": "graphs/CycleActiveWeapon.json"
     },
     {
+      "name": "FindNextOccupiedMedicineSlot",
+      "kind": "function",
+      "file": "graphs/FindNextOccupiedMedicineSlot.json"
+    },
+    {
       "name": "FindNextOccupiedRightHandSlot",
       "kind": "function",
       "file": "graphs/FindNextOccupiedRightHandSlot.json"
     },
     {
-      "name": "FindNextOccupiedToolSlot",
+      "name": "GetActiveMedicineItem",
       "kind": "function",
-      "file": "graphs/FindNextOccupiedToolSlot.json"
+      "file": "graphs/GetActiveMedicineItem.json"
+    },
+    {
+      "name": "GetActiveMedicineSlot",
+      "kind": "function",
+      "file": "graphs/GetActiveMedicineSlot.json"
     },
     {
       "name": "GetActiveRightHandItem",
@@ -835,16 +845,6 @@
       "name": "GetActiveRightHandSlot",
       "kind": "function",
       "file": "graphs/GetActiveRightHandSlot.json"
-    },
-    {
-      "name": "GetActiveToolItem",
-      "kind": "function",
-      "file": "graphs/GetActiveToolItem.json"
-    },
-    {
-      "name": "GetActiveToolSlot",
-      "kind": "function",
-      "file": "graphs/GetActiveToolSlot.json"
     },
     {
       "name": "GetActiveWeaponItem",
@@ -862,6 +862,11 @@
       "file": "graphs/GetEquippedItemAtSlot.json"
     },
     {
+      "name": "GetMedicineSlotsInOrder",
+      "kind": "function",
+      "file": "graphs/GetMedicineSlotsInOrder.json"
+    },
+    {
       "name": "GetOtherWeaponSlot",
       "kind": "function",
       "file": "graphs/GetOtherWeaponSlot.json"
@@ -870,6 +875,11 @@
       "name": "GetOwnedAttunementDefinition",
       "kind": "function",
       "file": "graphs/GetOwnedAttunementDefinition.json"
+    },
+    {
+      "name": "GetOwnedMedicineAtSlot",
+      "kind": "function",
+      "file": "graphs/GetOwnedMedicineAtSlot.json"
     },
     {
       "name": "GetOwnedOutfitDefinition",
@@ -882,24 +892,14 @@
       "file": "graphs/GetOwnedTalismanDefinition.json"
     },
     {
-      "name": "GetOwnedToolAtSlot",
-      "kind": "function",
-      "file": "graphs/GetOwnedToolAtSlot.json"
-    },
-    {
-      "name": "GetToolSlotsInOrder",
-      "kind": "function",
-      "file": "graphs/GetToolSlotsInOrder.json"
-    },
-    {
       "name": "GetValidWeaponAtSlot",
       "kind": "function",
       "file": "graphs/GetValidWeaponAtSlot.json"
     },
     {
-      "name": "HandleToolInventoryChanged",
+      "name": "HandleMedicineInventoryChanged",
       "kind": "function",
-      "file": "graphs/HandleToolInventoryChanged.json"
+      "file": "graphs/HandleMedicineInventoryChanged.json"
     },
     {
       "name": "HandleWeaponInventoryChanged",
@@ -947,14 +947,14 @@
       "file": "graphs/ReconcileAccessoryInventory.json"
     },
     {
+      "name": "ReconcileActiveMedicineSlot",
+      "kind": "function",
+      "file": "graphs/ReconcileActiveMedicineSlot.json"
+    },
+    {
       "name": "ReconcileActiveRightHandSlot",
       "kind": "function",
       "file": "graphs/ReconcileActiveRightHandSlot.json"
-    },
-    {
-      "name": "ReconcileActiveToolSlot",
-      "kind": "function",
-      "file": "graphs/ReconcileActiveToolSlot.json"
     },
     {
       "name": "ReconcileActiveWeapon",
@@ -977,14 +977,14 @@
       "file": "graphs/ResolveEquippedWeaponClass.json"
     },
     {
+      "name": "SetActiveMedicineSlot",
+      "kind": "function",
+      "file": "graphs/SetActiveMedicineSlot.json"
+    },
+    {
       "name": "SetActiveRightHandSlot",
       "kind": "function",
       "file": "graphs/SetActiveRightHandSlot.json"
-    },
-    {
-      "name": "SetActiveToolSlot",
-      "kind": "function",
-      "file": "graphs/SetActiveToolSlot.json"
     },
     {
       "name": "TryEquipAccessory",
@@ -1002,14 +1002,14 @@
       "file": "graphs/TryEquipItemToSlot.json"
     },
     {
+      "name": "TryEquipMedicineToSlot",
+      "kind": "function",
+      "file": "graphs/TryEquipMedicineToSlot.json"
+    },
+    {
       "name": "TryEquipOutfit",
       "kind": "function",
       "file": "graphs/TryEquipOutfit.json"
-    },
-    {
-      "name": "TryEquipToolToSlot",
-      "kind": "function",
-      "file": "graphs/TryEquipToolToSlot.json"
     },
     {
       "name": "TrySetActiveWeaponSlot",
