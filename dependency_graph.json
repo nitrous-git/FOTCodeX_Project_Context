@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 449,
-  "edge_count": 1388,
+  "node_count": 450,
+  "edge_count": 1383,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -2573,10 +2573,6 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot"
     },
     {
@@ -2590,6 +2586,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/DA_OutfitDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/ECodeXPassiveType"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
@@ -2622,10 +2622,6 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FWeaponScalingRule",
@@ -3313,10 +3309,6 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot"
     },
     {
@@ -3525,6 +3517,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/ECodeXPassiveType"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     },
     {
@@ -3534,6 +3530,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CharacterStatBalance_Default"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCodeXResourcePassive"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
@@ -3902,6 +3902,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCodeXResourcePassive",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/ECodeXPassiveType"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/IMC_CPC_PlayerCombat",
@@ -4333,10 +4337,6 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot"
     },
     {
@@ -4401,10 +4401,6 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
-      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_RequiredStats"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_EquipmentItem_StatScaling"
     },
     {
@@ -4442,14 +4438,6 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
@@ -4582,10 +4570,6 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_Status",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_Status",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Status/WBP_Status",
@@ -4842,10 +4826,6 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentChannelValues"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentResistances"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/RestMenu/LevelUp/WBP_LevelUp",

@@ -17,9 +17,11 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/ECodeXPassiveType",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CharacterStatBalance",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CharacterStatBalance_Default",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCodeXResourcePassive",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes"
     ],
     "referencers": [
@@ -373,23 +375,6 @@
         }
       },
       {
-        "name": "MaxEquipmentLoad",
-        "guid": "D17CE1504E62FDBB29E1C4AB19BDD594",
-        "friendly_name": "Max Equipment Load",
-        "category": "Default",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "real",
-          "sub_category": "double",
-          "sub_category_object": null,
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      },
-      {
         "name": "MaxFP",
         "guid": "B6FA8CF543C617E25D15DFA3A428C185",
         "friendly_name": "Max FP",
@@ -466,6 +451,23 @@
         "default_value": null,
         "type": {
           "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OnEffectiveAttributesChanged",
+        "guid": "932EE3EA4E53B5E73FE5988AAEAD3EE5",
+        "friendly_name": "On Effective Attributes Changed",
+        "category": "Default",
+        "property_flags": 17592454545413,
+        "default_value": null,
+        "type": {
+          "category": "mcdelegate",
           "sub_category": null,
           "sub_category_object": null,
           "container": null,
@@ -554,6 +556,23 @@
           "sub_category": "double",
           "sub_category_object": null,
           "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ResourcePassivesBySource",
+        "guid": "DC7974F24E902C5088029A9F0DA4C809",
+        "friendly_name": "Resource Passives by Source",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": "Map",
           "is_reference": false,
           "is_const": false,
           "is_weak_pointer": false
@@ -677,6 +696,57 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "TotalMaxENBonusPercent",
+        "guid": "9900E92243419AFAA2BDB497CF092FC7",
+        "friendly_name": "Total Max ENBonus Percent",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TotalMaxHPBonusPercent",
+        "guid": "8DF25AE54685377A419BA0900E8CDFB9",
+        "friendly_name": "Total Max HPBonus Percent",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TotalStaminaRegenBonusPercent",
+        "guid": "25739E9B483809FD5170078A20109977",
+        "friendly_name": "Total Stamina Regen Bonus Percent",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
@@ -714,13 +784,18 @@
         "GetActionStaminaCost",
         "ValidateResourceOwnerSprint",
         "InitializeRuntimeResourceBalance",
-        "ProcessSprintResourcePulse"
+        "ProcessSprintResourcePulse",
+        "GetEffectiveStaminaRegenRate",
+        "RefreshResourcePassiveTotals",
+        "SetResourcePassiveForSource",
+        "RemoveResourcePassiveForSource"
       ],
       "macros": [],
       "delegates": [
         "OnStatsChanged",
         "OnHealthDepleted",
-        "OnStaminaExhausted"
+        "OnStaminaExhausted",
+        "OnEffectiveAttributesChanged"
       ],
       "generated_graphs": [
         "ReceiveBeginPlay"

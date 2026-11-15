@@ -331,23 +331,6 @@
       }
     },
     {
-      "name": "MaxEquipmentLoad",
-      "guid": "D17CE1504E62FDBB29E1C4AB19BDD594",
-      "friendly_name": "Max Equipment Load",
-      "category": "Default",
-      "property_flags": 65541,
-      "default_value": null,
-      "type": {
-        "category": "real",
-        "sub_category": "double",
-        "sub_category_object": null,
-        "container": null,
-        "is_reference": false,
-        "is_const": false,
-        "is_weak_pointer": false
-      }
-    },
-    {
       "name": "MaxFP",
       "guid": "B6FA8CF543C617E25D15DFA3A428C185",
       "friendly_name": "Max FP",
@@ -424,6 +407,23 @@
       "default_value": null,
       "type": {
         "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnEffectiveAttributesChanged",
+      "guid": "932EE3EA4E53B5E73FE5988AAEAD3EE5",
+      "friendly_name": "On Effective Attributes Changed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
         "sub_category": null,
         "sub_category_object": null,
         "container": null,
@@ -512,6 +512,23 @@
         "sub_category": "double",
         "sub_category_object": null,
         "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ResourcePassivesBySource",
+      "guid": "DC7974F24E902C5088029A9F0DA4C809",
+      "friendly_name": "Resource Passives by Source",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Map",
         "is_reference": false,
         "is_const": false,
         "is_weak_pointer": false
@@ -635,6 +652,57 @@
         "is_const": false,
         "is_weak_pointer": false
       }
+    },
+    {
+      "name": "TotalMaxENBonusPercent",
+      "guid": "9900E92243419AFAA2BDB497CF092FC7",
+      "friendly_name": "Total Max ENBonus Percent",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TotalMaxHPBonusPercent",
+      "guid": "8DF25AE54685377A419BA0900E8CDFB9",
+      "friendly_name": "Total Max HPBonus Percent",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TotalStaminaRegenBonusPercent",
+      "guid": "25739E9B483809FD5170078A20109977",
+      "friendly_name": "Total Stamina Regen Bonus Percent",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
     }
   ],
   "graphs": [
@@ -722,10 +790,10 @@
       "name": "RecalculateDerivedStats",
       "kind": "function",
       "guid": "3504BDD347D70E4ECA0486ABE2D30CD2",
-      "node_count": 15,
-      "pin_count": 62,
-      "connection_count": 22,
-      "exec_connection_count": 9,
+      "node_count": 21,
+      "pin_count": 104,
+      "connection_count": 25,
+      "exec_connection_count": 12,
       "data_connection_count": 13
     },
     {
@@ -744,9 +812,9 @@
       "guid": "DCB0F03F4122666BB4268EBC659D9248",
       "node_count": 57,
       "pin_count": 299,
-      "connection_count": 64,
-      "exec_connection_count": 22,
-      "data_connection_count": 42
+      "connection_count": 60,
+      "exec_connection_count": 21,
+      "data_connection_count": 39
     },
     {
       "name": "EnsureStatBalance",
@@ -782,21 +850,21 @@
       "name": "CalculateResourceMaximums",
       "kind": "function",
       "guid": "B9AC8C49477FCFBB993249AE18FB70F4",
-      "node_count": 20,
-      "pin_count": 78,
-      "connection_count": 40,
-      "exec_connection_count": 5,
+      "node_count": 28,
+      "pin_count": 99,
+      "connection_count": 39,
+      "exec_connection_count": 4,
       "data_connection_count": 35
     },
     {
       "name": "ApplyRecalculatedStats",
       "kind": "function",
       "guid": "F0EE560E47BCD6420F3330AFEC7B207E",
-      "node_count": 48,
-      "pin_count": 167,
-      "connection_count": 62,
+      "node_count": 50,
+      "pin_count": 172,
+      "connection_count": 59,
       "exec_connection_count": 7,
-      "data_connection_count": 55
+      "data_connection_count": 52
     },
     {
       "name": "ClampCurrentResources",
@@ -902,8 +970,8 @@
       "name": "ResourcePulse",
       "kind": "function",
       "guid": "6AD36F4446D6C1E59E35A3B60838DAD0",
-      "node_count": 52,
-      "pin_count": 160,
+      "node_count": 53,
+      "pin_count": 162,
       "connection_count": 55,
       "exec_connection_count": 15,
       "data_connection_count": 40
@@ -987,12 +1055,62 @@
       "connection_count": 0,
       "exec_connection_count": 0,
       "data_connection_count": 0
+    },
+    {
+      "name": "OnEffectiveAttributesChanged",
+      "kind": "delegate",
+      "guid": "ED10096E48C900E5CEB78B8DAEE8D68D",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "GetEffectiveStaminaRegenRate",
+      "kind": "function",
+      "guid": "47F001854C62F6A87FB2888E4F7A4074",
+      "node_count": 9,
+      "pin_count": 21,
+      "connection_count": 6,
+      "exec_connection_count": 1,
+      "data_connection_count": 5
+    },
+    {
+      "name": "RefreshResourcePassiveTotals",
+      "kind": "function",
+      "guid": "2704182A4680A087C4F5EEBB0CF5709F",
+      "node_count": 110,
+      "pin_count": 438,
+      "connection_count": 33,
+      "exec_connection_count": 11,
+      "data_connection_count": 22
+    },
+    {
+      "name": "SetResourcePassiveForSource",
+      "kind": "function",
+      "guid": "EF90769246ED731FE4093A8E9D95DE0C",
+      "node_count": 80,
+      "pin_count": 292,
+      "connection_count": 46,
+      "exec_connection_count": 11,
+      "data_connection_count": 35
+    },
+    {
+      "name": "RemoveResourcePassiveForSource",
+      "kind": "function",
+      "guid": "99C665D74EB45BA52A2EEB9AE2836A28",
+      "node_count": 20,
+      "pin_count": 64,
+      "connection_count": 9,
+      "exec_connection_count": 6,
+      "data_connection_count": 3
     }
   ],
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "C25E83B94273B6E3B0F0BAA8A979510B",
+      "guid": "7863880542BE7197B32253882D150007",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1001,15 +1119,20 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 35,
+    "authored_graph_count": 40,
     "generated_graph_count": 1,
-    "authored_node_count": 884,
-    "authored_pin_count": 3157,
-    "authored_connection_count": 1129,
+    "authored_node_count": 1121,
+    "authored_pin_count": 4043,
+    "authored_connection_count": 1218,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
   "graph_files": [
+    {
+      "name": "OnEffectiveAttributesChanged",
+      "kind": "delegate",
+      "file": "graphs/OnEffectiveAttributesChanged.json"
+    },
     {
       "name": "OnHealthDepleted",
       "kind": "delegate",
@@ -1086,6 +1209,11 @@
       "file": "graphs/GetEffectiveAttribute.json"
     },
     {
+      "name": "GetEffectiveStaminaRegenRate",
+      "kind": "function",
+      "file": "graphs/GetEffectiveStaminaRegenRate.json"
+    },
+    {
       "name": "GetPrimaryAttribute",
       "kind": "function",
       "file": "graphs/GetPrimaryAttribute.json"
@@ -1126,9 +1254,19 @@
       "file": "graphs/RecalculateDerivedStats.json"
     },
     {
+      "name": "RefreshResourcePassiveTotals",
+      "kind": "function",
+      "file": "graphs/RefreshResourcePassiveTotals.json"
+    },
+    {
       "name": "RemoveModifiersBySource",
       "kind": "function",
       "file": "graphs/RemoveModifiersBySource.json"
+    },
+    {
+      "name": "RemoveResourcePassiveForSource",
+      "kind": "function",
+      "file": "graphs/RemoveResourcePassiveForSource.json"
     },
     {
       "name": "ResolveEffectiveAttributes",
@@ -1159,6 +1297,11 @@
       "name": "SetModifierForSource",
       "kind": "function",
       "file": "graphs/SetModifierForSource.json"
+    },
+    {
+      "name": "SetResourcePassiveForSource",
+      "kind": "function",
+      "file": "graphs/SetResourcePassiveForSource.json"
     },
     {
       "name": "StartStaminaRegeneration",
