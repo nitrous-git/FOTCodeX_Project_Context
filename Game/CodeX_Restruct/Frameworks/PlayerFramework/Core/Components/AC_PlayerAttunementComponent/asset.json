@@ -17,6 +17,7 @@
   },
   "architecture": {
     "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Neutral",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Neutral_Instance",
@@ -28,7 +29,7 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview"
     ],
-    "non_architecture_dependency_count": 1,
+    "non_architecture_dependency_count": 2,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -119,7 +120,8 @@
       "functions": [
         "InitAttunementComponent",
         "SetActiveAttunement",
-        "ReapplyAttunementToCurrentWeapons"
+        "ReapplyAttunementToCurrentWeapons",
+        "RefreshAttunementFromEquipment"
       ],
       "macros": [],
       "delegates": [],

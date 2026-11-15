@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "exporter_version": "0.5.0",
-  "generated_utc": "2026-11-15T15:22:38.933599+00:00",
+  "generated_utc": "2026-11-15T20:56:15.194922+00:00",
   "root_path": "/Game",
   "settings": {
     "excluded_paths": [
@@ -48,13 +48,13 @@
   },
   "discovery": {
     "summary": {
-      "scanned": 8493,
-      "full_graph": 304,
+      "scanned": 8498,
+      "full_graph": 305,
       "ignored_by_class": 3076,
       "excluded_by_path": 4974,
-      "structural": 131,
+      "structural": 135,
       "excluded_individual_asset": 8,
-      "export_candidates": 435
+      "export_candidates": 440
     },
     "class_breakdown": {
       "AimOffsetBlendSpace": 23,
@@ -67,7 +67,7 @@
       "BlackboardData": 2,
       "BlendSpace": 31,
       "BlendSpace1D": 9,
-      "Blueprint": 284,
+      "Blueprint": 285,
       "CameraAnimationSequence": 2,
       "ContextualAnimRolesAsset": 2,
       "ContextualAnimSceneAsset": 15,
@@ -80,7 +80,7 @@
       "DA_Attunement_Electric_C": 1,
       "DA_Attunement_Fire_C": 1,
       "DA_Attunement_Frost_C": 1,
-      "DA_Attunement_Neutral_C": 1,
+      "DA_Attunement_Neutral_C": 3,
       "DA_Attunement_Poison_C": 1,
       "DA_CharacterStatBalance_C": 1,
       "DA_CombatStyle_C": 1,
@@ -91,6 +91,7 @@
       "DA_Enemy_GroupMeleeProfile_C": 4,
       "DA_Enemy_RangedProfile_C": 2,
       "DA_OutfitDefinition_C": 1,
+      "DA_TalismanDefinition_C": 2,
       "DA_WeaponDefinition_C": 5,
       "DataLayerAsset": 6,
       "DataTable": 6,
@@ -2031,6 +2032,20 @@
           "category": "FULL_GRAPH",
           "classification_reason": "Logic-bearing Blueprint class",
           "planned_export_path": "Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
+        },
+        {
+          "asset_name": "DA_TalismanDefinition",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition.DA_TalismanDefinition",
+          "relative_package": "CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition"
         },
         {
           "asset_name": "DA_OutfitDefinition",
@@ -4779,6 +4794,34 @@
           "planned_export_path": "Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData"
         },
         {
+          "asset_name": "DA_Talisman_Endurance",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_Talisman_Endurance",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_Talisman_Endurance.DA_Talisman_Endurance",
+          "relative_package": "CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_Talisman_Endurance",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition",
+            "name": "DA_TalismanDefinition_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_Talisman_Endurance"
+        },
+        {
+          "asset_name": "DA_Talisman_Vitality",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_Talisman_Vitality",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_Talisman_Vitality.DA_Talisman_Vitality",
+          "relative_package": "CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_Talisman_Vitality",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition",
+            "name": "DA_TalismanDefinition_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_Talisman_Vitality"
+        },
+        {
           "asset_name": "DA_Outfit_Prototype01",
           "package_name": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/DA_Outfit_Prototype01",
           "package_path": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit",
@@ -4933,6 +4976,20 @@
           "planned_export_path": "Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/DT_Animset_ALC"
         },
         {
+          "asset_name": "DA_Attunement_Bleed",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Bleed",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Bleed.DA_Attunement_Bleed",
+          "relative_package": "CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Bleed",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Neutral",
+            "name": "DA_Attunement_Neutral_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Bleed"
+        },
+        {
           "asset_name": "DA_Attunement_Electric_Instance",
           "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Electric_Instance",
           "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement",
@@ -4973,6 +5030,20 @@
           "category": "STRUCTURAL",
           "classification_reason": "Included by structural naming convention",
           "planned_export_path": "Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Frost_Instance"
+        },
+        {
+          "asset_name": "DA_Attunement_Light",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Light",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Light.DA_Attunement_Light",
+          "relative_package": "CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Light",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Neutral",
+            "name": "DA_Attunement_Neutral_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Light"
         },
         {
           "asset_name": "DA_Attunement_Neutral_Instance",

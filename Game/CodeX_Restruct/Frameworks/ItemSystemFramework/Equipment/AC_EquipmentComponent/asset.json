@@ -18,12 +18,15 @@
   "architecture": {
     "dependencies": [
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/DA_OutfitDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/ECodeXPassiveType",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/E_AttunementType",
       "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     ],
     "referencers": [
@@ -33,6 +36,7 @@
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerAction_UsePotion",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
@@ -272,7 +276,14 @@
         "CanAssignWeaponToSlot",
         "GetOwnedOutfitDefinition",
         "TryEquipOutfit",
-        "ReconcileOutfitInventory"
+        "ReconcileOutfitInventory",
+        "GetOwnedAttunementDefinition",
+        "GetOwnedTalismanDefinition",
+        "CanAssignAccessoryToSlot",
+        "TryEquipAccessory",
+        "ReconcileAccessoryInventory",
+        "IsAccessorySlot",
+        "PruneInvalidAccessoryAssignment"
       ],
       "macros": [],
       "delegates": [

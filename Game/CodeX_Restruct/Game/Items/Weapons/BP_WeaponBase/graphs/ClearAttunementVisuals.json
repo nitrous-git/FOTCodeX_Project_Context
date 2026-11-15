@@ -8,8 +8,8 @@
   "stats": {
     "node_count": 15,
     "pin_count": 45,
-    "connection_count": 14,
-    "exec_connection_count": 8,
+    "connection_count": 15,
+    "exec_connection_count": 9,
     "data_connection_count": 6
   },
   "nodes": [
@@ -256,7 +256,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_1",
+              "pin_id": "7F94927845A8C4DEDC7CA6980915C09C"
+            }
+          ]
         }
       ]
     },
@@ -888,6 +893,10 @@
             {
               "node": "K2Node_VariableSet_1",
               "pin_id": "9EA1C55741F88C15B3C124BDBFBFAA04"
+            },
+            {
+              "node": "K2Node_MacroInstance_0",
+              "pin_id": "34F543A04A9EA154629221A789AC00B3"
             }
           ]
         },
@@ -1540,6 +1549,19 @@
       "to": {
         "node": "K2Node_MacroInstance_0",
         "pin_id": "A9E6EDCC401EC91111252196BD0480E0",
+        "pin_name": "exec"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_MacroInstance_0",
+        "pin_id": "34F543A04A9EA154629221A789AC00B3",
+        "pin_name": "Is Not Valid"
+      },
+      "to": {
+        "node": "K2Node_MacroInstance_1",
+        "pin_id": "7F94927845A8C4DEDC7CA6980915C09C",
         "pin_name": "exec"
       }
     },
