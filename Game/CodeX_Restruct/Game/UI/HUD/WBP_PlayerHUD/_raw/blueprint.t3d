@@ -1,5 +1,7 @@
 Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" ExportPath="/Script/UMGEditor.WidgetBlueprint'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD'"
    Begin Object Class=/Script/UMG.WidgetTree Name="WidgetTree" Archetype="/Script/UMG.WidgetTree'/Script/UMGEditor.Default__WidgetBlueprint:WidgetTree'" ExportPath="/Script/UMG.WidgetTree'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree'"
+      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid.WBP_ItemWheelGrid_C Name="ItemWheelGrid" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid.WBP_ItemWheelGrid_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.ItemWheelGrid'"
+      End Object
       Begin Object Class=/Script/UMG.Border Name="ResourcesContainer" ExportPath="/Script/UMG.Border'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.ResourcesContainer'"
          Begin Object Class=/Script/UMG.BorderSlot Name="BorderSlot_0" ExportPath="/Script/UMG.BorderSlot'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.ResourcesContainer.BorderSlot_0'"
          End Object
@@ -55,8 +57,6 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" Export
       Begin Object Class=/Script/UMG.VerticalBox Name="LootNotificationsBox" ExportPath="/Script/UMG.VerticalBox'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.LootNotificationsBox'"
       End Object
       Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_CurrencyContainer.WBP_CurrencyContainer_C Name="CurrencyContainer" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_CurrencyContainer.WBP_CurrencyContainer_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.CurrencyContainer'"
-      End Object
-      Begin Object Class=/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid.WBP_ItemWheelGrid_C Name="ItemWheelGrid" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid.WBP_ItemWheelGrid_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.ItemWheelGrid'"
       End Object
    End Object
    Begin Object Class=/Script/Engine.EdGraph Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:EventGraph'"
@@ -638,6 +638,12 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" Export
       End Object
    End Object
    Begin Object Name="WidgetTree" ExportPath="/Script/UMG.WidgetTree'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree'"
+      Begin Object Name="ItemWheelGrid" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid.WBP_ItemWheelGrid_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.ItemWheelGrid'"
+         DesignSizeMode=FillScreen
+         Slot="/Script/UMG.OverlaySlot'WBP_PlayerHUD:WidgetTree.HUDOverlay.OverlaySlot_1'"
+         Visibility=HitTestInvisible
+         DisplayLabel="ItemWheelGrid"
+      End Object
       Begin Object Name="ResourcesContainer" ExportPath="/Script/UMG.Border'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.ResourcesContainer'"
          Begin Object Name="BorderSlot_0" ExportPath="/Script/UMG.BorderSlot'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.ResourcesContainer.BorderSlot_0'"
             Padding=(Left=0.000000,Top=0.000000,Right=0.000000,Bottom=0.000000)
@@ -808,12 +814,6 @@ Begin Object Class=/Script/UMGEditor.WidgetBlueprint Name="WBP_PlayerHUD" Export
          TickFrequency=Auto
          Slot="/Script/UMG.OverlaySlot'WBP_PlayerHUD:WidgetTree.HUDOverlay.OverlaySlot_2'"
          DisplayLabel="CurrencyContainer"
-      End Object
-      Begin Object Name="ItemWheelGrid" ExportPath="/Game/CodeX_Restruct/Game/UI/HUD/WBP_ItemWheelGrid.WBP_ItemWheelGrid_C'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD:WidgetTree.ItemWheelGrid'"
-         DesignSizeMode=FillScreen
-         Slot="/Script/UMG.OverlaySlot'WBP_PlayerHUD:WidgetTree.HUDOverlay.OverlaySlot_1'"
-         Visibility=HitTestInvisible
-         DisplayLabel="ItemWheelGrid"
       End Object
       RootWidget="/Script/UMG.CanvasPanel'MainHUDCanvas'"
    End Object
