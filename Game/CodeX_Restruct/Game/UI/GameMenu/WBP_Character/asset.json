@@ -16,11 +16,28 @@
     "reason": "Logic-bearing Blueprint class"
   },
   "architecture": {
-    "dependencies": [],
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/FInventorySlotData",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/DA_OutfitDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/ECodeXPassiveType",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentChoiceEntry",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/CharacterPreview/WBP_CharacterPreviewPanel"
+    ],
     "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
     ],
-    "non_architecture_dependency_count": 4,
+    "non_architecture_dependency_count": 6,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -34,15 +51,113 @@
     "generated_class_object": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Character.WBP_Character_C",
     "interfaces": [],
     "components": [],
-    "variables": [],
+    "variables": [
+      {
+        "name": "AvailableOutfitIDs",
+        "guid": "C0B080CD4B83592DF19373A221819689",
+        "friendly_name": "Available Outfit IDs",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CharacterPreviewActor",
+        "guid": "CCAF9F7B4AC130AEC0A3D6ADDB7F6FF5",
+        "friendly_name": "Character Preview Actor",
+        "category": "Default",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InspectedOutfitID",
+        "guid": "109440F1411285536C319AA3F0BA9E69",
+        "friendly_name": "Inspected Outfit ID",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OutfitEquipmentRef",
+        "guid": "271BC8A7415D1D91596EA5A44A5971BF",
+        "friendly_name": "Outfit Equipment Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent.AC_EquipmentComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OutfitInventoryRef",
+        "guid": "A8BFDEB64F1C0DA6D7D9D3B4E18BD24B",
+        "friendly_name": "Outfit Inventory Ref",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
     "graphs": {
       "event_graphs": [
         "EventGraph"
       ],
-      "functions": [],
+      "functions": [
+        "EquipInspectedOutfit",
+        "FocusInspectedOutfit",
+        "RefreshOutfitCardStates",
+        "RefreshOutfitDetails",
+        "InspectOutfit",
+        "AddOutfitCard",
+        "RefreshOutfitCollection",
+        "DeactivateCharacter",
+        "ActivateCharacter"
+      ],
       "macros": [],
       "delegates": [],
-      "generated_graphs": []
+      "generated_graphs": [
+        "BndEvt__WBP_Character_EquipOutfitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
+      ]
     },
     "extraction_status": {
       "parent_class": "complete",
@@ -62,6 +177,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 3
+    "widget_count": 20
   }
 }

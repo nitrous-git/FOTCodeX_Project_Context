@@ -6,34 +6,265 @@
     "guid": "5ACAAB954491CFF6E41063AD510326FA",
     "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
   },
-  "variables": [],
+  "variables": [
+    {
+      "name": "AvailableOutfitIDs",
+      "guid": "C0B080CD4B83592DF19373A221819689",
+      "friendly_name": "Available Outfit IDs",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": "Array",
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CharacterPreviewActor",
+      "guid": "CCAF9F7B4AC130AEC0A3D6ADDB7F6FF5",
+      "friendly_name": "Character Preview Actor",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview.BP_PlayerBase_InventoryPreview_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InspectedOutfitID",
+      "guid": "109440F1411285536C319AA3F0BA9E69",
+      "friendly_name": "Inspected Outfit ID",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OutfitEquipmentRef",
+      "guid": "271BC8A7415D1D91596EA5A44A5971BF",
+      "friendly_name": "Outfit Equipment Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent.AC_EquipmentComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OutfitInventoryRef",
+      "guid": "A8BFDEB64F1C0DA6D7D9D3B4E18BD24B",
+      "friendly_name": "Outfit Inventory Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
   "graphs": [
     {
       "name": "EventGraph",
       "kind": "event",
       "guid": "BD003076444330E48A6E3A93A0766CE8",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 0,
-      "exec_connection_count": 0,
+      "node_count": 5,
+      "pin_count": 14,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EquipInspectedOutfit",
+      "kind": "function",
+      "guid": "D7D67324452E402486679D8318BF289B",
+      "node_count": 63,
+      "pin_count": 202,
+      "connection_count": 20,
+      "exec_connection_count": 10,
+      "data_connection_count": 10
+    },
+    {
+      "name": "FocusInspectedOutfit",
+      "kind": "function",
+      "guid": "E39DCCD346A9DE3CA808A3B009DAA5D4",
+      "node_count": 28,
+      "pin_count": 87,
+      "connection_count": 17,
+      "exec_connection_count": 6,
+      "data_connection_count": 11
+    },
+    {
+      "name": "RefreshOutfitCardStates",
+      "kind": "function",
+      "guid": "01AD2A4E45000A7BDC79298431CEA293",
+      "node_count": 35,
+      "pin_count": 129,
+      "connection_count": 25,
+      "exec_connection_count": 7,
+      "data_connection_count": 18
+    },
+    {
+      "name": "RefreshOutfitDetails",
+      "kind": "function",
+      "guid": "103B9B644A5589D822CED98CD7F4EDC5",
+      "node_count": 250,
+      "pin_count": 852,
+      "connection_count": 111,
+      "exec_connection_count": 29,
+      "data_connection_count": 82
+    },
+    {
+      "name": "InspectOutfit",
+      "kind": "function",
+      "guid": "65AE5D03493C943F82343382671A6135",
+      "node_count": 7,
+      "pin_count": 23,
+      "connection_count": 8,
+      "exec_connection_count": 4,
+      "data_connection_count": 4
+    },
+    {
+      "name": "AddOutfitCard",
+      "kind": "function",
+      "guid": "567FB7D74348DDE4CB202D920A7B6C48",
+      "node_count": 54,
+      "pin_count": 222,
+      "connection_count": 89,
+      "exec_connection_count": 29,
+      "data_connection_count": 60
+    },
+    {
+      "name": "RefreshOutfitCollection",
+      "kind": "function",
+      "guid": "63F63F54449B8434021AEDBA6AAB4A85",
+      "node_count": 100,
+      "pin_count": 338,
+      "connection_count": 57,
+      "exec_connection_count": 21,
+      "data_connection_count": 36
+    },
+    {
+      "name": "DeactivateCharacter",
+      "kind": "function",
+      "guid": "E3D4E75440A4674EB9F9C4BD5AB68F4B",
+      "node_count": 31,
+      "pin_count": 101,
+      "connection_count": 17,
+      "exec_connection_count": 10,
+      "data_connection_count": 7
+    },
+    {
+      "name": "ActivateCharacter",
+      "kind": "function",
+      "guid": "5DE4C8F342DB5955E944E48DA20A99CE",
+      "node_count": 77,
+      "pin_count": 293,
+      "connection_count": 38,
+      "exec_connection_count": 16,
+      "data_connection_count": 22
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "BndEvt__WBP_Character_EquipOutfitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "0447B56A4C9797134E1D0AA11FCDE02B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
       "data_connection_count": 0
     }
   ],
-  "generated_graphs": [],
   "stats": {
-    "authored_graph_count": 1,
-    "generated_graph_count": 0,
-    "authored_node_count": 3,
-    "authored_pin_count": 9,
-    "authored_connection_count": 0,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 10,
+    "generated_graph_count": 1,
+    "authored_node_count": 650,
+    "authored_pin_count": 2261,
+    "authored_connection_count": 383,
+    "generated_node_count": 2,
+    "generated_pin_count": 5
   },
   "graph_files": [
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ActivateCharacter",
+      "kind": "function",
+      "file": "graphs/ActivateCharacter.json"
+    },
+    {
+      "name": "AddOutfitCard",
+      "kind": "function",
+      "file": "graphs/AddOutfitCard.json"
+    },
+    {
+      "name": "DeactivateCharacter",
+      "kind": "function",
+      "file": "graphs/DeactivateCharacter.json"
+    },
+    {
+      "name": "EquipInspectedOutfit",
+      "kind": "function",
+      "file": "graphs/EquipInspectedOutfit.json"
+    },
+    {
+      "name": "FocusInspectedOutfit",
+      "kind": "function",
+      "file": "graphs/FocusInspectedOutfit.json"
+    },
+    {
+      "name": "InspectOutfit",
+      "kind": "function",
+      "file": "graphs/InspectOutfit.json"
+    },
+    {
+      "name": "RefreshOutfitCardStates",
+      "kind": "function",
+      "file": "graphs/RefreshOutfitCardStates.json"
+    },
+    {
+      "name": "RefreshOutfitCollection",
+      "kind": "function",
+      "file": "graphs/RefreshOutfitCollection.json"
+    },
+    {
+      "name": "RefreshOutfitDetails",
+      "kind": "function",
+      "file": "graphs/RefreshOutfitDetails.json"
     }
   ]
 }

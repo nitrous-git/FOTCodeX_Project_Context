@@ -76,6 +76,23 @@
       }
     },
     {
+      "name": "bShowItemLabel",
+      "guid": "D727ED2041657A68CC5690B510A94683",
+      "friendly_name": "Show Item Label",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "Icon",
       "guid": "37F04F2748C7A37479B753A283D89C40",
       "friendly_name": "Icon",
@@ -166,11 +183,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "3C625ED243EDCF6751081BA4CF33273C",
-      "node_count": 29,
-      "pin_count": 82,
-      "connection_count": 21,
+      "node_count": 32,
+      "pin_count": 91,
+      "connection_count": 22,
       "exec_connection_count": 13,
-      "data_connection_count": 8
+      "data_connection_count": 9
     },
     {
       "name": "RefreshAppearance",
@@ -196,11 +213,11 @@
       "name": "RefreshContent",
       "kind": "function",
       "guid": "151E1C204A2C084B03FC1F96126965B5",
-      "node_count": 6,
-      "pin_count": 14,
-      "connection_count": 5,
-      "exec_connection_count": 2,
-      "data_connection_count": 3
+      "node_count": 40,
+      "pin_count": 118,
+      "connection_count": 17,
+      "exec_connection_count": 8,
+      "data_connection_count": 9
     },
     {
       "name": "RefreshIconOpacity",
@@ -235,26 +252,17 @@
   ],
   "generated_graphs": [
     {
-      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
-      "guid": "B7CFDB1C478F979B2A1E31B61FB9932C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
+      "name": "PreConstruct",
+      "guid": "579A2B8E4CA61EFD91B078B26AEF7005",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
     },
     {
-      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
-      "guid": "556AAA9047F08274960FECB87A7A5D71",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
-      "guid": "F2B5E2244F22D9E6C8500BB0DF31FDF5",
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "F98B83E049D3238C462DDAA2A0E97E44",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -263,7 +271,7 @@
     },
     {
       "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
-      "guid": "1A3380724D355AEEE970DEB339379EE9",
+      "guid": "4553752047041FB104D162BE672D91E2",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -271,8 +279,8 @@
       "data_connection_count": 0
     },
     {
-      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-      "guid": "ED295A754031F964D02230A864653695",
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "A468760B45BB6D815906BB987B348B36",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -280,8 +288,26 @@
       "data_connection_count": 0
     },
     {
-      "name": "PreConstruct",
-      "guid": "0056B69E4C399ACE2C7627A021A1C6A4",
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+      "guid": "199C423F48AB9C97A6593B91C09D07D7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+      "guid": "4BD3D1EC473A031D329D5A91DB012311",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnAddedToFocusPath",
+      "guid": "9287144047DA5F025F144194E317A791",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -291,12 +317,12 @@
   ],
   "stats": {
     "authored_graph_count": 7,
-    "generated_graph_count": 6,
-    "authored_node_count": 90,
-    "authored_pin_count": 264,
-    "authored_connection_count": 86,
-    "generated_node_count": 13,
-    "generated_pin_count": 34
+    "generated_graph_count": 7,
+    "authored_node_count": 127,
+    "authored_pin_count": 377,
+    "authored_connection_count": 99,
+    "generated_node_count": 16,
+    "generated_pin_count": 43
   },
   "graph_files": [
     {

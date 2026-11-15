@@ -18,9 +18,10 @@
   "architecture": {
     "dependencies": [],
     "referencers": [
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment"
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Character"
     ],
-    "non_architecture_dependency_count": 7,
+    "non_architecture_dependency_count": 9,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -90,6 +91,23 @@
         "name": "bSelected",
         "guid": "3C370505425168690E8271BA670825DC",
         "friendly_name": "Selected",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bShowItemLabel",
+        "guid": "D727ED2041657A68CC5690B510A94683",
+        "friendly_name": "Show Item Label",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
@@ -205,12 +223,13 @@
         "OnChoicePreviewed"
       ],
       "generated_graphs": [
-        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
-        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
-        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
-        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+        "PreConstruct",
         "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
-        "PreConstruct"
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+        "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+        "OnAddedToFocusPath"
       ]
     },
     "extraction_status": {
@@ -231,6 +250,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 9
+    "widget_count": 10
   }
 }
