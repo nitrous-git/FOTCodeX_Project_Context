@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "BP_WeaponPreviewActor",
+    "package_name": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor",
+    "package_path": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment",
+    "object_path": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor.BP_WeaponPreviewActor",
+    "relative_package": "CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/FWeaponPreviewPart"
+    ],
+    "referencers": [
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview"
+    ],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor.BP_WeaponPreviewActor_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor.BP_WeaponPreviewActor_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+    "generated_class_object": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor.BP_WeaponPreviewActor_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "DefaultSceneRoot",
+        "class": "SceneComponent",
+        "parent": "BP_WeaponPreviewActor",
+        "inherited": false,
+        "native": false,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor.BP_WeaponPreviewActor_C:DefaultSceneRoot_GEN_VARIABLE"
+      },
+      {
+        "name": "FillLight",
+        "class": "RectLightComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor.BP_WeaponPreviewActor_C:FillLight_GEN_VARIABLE"
+      },
+      {
+        "name": "KeyLight",
+        "class": "RectLightComponent",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor.BP_WeaponPreviewActor_C:KeyLight_GEN_VARIABLE"
+      },
+      {
+        "name": "WeaponCapture",
+        "class": "SceneCaptureComponent2D",
+        "parent": "DefaultSceneRoot",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor.BP_WeaponPreviewActor_C:WeaponCapture_GEN_VARIABLE"
+      }
+    ],
+    "variables": [
+      {
+        "name": "PreviewMeshes",
+        "guid": "827BB53747BB330EC4EBDDA57401960C",
+        "friendly_name": "Preview Meshes",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.MeshComponent'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PreviewTarget",
+        "guid": "1E7A3C5E4FF526C04923A2B0165E9D6E",
+        "friendly_name": "Preview Target",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.TextureRenderTarget2D'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript",
+        "SetWeaponParts"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

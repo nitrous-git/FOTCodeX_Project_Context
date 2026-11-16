@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 442,
-  "edge_count": 1375,
+  "node_count": 445,
+  "edge_count": 1382,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -2753,6 +2753,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/FWeaponPreviewPart"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
     {
@@ -4304,6 +4308,10 @@
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
     {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/FWeaponPreviewPart"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/DT_EquipmentSlots_UI",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/FEquipmentSlotUIData"
     },
@@ -4396,12 +4404,28 @@
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot"
     },
     {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/DT_EquipmentSlots_UI"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/FEquipmentSlotUIData"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/FWeaponPreviewPart"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/BP_WeaponPreviewActor"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
@@ -4574,6 +4598,10 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/System/SG_SystemPreferences"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Character",

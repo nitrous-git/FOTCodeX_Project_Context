@@ -59,6 +59,23 @@
       }
     },
     {
+      "name": "bWeaponPreviewActive",
+      "guid": "94C141FC471146376AA9EA89F8FD5C00",
+      "friendly_name": "Weapon Preview Active",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "ChoiceItemIDs",
       "guid": "D1579E25486C77E80128F08585F976C9",
       "friendly_name": "Choice Item IDs",
@@ -268,8 +285,8 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "7BB65F034838082ADC1B95B1555EA433",
-      "node_count": 37,
-      "pin_count": 112,
+      "node_count": 31,
+      "pin_count": 91,
       "connection_count": 26,
       "exec_connection_count": 15,
       "data_connection_count": 11
@@ -278,10 +295,10 @@
       "name": "RefreshEquipment",
       "kind": "function",
       "guid": "7BE06EEA46E99728B096299E2C49D189",
-      "node_count": 39,
-      "pin_count": 123,
-      "connection_count": 29,
-      "exec_connection_count": 14,
+      "node_count": 32,
+      "pin_count": 99,
+      "connection_count": 30,
+      "exec_connection_count": 15,
       "data_connection_count": 15
     },
     {
@@ -348,8 +365,8 @@
       "name": "RebuildEquipmentChoices",
       "kind": "function",
       "guid": "0BCC5BD44AE965CC7C1EA08877CA4C1C",
-      "node_count": 73,
-      "pin_count": 240,
+      "node_count": 65,
+      "pin_count": 204,
       "connection_count": 77,
       "exec_connection_count": 32,
       "data_connection_count": 45
@@ -358,8 +375,8 @@
       "name": "AppendCompatibleChoice",
       "kind": "function",
       "guid": "3877FD8D4325ACF93EB0C29A07AB9D2E",
-      "node_count": 43,
-      "pin_count": 179,
+      "node_count": 41,
+      "pin_count": 171,
       "connection_count": 70,
       "exec_connection_count": 18,
       "data_connection_count": 52
@@ -378,8 +395,8 @@
       "name": "ChooseEquipmentItem",
       "kind": "function",
       "guid": "487905774D7879090BB7E4961AB53102",
-      "node_count": 29,
-      "pin_count": 100,
+      "node_count": 28,
+      "pin_count": 98,
       "connection_count": 42,
       "exec_connection_count": 17,
       "data_connection_count": 25
@@ -398,11 +415,11 @@
       "name": "PresentEquipmentItem",
       "kind": "function",
       "guid": "AF5EE7734A38675EE69D7F99D76A4700",
-      "node_count": 209,
-      "pin_count": 786,
-      "connection_count": 203,
-      "exec_connection_count": 85,
-      "data_connection_count": 118
+      "node_count": 153,
+      "pin_count": 579,
+      "connection_count": 206,
+      "exec_connection_count": 87,
+      "data_connection_count": 119
     },
     {
       "name": "HandleEquipmentChanged",
@@ -608,17 +625,57 @@
       "name": "SwitchMenuActiveWeapon",
       "kind": "function",
       "guid": "472DD23E422BD3A4980BBB9C4E4EE0DC",
-      "node_count": 10,
-      "pin_count": 31,
+      "node_count": 4,
+      "pin_count": 11,
       "connection_count": 4,
       "exec_connection_count": 2,
       "data_connection_count": 2
+    },
+    {
+      "name": "UpdateWeaponPreview",
+      "kind": "function",
+      "guid": "1D33CBFB462C1CC8BD8616B2161A18B2",
+      "node_count": 17,
+      "pin_count": 69,
+      "connection_count": 23,
+      "exec_connection_count": 9,
+      "data_connection_count": 14
+    },
+    {
+      "name": "ActivateWeaponPreview",
+      "kind": "function",
+      "guid": "8AD99A7A43BD4166A88BDAADD5F197A7",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
+    },
+    {
+      "name": "DeactivateWeaponPreview",
+      "kind": "function",
+      "guid": "890AC9AC4C4B32E91E7CF7B8C8D95BCB",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "PresentAssignedEquipmentItem",
+      "kind": "function",
+      "guid": "85C2FB4147DBAB83CE58998D897FD04D",
+      "node_count": 11,
+      "pin_count": 35,
+      "connection_count": 13,
+      "exec_connection_count": 3,
+      "data_connection_count": 10
     }
   ],
   "generated_graphs": [
     {
       "name": "PreConstruct",
-      "guid": "DA033EEA4B229792CDFA1CAACEDB129A",
+      "guid": "5322D3B94ED0A2869F7B3F9EF91C21D2",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -627,7 +684,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_0_OnSelectionCancelled__DelegateSignature",
-      "guid": "52B9633942A2AA6880A8C59E79878438",
+      "guid": "237B51C0488BB8A4EFBD738ECE506228",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -636,7 +693,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_RightHandSlot_K2Node_ComponentBoundEvent_1_OnEquipmentSlotPressed__DelegateSignature",
-      "guid": "16B747AC41A199BB7B8126BB6C390307",
+      "guid": "564E8F474BD1152B277C9F828D2F43EE",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -645,7 +702,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_SelectionPanel_K2Node_ComponentBoundEvent_7_OnUnequipRequested__DelegateSignature",
-      "guid": "7313092342FCB689420215BD05269214",
+      "guid": "C6AB6F83476B2F3A4A9721B43F2573A5",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -654,7 +711,7 @@
     },
     {
       "name": "Destruct",
-      "guid": "F63E39564E9A4004A98FE88A87F815F9",
+      "guid": "C00D728D489B99E8E35D9DBAE5EEC9C3",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -663,7 +720,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_FutureWeapon01_K2Node_ComponentBoundEvent_8_OnEquipmentSlotPressed__DelegateSignature",
-      "guid": "9E312A264E0199C502FBE2AFE62C3CF0",
+      "guid": "441629A04CCC032842407D9609B1D677",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -672,7 +729,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_ToolSlot01_K2Node_ComponentBoundEvent_10_OnEquipmentSlotPressed__DelegateSignature",
-      "guid": "21A41B1E4727CF0A97F83F9BEC9947B7",
+      "guid": "072AB2584E80FBB106143E8DD8B03FFD",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -681,7 +738,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_ToolSlot02_K2Node_ComponentBoundEvent_11_OnEquipmentSlotPressed__DelegateSignature",
-      "guid": "B9DF0C4B47E79943AEEA0B8C4BC1B690",
+      "guid": "1A24DAAE47DDABA2B09280ADCD561260",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -690,7 +747,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_TalismanSlot_K2Node_ComponentBoundEvent_2_OnEquipmentSlotPressed__DelegateSignature",
-      "guid": "443102A04C8ACD77DF1568A6BB7A4E11",
+      "guid": "B8B9251D441C66731BC7D785E5B40491",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -699,7 +756,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_AttunementSlot_K2Node_ComponentBoundEvent_3_OnEquipmentSlotPressed__DelegateSignature",
-      "guid": "243921754997554911608AB6C00B84EA",
+      "guid": "A587DE8848DB4C9F46DE81862E22C656",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -708,7 +765,7 @@
     },
     {
       "name": "BndEvt__WBP_Equipment_SwitchActiveWeaponButton_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature",
-      "guid": "4999481249DD1078AD0A6694AB7CB896",
+      "guid": "2524A88B45720004F9DE0AAB60D24EDF",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -717,11 +774,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 35,
+    "authored_graph_count": 39,
     "generated_graph_count": 11,
-    "authored_node_count": 1007,
-    "authored_pin_count": 3484,
-    "authored_connection_count": 1204,
+    "authored_node_count": 956,
+    "authored_pin_count": 3290,
+    "authored_connection_count": 1249,
     "generated_node_count": 29,
     "generated_pin_count": 83
   },
@@ -730,6 +787,11 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ActivateWeaponPreview",
+      "kind": "function",
+      "file": "graphs/ActivateWeaponPreview.json"
     },
     {
       "name": "AddEquipmentChoice",
@@ -745,6 +807,11 @@
       "name": "ChooseEquipmentItem",
       "kind": "function",
       "file": "graphs/ChooseEquipmentItem.json"
+    },
+    {
+      "name": "DeactivateWeaponPreview",
+      "kind": "function",
+      "file": "graphs/DeactivateWeaponPreview.json"
     },
     {
       "name": "HandleActiveWeaponChanged",
@@ -785,6 +852,11 @@
       "name": "OnPreviewKeyDown",
       "kind": "function",
       "file": "graphs/OnPreviewKeyDown.json"
+    },
+    {
+      "name": "PresentAssignedEquipmentItem",
+      "kind": "function",
+      "file": "graphs/PresentAssignedEquipmentItem.json"
     },
     {
       "name": "PresentEquipmentItem",
@@ -900,6 +972,11 @@
       "name": "UpdateItemInfoPreview",
       "kind": "function",
       "file": "graphs/UpdateItemInfoPreview.json"
+    },
+    {
+      "name": "UpdateWeaponPreview",
+      "kind": "function",
+      "file": "graphs/UpdateWeaponPreview.json"
     }
   ]
 }

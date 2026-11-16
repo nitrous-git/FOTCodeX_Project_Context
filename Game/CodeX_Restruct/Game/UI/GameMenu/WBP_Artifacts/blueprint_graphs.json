@@ -6,34 +6,112 @@
     "guid": "544FF5E648BFC0242BF4D08395994ADA",
     "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
   },
-  "variables": [],
+  "variables": [
+    {
+      "name": "V1Collected",
+      "guid": "BC29B97E422A83781F8D14A4F900F1E5",
+      "friendly_name": "V1Collected",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "V1Inventory",
+      "guid": "0B8DAD5D469111FA495FF49686B04853",
+      "friendly_name": "V1Inventory",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent.AC_InventoryComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
   "graphs": [
     {
       "name": "EventGraph",
       "kind": "event",
       "guid": "C064E29A433B13128BDDDCA765C9C555",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 0,
-      "exec_connection_count": 0,
+      "node_count": 50,
+      "pin_count": 149,
+      "connection_count": 30,
+      "exec_connection_count": 12,
+      "data_connection_count": 18
+    },
+    {
+      "name": "RefreshV1Collection",
+      "kind": "function",
+      "guid": "F60927174500F0DEFAF6E29B438B2B11",
+      "node_count": 265,
+      "pin_count": 901,
+      "connection_count": 93,
+      "exec_connection_count": 33,
+      "data_connection_count": 60
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "BndEvt__WBP_Artifacts_V1ArtifactButton0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "0076E57A49FA7DAB921DD8BCADD40842",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_Artifacts_V1ArtifactButton1_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
+      "guid": "E94F343D4D83A5BFDF2B38BD495FA8A5",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_Artifacts_V1ArtifactButton2_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
+      "guid": "75AF3F7A400415198D2DE28F071809F9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
       "data_connection_count": 0
     }
   ],
-  "generated_graphs": [],
   "stats": {
-    "authored_graph_count": 1,
-    "generated_graph_count": 0,
-    "authored_node_count": 3,
-    "authored_pin_count": 9,
-    "authored_connection_count": 0,
-    "generated_node_count": 0,
-    "generated_pin_count": 0
+    "authored_graph_count": 2,
+    "generated_graph_count": 3,
+    "authored_node_count": 315,
+    "authored_pin_count": 1050,
+    "authored_connection_count": 123,
+    "generated_node_count": 6,
+    "generated_pin_count": 15
   },
   "graph_files": [
     {
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "RefreshV1Collection",
+      "kind": "function",
+      "file": "graphs/RefreshV1Collection.json"
     }
   ]
 }

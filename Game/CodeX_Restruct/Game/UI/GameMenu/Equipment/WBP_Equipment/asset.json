@@ -37,13 +37,14 @@
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/ItemInfo/WBP_ItemInfoEntry",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentChoiceEntry",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSelectionPanel",
-      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot"
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
     ],
-    "non_architecture_dependency_count": 11,
+    "non_architecture_dependency_count": 15,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -96,6 +97,23 @@
         "name": "bSelectionOpen",
         "guid": "9FD56A294FC3437B15CEE68E5B60DB05",
         "friendly_name": "Selection Open",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bWeaponPreviewActive",
+        "guid": "94C141FC471146376AA9EA89F8FD5C00",
+        "friendly_name": "Weapon Preview Active",
         "category": "Default",
         "property_flags": 65541,
         "default_value": null,
@@ -352,7 +370,11 @@
         "RestoreSelectedSlotFocus",
         "SetEquipmentView",
         "HandleActiveWeaponChanged",
-        "SwitchMenuActiveWeapon"
+        "SwitchMenuActiveWeapon",
+        "UpdateWeaponPreview",
+        "ActivateWeaponPreview",
+        "DeactivateWeaponPreview",
+        "PresentAssignedEquipmentItem"
       ],
       "macros": [],
       "delegates": [],
@@ -388,6 +410,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 49
+    "widget_count": 56
   }
 }
