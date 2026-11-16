@@ -1,0 +1,2094 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "BP_CPC_PlayerController",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "DC67B60E4536724193B2148450BAAE21",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PlayerController'"
+  },
+  "variables": [
+    {
+      "name": "ActiveMenuPageIndex",
+      "guid": "9311F1EE4C5A52C8CD5E54AFA06CBBF1",
+      "friendly_name": "Active Menu Page Index",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ActiveRestingSite",
+      "guid": "D33EB463465C1F6068DE7FAA09CFE0B4",
+      "friendly_name": "Active Resting Site",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/InteractionFramework/BP_RestingSite.BP_RestingSite_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bCinematicControllerReady",
+      "guid": "9660F7CA45E37F6660FCD7A06F2AA693",
+      "friendly_name": "Cinematic Controller Ready",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bCinematicDeathLock",
+      "guid": "B95E719643F06534971CAE8FBF645993",
+      "friendly_name": "Cinematic Death Lock",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDeathPresentationStarted",
+      "guid": "404C2C90474A7826D557EC8DDB6650D5",
+      "friendly_name": "Death Presentation Started",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bDeathReloadRequested",
+      "guid": "299F8AAF48BFDDC5E34F64BD6E121255",
+      "friendly_name": "Death Reload Requested",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bFogTraversalInputLocked",
+      "guid": "BAA8E1B249FD660CE7AF72AFD32B0108",
+      "friendly_name": "Fog Traversal Input Locked",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bGameMenuOpen",
+      "guid": "5B7103CF476279B9B1276780BBD0A16D",
+      "friendly_name": "Game Menu Open",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bRestCombatContextWasActive",
+      "guid": "CA61A06B40F038D1C2EE888886776BA1",
+      "friendly_name": "Rest Combat Context Was Active",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bRestMenuOpen",
+      "guid": "1DC653184831964A9CAC7A8346176046",
+      "friendly_name": "Rest Menu Open",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bRestMovementTickEnabled",
+      "guid": "CBA6AD7349192D286BF959AEA2588BCA",
+      "friendly_name": "Rest Movement Tick Enabled",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bRestPawnPositioned",
+      "guid": "921FEE7746DB982DD78B2083C0F7482C",
+      "friendly_name": "Rest Pawn Positioned",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bRestPresentationApplied",
+      "guid": "007D69074C29D82067AFF8876E56EB4B",
+      "friendly_name": "Rest Presentation Applied",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bRestPreviousCursor",
+      "guid": "0A7F003D4BE8F4290A6007BE204110BC",
+      "friendly_name": "Rest Previous Cursor",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "EnemyAIManager",
+      "guid": "AC404964477C53B18AD09CB568982F89",
+      "friendly_name": "Enemy AIManager",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager.BP_EnemyAIManager_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ForwardIntent",
+      "guid": "F36497C0466C54A84627318635DAB8FF",
+      "friendly_name": "Forward Intent",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ForwardVector",
+      "guid": "A55701144D6B006A0A7DA0B230478AF8",
+      "friendly_name": "Forward Vector",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "FullScreenPagesReady",
+      "guid": "E01186434657EE7A714B31B3FD80302E",
+      "friendly_name": "Full Screen Pages Ready",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GameMenuRef",
+      "guid": "3CB4E339451C87C6D15325BBEC4CD5B0",
+      "friendly_name": "Game Menu Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu.WBP_GameMenu_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "GameplayHUDRef",
+      "guid": "A5A213B6460D4A1F04AA1589DFD86F1A",
+      "friendly_name": "Gameplay HUDRef",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/HUD/WBP_PlayerHUD.WBP_PlayerHUD_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InputStrength",
+      "guid": "4D8C0C62414884647F92CC923E6E2B86",
+      "friendly_name": "Input Strength",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastMoveInput",
+      "guid": "8029928644197E66C7776FB6F4F7136D",
+      "friendly_name": "Last Move Input",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MoveX",
+      "guid": "0047E0D140EB5ED78ED3C9AFEDE98DF2",
+      "friendly_name": "Move X",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MoveY",
+      "guid": "1E526BD64192BD4A1EEE0FAD9DF6AEDB",
+      "friendly_name": "Move Y",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PendingRestTime",
+      "guid": "C8C2F17847B7A8BDF747BFAB7740F2D4",
+      "friendly_name": "Pending Rest Time",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayerRef",
+      "guid": "F8B3D02747D847A0E0A986B4066ADE7C",
+      "friendly_name": "Player Ref",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RawWorldMoveIntent",
+      "guid": "A9BF38314ECEDD25162D979CBDBA846B",
+      "friendly_name": "Raw World Move Intent",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestCameraComponent",
+      "guid": "4A81D57A48AD18D46E3EAA8E95C59E16",
+      "friendly_name": "Rest Camera Component",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent.AC_CameraModeComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestCombatContextPriority",
+      "guid": "D96313FC431A45A195D1B7BA078E4C20",
+      "friendly_name": "Rest Combat Context Priority",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestFadeDuration",
+      "guid": "6EE9976D4E5F8CF5C112D7BE37F7078E",
+      "friendly_name": "Rest Fade Duration",
+      "category": "INVTEXT(\"Resting Site\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestingPawn",
+      "guid": "8D3D3591427BB285AD8A97BB63CB24D8",
+      "friendly_name": "Resting Pawn",
+      "category": "Default",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestMenuRef",
+      "guid": "133F81C74CAAE7FE068C8C8365220423",
+      "friendly_name": "Rest Menu Ref",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu.WBP_RestMenu_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestMorningTime",
+      "guid": "0858F4D84FD48FDB1477D8A3B75035F4",
+      "friendly_name": "Rest Morning Time",
+      "category": "INVTEXT(\"Resting Site\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestNightTime",
+      "guid": "12DC8B984085F456A936B58C04D3698B",
+      "friendly_name": "Rest Night Time",
+      "category": "INVTEXT(\"Resting Site\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestNoonTime",
+      "guid": "3B08043D40F5B00E0F5C8B9B8C3D16D5",
+      "friendly_name": "Rest Noon Time",
+      "category": "INVTEXT(\"Resting Site\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestPhase",
+      "guid": "60D2460D43D2F28DEF58CBB8A2391AAC",
+      "friendly_name": "Rest Phase",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "int",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestSettleSeconds",
+      "guid": "2625F30945A231903DC07DADF7F98A4A",
+      "friendly_name": "Rest Settle Seconds",
+      "category": "INVTEXT(\"Resting Site\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestSittingMontage",
+      "guid": "AD22FFE248AFD8067C5509AE51FBB457",
+      "friendly_name": "Rest Sitting Montage",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RestTimeSettleSeconds",
+      "guid": "4E4C95EE461B612CA83F678EC4CB86F6",
+      "friendly_name": "Rest Time Settle Seconds",
+      "category": "INVTEXT(\"Resting Site\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RightIntent",
+      "guid": "55B6D16F4254A16AA7EC55AB2A20EB8A",
+      "friendly_name": "Right Intent",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RightVector",
+      "guid": "3B2BB25A424B0F9CFD0160971AA615FA",
+      "friendly_name": "Right Vector",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SavedRestCameraMode",
+      "guid": "B25B2B014280E2D8C301CCBB378D2114",
+      "friendly_name": "Saved Rest Camera Mode",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode.ECameraMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SavedRestControlRotation",
+      "guid": "376BED1C4D645F05DDF0028A76506175",
+      "friendly_name": "Saved Rest Control Rotation",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SavedRestTransform",
+      "guid": "8939CD064C3F9C4F28465AB1F9822242",
+      "friendly_name": "Saved Rest Transform",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Transform'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SystemAudioReady",
+      "guid": "6D08DD44401CD6CB752BC2872BE8FAB6",
+      "friendly_name": "System Audio Ready",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SystemPreferences",
+      "guid": "44AEEA804A71B9B0D39D179E489F2C4B",
+      "friendly_name": "System Preferences",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/System/SG_SystemPreferences.SG_SystemPreferences_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WorldMoveIntent",
+      "guid": "D4FFBC0D4ECA70DA5A1D5F9F2C5EF4A7",
+      "friendly_name": "World Move Intent",
+      "category": "Movement",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "54B5DF38479743A61F43B19406610AD4",
+      "node_count": 156,
+      "pin_count": 542,
+      "connection_count": 146,
+      "exec_connection_count": 63,
+      "data_connection_count": 83
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "guid": "37DC3E6D46E3AA73D767338B3C0DCB61",
+      "node_count": 1,
+      "pin_count": 1,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "InitializeGameMenu",
+      "kind": "function",
+      "guid": "BD4AA52B47BA320781A77A9ED1741C30",
+      "node_count": 7,
+      "pin_count": 22,
+      "connection_count": 8,
+      "exec_connection_count": 4,
+      "data_connection_count": 4
+    },
+    {
+      "name": "ToggleGameMenu",
+      "kind": "function",
+      "guid": "D20204B6447BE7099A218FB39BD5EDA9",
+      "node_count": 18,
+      "pin_count": 56,
+      "connection_count": 18,
+      "exec_connection_count": 9,
+      "data_connection_count": 9
+    },
+    {
+      "name": "OpenGameMenu",
+      "kind": "function",
+      "guid": "28F786D04899B7E173B151A8B7A3E828",
+      "node_count": 20,
+      "pin_count": 64,
+      "connection_count": 20,
+      "exec_connection_count": 12,
+      "data_connection_count": 8
+    },
+    {
+      "name": "CloseGameMenu",
+      "kind": "function",
+      "guid": "E9426E4B48196740140182BF96A6B969",
+      "node_count": 15,
+      "pin_count": 50,
+      "connection_count": 17,
+      "exec_connection_count": 12,
+      "data_connection_count": 5
+    },
+    {
+      "name": "ShowMenuNavigation",
+      "kind": "function",
+      "guid": "39A42C384D91B315C03384AACFFD6F4F",
+      "node_count": 5,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "HideMenuViews",
+      "kind": "function",
+      "guid": "383FCF9044E9AA866D330DAA298C594A",
+      "node_count": 8,
+      "pin_count": 21,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "NavigateMenuBack",
+      "kind": "function",
+      "guid": "7387F87E45917DC07104CB9CADBB9758",
+      "node_count": 35,
+      "pin_count": 104,
+      "connection_count": 42,
+      "exec_connection_count": 11,
+      "data_connection_count": 31
+    },
+    {
+      "name": "OpenMenuPage",
+      "kind": "function",
+      "guid": "41FA00754B0F11959BBBCBA508993C47",
+      "node_count": 177,
+      "pin_count": 575,
+      "connection_count": 262,
+      "exec_connection_count": 75,
+      "data_connection_count": 187
+    },
+    {
+      "name": "ResetEquipmentMenuView",
+      "kind": "function",
+      "guid": "07B74BE04CABB927D67C13AD5A4D95E3",
+      "node_count": 7,
+      "pin_count": 21,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "EnsureGameplayHUD",
+      "kind": "function",
+      "guid": "D56AD37F4F39466CF9DED284879F3698",
+      "node_count": 12,
+      "pin_count": 38,
+      "connection_count": 14,
+      "exec_connection_count": 7,
+      "data_connection_count": 7
+    },
+    {
+      "name": "BindGameplayHUDToPawn",
+      "kind": "function",
+      "guid": "5D981A0F48BFD8EB3EB907AFA5C59833",
+      "node_count": 11,
+      "pin_count": 30,
+      "connection_count": 11,
+      "exec_connection_count": 5,
+      "data_connection_count": 6
+    },
+    {
+      "name": "DetachGameplayHUD",
+      "kind": "function",
+      "guid": "F48FDC704A88DC80631F05863D903297",
+      "node_count": 5,
+      "pin_count": 12,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RemoveGameplayHUD",
+      "kind": "function",
+      "guid": "229FFC26408BBD3B10DCE8A762B522BA",
+      "node_count": 8,
+      "pin_count": 22,
+      "connection_count": 7,
+      "exec_connection_count": 4,
+      "data_connection_count": 3
+    },
+    {
+      "name": "DebugCycleRightHandWeapon",
+      "kind": "function",
+      "guid": "EB63B5484F1B6FC20F791099DF06CA64",
+      "node_count": 11,
+      "pin_count": 39,
+      "connection_count": 15,
+      "exec_connection_count": 7,
+      "data_connection_count": 8
+    },
+    {
+      "name": "RequestInteraction",
+      "kind": "function",
+      "guid": "02C47D85490D1CBE6D001C9248D5C1B2",
+      "node_count": 15,
+      "pin_count": 48,
+      "connection_count": 17,
+      "exec_connection_count": 8,
+      "data_connection_count": 9
+    },
+    {
+      "name": "SyncInteractionState",
+      "kind": "function",
+      "guid": "7A77A6124F2CC8DC24F5689908E9FFE1",
+      "node_count": 21,
+      "pin_count": 66,
+      "connection_count": 23,
+      "exec_connection_count": 5,
+      "data_connection_count": 18
+    },
+    {
+      "name": "ResolveInteractionComponent",
+      "kind": "function",
+      "guid": "8E50420E4118710C4E17C49A1DE80A05",
+      "node_count": 9,
+      "pin_count": 23,
+      "connection_count": 10,
+      "exec_connection_count": 5,
+      "data_connection_count": 5
+    },
+    {
+      "name": "OpenRestMenu",
+      "kind": "function",
+      "guid": "3A283F85436014638DEE109DDDB1980C",
+      "node_count": 24,
+      "pin_count": 82,
+      "connection_count": 34,
+      "exec_connection_count": 16,
+      "data_connection_count": 18
+    },
+    {
+      "name": "CloseRestMenu",
+      "kind": "function",
+      "guid": "1CB5BF8047F3EEA3FAF133AEB6B4774E",
+      "node_count": 8,
+      "pin_count": 22,
+      "connection_count": 7,
+      "exec_connection_count": 3,
+      "data_connection_count": 4
+    },
+    {
+      "name": "FinishCloseRestMenu",
+      "kind": "function",
+      "guid": "FC14AECB4372BEC070CDA2B78AB2D5A7",
+      "node_count": 35,
+      "pin_count": 118,
+      "connection_count": 37,
+      "exec_connection_count": 22,
+      "data_connection_count": 15
+    },
+    {
+      "name": "LockForDeath",
+      "kind": "function",
+      "guid": "F70D52CA4BC3AB1A778571B138A8F7D1",
+      "node_count": 16,
+      "pin_count": 54,
+      "connection_count": 23,
+      "exec_connection_count": 12,
+      "data_connection_count": 11
+    },
+    {
+      "name": "BeginDeathPresentation",
+      "kind": "function",
+      "guid": "E455E52A4C51B30428FA6DA7B9F014A6",
+      "node_count": 11,
+      "pin_count": 49,
+      "connection_count": 12,
+      "exec_connection_count": 4,
+      "data_connection_count": 8
+    },
+    {
+      "name": "ShowDeathMessage",
+      "kind": "function",
+      "guid": "3FDA8ECC49DDC6E6FC04689FB3A0525B",
+      "node_count": 6,
+      "pin_count": 20,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "FadeForDeathReload",
+      "kind": "function",
+      "guid": "0D9FAFD24E1F5A5F96772A83C62431BD",
+      "node_count": 14,
+      "pin_count": 58,
+      "connection_count": 16,
+      "exec_connection_count": 9,
+      "data_connection_count": 7
+    },
+    {
+      "name": "ReloadAfterDeath",
+      "kind": "function",
+      "guid": "66711065418E2FF4AA0B618604398F09",
+      "node_count": 8,
+      "pin_count": 31,
+      "connection_count": 8,
+      "exec_connection_count": 4,
+      "data_connection_count": 4
+    },
+    {
+      "name": "CanUsePotionInput",
+      "kind": "function",
+      "guid": "76D1A8504BBFAE50730EAC9B23FB77CB",
+      "node_count": 18,
+      "pin_count": 50,
+      "connection_count": 19,
+      "exec_connection_count": 6,
+      "data_connection_count": 13
+    },
+    {
+      "name": "RequestUsePotion",
+      "kind": "function",
+      "guid": "B399425041AA1EB679A6B187C3E85FDE",
+      "node_count": 8,
+      "pin_count": 25,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "RequestCyclePotion",
+      "kind": "function",
+      "guid": "BD107B824F534DA96140C289797761F2",
+      "node_count": 8,
+      "pin_count": 24,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "CanBeginRest",
+      "kind": "function",
+      "guid": "6A5E6D9A47835B76D07D94B308209639",
+      "node_count": 26,
+      "pin_count": 76,
+      "connection_count": 29,
+      "exec_connection_count": 6,
+      "data_connection_count": 23
+    },
+    {
+      "name": "AnnounceRestingSite",
+      "kind": "function",
+      "guid": "0C7A900041545A5FA3FC6EB00CEAD83E",
+      "node_count": 6,
+      "pin_count": 19,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "BeginRestSession",
+      "kind": "function",
+      "guid": "518A81CA4543EE00770B449BE6943620",
+      "node_count": 30,
+      "pin_count": 96,
+      "connection_count": 41,
+      "exec_connection_count": 16,
+      "data_connection_count": 25
+    },
+    {
+      "name": "LockRestInput",
+      "kind": "function",
+      "guid": "8355F2C04BF92BE63C88F4A506C5B29B",
+      "node_count": 24,
+      "pin_count": 79,
+      "connection_count": 29,
+      "exec_connection_count": 14,
+      "data_connection_count": 15
+    },
+    {
+      "name": "RequestLeaveRest",
+      "kind": "function",
+      "guid": "563467484FD16BE1ABF9A2B23217835E",
+      "node_count": 18,
+      "pin_count": 55,
+      "connection_count": 17,
+      "exec_connection_count": 8,
+      "data_connection_count": 9
+    },
+    {
+      "name": "HandleRestFadeFinished",
+      "kind": "function",
+      "guid": "FB3A21C54BFC3F0B18DB2F9E20B4A919",
+      "node_count": 31,
+      "pin_count": 102,
+      "connection_count": 30,
+      "exec_connection_count": 15,
+      "data_connection_count": 15
+    },
+    {
+      "name": "HandleRestActorDestroyed",
+      "kind": "function",
+      "guid": "5683F4DA4EA4850503BFDE85C49F8AE6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "CompleteRestEntry",
+      "kind": "function",
+      "guid": "04B3A8C64A81D6C6ADE71FA21486436F",
+      "node_count": 49,
+      "pin_count": 170,
+      "connection_count": 60,
+      "exec_connection_count": 21,
+      "data_connection_count": 39
+    },
+    {
+      "name": "CompleteRestExit",
+      "kind": "function",
+      "guid": "77B05767467B5B10F0610AA7DB1C5956",
+      "node_count": 17,
+      "pin_count": 49,
+      "connection_count": 14,
+      "exec_connection_count": 8,
+      "data_connection_count": 6
+    },
+    {
+      "name": "RestoreRestPawn",
+      "kind": "function",
+      "guid": "CDB8A225447FF6F3528F7BABAFDB759A",
+      "node_count": 26,
+      "pin_count": 82,
+      "connection_count": 32,
+      "exec_connection_count": 10,
+      "data_connection_count": 22
+    },
+    {
+      "name": "AbortRestForDeath",
+      "kind": "function",
+      "guid": "4AA8EA00499B1A02B0CDA8B94C64D9B0",
+      "node_count": 15,
+      "pin_count": 44,
+      "connection_count": 14,
+      "exec_connection_count": 7,
+      "data_connection_count": 7
+    },
+    {
+      "name": "HealAtRestSite",
+      "kind": "function",
+      "guid": "6690FAB84E91C598DA088BA7129C7367",
+      "node_count": 17,
+      "pin_count": 50,
+      "connection_count": 22,
+      "exec_connection_count": 5,
+      "data_connection_count": 17
+    },
+    {
+      "name": "RequestRestTime",
+      "kind": "function",
+      "guid": "2052E21B407A6C5267F015A73B171639",
+      "node_count": 35,
+      "pin_count": 118,
+      "connection_count": 35,
+      "exec_connection_count": 14,
+      "data_connection_count": 21
+    },
+    {
+      "name": "ApplyRestTime",
+      "kind": "function",
+      "guid": "6342D5604B6C0729EDFE7FA70BA79DF1",
+      "node_count": 20,
+      "pin_count": 83,
+      "connection_count": 24,
+      "exec_connection_count": 13,
+      "data_connection_count": 11
+    },
+    {
+      "name": "EnableRestMenuInput",
+      "kind": "function",
+      "guid": "20D42FBA4404C99BC06ACFA69A3E3532",
+      "node_count": 9,
+      "pin_count": 24,
+      "connection_count": 8,
+      "exec_connection_count": 4,
+      "data_connection_count": 4
+    },
+    {
+      "name": "UnbindRestSession",
+      "kind": "function",
+      "guid": "A0CD2D03452A152BFAA9C69CBE868262",
+      "node_count": 25,
+      "pin_count": 73,
+      "connection_count": 33,
+      "exec_connection_count": 10,
+      "data_connection_count": 23
+    },
+    {
+      "name": "CancelRestForUnpossess",
+      "kind": "function",
+      "guid": "1ACE07EF4E5A5FD68C31F0A463E32B04",
+      "node_count": 7,
+      "pin_count": 21,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "PrepareRestPresentation",
+      "kind": "function",
+      "guid": "9F19860C4C92BA8219995EB3FFAD19A2",
+      "node_count": 14,
+      "pin_count": 46,
+      "connection_count": 17,
+      "exec_connection_count": 7,
+      "data_connection_count": 10
+    },
+    {
+      "name": "RestoreRestPresentation",
+      "kind": "function",
+      "guid": "D6AEFC82425552A339438E8CA18E3EA8",
+      "node_count": 18,
+      "pin_count": 58,
+      "connection_count": 21,
+      "exec_connection_count": 10,
+      "data_connection_count": 11
+    },
+    {
+      "name": "QueueRestReveal",
+      "kind": "function",
+      "guid": "0B93002F49F169175A349697B70C14B7",
+      "node_count": 4,
+      "pin_count": 18,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "RevealRestScreen",
+      "kind": "function",
+      "guid": "09C704CB4239C8127BFF4FAC7A00111D",
+      "node_count": 14,
+      "pin_count": 46,
+      "connection_count": 16,
+      "exec_connection_count": 4,
+      "data_connection_count": 12
+    },
+    {
+      "name": "InitializeCinematicPresentation",
+      "kind": "function",
+      "guid": "093726DE4CA315D56EF5E58624890B54",
+      "node_count": 9,
+      "pin_count": 24,
+      "connection_count": 9,
+      "exec_connection_count": 4,
+      "data_connection_count": 5
+    },
+    {
+      "name": "UpdateCinematicAvailability",
+      "kind": "function",
+      "guid": "0FDBB6094DFB07969996E5A16D02B03C",
+      "node_count": 19,
+      "pin_count": 55,
+      "connection_count": 18,
+      "exec_connection_count": 1,
+      "data_connection_count": 17
+    },
+    {
+      "name": "HandleCinematicInputLockChanged",
+      "kind": "function",
+      "guid": "D2901C4B4006804789DA2A8C9201A034",
+      "node_count": 2,
+      "pin_count": 4,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "HandleCinematicSkip",
+      "kind": "function",
+      "guid": "A434E1B74E1540108AB1318DD6474D97",
+      "node_count": 3,
+      "pin_count": 6,
+      "connection_count": 2,
+      "exec_connection_count": 1,
+      "data_connection_count": 1
+    },
+    {
+      "name": "InterruptCinematicForDeath",
+      "kind": "function",
+      "guid": "5187D08A4FBE841997D2F89D98FD0181",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "InterruptCinematicForUnpossess",
+      "kind": "function",
+      "guid": "33754B3D43725D36F750A69C293F6610",
+      "node_count": 7,
+      "pin_count": 18,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InterruptCinematicForEndPlay",
+      "kind": "function",
+      "guid": "45F5C52D4A8B63630DF916910A2D16C6",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 5,
+      "exec_connection_count": 3,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshCinematicPresentation",
+      "kind": "function",
+      "guid": "C86AA1ED463005141EF4F484ECB2A673",
+      "node_count": 7,
+      "pin_count": 18,
+      "connection_count": 6,
+      "exec_connection_count": 3,
+      "data_connection_count": 3
+    },
+    {
+      "name": "IsCinematicActive",
+      "kind": "function",
+      "guid": "58129FB343E3A082AF7E119B7331261B",
+      "node_count": 4,
+      "pin_count": 9,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "IsCinematicInputLocked",
+      "kind": "function",
+      "guid": "FD15392E4375F531CF621D960B6D798A",
+      "node_count": 4,
+      "pin_count": 9,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "TryLockFogTraversalInput",
+      "kind": "function",
+      "guid": "8E3EE16E4DE3D9C860E709BCEECD2A79",
+      "node_count": 41,
+      "pin_count": 125,
+      "connection_count": 51,
+      "exec_connection_count": 18,
+      "data_connection_count": 33
+    },
+    {
+      "name": "ReleaseFogTraversalInput",
+      "kind": "function",
+      "guid": "E579F4A74A7D31DAB9B4CAAD7CEFF4E4",
+      "node_count": 30,
+      "pin_count": 98,
+      "connection_count": 45,
+      "exec_connection_count": 20,
+      "data_connection_count": 25
+    },
+    {
+      "name": "InitializeSystemPreferences",
+      "kind": "function",
+      "guid": "B0B0BA7142BA9DA6652BD2B2F632CEF6",
+      "node_count": 14,
+      "pin_count": 53,
+      "connection_count": 17,
+      "exec_connection_count": 10,
+      "data_connection_count": 7
+    },
+    {
+      "name": "ApplySystemAudio",
+      "kind": "function",
+      "guid": "C2DF323845E9215A5A7E0C9F299B3235",
+      "node_count": 23,
+      "pin_count": 90,
+      "connection_count": 26,
+      "exec_connection_count": 8,
+      "data_connection_count": 18
+    },
+    {
+      "name": "SaveSystemPreferences",
+      "kind": "function",
+      "guid": "2867C77B49881A858341829011E26A7B",
+      "node_count": 6,
+      "pin_count": 18,
+      "connection_count": 7,
+      "exec_connection_count": 4,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ApplyCameraLookPreferences",
+      "kind": "function",
+      "guid": "6CFCA68C4CCC0555A251DBBDCD2759AB",
+      "node_count": 23,
+      "pin_count": 69,
+      "connection_count": 29,
+      "exec_connection_count": 3,
+      "data_connection_count": 26
+    },
+    {
+      "name": "IsWeaponSwitchInputLocked",
+      "kind": "function",
+      "guid": "571E108A4D3C04F9C357CFBB774148C1",
+      "node_count": 17,
+      "pin_count": 50,
+      "connection_count": 17,
+      "exec_connection_count": 2,
+      "data_connection_count": 15
+    },
+    {
+      "name": "UpdateEquipmentPreviewActivation",
+      "kind": "function",
+      "guid": "9007ACE34FE6E503CB85E4AEBFB56A7B",
+      "node_count": 11,
+      "pin_count": 33,
+      "connection_count": 13,
+      "exec_connection_count": 4,
+      "data_connection_count": 9
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "ReceiveEndPlay",
+      "guid": "14A6704C42AC4907BB6B36A99F4EB57D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveUnPossess",
+      "guid": "605692A14F8D96A8E51ECE955A5B5506",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceivePossess",
+      "guid": "95CA786647D402255C0AB4B525826013",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "072067C14DD7176CA7FA09B8CA50CED8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "InpActEvt_T_K2Node_InputKeyEvent_0",
+      "guid": "E24C5CD94547C709F85CAF9F1ED402E8",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "InpActEvt_IA_UseItem_K2Node_EnhancedInputActionEvent_0",
+      "guid": "D5EAE3BE433455A63EEF7D83AEC08177",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Interact_K2Node_EnhancedInputActionEvent_1",
+      "guid": "B95CD3BF4F327E74F72A8A9FCBDFD0D4",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_One_K2Node_InputKeyEvent_1",
+      "guid": "D1230C8C4AC8E60E072FD5939D3C5708",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "InpActEvt_IA_GameMenu_K2Node_EnhancedInputActionEvent_2",
+      "guid": "24691BA842D412F4855B1E82CA72348E",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_AttackLight_K2Node_EnhancedInputActionEvent_3",
+      "guid": "2B54F3844F77422ABE45898A6DC6BD4C",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Dodge_K2Node_EnhancedInputActionEvent_4",
+      "guid": "BAABB6194DDF623B79F3B1B17FC068D7",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_5",
+      "guid": "81F0A4D142EDDD3FAC5B08A140F8B8DC",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_6",
+      "guid": "7A6311C94EE904F097593CA0D153BB97",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Block_K2Node_EnhancedInputActionEvent_7",
+      "guid": "5CF832C94EDC6F06592E29B2BEDA55EA",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_N_K2Node_InputKeyEvent_2",
+      "guid": "B9F3D4954D9960A7784B21BB0456B76D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_8",
+      "guid": "091D0B504CB274BEF57732A8CC1B706F",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_9",
+      "guid": "4D48D59E4F1A75F7A5D28EA72A5B24E1",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Execution_K2Node_EnhancedInputActionEvent_10",
+      "guid": "231F6B3E4C55BBC64FD3E9BFCEAE75D2",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_ToggleLocomotion_K2Node_EnhancedInputActionEvent_11",
+      "guid": "EB889D3240AEDBFDCE2EAABD2124DA51",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_12",
+      "guid": "34E1265E46528E4C22C05FAAABD9B821",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_13",
+      "guid": "7D8336B34ABF7D2D45C54BAD4535C4B4",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Sprint_K2Node_EnhancedInputActionEvent_14",
+      "guid": "FE77B72343648D0C892322979935064F",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_15",
+      "guid": "C357AD0C41070A241F8977B14F566E12",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_16",
+      "guid": "E51A55D94D651FBDC38C0BBD73D3DFEF",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent_17",
+      "guid": "E5E07C0F433A84E0B9C1A49A5FBD1548",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent_18",
+      "guid": "B8849A814A230E9BBA2727B3AC98A64B",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 69,
+    "generated_graph_count": 26,
+    "authored_node_count": 1336,
+    "authored_pin_count": 4307,
+    "authored_connection_count": 1539,
+    "generated_node_count": 77,
+    "generated_pin_count": 344
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "AbortRestForDeath",
+      "kind": "function",
+      "file": "graphs/AbortRestForDeath.json"
+    },
+    {
+      "name": "AnnounceRestingSite",
+      "kind": "function",
+      "file": "graphs/AnnounceRestingSite.json"
+    },
+    {
+      "name": "ApplyCameraLookPreferences",
+      "kind": "function",
+      "file": "graphs/ApplyCameraLookPreferences.json"
+    },
+    {
+      "name": "ApplyRestTime",
+      "kind": "function",
+      "file": "graphs/ApplyRestTime.json"
+    },
+    {
+      "name": "ApplySystemAudio",
+      "kind": "function",
+      "file": "graphs/ApplySystemAudio.json"
+    },
+    {
+      "name": "BeginDeathPresentation",
+      "kind": "function",
+      "file": "graphs/BeginDeathPresentation.json"
+    },
+    {
+      "name": "BeginRestSession",
+      "kind": "function",
+      "file": "graphs/BeginRestSession.json"
+    },
+    {
+      "name": "BindGameplayHUDToPawn",
+      "kind": "function",
+      "file": "graphs/BindGameplayHUDToPawn.json"
+    },
+    {
+      "name": "CanBeginRest",
+      "kind": "function",
+      "file": "graphs/CanBeginRest.json"
+    },
+    {
+      "name": "CancelRestForUnpossess",
+      "kind": "function",
+      "file": "graphs/CancelRestForUnpossess.json"
+    },
+    {
+      "name": "CanUsePotionInput",
+      "kind": "function",
+      "file": "graphs/CanUsePotionInput.json"
+    },
+    {
+      "name": "CloseGameMenu",
+      "kind": "function",
+      "file": "graphs/CloseGameMenu.json"
+    },
+    {
+      "name": "CloseRestMenu",
+      "kind": "function",
+      "file": "graphs/CloseRestMenu.json"
+    },
+    {
+      "name": "CompleteRestEntry",
+      "kind": "function",
+      "file": "graphs/CompleteRestEntry.json"
+    },
+    {
+      "name": "CompleteRestExit",
+      "kind": "function",
+      "file": "graphs/CompleteRestExit.json"
+    },
+    {
+      "name": "DebugCycleRightHandWeapon",
+      "kind": "function",
+      "file": "graphs/DebugCycleRightHandWeapon.json"
+    },
+    {
+      "name": "DetachGameplayHUD",
+      "kind": "function",
+      "file": "graphs/DetachGameplayHUD.json"
+    },
+    {
+      "name": "EnableRestMenuInput",
+      "kind": "function",
+      "file": "graphs/EnableRestMenuInput.json"
+    },
+    {
+      "name": "EnsureGameplayHUD",
+      "kind": "function",
+      "file": "graphs/EnsureGameplayHUD.json"
+    },
+    {
+      "name": "FadeForDeathReload",
+      "kind": "function",
+      "file": "graphs/FadeForDeathReload.json"
+    },
+    {
+      "name": "FinishCloseRestMenu",
+      "kind": "function",
+      "file": "graphs/FinishCloseRestMenu.json"
+    },
+    {
+      "name": "HandleCinematicInputLockChanged",
+      "kind": "function",
+      "file": "graphs/HandleCinematicInputLockChanged.json"
+    },
+    {
+      "name": "HandleCinematicSkip",
+      "kind": "function",
+      "file": "graphs/HandleCinematicSkip.json"
+    },
+    {
+      "name": "HandleRestActorDestroyed",
+      "kind": "function",
+      "file": "graphs/HandleRestActorDestroyed.json"
+    },
+    {
+      "name": "HandleRestFadeFinished",
+      "kind": "function",
+      "file": "graphs/HandleRestFadeFinished.json"
+    },
+    {
+      "name": "HealAtRestSite",
+      "kind": "function",
+      "file": "graphs/HealAtRestSite.json"
+    },
+    {
+      "name": "HideMenuViews",
+      "kind": "function",
+      "file": "graphs/HideMenuViews.json"
+    },
+    {
+      "name": "InitializeCinematicPresentation",
+      "kind": "function",
+      "file": "graphs/InitializeCinematicPresentation.json"
+    },
+    {
+      "name": "InitializeGameMenu",
+      "kind": "function",
+      "file": "graphs/InitializeGameMenu.json"
+    },
+    {
+      "name": "InitializeSystemPreferences",
+      "kind": "function",
+      "file": "graphs/InitializeSystemPreferences.json"
+    },
+    {
+      "name": "InterruptCinematicForDeath",
+      "kind": "function",
+      "file": "graphs/InterruptCinematicForDeath.json"
+    },
+    {
+      "name": "InterruptCinematicForEndPlay",
+      "kind": "function",
+      "file": "graphs/InterruptCinematicForEndPlay.json"
+    },
+    {
+      "name": "InterruptCinematicForUnpossess",
+      "kind": "function",
+      "file": "graphs/InterruptCinematicForUnpossess.json"
+    },
+    {
+      "name": "IsCinematicActive",
+      "kind": "function",
+      "file": "graphs/IsCinematicActive.json"
+    },
+    {
+      "name": "IsCinematicInputLocked",
+      "kind": "function",
+      "file": "graphs/IsCinematicInputLocked.json"
+    },
+    {
+      "name": "IsWeaponSwitchInputLocked",
+      "kind": "function",
+      "file": "graphs/IsWeaponSwitchInputLocked.json"
+    },
+    {
+      "name": "LockForDeath",
+      "kind": "function",
+      "file": "graphs/LockForDeath.json"
+    },
+    {
+      "name": "LockRestInput",
+      "kind": "function",
+      "file": "graphs/LockRestInput.json"
+    },
+    {
+      "name": "NavigateMenuBack",
+      "kind": "function",
+      "file": "graphs/NavigateMenuBack.json"
+    },
+    {
+      "name": "OpenGameMenu",
+      "kind": "function",
+      "file": "graphs/OpenGameMenu.json"
+    },
+    {
+      "name": "OpenMenuPage",
+      "kind": "function",
+      "file": "graphs/OpenMenuPage.json"
+    },
+    {
+      "name": "OpenRestMenu",
+      "kind": "function",
+      "file": "graphs/OpenRestMenu.json"
+    },
+    {
+      "name": "PrepareRestPresentation",
+      "kind": "function",
+      "file": "graphs/PrepareRestPresentation.json"
+    },
+    {
+      "name": "QueueRestReveal",
+      "kind": "function",
+      "file": "graphs/QueueRestReveal.json"
+    },
+    {
+      "name": "RefreshCinematicPresentation",
+      "kind": "function",
+      "file": "graphs/RefreshCinematicPresentation.json"
+    },
+    {
+      "name": "ReleaseFogTraversalInput",
+      "kind": "function",
+      "file": "graphs/ReleaseFogTraversalInput.json"
+    },
+    {
+      "name": "ReloadAfterDeath",
+      "kind": "function",
+      "file": "graphs/ReloadAfterDeath.json"
+    },
+    {
+      "name": "RemoveGameplayHUD",
+      "kind": "function",
+      "file": "graphs/RemoveGameplayHUD.json"
+    },
+    {
+      "name": "RequestCyclePotion",
+      "kind": "function",
+      "file": "graphs/RequestCyclePotion.json"
+    },
+    {
+      "name": "RequestInteraction",
+      "kind": "function",
+      "file": "graphs/RequestInteraction.json"
+    },
+    {
+      "name": "RequestLeaveRest",
+      "kind": "function",
+      "file": "graphs/RequestLeaveRest.json"
+    },
+    {
+      "name": "RequestRestTime",
+      "kind": "function",
+      "file": "graphs/RequestRestTime.json"
+    },
+    {
+      "name": "RequestUsePotion",
+      "kind": "function",
+      "file": "graphs/RequestUsePotion.json"
+    },
+    {
+      "name": "ResetEquipmentMenuView",
+      "kind": "function",
+      "file": "graphs/ResetEquipmentMenuView.json"
+    },
+    {
+      "name": "ResolveInteractionComponent",
+      "kind": "function",
+      "file": "graphs/ResolveInteractionComponent.json"
+    },
+    {
+      "name": "RestoreRestPawn",
+      "kind": "function",
+      "file": "graphs/RestoreRestPawn.json"
+    },
+    {
+      "name": "RestoreRestPresentation",
+      "kind": "function",
+      "file": "graphs/RestoreRestPresentation.json"
+    },
+    {
+      "name": "RevealRestScreen",
+      "kind": "function",
+      "file": "graphs/RevealRestScreen.json"
+    },
+    {
+      "name": "SaveSystemPreferences",
+      "kind": "function",
+      "file": "graphs/SaveSystemPreferences.json"
+    },
+    {
+      "name": "ShowDeathMessage",
+      "kind": "function",
+      "file": "graphs/ShowDeathMessage.json"
+    },
+    {
+      "name": "ShowMenuNavigation",
+      "kind": "function",
+      "file": "graphs/ShowMenuNavigation.json"
+    },
+    {
+      "name": "SyncInteractionState",
+      "kind": "function",
+      "file": "graphs/SyncInteractionState.json"
+    },
+    {
+      "name": "ToggleGameMenu",
+      "kind": "function",
+      "file": "graphs/ToggleGameMenu.json"
+    },
+    {
+      "name": "TryLockFogTraversalInput",
+      "kind": "function",
+      "file": "graphs/TryLockFogTraversalInput.json"
+    },
+    {
+      "name": "UnbindRestSession",
+      "kind": "function",
+      "file": "graphs/UnbindRestSession.json"
+    },
+    {
+      "name": "UpdateCinematicAvailability",
+      "kind": "function",
+      "file": "graphs/UpdateCinematicAvailability.json"
+    },
+    {
+      "name": "UpdateEquipmentPreviewActivation",
+      "kind": "function",
+      "file": "graphs/UpdateEquipmentPreviewActivation.json"
+    },
+    {
+      "name": "UserConstructionScript",
+      "kind": "function",
+      "file": "graphs/UserConstructionScript.json"
+    }
+  ]
+}
