@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "WBP_FragmentCard",
+    "class": "/Script/UMGEditor.WidgetBlueprint",
+    "guid": "C5C677164785136A0C5361BCD83E11E4",
+    "parent_class": "/Script/CoreUObject.Class'/Script/UMG.UserWidget'"
+  },
+  "variables": [
+    {
+      "name": "bEquipped",
+      "guid": "243023B7488CB4742E158A8889181B74",
+      "friendly_name": "Equipped",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bHovered",
+      "guid": "BFD21D664CA2EB68E1B536A70ACFB5CD",
+      "friendly_name": "Hovered",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bPressed",
+      "guid": "C4F8FE1A4D859AC61D59698B96F6A32C",
+      "friendly_name": "Pressed",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bSelected",
+      "guid": "257024084F19B62D047CA2950AEBD806",
+      "friendly_name": "Selected",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "bShowItemLabel",
+      "guid": "036FEAF044A6A8287979129D1F591D5B",
+      "friendly_name": "Show Item Label",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Icon",
+      "guid": "A01ABAAC4EA5B80FDFDD8C90E3B41056",
+      "friendly_name": "Icon",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ItemID",
+      "guid": "4C40CCD0442083241033A083E8E4FFE7",
+      "friendly_name": "Item ID",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ItemLabel",
+      "guid": "C7AD110447DB1722C13CCBAC5F0FB30E",
+      "friendly_name": "Item Label",
+      "category": "Default",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "text",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnChoicePressed",
+      "guid": "5FD1562C4073B98796FC6995FC1CB427",
+      "friendly_name": "On Choice Pressed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OnChoicePreviewed",
+      "guid": "30C3DA2E4857653EA5AC5995F36EECDA",
+      "friendly_name": "On Choice Previewed",
+      "category": "Default",
+      "property_flags": 17592454545413,
+      "default_value": null,
+      "type": {
+        "category": "mcdelegate",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "3C625ED243EDCF6751081BA4CF33273C",
+      "node_count": 36,
+      "pin_count": 101,
+      "connection_count": 26,
+      "exec_connection_count": 15,
+      "data_connection_count": 11
+    },
+    {
+      "name": "RefreshAppearance",
+      "kind": "function",
+      "guid": "9812B21047DFA864EB00EDA4B74BAD9A",
+      "node_count": 39,
+      "pin_count": 125,
+      "connection_count": 47,
+      "exec_connection_count": 7,
+      "data_connection_count": 40
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "guid": "149A6D82405504D1BE3B4DBB43E58898",
+      "node_count": 4,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "RefreshContent",
+      "kind": "function",
+      "guid": "151E1C204A2C084B03FC1F96126965B5",
+      "node_count": 15,
+      "pin_count": 46,
+      "connection_count": 19,
+      "exec_connection_count": 9,
+      "data_connection_count": 10
+    },
+    {
+      "name": "RefreshIconOpacity",
+      "kind": "function",
+      "guid": "DDF7C98246D2A0741EC8BEBE76DB279D",
+      "node_count": 10,
+      "pin_count": 28,
+      "connection_count": 9,
+      "exec_connection_count": 1,
+      "data_connection_count": 8
+    },
+    {
+      "name": "ShowDiscovery",
+      "kind": "function",
+      "guid": "64BFA689471980E7BCFDA684B0EB922B",
+      "node_count": 42,
+      "pin_count": 132,
+      "connection_count": 49,
+      "exec_connection_count": 14,
+      "data_connection_count": 35
+    },
+    {
+      "name": "OnChoicePressed",
+      "kind": "delegate",
+      "guid": "18E3D80C4DECC4CB15881293A1A0149E",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OnChoicePreviewed",
+      "kind": "delegate",
+      "guid": "9EAEF9D945BF7E6620C16C8772E7A981",
+      "node_count": 1,
+      "pin_count": 2,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "OnRemovedFromFocusPath",
+      "guid": "D54A93A34246152478DD4A8B926D0862",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnAddedToFocusPath",
+      "guid": "1CCDC7A1476A226FEE2661877F8CD542",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "PreConstruct",
+      "guid": "60A157AE4605C91CD67C288AEC0813E1",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature",
+      "guid": "B053D8C64117539A4C81F599915E8A61",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature",
+      "guid": "CCBEA8CC4D0F5BC4D03E39B401A32724",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature",
+      "guid": "A966BAB94E8716002B92478332A1588F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature",
+      "guid": "F6DB012343B5B7A0A74F1997FD999AF3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BndEvt__WBP_EquipmentChoiceEntry_HitButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature",
+      "guid": "F97C3C9B47F0381D260A9D95F23ACA6E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 8,
+    "generated_graph_count": 8,
+    "authored_node_count": 148,
+    "authored_pin_count": 447,
+    "authored_connection_count": 154,
+    "generated_node_count": 19,
+    "generated_pin_count": 52
+  },
+  "graph_files": [
+    {
+      "name": "OnChoicePressed",
+      "kind": "delegate",
+      "file": "graphs/OnChoicePressed.json"
+    },
+    {
+      "name": "OnChoicePreviewed",
+      "kind": "delegate",
+      "file": "graphs/OnChoicePreviewed.json"
+    },
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplySelection",
+      "kind": "function",
+      "file": "graphs/ApplySelection.json"
+    },
+    {
+      "name": "RefreshAppearance",
+      "kind": "function",
+      "file": "graphs/RefreshAppearance.json"
+    },
+    {
+      "name": "RefreshContent",
+      "kind": "function",
+      "file": "graphs/RefreshContent.json"
+    },
+    {
+      "name": "RefreshIconOpacity",
+      "kind": "function",
+      "file": "graphs/RefreshIconOpacity.json"
+    },
+    {
+      "name": "ShowDiscovery",
+      "kind": "function",
+      "file": "graphs/ShowDiscovery.json"
+    }
+  ]
+}

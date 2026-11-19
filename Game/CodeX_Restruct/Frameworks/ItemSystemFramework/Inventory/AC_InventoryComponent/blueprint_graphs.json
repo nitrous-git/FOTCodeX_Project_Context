@@ -42,6 +42,23 @@
       }
     },
     {
+      "name": "bGrantChampionFragmentsForTesting",
+      "guid": "A03CEEE34CD3E3DE9ECA4F8F78400C8C",
+      "friendly_name": "Grant Champion Fragments for Testing",
+      "category": "INVTEXT(\"Development\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "bInventoryAmountActionInProgress",
       "guid": "A68FF2894DBC6EA697B69A9FF4F36E67",
       "friendly_name": "Inventory Amount Action in Progress",
@@ -530,10 +547,10 @@
       "name": "Debug_GiveTestInventory",
       "kind": "function",
       "guid": "19860B9346DD540DB379AD9DC931A361",
-      "node_count": 6,
-      "pin_count": 23,
-      "connection_count": 6,
-      "exec_connection_count": 4,
+      "node_count": 9,
+      "pin_count": 32,
+      "connection_count": 9,
+      "exec_connection_count": 7,
       "data_connection_count": 2
     },
     {
@@ -627,6 +644,46 @@
       "data_connection_count": 10
     },
     {
+      "name": "EnsureDevelopmentAttunements",
+      "kind": "function",
+      "guid": "2B2725194F91CD5C8FEDBFA5E56BFDBF",
+      "node_count": 20,
+      "pin_count": 84,
+      "connection_count": 26,
+      "exec_connection_count": 12,
+      "data_connection_count": 14
+    },
+    {
+      "name": "Debug_GiveChampionFragments",
+      "kind": "function",
+      "guid": "D151943E406421D00016FB85A6A0B79F",
+      "node_count": 20,
+      "pin_count": 84,
+      "connection_count": 26,
+      "exec_connection_count": 12,
+      "data_connection_count": 14
+    },
+    {
+      "name": "DevelopmentFragmentGrant",
+      "kind": "function",
+      "guid": "74DF285D4BD9E65BAABFE5B9B0B4D101",
+      "node_count": 4,
+      "pin_count": 10,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "EnsureDevelopmentFragments",
+      "kind": "function",
+      "guid": "5B198F764028E5CED2FD65B4EA0B1558",
+      "node_count": 16,
+      "pin_count": 65,
+      "connection_count": 20,
+      "exec_connection_count": 8,
+      "data_connection_count": 12
+    },
+    {
       "name": "OnInventoryChanged",
       "kind": "delegate",
       "guid": "81EE87BD47508F59243F2293DE4086A1",
@@ -650,7 +707,7 @@
   "generated_graphs": [
     {
       "name": "ReceiveBeginPlay",
-      "guid": "ABD6DBB74FB02CE22712829D6BEC0D22",
+      "guid": "359CCAD847D681330AE4DA97ACED0274",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -659,11 +716,11 @@
     }
   ],
   "stats": {
-    "authored_graph_count": 28,
+    "authored_graph_count": 32,
     "generated_graph_count": 1,
-    "authored_node_count": 767,
-    "authored_pin_count": 2899,
-    "authored_connection_count": 1023,
+    "authored_node_count": 830,
+    "authored_pin_count": 3151,
+    "authored_connection_count": 1101,
     "generated_node_count": 2,
     "generated_pin_count": 5
   },
@@ -699,6 +756,11 @@
       "file": "graphs/ClearInventorySlot.json"
     },
     {
+      "name": "Debug_GiveChampionFragments",
+      "kind": "function",
+      "file": "graphs/Debug_GiveChampionFragments.json"
+    },
+    {
       "name": "Debug_GiveStarterInventory",
       "kind": "function",
       "file": "graphs/Debug_GiveStarterInventory.json"
@@ -717,6 +779,21 @@
       "name": "Debug_PrintSingleSlot",
       "kind": "function",
       "file": "graphs/Debug_PrintSingleSlot.json"
+    },
+    {
+      "name": "DevelopmentFragmentGrant",
+      "kind": "function",
+      "file": "graphs/DevelopmentFragmentGrant.json"
+    },
+    {
+      "name": "EnsureDevelopmentAttunements",
+      "kind": "function",
+      "file": "graphs/EnsureDevelopmentAttunements.json"
+    },
+    {
+      "name": "EnsureDevelopmentFragments",
+      "kind": "function",
+      "file": "graphs/EnsureDevelopmentFragments.json"
     },
     {
       "name": "EnsureDevelopmentOutfits",

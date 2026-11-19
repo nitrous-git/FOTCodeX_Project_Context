@@ -8,8 +8,8 @@
   "stats": {
     "node_count": 36,
     "pin_count": 101,
-    "connection_count": 25,
-    "exec_connection_count": 14,
+    "connection_count": 26,
+    "exec_connection_count": 15,
     "data_connection_count": 11
   },
   "nodes": [
@@ -2397,6 +2397,10 @@
             {
               "node": "K2Node_CallFunction_1",
               "pin_id": "E41804DB48EF9C5CA9A0A287376124CB"
+            },
+            {
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "9C8FE9E445A6930CD50ADDA158857779"
             }
           ]
         },
@@ -2971,7 +2975,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_CallDelegate_1",
+              "pin_id": "75333BB84957A2E233BD389DC1729188"
+            }
+          ]
         },
         {
           "id": "B1D51A8E417455E98EF68891F94B10E3",
@@ -3322,6 +3331,19 @@
       "from": {
         "node": "K2Node_CallFunction_1",
         "pin_id": "E41804DB48EF9C5CA9A0A287376124CB",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallDelegate_1",
+        "pin_id": "75333BB84957A2E233BD389DC1729188",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "9C8FE9E445A6930CD50ADDA158857779",
         "pin_name": "then"
       },
       "to": {

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 451,
-  "edge_count": 1404,
+  "node_count": 454,
+  "edge_count": 1424,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -126,6 +126,10 @@
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts"
     },
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -4388,6 +4392,10 @@
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     },
     {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Artifacts/BP_FragmentPreview",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WeaponPreview/BP_WeaponPreviewBase"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/DT_EquipmentSlots_UI",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/FEquipmentSlotUIData"
     },
@@ -4484,6 +4492,10 @@
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview"
     },
     {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_Equipment",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_EquipmentSlot",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/DT_EquipmentSlots_UI"
     },
@@ -4494,6 +4506,10 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Artifacts/BP_FragmentPreview"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview",
@@ -4525,10 +4541,6 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/FEquipmentStatSnapshot"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
     },
     {
@@ -4557,23 +4569,11 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
@@ -4586,6 +4586,10 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventorySlot"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_Inventory",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryAction",
@@ -4656,6 +4660,46 @@
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview"
     },
     {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/DA_OutfitDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/Shared/WBP_ItemDetails",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/System/WBP_System",
       "to": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
     },
@@ -4690,6 +4734,42 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/DA_OutfitDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
+      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Artifacts/WBP_FragmentCard"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Artifacts",
+      "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview"
     },
     {
       "from": "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_Character",

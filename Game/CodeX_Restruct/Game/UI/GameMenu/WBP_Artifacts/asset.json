@@ -17,12 +17,22 @@
   },
   "architecture": {
     "dependencies": [
-      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/DA_TalismanDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Outfit/DA_OutfitDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/EItemCategory",
+      "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/FInventoryItemDefinition",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_CombatStyle",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Artifacts/WBP_FragmentCard",
+      "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WBP_WeaponPreview"
     ],
     "referencers": [
+      "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "/Game/CodeX_Restruct/Game/UI/GameMenu/WBP_GameMenu"
     ],
-    "non_architecture_dependency_count": 10,
+    "non_architecture_dependency_count": 7,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -37,6 +47,57 @@
     "interfaces": [],
     "components": [],
     "variables": [
+      {
+        "name": "CollectionOpen",
+        "guid": "2521204D4A7678AD793C77BD47A8A41A",
+        "friendly_name": "Collection Open",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CommittedFragment",
+        "guid": "8D87C1374315AD6F5FE26C819BAA9488",
+        "friendly_name": "Committed Fragment",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "InspectedFragment",
+        "guid": "0E617EBE4474C2AA4839ECBA1BBC7FD6",
+        "friendly_name": "Inspected Fragment",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
       {
         "name": "V1Collected",
         "guid": "BC29B97E422A83781F8D14A4F900F1E5",
@@ -77,14 +138,22 @@
         "EventGraph"
       ],
       "functions": [
-        "RefreshV1Collection"
+        "RefreshV1Collection",
+        "InspectFragment",
+        "BindCollectionInventory",
+        "UnbindCollectionInventory",
+        "SetCollectionOpen"
       ],
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "BndEvt__WBP_Artifacts_V1ArtifactButton2_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature",
-        "BndEvt__WBP_Artifacts_V1ArtifactButton1_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature",
-        "BndEvt__WBP_Artifacts_V1ArtifactButton0_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature"
+        "Destruct",
+        "BndEvt__WBP_Artifacts_FragmentCard2_K2Node_ComponentBoundEvent_8_OnChoicePreviewed__DelegateSignature",
+        "BndEvt__WBP_Artifacts_FragmentCard2_K2Node_ComponentBoundEvent_7_OnChoicePressed__DelegateSignature",
+        "BndEvt__WBP_Artifacts_FragmentCard1_K2Node_ComponentBoundEvent_6_OnChoicePreviewed__DelegateSignature",
+        "BndEvt__WBP_Artifacts_FragmentCard1_K2Node_ComponentBoundEvent_5_OnChoicePressed__DelegateSignature",
+        "BndEvt__WBP_Artifacts_FragmentCard0_K2Node_ComponentBoundEvent_4_OnChoicePreviewed__DelegateSignature",
+        "BndEvt__WBP_Artifacts_FragmentCard0_K2Node_ComponentBoundEvent_3_OnChoicePressed__DelegateSignature"
       ]
     },
     "extraction_status": {
@@ -105,6 +174,6 @@
   "widget_designer": {
     "file": "widget_tree.json",
     "status": "available",
-    "widget_count": 29
+    "widget_count": 42
   }
 }

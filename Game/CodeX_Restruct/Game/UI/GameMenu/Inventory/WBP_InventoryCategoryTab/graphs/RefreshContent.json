@@ -7,10 +7,10 @@
   },
   "stats": {
     "node_count": 8,
-    "pin_count": 20,
-    "connection_count": 8,
+    "pin_count": 19,
+    "connection_count": 7,
     "exec_connection_count": 3,
-    "data_connection_count": 5
+    "data_connection_count": 4
   },
   "nodes": [
     {
@@ -56,21 +56,21 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_0",
-              "pin_id": "3A88BAF942C4F7C2B739C4A440F75BA6"
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "D00602754FCEFBCC88783081229724EE"
             }
           ]
         }
       ]
     },
     {
-      "name": "K2Node_Self_0",
+      "name": "K2Node_Self_1",
       "class": "/Script/BlueprintGraph.K2Node_Self",
-      "guid": "ABB061B7424598DC3DE35CB5128EE671",
+      "guid": "98D866D8417EDD2F13F2BCB5D12E1FEF",
       "title": "K2Node_Self",
       "position": {
-        "x": 208,
-        "y": 208
+        "x": 32,
+        "y": -64
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -79,7 +79,7 @@
       "properties": {},
       "pins": [
         {
-          "id": "5DF74AB24CFE83F6DCD115906D031088",
+          "id": "6315AE264091FC712B021EB64D42A1D7",
           "name": "self",
           "friendly_name": null,
           "direction": "output",
@@ -100,47 +100,43 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_0",
-              "pin_id": "7A68432F44D78ECE263EF9951BDDB856"
-            },
-            {
-              "node": "K2Node_CallFunction_1",
-              "pin_id": "B786FF8B425A4F7F9AE9C6ABD7E493B7"
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "C1E2E4A84A2F193AF7E404B1F1DDDBA1"
             }
           ]
         }
       ]
     },
     {
-      "name": "K2Node_VariableGet_0",
+      "name": "K2Node_VariableGet_6",
       "class": "/Script/BlueprintGraph.K2Node_VariableGet",
-      "guid": "4B0B44D34243412E1597DE804F08EF2A",
-      "title": "Get CategoryLabel",
+      "guid": "FC16E35548E09B6B058961940CD3EE58",
+      "title": "Get TabCaption",
       "position": {
-        "x": 192,
-        "y": 144
+        "x": 312,
+        "y": 16
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
         "variable": {
-          "MemberName": "CategoryLabel",
-          "MemberGuid": "79AACECB4D3AC768AE61E6994F616605",
+          "MemberName": "TabCaption",
+          "MemberGuid": "6944B0AE4BDD015DA60BADB4727A61CB",
           "bSelfContext": true
         }
       },
       "properties": {},
       "pins": [
         {
-          "id": "94C1EE1F48F87DB38AB237A0956189B4",
-          "name": "CategoryLabel",
+          "id": "7031C80B48EE8CF4DB5B73A1A0B5CDE6",
+          "name": "TabCaption",
           "friendly_name": null,
           "direction": "output",
           "type": {
-            "category": "text",
+            "category": "object",
             "sub_category": "",
-            "sub_category_object": null,
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.TextBlock'",
             "container": null,
             "is_reference": false,
             "is_const": false,
@@ -154,13 +150,13 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_0",
-              "pin_id": "0440268C40A38B4B3B9B7B8C5C865E7A"
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "1121D5FC4EC47B74711A889B5BCFE6DB"
             }
           ]
         },
         {
-          "id": "B978BDF6484A9C5C59C363A9A9BCFCD1",
+          "id": "228862634F39AA7E0A1594AA71F23CE8",
           "name": "self",
           "friendly_name": "Target",
           "direction": "input",
@@ -184,27 +180,99 @@
       ]
     },
     {
-      "name": "K2Node_CallFunction_0",
-      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
-      "guid": "5E05AC0C4B8E3EA5AC0CA09673F164AE",
-      "title": "SetToolTipText",
+      "name": "K2Node_VariableGet_7",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "87A2117B407FA0F314CF4CA7488B98C6",
+      "title": "Get CategoryLabel",
       "position": {
-        "x": 448,
-        "y": 0
+        "x": 592,
+        "y": 16
       },
       "comment": null,
       "enabled_state": "Enabled",
       "is_intermediate": false,
       "references": {
-        "function": {
-          "MemberName": "SetToolTipText",
+        "variable": {
+          "MemberName": "CategoryLabel",
+          "MemberGuid": "79AACECB4D3AC768AE61E6994F616605",
           "bSelfContext": true
         }
       },
       "properties": {},
       "pins": [
         {
-          "id": "3A88BAF942C4F7C2B739C4A440F75BA6",
+          "id": "EB6DE5BE4D3154148AC812887ECBB60B",
+          "name": "CategoryLabel",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "text",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "834517E2435A3820C72DBFAB33AD1B7B"
+            }
+          ]
+        },
+        {
+          "id": "CBC68461445916C3C5A8388230E009F8",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryCategoryTab.WBP_InventoryCategoryTab_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_6",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "212277B64C8B97C12E7902B5CBBF740F",
+      "title": "SetText",
+      "position": {
+        "x": 872,
+        "y": 16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/UMG.TextBlock'",
+          "MemberName": "SetText"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "D00602754FCEFBCC88783081229724EE",
           "name": "execute",
           "friendly_name": null,
           "direction": "input",
@@ -231,7 +299,7 @@
           ]
         },
         {
-          "id": "22C107584F7FEDDCAE59A2A2D94263B0",
+          "id": "149D024C42E3478954F8B3BC4FBC4C35",
           "name": "then",
           "friendly_name": null,
           "direction": "output",
@@ -252,13 +320,215 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_1",
-              "pin_id": "72D7E25E4734488EB5C2F69F97F00736"
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "1D30D01A41D0C857590C11B44F3A23D0"
             }
           ]
         },
         {
-          "id": "7A68432F44D78ECE263EF9951BDDB856",
+          "id": "1121D5FC4EC47B74711A889B5BCFE6DB",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.TextBlock'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_6",
+              "pin_id": "7031C80B48EE8CF4DB5B73A1A0B5CDE6"
+            }
+          ]
+        },
+        {
+          "id": "834517E2435A3820C72DBFAB33AD1B7B",
+          "name": "InText",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "text",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_7",
+              "pin_id": "EB6DE5BE4D3154148AC812887ECBB60B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_8",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "3D3910544156E3A851D90DA87E2E0AA0",
+      "title": "Get CategoryLabel",
+      "position": {
+        "x": 1152,
+        "y": 16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "CategoryLabel",
+          "MemberGuid": "79AACECB4D3AC768AE61E6994F616605",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "09B93CE24C959F29881A41BF523F91EB",
+          "name": "CategoryLabel",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "text",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "D6B1E9CE4D24567F7DDC68B775CD3363"
+            }
+          ]
+        },
+        {
+          "id": "CDF563014C59D36353F7BAB8FEC8A381",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryCategoryTab.WBP_InventoryCategoryTab_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_7",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "A666D34946F2721600566EB84A40E007",
+      "title": "SetToolTipText",
+      "position": {
+        "x": 1432,
+        "y": 16
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberName": "SetToolTipText",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "1D30D01A41D0C857590C11B44F3A23D0",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "149D024C42E3478954F8B3BC4FBC4C35"
+            }
+          ]
+        },
+        {
+          "id": "B8C968154DCD55970D35BB9D9283C814",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "29EEA44A43F53FE373D7EB9FEA82F38F"
+            }
+          ]
+        },
+        {
+          "id": "C1E2E4A84A2F193AF7E404B1F1DDDBA1",
           "name": "self",
           "friendly_name": "Target",
           "direction": "input",
@@ -279,13 +549,13 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_Self_0",
-              "pin_id": "5DF74AB24CFE83F6DCD115906D031088"
+              "node": "K2Node_Self_1",
+              "pin_id": "6315AE264091FC712B021EB64D42A1D7"
             }
           ]
         },
         {
-          "id": "0440268C40A38B4B3B9B7B8C5C865E7A",
+          "id": "D6B1E9CE4D24567F7DDC68B775CD3363",
           "name": "InToolTipText",
           "friendly_name": null,
           "direction": "input",
@@ -306,21 +576,21 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableGet_0",
-              "pin_id": "94C1EE1F48F87DB38AB237A0956189B4"
+              "node": "K2Node_VariableGet_8",
+              "pin_id": "09B93CE24C959F29881A41BF523F91EB"
             }
           ]
         }
       ]
     },
     {
-      "name": "K2Node_CallFunction_1",
+      "name": "K2Node_CallFunction_8",
       "class": "/Script/BlueprintGraph.K2Node_CallFunction",
-      "guid": "638BD8754CBF9A199E56FE961FC7BF96",
+      "guid": "4767030C4B315963644EB38C283604A4",
       "title": "RefreshAppearance",
       "position": {
-        "x": 728,
-        "y": 0
+        "x": 1712,
+        "y": 16
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -335,7 +605,7 @@
       "properties": {},
       "pins": [
         {
-          "id": "72D7E25E4734488EB5C2F69F97F00736",
+          "id": "29EEA44A43F53FE373D7EB9FEA82F38F",
           "name": "execute",
           "friendly_name": null,
           "direction": "input",
@@ -356,13 +626,13 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_0",
-              "pin_id": "22C107584F7FEDDCAE59A2A2D94263B0"
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "B8C968154DCD55970D35BB9D9283C814"
             }
           ]
         },
         {
-          "id": "7C4561524937F4E67A022C8BC1FDAED8",
+          "id": "379709D745776D035016BB811895E580",
           "name": "then",
           "friendly_name": null,
           "direction": "output",
@@ -381,15 +651,10 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_2",
-              "pin_id": "450D09504EFD74CF5B14F480FCF313CF"
-            }
-          ]
+          "links": []
         },
         {
-          "id": "B786FF8B425A4F7F9AE9C6ABD7E493B7",
+          "id": "20DEEAEA465EAFC594774DA1534F864C",
           "name": "self",
           "friendly_name": "Target",
           "direction": "input",
@@ -408,302 +673,6 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_Self_0",
-              "pin_id": "5DF74AB24CFE83F6DCD115906D031088"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "K2Node_CallFunction_2",
-      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
-      "guid": "1B0BA3E94F89C421B413D3843525DDA4",
-      "title": "SetBrushFromTexture",
-      "position": {
-        "x": 1328,
-        "y": 0
-      },
-      "comment": null,
-      "enabled_state": "Enabled",
-      "is_intermediate": false,
-      "references": {
-        "function": {
-          "MemberParent": "/Script/CoreUObject.Class'/Script/UMG.Image'",
-          "MemberName": "SetBrushFromTexture"
-        }
-      },
-      "properties": {},
-      "pins": [
-        {
-          "id": "450D09504EFD74CF5B14F480FCF313CF",
-          "name": "execute",
-          "friendly_name": null,
-          "direction": "input",
-          "type": {
-            "category": "exec",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_1",
-              "pin_id": "7C4561524937F4E67A022C8BC1FDAED8"
-            }
-          ]
-        },
-        {
-          "id": "56F00F294E10A67E8013949B8C32E9C2",
-          "name": "then",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "exec",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": []
-        },
-        {
-          "id": "C4B583AD4B7C694A964F9BAB457A95D9",
-          "name": "self",
-          "friendly_name": "Target",
-          "direction": "input",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.Image'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableGet_1",
-              "pin_id": "E6F283584CF61D0C91ACE58BB0C8F076"
-            }
-          ]
-        },
-        {
-          "id": "D8083BEE4A0844CA6B7BBC90497D73CF",
-          "name": "Texture",
-          "friendly_name": null,
-          "direction": "input",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_VariableGet_2",
-              "pin_id": "5A7BAC2B45054B06BE6826A6C129F665"
-            }
-          ]
-        },
-        {
-          "id": "1A0CD6A14B332A0CD0C4839F3CF071E5",
-          "name": "bMatchSize",
-          "friendly_name": null,
-          "direction": "input",
-          "type": {
-            "category": "bool",
-            "sub_category": "",
-            "sub_category_object": null,
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": "false",
-          "autogenerated_default_value": "false",
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": []
-        }
-      ]
-    },
-    {
-      "name": "K2Node_VariableGet_1",
-      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
-      "guid": "0E9ED1E242FEBCAE114B93AE0AD8A213",
-      "title": "Get ItemIcon",
-      "position": {
-        "x": 1072,
-        "y": 112
-      },
-      "comment": null,
-      "enabled_state": "Enabled",
-      "is_intermediate": false,
-      "references": {
-        "variable": {
-          "MemberName": "ItemIcon",
-          "MemberGuid": "7AE6F1E04E39A027A1357F8BC0DC8D5D",
-          "bSelfContext": true
-        }
-      },
-      "properties": {},
-      "pins": [
-        {
-          "id": "E6F283584CF61D0C91ACE58BB0C8F076",
-          "name": "ItemIcon",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.Class'/Script/UMG.Image'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_2",
-              "pin_id": "C4B583AD4B7C694A964F9BAB457A95D9"
-            }
-          ]
-        },
-        {
-          "id": "43044380445AF1EF1CA8D1981E6F3E37",
-          "name": "self",
-          "friendly_name": "Target",
-          "direction": "input",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryCategoryTab.WBP_InventoryCategoryTab_C'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": true,
-          "orphaned": false,
-          "links": []
-        }
-      ]
-    },
-    {
-      "name": "K2Node_VariableGet_2",
-      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
-      "guid": "EBD3C6334F68EE1E103E699432258F95",
-      "title": "Get Icon",
-      "position": {
-        "x": 1072,
-        "y": 212
-      },
-      "comment": null,
-      "enabled_state": "Enabled",
-      "is_intermediate": false,
-      "references": {
-        "variable": {
-          "MemberName": "Icon",
-          "MemberGuid": "2E38F89A43101D3C9BA2DFA345E101AC",
-          "bSelfContext": true
-        }
-      },
-      "properties": {},
-      "pins": [
-        {
-          "id": "5A7BAC2B45054B06BE6826A6C129F665",
-          "name": "Icon",
-          "friendly_name": null,
-          "direction": "output",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Texture2D'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": false,
-          "orphaned": false,
-          "links": [
-            {
-              "node": "K2Node_CallFunction_2",
-              "pin_id": "D8083BEE4A0844CA6B7BBC90497D73CF"
-            }
-          ]
-        },
-        {
-          "id": "B5C0F93D4E04A28B34F2C5ADD5ADD007",
-          "name": "self",
-          "friendly_name": "Target",
-          "direction": "input",
-          "type": {
-            "category": "object",
-            "sub_category": "",
-            "sub_category_object": "/Script/UMG.WidgetBlueprintGeneratedClass'/Game/CodeX_Restruct/Game/UI/GameMenu/Inventory/WBP_InventoryCategoryTab.WBP_InventoryCategoryTab_C'",
-            "container": null,
-            "is_reference": false,
-            "is_const": false,
-            "is_weak_pointer": false,
-            "is_uobject_wrapper": false
-          },
-          "default_value": null,
-          "autogenerated_default_value": null,
-          "default_object": null,
-          "hidden": true,
-          "orphaned": false,
           "links": []
         }
       ]
@@ -713,26 +682,26 @@
     {
       "kind": "exec",
       "from": {
-        "node": "K2Node_CallFunction_0",
-        "pin_id": "22C107584F7FEDDCAE59A2A2D94263B0",
+        "node": "K2Node_CallFunction_6",
+        "pin_id": "149D024C42E3478954F8B3BC4FBC4C35",
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_CallFunction_1",
-        "pin_id": "72D7E25E4734488EB5C2F69F97F00736",
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "1D30D01A41D0C857590C11B44F3A23D0",
         "pin_name": "execute"
       }
     },
     {
       "kind": "exec",
       "from": {
-        "node": "K2Node_CallFunction_1",
-        "pin_id": "7C4561524937F4E67A022C8BC1FDAED8",
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "B8C968154DCD55970D35BB9D9283C814",
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_CallFunction_2",
-        "pin_id": "450D09504EFD74CF5B14F480FCF313CF",
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "29EEA44A43F53FE373D7EB9FEA82F38F",
         "pin_name": "execute"
       }
     },
@@ -744,74 +713,61 @@
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_CallFunction_0",
-        "pin_id": "3A88BAF942C4F7C2B739C4A440F75BA6",
+        "node": "K2Node_CallFunction_6",
+        "pin_id": "D00602754FCEFBCC88783081229724EE",
         "pin_name": "execute"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_Self_0",
-        "pin_id": "5DF74AB24CFE83F6DCD115906D031088",
+        "node": "K2Node_Self_1",
+        "pin_id": "6315AE264091FC712B021EB64D42A1D7",
         "pin_name": "self"
       },
       "to": {
-        "node": "K2Node_CallFunction_0",
-        "pin_id": "7A68432F44D78ECE263EF9951BDDB856",
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "C1E2E4A84A2F193AF7E404B1F1DDDBA1",
         "pin_name": "self"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_Self_0",
-        "pin_id": "5DF74AB24CFE83F6DCD115906D031088",
-        "pin_name": "self"
+        "node": "K2Node_VariableGet_6",
+        "pin_id": "7031C80B48EE8CF4DB5B73A1A0B5CDE6",
+        "pin_name": "TabCaption"
       },
       "to": {
-        "node": "K2Node_CallFunction_1",
-        "pin_id": "B786FF8B425A4F7F9AE9C6ABD7E493B7",
+        "node": "K2Node_CallFunction_6",
+        "pin_id": "1121D5FC4EC47B74711A889B5BCFE6DB",
         "pin_name": "self"
       }
     },
     {
       "kind": "data",
       "from": {
-        "node": "K2Node_VariableGet_0",
-        "pin_id": "94C1EE1F48F87DB38AB237A0956189B4",
+        "node": "K2Node_VariableGet_7",
+        "pin_id": "EB6DE5BE4D3154148AC812887ECBB60B",
         "pin_name": "CategoryLabel"
       },
       "to": {
-        "node": "K2Node_CallFunction_0",
-        "pin_id": "0440268C40A38B4B3B9B7B8C5C865E7A",
+        "node": "K2Node_CallFunction_6",
+        "pin_id": "834517E2435A3820C72DBFAB33AD1B7B",
+        "pin_name": "InText"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_8",
+        "pin_id": "09B93CE24C959F29881A41BF523F91EB",
+        "pin_name": "CategoryLabel"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "D6B1E9CE4D24567F7DDC68B775CD3363",
         "pin_name": "InToolTipText"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
-        "node": "K2Node_VariableGet_1",
-        "pin_id": "E6F283584CF61D0C91ACE58BB0C8F076",
-        "pin_name": "ItemIcon"
-      },
-      "to": {
-        "node": "K2Node_CallFunction_2",
-        "pin_id": "C4B583AD4B7C694A964F9BAB457A95D9",
-        "pin_name": "self"
-      }
-    },
-    {
-      "kind": "data",
-      "from": {
-        "node": "K2Node_VariableGet_2",
-        "pin_id": "5A7BAC2B45054B06BE6826A6C129F665",
-        "pin_name": "Icon"
-      },
-      "to": {
-        "node": "K2Node_CallFunction_2",
-        "pin_id": "D8083BEE4A0844CA6B7BBC90497D73CF",
-        "pin_name": "Texture"
       }
     }
   ]
