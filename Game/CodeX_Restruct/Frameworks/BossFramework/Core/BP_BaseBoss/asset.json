@@ -45,6 +45,7 @@
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Shared/VFX/AnimatedBloodSprayDecals/Decal_blood/B_D_7",
       "/Game/CodeX_Restruct/Frameworks/InteractionFramework/Rewards/BP_SoulPickup",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/BPFL_CombatFeedback",
       "/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome",
       "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatReceiver",
       "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatTargetable",
@@ -119,7 +120,7 @@
       "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner"
     ],
     "non_architecture_dependency_count": 17,
-    "non_architecture_referencer_count": 5
+    "non_architecture_referencer_count": 4
   },
   "registry": {
     "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
@@ -2281,7 +2282,9 @@
         "SkipBossCinematic",
         "HandleBossCinematicCompleted",
         "HandleBossCinematicSkipped",
-        "HandleBossCinematicAborted"
+        "HandleBossCinematicAborted",
+        "CFA_ReadHealth",
+        "CFA_SkipLegacyImpactEffect"
       ],
       "macros": [],
       "delegates": [
@@ -2325,10 +2328,10 @@
         "CS_PushExecuteRecoveryState",
         "BPI_OnExecutionStarted",
         "BPI_OnExecutionFinished",
-        "CS_TickAttackClamp",
-        "CS_SetAttackClampActive",
         "BPI_OnExecutionCanceled",
         "CS_PlayAnim",
+        "CS_TickAttackClamp",
+        "CS_SetAttackClampActive",
         "BndEvt__BP_Boss_SwordCapsule_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
         "AN_AttackWindow_SetActive",
         "CS_DoDamage",

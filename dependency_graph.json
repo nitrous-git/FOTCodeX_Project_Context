@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 454,
-  "edge_count": 1424,
+  "node_count": 473,
+  "edge_count": 1437,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -150,6 +150,10 @@
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "to": "/Game/CodeX_Restruct/Game/UI/RestMenu/WBP_RestMenu"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Components/AC_CombatFeedbackComponent"
     },
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -1558,6 +1562,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/BPFL_CombatFeedback"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
@@ -3324,6 +3332,18 @@
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/EActionWindowType"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Standard"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "to": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController"
     },
@@ -3537,7 +3557,23 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
-      "to": "/Game/CodeX_Restruct/Shared/CameraShake/CameraShakeWarySmool"
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/BPFL_CombatFeedback"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Components/AC_CombatFeedbackComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Block"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Parry"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
@@ -3929,10 +3965,6 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "to": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Inventory/AC_InventoryComponent"
     },
     {
@@ -3945,35 +3977,7 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CameraModeComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerInteractionComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerShadowStrikeComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerTargetingComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_ProgressionComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/BP_PlayerActionComponent"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
@@ -3981,23 +3985,7 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/TeleporterFramework/Core/AC_TeleporterComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
-    },
-    {
-      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
-      "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FActionDef",
@@ -5054,6 +5042,70 @@
     {
       "from": "/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle",
       "to": "/Game/CodeX_Restruct/Game/UI/Widget/WBP_LevelTitle_Variant"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatCameraImpulse",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Components/AC_CombatFeedbackComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatHitstop",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Components/AC_CombatFeedbackComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/BPFL_CombatFeedback",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Components/AC_CombatFeedbackComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Block",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Finisher",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Heavy"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Finisher",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_GuardBreak",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Heavy"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_GuardBreak",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Light",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Lunge",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Directional"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Lunge",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Parry",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Subtle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Parry",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Rapid",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Standard",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Subtle"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Standard",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
     },
     {
       "from": "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatReceiver",

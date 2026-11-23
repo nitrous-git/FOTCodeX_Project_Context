@@ -70,7 +70,11 @@
       "/Game/CodeX_Restruct/Shared/Animation/CameraAnimations/BP_CameraAnimationPlayer",
       "/Game/CodeX_Restruct/Shared/CameraShake/BP_CameraShake",
       "/Game/CodeX_Restruct/Shared/CameraShake/CameraShakeSmool",
-      "/Game/CodeX_Restruct/Shared/CameraShake/CameraShakeWarySmool",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/BPFL_CombatFeedback",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/Components/AC_CombatFeedbackComponent",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Block",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Parry",
       "/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome",
       "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatReceiver",
       "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Components/CT_Cmpt_Locomotion",
@@ -124,6 +128,7 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/Reaction/BP_PlayerAction_NormalHitReact",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Animations/ABP/ABP_PlayerMaster",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_ActionWindow",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/AN_ActionFinished",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/AN_ApplyDamage",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_CharacterStatsComponent",
@@ -149,7 +154,7 @@
       "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     ],
-    "non_architecture_dependency_count": 31,
+    "non_architecture_dependency_count": 30,
     "non_architecture_referencer_count": 2
   },
   "registry": {
@@ -342,6 +347,16 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:CollisionArrow_GEN_VARIABLE"
+      },
+      {
+        "name": "CombatFeedback",
+        "class": "AC_CombatFeedbackComponent_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:CombatFeedback_GEN_VARIABLE"
       },
       {
         "name": "ContextualAnimSceneActor",
@@ -1054,6 +1069,465 @@
         }
       },
       {
+        "name": "CFA_Box",
+        "guid": "6028E753446A1B042C1E1EB5DDB9C75F",
+        "friendly_name": "CFA Box",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.BoxComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_CameraShakeClassOverride",
+        "guid": "ACCBDF454C1CD31FB77CC29141E9DC43",
+        "friendly_name": "CFA Camera Shake Class Override",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraShakeBase'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_CameraShakeScaleOverride",
+        "guid": "94D2591549535AA3BE6A209392FB953C",
+        "friendly_name": "CFA Camera Shake Scale Override",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_DamageRecipient",
+        "guid": "703930A1402201A8299510BAA88C1D5A",
+        "friendly_name": "CFA Damage Recipient",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_DebugWindow",
+        "guid": "A5927E7C44FFBC145D2AFC847BEEF046",
+        "friendly_name": "CFA Debug Window",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_DisableAttunementVFX",
+        "guid": "EBDFFD9D422B27C2A9165297F9364F8B",
+        "friendly_name": "CFA Disable Attunement VFX",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_DisableImpactSound",
+        "guid": "1D6AFEE44E3C95A7E97F7CA4A83D1196",
+        "friendly_name": "CFA Disable Impact Sound",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_DisableImpactVFX",
+        "guid": "CB6C4C5F48ACFF2AEA55228053A7C51E",
+        "friendly_name": "CFA Disable Impact VFX",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_ForceAttunementVFX",
+        "guid": "3BD7C13A4C461356A1DD7DBC06F999EE",
+        "friendly_name": "CFA Force Attunement VFX",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_ForceHitstop",
+        "guid": "5819B61A421F96E87E6F7EB69298ED8D",
+        "friendly_name": "CFA Force Hitstop",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_HitstopDurationOverrideMS",
+        "guid": "1062FFDE4C47C4C7E6713489F2143F2F",
+        "friendly_name": "CFA Hitstop Duration Override MS",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_HitstopRateOverride",
+        "guid": "145133EE4AC5FCD6368E15A353B3F38C",
+        "friendly_name": "CFA Hitstop Rate Override",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_HitstopRequested",
+        "guid": "D9CF1AFD41F1DB2B191E7A8E5B634A5D",
+        "friendly_name": "CFA Hitstop Requested",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_ImpactLocationOffsetOverride",
+        "guid": "9A061C1348384F2D77715A861890A851",
+        "friendly_name": "CFA Impact Location Offset Override",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_ImpactOrientationOverride",
+        "guid": "231637C74FF86489D08103A354A1D994",
+        "friendly_name": "CFA Impact Orientation Override",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_ImpactRotationOffsetOverride",
+        "guid": "6EC265D84BDA062D4ED685B30107DC4B",
+        "friendly_name": "CFA Impact Rotation Offset Override",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_ImpactScaleOverride",
+        "guid": "B83C78AB48D156F31CE3F58B980A41E1",
+        "friendly_name": "CFA Impact Scale Override",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_ImpactSoundOverride",
+        "guid": "CFBD6BE5467AF93355168B80E4627102",
+        "friendly_name": "CFA Impact Sound Override",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SoundBase'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_ImpactVFXOverride",
+        "guid": "E839096341FDEC7EC0FD0BBDC99E9DB1",
+        "friendly_name": "CFA Impact VFXOverride",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_Mesh",
+        "guid": "CE9B6B8C4C911BFD0552C7A102E90CF3",
+        "friendly_name": "CFA Mesh",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SkeletalMeshComponent'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_Montage",
+        "guid": "31504BF44DA740BCAAC66C8462743FFB",
+        "friendly_name": "CFA Montage",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_OverrideImpactOffsets",
+        "guid": "CA4836A34C15C6E4D350808CEDB2EECE",
+        "friendly_name": "CFA Override Impact Offsets",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_PreviousBoxLocation",
+        "guid": "858987C747E39841B2B11799925F533E",
+        "friendly_name": "CFA Previous Box Location",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_Processed",
+        "guid": "50FD145F4C06ED16F45A2C9A113D566C",
+        "friendly_name": "CFA Processed",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "container": "Array",
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_Profile",
+        "guid": "B5082DD743DD2D1846B46FA0EE0C509D",
+        "friendly_name": "CFA Profile",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile.DA_CombatFeedbackProfile_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_Weapon",
+        "guid": "9317CE5C42CD9ED98F63F2BFCC45B862",
+        "friendly_name": "CFA Weapon",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_WindowID",
+        "guid": "8362C70145CCCE84D378B6BBDC53F0CB",
+        "friendly_name": "CFA Window ID",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "int",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "ClampBuffer",
         "guid": "8388E6014B03D931A4179BB9272B66DB",
         "friendly_name": "Clamp Buffer",
@@ -1639,7 +2113,17 @@
         "UpdateCombatStyleAnimationMode",
         "RefreshOutfitVisuals",
         "ResolveOutgoingMeleeBaseDamage",
-        "ApplyOutfitDefinition"
+        "ApplyOutfitDefinition",
+        "CFA_CloseMeleeWindow",
+        "CFA_ReadTargetHealth",
+        "CFA_ResolveContactInformation",
+        "CFA_ApplyConfirmedFeedback",
+        "CFA_ProcessMeleeContact",
+        "CFA_UpdateMeleeWindow",
+        "CFA_OpenMeleeWindow",
+        "CFA_EndMeleeWindow",
+        "CFA_PlayDefenseFeedback",
+        "CFA_UsesContactPresentation"
       ],
       "macros": [],
       "delegates": [
@@ -1648,6 +2132,7 @@
       "generated_graphs": [
         "IsTargetable",
         "ResolveIncomingHit",
+        "CFA_ApplyDetectedMeleeHit",
         "BndEvt__BP_PlayerBase_AC_EquipmentComponent_K2Node_ComponentBoundEvent_6_OnActiveWeaponChanged__DelegateSignature",
         "CE_StartBlocking",
         "CE_Unequip",
@@ -1680,9 +2165,9 @@
         "CS_ResetGlobalTimeDilation",
         "CS_SlowGlobalTimeDilation",
         "ReceiveBeginPlay",
-        "ReceiveTick",
         "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_0_ComponentOnTargetLockedOnOff__DelegateSignature",
         "BndEvt__BP_ThirdPersonCharacter_TargetSystem_K2Node_ComponentBoundEvent_1_ComponentOnTargetLockedOnOff__DelegateSignature",
+        "ReceiveTick",
         "CS_DoDamage",
         "CS_TickAttackClamp",
         "SetAttackClampActive",

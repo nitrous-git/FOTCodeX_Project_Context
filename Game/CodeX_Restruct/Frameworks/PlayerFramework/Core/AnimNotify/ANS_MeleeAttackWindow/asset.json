@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "ANS_MeleeAttackWindow",
+    "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow",
+    "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify",
+    "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow.ANS_MeleeAttackWindow",
+    "relative_package": "CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Standard"
+    ],
+    "referencers": [],
+    "non_architecture_dependency_count": 1,
+    "non_architecture_referencer_count": 4
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimNotifyState'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow.ANS_MeleeAttackWindow_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow.ANS_MeleeAttackWindow_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimNotifyState'",
+    "generated_class_object": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow.ANS_MeleeAttackWindow_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "CameraShakeClassOverride",
+        "guid": "02156CA4488A1BA0A5FB06BAF2D5D8FA",
+        "friendly_name": "Camera Shake Class Override",
+        "category": "INVTEXT(\"Camera Shake\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "class",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraShakeBase'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CameraShakeScaleOverride",
+        "guid": "D679CA504568682BA8550FA03FA3839A",
+        "friendly_name": "Camera Shake Scale Override",
+        "category": "INVTEXT(\"Camera Shake\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DebugWindow",
+        "guid": "12DD06124190C95EAAAD59938E099395",
+        "friendly_name": "Debug Window",
+        "category": "INVTEXT(\"Attack Configuration\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableAttunementVFX",
+        "guid": "37F91B6A44D8309F9CD4278DBECE98B2",
+        "friendly_name": "Disable Attunement VFX",
+        "category": "INVTEXT(\"Attunement\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableImpactSound",
+        "guid": "00C7756742432A4919A42D9C60AA7709",
+        "friendly_name": "Disable Impact Sound",
+        "category": "INVTEXT(\"Audio\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "DisableImpactVFX",
+        "guid": "6EB4A3FD44045F1927E40F9478E2CB9A",
+        "friendly_name": "Disable Impact VFX",
+        "category": "INVTEXT(\"Impact VFX\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "FeedbackProfile",
+        "guid": "F1B16CE642D1C1A3C11D41AC04D3DF28",
+        "friendly_name": "Feedback Profile",
+        "category": "INVTEXT(\"Attack Configuration\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile.DA_CombatFeedbackProfile_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ForceAttunementVFX",
+        "guid": "DB6B8E7440A6E1E7268A6F9551570A66",
+        "friendly_name": "Force Attunement VFX",
+        "category": "INVTEXT(\"Attunement\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ForceHitstop",
+        "guid": "B075285646377AED35BC6FAD22F56553",
+        "friendly_name": "Force Hitstop",
+        "category": "INVTEXT(\"Hitstop\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HitstopDurationOverrideMS",
+        "guid": "883B88CA4C6CE955B888F8A3679A07DE",
+        "friendly_name": "Hitstop Duration Override MS",
+        "category": "INVTEXT(\"Hitstop\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HitstopRateOverride",
+        "guid": "83F1E33548EE8670254BFCA9F6F675ED",
+        "friendly_name": "Hitstop Rate Override",
+        "category": "INVTEXT(\"Hitstop\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ImpactLocationOffsetOverride",
+        "guid": "68ABE85040015773861ACE929A68D1AD",
+        "friendly_name": "Impact Location Offset Override",
+        "category": "INVTEXT(\"Impact VFX\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ImpactOrientationOverride",
+        "guid": "A3EABEB443FD8C70FDE8558FF219FDC0",
+        "friendly_name": "Impact Orientation Override",
+        "category": "INVTEXT(\"Impact VFX\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "name",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ImpactRotationOffsetOverride",
+        "guid": "AE1BF03B4F14352D48B5F8BCDD5ABE66",
+        "friendly_name": "Impact Rotation Offset Override",
+        "category": "INVTEXT(\"Impact VFX\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ImpactScaleOverride",
+        "guid": "91CF1C354E61586C815F9DBCC54D67D5",
+        "friendly_name": "Impact Scale Override",
+        "category": "INVTEXT(\"Impact VFX\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ImpactSoundOverride",
+        "guid": "DD4F681A4BEBFA89B1540DA3D23E17FF",
+        "friendly_name": "Impact Sound Override",
+        "category": "INVTEXT(\"Audio\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SoundBase'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "ImpactVFXOverride",
+        "guid": "9171EAD941F69DF7561AB7BABFFCCA17",
+        "friendly_name": "Impact VFXOverride",
+        "category": "INVTEXT(\"Impact VFX\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "OverrideImpactOffsets",
+        "guid": "371BDA9444ED314B94BF1D9D90F05B03",
+        "friendly_name": "Override Impact Offsets",
+        "category": "INVTEXT(\"Impact VFX\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [],
+      "functions": [
+        "Received_NotifyBegin",
+        "Received_NotifyTick",
+        "Received_NotifyEnd"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "exporter_version": "0.5.0",
-  "generated_utc": "2026-11-19T05:12:54.532431+00:00",
+  "generated_utc": "2026-11-23T00:59:20.708813+00:00",
   "root_path": "/Game",
   "settings": {
     "excluded_paths": [
@@ -48,13 +48,13 @@
   },
   "discovery": {
     "summary": {
-      "scanned": 8615,
-      "full_graph": 316,
-      "ignored_by_class": 3179,
+      "scanned": 8627,
+      "full_graph": 327,
+      "ignored_by_class": 3172,
       "excluded_by_path": 4974,
-      "structural": 138,
+      "structural": 146,
       "excluded_individual_asset": 8,
-      "export_candidates": 454
+      "export_candidates": 473
     },
     "class_breakdown": {
       "AimOffsetBlendSpace": 23,
@@ -67,7 +67,7 @@
       "BlackboardData": 2,
       "BlendSpace": 31,
       "BlendSpace1D": 9,
-      "Blueprint": 291,
+      "Blueprint": 302,
       "CameraAnimationSequence": 2,
       "ContextualAnimRolesAsset": 2,
       "ContextualAnimSceneAsset": 15,
@@ -83,6 +83,7 @@
       "DA_Attunement_Neutral_C": 3,
       "DA_Attunement_Poison_C": 1,
       "DA_CharacterStatBalance_C": 1,
+      "DA_CombatFeedbackProfile_C": 8,
       "DA_CombatStyle_C": 1,
       "DA_CombatStyle_Common_C": 1,
       "DA_CombatStyle_Katana_C": 1,
@@ -105,7 +106,7 @@
       "InputMappingContext": 2,
       "LandscapeGrassType": 13,
       "LandscapeLayerInfoObject": 14,
-      "LevelSequence": 5,
+      "LevelSequence": 4,
       "MapBuildDataRegistry": 1,
       "Material": 422,
       "MaterialFunction": 276,
@@ -118,7 +119,7 @@
       "NiagaraEmitter": 40,
       "NiagaraScript": 5,
       "NiagaraSystem": 342,
-      "ObjectRedirector": 24,
+      "ObjectRedirector": 23,
       "ParticleSystem": 67,
       "PhysicalMaterial": 1,
       "PhysicsAsset": 34,
@@ -147,7 +148,7 @@
       "UserDefinedStruct": 37,
       "VectorFieldStatic": 1,
       "WidgetBlueprint": 59,
-      "World": 22
+      "World": 17
     },
     "review_class_breakdown": {},
     "excluded_path_breakdown": {
@@ -2482,6 +2483,20 @@
           "planned_export_path": "Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_ActionWindow"
         },
         {
+          "asset_name": "ANS_MeleeAttackWindow",
+          "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow",
+          "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify",
+          "object_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow.ANS_MeleeAttackWindow",
+          "relative_package": "CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_MeleeAttackWindow"
+        },
+        {
           "asset_name": "BP_PlayerBase",
           "package_name": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
           "package_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core",
@@ -4132,6 +4147,146 @@
           "category": "FULL_GRAPH",
           "classification_reason": "Logic-bearing Blueprint class",
           "planned_export_path": "Game/CodeX_Restruct/Shared/CameraShake/CameraShakeWarySmool"
+        },
+        {
+          "asset_name": "AN_CombatCameraImpulse",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatCameraImpulse",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatCameraImpulse.AN_CombatCameraImpulse",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatCameraImpulse",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatCameraImpulse"
+        },
+        {
+          "asset_name": "AN_CombatHitstop",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatHitstop",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatHitstop.AN_CombatHitstop",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatHitstop",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatHitstop"
+        },
+        {
+          "asset_name": "AN_CombatImpactVFX",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatImpactVFX",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatImpactVFX.AN_CombatImpactVFX",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatImpactVFX",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/AnimNotify/AN_CombatImpactVFX"
+        },
+        {
+          "asset_name": "BPFL_CombatFeedback",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/BPFL_CombatFeedback",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/BPFL_CombatFeedback.BPFL_CombatFeedback",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/BPFL_CombatFeedback",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/BPFL_CombatFeedback"
+        },
+        {
+          "asset_name": "CS_Impact_Cinematic",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Cinematic",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Cinematic.CS_Impact_Cinematic",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Cinematic",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Cinematic"
+        },
+        {
+          "asset_name": "CS_Impact_Directional",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Directional",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Directional.CS_Impact_Directional",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Directional",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Directional"
+        },
+        {
+          "asset_name": "CS_Impact_Heavy",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Heavy",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Heavy.CS_Impact_Heavy",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Heavy",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Heavy"
+        },
+        {
+          "asset_name": "CS_Impact_Subtle",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Subtle",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Subtle.CS_Impact_Subtle",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Subtle",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/CameraShake/CS_Impact_Subtle"
+        },
+        {
+          "asset_name": "AC_CombatFeedbackComponent",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/Components/AC_CombatFeedbackComponent",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Components",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Components/AC_CombatFeedbackComponent.AC_CombatFeedbackComponent",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/Components/AC_CombatFeedbackComponent",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/Components/AC_CombatFeedbackComponent"
+        },
+        {
+          "asset_name": "DA_CombatFeedbackProfile",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile.DA_CombatFeedbackProfile",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+          "asset_class": {
+            "package": "/Script/Engine",
+            "name": "Blueprint"
+          },
+          "category": "FULL_GRAPH",
+          "classification_reason": "Logic-bearing Blueprint class",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile"
         },
         {
           "asset_name": "BP_CombatResolverComponent",
@@ -6038,6 +6193,118 @@
           "category": "STRUCTURAL",
           "classification_reason": "Known structural asset class",
           "planned_export_path": "Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/Data/FEquipmentSlotUIData"
+        },
+        {
+          "asset_name": "DA_Impact_Block",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Block",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Block.DA_Impact_Block",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Block",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+            "name": "DA_CombatFeedbackProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Block"
+        },
+        {
+          "asset_name": "DA_Impact_Finisher",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Finisher",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Finisher.DA_Impact_Finisher",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Finisher",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+            "name": "DA_CombatFeedbackProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Finisher"
+        },
+        {
+          "asset_name": "DA_Impact_GuardBreak",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_GuardBreak",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_GuardBreak.DA_Impact_GuardBreak",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_GuardBreak",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+            "name": "DA_CombatFeedbackProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_GuardBreak"
+        },
+        {
+          "asset_name": "DA_Impact_Light",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Light",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Light.DA_Impact_Light",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Light",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+            "name": "DA_CombatFeedbackProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Light"
+        },
+        {
+          "asset_name": "DA_Impact_Lunge",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Lunge",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Lunge.DA_Impact_Lunge",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Lunge",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+            "name": "DA_CombatFeedbackProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Lunge"
+        },
+        {
+          "asset_name": "DA_Impact_Parry",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Parry",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Parry.DA_Impact_Parry",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Parry",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+            "name": "DA_CombatFeedbackProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Parry"
+        },
+        {
+          "asset_name": "DA_Impact_Rapid",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Rapid",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Rapid.DA_Impact_Rapid",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Rapid",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+            "name": "DA_CombatFeedbackProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Rapid"
+        },
+        {
+          "asset_name": "DA_Impact_Standard",
+          "package_name": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Standard",
+          "package_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles",
+          "object_path": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Standard.DA_Impact_Standard",
+          "relative_package": "CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Standard",
+          "asset_class": {
+            "package": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/DA_CombatFeedbackProfile",
+            "name": "DA_CombatFeedbackProfile_C"
+          },
+          "category": "STRUCTURAL",
+          "classification_reason": "Included by structural naming convention",
+          "planned_export_path": "Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Standard"
         },
         {
           "asset_name": "E_HitOutcome",

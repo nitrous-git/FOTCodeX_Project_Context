@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AN_CombatCameraImpulse",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "C55A63EC481208813EE311AA3240E2B1",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimNotify'"
+  },
+  "variables": [
+    {
+      "name": "DirectionOffset",
+      "guid": "0DA670294EC90054AFD8119D54DF9538",
+      "friendly_name": "Direction Offset",
+      "category": "INVTEXT(\"Camera Shake\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ShakeClass",
+      "guid": "263BB0F24356AF6CFC56508274E5ACC5",
+      "friendly_name": "Shake Class",
+      "category": "INVTEXT(\"Camera Shake\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraShakeBase'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ShakeScale",
+      "guid": "5E7FD0CC48A83DD2A1A742B47910130D",
+      "friendly_name": "Shake Scale",
+      "category": "INVTEXT(\"Camera Shake\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "UseDirectionalSpace",
+      "guid": "747BA2294D6E38A533D8C89EC2A4658D",
+      "friendly_name": "Use Directional Space",
+      "category": "INVTEXT(\"Camera Shake\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "Received_Notify",
+      "kind": "function",
+      "guid": "C0E4AFC24DCC27DC289E759A8C570775",
+      "node_count": 16,
+      "pin_count": 50,
+      "connection_count": 18,
+      "exec_connection_count": 4,
+      "data_connection_count": 14
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "Received_Notify_MERGED",
+      "guid": "C0E4AFC24DCC27DC289E759A8C570775",
+      "node_count": 16,
+      "pin_count": 50,
+      "connection_count": 18,
+      "exec_connection_count": 4,
+      "data_connection_count": 14
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 1,
+    "authored_node_count": 16,
+    "authored_pin_count": 50,
+    "authored_connection_count": 18,
+    "generated_node_count": 16,
+    "generated_pin_count": 50
+  },
+  "graph_files": [
+    {
+      "name": "Received_Notify",
+      "kind": "function",
+      "file": "graphs/Received_Notify.json"
+    }
+  ]
+}

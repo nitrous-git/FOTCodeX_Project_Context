@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "DA_CombatFeedbackProfile",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "E65DE7B046B3CBBB36F725B228E0639B",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.PrimaryDataAsset'"
+  },
+  "variables": [
+    {
+      "name": "AttunementEnabled",
+      "guid": "BC9DCA894116F3522F4D12B1605E2139",
+      "friendly_name": "Attunement Enabled",
+      "category": "INVTEXT(\"Attunement\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DurationMS",
+      "guid": "BF5AB49349290811AB2D4D8875F88EF8",
+      "friendly_name": "Duration MS",
+      "category": "INVTEXT(\"Hitstop\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitstopEnabled",
+      "guid": "D82A2C974357EF280940FBA6714B04DF",
+      "friendly_name": "Hitstop Enabled",
+      "category": "INVTEXT(\"Hitstop\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ImpactScale",
+      "guid": "8A02C8744AEC2A2C23D86D8363EEEBD9",
+      "friendly_name": "Impact Scale",
+      "category": "INVTEXT(\"Impact VFX\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ImpactSound",
+      "guid": "EA1086FE483E7B39F38E798A5CA64486",
+      "friendly_name": "Impact Sound",
+      "category": "INVTEXT(\"Audio\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.SoundBase'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ImpactSystem",
+      "guid": "2207BF27453900C306175682B94AE89A",
+      "friendly_name": "Impact System",
+      "category": "INVTEXT(\"Impact VFX\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraSystem'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LocationOffset",
+      "guid": "8EAA36694AD87543F6B7E68B707A5555",
+      "friendly_name": "Location Offset",
+      "category": "INVTEXT(\"Impact VFX\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OrientationMode",
+      "guid": "6969A7D64B062A9CD197D5889245F0AF",
+      "friendly_name": "Orientation Mode",
+      "category": "INVTEXT(\"Impact VFX\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PlayRateMultiplier",
+      "guid": "60C380C44E5C2A393987558671542B37",
+      "friendly_name": "Play Rate Multiplier",
+      "category": "INVTEXT(\"Hitstop\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RotationOffset",
+      "guid": "4CFB99F649147BCA7CBC7CABDFB14A76",
+      "friendly_name": "Rotation Offset",
+      "category": "INVTEXT(\"Impact VFX\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ShakeClass",
+      "guid": "12092AD646A3F4C8BD881D9236793EB0",
+      "friendly_name": "Shake Class",
+      "category": "INVTEXT(\"Camera Shake\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "class",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraShakeBase'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ShakeScale",
+      "guid": "0FF656744B80871B509A0AA866EA66D8",
+      "friendly_name": "Shake Scale",
+      "category": "INVTEXT(\"Camera Shake\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "BAF458C14C9E0457FA5BDBB2643BF343",
+      "node_count": 0,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReadHitstop",
+      "kind": "function",
+      "guid": "AD1C67D149C77D63DD28BD8C988F4A11",
+      "node_count": 5,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 1,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ReadCamera",
+      "kind": "function",
+      "guid": "E7F45A1B4DF93566B45DC6AE31186320",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    },
+    {
+      "name": "ReadImpact",
+      "kind": "function",
+      "guid": "C1918D1B4A366CFF04A80CB7E594493C",
+      "node_count": 7,
+      "pin_count": 17,
+      "connection_count": 6,
+      "exec_connection_count": 1,
+      "data_connection_count": 5
+    },
+    {
+      "name": "ReadLayers",
+      "kind": "function",
+      "guid": "4F95ED40447D0C458BBC5A9E9761926D",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 3,
+      "exec_connection_count": 1,
+      "data_connection_count": 2
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 0,
+    "authored_node_count": 20,
+    "authored_pin_count": 44,
+    "authored_connection_count": 16,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ReadCamera",
+      "kind": "function",
+      "file": "graphs/ReadCamera.json"
+    },
+    {
+      "name": "ReadHitstop",
+      "kind": "function",
+      "file": "graphs/ReadHitstop.json"
+    },
+    {
+      "name": "ReadImpact",
+      "kind": "function",
+      "file": "graphs/ReadImpact.json"
+    },
+    {
+      "name": "ReadLayers",
+      "kind": "function",
+      "file": "graphs/ReadLayers.json"
+    }
+  ]
+}

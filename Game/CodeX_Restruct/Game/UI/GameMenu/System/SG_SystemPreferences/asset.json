@@ -37,6 +37,23 @@
     "components": [],
     "variables": [
       {
+        "name": "CameraShakeIntensity",
+        "guid": "69039F40488B3B4829E183B1278B5487",
+        "friendly_name": "Camera Shake Intensity",
+        "category": "INVTEXT(\"Camera\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "CameraSpeed",
         "guid": "277385CA45D82CC9D4EF7487B7663816",
         "friendly_name": "Camera Speed",
@@ -143,7 +160,10 @@
       "event_graphs": [
         "EventGraph"
       ],
-      "functions": [],
+      "functions": [
+        "GetCameraShakeIntensity",
+        "SetCameraShakeIntensity"
+      ],
       "macros": [],
       "delegates": [],
       "generated_graphs": []

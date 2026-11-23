@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "AC_CombatFeedbackComponent",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "982A6DD7493F77A22E045190D1BEF9CA",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "ActiveShake",
+      "guid": "0A673600499F3B1D8991BFBDABD08CC0",
+      "friendly_name": "Active Shake",
+      "category": "INVTEXT(\"Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CameraShakeBase'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CameraShakeIntensity",
+      "guid": "6A5FC18646C72CDC5F4E749AAA7477AF",
+      "friendly_name": "Camera Shake Intensity",
+      "category": "INVTEXT(\"Camera Shake\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "HitstopActive",
+      "guid": "23C04AC54DB649124BE69DB2758DCD31",
+      "friendly_name": "Hitstop Active",
+      "category": "INVTEXT(\"Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "NextCameraTime",
+      "guid": "0E5E80A24C042DC78915ACAD14175031",
+      "friendly_name": "Next Camera Time",
+      "category": "INVTEXT(\"Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "ReducedRate",
+      "guid": "A777F26945110E7D51E3738F11255C27",
+      "friendly_name": "Reduced Rate",
+      "category": "INVTEXT(\"Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SavedRate",
+      "guid": "BDE6F6074F5CE0553A624298222A500D",
+      "friendly_name": "Saved Rate",
+      "category": "INVTEXT(\"Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StoppedAnim",
+      "guid": "A317657B4D2579FE176F279419DDAAFB",
+      "friendly_name": "Stopped Anim",
+      "category": "INVTEXT(\"Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "StoppedMontage",
+      "guid": "C021563346EC9542261F289D566BC7AF",
+      "friendly_name": "Stopped Montage",
+      "category": "INVTEXT(\"Runtime\")",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "C56367684B271CCF4C5B25AE57E9AA13",
+      "node_count": 0,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "RestoreHitstop",
+      "kind": "function",
+      "guid": "28FB1AD64B84AB1A5FEB718C777DF3DC",
+      "node_count": 18,
+      "pin_count": 61,
+      "connection_count": 25,
+      "exec_connection_count": 11,
+      "data_connection_count": 14
+    },
+    {
+      "name": "RequestHitstop",
+      "kind": "function",
+      "guid": "1D8095C0412971DD1D780BB2F2B5272C",
+      "node_count": 43,
+      "pin_count": 160,
+      "connection_count": 60,
+      "exec_connection_count": 18,
+      "data_connection_count": 42
+    },
+    {
+      "name": "RequestCameraImpulse",
+      "kind": "function",
+      "guid": "B75F699E43F3847AA1A422BDEFB75691",
+      "node_count": 29,
+      "pin_count": 114,
+      "connection_count": 43,
+      "exec_connection_count": 13,
+      "data_connection_count": 30
+    },
+    {
+      "name": "ApplyCameraShakeIntensity",
+      "kind": "function",
+      "guid": "A1DFAC69418D4486E19A1CB03B52F413",
+      "node_count": 17,
+      "pin_count": 60,
+      "connection_count": 18,
+      "exec_connection_count": 6,
+      "data_connection_count": 12
+    }
+  ],
+  "generated_graphs": [],
+  "stats": {
+    "authored_graph_count": 5,
+    "generated_graph_count": 0,
+    "authored_node_count": 107,
+    "authored_pin_count": 395,
+    "authored_connection_count": 146,
+    "generated_node_count": 0,
+    "generated_pin_count": 0
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "ApplyCameraShakeIntensity",
+      "kind": "function",
+      "file": "graphs/ApplyCameraShakeIntensity.json"
+    },
+    {
+      "name": "RequestCameraImpulse",
+      "kind": "function",
+      "file": "graphs/RequestCameraImpulse.json"
+    },
+    {
+      "name": "RequestHitstop",
+      "kind": "function",
+      "file": "graphs/RequestHitstop.json"
+    },
+    {
+      "name": "RestoreHitstop",
+      "kind": "function",
+      "file": "graphs/RestoreHitstop.json"
+    }
+  ]
+}
