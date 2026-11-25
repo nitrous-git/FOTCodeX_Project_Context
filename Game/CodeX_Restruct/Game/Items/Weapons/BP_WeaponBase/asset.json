@@ -17,8 +17,7 @@
   },
   "architecture": {
     "dependencies": [
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/E_AttunementType"
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
@@ -30,6 +29,7 @@
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/CombatAction/BP_PlayerAction_MeleeCombo",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Block",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/AnimNotify/ANS_WeaponSlashTrail",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Components/AC_PlayerAttunementComponent",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/InventoryPreview/BP_PlayerBase_InventoryPreview",
@@ -43,7 +43,7 @@
       "/Game/CodeX_Restruct/Game/Items/Weapons/EnemyItems/BP_Spear",
       "/Game/CodeX_Restruct/Game/Items/Weapons/EnemyItems/BP_Staff01"
     ],
-    "non_architecture_dependency_count": 2,
+    "non_architecture_dependency_count": 3,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -68,16 +68,6 @@
         "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C:ActiveBladeVFXComponent_GEN_VARIABLE"
       },
       {
-        "name": "ActiveTrailVFXComponent ",
-        "class": "NiagaraComponent",
-        "parent": "DefaultSceneRoot",
-        "inherited": false,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C:ActiveTrailVFXComponent _GEN_VARIABLE"
-      },
-      {
         "name": "DefaultSceneRoot",
         "class": "SceneComponent",
         "parent": "BP_WeaponBase",
@@ -86,16 +76,6 @@
         "root_component": true,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C:DefaultSceneRoot_GEN_VARIABLE"
-      },
-      {
-        "name": "WeaponVFXAttachComponent ",
-        "class": "SceneComponent",
-        "parent": "DefaultSceneRoot",
-        "inherited": false,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C:WeaponVFXAttachComponent _GEN_VARIABLE"
       }
     ],
     "variables": [
@@ -125,7 +105,8 @@
         "UserConstructionScript",
         "ApplyAttunement",
         "ClearAttunementVisuals",
-        "GetAttunementHitVFX"
+        "GetAttunementHitVFX",
+        "GetBladeAuraComponents"
       ],
       "macros": [],
       "delegates": [],

@@ -11,6 +11,12 @@ Begin Object Class=/Script/Engine.Blueprint Name="BP_Shield" ExportPath="/Script
       Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield.BP_Shield:UserConstructionScript.K2Node_FunctionEntry_0'"
       End Object
    End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="GetBladeAuraComponents" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield.BP_Shield:GetBladeAuraComponents'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield.BP_Shield:GetBladeAuraComponents.K2Node_FunctionEntry_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionResult Name="K2Node_FunctionResult_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionResult'/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield.BP_Shield:GetBladeAuraComponents.K2Node_FunctionResult_0'"
+      End Object
+   End Object
    Begin Object Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield.BP_Shield:EventGraph'"
       Begin Object Name="K2Node_Event_0" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield.BP_Shield:EventGraph.K2Node_Event_0'"
          EventReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.Actor'",MemberName="ReceiveBeginPlay")
@@ -67,11 +73,31 @@ Begin Object Class=/Script/Engine.Blueprint Name="BP_Shield" ExportPath="/Script
       bAllowDeletion=False
       GraphGuid=D2BF024B4E1B7E4642D736823C2CDDA8
    End Object
+   Begin Object Name="GetBladeAuraComponents" ExportPath="/Script/Engine.EdGraph'/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield.BP_Shield:GetBladeAuraComponents'"
+      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield.BP_Shield:GetBladeAuraComponents.K2Node_FunctionEntry_0'"
+         ExtraFlags=268435456
+         FunctionReference=(MemberParent="/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",MemberName="GetBladeAuraComponents",MemberGuid=ABF901E645A09DA4F13A0BBCB6A44ECC)
+         NodeGuid=E743018B420576EBD7E71BB73B38561D
+         CustomProperties Pin (PinId=E987E1E2435E226B337338BE61BD5779,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionResult_0 FC5AC9AC46B1280824676E98D51FD564,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_FunctionResult_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionResult'/Game/CodeX_Restruct/Game/Items/Weapons/BP_Shield.BP_Shield:GetBladeAuraComponents.K2Node_FunctionResult_0'"
+         FunctionReference=(MemberParent="/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'",MemberName="GetBladeAuraComponents",MemberGuid=ABF901E645A09DA4F13A0BBCB6A44ECC)
+         NodePosX=660
+         NodeGuid=156285A147528D6F3336B8AC9BECFD33
+         CustomProperties Pin (PinId=FC5AC9AC46B1280824676E98D51FD564,PinName="execute",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(K2Node_FunctionEntry_0 E987E1E2435E226B337338BE61BD5779,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=DFA4A223498F3D6F2BA8538568AEDDD5,PinName="Components",PinToolTip="Components\nArray of Niagara Particle System Component Object References",PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/CoreUObject.Class'/Script/Niagara.NiagaraComponent'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=Array,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
+      Nodes(1)="/Script/BlueprintGraph.K2Node_FunctionResult'K2Node_FunctionResult_0'"
+      GraphGuid=5B6F9769425D293CDA562D8A13879BA9
+   End Object
    ParentClass="/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase.BP_WeaponBase_C'"
    BlueprintSystemVersion=2
    SimpleConstructionScript="/Script/Engine.SimpleConstructionScript'BP_Shield_C:SimpleConstructionScript_0'"
    UbergraphPages(0)="/Script/Engine.EdGraph'EventGraph'"
    FunctionGraphs(0)="/Script/Engine.EdGraph'UserConstructionScript'"
+   FunctionGraphs(1)="/Script/Engine.EdGraph'GetBladeAuraComponents'"
    InheritableComponentHandler="/Script/Engine.InheritableComponentHandler'BP_Shield_C:InheritableComponentHandler'"
    CategorySorting(0)="Default"
    CategorySorting(1)=""

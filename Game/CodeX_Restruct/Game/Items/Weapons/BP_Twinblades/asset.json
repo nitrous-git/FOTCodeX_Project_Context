@@ -17,14 +17,13 @@
   },
   "architecture": {
     "dependencies": [
-      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement",
       "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
     ],
     "referencers": [
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_Weapon_Twinblades",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/CombatStyle/DA_CombatStyle_Twinblades_Instance"
     ],
-    "non_architecture_dependency_count": 4,
+    "non_architecture_dependency_count": 3,
     "non_architecture_referencer_count": 0
   },
   "registry": {
@@ -47,16 +46,6 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Twinblades.BP_Twinblades_C:ActiveBladeVFXComponent_GEN_VARIABLE"
-      },
-      {
-        "name": "ActiveTrailVFXComponent ",
-        "class": "NiagaraComponent",
-        "parent": "DefaultSceneRoot",
-        "inherited": true,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Twinblades.BP_Twinblades_C:ActiveTrailVFXComponent _GEN_VARIABLE"
       },
       {
         "name": "Blades01",
@@ -89,14 +78,14 @@
         "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Twinblades.BP_Twinblades_C:ICH-DefaultSceneRoot_GEN_VARIABLE"
       },
       {
-        "name": "ExtraBladeVFXAttachComponent",
-        "class": "SceneComponent",
-        "parent": "DefaultSceneRoot",
+        "name": "SecondaryBladeVFXComponent",
+        "class": "NiagaraComponent",
+        "parent": "Blades02",
         "inherited": false,
         "native": false,
         "root_component": false,
         "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Twinblades.BP_Twinblades_C:ExtraBladeVFXAttachComponent_GEN_VARIABLE"
+        "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Twinblades.BP_Twinblades_C:SecondaryBladeVFXComponent_GEN_VARIABLE"
       },
       {
         "name": "Twinblades",
@@ -117,45 +106,16 @@
         "root_component": false,
         "scene_component": true,
         "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Twinblades.BP_Twinblades_C:WeaponHitbox_GEN_VARIABLE"
-      },
-      {
-        "name": "WeaponVFXAttachComponent ",
-        "class": "SceneComponent",
-        "parent": "DefaultSceneRoot",
-        "inherited": true,
-        "native": false,
-        "root_component": false,
-        "scene_component": true,
-        "template_path": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_Twinblades.BP_Twinblades_C:WeaponVFXAttachComponent _GEN_VARIABLE"
       }
     ],
-    "variables": [
-      {
-        "name": "ExtraActiveBladeVFXComponent",
-        "guid": "7D71AA154DB0027597B8619F5C74422C",
-        "friendly_name": "Extra Active Blade VFXComponent",
-        "category": "Default",
-        "property_flags": 65541,
-        "default_value": null,
-        "type": {
-          "category": "object",
-          "sub_category": null,
-          "sub_category_object": "/Script/CoreUObject.Class'/Script/Niagara.NiagaraComponent'",
-          "container": null,
-          "is_reference": false,
-          "is_const": false,
-          "is_weak_pointer": false
-        }
-      }
-    ],
+    "variables": [],
     "graphs": {
       "event_graphs": [
         "EventGraph"
       ],
       "functions": [
         "UserConstructionScript",
-        "ApplyAttunement",
-        "ClearAttunementVisuals"
+        "GetBladeAuraComponents"
       ],
       "macros": [],
       "delegates": [],
