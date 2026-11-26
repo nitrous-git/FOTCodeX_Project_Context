@@ -312,6 +312,74 @@
         "is_const": false,
         "is_weak_pointer": false
       }
+    },
+    {
+      "name": "PushbackDisplacementCurve",
+      "guid": "D596897F447E5D0080BC6CAE548F3B91",
+      "friendly_name": "Pushback Displacement Curve",
+      "category": "INVTEXT(\"Pushback\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CurveFloat'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PushbackDistance",
+      "guid": "F104347041FDB009D29804A7241D806D",
+      "friendly_name": "Pushback Distance",
+      "category": "INVTEXT(\"Pushback\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PushbackDuration",
+      "guid": "375A20D844CBF3DE0BCDA79CDF4248C2",
+      "friendly_name": "Pushback Duration",
+      "category": "INVTEXT(\"Pushback\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "float",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PushbackOverrideMode",
+      "guid": "B27B11844487B73F56D372892686F879",
+      "friendly_name": "Pushback Override Mode",
+      "category": "INVTEXT(\"Pushback\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Enum'/Script/FOTCodeX_11142026.ECombatPushbackOverrideMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
     }
   ],
   "graphs": [
@@ -319,11 +387,11 @@
       "name": "Received_NotifyBegin",
       "kind": "function",
       "guid": "35FE27784B7692C49288B0A1B72B24F1",
-      "node_count": 25,
-      "pin_count": 83,
-      "connection_count": 32,
-      "exec_connection_count": 6,
-      "data_connection_count": 26
+      "node_count": 26,
+      "pin_count": 88,
+      "connection_count": 34,
+      "exec_connection_count": 7,
+      "data_connection_count": 27
     },
     {
       "name": "Received_NotifyTick",
@@ -344,15 +412,25 @@
       "connection_count": 9,
       "exec_connection_count": 4,
       "data_connection_count": 5
+    },
+    {
+      "name": "ResolvePushback",
+      "kind": "function",
+      "guid": "615D6475415964287A85A08669D02FB7",
+      "node_count": 13,
+      "pin_count": 36,
+      "connection_count": 15,
+      "exec_connection_count": 5,
+      "data_connection_count": 10
     }
   ],
   "generated_graphs": [],
   "stats": {
-    "authored_graph_count": 3,
+    "authored_graph_count": 4,
     "generated_graph_count": 0,
-    "authored_node_count": 37,
-    "authored_pin_count": 124,
-    "authored_connection_count": 50,
+    "authored_node_count": 51,
+    "authored_pin_count": 165,
+    "authored_connection_count": 67,
     "generated_node_count": 0,
     "generated_pin_count": 0
   },
@@ -371,6 +449,11 @@
       "name": "Received_NotifyTick",
       "kind": "function",
       "file": "graphs/Received_NotifyTick.json"
+    },
+    {
+      "name": "ResolvePushback",
+      "kind": "function",
+      "file": "graphs/ResolvePushback.json"
     }
   ]
 }

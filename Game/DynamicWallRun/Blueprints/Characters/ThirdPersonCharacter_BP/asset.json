@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "ThirdPersonCharacter_BP",
+    "package_name": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP",
+    "package_path": "/Game/DynamicWallRun/Blueprints/Characters",
+    "object_path": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.ThirdPersonCharacter_BP",
+    "relative_package": "DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/DynamicWallRun/Animations/ThirdPerson_AnimBP",
+      "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP",
+      "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI",
+      "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP"
+    ],
+    "referencers": [
+      "/Game/DynamicWallRun/Blueprints/Misc/ThirdPersonGameMode_BP"
+    ],
+    "non_architecture_dependency_count": 4,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.ThirdPersonCharacter_BP_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "description": "Character Blueprint that contains movement logic.",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.ThirdPersonCharacter_BP_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+    "generated_class_object": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.ThirdPersonCharacter_BP_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "ArrowComponent",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.Default__ThirdPersonCharacter_BP_C:Arrow"
+      },
+      {
+        "name": "CameraBoom",
+        "class": "SpringArmComponent",
+        "parent": "CapsuleComponent",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.ThirdPersonCharacter_BP_C:SpringArmComponent_0__A9892D03"
+      },
+      {
+        "name": "CapsuleComponent",
+        "class": "CapsuleComponent",
+        "parent": "ThirdPersonCharacter_BP",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.Default__ThirdPersonCharacter_BP_C:CollisionCylinder"
+      },
+      {
+        "name": "CharacterMovement",
+        "class": "CharacterMovementComponent",
+        "parent": "ThirdPersonCharacter_BP",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.Default__ThirdPersonCharacter_BP_C:CharMoveComp"
+      },
+      {
+        "name": "DynamicWallRunComponent_BP",
+        "class": "DynamicWallRunComponent_BP_C",
+        "parent": "ThirdPersonCharacter_BP",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.ThirdPersonCharacter_BP_C:DynamicWallRunComponent_BP_GEN_VARIABLE"
+      },
+      {
+        "name": "FollowCamera",
+        "class": "CameraComponent",
+        "parent": "CameraBoom",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.ThirdPersonCharacter_BP_C:CameraComponent_0__CCE3C0B4"
+      },
+      {
+        "name": "Mesh",
+        "class": "SkeletalMeshComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP.Default__ThirdPersonCharacter_BP_C:CharacterMesh0"
+      }
+    ],
+    "variables": [
+      {
+        "name": "BaseLookUpRate",
+        "guid": "3A4B0E414236EAFDC184ADA1900B8128",
+        "friendly_name": "Base Look Up Rate",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "BaseTurnRate",
+        "guid": "109294AC4177F16AD3527ABD6C48B674",
+        "friendly_name": "Base Turn Rate",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [
+        "UserConstructionScript"
+      ],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "InpActEvt_Jump_K2Node_InputActionEvent_1",
+        "InpActEvt_Jump_K2Node_InputActionEvent_0",
+        "InpAxisEvt_LookUp_K2Node_InputAxisEvent_40",
+        "InpAxisEvt_Turn_K2Node_InputAxisEvent_47",
+        "InpAxisEvt_MoveForward_K2Node_InputAxisEvent_79",
+        "InpAxisEvt_MoveRight_K2Node_InputAxisEvent_90",
+        "InpAxisEvt_TurnRate_K2Node_InputAxisEvent_38",
+        "InpAxisEvt_LookUpRate_K2Node_InputAxisEvent_53",
+        "GetWallRunComponent"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

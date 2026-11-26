@@ -59,6 +59,7 @@
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECombatStyleMode",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ELocomotionMode",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/E_AttunementType",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FAnimVariant",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FCharacterStatusSnapshot",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Structs/FPrimaryAttributes",
@@ -155,7 +156,7 @@
       "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     ],
-    "non_architecture_dependency_count": 30,
+    "non_architecture_dependency_count": 31,
     "non_architecture_referencer_count": 2
   },
   "registry": {
@@ -1495,6 +1496,40 @@
         }
       },
       {
+        "name": "CFA_PushbackDirection",
+        "guid": "CB8B72544BDF773EE21827B57AC44A47",
+        "friendly_name": "CFA Pushback Direction",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CFA_PushbackSettings",
+        "guid": "C13069B04257A36140A2D1B18EF5CAFF",
+        "friendly_name": "CFA Pushback Settings",
+        "category": "INVTEXT(\"Combat Feedback\")",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "struct",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/FOTCodeX_11142026.CombatPushbackSettings'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
         "name": "CFA_Weapon",
         "guid": "9317CE5C42CD9ED98F63F2BFCC45B862",
         "friendly_name": "CFA Weapon",
@@ -2124,7 +2159,8 @@
         "CFA_OpenMeleeWindow",
         "CFA_EndMeleeWindow",
         "CFA_PlayDefenseFeedback",
-        "CFA_UsesContactPresentation"
+        "CFA_UsesContactPresentation",
+        "ResolveWeaponStatus"
       ],
       "macros": [],
       "delegates": [

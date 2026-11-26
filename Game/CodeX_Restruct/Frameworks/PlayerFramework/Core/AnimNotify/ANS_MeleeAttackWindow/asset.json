@@ -22,7 +22,7 @@
       "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/Profiles/DA_Impact_Standard"
     ],
     "referencers": [],
-    "non_architecture_dependency_count": 1,
+    "non_architecture_dependency_count": 2,
     "non_architecture_referencer_count": 14
   },
   "registry": {
@@ -342,6 +342,74 @@
           "is_const": false,
           "is_weak_pointer": false
         }
+      },
+      {
+        "name": "PushbackDisplacementCurve",
+        "guid": "D596897F447E5D0080BC6CAE548F3B91",
+        "friendly_name": "Pushback Displacement Curve",
+        "category": "INVTEXT(\"Pushback\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CurveFloat'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PushbackDistance",
+        "guid": "F104347041FDB009D29804A7241D806D",
+        "friendly_name": "Pushback Distance",
+        "category": "INVTEXT(\"Pushback\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PushbackDuration",
+        "guid": "375A20D844CBF3DE0BCDA79CDF4248C2",
+        "friendly_name": "Pushback Duration",
+        "category": "INVTEXT(\"Pushback\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "float",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "PushbackOverrideMode",
+        "guid": "B27B11844487B73F56D372892686F879",
+        "friendly_name": "Pushback Override Mode",
+        "category": "INVTEXT(\"Pushback\")",
+        "property_flags": 5,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Enum'/Script/FOTCodeX_11142026.ECombatPushbackOverrideMode'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
       }
     ],
     "graphs": {
@@ -349,7 +417,8 @@
       "functions": [
         "Received_NotifyBegin",
         "Received_NotifyTick",
-        "Received_NotifyEnd"
+        "Received_NotifyEnd",
+        "ResolvePushback"
       ],
       "macros": [],
       "delegates": [],

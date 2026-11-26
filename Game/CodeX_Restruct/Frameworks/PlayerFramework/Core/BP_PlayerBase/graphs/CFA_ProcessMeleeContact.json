@@ -6,11 +6,11 @@
     "guid": "B021FB944791A49A86F6BBB87CD72367"
   },
   "stats": {
-    "node_count": 28,
-    "pin_count": 115,
-    "connection_count": 46,
-    "exec_connection_count": 16,
-    "data_connection_count": 30
+    "node_count": 29,
+    "pin_count": 120,
+    "connection_count": 48,
+    "exec_connection_count": 17,
+    "data_connection_count": 31
   },
   "nodes": [
     {
@@ -712,7 +712,7 @@
           ]
         },
         {
-          "id": "A0CE27DB46CF6BA2BB86A39BD083C1D2",
+          "id": "B0117FC240324F75BB5B669A82C635BC",
           "name": "ErrorTolerance",
           "friendly_name": null,
           "direction": "input",
@@ -1029,7 +1029,7 @@
           ]
         },
         {
-          "id": "43617E1140A4568FFCE072BDED4EBFF9",
+          "id": "0EF4FBF94DF1EC64267118B924EFF0D1",
           "name": "ErrorTolerance",
           "friendly_name": null,
           "direction": "input",
@@ -1994,6 +1994,10 @@
             {
               "node": "K2Node_CallFunction_30",
               "pin_id": "CB7543AF402F377C17B29EB1CC9DB315"
+            },
+            {
+              "node": "K2Node_VariableSet_0",
+              "pin_id": "3B7148A649CFD978F82D11A43E18E01C"
             }
           ]
         },
@@ -2418,8 +2422,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_28",
-              "pin_id": "89949363498148AD1431A69641392B3E"
+              "node": "K2Node_VariableSet_0",
+              "pin_id": "B64F26384A7A262480F95F8D051CF1E2"
             }
           ]
         },
@@ -2502,7 +2506,7 @@
       "guid": "E3CBF07F4A80451953245089DB649C25",
       "title": "CFA_ApplyDetectedMeleeHit",
       "position": {
-        "x": 4038,
+        "x": 4348,
         "y": 161
       },
       "comment": null,
@@ -2539,8 +2543,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_VariableSet_4",
-              "pin_id": "C24D67634AF99D299A3B27B6902C55BB"
+              "node": "K2Node_VariableSet_0",
+              "pin_id": "252DE1EF42F89FC9821F9ABA995D2BF5"
             }
           ]
         },
@@ -2601,7 +2605,7 @@
       "guid": "64C9C96443F466F6BFB75D865AE55797",
       "title": "Set CFA_DamageRecipient",
       "position": {
-        "x": 4465,
+        "x": 4775,
         "y": 161
       },
       "comment": null,
@@ -2835,7 +2839,7 @@
           ]
         },
         {
-          "id": "4467C98F4131A240A1967BAB508848AF",
+          "id": "C0A3293E47878DB307F5669601E6D668",
           "name": "ErrorTolerance",
           "friendly_name": null,
           "direction": "input",
@@ -2864,7 +2868,7 @@
       "guid": "E39A574446E21F2CE6C177B14E109577",
       "title": "Branch",
       "position": {
-        "x": 4765,
+        "x": 5075,
         "y": 242
       },
       "comment": null,
@@ -2984,7 +2988,7 @@
       "guid": "CC55CFED48E0B50E0ACE7A9B8B7CF818",
       "title": "CFA_ReadTargetHealth",
       "position": {
-        "x": 5065,
+        "x": 5375,
         "y": 195
       },
       "comment": null,
@@ -3137,7 +3141,7 @@
       "guid": "92184FE849E31F4D44F3A7BCB9ED1DA4",
       "title": "K2Node_PromotableOperator",
       "position": {
-        "x": 5458,
+        "x": 5768,
         "y": 198
       },
       "comment": null,
@@ -3233,7 +3237,7 @@
           ]
         },
         {
-          "id": "C12620BD42577DA7332050BC13244303",
+          "id": "505FCC3F4190E800AC148CA7482D3581",
           "name": "ErrorTolerance",
           "friendly_name": null,
           "direction": "input",
@@ -3262,7 +3266,7 @@
       "guid": "EED2D37648C32A0BFCDBEE953695B388",
       "title": "Branch",
       "position": {
-        "x": 5808,
+        "x": 6118,
         "y": 196
       },
       "comment": null,
@@ -3382,7 +3386,7 @@
       "guid": "6F47C7C5493EF83AC553B1BA2F3BA575",
       "title": "CFA_ApplyConfirmedFeedback",
       "position": {
-        "x": 6108,
+        "x": 6418,
         "y": 224
       },
       "comment": null,
@@ -3577,6 +3581,154 @@
           ]
         }
       ]
+    },
+    {
+      "name": "K2Node_VariableSet_0",
+      "class": "/Script/BlueprintGraph.K2Node_VariableSet",
+      "guid": "55DBB80D4126620A429ADAACE58CC5E2",
+      "title": "Set CFA_PushbackDirection",
+      "position": {
+        "x": 4038,
+        "y": 161
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "CFA_PushbackDirection",
+          "MemberGuid": "CB8B72544BDF773EE21827B57AC44A47",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "B64F26384A7A262480F95F8D051CF1E2",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableSet_4",
+              "pin_id": "C24D67634AF99D299A3B27B6902C55BB"
+            }
+          ]
+        },
+        {
+          "id": "252DE1EF42F89FC9821F9ABA995D2BF5",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_28",
+              "pin_id": "89949363498148AD1431A69641392B3E"
+            }
+          ]
+        },
+        {
+          "id": "3B7148A649CFD978F82D11A43E18E01C",
+          "name": "CFA_PushbackDirection",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "struct",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "0, 0, 0",
+          "autogenerated_default_value": "0, 0, 0",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_26",
+              "pin_id": "D3B461344D4589B19D57A9AE15B698F3"
+            }
+          ]
+        },
+        {
+          "id": "BBDE5E874BE4464D955E6F8442C7AA52",
+          "name": "Output_Get",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "struct",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "0, 0, 0",
+          "autogenerated_default_value": "0, 0, 0",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "E0353FAB4D1D6B292D5788A89A98FB9C",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
     }
   ],
   "connections": [
@@ -3656,6 +3808,19 @@
         "node": "K2Node_CallFunction_30",
         "pin_id": "CB7543AF402F377C17B29EB1CC9DB315",
         "pin_name": "Direction"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallFunction_26",
+        "pin_id": "D3B461344D4589B19D57A9AE15B698F3",
+        "pin_name": "Direction"
+      },
+      "to": {
+        "node": "K2Node_VariableSet_0",
+        "pin_id": "3B7148A649CFD978F82D11A43E18E01C",
+        "pin_name": "CFA_PushbackDirection"
       }
     },
     {
@@ -4142,6 +4307,19 @@
     {
       "kind": "exec",
       "from": {
+        "node": "K2Node_VariableSet_0",
+        "pin_id": "252DE1EF42F89FC9821F9ABA995D2BF5",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_28",
+        "pin_id": "89949363498148AD1431A69641392B3E",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
         "node": "K2Node_VariableSet_3",
         "pin_id": "35A6977845F263A849333C8C2A562212",
         "pin_name": "then"
@@ -4160,8 +4338,8 @@
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_CallFunction_28",
-        "pin_id": "89949363498148AD1431A69641392B3E",
+        "node": "K2Node_VariableSet_0",
+        "pin_id": "B64F26384A7A262480F95F8D051CF1E2",
         "pin_name": "execute"
       }
     },

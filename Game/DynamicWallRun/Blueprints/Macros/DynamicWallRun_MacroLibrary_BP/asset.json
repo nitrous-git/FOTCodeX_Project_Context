@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "DynamicWallRun_MacroLibrary_BP",
+    "package_name": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP",
+    "package_path": "/Game/DynamicWallRun/Blueprints/Macros",
+    "object_path": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP.DynamicWallRun_MacroLibrary_BP",
+    "relative_package": "DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "Blueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP",
+      "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
+    ],
+    "referencers": [
+      "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP"
+    ],
+    "non_architecture_dependency_count": 2,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP.DynamicWallRun_MacroLibrary_BP_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.BlueprintGeneratedClass'/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP.DynamicWallRun_MacroLibrary_BP_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+    "generated_class_object": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP.DynamicWallRun_MacroLibrary_BP_C",
+    "interfaces": [],
+    "components": [
+      {
+        "name": "ArrowComponent",
+        "class": "ArrowComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP.Default__DynamicWallRun_MacroLibrary_BP_C:Arrow"
+      },
+      {
+        "name": "CapsuleComponent",
+        "class": "CapsuleComponent",
+        "parent": "DynamicWallRun_MacroLibrary_BP",
+        "inherited": true,
+        "native": true,
+        "root_component": true,
+        "scene_component": true,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP.Default__DynamicWallRun_MacroLibrary_BP_C:CollisionCylinder"
+      },
+      {
+        "name": "CharacterMovement",
+        "class": "CharacterMovementComponent",
+        "parent": "DynamicWallRun_MacroLibrary_BP",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP.Default__DynamicWallRun_MacroLibrary_BP_C:CharMoveComp"
+      },
+      {
+        "name": "Mesh",
+        "class": "SkeletalMeshComponent",
+        "parent": "CapsuleComponent",
+        "inherited": true,
+        "native": true,
+        "root_component": false,
+        "scene_component": true,
+        "template_path": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP.Default__DynamicWallRun_MacroLibrary_BP_C:CharacterMesh0"
+      }
+    ],
+    "variables": [],
+    "graphs": {
+      "event_graphs": [],
+      "functions": [],
+      "macros": [
+        "WallJumpIfAppropriate"
+      ],
+      "delegates": [],
+      "generated_graphs": []
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "complete",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

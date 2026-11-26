@@ -36,6 +36,9 @@
       "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase",
       "/Game/CodeX_Restruct/Game/UI/HUD/WBP_CombatHealthBar",
       "/Game/CodeX_Restruct/Shared/CameraShake/CameraShakeSmool",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/StatusEffects/DA_StatusEffect_Bleed",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/StatusEffects/DA_StatusEffect_Fire",
+      "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/StatusEffects/DA_StatusEffect_Lightning",
       "/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome",
       "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatReceiver",
       "/Game/CodeX_Restruct/Shared/Core/Interfaces/BPI_CombatTargetable",
@@ -73,7 +76,7 @@
       "/Game/CodeX_Restruct/Shared/Managers/BP_EncountersSpawner",
       "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager"
     ],
-    "non_architecture_dependency_count": 22,
+    "non_architecture_dependency_count": 23,
     "non_architecture_referencer_count": 10
   },
   "registry": {
@@ -146,6 +149,26 @@
         "root_component": false,
         "scene_component": false,
         "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.Default__BP_EnemyBase_C:CharMoveComp"
+      },
+      {
+        "name": "CombatPushback",
+        "class": "CombatPushbackComponent",
+        "parent": "BP_EnemyBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:CombatPushback_GEN_VARIABLE"
+      },
+      {
+        "name": "CombatStatusEffects",
+        "class": "CombatStatusEffectComponent",
+        "parent": "BP_EnemyBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C:CombatStatusEffects_GEN_VARIABLE"
       },
       {
         "name": "CombatTargetPoint ",
@@ -1915,6 +1938,7 @@
         "BPI_GetExecutionTargetLocation",
         "Combat_CanAttackPlayer",
         "Combat_ApplyProfile",
+        "GetCombatStatusTargetState",
         "CE_StartDeadState",
         "CE_UpdateDeadState",
         "CE_StopDeadState",

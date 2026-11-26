@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "DynamicWallRun_AnimBP",
+    "package_name": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
+    "package_path": "/Game/DynamicWallRun/Animations",
+    "object_path": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP.DynamicWallRun_AnimBP",
+    "relative_package": "DynamicWallRun/Animations/DynamicWallRun_AnimBP"
+  },
+  "classification": {
+    "category": "FULL_GRAPH",
+    "asset_class": {
+      "package": "/Script/Engine",
+      "name": "AnimBlueprint"
+    },
+    "reason": "Logic-bearing Blueprint class"
+  },
+  "architecture": {
+    "dependencies": [
+      "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP",
+      "/Game/DynamicWallRun/Blueprints/Enums/Direction_Enum",
+      "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
+    ],
+    "referencers": [
+      "/Game/DynamicWallRun/Animations/ThirdPerson_AnimBP"
+    ],
+    "non_architecture_dependency_count": 17,
+    "non_architecture_referencer_count": 0
+  },
+  "registry": {
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP.DynamicWallRun_AnimBP_C'",
+    "row_structure": null
+  },
+  "blueprint": {
+    "generated_class": "/Script/Engine.AnimBlueprintGeneratedClass'/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP.DynamicWallRun_AnimBP_C'",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'",
+    "generated_class_object": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP.DynamicWallRun_AnimBP_C",
+    "interfaces": [],
+    "components": [],
+    "variables": [
+      {
+        "name": "Character",
+        "guid": "936CA05F4CC28EDC26CAC18683DD8200",
+        "friendly_name": "Character",
+        "category": "References",
+        "property_flags": 67589,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentAnimPlayRate",
+        "guid": "6E1EF47A47F96D465C104EB9C267F55A",
+        "friendly_name": "Current Anim Play Rate",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentArcAngle",
+        "guid": "228B6B7F4F52ABABE74EF9B4BCC704EF",
+        "friendly_name": "Current Arc Angle",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "CurrentSpeed",
+        "guid": "F1D4060D41E60B3C890A7FAC9FC7051D",
+        "friendly_name": "Current Speed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "HandCorrectionAdditive",
+        "guid": "F9207B09488FCA62F536B288B5BA6430",
+        "friendly_name": "Hand Correction Additive",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsWallJumping",
+        "guid": "50AD9A2947E88560A4012FA28B5EFBAC",
+        "friendly_name": "Is Wall Jumping",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "IsWallRunning",
+        "guid": "AEC73E7741B99EF4D8D9629598576DAB",
+        "friendly_name": "Is Wall Running",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "Side",
+        "guid": "9A04D5E3434A6D9C946DEFAE5133F3D2",
+        "friendly_name": "Side",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "byte",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/DynamicWallRun/Blueprints/Enums/Direction_Enum.Direction_Enum'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "TurnRate",
+        "guid": "98127AFD48A802533F027E90E04FF9BE",
+        "friendly_name": "Turn Rate",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WallJumpAnimationSpeed",
+        "guid": "E265A3174616E963C010F09F1FA6081F",
+        "friendly_name": "Wall Jump Animation Speed",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "real",
+          "sub_category": "double",
+          "sub_category_object": null,
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "WallRunComponent",
+        "guid": "D61B297B4BFB83448D772DBA943C9BEB",
+        "friendly_name": "Wall Run Component",
+        "category": "References",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "object",
+          "sub_category": null,
+          "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP.DynamicWallRunComponent_BP_C'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      }
+    ],
+    "graphs": {
+      "event_graphs": [
+        "EventGraph"
+      ],
+      "functions": [],
+      "macros": [],
+      "delegates": [],
+      "generated_graphs": [
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_DynamicWallRun_AnimBP_AnimGraphNode_BlendListByBool_7D460BAE482DB2D8993CAD9AF1DFF7F7",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_DynamicWallRun_AnimBP_AnimGraphNode_TransitionResult_16B12CB9487C13BD9A40348C920C2C3C",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_DynamicWallRun_AnimBP_AnimGraphNode_TransitionResult_A9B0D07F497857AB5928C38F871342F0",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_DynamicWallRun_AnimBP_AnimGraphNode_TransitionResult_E180D4374BD89C07C845DE9F023A3601",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_DynamicWallRun_AnimBP_AnimGraphNode_TransitionResult_3D3A54BF4EC6FA5914B09D8ACB5872FA",
+        "EvaluateGraphExposedInputs_ExecuteUbergraph_DynamicWallRun_AnimBP_AnimGraphNode_TransitionResult_489E271748D7B40FFA6BC8B32A75F94B",
+        "BlueprintUpdateAnimation"
+      ]
+    },
+    "extraction_status": {
+      "parent_class": "complete",
+      "generated_class": "complete",
+      "interfaces": "best_effort",
+      "components": "not_applicable",
+      "member_variables": "complete",
+      "graph_inventory": "complete",
+      "graph_nodes": "complete"
+    },
+    "graph_source": {
+      "index": "blueprint_graphs.json",
+      "raw_t3d": "_raw/blueprint.t3d",
+      "graph_directory": "graphs"
+    }
+  }
+}

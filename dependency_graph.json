@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 472,
-  "edge_count": 1424,
+  "node_count": 485,
+  "edge_count": 1445,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -2249,6 +2249,18 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/StatusEffects/DA_StatusEffect_Bleed"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/StatusEffects/DA_StatusEffect_Fire"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/StatusEffects/DA_StatusEffect_Lightning"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "to": "/Game/CodeX_Restruct/Shared/Core/Enums/E_HitOutcome"
     },
     {
@@ -2714,6 +2726,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_Weapon_Twinblades",
       "to": "/Game/CodeX_Restruct/Game/UI/GameMenu/Equipment/WeaponPreview/BP_Preview_Twinblades"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/E_AttunementType"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Items/Definitions/Weapons/DA_WeaponDefinition",
@@ -3453,6 +3469,10 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/E_AttunementType"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/Enum/ECameraMode"
     },
     {
@@ -3724,12 +3744,20 @@
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Neutral"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Bleed",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/StatusEffects/DA_StatusEffect_Bleed"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Fire",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/DA_Attunement"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Fire_Instance",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Fire"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Fire_Instance",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/StatusEffects/DA_StatusEffect_Fire"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Frost",
@@ -3750,6 +3778,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Lightning_Instance",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Neutral"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Lightning_Instance",
+      "to": "/Game/CodeX_Restruct/Shared/CombatFeedback/Data/StatusEffects/DA_StatusEffect_Lightning"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/DataAssets/Attunement/DA_Attunement_Neutral",
@@ -5154,6 +5186,58 @@
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
+      "to": "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
+      "to": "/Game/DynamicWallRun/Blueprints/Enums/Direction_Enum"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
+      "to": "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Animations/ThirdPerson_AnimBP",
+      "to": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP",
+      "to": "/Game/DynamicWallRun/Animations/ThirdPerson_AnimBP"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP",
+      "to": "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP",
+      "to": "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP",
+      "to": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP",
+      "to": "/Game/DynamicWallRun/Blueprints/Enums/Direction_Enum"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI",
+      "to": "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP",
+      "to": "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP",
+      "to": "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
+    },
+    {
+      "from": "/Game/DynamicWallRun/Blueprints/Misc/ThirdPersonGameMode_BP",
+      "to": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP"
     },
     {
       "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK",
