@@ -22,6 +22,8 @@
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Core/BP_BaseBoss",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_BaseProjectile",
       "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI",
+      "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP",
+      "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI",
       "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentComponent",
       "/Game/CodeX_Restruct/Frameworks/ItemSystemFramework/Equipment/AC_EquipmentStatsComponent",
@@ -289,6 +291,16 @@
         "root_component": false,
         "scene_component": false,
         "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_TraversalHomingComponent_GEN_VARIABLE"
+      },
+      {
+        "name": "AC_TraversalWallRunComponent",
+        "class": "DynamicWallRunComponent_BP_C",
+        "parent": "BP_PlayerBase",
+        "inherited": false,
+        "native": false,
+        "root_component": false,
+        "scene_component": false,
+        "template_path": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C:AC_TraversalWallRunComponent_GEN_VARIABLE"
       },
       {
         "name": "ArrowComponent",
@@ -2169,6 +2181,7 @@
       "generated_graphs": [
         "IsTargetable",
         "ResolveIncomingHit",
+        "GetWallRunComponent",
         "CFA_ApplyDetectedMeleeHit",
         "BndEvt__BP_PlayerBase_AC_EquipmentComponent_K2Node_ComponentBoundEvent_6_OnActiveWeaponChanged__DelegateSignature",
         "CE_StartBlocking",

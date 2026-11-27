@@ -6,11 +6,11 @@
     "guid": "E86C31604BB173E657E158976DDD599E"
   },
   "stats": {
-    "node_count": 240,
-    "pin_count": 763,
-    "connection_count": 235,
-    "exec_connection_count": 101,
-    "data_connection_count": 134
+    "node_count": 253,
+    "pin_count": 802,
+    "connection_count": 248,
+    "exec_connection_count": 105,
+    "data_connection_count": 143
   },
   "nodes": [
     {
@@ -2634,7 +2634,7 @@
       "guid": "1306269E4BE6B81C51BE2A81733C11D1",
       "title": "K2Node_CustomEvent",
       "position": {
-        "x": 262,
+        "x": -558,
         "y": 3988
       },
       "comment": null,
@@ -2692,8 +2692,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_IfThenElse_14",
-              "pin_id": "614FFD6442CE1E22939D8B99869E59D6"
+              "node": "K2Node_IfThenElse_2",
+              "pin_id": "37DC8C9943EF061BFDD3C1B722C8059A"
             }
           ]
         }
@@ -2808,8 +2808,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CustomEvent_0",
-              "pin_id": "A9B096B0499333C84B0C6AA2430AA643"
+              "node": "K2Node_IfThenElse_2",
+              "pin_id": "E36918704393C564579CE38BE0C345DA"
             }
           ]
         },
@@ -5535,7 +5535,7 @@
           ]
         },
         {
-          "id": "0C6C916747E4F4E977448F92C3A8367A",
+          "id": "287DCB0B4AD5A918623EF6BF16C843A3",
           "name": "ErrorTolerance",
           "friendly_name": null,
           "direction": "input",
@@ -10298,7 +10298,7 @@
           ]
         },
         {
-          "id": "3BF13C1C45D912ADB77CD0926CD35F3D",
+          "id": "9E140A964705E83425510BAA21F774E1",
           "name": "ErrorTolerance",
           "friendly_name": null,
           "direction": "input",
@@ -11115,7 +11115,7 @@
           ]
         },
         {
-          "id": "AC87A30E4C23900E1101EF9C5A7F3A36",
+          "id": "DF12C9D545CC03930F11BE850AF177E1",
           "name": "ErrorTolerance",
           "friendly_name": null,
           "direction": "input",
@@ -12555,7 +12555,7 @@
           ]
         },
         {
-          "id": "D5252DD9438EF3032F0785BFA07F03BB",
+          "id": "68166AD4479E85467C15EF958F9C7745",
           "name": "ErrorTolerance",
           "friendly_name": null,
           "direction": "input",
@@ -17420,7 +17420,12 @@
           "default_object": null,
           "hidden": false,
           "orphaned": false,
-          "links": []
+          "links": [
+            {
+              "node": "K2Node_CallFunction_9",
+              "pin_id": "F5688B3449C4934344B108961BC576DF"
+            }
+          ]
         },
         {
           "id": "0359E9F04BA3F0E07AA4A0BD5162D094",
@@ -19569,7 +19574,7 @@
       "guid": "6453AE2E4EB7EC3950D800B42FE8886E",
       "title": "K2Node_CustomEvent",
       "position": {
-        "x": 256,
+        "x": -564,
         "y": 7424
       },
       "comment": null,
@@ -19627,8 +19632,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_MacroInstance_2",
-              "pin_id": "D7C401924B291AEB6FF0E4B8E3CFC084"
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "AB7BB0204BAD8C6AE6B9DB90E93B75AA"
             }
           ]
         }
@@ -19843,8 +19848,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CustomEvent_8",
-              "pin_id": "2B1BFD2B4FAD4445609AD5A92BC83C82"
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "F3D7A632463F486DD55CC7A627C5C92F"
             }
           ]
         },
@@ -22093,7 +22098,7 @@
           ]
         },
         {
-          "id": "A3C1B50648A8A591E1FA688E587068EA",
+          "id": "CDD2D1C345D03596FB1BCB8B8B8514F4",
           "name": "ErrorTolerance",
           "friendly_name": null,
           "direction": "input",
@@ -24405,6 +24410,1269 @@
           ]
         }
       ]
+    },
+    {
+      "name": "K2Node_CallFunction_5",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "FF4C6C0A48ECC353BC0D088310BAD44E",
+      "title": "GetOwner",
+      "position": {
+        "x": -589,
+        "y": 7574
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberName": "GetOwner",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "8B9CFAD042F21B00095E23A3658D700E",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "DC3BF0FE4FE923695799F0ABBEAAF58D",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "DEF8134F4CD3BD7B0ED64E83A78D30CA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_6",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "7BAA482846D13191FD0342907D4C5985",
+      "title": "IsActorCombatRestricted",
+      "position": {
+        "x": -354,
+        "y": 7574
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/FOTCodeX_11142026.CombatActionRestrictionComponent'",
+          "MemberName": "IsActorCombatRestricted"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "28E288764827582DEAB42DBD4FF470F1",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/FOTCodeX_11142026.CombatActionRestrictionComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/FOTCodeX_11142026.Default__CombatActionRestrictionComponent",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "DEF8134F4CD3BD7B0ED64E83A78D30CA",
+          "name": "Actor",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+            "container": null,
+            "is_reference": false,
+            "is_const": true,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_5",
+              "pin_id": "DC3BF0FE4FE923695799F0ABBEAAF58D"
+            }
+          ]
+        },
+        {
+          "id": "062275B84863414476634487A6210613",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_1",
+              "pin_id": "852572304FC45A370D3FCB907F2CBDF2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_IfThenElse_1",
+      "class": "/Script/BlueprintGraph.K2Node_IfThenElse",
+      "guid": "C7B134F64692B7005DF58983F8886FBA",
+      "title": "Branch",
+      "position": {
+        "x": -4,
+        "y": 7424
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {},
+      "properties": {},
+      "pins": [
+        {
+          "id": "AB7BB0204BAD8C6AE6B9DB90E93B75AA",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CustomEvent_8",
+              "pin_id": "2B1BFD2B4FAD4445609AD5A92BC83C82"
+            }
+          ]
+        },
+        {
+          "id": "852572304FC45A370D3FCB907F2CBDF2",
+          "name": "Condition",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "true",
+          "autogenerated_default_value": "true",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_6",
+              "pin_id": "062275B84863414476634487A6210613"
+            }
+          ]
+        },
+        {
+          "id": "715FAA2940DAFBBA4D86EBAAC04BCDF7",
+          "name": "then",
+          "friendly_name": "true",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "F3D7A632463F486DD55CC7A627C5C92F",
+          "name": "else",
+          "friendly_name": "false",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_MacroInstance_2",
+              "pin_id": "D7C401924B291AEB6FF0E4B8E3CFC084"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_7",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "FF7BFBE4460D5D81E4E593AE4EDB8622",
+      "title": "GetOwner",
+      "position": {
+        "x": -583,
+        "y": 4138
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberName": "GetOwner",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "07671C0244620661E4FE4FB1F55756F4",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "B584B9924E94D4AE709D02AE7E64DB50",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "51508F844081B69E92B7CFA2D93615C7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_8",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "B96730A448B25310A4883EB9C8D23A15",
+      "title": "IsActorMovementRestricted",
+      "position": {
+        "x": -348,
+        "y": 4138
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/FOTCodeX_11142026.CombatActionRestrictionComponent'",
+          "MemberName": "IsActorMovementRestricted"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "8008D4CA46A2058E14CA8291D02C2281",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/FOTCodeX_11142026.CombatActionRestrictionComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/FOTCodeX_11142026.Default__CombatActionRestrictionComponent",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "51508F844081B69E92B7CFA2D93615C7",
+          "name": "Actor",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+            "container": null,
+            "is_reference": false,
+            "is_const": true,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_7",
+              "pin_id": "B584B9924E94D4AE709D02AE7E64DB50"
+            }
+          ]
+        },
+        {
+          "id": "72D67E844E85DB4A5A8733B8A46489F9",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_2",
+              "pin_id": "D61B6FEB455932FD74738381173C641B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_IfThenElse_2",
+      "class": "/Script/BlueprintGraph.K2Node_IfThenElse",
+      "guid": "9E666D5C48271519A1C499B766FA47F1",
+      "title": "Branch",
+      "position": {
+        "x": 2,
+        "y": 3988
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {},
+      "properties": {},
+      "pins": [
+        {
+          "id": "37DC8C9943EF061BFDD3C1B722C8059A",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CustomEvent_0",
+              "pin_id": "A9B096B0499333C84B0C6AA2430AA643"
+            }
+          ]
+        },
+        {
+          "id": "D61B6FEB455932FD74738381173C641B",
+          "name": "Condition",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "true",
+          "autogenerated_default_value": "true",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "72D67E844E85DB4A5A8733B8A46489F9"
+            }
+          ]
+        },
+        {
+          "id": "A80815F042DA059F1A76F9B827B88333",
+          "name": "then",
+          "friendly_name": "true",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "E36918704393C564579CE38BE0C345DA",
+          "name": "else",
+          "friendly_name": "false",
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_IfThenElse_14",
+              "pin_id": "614FFD6442CE1E22939D8B99869E59D6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_0",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "C24D037B4A6320EC70779F997B9E91CA",
+      "title": "Get RangedProfile",
+      "position": {
+        "x": 2080,
+        "y": 268
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "RangedProfile",
+          "MemberGuid": "F046050749966CEA386C38A1B13C8C95",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "476BA28F496871E865F15491AAAA29F3",
+          "name": "RangedProfile",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_RangedProfile.DA_Enemy_RangedProfile_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_2",
+              "pin_id": "24128A14423FD44705765297DD956633"
+            }
+          ]
+        },
+        {
+          "id": "A55052BE46FCBFE6A7BA9C990CC82B28",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged.AC_EnemyCombat_Ranged_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_2",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "80ED28054A82E3D741F8E1981D31EB1A",
+      "title": "Get CastMontage",
+      "position": {
+        "x": 2304,
+        "y": 270
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_RangedProfile.DA_Enemy_RangedProfile_C'",
+          "MemberName": "CastMontage",
+          "MemberGuid": "8E09E4E044D07D695543CDB8177DBB38"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "81CD887D4990F796651301954B0479DB",
+          "name": "CastMontage",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_9",
+              "pin_id": "D1A38E19447D8821018E048109A7903F"
+            }
+          ]
+        },
+        {
+          "id": "24128A14423FD44705765297DD956633",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/DataAssets/NewDA/DA_Enemy_RangedProfile.DA_Enemy_RangedProfile_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_0",
+              "pin_id": "476BA28F496871E865F15491AAAA29F3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_6",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "2677C1F94CD7340648A1B3B965C16CF3",
+      "title": "Get OwnerEnemy",
+      "position": {
+        "x": 2320,
+        "y": 354
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "OwnerEnemy",
+          "MemberGuid": "74A57D69409C678DE405EB8FFE032FCB",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "99E625B345C27FF75F4219812DF0EE30",
+          "name": "OwnerEnemy",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_9",
+              "pin_id": "552C84E04BDCB065DE0245A7F13A760A"
+            }
+          ]
+        },
+        {
+          "id": "D86A3EB1485FAA4C1B70229FED9ECFA8",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged.AC_EnemyCombat_Ranged_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_9",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "270674574A0310F756ED14BB59067FF8",
+      "title": "StopOffensiveMontage",
+      "position": {
+        "x": 2560,
+        "y": 96
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/FOTCodeX_11142026.CombatActionRestrictionComponent'",
+          "MemberName": "StopOffensiveMontage"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "F5688B3449C4934344B108961BC576DF",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableSet_50",
+              "pin_id": "836FE17D4F4B87B26CA2A08B9779BF8E"
+            }
+          ]
+        },
+        {
+          "id": "6E93BE9F45F56618AC32DFB37620796E",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_11",
+              "pin_id": "A4326A3C4A68C1F5C2702D92ECBFDAE5"
+            }
+          ]
+        },
+        {
+          "id": "0124FB6442E888E8BD570CBB33F56652",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/FOTCodeX_11142026.CombatActionRestrictionComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/FOTCodeX_11142026.Default__CombatActionRestrictionComponent",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "552C84E04BDCB065DE0245A7F13A760A",
+          "name": "Character",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_6",
+              "pin_id": "99E625B345C27FF75F4219812DF0EE30"
+            }
+          ]
+        },
+        {
+          "id": "D1A38E19447D8821018E048109A7903F",
+          "name": "Montage",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.AnimMontage'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_2",
+              "pin_id": "81CD887D4990F796651301954B0479DB"
+            }
+          ]
+        },
+        {
+          "id": "F9784C674D10A7CD3615368724F12EBA",
+          "name": "BlendOutTime",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "real",
+            "sub_category": "float",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "0.150000",
+          "autogenerated_default_value": "0.150000",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_7",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "58A4E4AD4B674126E1E2B691665FB90F",
+      "title": "Get OwnerEnemy",
+      "position": {
+        "x": 2548,
+        "y": 354
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "OwnerEnemy",
+          "MemberGuid": "74A57D69409C678DE405EB8FFE032FCB",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "B660E69645700FD32CC2809C13177BB6",
+          "name": "OwnerEnemy",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/BP_EnemyBase.BP_EnemyBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_10",
+              "pin_id": "DC5D9D7E4737BC1D956F099449851E49"
+            }
+          ]
+        },
+        {
+          "id": "09648F564A7DBD19F021AC8AD42A7401",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged.AC_EnemyCombat_Ranged_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_10",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "4AE7FA1E44B0EECF06ACB5BAF344034B",
+      "title": "GetComponentByClass",
+      "position": {
+        "x": 2784,
+        "y": 252
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+          "MemberName": "GetComponentByClass"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "DC5D9D7E4737BC1D956F099449851E49",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Actor'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_7",
+              "pin_id": "B660E69645700FD32CC2809C13177BB6"
+            }
+          ]
+        },
+        {
+          "id": "2FE1C4654BACD106793B8B8913936C28",
+          "name": "ComponentClass",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "class",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": true
+          },
+          "default_value": null,
+          "autogenerated_default_value": "/Script/Engine.ActorComponent",
+          "default_object": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent.BP_ProjectileComponent_C",
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "A962AF65437300903D3A8887A860435C",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent.BP_ProjectileComponent_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_11",
+              "pin_id": "A882AFE344BEC7E6C3BBF4AE33DDC58A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CallFunction_11",
+      "class": "/Script/BlueprintGraph.K2Node_CallFunction",
+      "guid": "37AA6F70473D5D6118D0EE8021D76761",
+      "title": "CancelComponentLatentActions",
+      "position": {
+        "x": 3136,
+        "y": 96
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/FOTCodeX_11142026.CombatActionRestrictionComponent'",
+          "MemberName": "CancelComponentLatentActions"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "A4326A3C4A68C1F5C2702D92ECBFDAE5",
+          "name": "execute",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_9",
+              "pin_id": "6E93BE9F45F56618AC32DFB37620796E"
+            }
+          ]
+        },
+        {
+          "id": "BB06F8AE4DE52662044DE1BE0339A1C2",
+          "name": "then",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "exec",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "5689B5D24CC5F2EB9FE976BB67E745B0",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/FOTCodeX_11142026.CombatActionRestrictionComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/FOTCodeX_11142026.Default__CombatActionRestrictionComponent",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "A882AFE344BEC7E6C3BBF4AE33DDC58A",
+          "name": "Component",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_10",
+              "pin_id": "A962AF65437300903D3A8887A860435C"
+            }
+          ]
+        }
+      ]
     }
   ],
   "connections": [
@@ -24471,6 +25739,19 @@
         "node": "K2Node_VariableSet_44",
         "pin_id": "F5DEA8FC41B040743D0737BDE0E15335",
         "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallFunction_10",
+        "pin_id": "A962AF65437300903D3A8887A860435C",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_11",
+        "pin_id": "A882AFE344BEC7E6C3BBF4AE33DDC58A",
+        "pin_name": "Component"
       }
     },
     {
@@ -24619,6 +25900,19 @@
     {
       "kind": "data",
       "from": {
+        "node": "K2Node_CallFunction_5",
+        "pin_id": "DC3BF0FE4FE923695799F0ABBEAAF58D",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_6",
+        "pin_id": "DEF8134F4CD3BD7B0ED64E83A78D30CA",
+        "pin_name": "Actor"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
         "node": "K2Node_CallFunction_50",
         "pin_id": "CD6E241D4ACAE3FB455A0DA945E8D0D1",
         "pin_name": "ReturnValue"
@@ -24626,6 +25920,19 @@
       "to": {
         "node": "K2Node_IfThenElse_14",
         "pin_id": "2EF571F6483CE57712AD4DA9448BCCA3",
+        "pin_name": "Condition"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallFunction_6",
+        "pin_id": "062275B84863414476634487A6210613",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "852572304FC45A370D3FCB907F2CBDF2",
         "pin_name": "Condition"
       }
     },
@@ -24692,6 +25999,19 @@
         "node": "K2Node_CommutativeAssociativeBinaryOperator_7",
         "pin_id": "D59105C94027F5043A0A289D9E2013AC",
         "pin_name": "A"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CallFunction_7",
+        "pin_id": "B584B9924E94D4AE709D02AE7E64DB50",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "51508F844081B69E92B7CFA2D93615C7",
+        "pin_name": "Actor"
       }
     },
     {
@@ -24840,6 +26160,19 @@
     {
       "kind": "data",
       "from": {
+        "node": "K2Node_CallFunction_8",
+        "pin_id": "72D67E844E85DB4A5A8733B8A46489F9",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_IfThenElse_2",
+        "pin_id": "D61B6FEB455932FD74738381173C641B",
+        "pin_name": "Condition"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
         "node": "K2Node_CallFunction_81",
         "pin_id": "579F18184AB7A4D51D2641943851C623",
         "pin_name": "ReturnValue"
@@ -24916,6 +26249,19 @@
       }
     },
     {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_CallFunction_9",
+        "pin_id": "6E93BE9F45F56618AC32DFB37620796E",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_11",
+        "pin_id": "A4326A3C4A68C1F5C2702D92ECBFDAE5",
+        "pin_name": "execute"
+      }
+    },
+    {
       "kind": "data",
       "from": {
         "node": "K2Node_CommutativeAssociativeBinaryOperator_2",
@@ -24975,8 +26321,8 @@
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_IfThenElse_14",
-        "pin_id": "614FFD6442CE1E22939D8B99869E59D6",
+        "node": "K2Node_IfThenElse_2",
+        "pin_id": "37DC8C9943EF061BFDD3C1B722C8059A",
         "pin_name": "execute"
       }
     },
@@ -25040,9 +26386,9 @@
         "pin_name": "then"
       },
       "to": {
-        "node": "K2Node_MacroInstance_2",
-        "pin_id": "D7C401924B291AEB6FF0E4B8E3CFC084",
-        "pin_name": "exec"
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "AB7BB0204BAD8C6AE6B9DB90E93B75AA",
+        "pin_name": "execute"
       }
     },
     {
@@ -25269,6 +26615,19 @@
     {
       "kind": "exec",
       "from": {
+        "node": "K2Node_IfThenElse_1",
+        "pin_id": "F3D7A632463F486DD55CC7A627C5C92F",
+        "pin_name": "else"
+      },
+      "to": {
+        "node": "K2Node_MacroInstance_2",
+        "pin_id": "D7C401924B291AEB6FF0E4B8E3CFC084",
+        "pin_name": "exec"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
         "node": "K2Node_IfThenElse_11",
         "pin_id": "8571A46E4A9F68359B570F9E60BCCA65",
         "pin_name": "then"
@@ -25315,6 +26674,19 @@
       "to": {
         "node": "K2Node_IfThenElse_24",
         "pin_id": "CCCE43FB4CA4A16DF2ABD99145D8D227",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_IfThenElse_2",
+        "pin_id": "E36918704393C564579CE38BE0C345DA",
+        "pin_name": "else"
+      },
+      "to": {
+        "node": "K2Node_IfThenElse_14",
+        "pin_id": "614FFD6442CE1E22939D8B99869E59D6",
         "pin_name": "execute"
       }
     },
@@ -25893,6 +27265,19 @@
     {
       "kind": "data",
       "from": {
+        "node": "K2Node_VariableGet_0",
+        "pin_id": "476BA28F496871E865F15491AAAA29F3",
+        "pin_name": "RangedProfile"
+      },
+      "to": {
+        "node": "K2Node_VariableGet_2",
+        "pin_id": "24128A14423FD44705765297DD956633",
+        "pin_name": "self"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
         "node": "K2Node_VariableGet_1",
         "pin_id": "B8027BEC437B65E9B3B353BDB6939C16",
         "pin_name": "OwnerEnemy"
@@ -26122,6 +27507,19 @@
         "node": "K2Node_AIMoveTo_0",
         "pin_id": "7897F1CB421D80BBC8A47193A38AC91A",
         "pin_name": "TargetActor"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_2",
+        "pin_id": "81CD887D4990F796651301954B0479DB",
+        "pin_name": "CastMontage"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_9",
+        "pin_id": "D1A38E19447D8821018E048109A7903F",
+        "pin_name": "Montage"
       }
     },
     {
@@ -26413,6 +27811,19 @@
     {
       "kind": "data",
       "from": {
+        "node": "K2Node_VariableGet_6",
+        "pin_id": "99E625B345C27FF75F4219812DF0EE30",
+        "pin_name": "OwnerEnemy"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_9",
+        "pin_id": "552C84E04BDCB065DE0245A7F13A760A",
+        "pin_name": "Character"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
         "node": "K2Node_VariableGet_60",
         "pin_id": "2AF3B1624087B8598541188CEC8B7E7C",
         "pin_name": "RangedProfile"
@@ -26525,6 +27936,19 @@
         "node": "K2Node_PromotableOperator_10",
         "pin_id": "57254DAF47EF01D0838A629D55BB3713",
         "pin_name": "B"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_7",
+        "pin_id": "B660E69645700FD32CC2809C13177BB6",
+        "pin_name": "OwnerEnemy"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_10",
+        "pin_id": "DC5D9D7E4737BC1D956F099449851E49",
+        "pin_name": "self"
       }
     },
     {
@@ -27265,6 +28689,19 @@
       "to": {
         "node": "K2Node_VariableSet_45",
         "pin_id": "455F85D94750B8FC14E9378FD3AA8D5E",
+        "pin_name": "execute"
+      }
+    },
+    {
+      "kind": "exec",
+      "from": {
+        "node": "K2Node_VariableSet_50",
+        "pin_id": "836FE17D4F4B87B26CA2A08B9779BF8E",
+        "pin_name": "then"
+      },
+      "to": {
+        "node": "K2Node_CallFunction_9",
+        "pin_id": "F5688B3449C4934344B108961BC576DF",
         "pin_name": "execute"
       }
     },

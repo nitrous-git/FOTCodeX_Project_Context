@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Engine/DataAsset.h"
+#include "Combat/CombatActionRestrictionComponent.h"
 #include "Combat/Status/CombatStatusEffectTypes.h"
 #include "CombatStatusEffectDefinition.generated.h"
 
@@ -54,6 +55,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Effect",
 		meta=(ClampMin="0", ClampMax="100", EditCondition="Execution == ECombatStatusExecution::InstantBurst", EditConditionHides))
 	float BurstMaxHealthPercent = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Effect",
+		meta=(EditCondition="Execution != ECombatStatusExecution::InstantBurst", EditConditionHides))
+	FCombatActionRestrictions ActionRestrictions;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Visual")
 	FCombatStatusVFX ApplicationVFX;

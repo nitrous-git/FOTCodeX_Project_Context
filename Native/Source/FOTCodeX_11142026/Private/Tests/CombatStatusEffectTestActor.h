@@ -1,22 +1,27 @@
 #pragma once
 
+#include "Combat/CombatActionRestrictionComponent.h"
 #include "Combat/Status/CombatStatusEffectComponent.h"
-#include "GameFramework/Actor.h"
+#include "GameFramework/Character.h"
 #include "CombatStatusEffectTestActor.generated.h"
 
 /** Damage receiver used by the native status automation tests. */
 UCLASS(NotBlueprintable, NotPlaceable, Transient)
-class ACombatStatusEffectTestActor : public AActor, public ICombatStatusTarget
+class ACombatStatusEffectTestActor : public ACharacter, public ICombatStatusTarget, public ICombatActionRestrictionTarget
 {
 	GENERATED_BODY()
 
 public:
 	ACombatStatusEffectTestActor();
 	virtual FCombatStatusTargetState GetCombatStatusTargetState_Implementation() const override;
+	virtual void OnCombatRestrictionChanged_Implementation(bool bRestricted) override;
 	virtual float TakeDamage(float Damage, const FDamageEvent& DamageEvent, AController* EventInstigator, AActor* Causer) override;
 
 	UPROPERTY()
 	TObjectPtr<UCombatStatusEffectComponent> Status;
+
+	UPROPERTY()
+	TObjectPtr<UCombatActionRestrictionComponent> Restrictions;
 
 	UPROPERTY()
 	TObjectPtr<AActor> LastStatusSource;
@@ -26,4 +31,5 @@ public:
 	int32 StatusDamageEvents = 0;
 	bool bProtected = false;
 	bool bRejectWeaponDamage = false;
+	TFunction<void(bool)> OnCombatRestriction;
 };

@@ -1,0 +1,1146 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "DynamicWallRunComponent_BP",
+    "class": "/Script/Engine.Blueprint",
+    "guid": "B6B71EC74153E378D387CE9AEC32D245",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.ActorComponent'"
+  },
+  "variables": [
+    {
+      "name": "ArcAmount",
+      "guid": "7CD27FB44C4E5E77BCD61485FD2CF229",
+      "friendly_name": "Arc Amount",
+      "category": "Wall Run Parameters",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AverageWallNormal",
+      "guid": "62FDFD44454C4E4F9DED689D48539304",
+      "friendly_name": "Average Wall Normal",
+      "category": "Core Utilities (Do Not Modify)|Current Wall Information",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CapsuleRadius",
+      "guid": "2D3DC40347023E3F1F34449FD88F7339",
+      "friendly_name": "Capsule Radius",
+      "category": "Core Utilities (Do Not Modify)|Original Character Information",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "Character",
+      "guid": "F0C137DC439BE05BEBAC359EA0C21B07",
+      "friendly_name": "Character",
+      "category": "Core Utilities (Do Not Modify)|References",
+      "property_flags": 67589,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.Character'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentArcAngle",
+      "guid": "749A181F441ED762DCC82CA717E49E40",
+      "friendly_name": "Current Arc Angle",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"FDC43D3D4D25E5EF609D028B50C4D38C\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"4CA778814EE9548879D21186E0DEBBFD\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"9C2AE8DD4CF03E6DCE12D495382BC990\", \"Animation Values\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentCornerAngle",
+      "guid": "CA023FFB4376779DBCCF8987C83E13B1",
+      "friendly_name": "Current Corner Angle",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"B98F17E34C37DD4D3F02228FF535E70B\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"2A1538E7486004A9A47B50A20F22A527\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"07A7A9D84E7DC101BD905FA7B5FE3891\", \"Current Wall Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentTurnRate",
+      "guid": "9D36375C4DC9F8A6F2AA99ACA70FB0B1",
+      "friendly_name": "Current Turn Rate",
+      "category": "Core Utilities (Do Not Modify)|Animation Values",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentWallLocation",
+      "guid": "035B656F4F59F1B0F6FB3D8B60834902",
+      "friendly_name": "Current Wall Location",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"D9423A6A41901D4CFB209884E0889D9A\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"3F1328A547DB72127EB3ABBA8AEE1FF3\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"76F38FB4462C0C31705BD494FFDF4A77\", \"Current Wall Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CurrentWallRunDuration",
+      "guid": "79AA00D246C21964BC5CD9886F83BF3C",
+      "friendly_name": "Current Wall Run Duration",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"57327CF24FEF0DC8E35419843C925F79\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"5C6C89AB40EE38C6C63C99B94FDFE3BE\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"423DF130485337CD23E3B091EBC2B027\", \"Current Wall Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefaultAirControl",
+      "guid": "459E18A4422969C7959B1EB892848021",
+      "friendly_name": "Default Air Control",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"71BCD89B4CD055899618588CFE28E171\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"71846CB24CA9345A5102F8935CB220AE\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"901FECE6425AD196A06438869F635ED6\", \"Original Character Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefaultBrakingDeceleration",
+      "guid": "4BB83F314F1954325C42F3B07641292D",
+      "friendly_name": "Default Braking Deceleration",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"E5B8996C44737E1A35D951AECBCCEDF0\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"B08DE1524AC848C5507CCC93402347F0\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"3A7EE20440FAAEDC65A10D8CAD4048FE\", \"Original Character Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefaultMaxAcceleration",
+      "guid": "CF114FF24014A3220611E996ECC5C3D8",
+      "friendly_name": "Default Max Acceleration",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"C8652C6D4C558C4948FA5F9AD2CC2C20\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"E9C6EAEC482B316096D77DAECA7A502B\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"59E2E3B2480140684EE5F6ACE9244911\", \"Original Character Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefaultMaxFlySpeed",
+      "guid": "4440609A42B55D3331A7EE93D3B5F07D",
+      "friendly_name": "Default Max Fly Speed",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"C634E850435FFE87D9B8DB8A11AE26B0\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"E4A23F03453DD52CF204A68C6CE9AC01\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"85470FB34091D0EE4E44E39824F36BB9\", \"Original Character Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DefaultOrientRotation",
+      "guid": "CE98AD8C4709F4325324DDBF5E110C3E",
+      "friendly_name": "Default Orient Rotation",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"A2A494E844163294F88799BACBD37C4E\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"1F0778B5493C5F412AD97394F3FB227A\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"71AE82344E50C03F57E52F8CC2C6A464\", \"Original Character Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DisabledWallRunTimer",
+      "guid": "DC2DF94041EEBA89A06E9386775C1340",
+      "friendly_name": "Disabled Wall Run Timer",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"78CA658D472CD7D5312488B1BEFA23CE\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"30F213F3470AC93BF5EFD0BEC40E6EEF\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"3F8878D349C03390977B98A9F2DC4127\", \"Timers\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DistanceFromWall",
+      "guid": "616ACC124E82D2250C04A1B8A217B690",
+      "friendly_name": "Distance from Wall",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"5B54D9EB4E606C33B7EF068836BFAD47\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"F1C2FC0445124099A62AF49F2190311B\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"CF34B15A4D2F1E7B81886783937E62BD\", \"Current Wall Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "DurationCountdownTimer",
+      "guid": "4CAF7B374A833F8D078562AF1EE430CC",
+      "friendly_name": "Duration Countdown Timer",
+      "category": "Core Utilities (Do Not Modify)|Timers",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "InsideCornerAngleLimit",
+      "guid": "F252C6F44A56C464B0B8A09BF2702EDB",
+      "friendly_name": "Inside Corner Angle Limit",
+      "category": "Wall Run Parameters",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsWallJumping",
+      "guid": "249B0B954290FFB63BE94D826D7C249A",
+      "friendly_name": "Is Wall Jumping",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"D3F134E1466B558A8652A79A5EB62D9F\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"E8403DDD4CE96BF9403414A815718BFF\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"60D5EA5B479E1F0F9AE1C2BA618A9E65\", \"States\"))",
+      "property_flags": 65573,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "IsWallRunning",
+      "guid": "688B74304031FBC69AC8FE85E68F92BC",
+      "friendly_name": "Is Wall Running",
+      "category": "Core Utilities (Do Not Modify)|States",
+      "property_flags": 65573,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "LastKnownSafeHeight",
+      "guid": "2DF82255464462E0E9A57589AA7BCF61",
+      "friendly_name": "Last Known Safe Height",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"CDE5AC824CDBB79C8CC48D86E5A9CE99\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"DE95A6EE4793E16A9B4E6C86295C99A0\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"99CD00D3420486B7EA84F59623BFBE0B\", \"Current Wall Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "MovementComponent",
+      "guid": "4874AC0A4151D45E80D2B296FC030D02",
+      "friendly_name": "Movement Component",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"EA7F684A448CD4BC18527DA458519053\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"2118422B4D293C8CA77660907FA1AB2D\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"604DD48C4406732967F6D3BBC107815E\", \"References\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.CharacterMovementComponent'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "OutsideCornerAngleLimit",
+      "guid": "F43717604FD2A2D52399C8ADF5EB23E9",
+      "friendly_name": "Outside Corner Angle Limit",
+      "category": "Wall Run Parameters",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PreviousRotation",
+      "guid": "2B15F4C9447BD7D0E07126B5F6A66140",
+      "friendly_name": "Previous Rotation",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"27B4E008415FD188864C2B8E5F519BE3\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"73AF1FAD40E96CE81EB6A0B3430C669E\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"6EA2DE664B896B575596A88E59356176\", \"Animation Values\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Rotator'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PreviousVelocity",
+      "guid": "82A5089F4AD54400843E79B472659E30",
+      "friendly_name": "Previous Velocity",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"713009974143AA8AA45B1E99EAA4E97A\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"669B833E4D7A0828AA80B2AB1FD992A7\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"FE492FD44215F39F5FB6A4BBBE104041\", \"Current Wall Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PrimaryTraceNormal",
+      "guid": "CA7E32274847DEEAD72431B763B2E4C5",
+      "friendly_name": "Primary Trace Normal",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"E5F56AB549917D2032C9EF819B0294CA\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"554541EF49FDBD6C837E1BBC3E152908\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"E21F632B4BC37E83B57873BA3E406FF8\", \"Current Wall Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "PrimaryTraceSize",
+      "guid": "BAF36524466E23B56E1ECAA91353EC0A",
+      "friendly_name": "Primary Trace Size",
+      "category": "Core Utilities (Do Not Modify)|TraceProperties",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "RequiresTag",
+      "guid": "BB2B63674ABEB3A78A6D00B3C69B8099",
+      "friendly_name": "Requires Tag",
+      "category": "Wall Run Parameters",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SecondaryTraceNormal",
+      "guid": "DA7490E942F6A109072CF9A23C46374E",
+      "friendly_name": "Secondary Trace Normal",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"45DFFD334EC7F5DD777157875B79E49D\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"DB6B72834760744499428E9A86277E0D\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"1B68C0BA47F7BE6A12FE899BA7C1C1E5\", \"Current Wall Information\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpeedMonitorTimer",
+      "guid": "CD6BA174482FF86F1BD3298C60792355",
+      "friendly_name": "Speed Monitor Timer",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"69E094D24B98E0F611B460A453AD9B3B\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"184CB7B34DD150B6EF45029887784505\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"305BED994A3E7E183FD5A98B84C57A95\", \"Timers\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "SpeedTooLow",
+      "guid": "D418273D4FBC892DC6EAEEBFEF79DE4C",
+      "friendly_name": "Speed Too Low",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"72EB52DC487FC4AB5DC825BB832EAD3E\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"AD15529E4D7933FBFC80719C6A2BDB57\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"42DE1BD04F849340D6BFBC831480EE82\", \"States\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TagForAllowingWallRun",
+      "guid": "0B51DC074F5644EBF832E481CD21E08F",
+      "friendly_name": "Tag for Allowing Wall Run",
+      "category": "INVTEXT(\"Wall Run Parameters\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TagForPreventingWallRun",
+      "guid": "5DD663DC4423622C3FE74C8B9D3609BB",
+      "friendly_name": "Tag for Preventing Wall Run",
+      "category": "Wall Run Parameters",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "name",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallJumpAirControl",
+      "guid": "962142BA44D097C353AED1B8D726777E",
+      "friendly_name": "Wall Jump Air Control",
+      "category": "Wall Run Parameters",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallJumpAirControlTimer",
+      "guid": "AECFE0534C6631ED60F57EA578A307B5",
+      "friendly_name": "Wall Jump Air Control Timer",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"322E5E654F747B6FDC7F9C8461196561\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"45C89D0149EB5F81BB1E8B896E869CDE\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"78597EFB4782310AE6AF0D86920CEB77\", \"Timers\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "struct",
+        "sub_category": null,
+        "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/Engine.TimerHandle'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallJumpAngle",
+      "guid": "25461ECA4F6514572B28A6BF2890941E",
+      "friendly_name": "Wall Jump Angle",
+      "category": "Wall Run Parameters",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallJumpHorizontalVelocity",
+      "guid": "1F0E2A1D427E083F28F32AA86D994D06",
+      "friendly_name": "Wall Jump Horizontal Velocity",
+      "category": "Wall Run Parameters",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallJumpVerticalVelocity",
+      "guid": "8D1806D04EDE34949D369790F5F178D0",
+      "friendly_name": "Wall Jump Vertical Velocity",
+      "category": "Wall Run Parameters",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallRunAcceleration",
+      "guid": "7B37B50348E9AAF3643F39B678CB5F98",
+      "friendly_name": "Wall Run Acceleration",
+      "category": "Core Utilities (Do Not Modify)|Wall Run Movement Settings",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallRunBrakingDeceleration",
+      "guid": "A66A4CE64817FD92516286B0EA84A9F9",
+      "friendly_name": "Wall Run Braking Deceleration",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"12DDEB124B19E7E7189211BC914D4F37\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"D7AD1A6541D596DE91BF46A441F77A7A\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"0EF69CC54FBA2169F3E4ADBEECFBDAA8\", \"Wall Run Movement Settings\"))",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallRunDurationLimit",
+      "guid": "87D9C6E9432815EC8D22128F18140A1A",
+      "friendly_name": "Wall Run Duration Limit",
+      "category": "Wall Run Parameters",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallRunningAvailable",
+      "guid": "63C40B534FBA4FC71EF72E8C4CC65449",
+      "friendly_name": "Wall Running Available",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"D916A45D48DDE25A8F18C1AD3E5FA8DC\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"43749AE949D42B8909F1D1B878D8E2A3\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"0DBB9F534C387BA15EF0D593E0BD6D9F\", \"States\"))",
+      "property_flags": 65573,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallRunSpeed",
+      "guid": "3D5E151B4DC86880E9C71E9F406E0C2C",
+      "friendly_name": "Wall Run Speed",
+      "category": "INVTEXT(\"Wall Run Parameters\")",
+      "property_flags": 5,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "WallSide",
+      "guid": "11524D9D4BD20D63791202AD6A4F2AD3",
+      "friendly_name": "Wall Side",
+      "category": "LOCGEN_FORMAT_ORDERED(NSLOCTEXT(\"\", \"3A87F05642BB79271EAEFA8028CB9B38\", \"{0}|{1}\"), NSLOCTEXT(\"\", \"4E515BB94FEC420055BC8D85772389FD\", \"Core Utilities (Do Not Modify)\"), NSLOCTEXT(\"\", \"B983D72041EE5823C3D3C5B2541B861A\", \"Current Wall Information\"))",
+      "property_flags": 65573,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Enums/Direction_Enum.Direction_Enum'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "DEF8B4D041019BEB116C59859416756F",
+      "node_count": 6,
+      "pin_count": 0,
+      "connection_count": 0,
+      "exec_connection_count": 0,
+      "data_connection_count": 0
+    },
+    {
+      "name": "DetectWall",
+      "kind": "function",
+      "guid": "964D40774F86420CA63579ABFFCF7B09",
+      "node_count": 147,
+      "pin_count": 494,
+      "connection_count": 162,
+      "exec_connection_count": 60,
+      "data_connection_count": 102
+    },
+    {
+      "name": "StartWallRun",
+      "kind": "function",
+      "guid": "9889D6824EE64AF292051D8457209FFA",
+      "node_count": 70,
+      "pin_count": 179,
+      "connection_count": 67,
+      "exec_connection_count": 30,
+      "data_connection_count": 37
+    },
+    {
+      "name": "WallRunTick",
+      "kind": "function",
+      "guid": "0A6697314B61248EDD924DB0A7E292C5",
+      "node_count": 42,
+      "pin_count": 122,
+      "connection_count": 37,
+      "exec_connection_count": 8,
+      "data_connection_count": 29
+    },
+    {
+      "name": "StopWallRun",
+      "kind": "function",
+      "guid": "5C2A173B4801EA1C80EA51ABF99B1F9B",
+      "node_count": 36,
+      "pin_count": 92,
+      "connection_count": 38,
+      "exec_connection_count": 15,
+      "data_connection_count": 23
+    },
+    {
+      "name": "HugWall",
+      "kind": "function",
+      "guid": "C6005A024858544231DA2D84A017FB9B",
+      "node_count": 8,
+      "pin_count": 22,
+      "connection_count": 6,
+      "exec_connection_count": 1,
+      "data_connection_count": 5
+    },
+    {
+      "name": "UpdateAnimationValues",
+      "kind": "function",
+      "guid": "0DD4CD9A4CF9CABA4B2F64A1438F00C1",
+      "node_count": 31,
+      "pin_count": 107,
+      "connection_count": 36,
+      "exec_connection_count": 3,
+      "data_connection_count": 33
+    },
+    {
+      "name": "IsWallRunnable",
+      "kind": "function",
+      "guid": "5BB71D20465751CFA0B3D695A5EBC8E5",
+      "node_count": 33,
+      "pin_count": 72,
+      "connection_count": 36,
+      "exec_connection_count": 22,
+      "data_connection_count": 14
+    },
+    {
+      "name": "TopHeightCheck",
+      "kind": "function",
+      "guid": "D0EE6DE84C562E7E5129F1A463BDA79D",
+      "node_count": 112,
+      "pin_count": 415,
+      "connection_count": 135,
+      "exec_connection_count": 42,
+      "data_connection_count": 93
+    },
+    {
+      "name": "BottomHeightCheck",
+      "kind": "function",
+      "guid": "451134784C2F2CC11430CC805861705C",
+      "node_count": 28,
+      "pin_count": 106,
+      "connection_count": 31,
+      "exec_connection_count": 9,
+      "data_connection_count": 22
+    },
+    {
+      "name": "StartWallJump",
+      "kind": "function",
+      "guid": "F9EDD90244788A649016A6A795A3CF36",
+      "node_count": 28,
+      "pin_count": 84,
+      "connection_count": 24,
+      "exec_connection_count": 9,
+      "data_connection_count": 15
+    },
+    {
+      "name": "StopWallJump",
+      "kind": "function",
+      "guid": "9AABEB474BDE403C92B62BA2A14AE39E",
+      "node_count": 23,
+      "pin_count": 59,
+      "connection_count": 23,
+      "exec_connection_count": 11,
+      "data_connection_count": 12
+    },
+    {
+      "name": "WallJumpTick",
+      "kind": "function",
+      "guid": "FE50ADAE4192BDBB9ED47E9C10EF5799",
+      "node_count": 13,
+      "pin_count": 41,
+      "connection_count": 13,
+      "exec_connection_count": 2,
+      "data_connection_count": 11
+    },
+    {
+      "name": "GatherCharacterInformation",
+      "kind": "function",
+      "guid": "911133AD42CFEA2A15932E8E02FC6E06",
+      "node_count": 21,
+      "pin_count": 57,
+      "connection_count": 23,
+      "exec_connection_count": 6,
+      "data_connection_count": 17
+    },
+    {
+      "name": "LineTraceRelativeToCapsuleAndWall",
+      "kind": "function",
+      "guid": "460E339040A03A785F75238A1B4F0A62",
+      "node_count": 49,
+      "pin_count": 138,
+      "connection_count": 52,
+      "exec_connection_count": 4,
+      "data_connection_count": 48
+    },
+    {
+      "name": "CheckCornerAngle",
+      "kind": "function",
+      "guid": "5529A55942EC51BDB1278E84BAE6448C",
+      "node_count": 29,
+      "pin_count": 85,
+      "connection_count": 31,
+      "exec_connection_count": 2,
+      "data_connection_count": 29
+    },
+    {
+      "name": "UpdateRotationALS",
+      "kind": "function",
+      "guid": "63F48B5E4F477332C3DDC9B37D2A1D9F",
+      "node_count": 10,
+      "pin_count": 23,
+      "connection_count": 8,
+      "exec_connection_count": 1,
+      "data_connection_count": 7
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "StartDurationCountdown",
+      "guid": "1C8D114F445A7AADF86B4594081C89E9",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "WallrunTimeout",
+      "guid": "71F8D2F441E006667E0CDEBA6BC2D575",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TemporarilyDisableWallrunning",
+      "guid": "89B87CDD43FCE875F34AEBA380B8580C",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "AllowWallRunning",
+      "guid": "BE25B4084BDB3B6445AE7F9BC2FB6CAB",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "StartMonitoringSpeed",
+      "guid": "9DDC28F94797CA36435E7E892F05855C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "MonitorSpeed",
+      "guid": "B4B830004EF53B40A82D7BB1A7CB398C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "StopMonitoringSpeed",
+      "guid": "DB2927BD4AB85FE045D32B939343ABCA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "DelayedAirControl",
+      "guid": "D3A4476041657A084062408929E525D5",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EnableWallJumpAirControl",
+      "guid": "C97342124718A8B45DD89BBCE8989457",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ReceiveTick",
+      "guid": "25C3A9A44FDA1FCD87A70196B35E7264",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ManageTick",
+      "guid": "969070944300DFF6A418FBB7E1763232",
+      "node_count": 3,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "CheckForFloor",
+      "guid": "79B939F4475DEE44C59A7D829AE1C7AE",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "AD65C0184B0B596DA1865A8012805F38",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 17,
+    "generated_graph_count": 13,
+    "authored_node_count": 686,
+    "authored_pin_count": 2096,
+    "authored_connection_count": 722,
+    "generated_node_count": 30,
+    "generated_pin_count": 91
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "BottomHeightCheck",
+      "kind": "function",
+      "file": "graphs/BottomHeightCheck.json"
+    },
+    {
+      "name": "CheckCornerAngle",
+      "kind": "function",
+      "file": "graphs/CheckCornerAngle.json"
+    },
+    {
+      "name": "DetectWall",
+      "kind": "function",
+      "file": "graphs/DetectWall.json"
+    },
+    {
+      "name": "GatherCharacterInformation",
+      "kind": "function",
+      "file": "graphs/GatherCharacterInformation.json"
+    },
+    {
+      "name": "HugWall",
+      "kind": "function",
+      "file": "graphs/HugWall.json"
+    },
+    {
+      "name": "IsWallRunnable",
+      "kind": "function",
+      "file": "graphs/IsWallRunnable.json"
+    },
+    {
+      "name": "LineTraceRelativeToCapsuleAndWall",
+      "kind": "function",
+      "file": "graphs/LineTraceRelativeToCapsuleAndWall.json"
+    },
+    {
+      "name": "StartWallJump",
+      "kind": "function",
+      "file": "graphs/StartWallJump.json"
+    },
+    {
+      "name": "StartWallRun",
+      "kind": "function",
+      "file": "graphs/StartWallRun.json"
+    },
+    {
+      "name": "StopWallJump",
+      "kind": "function",
+      "file": "graphs/StopWallJump.json"
+    },
+    {
+      "name": "StopWallRun",
+      "kind": "function",
+      "file": "graphs/StopWallRun.json"
+    },
+    {
+      "name": "TopHeightCheck",
+      "kind": "function",
+      "file": "graphs/TopHeightCheck.json"
+    },
+    {
+      "name": "UpdateAnimationValues",
+      "kind": "function",
+      "file": "graphs/UpdateAnimationValues.json"
+    },
+    {
+      "name": "UpdateRotationALS",
+      "kind": "function",
+      "file": "graphs/UpdateRotationALS.json"
+    },
+    {
+      "name": "WallJumpTick",
+      "kind": "function",
+      "file": "graphs/WallJumpTick.json"
+    },
+    {
+      "name": "WallRunTick",
+      "kind": "function",
+      "file": "graphs/WallRunTick.json"
+    }
+  ]
+}

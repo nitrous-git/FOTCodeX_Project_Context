@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 485,
-  "edge_count": 1445,
+  "node_count": 480,
+  "edge_count": 1442,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -1964,6 +1964,34 @@
       "to": "/Game/CodeX_Restruct/Frameworks/CinematicFramework/AC_CinematicController"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Enums/Direction_Enum"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Enums/Direction_Enum"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/AIController_BasicEnemy",
       "to": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BT_BasicEnemy"
     },
@@ -2318,6 +2346,10 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_GroupMelee",
       "to": "/Game/CodeX_Restruct/Game/Items/Weapons/BP_WeaponBase"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged",
+      "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/Projectiles/BP_ProjectileComponent"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/Core/Components/AC_EnemyCombat_Ranged",
@@ -3330,6 +3362,14 @@
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
       "to": "/Game/CodeX_Restruct/Frameworks/BossFramework/UI/WBP_BossUI"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase",
@@ -5186,58 +5226,6 @@
     {
       "from": "/Game/CodeX_Restruct/Shared/Managers/BP_EnemyAIManager",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
-      "to": "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
-      "to": "/Game/DynamicWallRun/Blueprints/Enums/Direction_Enum"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
-      "to": "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Animations/ThirdPerson_AnimBP",
-      "to": "/Game/DynamicWallRun/Animations/DynamicWallRun_AnimBP"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP",
-      "to": "/Game/DynamicWallRun/Animations/ThirdPerson_AnimBP"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP",
-      "to": "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP",
-      "to": "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP",
-      "to": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP",
-      "to": "/Game/DynamicWallRun/Blueprints/Enums/Direction_Enum"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI",
-      "to": "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP",
-      "to": "/Game/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP",
-      "to": "/Game/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
-    },
-    {
-      "from": "/Game/DynamicWallRun/Blueprints/Misc/ThirdPersonGameMode_BP",
-      "to": "/Game/DynamicWallRun/Blueprints/Characters/ThirdPersonCharacter_BP"
     },
     {
       "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Common/AnimGraph_HandIK",

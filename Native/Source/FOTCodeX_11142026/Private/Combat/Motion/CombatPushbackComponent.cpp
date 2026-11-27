@@ -1,4 +1,5 @@
 #include "Combat/Motion/CombatPushbackComponent.h"
+#include "Combat/CombatActionRestrictionComponent.h"
 
 #include "Animation/AnimInstance.h"
 #include "Animation/AnimMontage.h"
@@ -243,6 +244,11 @@ FVector UCombatPushbackComponent::AdvanceDisplacement(float MontageSeconds)
 const TCHAR* UCombatPushbackComponent::GetMovementRejection(const ACharacter* Character,
 	const UCharacterMovementComponent* Movement) const
 {
+	if (UCombatActionRestrictionComponent::IsActorMovementRestricted(Character))
+	{
+		return TEXT("movement is restricted");
+	}
+
 	if (!Character || !Movement || !Movement->HasValidData() || Character->GetLocalRole() == ROLE_SimulatedProxy
 		|| !Movement->IsComponentTickEnabled() || Movement->MovementMode == MOVE_None)
 	{

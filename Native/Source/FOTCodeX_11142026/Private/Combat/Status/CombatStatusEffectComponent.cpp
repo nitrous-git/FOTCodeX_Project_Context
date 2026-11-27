@@ -1,5 +1,6 @@
 #include "Combat/Status/CombatStatusEffectComponent.h"
 
+#include "Combat/CombatActionRestrictionComponent.h"
 #include "Combat/Motion/CombatPushbackComponent.h"
 #include "Combat/Status/CombatStatusEffectDefinition.h"
 #include "Components/SkeletalMeshComponent.h"
@@ -71,6 +72,18 @@ namespace
 			State.PersistentVFX->DestroyComponent();
 		}
 		State.PersistentVFX = nullptr;
+	}
+
+	void ReleaseRestriction(FCombatStatusRuntime& State)
+	{
+		UCombatActionRestrictionComponent* Owner = State.RestrictionOwner.Get();
+		State.RestrictionOwner.Reset();
+		const FGuid Handle = State.RestrictionHandle;
+		State.RestrictionHandle.Invalidate();
+		if (Owner && Handle.IsValid())
+		{
+			Owner->ReleaseRestriction(Handle);
+		}
 	}
 }
 
@@ -180,11 +193,24 @@ float UCombatStatusEffectComponent::GetStatusImmunityRemainingTime(FName StatusT
 bool UCombatStatusEffectComponent::AddStatusBuildup(const UCombatStatusEffectDefinition* Definition,
 	float Amount, AActor* Source, AController* Instigator)
 {
-	if (!IsValid(Definition) || !Definition->bGameplayEnabled || Definition->StatusType.IsNone()
+	if (bResettingEffects || !IsValid(Definition) || !Definition->bGameplayEnabled || Definition->StatusType.IsNone()
 		|| !FMath::IsFinite(Amount) || Amount <= 0.0f || !GetWorld() || !GetOwner() || !GetOwner()->HasAuthority()
 		|| !CanReceiveStatus(ReadTarget()))
 	{
 		return false;
+	}
+
+	UCombatActionRestrictionComponent* Restrictions = nullptr;
+	if (!Definition->ActionRestrictions.IsEmpty())
+	{
+		Restrictions = GetOwner()->FindComponentByClass<UCombatActionRestrictionComponent>();
+		if (Definition->Execution == ECombatStatusExecution::InstantBurst
+			|| !Restrictions || !Restrictions->CanAcquireRestriction(Definition->ActionRestrictions))
+		{
+			UE_CLOG(IsDebugEnabled(), LogCombatStatusEffects, Log, TEXT("%s: %s rejected (unsupported restrictions)"),
+				*GetNameSafe(GetOwner()), *Definition->StatusType.ToString());
+			return false;
+		}
 	}
 
 	const FName Type = Definition->StatusType;
@@ -208,7 +234,7 @@ bool UCombatStatusEffectComponent::AddStatusBuildup(const UCombatStatusEffectDef
 
 	if (State.Buildup >= Threshold)
 	{
-		StartEffect(Type, State, Source, Instigator);
+		return StartEffect(Type, State, Source, Instigator, Restrictions);
 	}
 	else
 	{
@@ -222,7 +248,8 @@ bool UCombatStatusEffectComponent::AddStatusBuildup(const UCombatStatusEffectDef
 	return true;
 }
 
-void UCombatStatusEffectComponent::StartEffect(FName Type, FCombatStatusRuntime& State, AActor* Source, AController* Instigator)
+bool UCombatStatusEffectComponent::StartEffect(FName Type, FCombatStatusRuntime& State, AActor* Source, AController* Instigator,
+	UCombatActionRestrictionComponent* Restrictions)
 {
 	const UCombatStatusEffectDefinition& Definition = *State.Definition;
 	const bool bBurst = Definition.Execution == ECombatStatusExecution::InstantBurst;
@@ -235,20 +262,41 @@ void UCombatStatusEffectComponent::StartEffect(FName Type, FCombatStatusRuntime&
 	State.bActive = true;
 	const uint64 Generation = State.Generation;
 
+	FCombatStatusRuntime* Current = &State;
+	if (Restrictions)
+	{
+		// Publish the ownership before acquisition can call back into status removal.
+		const FGuid Handle = FGuid::NewGuid();
+		State.RestrictionOwner = Restrictions;
+		State.RestrictionHandle = Handle;
+		if (!Restrictions->AcquireRestrictionWithHandle(Handle, Definition.ActionRestrictions))
+		{
+			GetWorld()->GetTimerManager().ClearTimer(State.Timer);
+			Statuses.Remove(Type);
+			return false;
+		}
+		Current = Statuses.Find(Type);
+		if (!Current || Current->Generation != Generation)
+		{
+			return true;
+		}
+	}
+
 	SpawnVFX(Definition.ApplicationVFX, false);
 	if (!bBurst)
 	{
-		State.PersistentVFX = SpawnVFX(Definition.PersistentVFX, true);
-		const double FirstTick = State.NextTick > 0 ? State.ActivationTime + Definition.DamageInterval : State.ActiveEnd;
-		Schedule(Type, State, FMath::Min(FirstTick, State.ActiveEnd));
+		Current->PersistentVFX = SpawnVFX(Definition.PersistentVFX, true);
+		const double FirstTick = Current->NextTick > 0 ? Current->ActivationTime + Definition.DamageInterval : Current->ActiveEnd;
+		Schedule(Type, *Current, FMath::Min(FirstTick, Current->ActiveEnd));
 	}
 
-	UE_CLOG(IsDebugEnabled(), LogCombatStatusEffects, Log, TEXT("%s: %s applied"), *GetNameSafe(GetOwner()), *Type.ToString());
+	UE_CLOG(IsDebugEnabled(), LogCombatStatusEffects, Log, TEXT("%s: %s applied (%.2fs)"),
+		*GetNameSafe(GetOwner()), *Type.ToString(), Current->ActiveEnd - Current->ActivationTime);
 	OnStatusBuildupChanged.Broadcast(Type, 0.0f, GetThreshold(Definition));
-	FCombatStatusRuntime* Current = Statuses.Find(Type);
+	Current = Statuses.Find(Type);
 	if (!Current || Current->Generation != Generation)
 	{
-		return;
+		return true;
 	}
 	OnStatusApplied.Broadcast(Type, Source);
 	Current = Statuses.Find(Type);
@@ -261,6 +309,7 @@ void UCombatStatusEffectComponent::StartEffect(FName Type, FCombatStatusRuntime&
 			Expire(Type, *Current);
 		}
 	}
+	return true;
 }
 
 void UCombatStatusEffectComponent::Schedule(FName Type, FCombatStatusRuntime& State, double Time)
@@ -342,6 +391,11 @@ void UCombatStatusEffectComponent::Advance(FName Type)
 void UCombatStatusEffectComponent::Expire(FName Type, FCombatStatusRuntime& State)
 {
 	const UCombatStatusEffectDefinition& Definition = *State.Definition;
+	FCombatStatusRuntime Released;
+	Released.RestrictionOwner = State.RestrictionOwner;
+	Released.RestrictionHandle = State.RestrictionHandle;
+	State.RestrictionOwner.Reset();
+	State.RestrictionHandle.Invalidate();
 	DestroyPersistentVFX(State);
 	SpawnVFX(Definition.ExpirationVFX, false);
 	State.bActive = false;
@@ -357,8 +411,13 @@ void UCombatStatusEffectComponent::Expire(FName Type, FCombatStatusRuntime& Stat
 		GetWorld()->GetTimerManager().ClearTimer(State.Timer);
 		Statuses.Remove(Type);
 	}
-	UE_CLOG(IsDebugEnabled(), LogCombatStatusEffects, Log, TEXT("%s: %s expired"), *GetNameSafe(GetOwner()), *Type.ToString());
-	OnStatusExpired.Broadcast(Type);
+	UE_CLOG(IsDebugEnabled(), LogCombatStatusEffects, Log, TEXT("%s: %s expired (%.2fs immunity)"),
+		*GetNameSafe(GetOwner()), *Type.ToString(), Definition.ImmunityDuration);
+	ReleaseRestriction(Released);
+	if (!bEndingPlay)
+	{
+		OnStatusExpired.Broadcast(Type);
+	}
 }
 
 void UCombatStatusEffectComponent::DealStatusDamage(FName Type, const FCombatStatusRuntime& State, float Percent, bool bBurst)
@@ -383,11 +442,16 @@ void UCombatStatusEffectComponent::ClearStatusEffect(FName Type)
 	}
 	GetWorld()->GetTimerManager().ClearTimer(State.Timer);
 	DestroyPersistentVFX(State);
+	ReleaseRestriction(State);
+	if (bEndingPlay)
+	{
+		return;
+	}
 	if (State.Buildup > 0.0f)
 	{
 		OnStatusBuildupChanged.Broadcast(Type, 0.0f, GetThreshold(*State.Definition));
 	}
-	if (State.bActive)
+	if (State.bActive && !bEndingPlay)
 	{
 		OnStatusExpired.Broadcast(Type);
 	}
@@ -395,21 +459,27 @@ void UCombatStatusEffectComponent::ClearStatusEffect(FName Type)
 
 void UCombatStatusEffectComponent::ResetEffects(bool bNotify)
 {
+	TGuardValue<bool> Resetting(bResettingEffects, true);
 	TMap<FName, FCombatStatusRuntime> Removed = MoveTemp(Statuses);
 	for (TPair<FName, FCombatStatusRuntime>& Pair : Removed)
 	{
 		GetWorld()->GetTimerManager().ClearTimer(Pair.Value.Timer);
 		DestroyPersistentVFX(Pair.Value);
+		ReleaseRestriction(Pair.Value);
 	}
 	if (bNotify)
 	{
 		for (const TPair<FName, FCombatStatusRuntime>& Pair : Removed)
 		{
+			if (bEndingPlay)
+			{
+				break;
+			}
 			if (Pair.Value.Buildup > 0.0f)
 			{
 				OnStatusBuildupChanged.Broadcast(Pair.Key, 0.0f, GetThreshold(*Pair.Value.Definition));
 			}
-			if (Pair.Value.bActive)
+			if (Pair.Value.bActive && !bEndingPlay)
 			{
 				OnStatusExpired.Broadcast(Pair.Key);
 			}
@@ -428,6 +498,10 @@ void UCombatStatusEffectComponent::ClearStatusEffectsOnDeath()
 	{
 		bOwnerDead = true;
 		UE_CLOG(IsDebugEnabled(), LogCombatStatusEffects, Log, TEXT("%s: status death cleanup"), *GetNameSafe(GetOwner()));
+		if (UCombatActionRestrictionComponent* Restrictions = GetOwner()->FindComponentByClass<UCombatActionRestrictionComponent>())
+		{
+			Restrictions->ShutDown();
+		}
 		GetWorld()->GetTimerManager().ClearTimer(DebugTimer);
 		ResetEffects(true);
 	}
@@ -495,6 +569,12 @@ void UCombatStatusEffectComponent::DrawDebugStatus()
 {
 #if ENABLE_DRAW_DEBUG && !UE_BUILD_SHIPPING
 	FString Text;
+	if (const UCombatActionRestrictionComponent* Restrictions = GetOwner()->FindComponentByClass<UCombatActionRestrictionComponent>())
+	{
+		Text += FString::Printf(TEXT("Movement restricted: %s | Combat interrupted: %s\n"),
+			Restrictions->HasMovementRestriction() ? TEXT("yes") : TEXT("no"),
+			Restrictions->HasCombatRestriction() ? TEXT("yes") : TEXT("no"));
+	}
 	for (const UCombatStatusEffectDefinition* Definition : DebugDefinitions)
 	{
 		if (!IsValid(Definition))

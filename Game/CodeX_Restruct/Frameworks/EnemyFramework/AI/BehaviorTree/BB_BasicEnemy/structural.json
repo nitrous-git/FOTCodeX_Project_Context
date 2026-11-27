@@ -10,7 +10,7 @@
   "serializer": "blackboard",
   "data": {
     "parent": null,
-    "key_count": 3,
+    "key_count": 4,
     "keys": [
       {
         "name": "Target",
@@ -49,6 +49,17 @@
           "enum_name": "E_EnemyState",
           "enum_name_valid": true
         }
+      },
+      {
+        "name": "bCombatInterrupted",
+        "category": "None",
+        "description": "Aggregate combat action restriction on the controlled enemy.",
+        "instance_synced": false,
+        "key_type": {
+          "name": "BlackboardKeyType_Bool_0",
+          "class": "BlackboardKeyType_Bool",
+          "path": "/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BB_BasicEnemy.BB_BasicEnemy:BlackboardKeyType_Bool_0"
+        }
       }
     ],
     "inherited_key_count": 0,
@@ -71,9 +82,20 @@
         {
           "name": "Keys(2)",
           "value": "(EntryName=\"EnemyState\",EntryDescription=\"E_EnemyState\",KeyType=\"/Script/AIModule.BlackboardKeyType_Enum'BlackboardKeyType_Enum_1'\")"
+        },
+        {
+          "name": "Keys(3)",
+          "value": "(EntryName=\"bCombatInterrupted\",EntryDescription=\"Aggregate combat action restriction on the controlled enemy.\",KeyType=\"/Script/AIModule.BlackboardKeyType_Bool'BlackboardKeyType_Bool_0'\")"
         }
       ],
       "children": [
+        {
+          "name": "BlackboardKeyType_Bool_0",
+          "class": "/Script/AIModule.BlackboardKeyType_Bool",
+          "export_path": "/Script/AIModule.BlackboardKeyType_Bool'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BB_BasicEnemy.BB_BasicEnemy:BlackboardKeyType_Bool_0'",
+          "properties": [],
+          "children": []
+        },
         {
           "name": "BlackboardKeyType_Enum_1",
           "class": "/Script/AIModule.BlackboardKeyType_Enum",
@@ -92,6 +114,13 @@
           "name": "BlackboardKeyType_Object_2",
           "class": "/Script/AIModule.BlackboardKeyType_Object",
           "export_path": "/Script/AIModule.BlackboardKeyType_Object'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BB_BasicEnemy.BB_BasicEnemy:BlackboardKeyType_Object_2'",
+          "properties": [],
+          "children": []
+        },
+        {
+          "name": "BlackboardKeyType_Bool_0",
+          "class": "/Script/AIModule.BlackboardKeyType_Bool",
+          "export_path": "/Script/AIModule.BlackboardKeyType_Bool'/Game/CodeX_Restruct/Frameworks/EnemyFramework/AI/BehaviorTree/BB_BasicEnemy.BB_BasicEnemy:BlackboardKeyType_Bool_0'",
           "properties": [],
           "children": []
         },
@@ -146,7 +175,7 @@
     "t3d_exported": true,
     "t3d_file": "_raw/structural.t3d",
     "encoding": "utf-8",
-    "size_bytes": 2493
+    "size_bytes": 3208
   },
   "warnings": []
 }

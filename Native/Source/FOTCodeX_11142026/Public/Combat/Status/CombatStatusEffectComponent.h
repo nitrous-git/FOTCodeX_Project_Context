@@ -9,6 +9,7 @@
 #include "CombatStatusEffectComponent.generated.h"
 
 class UNiagaraComponent;
+class UCombatActionRestrictionComponent;
 
 USTRUCT(BlueprintType)
 struct FCombatStatusTargetState
@@ -59,6 +60,8 @@ struct FCombatStatusRuntime
 	TWeakObjectPtr<AActor> Source;
 	TWeakObjectPtr<AController> Instigator;
 	FTimerHandle Timer;
+	TWeakObjectPtr<UCombatActionRestrictionComponent> RestrictionOwner;
+	FGuid RestrictionHandle;
 	uint64 Generation = 0;
 	float Buildup = 0.0f;
 	double LastDecayTime = 0.0;
@@ -143,7 +146,8 @@ private:
 	double Now() const;
 	float GetThreshold(const UCombatStatusEffectDefinition& Definition) const;
 	bool IsIntrinsicallyImmune(FName StatusType) const;
-	void StartEffect(FName Type, FCombatStatusRuntime& State, AActor* Source, AController* Instigator);
+	bool StartEffect(FName Type, FCombatStatusRuntime& State, AActor* Source, AController* Instigator,
+		UCombatActionRestrictionComponent* Restrictions);
 	void Advance(FName Type);
 	void Schedule(FName Type, FCombatStatusRuntime& State, double Time);
 	void Expire(FName Type, FCombatStatusRuntime& State);
@@ -159,6 +163,7 @@ private:
 	uint64 NextGeneration = 0;
 	bool bOwnerDead = false;
 	bool bEndingPlay = false;
+	bool bResettingEffects = false;
 };
 
 UCLASS()

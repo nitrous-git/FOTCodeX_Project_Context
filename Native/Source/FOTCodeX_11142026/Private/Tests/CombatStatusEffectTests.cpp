@@ -1,11 +1,22 @@
 #include "CombatStatusEffectTestActor.h"
 
 #include "Combat/Status/CombatStatusEffectDefinition.h"
+#include "Components/CapsuleComponent.h"
 #include "Engine/DamageEvents.h"
 
 ACombatStatusEffectTestActor::ACombatStatusEffectTestActor()
 {
 	Status = CreateDefaultSubobject<UCombatStatusEffectComponent>(TEXT("CombatStatusEffects"));
+	Restrictions = CreateDefaultSubobject<UCombatActionRestrictionComponent>(TEXT("CombatActionRestrictions"));
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+}
+
+void ACombatStatusEffectTestActor::OnCombatRestrictionChanged_Implementation(bool bRestricted)
+{
+	if (OnCombatRestriction)
+	{
+		OnCombatRestriction(bRestricted);
+	}
 }
 
 FCombatStatusTargetState ACombatStatusEffectTestActor::GetCombatStatusTargetState_Implementation() const
@@ -64,6 +75,17 @@ namespace
 		Definition->StatusType = Bleed;
 		Definition->Execution = ECombatStatusExecution::InstantBurst;
 		Definition->BurstMaxHealthPercent = 30.0f;
+		return Definition;
+	}
+
+	UCombatStatusEffectDefinition* MakeLightning()
+	{
+		auto* Definition = NewObject<UCombatStatusEffectDefinition>();
+		Definition->StatusType = LightningType;
+		Definition->BaseBuildupPerHit = 20.0f;
+		Definition->Duration = 2.5f;
+		Definition->ImmunityDuration = 5.0f;
+		Definition->ActionRestrictions = {true, true};
 		return Definition;
 	}
 
@@ -216,6 +238,143 @@ bool FCombatStatusLifecycleTest::RunTest(const FString& Parameters)
 	Executing->bProtected = false;
 	AdvanceWorld(TestWorld, 1.0f);
 	TestEqual(TEXT("The next scheduled tick resumes after protection"), Executing->StatusDamageEvents, 1);
+	return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FCombatLightningDurationTest, "CodeX.Combat.StatusEffects.LightningDuration",
+	EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
+
+bool FCombatLightningDurationTest::RunTest(const FString& Parameters)
+{
+	FTestWorldWrapper TestWorld;
+	if (!TestTrue(TEXT("Transient game world starts"), TestWorld.CreateTestWorld(EWorldType::Game) && TestWorld.BeginPlayInTestWorld()))
+	{
+		return false;
+	}
+	UWorld* World = TestWorld.GetTestWorld();
+	auto* Receiver = World->SpawnActor<ACombatStatusEffectTestActor>();
+	auto* Other = World->SpawnActor<ACombatStatusEffectTestActor>();
+	auto* Unsupported = World->SpawnActor<ACombatStatusEffectTestActor>();
+	auto* Attacker = World->SpawnActor<AActor>();
+	const auto* Lightning = MakeLightning();
+	const FCombatWeaponStatus Matching{Lightning, true, 1.35f};
+	const FCombatWeaponStatus Mismatched{Lightning, false, 1.35f};
+	auto& Status = *Receiver->Status;
+	auto& Restrictions = *Receiver->Restrictions;
+
+	Unsupported->Restrictions->DestroyComponent();
+	TestFalse(TEXT("Unsupported receiver rejects even partial buildup"), Unsupported->Status->AddStatusBuildup(Lightning, 20, Attacker, nullptr));
+	Receiver->bProtected = true;
+	TestFalse(TEXT("Protected receiver rejects Lightning"), Status.AddStatusBuildup(Lightning, 100, Attacker, nullptr));
+	Receiver->bProtected = false;
+	Receiver->SetCanBeDamaged(false);
+	TestFalse(TEXT("Invulnerable receiver rejects Lightning"), Status.AddStatusBuildup(Lightning, 100, Attacker, nullptr));
+	Receiver->SetCanBeDamaged(true);
+
+	for (int32 Hit = 0; Hit < 3; ++Hit)
+	{
+		WeaponHit(Receiver, Attacker, Matching);
+		WeaponHit(Other, Attacker, Mismatched);
+	}
+	TestEqual(TEXT("Typed matching affinity adds 27 per hit"), Status.GetStatusBuildup(LightningType), 81.0f);
+	TestEqual(TEXT("Mismatched affinity adds 20"), Other->Status->GetStatusBuildup(LightningType), 60.0f);
+	TestFalse(TEXT("Below threshold does not interrupt"), Restrictions.HasCombatRestriction());
+	WeaponHit(Receiver, Attacker, Matching);
+	WeaponHit(Other, Attacker, Mismatched);
+	TestTrue(TEXT("Fourth matching hit activates even without Niagara"), Status.IsStatusActive(LightningType));
+	TestFalse(TEXT("Fourth mismatched hit remains below threshold"), Other->Status->IsStatusActive(LightningType));
+	TestEqual(TEXT("Active duration starts at 2.5 seconds"), Status.GetStatusRemainingTime(LightningType), 2.5f);
+	TestTrue(TEXT("Lightning restricts movement"), Restrictions.HasMovementRestriction());
+	TestTrue(TEXT("Lightning restricts combat"), Restrictions.HasCombatRestriction());
+
+	AdvanceWorld(TestWorld, 0.5f);
+	WeaponHit(Other, Attacker, Mismatched);
+	TestTrue(TEXT("A second enemy has an independent stun"), Other->Restrictions->HasCombatRestriction());
+	TestFalse(TEXT("Lightning rejects active buildup"), Status.AddStatusBuildup(Lightning, 100, Attacker, nullptr));
+	TestEqual(TEXT("Buildup is zero during stun"), Status.GetStatusBuildup(LightningType), 0.0f);
+	TestEqual(TEXT("Repeated hits do not refresh duration"), Status.GetStatusRemainingTime(LightningType), 2.0f, 0.01f);
+	AdvanceWorld(TestWorld, 1.9f);
+	TestTrue(TEXT("Stun is still active before 2.5 seconds"), Restrictions.HasCombatRestriction());
+	// Timers dispatch on the first world tick at or beyond the measured end time.
+	AdvanceWorld(TestWorld, 0.15f);
+	TestFalse(TEXT("Movement lock ends at expiration"), Restrictions.HasMovementRestriction());
+	TestFalse(TEXT("Combat lock ends at expiration"), Restrictions.HasCombatRestriction());
+	TestTrue(TEXT("Second enemy remains stunned"), Other->Restrictions->HasCombatRestriction());
+	TestEqual(TEXT("Immunity starts at 5 seconds"), Status.GetStatusImmunityRemainingTime(LightningType), 5.0f, 0.06f);
+	TestFalse(TEXT("Immunity rejects buildup"), Status.AddStatusBuildup(Lightning, 100, Attacker, nullptr));
+	TestEqual(TEXT("Lightning never applies status damage"), Receiver->StatusDamageEvents, 0);
+	AdvanceWorld(TestWorld, 4.9f);
+	TestTrue(TEXT("Immunity remains active before five seconds"), Status.IsStatusImmune(LightningType));
+	AdvanceWorld(TestWorld, 0.15f);
+	TestFalse(TEXT("Immunity ends"), Status.IsStatusImmune(LightningType));
+	TestTrue(TEXT("Buildup can resume"), Status.AddStatusBuildup(Lightning, 20, Attacker, nullptr));
+	return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FCombatRestrictionOwnershipTest, "CodeX.Combat.StatusEffects.RestrictionOwnership",
+	EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
+
+bool FCombatRestrictionOwnershipTest::RunTest(const FString& Parameters)
+{
+	FTestWorldWrapper TestWorld;
+	if (!TestTrue(TEXT("Transient game world starts"), TestWorld.CreateTestWorld(EWorldType::Game) && TestWorld.BeginPlayInTestWorld()))
+	{
+		return false;
+	}
+	UWorld* World = TestWorld.GetTestWorld();
+	auto* Receiver = World->SpawnActor<ACombatStatusEffectTestActor>();
+	auto& Status = *Receiver->Status;
+	auto& Restrictions = *Receiver->Restrictions;
+	const auto* Lightning = MakeLightning();
+	int32 Transitions = 0;
+	Receiver->OnCombatRestriction = [&Transitions](bool) { ++Transitions; };
+	const FGuid Movement = Restrictions.AcquireRestriction({true, false});
+	const FGuid Combat = Restrictions.AcquireRestriction({false, true});
+	TestTrue(TEXT("Independent sources get unique handles"), Movement.IsValid() && Combat.IsValid() && Movement != Combat);
+	TestTrue(TEXT("A separate status can own both restrictions"), Status.AddStatusBuildup(Lightning, 100, nullptr, nullptr));
+	TestTrue(TEXT("Releasing movement does not drop either aggregate flag"), Restrictions.ReleaseRestriction(Movement)
+		&& Restrictions.HasMovementRestriction() && Restrictions.HasCombatRestriction());
+	TestFalse(TEXT("A previously released handle is harmless"), Restrictions.ReleaseRestriction(Movement));
+	Status.ClearStatusEffect(LightningType);
+	TestFalse(TEXT("Explicit removal releases the status's movement lock"), Restrictions.HasMovementRestriction());
+	TestTrue(TEXT("Explicit removal leaves the other combat source"), Restrictions.HasCombatRestriction());
+	TestEqual(TEXT("Overlapping active sources cause one combat interruption"), Transitions, 1);
+	TestTrue(TEXT("Last combat owner can release its own handle"), Restrictions.ReleaseRestriction(Combat));
+	TestEqual(TEXT("Last release causes one combat recovery"), Transitions, 2);
+
+	Receiver->OnCombatRestriction = [&Status](bool bRestricted)
+	{
+		if (bRestricted)
+		{
+			Status.ClearAllStatusEffects();
+		}
+	};
+	Status.AddStatusBuildup(Lightning, 100, nullptr, nullptr);
+	TestFalse(TEXT("Reentrant clear cancels the effect"), Status.IsStatusActive(LightningType));
+	TestFalse(TEXT("Reentrant clear leaves no movement restriction"), Restrictions.HasMovementRestriction());
+	TestFalse(TEXT("Reentrant clear leaves no combat restriction"), Restrictions.HasCombatRestriction());
+
+	Receiver->OnCombatRestriction = [&Transitions](bool) { ++Transitions; };
+	Status.AddStatusBuildup(Lightning, 100, nullptr, nullptr);
+	Receiver->Health = 1.0f;
+	Status.AddStatusBuildup(MakeFire(), 100, nullptr, nullptr);
+	AdvanceWorld(TestWorld, 1.1f);
+	TestEqual(TEXT("Fire can kill while the receiver is stunned"), Receiver->Health, 0.0f);
+	TestFalse(TEXT("Death releases the action lock"), Restrictions.HasCombatRestriction() || Restrictions.HasMovementRestriction());
+	TestFalse(TEXT("Death clears active Lightning"), Status.IsStatusActive(LightningType));
+	TestFalse(TEXT("Dead owners cannot acquire new restrictions"), Restrictions.AcquireRestriction({true, true}).IsValid());
+	TestEqual(TEXT("Death does not invoke the living recovery callback"), Transitions, 3);
+	Receiver->OnCombatRestriction = {};
+
+	auto* RemovedStatus = World->SpawnActor<ACombatStatusEffectTestActor>();
+	RemovedStatus->Status->AddStatusBuildup(Lightning, 100, nullptr, nullptr);
+	RemovedStatus->Status->DestroyComponent();
+	TestFalse(TEXT("Destroying just the status component releases its ownership"), RemovedStatus->Restrictions->HasCombatRestriction());
+	auto* Destroyed = World->SpawnActor<ACombatStatusEffectTestActor>();
+	Destroyed->Status->AddStatusBuildup(Lightning, 100, nullptr, nullptr);
+	Destroyed->Destroy();
+	TestFalse(TEXT("Actor destruction clears Lightning"), Destroyed->Status->IsStatusActive(LightningType));
+	TestFalse(TEXT("Actor destruction cleans restrictions"), Destroyed->Restrictions->HasCombatRestriction());
 	return true;
 }
 
