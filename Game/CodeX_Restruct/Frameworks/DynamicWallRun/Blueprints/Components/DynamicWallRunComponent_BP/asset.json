@@ -23,6 +23,7 @@
       "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Animations/DynamicWallRun_AnimBP",
       "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI",
       "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Macros/DynamicWallRun_MacroLibrary_BP",
+      "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Jump",
       "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     ],
     "non_architecture_dependency_count": 2,
@@ -68,6 +69,23 @@
           "category": "struct",
           "sub_category": null,
           "sub_category_object": "/Script/CoreUObject.ScriptStruct'/Script/CoreUObject.Vector'",
+          "container": null,
+          "is_reference": false,
+          "is_const": false,
+          "is_weak_pointer": false
+        }
+      },
+      {
+        "name": "bDebugDisableWallRun",
+        "guid": "7E4CE3AA4DEE31011908CBAF6078AF27",
+        "friendly_name": "Debug Disable Wall Run",
+        "category": "Default",
+        "property_flags": 65541,
+        "default_value": null,
+        "type": {
+          "category": "bool",
+          "sub_category": null,
+          "sub_category_object": null,
           "container": null,
           "is_reference": false,
           "is_const": false,
@@ -814,19 +832,19 @@
       "macros": [],
       "delegates": [],
       "generated_graphs": [
-        "StartDurationCountdown",
-        "WallrunTimeout",
-        "TemporarilyDisableWallrunning",
-        "AllowWallRunning",
-        "StartMonitoringSpeed",
-        "MonitorSpeed",
-        "StopMonitoringSpeed",
-        "DelayedAirControl",
-        "EnableWallJumpAirControl",
-        "ReceiveTick",
-        "ManageTick",
+        "ReceiveBeginPlay",
         "CheckForFloor",
-        "ReceiveBeginPlay"
+        "ManageTick",
+        "ReceiveTick",
+        "EnableWallJumpAirControl",
+        "DelayedAirControl",
+        "StopMonitoringSpeed",
+        "MonitorSpeed",
+        "StartMonitoringSpeed",
+        "AllowWallRunning",
+        "TemporarilyDisableWallrunning",
+        "WallrunTimeout",
+        "StartDurationCountdown"
       ]
     },
     "extraction_status": {

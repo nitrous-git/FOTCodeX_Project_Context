@@ -42,6 +42,23 @@
       }
     },
     {
+      "name": "bDebugDisableWallRun",
+      "guid": "7E4CE3AA4DEE31011908CBAF6078AF27",
+      "friendly_name": "Debug Disable Wall Run",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "CapsuleRadius",
       "guid": "2D3DC40347023E3F1F34449FD88F7339",
       "friendly_name": "Capsule Radius",
@@ -831,11 +848,11 @@
       "name": "IsWallRunnable",
       "kind": "function",
       "guid": "5BB71D20465751CFA0B3D695A5EBC8E5",
-      "node_count": 33,
-      "pin_count": 72,
-      "connection_count": 36,
-      "exec_connection_count": 22,
-      "data_connection_count": 14
+      "node_count": 37,
+      "pin_count": 85,
+      "connection_count": 39,
+      "exec_connection_count": 24,
+      "data_connection_count": 15
     },
     {
       "name": "TopHeightCheck",
@@ -930,8 +947,8 @@
   ],
   "generated_graphs": [
     {
-      "name": "StartDurationCountdown",
-      "guid": "1C8D114F445A7AADF86B4594081C89E9",
+      "name": "ReceiveBeginPlay",
+      "guid": "FC73328F4248F1A072D89A98DDBDB99F",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -939,17 +956,26 @@
       "data_connection_count": 0
     },
     {
-      "name": "WallrunTimeout",
-      "guid": "71F8D2F441E006667E0CDEBA6BC2D575",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
+      "name": "CheckForFloor",
+      "guid": "7A61D2304F05F9A4F3E13084FB2A3F13",
+      "node_count": 3,
+      "pin_count": 15,
+      "connection_count": 6,
+      "exec_connection_count": 2,
+      "data_connection_count": 4
     },
     {
-      "name": "TemporarilyDisableWallrunning",
-      "guid": "89B87CDD43FCE875F34AEBA380B8580C",
+      "name": "ManageTick",
+      "guid": "3E6504D8447F6EE2F9E2E99F69F78273",
+      "node_count": 3,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "ReceiveTick",
+      "guid": "328B06CB45834E81892A75909260DC2D",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -957,35 +983,8 @@
       "data_connection_count": 1
     },
     {
-      "name": "AllowWallRunning",
-      "guid": "BE25B4084BDB3B6445AE7F9BC2FB6CAB",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "StartMonitoringSpeed",
-      "guid": "9DDC28F94797CA36435E7E892F05855C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "MonitorSpeed",
-      "guid": "B4B830004EF53B40A82D7BB1A7CB398C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "StopMonitoringSpeed",
-      "guid": "DB2927BD4AB85FE045D32B939343ABCA",
+      "name": "EnableWallJumpAirControl",
+      "guid": "EC30C89248467A299C0D558210E974D2",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -994,7 +993,7 @@
     },
     {
       "name": "DelayedAirControl",
-      "guid": "D3A4476041657A084062408929E525D5",
+      "guid": "F364881341B1A4F21B184B8BD2BE4615",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1002,8 +1001,8 @@
       "data_connection_count": 0
     },
     {
-      "name": "EnableWallJumpAirControl",
-      "guid": "C97342124718A8B45DD89BBCE8989457",
+      "name": "StopMonitoringSpeed",
+      "guid": "F72C16AB4A1F59E327DBB1B8E2C12460",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1011,8 +1010,35 @@
       "data_connection_count": 0
     },
     {
-      "name": "ReceiveTick",
-      "guid": "25C3A9A44FDA1FCD87A70196B35E7264",
+      "name": "MonitorSpeed",
+      "guid": "C996FEED4E630832E4A125B5EDA4D887",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "StartMonitoringSpeed",
+      "guid": "F56D06294960A2AE55292EABD583A33A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AllowWallRunning",
+      "guid": "D8632C724DA5B1B2EB8F00B6E69DEC15",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TemporarilyDisableWallrunning",
+      "guid": "091705A744B5CF0238FE899254282FF4",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1020,26 +1046,17 @@
       "data_connection_count": 1
     },
     {
-      "name": "ManageTick",
-      "guid": "969070944300DFF6A418FBB7E1763232",
-      "node_count": 3,
-      "pin_count": 13,
-      "connection_count": 5,
-      "exec_connection_count": 2,
-      "data_connection_count": 3
+      "name": "WallrunTimeout",
+      "guid": "41325EB64A24575C97F8AE843AFB6150",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     },
     {
-      "name": "CheckForFloor",
-      "guid": "79B939F4475DEE44C59A7D829AE1C7AE",
-      "node_count": 3,
-      "pin_count": 15,
-      "connection_count": 6,
-      "exec_connection_count": 2,
-      "data_connection_count": 4
-    },
-    {
-      "name": "ReceiveBeginPlay",
-      "guid": "AD65C0184B0B596DA1865A8012805F38",
+      "name": "StartDurationCountdown",
+      "guid": "FEBDBC8441D5EB340AB3EBA3AFF57317",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -1050,9 +1067,9 @@
   "stats": {
     "authored_graph_count": 17,
     "generated_graph_count": 13,
-    "authored_node_count": 686,
-    "authored_pin_count": 2096,
-    "authored_connection_count": 722,
+    "authored_node_count": 690,
+    "authored_pin_count": 2109,
+    "authored_connection_count": 725,
     "generated_node_count": 30,
     "generated_pin_count": 91
   },

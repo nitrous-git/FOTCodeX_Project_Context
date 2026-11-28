@@ -195,6 +195,23 @@
       }
     },
     {
+      "name": "bIsTraversalDeviceActive",
+      "guid": "5862AE80401268B07F9B90ACF32DA0C7",
+      "friendly_name": "Is Traversal Device Active",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "bool",
+        "sub_category": null,
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "Cached_ExtendedPose",
       "guid": "AF637C9D4EFB45C2F0DC938F0117EF8E",
       "friendly_name": "Cached Extended Pose",
@@ -2847,6 +2864,23 @@
       }
     },
     {
+      "name": "TraversalDeviceComponent",
+      "guid": "7A34F7E04DDDA4002F1B7FA36EFAB3E2",
+      "friendly_name": "Traversal Device Component",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent.AC_TraversalDeviceComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "Turn in Place",
       "guid": "B2DA154D4AAFA78F28AF33BE1A242664",
       "friendly_name": "Turn In Place",
@@ -3090,11 +3124,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "A68AFD6B4CFD741C06CEEABCB3CF8E3F",
-      "node_count": 15,
-      "pin_count": 50,
-      "connection_count": 13,
-      "exec_connection_count": 10,
-      "data_connection_count": 3
+      "node_count": 22,
+      "pin_count": 79,
+      "connection_count": 21,
+      "exec_connection_count": 12,
+      "data_connection_count": 9
     },
     {
       "name": "EventLocomotionGraph",
@@ -3590,11 +3624,11 @@
       "name": "Initialization",
       "kind": "function",
       "guid": "D697CFAD402DD149E38A938EC206B530",
-      "node_count": 60,
-      "pin_count": 165,
-      "connection_count": 72,
-      "exec_connection_count": 26,
-      "data_connection_count": 46
+      "node_count": 66,
+      "pin_count": 188,
+      "connection_count": 79,
+      "exec_connection_count": 29,
+      "data_connection_count": 50
     },
     {
       "name": "GetMovementComponent",
@@ -3929,656 +3963,8 @@
   ],
   "generated_graphs": [
     {
-      "name": "BlueprintInitializeAnimation",
-      "guid": "E37E987848A0E20C916115B0465BFF74",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "BlueprintBeginPlay",
-      "guid": "2958042D49D48CA230B2BEADD51E1222",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "BlueprintUpdateAnimation",
-      "guid": "98F4E0E44512B166AFB33BACBCB92B0F",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Event_OnResetRootYawOffset",
-      "guid": "9224B15844BE0B78112E5883BF3897B7",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Event_OnSetSkeletonType",
-      "guid": "3FB2224F40D3AA97B9DB2CB79EE55DD4",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Event_OnSetGlobalExtendedPose",
-      "guid": "E364009546F24DDC4DAE52A63F283CA3",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Event_OnSetMount",
-      "guid": "AFBF041D400DB0C2C59D9D947C7BCC2C",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Event_OnMovementModeChanged",
-      "guid": "93001A2F4D71B85D459615A9EC425235",
-      "node_count": 3,
-      "pin_count": 13,
-      "connection_count": 5,
-      "exec_connection_count": 2,
-      "data_connection_count": 3
-    },
-    {
-      "name": "Event_OnRootYawOffsetStatus",
-      "guid": "AAC2334A462EBE1ABE8B4A973F859455",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Event_OnSetAnimset",
-      "guid": "FB274250430AA3ED498717B6F43D7F0A",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Event_OnAccelerationChanged",
-      "guid": "8807347C4C8B9D86B4263DA8027EB871",
-      "node_count": 3,
-      "pin_count": 11,
-      "connection_count": 4,
-      "exec_connection_count": 2,
-      "data_connection_count": 2
-    },
-    {
-      "name": "Event_OnSetOverrideName",
-      "guid": "FD392B53417DEB023F0BF19D3A5CEE42",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Event_OnSetRotationMode",
-      "guid": "C2E14F2C45A25A95F2C634845273210D",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Event_OnSetMovementType",
-      "guid": "DC8197E24216D9E6447A35A4F771A38A",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Event_OnSprintChanged",
-      "guid": "335B96D1487606BAD0B7F9ADF4E97D3E",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_2A3F84CD487DB46B2765C487929EE336",
-      "guid": "24A763B1480C2F4EB505258965AA9317",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C51D5F1D40D14A5229B65798C25240DF",
-      "guid": "3C7789754AF81653A8A796BC1088F5BC",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_9E3B7BB7497C4272A9FB78B3F2A72F1F",
-      "guid": "3B696A354877CD91425D3B9838AB0BF8",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_8E5EAF07460C1B3ED6D911B2B2471CEC",
-      "guid": "08C8DEE04F8AEDD404970CBEDD38A37C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_58BE6CEA4694374588AFED9DD356AE21",
-      "guid": "27E68A8444D30C93B80695B26C4BB197",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F96BF8024CEC318E290EF5996098D8F9",
-      "guid": "8A2549424F1351990720F9B5EDC313CD",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_1D10927B4E2E5DFA5FCD398B85425D04",
-      "guid": "CCE122EA409C06F0551CE7918E85AAA5",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_03FD123E4AF9D594D0D74ABA10990DA9_0",
-      "guid": "B8A7FCF543B79930205414AF07FB98BC",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_54C9B6E14FB59A1079E24E8B89B59DF3",
-      "guid": "41BEA1FE4A0FB6E76B156BA1BCDD491D",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_01D0AA6744EEB20BBDAE04B19562BC4D",
-      "guid": "BF0AA5B644A3477C5471CC9B80D4F889",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_0AEEBD0942C2748483781CA5248542CC",
-      "guid": "49108C76418DE913EC91BAB9D3EC2A7C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_7277B1CF48511EBCCB6140AD2E1F2900_1",
-      "guid": "9EF32DAE44E38A391894F78077B01608",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_EA0049654DA430E82D58ECB188198DF7_1",
-      "guid": "7898A4874C719C8D2377BFA502B64CE3",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_4",
-      "guid": "A47B57E34BD4120CBED5A2B969C4889D",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_BE414FA74879AACE9A1FB394BB5A5446_0",
-      "guid": "008AB2394D1669F4EB28008F1F00A443",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_01839F45423BF5FD2F86DC878DB5D0F2_0",
-      "guid": "ED0679CD4AF2FAAF2D57D0A36924AF1E",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_3",
-      "guid": "7AFA74F842AB225D45CC17B4D41E2C67",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_7277B1CF48511EBCCB6140AD2E1F2900_0",
-      "guid": "08FDC06C474FC3CBA5D693B7D7153873",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_EA0049654DA430E82D58ECB188198DF7_0",
-      "guid": "876DB99246C0FA366ACB6CAEA5BAA79C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_96D6696D4143464AFCC1C19BCAFF33E8",
-      "guid": "8E9A5482457F62267A021C924EB25984",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_E4EFDF0B4BE2DA88763AA3AC5C06D27C_0",
-      "guid": "FDE3926C41286BD3D7144CB579292705",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_2",
-      "guid": "62731C3E47EE0F02F795B6AECFF11664",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_AE027B12479CAFA6F4FF52B2CA66135B_0",
-      "guid": "D26F060D4530B92E1FBA5883CCA872A6",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_DEA3CB7B49B578EAEDD7F08AEFCA3F57",
-      "guid": "06A1B59A4A5E723EB5EB1193FEB4849C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_01839F45423BF5FD2F86DC878DB5D0F2",
-      "guid": "CFA642124A1DC5651A4A40B84A8A98C3",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_5A73B373425CEAAFC0D0FC85FF13BE14",
-      "guid": "47B117924C7F87F5F04FB0B746855530",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_510FDE1D4088CABF1398B4AA55550B04",
-      "guid": "D4A22D9541E343D36AED8195139B0154",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_E1C801B44199A13625F5CFA99C90DD4F",
-      "guid": "FA66BA2447722F32684303B335A2409F",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_EA0049654DA430E82D58ECB188198DF7",
-      "guid": "BE2E46064C9C3A90B5590D9018138902",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_1",
-      "guid": "208095B24BBB43F586ACEC96FFF86103",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_E4EFDF0B4BE2DA88763AA3AC5C06D27C",
-      "guid": "8F0A3F3E4AC9FA6B641B16ADF5DD9FDC",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_AE027B12479CAFA6F4FF52B2CA66135B",
-      "guid": "883AFD884FE6112CD12122B344BF04FB",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_7277B1CF48511EBCCB6140AD2E1F2900",
-      "guid": "5FEC6E3C42717A6185B4059A339EA0C6",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_5C9806AF4CA09CF8F8D2D388079EB422",
-      "guid": "986CBD9941745E09A458BE880001D501",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_03FD123E4AF9D594D0D74ABA10990DA9",
-      "guid": "3FABB3AD447440C4C8FD09AADF73F270",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_BE414FA74879AACE9A1FB394BB5A5446",
-      "guid": "AFB9100847E93E06098F42BBE2138B96",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_8C4D60B24D27FBF0F7D4D6A55D60F028",
-      "guid": "39B91DFD42C77EC1A2CF978A502A9956",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_0",
-      "guid": "EB039DDF4506BB63802782BE2C97CBD2",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_LinkedAnimGraph_5427B0EE41C3F3D9AB325EBFAE6F5C2B",
-      "guid": "C0D05E834231CE2957493091D7C33934",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_BlendListByBool_C78FF92442753FDD3DE31FAEA9B763EE",
-      "guid": "A8031726409B4B8B0B5475ABC8725BED",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888",
-      "guid": "D19B41E1436F60D7CA43F28DF7FBDB75",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_LinkedAnimGraph_7105637A47D6AD66AE562ABF70F9FC02",
-      "guid": "D68614134977BCB1D346579539BB6A5C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_4198E1394F8F343D69E8D6908D341946",
-      "guid": "20CB952342A82C0AEDE5CA9D70630FBD",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F08C1B08409042895EEF08ACC14BAE4E_1",
-      "guid": "842E2E264804D5C341C73486E22C62B7",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C40F94FB43A27F310AD60CA1FDD97592_1",
-      "guid": "AFC260E0465CE7E6455409A8E70EDD66",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F08C1B08409042895EEF08ACC14BAE4E_0",
-      "guid": "5174C21844E3E00554BE449E0A795104",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C40F94FB43A27F310AD60CA1FDD97592_0",
-      "guid": "D602C64F410C006E97918DACD2D97700",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_42DA72D54A1F22541DD6A1977DFBE0C9",
-      "guid": "7EC10F544CB2E7036EAAB892B33C830F",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F08C1B08409042895EEF08ACC14BAE4E",
-      "guid": "D56C5F8745E1F7706544F58D212F40EB",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_AB4DC5864B8EA13B22F86BAD3BE0C22D",
-      "guid": "25AAFC4C434C3EA2A09CA788DA174C31",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C40F94FB43A27F310AD60CA1FDD97592",
-      "guid": "2517B9694144644B31D3EB8398B4CABC",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_D408052043B2AC456FA719A5A479373C",
-      "guid": "9E0573D84E24FB0484C8C8A62C97211B",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_B3DC8AEE442181BEDD17A396496155AA",
-      "guid": "9CDDF0554664A0CDF5A0A9825C74162C",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_1E489E554D0ED76EE3E579B651A9792F",
-      "guid": "4BBC63054C291E64DCC9E0AD150B08DF",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_2A763CD24C557C11C6648F81D8E3681C",
-      "guid": "94E6927F43E55AC4FE0078A2777E27F1",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_RotationOffsetBlendSpace_7F5FCAC744147E82F2F40799D7D67982",
-      "guid": "CE6597244F520C173ACC12800E9FD846",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_BlendListByBool_6F4D5D314B316980760F4990CD80C8B2",
-      "guid": "DECCF5F8468FFDF006E782835163B75B",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_RotationOffsetBlendSpace_534569A047BE2162E6E19185EE43A3ED",
-      "guid": "2693029647D15A61D2115B86FBDBD2A7",
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_RotateRootBone_991C8A984B78787C96D44D9411C820C0",
+      "guid": "1B80C4FC4227F07E5A1C549CC50622CD",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -4587,7 +3973,7 @@
     },
     {
       "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_ApplyAdditive_E65EC30F4CC853B5BCC965859EA5E798",
-      "guid": "BFF6B877450E5DCDDC8DBEAC1634D570",
+      "guid": "94E136114C153FE32292108693D3019B",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
@@ -4595,23 +3981,752 @@
       "data_connection_count": 0
     },
     {
-      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_RotateRootBone_991C8A984B78787C96D44D9411C820C0",
-      "guid": "A514E30940F1C6166B6CE797FBCC4150",
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_RotationOffsetBlendSpace_534569A047BE2162E6E19185EE43A3ED",
+      "guid": "27C79B4043A2DFE2993A7DA215318668",
       "node_count": 2,
       "pin_count": 5,
       "connection_count": 1,
       "exec_connection_count": 1,
       "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_BlendListByBool_6F4D5D314B316980760F4990CD80C8B2",
+      "guid": "471214AA4EAA599AB649EC9FB7A5C680",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_RotationOffsetBlendSpace_7F5FCAC744147E82F2F40799D7D67982",
+      "guid": "01D15F7F4AD659E9502B2DB69956DE7D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_2A763CD24C557C11C6648F81D8E3681C",
+      "guid": "D9671D51475CA1530BF941B818CE6812",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_1E489E554D0ED76EE3E579B651A9792F",
+      "guid": "6D8B748B4F2AD2A9682749824ABEDADE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_B3DC8AEE442181BEDD17A396496155AA",
+      "guid": "E593727E4BCA46D65DACECBB3B983C51",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TwoWayBlend_D408052043B2AC456FA719A5A479373C",
+      "guid": "3F09C3C14536D1FA112556B74769895C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C40F94FB43A27F310AD60CA1FDD97592",
+      "guid": "55F54772429FEDFE7BC002ADC9EA8A7A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_AB4DC5864B8EA13B22F86BAD3BE0C22D",
+      "guid": "FB20F18840A1232BD88A1F867DD08295",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F08C1B08409042895EEF08ACC14BAE4E",
+      "guid": "3F6BF61B4023F4387C497A802F6FCBE6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_42DA72D54A1F22541DD6A1977DFBE0C9",
+      "guid": "14CB2C2641D3D762493A6D99A4B37C55",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C40F94FB43A27F310AD60CA1FDD97592_0",
+      "guid": "6ABB9EC74A3115479E8181BA570D9931",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F08C1B08409042895EEF08ACC14BAE4E_0",
+      "guid": "B2C1FAD6494EC3CB872440BF2F548C72",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888",
+      "guid": "2B0BF2294D09C261D3F4B39CDCD07B71",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C40F94FB43A27F310AD60CA1FDD97592_1",
+      "guid": "15B51E4248CD1B4A53E6EAAC70CC530A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F08C1B08409042895EEF08ACC14BAE4E_1",
+      "guid": "FC9B91C941712536AF28D1AF6738DA0D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_4198E1394F8F343D69E8D6908D341946",
+      "guid": "205FB7A14BE143AEF4CF93B3D9BEA57A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_LinkedAnimGraph_7105637A47D6AD66AE562ABF70F9FC02",
+      "guid": "CE21B2924809B1BDDBC335996ECE1654",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_0",
+      "guid": "484AB3474A2E71E77BE063B80419AE4B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_BlendListByBool_C78FF92442753FDD3DE31FAEA9B763EE",
+      "guid": "7A4868DF46924ABD7866C5B14A1BB160",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_LinkedAnimGraph_5427B0EE41C3F3D9AB325EBFAE6F5C2B",
+      "guid": "035FE83C45BF1F6458110482F6F4026F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_5C9806AF4CA09CF8F8D2D388079EB422",
+      "guid": "DB5676A14F5E7E3DA734BBBEA074BBE5",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_8C4D60B24D27FBF0F7D4D6A55D60F028",
+      "guid": "6B4F201445E44CE14B279BADFFA5CC61",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_BE414FA74879AACE9A1FB394BB5A5446",
+      "guid": "40CC35BB44A186FE13782E86C5BE50AF",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_03FD123E4AF9D594D0D74ABA10990DA9",
+      "guid": "0F51C42945C6E38250353786912E89BA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_1",
+      "guid": "792308E44F371F81084FF487AD3D4808",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_7277B1CF48511EBCCB6140AD2E1F2900",
+      "guid": "A329A767476B96D59E80B39B9277FC9F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_AE027B12479CAFA6F4FF52B2CA66135B",
+      "guid": "2E466DA4415409AA1728129A08AFC1BD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_510FDE1D4088CABF1398B4AA55550B04",
+      "guid": "C7057B664B9C7A798C8685B9E3A13CA7",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_E4EFDF0B4BE2DA88763AA3AC5C06D27C",
+      "guid": "5DB1A59847A3D42DD4B9B99DDCD8F147",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_EA0049654DA430E82D58ECB188198DF7",
+      "guid": "3D03AE524144901E5FB1119694D061C4",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_E1C801B44199A13625F5CFA99C90DD4F",
+      "guid": "500A4A054DD6347ACC2234A541AF023A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_5A73B373425CEAAFC0D0FC85FF13BE14",
+      "guid": "EA980B1D430410E004A913B67CEEC29A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_2",
+      "guid": "F2AC52A0453BAFFDB62F428F5AB3A15D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_01839F45423BF5FD2F86DC878DB5D0F2",
+      "guid": "41691CBD4A96A076377BBF833DF99647",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_96D6696D4143464AFCC1C19BCAFF33E8",
+      "guid": "39CA6A8C48730B4B50AD9C978CAA6618",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_DEA3CB7B49B578EAEDD7F08AEFCA3F57",
+      "guid": "88DEC3B54AAF97E386532AB5189CF411",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_AE027B12479CAFA6F4FF52B2CA66135B_0",
+      "guid": "D2D6E86E46AE26D1F9E95E8EEB1E7097",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_E4EFDF0B4BE2DA88763AA3AC5C06D27C_0",
+      "guid": "4ECB82ED40304B4F11F53181B4E98E35",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_3",
+      "guid": "F9E80B6E4BACDC79522839A347207AAE",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_EA0049654DA430E82D58ECB188198DF7_0",
+      "guid": "B714F578497974DE216716A08CAB3321",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_64C2F7D249C9C7D1FE70BAB1761C7888_4",
+      "guid": "C6FA3FF44868E61A679AC886AE7B772F",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_7277B1CF48511EBCCB6140AD2E1F2900_0",
+      "guid": "49D3FF604543C6CEBEA45CBB843CBDD5",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_01839F45423BF5FD2F86DC878DB5D0F2_0",
+      "guid": "0E1EC2424B41B8DC05EB7A887228B3B8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_BE414FA74879AACE9A1FB394BB5A5446_0",
+      "guid": "89B5F92C41F8B70D58431DAEEC903E3B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_54C9B6E14FB59A1079E24E8B89B59DF3",
+      "guid": "E2AE7549476990BCC55C4186449519D1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_EA0049654DA430E82D58ECB188198DF7_1",
+      "guid": "57BADEBC4F67469AA91E10BDBB4449B1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_7277B1CF48511EBCCB6140AD2E1F2900_1",
+      "guid": "C5D6F9BE412B0120DD0A3D9916097D8D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_0AEEBD0942C2748483781CA5248542CC",
+      "guid": "5F5F506F43FEA7D0D87727BDB6229696",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_01D0AA6744EEB20BBDAE04B19562BC4D",
+      "guid": "DD244CE04E550815BE07ADAE698B8CBA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_2A3F84CD487DB46B2765C487929EE336",
+      "guid": "063F3FAE49DC58AFCADC5392072A777B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_03FD123E4AF9D594D0D74ABA10990DA9_0",
+      "guid": "635F67664B7DD68FC73518BFCB905E68",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_1D10927B4E2E5DFA5FCD398B85425D04",
+      "guid": "1D839F354BF5BA1882F8468F095B92B6",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_F96BF8024CEC318E290EF5996098D8F9",
+      "guid": "1BBEDF8E4F9D11F2D2CC32B03248B071",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_58BE6CEA4694374588AFED9DD356AE21",
+      "guid": "FE7CF4924884C3DDBBE7CAB338B55B21",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_8E5EAF07460C1B3ED6D911B2B2471CEC",
+      "guid": "BA49659541D046D6329FF3AAC91F242D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_9E3B7BB7497C4272A9FB78B3F2A72F1F",
+      "guid": "9C48CEC7429B15FDF840A293BBCE95D0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Locomotion_UE4_AnimGraphNode_TransitionResult_C51D5F1D40D14A5229B65798C25240DF",
+      "guid": "DF6C3D69488547FFAC01048DC0619D9A",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Event_OnSprintChanged",
+      "guid": "B7584AF84C166A5FE1F78FBB06EB3915",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Event_OnSetMovementType",
+      "guid": "B25D6BF641D2C88244B1CFB4C5DCA21B",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Event_OnSetRotationMode",
+      "guid": "25E19AAD46B270D197C72F804094E2A5",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Event_OnSetOverrideName",
+      "guid": "95C41E6C46675F03C11D388248A843F2",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Event_OnAccelerationChanged",
+      "guid": "5F25957749BF03175897308476EEE872",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "Event_OnSetAnimset",
+      "guid": "ADC415794F5319CA746E769E05654F0F",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Event_OnRootYawOffsetStatus",
+      "guid": "BB6660214F13013AB577C1971321D7E3",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Event_OnMovementModeChanged",
+      "guid": "D9AD3D8040A0555ADA2D268C2E4FFFF4",
+      "node_count": 3,
+      "pin_count": 13,
+      "connection_count": 5,
+      "exec_connection_count": 2,
+      "data_connection_count": 3
+    },
+    {
+      "name": "Event_OnSetMount",
+      "guid": "9A2189B3462CC869181E78AD4BE91330",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Event_OnSetGlobalExtendedPose",
+      "guid": "CBAFFC664E074A2A91FDCCAA68C65DA8",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Event_OnSetSkeletonType",
+      "guid": "77C01E7F42E656032B4C289DB05C3EEC",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Event_OnResetRootYawOffset",
+      "guid": "5A1A1B6F4A2AC793200D10B4E56CE7B1",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BlueprintUpdateAnimation",
+      "guid": "FB4FFB7649D9351ED8199EB9208C178B",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BlueprintBeginPlay",
+      "guid": "F7DB6DC54216ED029E4F94A0D68F3245",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "BlueprintInitializeAnimation",
+      "guid": "2070FC0744EA32D315F36D9E1FAB9FA0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TraversalHoming_Animation_Layer__AnimFunc",
+      "guid": "F29FEFAB4FABADB1C409B6899C33393E",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TraversalDevice_Animation_Layer__AnimFunc",
+      "guid": "B9D25427445F79143C21059DD1BEF49E",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
+    },
+    {
+      "name": "DefaultSlot__AnimFunc",
+      "guid": "200546114D09576CAA930A95C3CA0AA1",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
+    },
+    {
+      "name": "OutputPoseOverride__AnimFunc",
+      "guid": "6BADE59D4FBA09DC68E9C9895FC61E4C",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
+    },
+    {
+      "name": "ExtendedPoses__AnimFunc",
+      "guid": "50C8291649F4C193814238AB97ED1A5E",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
+    },
+    {
+      "name": "MontageSlots__AnimFunc",
+      "guid": "B34F17A44449810520D6C18AAE0BB55C",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
+    },
+    {
+      "name": "FullBodyAdditives__AnimFunc",
+      "guid": "D06CA0AD48D88C816C799C87580FCB12",
+      "node_count": 4,
+      "pin_count": 6,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
+    },
+    {
+      "name": "FullBodyAiming__AnimFunc",
+      "guid": "284D0FA3427CF2F6E51C94B71A30E257",
+      "node_count": 4,
+      "pin_count": 8,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimGraph__AnimFunc",
+      "guid": "6AA0E7FF40C50C5C5A2C02AE9D3CCDC1",
+      "node_count": 4,
+      "pin_count": 6,
+      "connection_count": 2,
+      "exec_connection_count": 2,
+      "data_connection_count": 0
     }
   ],
   "stats": {
     "authored_graph_count": 84,
-    "generated_graph_count": 75,
-    "authored_node_count": 1790,
-    "authored_pin_count": 5554,
-    "authored_connection_count": 1894,
-    "generated_node_count": 162,
-    "generated_pin_count": 429
+    "generated_graph_count": 84,
+    "authored_node_count": 1803,
+    "authored_pin_count": 5606,
+    "authored_connection_count": 1909,
+    "generated_node_count": 198,
+    "generated_pin_count": 497
   },
   "graph_files": [
     {

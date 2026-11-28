@@ -2,6 +2,8 @@
 
 #include "Combat/Motion/CombatPushbackComponent.h"
 
+#include "Combat/CombatActionRestrictionComponent.h"
+#include "AIController.h"
 #include "Animation/AnimInstance.h"
 #include "Animation/AnimMontage.h"
 #include "Components/BoxComponent.h"
@@ -151,6 +153,7 @@ bool FCombatPushbackMovementTest::RunTest(const FString& Parameters)
 	UWorld* World = TestWorld.GetTestWorld();
 	TArray<ACharacter*> Characters;
 	TArray<UCombatPushbackComponent*> Pushbacks;
+	TArray<UCombatActionRestrictionComponent*> Restrictions;
 	for (int32 Index = 0; Index < 4; ++Index)
 	{
 		ACharacter* Character = World->SpawnActor<ACharacter>(FVector(0.0, Index * 1000.0, 100.0), FRotator::ZeroRotator);
@@ -172,8 +175,11 @@ bool FCombatPushbackMovementTest::RunTest(const FString& Parameters)
 			Character->GetCharacterMovement()->ProcessRootMotionPreConvertToWorld.IsBound());
 		UCombatPushbackComponent* Pushback = NewObject<UCombatPushbackComponent>(Character);
 		Pushback->RegisterComponent();
+		UCombatActionRestrictionComponent* Restriction = NewObject<UCombatActionRestrictionComponent>(Character);
+		Restriction->RegisterComponent();
 		Characters.Add(Character);
 		Pushbacks.Add(Pushback);
+		Restrictions.Add(Restriction);
 	}
 
 	AActor* Wall = World->SpawnActor<AActor>();
@@ -188,6 +194,11 @@ bool FCombatPushbackMovementTest::RunTest(const FString& Parameters)
 	FCombatPushbackSettings Settings;
 	Settings.bEnabled = true;
 	Settings.Distance = 30.0f;
+	AAIController* Controller = World->SpawnActor<AAIController>();
+	Controller->Possess(Characters[1]);
+	Characters[1]->GetCharacterMovement()->SetMovementMode(MOVE_Flying);
+	const FGuid AlreadyRestricted = Restrictions[2]->AcquireRestriction({true, false});
+	TestTrue(TEXT("Movement is restricted before the second reaction"), AlreadyRestricted.IsValid());
 	for (int32 Index = 0; Index < Characters.Num(); ++Index)
 	{
 		if (!TestTrue(TEXT("Authored reaction plays"), Characters[Index]->PlayAnimMontage(Reaction) > 0.0f))
@@ -200,6 +211,13 @@ bool FCombatPushbackMovementTest::RunTest(const FString& Parameters)
 			return false;
 		}
 	}
+	const FGuid DuringReaction = Restrictions[1]->AcquireRestriction({true, false});
+	TestTrue(TEXT("Activation leaves the accepted pushback bound"), DuringReaction.IsValid() && Pushbacks[1]->IsPushbackActive());
+	TestEqual(TEXT("Activation preserves montage root motion extraction"),
+		Characters[1]->GetMesh()->GetAnimInstance()->RootMotionMode.GetValue(), ERootMotionMode::RootMotionFromMontagesOnly);
+	Characters[1]->AddMovementInput(FVector::RightVector, 1.0f);
+	TestTrue(TEXT("Voluntary input is ignored during a live root-motion reaction"),
+		Characters[1]->ConsumeMovementInputVector().IsNearlyZero());
 
 	UAnimInstance* SlowAnimation = Characters[2]->GetMesh()->GetAnimInstance();
 	SlowAnimation->Montage_SetPlayRate(Reaction, 0.01f);
@@ -218,12 +236,14 @@ bool FCombatPushbackMovementTest::RunTest(const FString& Parameters)
 	const FVector Baseline = Characters[0]->GetActorLocation() - FVector(0.0, 0.0, 100.0);
 	const FVector Pushed = Characters[1]->GetActorLocation() - FVector(0.0, 1000.0, 100.0);
 	TestTrue(TEXT("The authored reaction moves the baseline"), !Baseline.IsNearlyZero());
-	TestTrue(TEXT("Movement adds 30 cm horizontally to authored root motion"), (Pushed - Baseline).Equals(FVector(30.0, 0.0, 0.0), 0.25));
+	TestEqual(TEXT("Movement adds 30 cm horizontally to authored root motion"), Pushed - Baseline, FVector(30.0, 0.0, 0.0), 0.25);
 	TestTrue(TEXT("Authored rotation is preserved"), Characters[1]->GetActorQuat().Equals(Characters[0]->GetActorQuat(), 0.001));
 	TestTrue(TEXT("The wall limits movement"), Characters[3]->GetActorLocation().X <= WallGap + 0.5);
 	TestFalse(TEXT("The wall does not extend pushback"), Pushbacks[3]->IsPushbackActive());
 	TestFalse(TEXT("Unobstructed pushback completes"), Pushbacks[1]->IsPushbackActive());
 	TestTrue(TEXT("Paused pushback consumes no montage time"), Pushbacks[2]->IsPushbackActive() && Pushbacks[2]->Elapsed == PausedTime);
+	TestTrue(TEXT("Release preserves an ongoing reaction and pushback"),
+		Restrictions[2]->ReleaseRestriction(AlreadyRestricted) && Pushbacks[2]->IsPushbackActive());
 	TestTrue(TEXT("Completion leaves Motion Warping bound and releases PB1's hook"),
 		Characters[1]->GetCharacterMovement()->ProcessRootMotionPreConvertToWorld.IsBound()
 		&& !Characters[1]->GetCharacterMovement()->ProcessRootMotionPostConvertToWorld.IsBound());

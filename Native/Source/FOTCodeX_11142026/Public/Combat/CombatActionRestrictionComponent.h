@@ -1,12 +1,14 @@
 #pragma once
 
-#include "Animation/AnimInstance.h"
 #include "Components/ActorComponent.h"
 #include "UObject/Interface.h"
 #include "CombatActionRestrictionComponent.generated.h"
 
 class AController;
+class ACharacter;
 class APawn;
+class UAnimMontage;
+class UAnimSequenceBase;
 class UBlackboardComponent;
 class USkeletalMeshComponent;
 
@@ -15,9 +17,11 @@ struct FCombatActionRestrictions
 {
 	GENERATED_BODY()
 
+	/** Blocks voluntary movement input and navigation. Reactive and externally imposed motion remain available. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat|Restrictions")
 	bool bRestrictMovement = false;
 
+	/** Blocks self-initiated offense. Damage reactions, executions and death remain available. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat|Restrictions")
 	bool bRestrictCombat = false;
 
@@ -55,16 +59,19 @@ class FOTCODEX_11142026_API UCombatActionRestrictionComponent : public UActorCom
 public:
 	UCombatActionRestrictionComponent();
 
-	/** Returns an invalid handle if the owner cannot enforce the requested restriction. */
+	/** Acquires a source's voluntary action restrictions and returns its ownership handle, or an invalid handle on failure. */
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category="Combat|Restrictions")
 	FGuid AcquireRestriction(FCombatActionRestrictions Restrictions);
 
+	/** Releases only the restrictions acquired by this handle. */
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category="Combat|Restrictions")
 	bool ReleaseRestriction(FGuid Handle);
 
+	/** True while at least one source blocks voluntary movement input or navigation. */
 	UFUNCTION(BlueprintPure, Category="Combat|Restrictions")
 	bool HasMovementRestriction() const { return Aggregate.bRestrictMovement; }
 
+	/** True while at least one source blocks self-initiated offensive actions. */
 	UFUNCTION(BlueprintPure, Category="Combat|Restrictions")
 	bool HasCombatRestriction() const { return Aggregate.bRestrictCombat; }
 
@@ -116,8 +123,6 @@ private:
 	FCombatActionRestrictions Aggregate;
 	FCombatActionRestrictions Published;
 	TWeakObjectPtr<AController> RestrictedController;
-	TWeakObjectPtr<UAnimInstance> RestrictedAnimation;
-	TEnumAsByte<ERootMotionMode::Type> PreviousRootMotionMode = ERootMotionMode::RootMotionFromMontagesOnly;
 	bool bPublishing = false;
 	bool bShutDown = false;
 };

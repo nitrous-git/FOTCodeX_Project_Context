@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "node_count": 480,
-  "edge_count": 1442,
+  "node_count": 482,
+  "edge_count": 1454,
   "edges": [
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -102,6 +102,10 @@
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Input/InputActions/IA_UseItem"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
+      "to": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent"
     },
     {
       "from": "/Game/CodeX_Restruct/Core/Controllers/BP_CPC_PlayerController",
@@ -3181,6 +3185,14 @@
     },
     {
       "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Jump",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Jump",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Interfaces/DynamicWallrun_BPI"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/LocomotionAction/BP_PlayerAction_Jump",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Actions/BP_PlayerActionBase"
     },
     {
@@ -4304,6 +4316,22 @@
       "to": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/TraversalDeviceActors/BP_PlatformerDeviceBase"
     },
     {
+      "from": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Animations/ABP/ABP_TraversalHoming",
+      "to": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Animations/ABP/ALI_TraversalHoming"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Animations/ABP/ABP_TraversalHoming",
+      "to": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Animations/ABP/ABP_TraversalHoming",
+      "to": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice"
+    },
+    {
+      "from": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Animations/ABP/ABP_TraversalHoming",
+      "to": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/ETraversalAirMode"
+    },
+    {
       "from": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/AnimNotify/AN_HomingChainWindow",
       "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
     },
@@ -5266,6 +5294,26 @@
     {
       "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/Extended/AnimGraph_Extended_Pose",
       "to": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/Datas/Enumerations/Enum_SkeletonType"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Animations/DynamicWallRun_AnimBP"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Animations/ABP/ALI_TraversalDevice"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/CodeX_Restruct/Frameworks/TraversalDeviceFramework/Core/Component/AC_TraversalDeviceComponent"
+    },
+    {
+      "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",
+      "to": "/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Animations/ABP/ALI_TraversalHoming"
     },
     {
       "from": "/Game/LocomotionSystem/Assets/CT_Components/LocomotionSystem/AnimGraph/UE4/ABP_Locomotion_UE4",

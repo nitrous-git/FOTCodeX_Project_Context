@@ -6,11 +6,11 @@
     "guid": "A7884C3243D71AF8124D76AE42B2EDDE"
   },
   "stats": {
-    "node_count": 36,
-    "pin_count": 113,
-    "connection_count": 43,
+    "node_count": 39,
+    "pin_count": 121,
+    "connection_count": 46,
     "exec_connection_count": 16,
-    "data_connection_count": 27
+    "data_connection_count": 30
   },
   "nodes": [
     {
@@ -19,8 +19,8 @@
       "guid": "77135F2E4AAAE130A331748029DD6696",
       "title": "CanRequestResourceAction",
       "position": {
-        "x": 0,
-        "y": 0
+        "x": -1072,
+        "y": -352
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -379,8 +379,8 @@
       "guid": "25EBEC28466B69322F61CEAF34E0E528",
       "title": "MatchesTag",
       "position": {
-        "x": 576,
-        "y": 432
+        "x": 592,
+        "y": 336
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -2301,7 +2301,7 @@
           ]
         },
         {
-          "id": "131659D0443EA73B46EF4FB4AE86A35F",
+          "id": "CE59FA5B4365680DC96BBA82A953EA6F",
           "name": "ErrorTolerance",
           "friendly_name": null,
           "direction": "input",
@@ -2816,7 +2816,7 @@
       "title": "Branch",
       "position": {
         "x": 3640,
-        "y": 600
+        "y": 592
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -2940,8 +2940,8 @@
       "guid": "0FBDFD164FFBA35892201A939D52C58F",
       "title": "Return",
       "position": {
-        "x": 3920,
-        "y": 600
+        "x": 4672,
+        "y": 592
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3002,8 +3002,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_CallFunction_8",
-              "pin_id": "F2B6998B4134982A00648D8C8119E6D0"
+              "node": "K2Node_CommutativeAssociativeBinaryOperator_2",
+              "pin_id": "88A39DC64310991EDFDD6B953EB23FEE"
             }
           ]
         }
@@ -3015,8 +3015,8 @@
       "guid": "C1B215C94C67DE7A468AEA8A0FE69347",
       "title": "CanJump",
       "position": {
-        "x": 3632,
-        "y": 720
+        "x": 4176,
+        "y": 672
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3073,8 +3073,8 @@
           "orphaned": false,
           "links": [
             {
-              "node": "K2Node_FunctionResult_4",
-              "pin_id": "04F0F0F146B78960DACB99B2EF2545BF"
+              "node": "K2Node_CommutativeAssociativeBinaryOperator_2",
+              "pin_id": "ABF6B3134893EDD0C0E55E93B3C80E23"
             }
           ]
         }
@@ -3086,8 +3086,8 @@
       "guid": "AB7A96244563FE90F38F22808B1124B9",
       "title": "Return",
       "position": {
-        "x": 3920,
-        "y": 800
+        "x": 4144,
+        "y": 928
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3226,8 +3226,8 @@
       "guid": "857A98BE4F9838CBBE27D8B019254409",
       "title": "MatchesTag",
       "position": {
-        "x": -400,
-        "y": -100
+        "x": -640,
+        "y": -272
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3493,8 +3493,8 @@
       "guid": "870215404E18556C21D4C8A858CA339B",
       "title": "CanStartPotion",
       "position": {
-        "x": 60,
-        "y": -360
+        "x": 144,
+        "y": -368
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3619,8 +3619,8 @@
       "guid": "85E0AAF44599CCFCACFDE48B4229203C",
       "title": "Return",
       "position": {
-        "x": 290,
-        "y": -360
+        "x": 384,
+        "y": -352
       },
       "comment": null,
       "enabled_state": "Enabled",
@@ -3683,6 +3683,279 @@
             {
               "node": "K2Node_CallFunction_14",
               "pin_id": "76365F604696445F1C4C9CB459689528"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_CommutativeAssociativeBinaryOperator_2",
+      "class": "/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator",
+      "guid": "58F9113C4933C022229F9CB04611EB50",
+      "title": "K2Node_CommutativeAssociativeBinaryOperator",
+      "position": {
+        "x": 4464,
+        "y": 736
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "function": {
+          "MemberParent": "/Script/CoreUObject.Class'/Script/Engine.KismetMathLibrary'",
+          "MemberName": "BooleanOR"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "928F90094C2E7C163322ED99B4215E71",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/CoreUObject.Class'/Script/Engine.KismetMathLibrary'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": "/Script/Engine.Default__KismetMathLibrary",
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        },
+        {
+          "id": "ABF6B3134893EDD0C0E55E93B3C80E23",
+          "name": "A",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CallFunction_8",
+              "pin_id": "F2B6998B4134982A00648D8C8119E6D0"
+            }
+          ]
+        },
+        {
+          "id": "77FF920042888C856E295EB905EDE452",
+          "name": "B",
+          "friendly_name": null,
+          "direction": "input",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_10",
+              "pin_id": "BE7D19FD40259A40D8281E906DCD3D45"
+            }
+          ]
+        },
+        {
+          "id": "88A39DC64310991EDFDD6B953EB23FEE",
+          "name": "ReturnValue",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_FunctionResult_4",
+              "pin_id": "04F0F0F146B78960DACB99B2EF2545BF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_9",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "3E93F0CD4ED1B01892B1C2B0E24748B8",
+      "title": "Get AC_TraversalWallRunComponent",
+      "position": {
+        "x": 3920,
+        "y": 784
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberName": "AC_TraversalWallRunComponent",
+          "bSelfContext": true
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "6377CD7949FD9B7647BC72946818535D",
+          "name": "AC_TraversalWallRunComponent",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP.DynamicWallRunComponent_BP_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_10",
+              "pin_id": "EFBF720E486758CD4C14EF9678384C81"
+            }
+          ]
+        },
+        {
+          "id": "888C7F1246385679FA4911ABAB395C14",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/PlayerFramework/Core/BP_PlayerBase.BP_PlayerBase_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": true,
+          "orphaned": false,
+          "links": []
+        }
+      ]
+    },
+    {
+      "name": "K2Node_VariableGet_10",
+      "class": "/Script/BlueprintGraph.K2Node_VariableGet",
+      "guid": "E2F41C4D41B09A04A180439FF1D042ED",
+      "title": "Get IsWallRunning",
+      "position": {
+        "x": 4192,
+        "y": 784
+      },
+      "comment": null,
+      "enabled_state": "Enabled",
+      "is_intermediate": false,
+      "references": {
+        "variable": {
+          "MemberParent": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP.DynamicWallRunComponent_BP_C'",
+          "MemberName": "IsWallRunning",
+          "MemberGuid": "688B74304031FBC69AC8FE85E68F92BC"
+        }
+      },
+      "properties": {},
+      "pins": [
+        {
+          "id": "BE7D19FD40259A40D8281E906DCD3D45",
+          "name": "IsWallRunning",
+          "friendly_name": null,
+          "direction": "output",
+          "type": {
+            "category": "bool",
+            "sub_category": "",
+            "sub_category_object": null,
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": "false",
+          "autogenerated_default_value": "false",
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_CommutativeAssociativeBinaryOperator_2",
+              "pin_id": "77FF920042888C856E295EB905EDE452"
+            }
+          ]
+        },
+        {
+          "id": "EFBF720E486758CD4C14EF9678384C81",
+          "name": "self",
+          "friendly_name": "Target",
+          "direction": "input",
+          "type": {
+            "category": "object",
+            "sub_category": "",
+            "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/DynamicWallRun/Blueprints/Components/DynamicWallRunComponent_BP.DynamicWallRunComponent_BP_C'",
+            "container": null,
+            "is_reference": false,
+            "is_const": false,
+            "is_weak_pointer": false,
+            "is_uobject_wrapper": false
+          },
+          "default_value": null,
+          "autogenerated_default_value": null,
+          "default_object": null,
+          "hidden": false,
+          "orphaned": false,
+          "links": [
+            {
+              "node": "K2Node_VariableGet_9",
+              "pin_id": "6377CD7949FD9B7647BC72946818535D"
             }
           ]
         }
@@ -3867,9 +4140,9 @@
         "pin_name": "ReturnValue"
       },
       "to": {
-        "node": "K2Node_FunctionResult_4",
-        "pin_id": "04F0F0F146B78960DACB99B2EF2545BF",
-        "pin_name": "Success"
+        "node": "K2Node_CommutativeAssociativeBinaryOperator_2",
+        "pin_id": "ABF6B3134893EDD0C0E55E93B3C80E23",
+        "pin_name": "A"
       }
     },
     {
@@ -3895,6 +4168,19 @@
       "to": {
         "node": "K2Node_FunctionResult_3",
         "pin_id": "94BA22BF4BDF0D4E05CA0887CD64EFBD",
+        "pin_name": "Success"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_CommutativeAssociativeBinaryOperator_2",
+        "pin_id": "88A39DC64310991EDFDD6B953EB23FEE",
+        "pin_name": "ReturnValue"
+      },
+      "to": {
+        "node": "K2Node_FunctionResult_4",
+        "pin_id": "04F0F0F146B78960DACB99B2EF2545BF",
         "pin_name": "Success"
       }
     },
@@ -4174,6 +4460,19 @@
     {
       "kind": "data",
       "from": {
+        "node": "K2Node_VariableGet_10",
+        "pin_id": "BE7D19FD40259A40D8281E906DCD3D45",
+        "pin_name": "IsWallRunning"
+      },
+      "to": {
+        "node": "K2Node_CommutativeAssociativeBinaryOperator_2",
+        "pin_id": "77FF920042888C856E295EB905EDE452",
+        "pin_name": "B"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
         "node": "K2Node_VariableGet_2",
         "pin_id": "2364606B4D944C98159B9D85C15A5506",
         "pin_name": "AC_CharacterStatsComponent"
@@ -4247,6 +4546,19 @@
         "node": "K2Node_PromotableOperator_0",
         "pin_id": "6DC30FDC4EE1EAAC8827A5BB3E49ADFE",
         "pin_name": "A"
+      }
+    },
+    {
+      "kind": "data",
+      "from": {
+        "node": "K2Node_VariableGet_9",
+        "pin_id": "6377CD7949FD9B7647BC72946818535D",
+        "pin_name": "AC_TraversalWallRunComponent"
+      },
+      "to": {
+        "node": "K2Node_VariableGet_10",
+        "pin_id": "EFBF720E486758CD4C14EF9678384C81",
+        "pin_name": "self"
       }
     }
   ]

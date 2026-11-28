@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "blueprint": {
+    "name": "ABP_TraversalHoming",
+    "class": "/Script/Engine.AnimBlueprint",
+    "guid": "701C5CE94BF5C0B0426280B77B5CF370",
+    "parent_class": "/Script/CoreUObject.Class'/Script/Engine.AnimInstance'"
+  },
+  "variables": [
+    {
+      "name": "AirMode",
+      "guid": "01D3189D4FC5270ABD5F2085B2DED9BE",
+      "friendly_name": "Air Mode",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/ETraversalAirMode.ETraversalAirMode'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "AnimChoice",
+      "guid": "B231984748255B611C89CCB3ECB94D05",
+      "friendly_name": "Anim Choice",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "byte",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.UserDefinedEnum'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Enum/EAnimationChoice.EAnimationChoice'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "TraversalHomingComponent",
+      "guid": "433891EE47323299C2624283BC20EEDB",
+      "friendly_name": "Traversal Homing Component",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "object",
+        "sub_category": null,
+        "sub_category_object": "/Script/Engine.BlueprintGeneratedClass'/Game/CodeX_Restruct/Frameworks/TraversalHomingFramework/Core/Component/AC_TraversalHomingComponent.AC_TraversalHomingComponent_C'",
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    }
+  ],
+  "graphs": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "guid": "37D721AF42654F2EEA1DB99450D236EC",
+      "node_count": 16,
+      "pin_count": 54,
+      "connection_count": 12,
+      "exec_connection_count": 5,
+      "data_connection_count": 7
+    }
+  ],
+  "generated_graphs": [
+    {
+      "name": "BlueprintUpdateAnimation",
+      "guid": "D3BD53D54BAFD39F5EB609AEB919CB57",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "BlueprintInitializeAnimation",
+      "guid": "5871B0A24CA1D48833EC0BB57E05F910",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "TraversalHoming_Animation_Layer__AnimFunc",
+      "guid": "EE0283444400FA291F29EAB39AEFCCF0",
+      "node_count": 28,
+      "pin_count": 56,
+      "connection_count": 14,
+      "exec_connection_count": 14,
+      "data_connection_count": 0
+    },
+    {
+      "name": "AnimGraph__AnimFunc",
+      "guid": "FBD4372E4AE3243DFA0E2A97B8798C87",
+      "node_count": 28,
+      "pin_count": 44,
+      "connection_count": 14,
+      "exec_connection_count": 14,
+      "data_connection_count": 0
+    }
+  ],
+  "stats": {
+    "authored_graph_count": 1,
+    "generated_graph_count": 4,
+    "authored_node_count": 16,
+    "authored_pin_count": 54,
+    "authored_connection_count": 12,
+    "generated_node_count": 61,
+    "generated_pin_count": 114
+  },
+  "graph_files": [
+    {
+      "name": "EventGraph",
+      "kind": "event",
+      "file": "graphs/EventGraph.json"
+    }
+  ]
+}

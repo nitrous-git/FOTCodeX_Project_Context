@@ -1,9 +1,9 @@
 #include "Combat/CombatActionRestrictionComponent.h"
 
 #include "AIController.h"
+#include "Animation/AnimInstance.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "BehaviorTree/Blackboard/BlackboardKeyType_Bool.h"
-#include "Combat/Motion/CombatPushbackComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Engine/LatentActionManager.h"
 #include "Engine/World.h"
@@ -181,39 +181,16 @@ void UCombatActionRestrictionComponent::ShutDown()
 void UCombatActionRestrictionComponent::ApplyMovementRestriction()
 {
 	ACharacter* Character = CastChecked<ACharacter>(GetOwner());
-	if (UCombatPushbackComponent* Pushback = Character->FindComponentByClass<UCombatPushbackComponent>())
-	{
-		Pushback->CancelPushback();
-	}
-
-	if (UAnimInstance* Animation = Character->GetMesh()->GetAnimInstance())
-	{
-		RestrictedAnimation = Animation;
-		PreviousRootMotionMode = Animation->RootMotionMode;
-		Animation->SetRootMotionMode(ERootMotionMode::IgnoreRootMotion);
-	}
-
-	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
-	Character->ConsumeMovementInputVector();
-	Movement->StopActiveMovement();
-	//Movement->RootMotionParams.Clear();
-	//Movement->Velocity.X = 0.0;
-	//Movement->Velocity.Y = 0.0;
-	Movement->UpdateComponentVelocity();
+	// Abort with Keep before resetting movement requests. StopActiveMovement can otherwise
+	// abort an active path with its default velocity reset.
 	SetRestrictedController(Character->GetController());
+	Character->ConsumeMovementInputVector();
+	Character->GetCharacterMovement()->StopActiveMovement();
 }
 
 void UCombatActionRestrictionComponent::RemoveMovementRestriction()
 {
 	SetRestrictedController(nullptr);
-	if (UAnimInstance* Animation = RestrictedAnimation.Get())
-	{
-		if (Animation->RootMotionMode == ERootMotionMode::IgnoreRootMotion)
-		{
-			Animation->SetRootMotionMode(PreviousRootMotionMode);
-		}
-	}
-	RestrictedAnimation.Reset();
 }
 
 void UCombatActionRestrictionComponent::SetRestrictedController(AController* Controller)

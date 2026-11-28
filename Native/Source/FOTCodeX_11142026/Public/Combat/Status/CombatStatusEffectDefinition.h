@@ -56,6 +56,7 @@ public:
 		meta=(ClampMin="0", ClampMax="100", EditCondition="Execution == ECombatStatusExecution::InstantBurst", EditConditionHides))
 	float BurstMaxHealthPercent = 0.0f;
 
+	/** Optional voluntary action limits for the active effect. Hit reactions and contextual animations retain control of motion. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Effect",
 		meta=(EditCondition="Execution != ECombatStatusExecution::InstantBurst", EditConditionHides))
 	FCombatActionRestrictions ActionRestrictions;

@@ -110,6 +110,40 @@
       }
     },
     {
+      "name": "CachedBrakingFriction",
+      "guid": "CF0BBC0D4E5DE80DFF41A5A5F2F53C8E",
+      "friendly_name": "Cached Braking Friction",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
+      "name": "CachedBrakingFrictionFactor",
+      "guid": "0D78320241D4F7ECE7847FB157137EB7",
+      "friendly_name": "Cached Braking Friction Factor",
+      "category": "Default",
+      "property_flags": 65541,
+      "default_value": null,
+      "type": {
+        "category": "real",
+        "sub_category": "double",
+        "sub_category_object": null,
+        "container": null,
+        "is_reference": false,
+        "is_const": false,
+        "is_weak_pointer": false
+      }
+    },
+    {
       "name": "CanLaunchCharacter?",
       "guid": "0FF1E22D4104F9853B107FA73D8A5F70",
       "friendly_name": "Can Launch Character?",
@@ -1033,11 +1067,11 @@
       "name": "EventGraph",
       "kind": "event",
       "guid": "03DE632C4FCAD5FF015F6FBAA778A1D2",
-      "node_count": 1080,
-      "pin_count": 3436,
-      "connection_count": 1099,
-      "exec_connection_count": 552,
-      "data_connection_count": 547
+      "node_count": 1109,
+      "pin_count": 3545,
+      "connection_count": 1123,
+      "exec_connection_count": 561,
+      "data_connection_count": 562
     },
     {
       "name": "Get Launch Velocity",
@@ -1228,372 +1262,22 @@
       "connection_count": 7,
       "exec_connection_count": 3,
       "data_connection_count": 4
+    },
+    {
+      "name": "CacheFallingParameters",
+      "kind": "function",
+      "guid": "4CF6132D4B756CB9A7966CB40C1425D9",
+      "node_count": 21,
+      "pin_count": 65,
+      "connection_count": 12,
+      "exec_connection_count": 4,
+      "data_connection_count": 8
     }
   ],
   "generated_graphs": [
     {
-      "name": "Hit SFX And Camera Shake",
-      "guid": "CC910259498D9271C18EFD8911233717",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Play Animation",
-      "guid": "4E77F5E14C2CADB451E5E0BC214BD5D9",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Keep Character At Location",
-      "guid": "0FE2AC364FA6D8B240FD0282D4C7A279",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Start Using Actor",
-      "guid": "58F8BC074388AB4005436F8030D72489",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Get Overlapping Actor",
-      "guid": "E16F5A6E497CF6BF04BD34BEC89AD157",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Set Component State",
-      "guid": "990344574610A6648B8B7FAB9DD1AA77",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Look For Platformer Actor",
-      "guid": "3D0DEAB84EBE2AE96CE9D8BAA75F36EE",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Stop Active Action",
-      "guid": "C45C9B604229630FE685D7998083B45E",
-      "node_count": 3,
-      "pin_count": 11,
-      "connection_count": 4,
-      "exec_connection_count": 2,
-      "data_connection_count": 2
-    },
-    {
-      "name": "Set Launch Velocity",
-      "guid": "CA6CD2904385DF778A7F678DD8E02E59",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Stop Component Tick",
-      "guid": "F8E92E1740C94EE40E2EFBA560BFF106",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Set Jump Pad And Boost Ring Animations",
-      "guid": "7FB4DB1B4F5E22A231401899F7F57C06",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Set Falling Parameters",
-      "guid": "6B4B869C419766E5046C8DAFF6941314",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Check Movement Input",
-      "guid": "D9EB9EDF4BF317DEE49205B915164D39",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Input Registered?",
-      "guid": "2B0B83D142EB0C74DAD9CF9ED6651B52",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Stop Active Montage",
-      "guid": "92923FB54204E3C362789DBC592E9496",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Update Up Spring Curve Value",
-      "guid": "96792CF146CFE47ABB5345B408E1FC07",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Set Up Spring Launch Animations",
-      "guid": "850ADC344C8CEE781AE2E8AB9DEE8E73",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Set Arc Spring Animations",
-      "guid": "1BDA12BD4FF8887380FCED82804A2F64",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Set Capsule Height and Radius",
-      "guid": "8BC36CF446F408B88B946F97A799FAEA",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Pause Capsule Check",
-      "guid": "7A7C20C342016EEDE63854BEB534604F",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Check Capsule",
-      "guid": "727853AE4D002D5300FAFA9D9D6539DC",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Start Arc Simulation",
-      "guid": "076C1D804AFC84561E4A62B1BA3ACA98",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "On Hit",
-      "guid": "D2B984B149676B77AD197BAB868B911D",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "On Landed",
-      "guid": "3BD171914ADDBA589F62DA851E96FCF7",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "Set Spline",
-      "guid": "354C8432481A37D36F4C039E7231B8C3",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "ReceiveTick",
-      "guid": "8E568EEA4EBCAC2AE7C3F0AEE3911D73",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "Overlap Actor",
-      "guid": "3231C6C747B1F521027188BDCCB5E583",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "ReceiveBeginPlay",
-      "guid": "44A3AC2B4F48153DA74474B8106FA890",
-      "node_count": 2,
-      "pin_count": 5,
-      "connection_count": 1,
-      "exec_connection_count": 1,
-      "data_connection_count": 0
-    },
-    {
-      "name": "OnCompleted_AF721FF34CD3474F2E6258827C7CF9E5",
-      "guid": "EAB6672742878E01FCEF62A1C2AA0922",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnBlendOut_AF721FF34CD3474F2E6258827C7CF9E5",
-      "guid": "529D17104045F31EC33002B957A07EC0",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnInterrupted_AF721FF34CD3474F2E6258827C7CF9E5",
-      "guid": "0465D6E2463122CE66EC2FA566BA8503",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnNotifyBegin_AF721FF34CD3474F2E6258827C7CF9E5",
-      "guid": "C18E6FC6464E100E405023ABC9247E64",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnNotifyEnd_AF721FF34CD3474F2E6258827C7CF9E5",
-      "guid": "989130C34D4BFDD7DF04E296911C5393",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnCompleted_7D0A7B274EBC5FD0AC8360A3A07E31F0",
-      "guid": "F2AB90CF48376268F166F4A1FD5044E6",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnBlendOut_7D0A7B274EBC5FD0AC8360A3A07E31F0",
-      "guid": "230115D8433C3BC8F68CE6BD0C05903A",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnInterrupted_7D0A7B274EBC5FD0AC8360A3A07E31F0",
-      "guid": "AC61741D4F80F33AD4DDF3B0A8F1C5E1",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnNotifyBegin_7D0A7B274EBC5FD0AC8360A3A07E31F0",
-      "guid": "26E0A5964B8ED26E3EBFB9B450931930",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnNotifyEnd_7D0A7B274EBC5FD0AC8360A3A07E31F0",
-      "guid": "9A7209A44FC57744F09D88932DCD8782",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnCompleted_FB14120A457A4103B776F988AC532F4B",
-      "guid": "182095414991C49401EBD0A53D71C819",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnBlendOut_FB14120A457A4103B776F988AC532F4B",
-      "guid": "BFE31516429F8BCABF90708230565EB1",
-      "node_count": 3,
-      "pin_count": 9,
-      "connection_count": 3,
-      "exec_connection_count": 2,
-      "data_connection_count": 1
-    },
-    {
-      "name": "OnInterrupted_FB14120A457A4103B776F988AC532F4B",
-      "guid": "D97EFAC04CC63F45B3334D86BCD6A053",
+      "name": "OnNotifyEnd_FB14120A457A4103B776F988AC532F4B",
+      "guid": "3B33AB974D192ACAFC42EB933B8D1297",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1602,7 +1286,7 @@
     },
     {
       "name": "OnNotifyBegin_FB14120A457A4103B776F988AC532F4B",
-      "guid": "CC43814740B5D568E567A38C8ED9112E",
+      "guid": "662F4F3243037F325BDB978F2B155148",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
@@ -1610,21 +1294,381 @@
       "data_connection_count": 1
     },
     {
-      "name": "OnNotifyEnd_FB14120A457A4103B776F988AC532F4B",
-      "guid": "CA957AEE446E83F0675A3FB02C1C72C3",
+      "name": "OnInterrupted_FB14120A457A4103B776F988AC532F4B",
+      "guid": "2E697D374DEC3B2B77E285AD5D603E22",
       "node_count": 3,
       "pin_count": 9,
       "connection_count": 3,
       "exec_connection_count": 2,
       "data_connection_count": 1
+    },
+    {
+      "name": "OnBlendOut_FB14120A457A4103B776F988AC532F4B",
+      "guid": "3FC93ED64A44C95B626AEDAB9A87FAF6",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnCompleted_FB14120A457A4103B776F988AC532F4B",
+      "guid": "123FD0C249C5B42284C25D863DDCFB84",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnNotifyEnd_7D0A7B274EBC5FD0AC8360A3A07E31F0",
+      "guid": "7B089E1845986ADA89CDF1A32D21C109",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnNotifyBegin_7D0A7B274EBC5FD0AC8360A3A07E31F0",
+      "guid": "9BFFC06744DA20B5A6B1439FC520053D",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnInterrupted_7D0A7B274EBC5FD0AC8360A3A07E31F0",
+      "guid": "1DD29E3A46612A5D191428A4DA7A985F",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnBlendOut_7D0A7B274EBC5FD0AC8360A3A07E31F0",
+      "guid": "FC84607548824E0139CAC0A41A736710",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnCompleted_7D0A7B274EBC5FD0AC8360A3A07E31F0",
+      "guid": "83DB1CB34458E514C44E008599B502C4",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnNotifyEnd_AF721FF34CD3474F2E6258827C7CF9E5",
+      "guid": "58D399B44AE588CD2174DFB181BDD85C",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnNotifyBegin_AF721FF34CD3474F2E6258827C7CF9E5",
+      "guid": "B9436517485948980BBAC2B3D964E7A3",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnInterrupted_AF721FF34CD3474F2E6258827C7CF9E5",
+      "guid": "7FBDFCFA47F0D58F9984F6A9B402F483",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnBlendOut_AF721FF34CD3474F2E6258827C7CF9E5",
+      "guid": "67BE9D624CA53D19E0FA4194799BBAF4",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "OnCompleted_AF721FF34CD3474F2E6258827C7CF9E5",
+      "guid": "B4EAC8864A864DCB1015198BAB8AFC94",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveBeginPlay",
+      "guid": "437DE2FC4141A3935DE3AB9AFD3B8DBD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Overlap Actor",
+      "guid": "4D7FEC6A4903D35C173D539D6A1D400F",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "ReceiveTick",
+      "guid": "C7E66E0C40DEEB07D23CBBBCC7987226",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Set Spline",
+      "guid": "4432496443B84B4BC14E88A8E86B4A2C",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "On Landed",
+      "guid": "2FA0372E40A795282D2455BC5144B51D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "On Hit",
+      "guid": "E5D3714443247E47C480C5B14B9C0FA4",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Start Arc Simulation",
+      "guid": "44189D754F375B58AEB56D91CD0B904D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Check Capsule",
+      "guid": "F8D215654A3AB79B6E4CF6BD6C2513FD",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Pause Capsule Check",
+      "guid": "AD1A4A114D293A9D526B35B6F4D0F1BA",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Set Capsule Height and Radius",
+      "guid": "9028E88F4D59774DF5369D9CFEF2181B",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Set Arc Spring Animations",
+      "guid": "137CDBE6487C95D99D531C840C3D3153",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Set Up Spring Launch Animations",
+      "guid": "9E5FC9004FAAB71F66D25C9F018DA349",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Update Up Spring Curve Value",
+      "guid": "D2E851F342E513DAABBDE893E2C7C64C",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Stop Active Montage",
+      "guid": "F34D5C934FC1163D383569AA0C98C8C8",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Input Registered?",
+      "guid": "DACC36BE4D746544DE6EBB80AD077E25",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Check Movement Input",
+      "guid": "00EA5A2743300E52BB6A80BA74F7C1D0",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Set Falling Parameters",
+      "guid": "23C848634630ED5660A0C2A1A25764FC",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Set Jump Pad And Boost Ring Animations",
+      "guid": "8A2A5C7B46F717234F753B947C691B1E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Stop Component Tick",
+      "guid": "D23AA63A40CA53B7029C7FBAAFAA8F0D",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Set Launch Velocity",
+      "guid": "AEEB9FDA45745D10F4288A8D8958A099",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Stop Active Action",
+      "guid": "DB9C222E49EB4BF26EFB58AD0D6B648B",
+      "node_count": 3,
+      "pin_count": 11,
+      "connection_count": 4,
+      "exec_connection_count": 2,
+      "data_connection_count": 2
+    },
+    {
+      "name": "Look For Platformer Actor",
+      "guid": "3CD314CA48FB455363848C82FFE7FB03",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Set Component State",
+      "guid": "22316D224ED058B78F9C99AE1D9CE5B9",
+      "node_count": 3,
+      "pin_count": 9,
+      "connection_count": 3,
+      "exec_connection_count": 2,
+      "data_connection_count": 1
+    },
+    {
+      "name": "Get Overlapping Actor",
+      "guid": "405714C14895A88653735EBC76D15181",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Start Using Actor",
+      "guid": "B462CAA6444A23E8C493C5B5768DF99E",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Keep Character At Location",
+      "guid": "86E9B2D9412BD949B0DCAF9489F42288",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Play Animation",
+      "guid": "30A84A7348574C45B9CB3D8B227F1FF3",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
+    },
+    {
+      "name": "Hit SFX And Camera Shake",
+      "guid": "126C30FD4E44EB67E48B95BA9129AED5",
+      "node_count": 2,
+      "pin_count": 5,
+      "connection_count": 1,
+      "exec_connection_count": 1,
+      "data_connection_count": 0
     }
   ],
   "stats": {
-    "authored_graph_count": 20,
+    "authored_graph_count": 21,
     "generated_graph_count": 43,
-    "authored_node_count": 1314,
-    "authored_pin_count": 4159,
-    "authored_connection_count": 1328,
+    "authored_node_count": 1364,
+    "authored_pin_count": 4333,
+    "authored_connection_count": 1364,
     "generated_node_count": 108,
     "generated_pin_count": 305
   },
@@ -1633,6 +1677,11 @@
       "name": "EventGraph",
       "kind": "event",
       "file": "graphs/EventGraph.json"
+    },
+    {
+      "name": "CacheFallingParameters",
+      "kind": "function",
+      "file": "graphs/CacheFallingParameters.json"
     },
     {
       "name": "Can Component Be Interrupted?",
